@@ -20,23 +20,51 @@ export type ZdjecieWlasne = {
   dodano: string;
 };
 
+/** A photo as written into a backup file. */
+export type ZdjecieKopii = Omit<ZdjecieWlasne, 'blob'> & { dataUrl: string };
+
+/** The browser cannot decode this file (typically HEIC outside Safari). */
+export class NieobslugiwanyFormat extends Error {
+  constructor(public plik: string) {
+    super(`cannot decode ${plik}`);
+    this.name = 'NieobslugiwanyFormat';
+  }
+}
+
 const DB = 'wor-zdjecia';
 const STORE = 'zdjecia';
 const MAKS_BOK = 1600;
 
-const listeners = new Set<() => void>();
-const powiadom = () => listeners.forEach((l) => l());
+/** Listeners get the species that changed, or null when everything did. */
+const listeners = new Set<(gatunek: string | null) => void>();
+const powiadom = (gatunek: string | null) => listeners.forEach((l) => l(gatunek));
+
+// One connection for the whole page, not one per operation.
+let polaczenie: Promise<IDBDatabase> | null = null;
 
 function otworz(): Promise<IDBDatabase> {
-  return new Promise((resolve, reject) => {
+  if (polaczenie) return polaczenie;
+  polaczenie = new Promise((resolve, reject) => {
     const req = indexedDB.open(DB, 1);
     req.onupgradeneeded = () => {
       const store = req.result.createObjectStore(STORE, { keyPath: 'id' });
       store.createIndex('gatunek', 'gatunek');
     };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
+    req.onsuccess = () => {
+      const db = req.result;
+      // Let a future schema upgrade (in another tab) proceed.
+      db.onversionchange = () => {
+        db.close();
+        polaczenie = null;
+      };
+      resolve(db);
+    };
+    req.onerror = () => {
+      polaczenie = null;
+      reject(req.error);
+    };
   });
+  return polaczenie;
 }
 
 function transakcja<T>(tryb: IDBTransactionMode, praca: (s: IDBObjectStore) => IDBRequest<T>) {
@@ -52,8 +80,13 @@ function transakcja<T>(tryb: IDBTransactionMode, praca: (s: IDBObjectStore) => I
   );
 }
 
-async function zmniejsz(plik: Blob): Promise<{ blob: Blob; width: number; height: number }> {
-  const bitmap = await createImageBitmap(plik);
+async function zmniejsz(plik: File): Promise<{ blob: Blob; width: number; height: number }> {
+  let bitmap: ImageBitmap;
+  try {
+    bitmap = await createImageBitmap(plik);
+  } catch {
+    throw new NieobslugiwanyFormat(plik.name);
+  }
   const skala = Math.min(1, MAKS_BOK / Math.max(bitmap.width, bitmap.height));
   const width = Math.round(bitmap.width * skala);
   const height = Math.round(bitmap.height * skala);
@@ -69,36 +102,68 @@ async function zmniejsz(plik: Blob): Promise<{ blob: Blob; width: number; height
   return { blob, width, height };
 }
 
+// crypto.randomUUID needs a secure context; testing over http://<LAN-IP> has none.
+const noweId = () =>
+  typeof crypto.randomUUID === 'function'
+    ? crypto.randomUUID()
+    : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+
 export async function dodajZdjecie(gatunek: string, plik: File, dodano: string) {
   const { blob, width, height } = await zmniejsz(plik);
-  const zdjecie: ZdjecieWlasne = { id: crypto.randomUUID(), gatunek, blob, width, height, dodano };
+  const zdjecie: ZdjecieWlasne = { id: noweId(), gatunek, blob, width, height, dodano };
   await transakcja('readwrite', (s) => s.put(zdjecie));
   // Ask the browser not to evict this origin's data under storage pressure.
   void navigator.storage?.persist?.();
-  powiadom();
+  powiadom(gatunek);
 }
 
-export async function usunZdjecie(id: string) {
+export async function usunZdjecie(id: string, gatunek: string) {
   await transakcja('readwrite', (s) => s.delete(id));
-  powiadom();
+  powiadom(gatunek);
 }
 
 export function wszystkieZdjecia() {
   return transakcja<ZdjecieWlasne[]>('readonly', (s) => s.getAll());
 }
 
+/**
+ * Replaces every stored photo in one transaction. If any put fails, the
+ * transaction is aborted, so the old photos are never half-deleted.
+ */
 export async function zastapZdjecia(zdjecia: ZdjecieWlasne[]) {
   const db = await otworz();
   await new Promise<void>((resolve, reject) => {
     const tx = db.transaction(STORE, 'readwrite');
-    const s = tx.objectStore(STORE);
-    s.clear();
-    zdjecia.forEach((z) => s.put(z));
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
     tx.onabort = () => reject(tx.error);
+    try {
+      const s = tx.objectStore(STORE);
+      s.clear();
+      zdjecia.forEach((z) => s.put(z));
+    } catch (err) {
+      tx.abort();
+      reject(err);
+    }
   });
-  powiadom();
+  powiadom(null);
+}
+
+export function isZdjecieKopii(v: unknown): v is ZdjecieKopii {
+  if (typeof v !== 'object' || v === null) return false;
+  const z = v as Record<string, unknown>;
+  return (
+    typeof z.id === 'string' &&
+    z.id !== '' &&
+    typeof z.gatunek === 'string' &&
+    typeof z.dodano === 'string' &&
+    typeof z.width === 'number' &&
+    Number.isFinite(z.width) &&
+    typeof z.height === 'number' &&
+    Number.isFinite(z.height) &&
+    typeof z.dataUrl === 'string' &&
+    z.dataUrl.startsWith('data:image/')
+  );
 }
 
 export type ZdjecieDoPokazania = ZdjecieWlasne & { url: string };
@@ -116,26 +181,34 @@ export function useZdjeciaWlasne(gatunek: string) {
   useEffect(() => {
     let urls: string[] = [];
     let aktywny = true;
-    const wczytaj = () =>
+    let numer = 0; // only the newest of overlapping loads may win
+    const wczytaj = () => {
+      const moj = ++numer;
       transakcja<ZdjecieWlasne[]>('readonly', (s) => s.index('gatunek').getAll(gatunek))
         .then((lista) => {
-          if (!aktywny) return;
+          if (!aktywny || moj !== numer) return;
           urls.forEach(URL.revokeObjectURL);
           const zdjecia = lista
-            .sort((a, b) => a.dodano.localeCompare(b.dodano))
+            .sort((a, b) => String(a.dodano).localeCompare(String(b.dodano)))
             .map((z) => ({ ...z, url: URL.createObjectURL(z.blob) }));
           urls = zdjecia.map((z) => z.url);
           setStan({ zdjecia, blad: null });
         })
         .catch((err: unknown) => {
           console.error('[wor-zdjecia] could not read photos', err);
-          if (aktywny) setStan({ zdjecia: [], blad: 'Nie udało się wczytać zdjęć z pamięci przeglądarki.' });
+          if (aktywny && moj === numer) {
+            setStan({ zdjecia: [], blad: 'Nie udało się wczytać zdjęć z pamięci przeglądarki.' });
+          }
         });
+    };
+    const sluchaj = (zmieniony: string | null) => {
+      if (zmieniony === null || zmieniony === gatunek) wczytaj();
+    };
     wczytaj();
-    listeners.add(wczytaj);
+    listeners.add(sluchaj);
     return () => {
       aktywny = false;
-      listeners.delete(wczytaj);
+      listeners.delete(sluchaj);
       urls.forEach(URL.revokeObjectURL);
     };
   }, [gatunek]);
@@ -153,6 +226,8 @@ export function blobNaDataUrl(blob: Blob) {
   });
 }
 
+/** Only `data:image/…` URLs are decoded: a backup must never make the page fetch anything. */
 export async function dataUrlNaBlob(dataUrl: string) {
+  if (!dataUrl.startsWith('data:image/')) throw new Error('not an image data URL');
   return (await fetch(dataUrl)).blob();
 }

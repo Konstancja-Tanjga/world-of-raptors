@@ -2,15 +2,10 @@
 
 import Link from 'next/link';
 import { useMemo, useRef, useState } from 'react';
-import { dzisiaj, isChecklista, useChecklista, type Checklista } from '@/lib/checklist';
-import { isPostep, usePostep } from '@/lib/postep';
-import {
-  blobNaDataUrl,
-  dataUrlNaBlob,
-  wszystkieZdjecia,
-  zastapZdjecia,
-  type ZdjecieWlasne,
-} from '@/lib/zdjeciaWlasne';
+import { dzisiaj, useChecklista } from '@/lib/checklist';
+import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
+import { usePostep } from '@/lib/postep';
+import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
 import { OwnPhotos } from './OwnPhotos';
 import type { Gatunek } from '@/lib/types';
 import {
@@ -57,70 +52,95 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const liczba = Object.keys(lista).filter((id) => znane.has(id)).length;
   const wFiltrze = wynik.filter((g) => lista[g.id]).length;
 
-  // Backup format v2: checklist, lesson progress and my photos in one file.
-  // v1 files (a bare checklist object) still import.
   const eksportuj = async () => {
-    let zdjecia: (Omit<ZdjecieWlasne, 'blob'> & { dataUrl: string })[] = [];
     try {
-      zdjecia = await Promise.all(
-        (await wszystkieZdjecia()).map(async ({ blob, ...z }) => ({ ...z, dataUrl: await blobNaDataUrl(blob) })),
-      );
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {});
+      const url = URL.createObjectURL(plik);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `checklista-${dzisiaj()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      if (bezZdjec) {
+        notify({
+          tone: 'warning',
+          title: 'Kopia bez zdjęć',
+          description:
+            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Import tego pliku nie usunie zdjęć na innym urządzeniu.',
+          duration: null,
+        });
+      }
     } catch (err) {
-      console.error('[wor-zdjecia] could not read photos for export', err);
+      console.error('[kopia] export failed', err);
       notify({
-        tone: 'warning',
-        title: 'Kopia bez zdjęć',
-        description: 'Nie udało się odczytać moich zdjęć. Checklista i postęp zostały wyeksportowane.',
+        tone: 'critical',
+        title: 'Nie udało się utworzyć pliku kopii',
+        description: 'Spróbuj jeszcze raz. Jeśli zdjęć jest bardzo dużo, przeglądarce mogło zabraknąć pamięci.',
         duration: null,
       });
     }
-    const kopia = { wersja: 2, checklista: lista, postep: postep ?? {}, zdjecia };
-    const blob = new Blob([JSON.stringify(kopia)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `checklista-${dzisiaj()}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
   };
 
+  // Order matters: validate everything, then write photos (most likely to
+  // fail, and aborted atomically), then progress, then the checklist.
   const importuj = async (file: File) => {
+    let kopia: OdczytanaKopia;
     try {
-      const parsed: unknown = JSON.parse(await file.text());
-      const v2 =
-        typeof parsed === 'object' && parsed !== null && (parsed as { wersja?: unknown }).wersja === 2
-          ? (parsed as { checklista: unknown; postep?: unknown; zdjecia?: unknown })
-          : null;
-      const checklista = v2 ? v2.checklista : parsed;
-      if (!isChecklista(checklista)) throw new Error('format');
-      sprawdzZapis(zastap(checklista as Checklista));
-      let ileZdjec = 0;
-      if (v2) {
-        if (v2.postep !== undefined && isPostep(v2.postep)) sprawdzZapis(zastapPostep(v2.postep));
-        if (Array.isArray(v2.zdjecia)) {
-          const zdjecia = await Promise.all(
-            (v2.zdjecia as (Omit<ZdjecieWlasne, 'blob'> & { dataUrl: string })[]).map(async ({ dataUrl, ...z }) => ({
-              ...z,
-              blob: await dataUrlNaBlob(dataUrl),
-            })),
-          );
-          await zastapZdjecia(zdjecia);
-          ileZdjec = zdjecia.length;
-        }
-      }
-      notify({
-        tone: 'success',
-        title: 'Kopia zaimportowana',
-        description: `Wczytano ${Object.keys(checklista).length} obserwacji${v2 ? `, ${ileZdjec} zdjęć i postęp nauki` : ''}.`,
-      });
-    } catch {
+      kopia = await odczytajKopie(await file.text());
+    } catch (err) {
+      console.error('[kopia] invalid backup', err);
       notify({
         tone: 'critical',
         title: 'Nie udało się zaimportować pliku',
-        description: 'Wybierz plik JSON wyeksportowany z tej checklisty.',
+        description: `${err instanceof NiepoprawnaKopia ? err.message[0].toUpperCase() + err.message.slice(1) : 'Nie udało się odczytać pliku'}. Nic nie zostało zmienione.`,
         duration: null,
       });
+      return;
     }
+
+    if (kopia.zdjecia) {
+      try {
+        await zastapZdjecia(kopia.zdjecia);
+      } catch (err) {
+        console.error('[kopia] could not store photos', err);
+        notify({
+          tone: 'critical',
+          title: 'Nie udało się zapisać zdjęć z kopii',
+          description:
+            err instanceof DOMException && err.name === 'QuotaExceededError'
+              ? 'Brak miejsca w pamięci przeglądarki. Nic nie zostało zmienione: checklista, postęp i dotychczasowe zdjęcia są bez zmian.'
+              : 'Przeglądarka odmówiła zapisu. Nic nie zostało zmienione: checklista, postęp i dotychczasowe zdjęcia są bez zmian.',
+          duration: null,
+        });
+        return;
+      }
+    }
+
+    const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
+    const checklistaOk = zastap(kopia.checklista);
+    const nieZapisane = [!checklistaOk && 'checklisty', !postepOk && 'postępu nauki'].filter(Boolean);
+    const wczytano = [
+      `${Object.keys(kopia.checklista).length} obserwacji`,
+      kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
+      kopia.postep ? 'postęp nauki' : null,
+    ].filter(Boolean);
+    const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)'].filter(
+      Boolean,
+    );
+    notify({
+      tone: nieZapisane.length ? 'warning' : 'success',
+      title: nieZapisane.length ? 'Kopia zaimportowana częściowo' : 'Kopia zaimportowana',
+      description: [
+        `Wczytano: ${wczytano.join(', ')}.`,
+        pominiete.length ? `Plik nie zawierał ${pominiete.join(' ani ')}.` : '',
+        nieZapisane.length
+          ? `Przeglądarka nie zapisała ${nieZapisane.join(' ani ')}: te zmiany znikną po odświeżeniu.`
+          : '',
+      ]
+        .filter(Boolean)
+        .join(' '),
+      duration: nieZapisane.length ? null : undefined,
+    });
   };
 
   return (
