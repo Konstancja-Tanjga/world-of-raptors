@@ -31,6 +31,10 @@ body {
   flex-direction: column;
   gap: var(--bh-gap-normal);
   padding-block: var(--bh-padding-block);
+  /* Keep items and the active highlight off the viewport edge. */
+  padding-inline: var(--bh-padding-inline);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .page {
