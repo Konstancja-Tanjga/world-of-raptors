@@ -1,0 +1,319 @@
+/*
+ * App-level styles. Big Hat rule 1 and 2: semantic tokens only, spacing and
+ * type from the scale. The only literals are 1px borders and the reading
+ * measure, which has no token.
+ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.brand {
+  font-weight: var(--bh-text-weight-heading);
+  font-size: var(--bh-text-size-body);
+  white-space: nowrap;
+}
+
+/* The shell hides the sidebar below 900px; the toggle is only useful there. */
+.nav-toggle {
+  display: none;
+}
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+  padding-block: var(--bh-padding-block);
+}
+
+.page {
+  box-sizing: border-box;
+  max-width: 72rem;
+  padding: var(--bh-padding-hero) var(--bh-padding-page);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-loose);
+}
+
+.page--reading {
+  max-width: 52rem;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: var(--bh-padding-section);
+  }
+}
+
+/* A control that cannot wrap scrolls inside its own box instead of widening the page. */
+.scroll-x {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.page-title {
+  margin: 0;
+  font-size: var(--bh-text-size-display);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  color: var(--bh-text-primary);
+}
+
+.lead {
+  margin: 0;
+  font-size: var(--bh-text-size-body);
+  color: var(--bh-text-secondary);
+  line-height: var(--bh-text-leading-normal);
+}
+
+.section-title {
+  margin: 0;
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+}
+
+.muted {
+  margin: 0;
+  color: var(--bh-text-muted);
+}
+
+.latin {
+  margin: 0;
+  font-style: italic;
+  color: var(--bh-text-secondary);
+}
+
+.text-link {
+  color: var(--bh-text-link);
+}
+.text-link:focus-visible,
+.prose a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-normal);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--bh-gap-normal);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+}
+.filters__group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.filters__legend {
+  padding: 0;
+  font-size: var(--bh-text-size-label);
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-secondary);
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.checklist__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal);
+}
+.checklist__details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--bh-gap-normal);
+  padding-block-start: var(--bh-gap-normal);
+}
+
+/* Cards */
+.species-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.species-card__title {
+  margin: 0;
+  font-size: var(--bh-text-size-body);
+  font-weight: var(--bh-text-weight-heading);
+}
+
+.lesson-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal);
+  padding-block-start: var(--bh-gap-loose);
+  border-top: 1px solid var(--bh-border-subtle);
+}
+
+/* Lesson Markdown */
+.prose {
+  font-size: var(--bh-text-size-body);
+  line-height: var(--bh-text-leading-normal);
+  color: var(--bh-text-primary);
+}
+.prose > :first-child {
+  margin-top: 0;
+}
+.prose h1 {
+  font-size: var(--bh-text-size-display);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  margin: 0 0 var(--bh-gap-loose);
+}
+.prose h2 {
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  margin: var(--bh-padding-section) 0 var(--bh-gap-normal);
+}
+.prose h3 {
+  font-size: var(--bh-text-size-body);
+  font-weight: var(--bh-text-weight-heading);
+  margin: var(--bh-gap-loose) 0 var(--bh-gap-snug);
+}
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 var(--bh-gap-normal);
+}
+.prose li {
+  margin-block-end: var(--bh-gap-tight);
+}
+.prose a {
+  color: var(--bh-text-link);
+}
+.prose em {
+  color: var(--bh-text-secondary);
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--bh-border-subtle);
+  margin: var(--bh-gap-loose) 0;
+}
+.prose blockquote {
+  margin: 0 0 var(--bh-gap-normal);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  background: var(--bh-status-info-bg);
+  border: 1px solid var(--bh-status-info-border);
+  border-radius: var(--bh-radius-surface);
+  color: var(--bh-text-primary);
+}
+.prose blockquote > :last-child {
+  margin-bottom: 0;
+}
+.prose code {
+  font-size: var(--bh-text-size-dense);
+  background: var(--bh-surface-sunken);
+  border-radius: var(--bh-radius-control);
+  padding: 0 var(--bh-gap-tight);
+}
+.prose pre {
+  background: var(--bh-surface-sunken);
+  border-radius: var(--bh-radius-surface);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  overflow-x: auto;
+}
+.prose pre code {
+  padding: 0;
+}
+.prose details {
+  margin: 0 0 var(--bh-gap-normal);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  background: var(--bh-surface-sunken);
+  border: 1px solid var(--bh-border-subtle);
+  border-radius: var(--bh-radius-surface);
+}
+.prose summary {
+  cursor: pointer;
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.prose summary:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.prose__table {
+  overflow-x: auto;
+  margin: 0 0 var(--bh-gap-normal);
+  border: 1px solid var(--bh-border-subtle);
+  border-radius: var(--bh-radius-surface);
+}
+.prose__table:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--bh-text-size-dense);
+}
+.prose th,
+.prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--bh-gap-snug) var(--bh-gap-normal);
+  border-bottom: 1px solid var(--bh-border-subtle);
+}
+.prose th {
+  background: var(--bh-surface-sunken);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.prose tr:last-child td {
+  border-bottom: 0;
+}

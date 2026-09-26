@@ -1,0 +1,1167 @@
+{
+  "modul": "gibraltar",
+  "uwaga": "Rozpiętości orientacyjne. status: wedrowny, osiadly, zimuje, rzadki. regiony: gibraltar, poludnie-hiszpanii, polska. aktywnosc: dzienny, nocny.",
+  "gatunki": [
+    {
+      "id": "kania-czarna",
+      "pl": "Kania czarna",
+      "lat": "Milvus migrans",
+      "en": "Black Kite",
+      "es": "Milano negro",
+      "grupa": "kanie",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        135,
+        155
+      ],
+      "sezon": "przelot VII–X (szczyt VIII), wiosną II–III",
+      "cechy": [
+        "ogon płytko wcięty, przy rozłożeniu prawie prosty",
+        "ciemnobrązowa, mało kontrastowa",
+        "stale kręci ogonem"
+      ],
+      "mylona_z": [
+        "kania-ruda",
+        "blotniak-stawowy",
+        "orzelek-wlochaty"
+      ],
+      "gdzie": "wszystkie punkty przelotu; zgromadzenia 'La Milanada'",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "kania-ruda",
+      "pl": "Kania ruda",
+      "lat": "Milvus milvus",
+      "en": "Red Kite",
+      "es": "Milano real",
+      "grupa": "kanie",
+      "status": [
+        "osiadly",
+        "zimuje",
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        145,
+        170
+      ],
+      "sezon": "X i zima",
+      "cechy": [
+        "głęboko wcięty rudy ogon",
+        "duże białe okna na spodzie ręki",
+        "kontrastowa, jasna głowa"
+      ],
+      "mylona_z": [
+        "kania-czarna"
+      ],
+      "gdzie": "punkty przelotu jesienią, La Janda zimą",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "trzmielojad",
+      "pl": "Trzmielojad",
+      "lat": "Pernis apivorus",
+      "en": "European Honey Buzzard",
+      "es": "Abejero europeo",
+      "grupa": "myszołowate",
+      "status": [
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        135,
+        150
+      ],
+      "sezon": "szczyt koniec VIII – pocz. IX; wiosną koniec IV – VI",
+      "cechy": [
+        "mała wysunięta głowa na długiej szyi",
+        "skrzydła płasko lub lekko opuszczone",
+        "ogon: 2 wąskie pasy u nasady + szeroki pas końcowy"
+      ],
+      "mylona_z": [
+        "myszolow",
+        "orzelek-wlochaty"
+      ],
+      "gdzie": "wszystkie punkty przelotu, masowo",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "myszolow",
+      "pl": "Myszołów",
+      "lat": "Buteo buteo",
+      "en": "Common Buzzard",
+      "es": "Busardo ratonero",
+      "grupa": "myszołowate",
+      "status": [
+        "osiadly",
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        110,
+        130
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "krótka szyja, duża głowa",
+        "skrzydła w płytkie V",
+        "krótki, gęsto prążkowany ogon"
+      ],
+      "mylona_z": [
+        "trzmielojad",
+        "kurhannik"
+      ],
+      "gdzie": "tereny otwarte i lasy w całym regionie",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "kurhannik",
+      "pl": "Kurhannik",
+      "lat": "Buteo rufinus",
+      "en": "Long-legged Buzzard",
+      "es": "Busardo moro",
+      "grupa": "myszołowate",
+      "status": [
+        "osiadly",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        125,
+        155
+      ],
+      "sezon": "cały rok, coraz częstszy",
+      "cechy": [
+        "większy od myszołowa, długie skrzydła",
+        "rudawy, prawie nieprążkowany ogon",
+        "jasna głowa, ciemne nadgarstki"
+      ],
+      "mylona_z": [
+        "myszolow"
+      ],
+      "gdzie": "okolice Tarify, strona marokańska",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "orzelek-wlochaty",
+      "pl": "Orzełek włochaty",
+      "lat": "Aquila pennata",
+      "en": "Booted Eagle",
+      "es": "Aguililla calzada",
+      "grupa": "orły",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        110,
+        135
+      ],
+      "sezon": "szczyt poł. IX – pocz. X; wiosną III–IV",
+      "cechy": [
+        "ogon prosto ścięty, jaśniejszy od spodu",
+        "białe 'światła do lądowania' u nasady skrzydeł",
+        "dwie odmiany: jasna i ciemna"
+      ],
+      "mylona_z": [
+        "scierwnik",
+        "gadozer",
+        "kania-czarna",
+        "trzmielojad"
+      ],
+      "gdzie": "punkty przelotu; lęgi w Los Alcornocales",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "scierwnik",
+      "pl": "Ścierwnik",
+      "lat": "Neophron percnopterus",
+      "en": "Egyptian Vulture",
+      "es": "Alimoche común",
+      "grupa": "sępy",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        155,
+        170
+      ],
+      "sezon": "IX; wiosną III–IV",
+      "cechy": [
+        "klinowaty (rombowy) ogon w każdym wieku",
+        "dorosły biało-czarny z żółtą twarzą",
+        "młody ciemnobrązowy"
+      ],
+      "mylona_z": [
+        "orzelek-wlochaty"
+      ],
+      "gdzie": "punkty przelotu; lęgi w sierras (Bolonia, Grazalema)",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "gadozer",
+      "pl": "Gadożer",
+      "lat": "Circaetus gallicus",
+      "en": "Short-toed Snake Eagle",
+      "es": "Culebrera europea",
+      "grupa": "orły",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        170,
+        190
+      ],
+      "sezon": "szczyt poł. IX – pocz. X; wiosną II–III",
+      "cechy": [
+        "jasny spód bez ciemnych nadgarstków",
+        "ciemny 'kaptur' – głowa i pierś",
+        "zawisa w powietrzu"
+      ],
+      "mylona_z": [
+        "rybolow",
+        "orzelek-wlochaty"
+      ],
+      "gdzie": "punkty przelotu; lęgi w Los Alcornocales",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "rybolow",
+      "pl": "Rybołów",
+      "lat": "Pandion haliaetus",
+      "en": "Osprey",
+      "es": "Águila pescadora",
+      "grupa": "rybołowy",
+      "status": [
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        145,
+        170
+      ],
+      "sezon": "IX; wiosną III–IV",
+      "cechy": [
+        "skrzydła wygięte w 'M' jak u mewy",
+        "ciemne plamy nadgarstkowe",
+        "ciemny pas przez oko"
+      ],
+      "mylona_z": [
+        "gadozer"
+      ],
+      "gdzie": "wybrzeże, zatoka Algeciras, ujścia rzek",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "sep-plowy",
+      "pl": "Sęp płowy",
+      "lat": "Gyps fulvus",
+      "en": "Griffon Vulture",
+      "es": "Buitre leonado",
+      "grupa": "sępy",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        240,
+        280
+      ],
+      "sezon": "przelot głównie X; cały rok w koloniach",
+      "cechy": [
+        "ogromny, płowy",
+        "jasne pokrywy vs ciemne lotki od spodu",
+        "skrzydła w lekkie V, bardzo krótki ogon"
+      ],
+      "mylona_z": [
+        "sep-plamisty",
+        "sep-kasztanowaty"
+      ],
+      "gdzie": "kolonia Sierra de la Plata (Bolonia), punkty przelotu",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "sep-plamisty",
+      "pl": "Sęp plamisty",
+      "lat": "Gyps rueppelli",
+      "en": "Rüppell's Vulture",
+      "es": "Buitre moteado",
+      "grupa": "sępy",
+      "status": [
+        "rzadki",
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        220,
+        250
+      ],
+      "sezon": "głównie X, razem z sępami płowymi",
+      "cechy": [
+        "ciemniejszy od płowego, łuskowany wzór",
+        "2–3 cienkie jasne linie na spodzie skrzydła",
+        "nieco smuklejszy"
+      ],
+      "mylona_z": [
+        "sep-plowy"
+      ],
+      "gdzie": "w stadach sępów płowych",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "sep-kasztanowaty",
+      "pl": "Sęp kasztanowaty",
+      "lat": "Aegypius monachus",
+      "en": "Cinereous Vulture",
+      "es": "Buitre negro",
+      "grupa": "sępy",
+      "status": [
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        250,
+        295
+      ],
+      "sezon": "sporadycznie",
+      "cechy": [
+        "jednolicie ciemny",
+        "skrzydła płasko jak deska",
+        "głębokie 'palce'"
+      ],
+      "mylona_z": [
+        "sep-plowy"
+      ],
+      "gdzie": "sporadycznie z sępami płowymi",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "blotniak-lakowy",
+      "pl": "Błotniak łąkowy",
+      "lat": "Circus pygargus",
+      "en": "Montagu's Harrier",
+      "es": "Aguilucho cenizo",
+      "grupa": "błotniaki",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        100,
+        120
+      ],
+      "sezon": "lęgi IV–VIII, przelot VIII–IX",
+      "cechy": [
+        "samiec: szary, czarny pasek na wierzchu skrzydła",
+        "samiec: rdzawe kreski na spodzie",
+        "samica: brązowa z białym kuprem"
+      ],
+      "mylona_z": [
+        "blotniak-zbozowy"
+      ],
+      "gdzie": "pola La Jandy",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "blotniak-zbozowy",
+      "pl": "Błotniak zbożowy",
+      "lat": "Circus cyaneus",
+      "en": "Hen Harrier",
+      "es": "Aguilucho pálido",
+      "grupa": "błotniaki",
+      "status": [
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        100,
+        120
+      ],
+      "sezon": "zima",
+      "cechy": [
+        "samiec: czysto szary spód",
+        "szeroki ciemny pas na tylnej krawędzi skrzydła",
+        "masywniejszy od łąkowego"
+      ],
+      "mylona_z": [
+        "blotniak-lakowy"
+      ],
+      "gdzie": "La Janda zimą",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "blotniak-stawowy",
+      "pl": "Błotniak stawowy",
+      "lat": "Circus aeruginosus",
+      "en": "Western Marsh Harrier",
+      "es": "Aguilucho lagunero",
+      "grupa": "błotniaki",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        115,
+        130
+      ],
+      "sezon": "cały rok, przelot IX i III–IV",
+      "cechy": [
+        "skrzydła w wyraźne V",
+        "samiec trzykolorowy: brąz, szary, czarny",
+        "samica ciemnobrązowa z kremową głową"
+      ],
+      "mylona_z": [
+        "kania-czarna"
+      ],
+      "gdzie": "mokradła, La Janda, punkty przelotu",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "orzel-iberyjski",
+      "pl": "Orzeł iberyjski",
+      "lat": "Aquila adalberti",
+      "en": "Spanish Imperial Eagle",
+      "es": "Águila imperial ibérica",
+      "grupa": "orły",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        190,
+        210
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "dorosły: ciemny z białymi 'epoletami'",
+        "jasna głowa i kark",
+        "młody: jednolicie płowy/rudawy"
+      ],
+      "mylona_z": [
+        "orzel-poludniowy"
+      ],
+      "gdzie": "La Janda (program reintrodukcji)",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "orzel-poludniowy",
+      "pl": "Orzeł południowy",
+      "lat": "Aquila fasciata",
+      "en": "Bonelli's Eagle",
+      "es": "Águila perdicera",
+      "grupa": "orły",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        150,
+        170
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "jasny kreskowany spód tułowia",
+        "ciemny pas na pokrywach spodu skrzydła",
+        "szeroki ciemny pas końcowy ogona"
+      ],
+      "mylona_z": [
+        "orzel-iberyjski",
+        "gadozer"
+      ],
+      "gdzie": "sierras, Los Alcornocales, Grazalema",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "kaniuk",
+      "pl": "Kaniuk",
+      "lat": "Elanus caeruleus",
+      "en": "Black-winged Kite",
+      "es": "Elanio común",
+      "grupa": "kanie",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        75,
+        85
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "biało-szary",
+        "czarne 'ramiona'",
+        "czerwone oczy, zawisa"
+      ],
+      "mylona_z": [],
+      "gdzie": "La Janda, słupy i druty",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "pustulka",
+      "pl": "Pustułka",
+      "lat": "Falco tinnunculus",
+      "en": "Common Kestrel",
+      "es": "Cernícalo vulgar",
+      "grupa": "sokoły",
+      "status": [
+        "osiadly",
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        65,
+        80
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "zawisa",
+        "samiec: rudy grzbiet w plamki",
+        "czarne pazury"
+      ],
+      "mylona_z": [
+        "pustuleczka"
+      ],
+      "gdzie": "cały region",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "pustuleczka",
+      "pl": "Pustułeczka",
+      "lat": "Falco naumanni",
+      "en": "Lesser Kestrel",
+      "es": "Cernícalo primilla",
+      "grupa": "sokoły",
+      "status": [
+        "wedrowny",
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        58,
+        72
+      ],
+      "sezon": "lęgi II–IX",
+      "cechy": [
+        "samiec: rudy grzbiet bez plamek",
+        "samiec: szaroniebieski pas na skrzydle",
+        "jasne pazury, kolonie"
+      ],
+      "mylona_z": [
+        "pustulka"
+      ],
+      "gdzie": "kolonie w miasteczkach (np. Arcos de la Frontera)",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "kobuz",
+      "pl": "Kobuz",
+      "lat": "Falco subbuteo",
+      "en": "Eurasian Hobby",
+      "es": "Alcotán europeo",
+      "grupa": "sokoły",
+      "status": [
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        70,
+        84
+      ],
+      "sezon": "przelot IX–X, IV–V",
+      "cechy": [
+        "sierpowate skrzydła jak u jerzyka",
+        "ciemne wąsy",
+        "rude 'portki' u dorosłego"
+      ],
+      "mylona_z": [
+        "sokol-wedrowny",
+        "sokol-skalny"
+      ],
+      "gdzie": "punkty przelotu",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "sokol-wedrowny",
+      "pl": "Sokół wędrowny",
+      "lat": "Falco peregrinus",
+      "en": "Peregrine Falcon",
+      "es": "Halcón peregrino",
+      "grupa": "sokoły",
+      "status": [
+        "osiadly",
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        95,
+        115
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "masywny, 'beczkowaty' tułów",
+        "szerokie czarne wąsy",
+        "szerokie u nasady trójkątne skrzydła"
+      ],
+      "mylona_z": [
+        "kobuz"
+      ],
+      "gdzie": "klify, Skała Gibraltarska",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "sokol-skalny",
+      "pl": "Sokół skalny",
+      "lat": "Falco eleonorae",
+      "en": "Eleonora's Falcon",
+      "es": "Halcón de Eleonora",
+      "grupa": "sokoły",
+      "status": [
+        "rzadki",
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        87,
+        104
+      ],
+      "sezon": "koniec lata – jesień",
+      "cechy": [
+        "długie skrzydła i ogon",
+        "odmiana jasna i ciemna",
+        "ciemne pokrywy kontrastują z jaśniejszymi lotkami od spodu"
+      ],
+      "mylona_z": [
+        "kobuz"
+      ],
+      "gdzie": "wybrzeże, sporadycznie",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "krogulec",
+      "pl": "Krogulec",
+      "lat": "Accipiter nisus",
+      "en": "Eurasian Sparrowhawk",
+      "es": "Gavilán común",
+      "grupa": "krogulce",
+      "status": [
+        "wedrowny",
+        "osiadly",
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        60,
+        80
+      ],
+      "sezon": "przelot X",
+      "cechy": [
+        "krótkie zaokrąglone skrzydła",
+        "długi prosty ogon",
+        "lot: seria uderzeń + ślizg"
+      ],
+      "mylona_z": [
+        "pustulka"
+      ],
+      "gdzie": "punkty przelotu, nisko",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "gibraltar",
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "orzel-przedni",
+      "pl": "Orzeł przedni",
+      "lat": "Aquila chrysaetos",
+      "en": "Golden Eagle",
+      "es": "Águila real",
+      "grupa": "orły",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        190,
+        225
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "skrzydła zwężone u nasady, krawędź w kształcie „S”",
+        "szybuje w lekkie V",
+        "młody: białe plamy na skrzydłach i biały ogon z czarnym pasem"
+      ],
+      "mylona_z": [
+        "orzel-iberyjski",
+        "orzel-poludniowy"
+      ],
+      "gdzie": "góry: Sierra Nevada, Cazorla, Grazalema; w Polsce Karpaty",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "orlosep",
+      "pl": "Orłosęp",
+      "lat": "Gypaetus barbatus",
+      "en": "Bearded Vulture",
+      "es": "Quebrantahuesos",
+      "grupa": "sępy",
+      "status": [
+        "osiadly",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        265,
+        285
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "sylwetka ogromnego sokoła: wąskie spiczaste skrzydła",
+        "długi klinowaty ogon",
+        "dorosły: rdzawy spód, czarna „broda”"
+      ],
+      "mylona_z": [
+        "scierwnik",
+        "sep-plowy"
+      ],
+      "gdzie": "Sierra de Cazorla (reintrodukcja)",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "poludnie-hiszpanii"
+      ]
+    },
+    {
+      "id": "jastrzab",
+      "pl": "Jastrząb",
+      "lat": "Accipiter gentilis",
+      "en": "Northern Goshawk",
+      "es": "Azor común",
+      "grupa": "krogulce",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        95,
+        125
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "masywny, zaokrąglony ogon",
+        "wyraźna jasna brew",
+        "białe puszyste pokrywy podogonowe"
+      ],
+      "mylona_z": [
+        "krogulec"
+      ],
+      "gdzie": "lasy górskie (Cazorla, Sierra Nevada); w Polsce lasy w całym kraju",
+      "aktywnosc": "dzienny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "puchacz",
+      "pl": "Puchacz",
+      "lat": "Bubo bubo",
+      "en": "Eurasian Eagle-Owl",
+      "es": "Búho real",
+      "grupa": "sowy",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        155,
+        190
+      ],
+      "sezon": "toki I–III",
+      "cechy": [
+        "ogromny, długie „uszy”",
+        "pomarańczowe oczy",
+        "głos: bardzo niskie „uu-hu”"
+      ],
+      "mylona_z": [
+        "uszatka"
+      ],
+      "gdzie": "skały, wąwozy, kamieniołomy",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "puszczyk",
+      "pl": "Puszczyk",
+      "lat": "Strix aluco",
+      "en": "Tawny Owl",
+      "es": "Cárabo común",
+      "grupa": "sowy",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        80,
+        95
+      ],
+      "sezon": "toki X–XI i II–III",
+      "cechy": [
+        "okrągła głowa bez „uszu”",
+        "ciemne oczy",
+        "głos: drżące „huuu… hu-hu-huuu”, samica „kju-wik”"
+      ],
+      "mylona_z": [
+        "puszczyk-uralski"
+      ],
+      "gdzie": "lasy, parki, cmentarze",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "puszczyk-uralski",
+      "pl": "Puszczyk uralski",
+      "lat": "Strix uralensis",
+      "en": "Ural Owl",
+      "es": "Cárabo uralense",
+      "grupa": "sowy",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        125,
+        135
+      ],
+      "sezon": "toki II–IV",
+      "cechy": [
+        "duży, jasnoszary",
+        "długi ogon",
+        "małe ciemne oczy w gładkiej szlarze"
+      ],
+      "mylona_z": [
+        "puszczyk"
+      ],
+      "gdzie": "Karpaty, stare lasy wschodniej Polski",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "polska"
+      ]
+    },
+    {
+      "id": "plomykowka",
+      "pl": "Płomykówka",
+      "lat": "Tyto alba",
+      "en": "Western Barn Owl",
+      "es": "Lechuza común",
+      "grupa": "sowy",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        85,
+        95
+      ],
+      "sezon": "cały rok",
+      "cechy": [
+        "biała sercowata twarz",
+        "czarne oczy",
+        "głos: syczący wrzask"
+      ],
+      "mylona_z": [],
+      "gdzie": "kościoły, stodoły, pola",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska",
+        "gibraltar"
+      ]
+    },
+    {
+      "id": "uszatka",
+      "pl": "Uszatka",
+      "lat": "Asio otus",
+      "en": "Long-eared Owl",
+      "es": "Búho chico",
+      "grupa": "sowy",
+      "status": [
+        "osiadly",
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        90,
+        100
+      ],
+      "sezon": "toki II–IV, młode VI–VII",
+      "cechy": [
+        "długie „uszy”",
+        "pomarańczowe oczy",
+        "młode piszczą jak nienaoliwione drzwi"
+      ],
+      "mylona_z": [
+        "uszatka-blotna",
+        "puchacz"
+      ],
+      "gdzie": "zadrzewienia wśród pól; zimowe noclegowiska w miastach",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska"
+      ]
+    },
+    {
+      "id": "uszatka-blotna",
+      "pl": "Uszatka błotna",
+      "lat": "Asio flammeus",
+      "en": "Short-eared Owl",
+      "es": "Búho campestre",
+      "grupa": "sowy",
+      "status": [
+        "zimuje",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        95,
+        110
+      ],
+      "sezon": "zima, przeloty",
+      "cechy": [
+        "żółte oczy w czarnej obwódce",
+        "poluje za dnia nad łąkami",
+        "biała tylna krawędź skrzydła"
+      ],
+      "mylona_z": [
+        "uszatka"
+      ],
+      "gdzie": "łąki, mokradła; La Janda zimą",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska",
+        "gibraltar"
+      ]
+    },
+    {
+      "id": "pojdzka",
+      "pl": "Pójdźka",
+      "lat": "Athene noctua",
+      "en": "Little Owl",
+      "es": "Mochuelo europeo",
+      "grupa": "sowy",
+      "status": [
+        "osiadly"
+      ],
+      "rozpietosc_cm": [
+        55,
+        60
+      ],
+      "sezon": "toki II–V",
+      "cechy": [
+        "płaska głowa, żółte oczy",
+        "białe „brwi”",
+        "siedzi za dnia na murkach i słupach"
+      ],
+      "mylona_z": [
+        "wlochatka",
+        "soweczka",
+        "syczek"
+      ],
+      "gdzie": "gaje oliwne, wsie, stare wierzby",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "polska",
+        "gibraltar"
+      ]
+    },
+    {
+      "id": "syczek",
+      "pl": "Syczek",
+      "lat": "Otus scops",
+      "en": "Eurasian Scops Owl",
+      "es": "Autillo europeo",
+      "grupa": "sowy",
+      "status": [
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        47,
+        54
+      ],
+      "sezon": "IV–IX",
+      "cechy": [
+        "malutki, małe „uszka”",
+        "wzór jak kora drzewa",
+        "głos: „tjuu” co 2–3 s"
+      ],
+      "mylona_z": [
+        "pojdzka",
+        "uszatka"
+      ],
+      "gdzie": "parki, ogrody, wioski, gaje oliwne",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "poludnie-hiszpanii",
+        "gibraltar"
+      ]
+    },
+    {
+      "id": "wlochatka",
+      "pl": "Włochatka",
+      "lat": "Aegolius funereus",
+      "en": "Boreal Owl",
+      "es": "Mochuelo boreal",
+      "grupa": "sowy",
+      "status": [
+        "osiadly",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        50,
+        60
+      ],
+      "sezon": "toki III–IV",
+      "cechy": [
+        "duża kwadratowa głowa",
+        "„zdziwiona” mina, ciemna obwódka szlary",
+        "głos: szybka seria „pu-pu-pu-pu”"
+      ],
+      "mylona_z": [
+        "pojdzka",
+        "soweczka"
+      ],
+      "gdzie": "stare lasy iglaste, dziuple dzięcioła czarnego",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "polska"
+      ]
+    },
+    {
+      "id": "soweczka",
+      "pl": "Sóweczka",
+      "lat": "Glaucidium passerinum",
+      "en": "Eurasian Pygmy Owl",
+      "es": "Mochuelo chico",
+      "grupa": "sowy",
+      "status": [
+        "osiadly",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        32,
+        39
+      ],
+      "sezon": "toki III–IV i IX–X",
+      "cechy": [
+        "wielkości szpaka, mała głowa",
+        "długi, ruchliwy ogon",
+        "aktywna o zmierzchu i świcie"
+      ],
+      "mylona_z": [
+        "pojdzka",
+        "wlochatka"
+      ],
+      "gdzie": "stare lasy iglaste: Karpaty, Sudety, Puszcza Białowieska",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "polska"
+      ]
+    }
+  ]
+}

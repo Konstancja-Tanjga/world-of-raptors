@@ -1,0 +1,125 @@
+# Lekcja 3: Gatunki i trudne pary
+
+Legenda: 🇵🇱 Polska · 🇪🇸 południe Hiszpanii · ⭐ rzadki · 🔁 wędrowny
+
+Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia, więc zawsze odsłuchaj nagrania na [xeno-canto](https://xeno-canto.org).
+
+---
+
+## A. Duże sowy
+
+### Puchacz — *Bubo bubo* 🇵🇱🇪🇸
+- **Rozpiętość:** ok. 155–190 cm (największa sowa Europy)
+- **Klucz:** ogromny, z **długimi „uszami”**, **pomarańczowe oczy**, rdzawobrązowy.
+- **Głos:** bardzo niskie, dwusylabowe **„uu-hu”**, słyszalne z daleka; tokuje od zimy do wczesnej wiosny.
+- **Gdzie:** skały, wąwozy, kamieniołomy, stare lasy. W Hiszpanii dość częsty w sierras, w Polsce nieliczny.
+
+### Puszczyk uralski — *Strix uralensis* 🇵🇱
+- **Rozpiętość:** ok. 125–135 cm
+- **Klucz:** duży, **jasnoszary**, okrągła głowa bez „uszu”, **małe ciemne oczy** w gładkiej szarej szlarze, **długi ogon**.
+- **Głos:** głębokie **„wuhu… wuhu-wuhu”**.
+- **Uwaga:** przy gnieździe potrafi zaatakować człowieka, więc trzymaj się z daleka.
+- **Gdzie:** Karpaty, stare lasy wschodniej Polski.
+
+### Puszczyk — *Strix aluco* 🇵🇱🇪🇸
+- **Rozpiętość:** ok. 80–95 cm
+- **Klucz:** okrągła głowa bez „uszu”, **ciemne oczy**, odmiany szara i rdzawa.
+- **Głos:** samiec: drżące **„huuu… hu-hu-hu-huuuu”**; samica: ostre **„kju-wik”**.
+- **Gdzie:** najpospolitsza sowa Polski: lasy, parki, cmentarze, nawet miasta. W Hiszpanii w lasach, np. w Los Alcornocales.
+
+### ⚖️ Puszczyk vs puszczyk uralski
+| Cecha | Puszczyk | Puszczyk uralski |
+|---|---|---|
+| Wielkość | średnia | wyraźnie większa |
+| Ubarwienie | szare lub rdzawe, kontrastowe | jasnoszare, spokojne |
+| Ogon | krótki | długi |
+| Szlara | z ciemnym obramowaniem | gładka, jasna |
+| Głos | drżące „huuu… hu-hu-huuu” | głębokie „wuhu… wuhu-wuhu” |
+
+---
+
+## B. Płomykówka
+
+### Płomykówka — *Tyto alba* 🇵🇱🇪🇸
+- **Rozpiętość:** ok. 85–95 cm
+- **Klucz:** **biała, sercowata twarz**, **czarne oczy**, jasny spód, złotawy wierzch; w locie wygląda na prawie białą.
+- **Głos:** przeciągły, **syczący wrzask** „srrriii”; młode chrapią i syczą.
+- **Gdzie:** wieże kościołów, stodoły, pola. W Polsce jej liczebność silnie spadła, w Hiszpanii jest częstsza.
+
+---
+
+## C. „Uszate” sowy średniej wielkości
+
+### Uszatka — *Asio otus* 🇵🇱🇪🇸
+- **Rozpiętość:** ok. 90–100 cm
+- **Klucz:** **długie „uszy”**, **pomarańczowe oczy**, smukła; gęsto kreskowany spód aż do brzucha.
+- **Głos:** samiec: miękkie, niskie **„huu”** co 2–3 sekundy. Młode (VI–VII): piskliwe **„pii-e”**, jak nienaoliwione drzwi.
+- **Ciekawostka:** zimą tworzy **grupowe noclegowiska**, nawet kilkadziesiąt ptaków na jednym drzewie w mieście (także w Polsce).
+
+### Uszatka błotna — *Asio flammeus* 🇵🇱🇪🇸
+- **Rozpiętość:** ok. 95–110 cm
+- **Klucz:** **żółte oczy w czarnej obwódce** (wygląda, jakby miała makijaż), krótkie, rzadko widoczne „uszy”; **poluje za dnia** nisko nad łąkami, lotem podobnym do błotniaka.
+- **Gdzie:** łąki i mokradła. W Hiszpanii zimuje, np. na La Jandzie. W Polsce nieliczna, zimą i w czasie przelotów częstsza.
+
+### ⚖️ Uszatka vs uszatka błotna
+| Cecha | Uszatka | Uszatka błotna |
+|---|---|---|
+| Oczy | pomarańczowe | żółte, czarna obwódka |
+| „Uszy” | długie, dobrze widoczne | krótkie, zwykle niewidoczne |
+| Brzuch | kreskowany | jasny, kreski tylko na piersi |
+| Skrzydło (w locie) | tylna krawędź bez białego obrzeżenia, gęsto prążkowane | **biała tylna krawędź**, ciemne końce |
+| Aktywność | nocna | także dzienna |
+| Siedlisko | zadrzewienia | otwarte łąki |
+
+---
+
+## D. Małe sowy
+
+### Pójdźka — *Athene noctua* 🇵🇱🇪🇸
+- **Rozpiętość:** ok. 55–60 cm
+- **Klucz:** mała, **płaska głowa**, **żółte oczy**, białe „brwi” (wygląda na złą albo zdziwioną); często siedzi **za dnia** na murkach, słupach i dachach; kiwa się, gdy jest zaniepokojona.
+- **Głos:** zawodzące **„guuk”** i ostre **„kiju”**.
+- **Gdzie:** w Hiszpanii pospolita (gaje oliwne, ruiny, pola). W Polsce rzadka: stare wierzby, zabudowania wiejskie.
+
+### Włochatka — *Aegolius funereus* 🇵🇱
+- **Rozpiętość:** ok. 50–60 cm
+- **Klucz:** **duża kwadratowa głowa**, **żółte oczy**, wyraźna jasna szlara z ciemnym obramowaniem, więc mina „wiecznie zdziwiona”; nogi pokryte gęstym pierzem.
+- **Głos:** szybka seria **„pu-pu-pu-pu-pu”** (5–8 dźwięków), zwykle w marcu i kwietniu, w nocy.
+- **Gdzie:** stare lasy iglaste w górach i na północnym wschodzie. Gniazduje w dziuplach dzięcioła czarnego.
+
+### Sóweczka — *Glaucidium passerinum* 🇵🇱
+- **Rozpiętość:** ok. 32–39 cm (najmniejsza sowa Europy, wielkości szpaka)
+- **Klucz:** **mała głowa**, żółte oczy, jasne „brwi”, **długi ogon**, którym kręci i podrzuca; aktywna **o zmierzchu i o świcie**.
+- **Głos:** monotonne gwizdy **„djuu… djuu”**, a jesienią wznosząca się „gama”.
+- **Gdzie:** stare lasy iglaste: Karpaty, Sudety, Puszcza Białowieska.
+
+### Syczek — *Otus scops* 🇪🇸 (🇵🇱⭐) 🔁
+- **Rozpiętość:** ok. 47–54 cm
+- **Klucz:** malutki, **małe „uszka”**, szarobrązowy wzór **jak kora drzewa**, żółte oczy; prawie niewidoczny w dzień.
+- **Głos:** czysty, monotonny gwizd **„tjuu”** co 2–3 sekundy, przez całą noc; często dwa ptaki „rozmawiają” w nieco innej tonacji.
+- **Gdzie:** parki, ogrody, wioski, gaje oliwne na południu Hiszpanii, **od kwietnia do września**. Zimuje w Afryce. W Polsce pojawia się sporadycznie.
+
+### ⚖️ Pójdźka vs włochatka vs sóweczka
+| Cecha | Pójdźka | Włochatka | Sóweczka |
+|---|---|---|---|
+| Wielkość | mała | mała | **najmniejsza** |
+| Głowa | płaska, szeroka | **duża, kwadratowa** | **mała** |
+| Szlara | słabo zaznaczona | wyraźna, ciemna obwódka | słabo zaznaczona |
+| Ogon | krótki | krótki | **długi, ruchliwy** |
+| Siedlisko | pola, wieś | stary las iglasty | stary las iglasty |
+| Aktywność | zmierzch i dzień | noc | zmierzch i świt |
+
+### ⚖️ Syczek vs pójdźka (latem na południu Hiszpanii)
+Syczek ma „uszka” i wzór kory, jest aktywny tylko w nocy i odzywa się monotonnym „tjuu”. Pójdźka: płaska głowa bez „uszu”, często widoczna za dnia, głos zawodzący i bardziej zróżnicowany.
+
+---
+
+## Drzewko decyzyjne: słyszysz sowę w nocy
+1. **Bardzo niskie, dwusylabowe „uu-hu” ze skał?** → puchacz
+2. **Drżące „hu-hu-huuu” w parku lub lesie?** → puszczyk
+3. **Syczący wrzask przy kościele lub stodole?** → płomykówka
+4. **Pojedyncze „tjuu” co 2–3 s, lato, południe?** → syczek
+5. **Pojedyncze niskie „huu” co 2–3 s, zadrzewienia?** → uszatka
+6. **Piszczenie jak skrzypiące drzwi w czerwcu?** → młode uszatki
+7. **Szybka seria „pu-pu-pu-pu” w starym lesie iglastym?** → włochatka
+8. **Gwizdy o zmierzchu w górskim świerczynie?** → sóweczka

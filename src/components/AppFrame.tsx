@@ -1,0 +1,90 @@
+'use client';
+
+import { usePathname, useRouter } from 'next/navigation';
+import { useState, type ReactNode } from 'react';
+import { AppBar, AppShell, Button, NavGroup, NavItem, NavList, SkipLink } from './ds';
+
+type NavEntry = { id: string; label: string; href: string };
+
+export function AppFrame({
+  moduly,
+  children,
+}: {
+  moduly: { slug: string; id: string; tytul: string }[];
+  children: ReactNode;
+}) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [navOpen, setNavOpen] = useState(false);
+
+  const glowne: NavEntry[] = [
+    { id: 'start', label: 'Start', href: '/' },
+    { id: 'plan', label: 'Plan kursu', href: '/plan' },
+  ];
+  const narzedzia: NavEntry[] = [
+    { id: 'gatunki', label: 'Atlas gatunków', href: '/gatunki' },
+    { id: 'checklista', label: 'Moja checklista', href: '/checklista' },
+  ];
+  const lekcje: NavEntry[] = moduly.map((m) => ({
+    id: m.slug,
+    label: `${m.id} · ${m.tytul}`,
+    href: `/moduly/${m.slug}`,
+  }));
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
+
+  const go = (entries: NavEntry[]) => (id: string) => {
+    const entry = entries.find((e) => e.id === id);
+    if (!entry) return;
+    setNavOpen(false);
+    router.push(entry.href);
+  };
+
+  const renderItems = (entries: NavEntry[]) =>
+    entries.map((e) => (
+      <NavItem
+        key={e.id}
+        item={{ id: e.id, label: e.label }}
+        active={isActive(e.href)}
+        onSelect={go(entries)}
+      />
+    ));
+
+  return (
+    <>
+      <SkipLink>Przejdź do treści</SkipLink>
+      <AppShell
+        navOpen={navOpen}
+        onNavToggle={() => setNavOpen((o) => !o)}
+        header={
+          <AppBar
+            brand={<span className="brand">🦅 World of Raptors</span>}
+            titleAsHeading={false}
+            actions={
+              <span className="nav-toggle">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  aria-expanded={navOpen}
+                  onClick={() => setNavOpen((o) => !o)}
+                >
+                  Menu
+                </Button>
+              </span>
+            }
+          />
+        }
+        sidebar={
+          <nav aria-label="Nawigacja kursu" className="sidebar">
+            <NavList ariaLabel="Główne">{renderItems(glowne)}</NavList>
+            <NavGroup label="Moduły">{renderItems(lekcje)}</NavGroup>
+            <NavGroup label="Narzędzia">{renderItems(narzedzia)}</NavGroup>
+          </nav>
+        }
+      >
+        {children}
+      </AppShell>
+    </>
+  );
+}
