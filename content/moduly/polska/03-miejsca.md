@@ -22,7 +22,17 @@ Transmisje z gniazd to świetny sposób, żeby oglądać ptaki, których w teren
 - Nie publikuj dokładnych lokalizacji gniazd.
 - Nie podchodź do siedzącego ptaka tak blisko, żeby odleciał. Każdy start kosztuje go energię, a zimą to poważna strata.
 
+## Filmy
+- [YouTube: Biebrzański Park Narodowy, ptaki](https://www.youtube.com/results?search_query=Biebrza+ptaki+orlik)
+- [YouTube: Stawy Milickie, bieliki](https://www.youtube.com/results?search_query=Stawy+Milickie+bieliki)
+- [YouTube: przelot ptaków drapieżnych na Helu](https://www.youtube.com/results?search_query=Hel+przelot+ptak%C3%B3w+drapie%C5%BCnych)
+- [YouTube: kamera na gnieździe bielika](https://www.youtube.com/results?search_query=kamera+gniazdo+bielik)
+
 ## Źródła
+- [Wikipedia: Biebrzański Park Narodowy](https://pl.wikipedia.org/wiki/Biebrza%C5%84ski_Park_Narodowy)
+- [Wikipedia: Dolina Baryczy](https://pl.wikipedia.org/wiki/Dolina_Baryczy) i [Stawy Milickie](https://pl.wikipedia.org/wiki/Stawy_Milickie)
+- [Wikipedia: Mierzeja Helska](https://pl.wikipedia.org/wiki/Mierzeja_Helska) i [Akcja Bałtycka](https://pl.wikipedia.org/wiki/Akcja_Ba%C5%82tycka): badania wędrówek ptaków na wybrzeżu
+- [Wikipedia: Park Narodowy „Ujście Warty”](https://pl.wikipedia.org/wiki/Park_Narodowy_%E2%80%9EUj%C5%9Bcie_Warty%E2%80%9D)
 - [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): liczebności i trendy gatunków
 - [OTOP](https://otop.org.pl): Ogólnopolskie Towarzystwo Ochrony Ptaków
 - [Komitet Ochrony Orłów](https://koo.org.pl): ochrona orłów i orlików w Polsce

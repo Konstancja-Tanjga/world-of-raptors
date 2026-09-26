@@ -16,6 +16,7 @@ import {
   useToast,
 } from './ds';
 import { SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
 
@@ -25,6 +26,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const [widok, setWidok] = useState<Widok>('wszystkie');
   const fileInput = useRef<HTMLInputElement>(null);
   const { notify } = useToast();
+  const sprawdzZapis = useOstrzezenieZapisu();
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
@@ -59,7 +61,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
     try {
       const parsed: unknown = JSON.parse(await file.text());
       if (!isChecklista(parsed)) throw new Error('format');
-      zastap(parsed as Checklista);
+      sprawdzZapis(zastap(parsed as Checklista));
       notify({
         tone: 'success',
         title: 'Checklista zaimportowana',
@@ -134,7 +136,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
                           label={g.pl}
                           description={`${g.lat} (ang. ${g.en})`}
                           checked={Boolean(obs)}
-                          onChange={() => przelacz(g.id)}
+                          onChange={() => sprawdzZapis(przelacz(g.id))}
                         />
                         <Link href={`/gatunki/${g.id}`} className="text-link">
                           Karta gatunku<span className="visually-hidden">: {g.pl}</span>
@@ -146,18 +148,18 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
                             label="Data obserwacji"
                             type="date"
                             value={obs.data ?? ''}
-                            onChange={(e) => aktualizuj(g.id, { data: e.target.value })}
+                            onChange={(e) => sprawdzZapis(aktualizuj(g.id, { data: e.target.value }))}
                           />
                           <Input
                             label="Miejsce"
                             value={obs.miejsce ?? ''}
-                            onChange={(e) => aktualizuj(g.id, { miejsce: e.target.value })}
+                            onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
                           />
                           <Textarea
                             label="Notatka"
                             rows={2}
                             value={obs.notatka ?? ''}
-                            onChange={(e) => aktualizuj(g.id, { notatka: e.target.value })}
+                            onChange={(e) => sprawdzZapis(aktualizuj(g.id, { notatka: e.target.value }))}
                           />
                         </div>
                       )}

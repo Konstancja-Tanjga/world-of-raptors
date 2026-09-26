@@ -2,10 +2,12 @@ import Link from 'next/link';
 import { zdjecia, znajdzGatunek } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { Photo } from './Photo';
+import { SpeciesCues } from './SpeciesCues';
 
 /**
- * The two reference photos of a species (perched and in flight), the species
- * it is most often confused with, and where to see and hear more.
+ * The two reference photos of a species (perched and in flight), what to look
+ * at in them, the species it is most often confused with, and where to see and
+ * hear more.
  */
 export function SpeciesMedia({
   id,
@@ -35,6 +37,8 @@ export function SpeciesMedia({
           {z.lot && <Photo zdjecie={z.lot} alt={`${g.pl} w locie`} podpis="W locie" />}
         </div>
       )}
+
+      <SpeciesCues g={g} />
 
       {mylone.length > 0 && (
         <div className="confusion">

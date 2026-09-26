@@ -36,6 +36,17 @@ Zanim sięgniesz po rzadki gatunek, zapytaj:
 - **Notatnik** albo aplikacja: data, godzina, miejsce, pogoda, **co widziałaś** (a nie tylko nazwa gatunku). Szkic sylwetki jest bardzo cenny.
 - Odhaczaj gatunki w [checkliście](/checklista), a obserwacje zgłaszaj do eBird lub Observation.org.
 
+## Filmy
+- [YouTube: kukułka czy krogulec?](https://www.youtube.com/results?search_query=cuckoo+vs+sparrowhawk+identification)
+- [YouTube: jak wybrać lornetkę do obserwacji ptaków](https://www.youtube.com/results?search_query=jak+wybra%C4%87+lornetk%C4%99+do+obserwacji+ptak%C3%B3w)
+- [YouTube: wskazówki dla obserwatorów przelotu ptaków drapieżnych](https://www.youtube.com/results?search_query=hawk+watching+tips)
+
+## Źródła
+- [HawkWatch International: Raptor ID](https://hawkwatch.org/raptor-id/)
+- [Wikipedia: Common cuckoo](https://en.wikipedia.org/wiki/Common_cuckoo): o podobieństwie kukułki do krogulca
+- [Wikipedia: Brood parasite](https://en.wikipedia.org/wiki/Brood_parasite): dlaczego kukułce opłaca się „udawać” drapieżnika
+- [eBird](https://ebird.org) i [Observation.org](https://observation.org): zapisywanie obserwacji ze zdjęciem
+
 ## Mini-quiz
 1. Styczeń, Polska, duży brązowy ptak krąży nad polem. Od jakiego gatunku zaczniesz?
 2. Ile niezależnych cech powinnaś mieć, zanim uznasz rozpoznanie za pewne?

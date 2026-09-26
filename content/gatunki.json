@@ -34,7 +34,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "kanie",
+        "skrzydla": "długie, dość wąskie, „złamane” w nadgarstku",
+        "palce": "5–6, średnio rozcapierzone",
+        "ogon": "długi, płytko wcięty; rozłożony wygląda prawie prosto",
+        "glowa": "średnia, wystaje umiarkowanie",
+        "lot": "płasko, „ręka” lekko opuszczona; stale skręca ogonem"
+      }
     },
     {
       "id": "kania-ruda",
@@ -67,7 +75,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "kanie",
+        "skrzydla": "bardzo długie i wąskie, wyraźnie „złamane” w nadgarstku",
+        "palce": "5, wyraźne",
+        "ogon": "długi, głęboko wcięty, wcięcie widać zawsze",
+        "glowa": "średnia, jasna, wystaje umiarkowanie",
+        "lot": "skrzydła lekko łukiem, lot elastyczny; kręci ogonem"
+      }
     },
     {
       "id": "trzmielojad",
@@ -99,7 +115,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "myszołowy",
+        "skrzydla": "długie i szerokie, węższe u nasady niż u myszołowa",
+        "palce": "5–6, dość krótkie",
+        "ogon": "dłuższy niż u myszołowa, boki zaokrąglone",
+        "glowa": "mała, wysunięta daleko na długiej szyi (jak u kukułki)",
+        "lot": "płasko albo z lekko opuszczoną „ręką”; uderzenia głębokie i elastyczne"
+      }
     },
     {
       "id": "myszolow",
@@ -134,7 +158,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "myszołowy",
+        "skrzydla": "średniej długości, szerokie, zaokrąglone",
+        "palce": "5",
+        "ogon": "krótki, szeroki, często rozłożony w wachlarz",
+        "glowa": "duża, szyja krótka, słabo wystaje",
+        "lot": "płytkie V; często krąży"
+      }
     },
     {
       "id": "kurhannik",
@@ -165,7 +197,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "myszołowy",
+        "skrzydla": "dłuższe niż u myszołowa",
+        "palce": "5",
+        "ogon": "średni, rudawy, prawie bez prążków",
+        "glowa": "jasna, wystaje jak u myszołowa",
+        "lot": "wyraźniejsze V niż u myszołowa; często zawisa"
+      }
     },
     {
       "id": "orzelek-wlochaty",
@@ -200,7 +240,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "orły (mały orzeł)",
+        "skrzydla": "średnio długie, dość wąskie, krawędzie prawie równoległe",
+        "palce": "6, wyraźne",
+        "ogon": "dość długi, prosto ścięty, z ostrymi rogami",
+        "glowa": "mała, ale wyraźnie wystaje",
+        "lot": "płasko albo z lekko opuszczoną „ręką”; od przodu białe „światła do lądowania”"
+      }
     },
     {
       "id": "scierwnik",
@@ -231,7 +279,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sępy (mały sęp)",
+        "skrzydla": "długie, średniej szerokości",
+        "palce": "6, głęboko rozcapierzone",
+        "ogon": "klinowaty (romb) w każdym wieku",
+        "glowa": "mała i wąska, wysunięta, cienki dziób",
+        "lot": "płasko, „ręka” lekko opuszczona"
+      }
     },
     {
       "id": "gadozer",
@@ -264,7 +320,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "orły",
+        "skrzydla": "długie i szerokie, z szeroką „ręką”",
+        "palce": "6–7",
+        "ogon": "średni, prosto ścięty, z 3 ciemnymi pasami",
+        "glowa": "duża i okrągła, „sowia”, wystaje szeroko",
+        "lot": "płasko albo z lekko opuszczoną „ręką”; często zawisa"
+      }
     },
     {
       "id": "rybolow",
@@ -296,7 +360,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "rybołów",
+        "skrzydla": "bardzo długie i wąskie, mocno zgięte w nadgarstku",
+        "palce": "4, długie",
+        "ogon": "krótki, prosto ścięty",
+        "glowa": "mała, wystaje",
+        "lot": "skrzydła w „M” jak u mewy"
+      }
     },
     {
       "id": "sep-plowy",
@@ -328,7 +400,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sępy",
+        "skrzydla": "ogromne, bardzo szerokie, prostokątne jak deska",
+        "palce": "7, głęboko rozcapierzone",
+        "ogon": "bardzo krótki, ciemny",
+        "glowa": "mała, schowana między barkami, ledwo wystaje",
+        "lot": "płytkie V; długo krąży w kominach"
+      }
     },
     {
       "id": "sep-plamisty",
@@ -359,7 +439,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sępy",
+        "skrzydla": "jak u sępa płowego, nieco smuklejsze",
+        "palce": "7",
+        "ogon": "bardzo krótki",
+        "glowa": "mała, schowana",
+        "lot": "płytkie V"
+      }
     },
     {
       "id": "sep-kasztanowaty",
@@ -389,7 +477,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sępy",
+        "skrzydla": "ogromne, najbardziej prostokątne ze wszystkich sępów",
+        "palce": "7, bardzo głębokie",
+        "ogon": "krótki, lekko klinowaty",
+        "glowa": "mała, schowana",
+        "lot": "płasko jak deska, bez V"
+      }
     },
     {
       "id": "blotniak-lakowy",
@@ -421,7 +517,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "błotniaki",
+        "skrzydla": "długie, bardzo wąskie i spiczaste (najsmuklejszy błotniak)",
+        "palce": "4, krótkie",
+        "ogon": "długi, wąski",
+        "glowa": "mała",
+        "lot": "wyraźne V; lot nisko, kołysze się"
+      }
     },
     {
       "id": "blotniak-zbozowy",
@@ -452,7 +556,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "błotniaki",
+        "skrzydla": "długie, szersze niż u łąkowego, „ręka” bardziej zaokrąglona",
+        "palce": "5",
+        "ogon": "długi, wąski",
+        "glowa": "mała, z szlarą podobną do sowiej",
+        "lot": "V; lot nisko nad polem"
+      }
     },
     {
       "id": "blotniak-stawowy",
@@ -484,7 +596,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "błotniaki",
+        "skrzydla": "długie, najszersze z błotniaków",
+        "palce": "5–6",
+        "ogon": "długi",
+        "glowa": "mała",
+        "lot": "wyraźne V; nisko nad trzcinami"
+      }
     },
     {
       "id": "orzel-iberyjski",
@@ -514,7 +634,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "orły",
+        "skrzydla": "długie i szerokie, krawędzie równoległe",
+        "palce": "7",
+        "ogon": "średni, prosto ścięty",
+        "glowa": "duża, wyraźnie wystaje",
+        "lot": "płasko"
+      }
     },
     {
       "id": "orzel-poludniowy",
@@ -545,7 +673,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "orły (średni orzeł)",
+        "skrzydla": "dość długie, węższe niż u innych orłów",
+        "palce": "6",
+        "ogon": "długi",
+        "glowa": "wystaje wyraźnie",
+        "lot": "płasko; sylwetka trochę „jastrzębia”"
+      }
     },
     {
       "id": "kaniuk",
@@ -573,7 +709,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "kanie (mała kania)",
+        "skrzydla": "spiczaste jak u sokoła, szerokie u nasady",
+        "palce": "słabo widoczne",
+        "ogon": "krótki, lekko wcięty",
+        "glowa": "duża i okrągła",
+        "lot": "zawisa; szybuje ze skrzydłami w V"
+      }
     },
     {
       "id": "pustulka",
@@ -606,7 +750,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sokoły",
+        "skrzydla": "długie, wąskie, spiczaste (końce tępsze niż u innych sokołów)",
+        "palce": "brak, koniec skrzydła ostry",
+        "ogon": "długi, zaokrąglony na końcu",
+        "glowa": "krótka",
+        "lot": "zawisa; uderzenia szybkie i płytkie"
+      }
     },
     {
       "id": "pustuleczka",
@@ -637,7 +789,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sokoły",
+        "skrzydla": "jak u pustułki, smuklejsze",
+        "palce": "brak",
+        "ogon": "długi, klinowaty: środkowe sterówki wystają",
+        "glowa": "krótka",
+        "lot": "zawisa"
+      }
     },
     {
       "id": "kobuz",
@@ -670,7 +830,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sokoły",
+        "skrzydla": "bardzo długie, sierpowate (jak u jerzyka)",
+        "palce": "brak",
+        "ogon": "krótki do średniego",
+        "glowa": "krótka",
+        "lot": "zwinny i szybki; łapie owady w locie"
+      }
     },
     {
       "id": "sokol-wedrowny",
@@ -702,7 +870,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sokoły",
+        "skrzydla": "szerokie u nasady, trójkątne, spiczaste",
+        "palce": "brak",
+        "ogon": "średni, krótszy niż u pustułki",
+        "glowa": "krótka, masywny tułów",
+        "lot": "mocne uderzenia; pikuje z dużej wysokości"
+      }
     },
     {
       "id": "sokol-skalny",
@@ -733,7 +909,15 @@
       "regiony": [
         "gibraltar",
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sokoły",
+        "skrzydla": "bardzo długie i wąskie",
+        "palce": "brak",
+        "ogon": "długi",
+        "glowa": "krótka",
+        "lot": "elegancki i elastyczny"
+      }
     },
     {
       "id": "krogulec",
@@ -766,7 +950,15 @@
         "gibraltar",
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "krogulce",
+        "skrzydla": "krótkie, zaokrąglone",
+        "palce": "6, krótkie",
+        "ogon": "długi, prosto ścięty",
+        "glowa": "mała",
+        "lot": "seria szybkich uderzeń i ślizg"
+      }
     },
     {
       "id": "orzel-przedni",
@@ -798,7 +990,15 @@
       "regiony": [
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "orły",
+        "skrzydla": "długie, zwężone u nasady, tylna krawędź w kształcie „S”",
+        "palce": "7",
+        "ogon": "długi, zaokrąglony",
+        "glowa": "średnia, wystaje mniej niż u bielika",
+        "lot": "płytkie V"
+      }
     },
     {
       "id": "orlosep",
@@ -829,7 +1029,15 @@
       "aktywnosc": "dzienny",
       "regiony": [
         "poludnie-hiszpanii"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "sępy",
+        "skrzydla": "długie, wąskie i spiczaste, sylwetka ogromnego sokoła",
+        "palce": "słabo rozcapierzone",
+        "ogon": "długi, klinowaty",
+        "glowa": "mała",
+        "lot": "płasko"
+      }
     },
     {
       "id": "jastrzab",
@@ -859,7 +1067,15 @@
       "regiony": [
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "grupa": "krogulce",
+        "skrzydla": "dłuższe i szersze niż u krogulca, „ręka” bardziej wysunięta",
+        "palce": "6",
+        "ogon": "długi, zaokrąglony",
+        "glowa": "wyraźnie wystaje",
+        "lot": "mocne uderzenia i ślizg"
+      }
     },
     {
       "id": "puchacz",
@@ -889,7 +1105,14 @@
       "regiony": [
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "długie, odchylone na boki",
+        "oczy": "pomarańczowe",
+        "glowa": "ogromna",
+        "glos": "bardzo niskie, dwusylabowe „uu-hu”",
+        "sylwetka": "masywna, największa sowa Europy"
+      }
     },
     {
       "id": "puszczyk",
@@ -919,7 +1142,14 @@
       "regiony": [
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "ciemne",
+        "glowa": "duża i okrągła",
+        "glos": "drżące „huuu… hu-hu-huuu”; samica „kju-wik”",
+        "sylwetka": "krępa"
+      }
     },
     {
       "id": "puszczyk-uralski",
@@ -948,7 +1178,14 @@
       "aktywnosc": "nocny",
       "regiony": [
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "ciemne, małe",
+        "glowa": "okrągła, gładka szara szlara",
+        "glos": "głębokie „wuhu… wuhu-wuhu”",
+        "sylwetka": "duża, z długim ogonem"
+      }
     },
     {
       "id": "plomykowka",
@@ -977,7 +1214,14 @@
         "poludnie-hiszpanii",
         "polska",
         "gibraltar"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "czarne",
+        "glowa": "biała, sercowata szlara",
+        "glos": "syczący wrzask",
+        "sylwetka": "jasna, długie nogi"
+      }
     },
     {
       "id": "uszatka",
@@ -1009,7 +1253,14 @@
       "regiony": [
         "poludnie-hiszpanii",
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "długie, sterczące",
+        "oczy": "pomarańczowe",
+        "glowa": "rdzawa szlara",
+        "glos": "miękkie „huu” co 2–3 s; młode piszczą jak drzwi",
+        "sylwetka": "smukła"
+      }
     },
     {
       "id": "uszatka-blotna",
@@ -1041,7 +1292,14 @@
         "poludnie-hiszpanii",
         "polska",
         "gibraltar"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "krótkie, zwykle niewidoczne",
+        "oczy": "żółte w czarnej obwódce",
+        "glowa": "jasna szlara",
+        "glos": "odzywa się rzadko",
+        "sylwetka": "długie skrzydła; poluje za dnia nad łąkami"
+      }
     },
     {
       "id": "pojdzka",
@@ -1074,7 +1332,14 @@
         "poludnie-hiszpanii",
         "polska",
         "gibraltar"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "żółte, nad nimi białe „brwi”",
+        "glowa": "płaska i szeroka",
+        "glos": "zawodzące „guuk” i ostre „kiju”",
+        "sylwetka": "mała, krótki ogon; kiwa się, gdy jest zaniepokojona"
+      }
     },
     {
       "id": "syczek",
@@ -1105,7 +1370,14 @@
       "regiony": [
         "poludnie-hiszpanii",
         "gibraltar"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "małe „uszka”",
+        "oczy": "żółte",
+        "glowa": "mała",
+        "glos": "czysty gwizd „tjuu” co 2–3 s",
+        "sylwetka": "smukły, wzór jak kora drzewa"
+      }
     },
     {
       "id": "wlochatka",
@@ -1136,7 +1408,14 @@
       "aktywnosc": "nocny",
       "regiony": [
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "żółte",
+        "glowa": "duża i kwadratowa, szlara z ciemną obwódką",
+        "glos": "szybka seria „pu-pu-pu-pu”",
+        "sylwetka": "krępa"
+      }
     },
     {
       "id": "soweczka",
@@ -1167,7 +1446,14 @@
       "aktywnosc": "nocny",
       "regiony": [
         "polska"
-      ]
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "żółte, małe",
+        "glowa": "mała",
+        "glos": "gwizd „djuu”",
+        "sylwetka": "wielkości szpaka, długi ruchliwy ogon"
+      }
     },
     {
       "id": "bielik",
@@ -1198,7 +1484,15 @@
       "regiony": [
         "polska"
       ],
-      "aktywnosc": "dzienny"
+      "aktywnosc": "dzienny",
+      "sylwetka": {
+        "grupa": "orły",
+        "skrzydla": "bardzo długie i szerokie, prostokątne jak drzwi",
+        "palce": "7, głębokie",
+        "ogon": "krótki, klinowaty",
+        "glowa": "ogromna, z dziobem wystaje prawie tak daleko jak ogon",
+        "lot": "płasko"
+      }
     },
     {
       "id": "orlik-krzykliwy",
@@ -1228,7 +1522,15 @@
       "regiony": [
         "polska"
       ],
-      "aktywnosc": "dzienny"
+      "aktywnosc": "dzienny",
+      "sylwetka": {
+        "grupa": "orły (mały orzeł)",
+        "skrzydla": "długie, prostokątne, średnio szerokie",
+        "palce": "7",
+        "ogon": "krótki",
+        "glowa": "mała i wąska",
+        "lot": "płasko, z opuszczoną „ręką”"
+      }
     },
     {
       "id": "orlik-grubodzioby",
@@ -1258,7 +1560,15 @@
       "regiony": [
         "polska"
       ],
-      "aktywnosc": "dzienny"
+      "aktywnosc": "dzienny",
+      "sylwetka": {
+        "grupa": "orły",
+        "skrzydla": "szersze i bardziej prostokątne niż u krzykliwego",
+        "palce": "7",
+        "ogon": "krótki",
+        "glowa": "masywniejsza niż u krzykliwego",
+        "lot": "„ręka” mocno opuszczona"
+      }
     },
     {
       "id": "myszolow-wlochaty",
@@ -1287,7 +1597,15 @@
       "regiony": [
         "polska"
       ],
-      "aktywnosc": "dzienny"
+      "aktywnosc": "dzienny",
+      "sylwetka": {
+        "grupa": "myszołowy",
+        "skrzydla": "dłuższe i węższe niż u myszołowa",
+        "palce": "5",
+        "ogon": "dłuższy niż u myszołowa",
+        "glowa": "jak u myszołowa",
+        "lot": "V; często zawisa"
+      }
     },
     {
       "id": "drzemlik",
@@ -1317,7 +1635,15 @@
       "regiony": [
         "polska"
       ],
-      "aktywnosc": "dzienny"
+      "aktywnosc": "dzienny",
+      "sylwetka": {
+        "grupa": "sokoły",
+        "skrzydla": "krótkie, szerokie u nasady, spiczaste",
+        "palce": "brak",
+        "ogon": "średni",
+        "glowa": "krótka",
+        "lot": "szybki i niski, tuż nad ziemią; nie zawisa"
+      }
     }
   ]
 }

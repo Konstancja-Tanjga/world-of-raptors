@@ -39,6 +39,18 @@ Na końcu skrzydła wielu dużych ptaków widać rozcapierzone lotki, które wyg
 - **krogulce:** 5–6, krótkie, przy zaokrąglonym skrzydle,
 - **sokoły:** brak, koniec skrzydła jest ostry.
 
+## Filmy
+- [YouTube: rozpoznawanie ptaków drapieżnych po sylwetce w locie](https://www.youtube.com/results?search_query=raptor+identification+in+flight+silhouettes)
+- [YouTube: HawkWatch International, raptor ID](https://www.youtube.com/results?search_query=HawkWatch+International+raptor+identification)
+- [YouTube: rozpoznawanie ptaków drapieżnych Europy w locie](https://www.youtube.com/results?search_query=European+raptors+flight+identification)
+
+## Źródła
+- [HawkWatch International: Raptor ID](https://hawkwatch.org/raptor-id/): karty sylwetek i cech w locie
+- [Hawk Migration Association of North America: Raptor Identification Resources](https://www.hawkmigration.org/raptor-identification-resources/)
+- [Wikipedia: Lotki](https://pl.wikipedia.org/wiki/Lotki) i [Flight feather](https://en.wikipedia.org/wiki/Flight_feather): budowa skrzydła i „palce”
+- [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków (część treści płatna)
+- Forsman D., *Flight Identification of Raptors of Europe, North Africa and the Middle East*
+
 ## Mini-quiz
 1. Ptak ma krótkie, zaokrąglone skrzydła i długi ogon. Jaka to grupa?
 2. Jak odróżnisz sępa od orła po samej sylwetce?

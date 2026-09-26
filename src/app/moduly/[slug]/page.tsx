@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { ButtonLink } from '@/components/ButtonLink';
 import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/ds';
 import { Markdown } from '@/components/Markdown';
@@ -31,9 +31,9 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
       {pierwsza && (
         <nav className="lesson-nav" aria-label="Nawigacja modułu">
           <span />
-          <Link href={`/moduly/${slug}/${pierwsza.slug}`} className="text-link">
+          <ButtonLink href={`/moduly/${slug}/${pierwsza.slug}`}>
             Zacznij: lekcja 1, {pierwsza.tytul} →
-          </Link>
+          </ButtonLink>
         </nav>
       )}
     </div>

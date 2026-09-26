@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { ButtonLink } from '@/components/ButtonLink';
 import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/ds';
+import { LessonComplete } from '@/components/LessonComplete';
 import { LessonMedia } from '@/components/LessonMedia';
 import { Markdown } from '@/components/Markdown';
 import { czytajMarkdown, gotoweModuly, przygotujLekcje, znajdzModul } from '@/lib/content';
@@ -41,24 +42,23 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
       />
       <Markdown source={lekcjaMd.md} baseDir={`moduly/${slug}`} />
       <LessonMedia ids={lekcjaMd.wszystkie} juzPokazane={lekcjaMd.wNaglowkach} />
+      <LessonComplete modul={slug} lekcja={lekcja} ostatnia={!nastepna} />
       <nav className="lesson-nav" aria-label="Nawigacja lekcji">
         {poprzednia ? (
-          <Link href={`/moduly/${slug}/${poprzednia.slug}`} className="text-link">
+          <ButtonLink href={`/moduly/${slug}/${poprzednia.slug}`} variant="secondary">
             ← Lekcja {index}: {poprzednia.tytul}
-          </Link>
+          </ButtonLink>
         ) : (
-          <Link href={`/moduly/${slug}`} className="text-link">
+          <ButtonLink href={`/moduly/${slug}`} variant="secondary">
             ← O module
-          </Link>
+          </ButtonLink>
         )}
         {nastepna ? (
-          <Link href={`/moduly/${slug}/${nastepna.slug}`} className="text-link">
+          <ButtonLink href={`/moduly/${slug}/${nastepna.slug}`}>
             Lekcja {index + 2}: {nastepna.tytul} →
-          </Link>
+          </ButtonLink>
         ) : (
-          <Link href="/checklista" className="text-link">
-            Odhacz obserwacje w checkliście →
-          </Link>
+          <ButtonLink href="/checklista">Odhacz obserwacje w checkliście →</ButtonLink>
         )}
       </nav>
     </div>

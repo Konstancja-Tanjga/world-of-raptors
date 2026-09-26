@@ -16,3 +16,14 @@
 | **Grudzień** | Zima | bieliki gromadzą się przy padlinie i niezamarzających zbiornikach |
 
 > 💡 Zima to paradoksalnie świetna pora na drapieżniki w Polsce: nie ma liści, ptaki siedzą na widoku przy polach, a przylatują gatunki z północy.
+
+## Filmy
+- [YouTube: toki bielików zimą i wczesną wiosną](https://www.youtube.com/results?search_query=white-tailed+eagle+courtship+display)
+- [YouTube: myszołów włochaty zimą w Polsce](https://www.youtube.com/results?search_query=myszo%C5%82%C3%B3w+w%C5%82ochaty)
+- [YouTube: jesienny przelot ptaków drapieżnych](https://www.youtube.com/results?search_query=autumn+raptor+migration+Europe)
+
+## Źródła
+- [Wikipedia: Wędrówki ptaków](https://pl.wikipedia.org/wiki/W%C4%99dr%C3%B3wki_ptak%C3%B3w) i [Bird migration](https://en.wikipedia.org/wiki/Bird_migration)
+- [eBird: Polska](https://ebird.org/region/PL): wykresy obecności gatunków w kolejnych miesiącach
+- [Trektellen](https://www.trektellen.org): wyniki liczeń przelotu, także z polskich punktów
+- [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl)

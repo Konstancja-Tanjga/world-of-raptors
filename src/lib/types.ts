@@ -2,6 +2,11 @@ export type Region = 'gibraltar' | 'poludnie-hiszpanii' | 'polska';
 export type Aktywnosc = 'dzienny' | 'nocny';
 export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
 
+/** What to look at in a diurnal raptor, as taught in B1 (lessons 1–2). */
+export type SylwetkaDzienna = Record<'grupa' | 'skrzydla' | 'palce' | 'ogon' | 'glowa' | 'lot', string>;
+/** What to look and listen for in an owl, as taught in B5 (lesson 2). */
+export type SylwetkaNocna = Record<'glos' | 'uszy' | 'oczy' | 'glowa' | 'sylwetka', string>;
+
 export type Gatunek = {
   id: string;
   pl: string;
@@ -17,6 +22,8 @@ export type Gatunek = {
   gdzie: string;
   aktywnosc: Aktywnosc;
   regiony: Region[];
+  /** Identification cues: diurnal keys for `dzienny`, owl keys for `nocny`. */
+  sylwetka: SylwetkaDzienna | SylwetkaNocna;
 };
 
 export type Lekcja = { slug: string; tytul: string };

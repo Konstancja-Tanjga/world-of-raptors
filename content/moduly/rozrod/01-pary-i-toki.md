@@ -23,6 +23,8 @@ Są też gatunki **kolonijne** albo gniazdujące w luźnych grupach:
 
 Gatunki kolonijne bronią tylko najbliższego otoczenia gniazda, a żerują wspólnie.
 
+{{TAG:r1_lk}}
+
 ## Toki, czyli jak drapieżnik się „oświadcza”
 Toki (pokazy godowe) służą do dwóch rzeczy naraz: do **zdobycia i utrzymania partnera** oraz do **ogłoszenia sąsiadom**, że terytorium jest zajęte. Dlatego wiele toków odbywa się wysoko w powietrzu, dobrze widocznych z daleka.
 
@@ -40,6 +42,8 @@ Najbardziej widowiskowy pokaz: dwa ptaki chwytają się szponami w powietrzu i *
 
 Uwaga: sczepianie się szponami **nie zawsze** jest tokiem. Czasem to walka dwóch ptaków o terytorium albo młodego z dorosłym. Bez wiedzy, kim są uczestnicy, trudno to rozstrzygnąć, i badacze opisują oba przypadki.
 
+{{TAG:r1_grapple}}
+
 ### 4. Przekazywanie pokarmu w powietrzu
 Znak rozpoznawczy **błotniaków**. Samiec z ofiarą w szponach woła samicę. Ta podlatuje pod niego, a on **upuszcza zdobycz**, którą samica łapie w locie, często obracając się na grzbiet. Podobnie zachowują się niektóre sokoły.
 
@@ -49,6 +53,8 @@ Karmienie w czasie toków (przynoszenie pokarmu samicy) występuje u wielu gatun
 
 ### 5. Toki przy gnieździe
 Nie wszystko dzieje się w powietrzu. Para **przynosi gałęzie**, poprawia gniazdo, woła w duecie, siada obok siebie. U sokołów samiec pokazuje samicy możliwe miejsca lęgowe: siada na półce skalnej i „drapie” w niej płytkie zagłębienie.
+
+{{TAG:r1_permate}}
 
 ## Kalendarz: kto zaczyna pierwszy
 Terminy zależą od gatunku. W Polsce:

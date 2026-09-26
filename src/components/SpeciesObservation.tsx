@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import { useChecklista } from '@/lib/checklist';
 import { Card, Checkbox, StateBlock } from './ds';
+import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 /** The checklist entry for one species, shown on its atlas card. */
 export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string }) {
   const { lista, przelacz } = useChecklista();
+  const sprawdzZapis = useOstrzezenieZapisu();
 
   if (!lista) return <StateBlock state="loading" title="Wczytywanie checklisty" scope="inline" />;
 
@@ -24,7 +26,7 @@ export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string })
               : 'Zaznacz, żeby dodać gatunek do checklisty.'
           }
           checked={Boolean(obs)}
-          onChange={() => przelacz(id)}
+          onChange={() => sprawdzZapis(przelacz(id))}
         />
         <Link href="/checklista" className="text-link">
           Otwórz checklistę

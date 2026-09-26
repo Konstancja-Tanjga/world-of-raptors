@@ -426,3 +426,40 @@ body {
   flex-direction: column;
   gap: var(--bh-gap-snug);
 }
+
+/* ButtonLink (local): the system's button look on an anchor. Anchors are
+   underlined by default and long lesson titles must wrap on phones. */
+.button-link {
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+  height: auto;
+  min-height: var(--bh-control-md);
+  padding-block: var(--bh-padding-block);
+  line-height: var(--bh-text-leading-tight);
+}
+.button-link.bh-button--sm {
+  min-height: var(--bh-control-sm);
+}
+.button-link.bh-button--lg {
+  min-height: var(--bh-control-lg);
+}
+
+/* "Na co patrzeć": the method checklist for one species */
+.cues {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  background: var(--bh-status-info-bg);
+  border: 1px solid var(--bh-status-info-border);
+  border-radius: var(--bh-radius-surface);
+}
+.cues__title {
+  margin: 0;
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-primary);
+}
+.cues__source {
+  font-size: var(--bh-text-size-dense);
+}

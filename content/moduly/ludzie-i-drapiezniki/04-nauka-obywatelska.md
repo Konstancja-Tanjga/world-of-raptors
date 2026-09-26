@@ -73,6 +73,20 @@ Numery ośrodków sprawdź **zanim będą potrzebne** i zapisz w telefonie. Przy
 
 Najważniejsze: **zabijanie, płoszenie z gniazda czy trucie chronionych ptaków jest przestępstwem**, a poza tym nie rozwiązuje problemu, bo na miejsce jednego ptaka przychodzi następny. Trwałe rozwiązania to zmiana praktyk i wsparcie finansowe dla gospodarzy. O ochronie prawnej więcej w [module o ochronie](../ochrona/README.md).
 
+## Filmy
+- [YouTube: jak wysłać listę w eBird (poradnik)](https://www.youtube.com/results?search_query=eBird+how+to+submit+checklist)
+- [YouTube: odczytywanie obrączek barwnych u ptaków](https://www.youtube.com/results?search_query=reading+colour+rings+birds)
+- [YouTube: kamera na gnieździe sokoła wędrownego w Polsce](https://www.youtube.com/results?search_query=sok%C3%B3%C5%82+w%C4%99drowny+kamera+gniazdo)
+- [YouTube: znalazłem rannego ptaka drapieżnego, co robić](https://www.youtube.com/results?search_query=ranny+ptak+drapie%C5%BCny+co+robi%C4%87)
+
+## Źródła
+- [Wikipedia: Nauka obywatelska](https://pl.wikipedia.org/wiki/Nauka_obywatelska) i [Citizen science](https://en.wikipedia.org/wiki/Citizen_science)
+- [eBird: About](https://ebird.org/about): jak powstają dane eBird i do czego służą
+- [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): programy i zapisy dla wolontariuszy
+- [Trektellen](https://www.trektellen.org): międzynarodowa baza liczeń przelotu
+- [Wikipedia: Bird ringing](https://en.wikipedia.org/wiki/Bird_ringing): obrączkowanie ptaków
+- [OTOP](https://otop.org.pl): Ogólnopolskie Towarzystwo Ochrony Ptaków
+
 ## Mini-quiz
 1. Dlaczego „kompletna lista” w eBird jest cenniejsza od pojedynczej obserwacji?
 2. Znalazłaś młodą uszatkę siedzącą na gałęzi nisko nad ziemią. Co robisz?

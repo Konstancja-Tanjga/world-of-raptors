@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { ButtonLink } from '@/components/ButtonLink';
 import { useChecklista } from '@/lib/checklist';
 import { Card, Progress, StateBlock } from './ds';
 
@@ -21,9 +21,11 @@ export function ChecklistSummary({ ids }: { ids: string[] }) {
         ) : (
           <StateBlock state="loading" title="Wczytywanie checklisty" scope="inline" />
         )}
-        <Link href="/checklista" className="text-link">
-          Odhacz obserwacje
-        </Link>
+        <div>
+          <ButtonLink href="/checklista" variant="secondary">
+            Odhacz obserwacje
+          </ButtonLink>
+        </div>
       </div>
     </Card>
   );

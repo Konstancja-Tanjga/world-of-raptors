@@ -60,6 +60,18 @@ Ostrożnie z interpretacją: nazwiska na *-owski*/*-ski* pochodzą często **od 
 ## Od uprzedzeń do sympatii
 Przez długi czas ptaki drapieżne w Polsce i w całej Europie uważano za **„szkodniki”** i tępiono, a w wielu krajach za ich zabijanie płacono nagrody. Dziś niemal wszystkie gatunki są objęte ochroną, a bielik czy sokół wędrowny stały się **symbolem sukcesu ochrony przyrody**. Jak do tego doszło, dowiesz się w [module o ochronie](../ochrona/README.md).
 
+## Filmy
+- [YouTube: Szlak Orlich Gniazd, zamki na skałach Jury](https://www.youtube.com/results?search_query=Szlak+Orlich+Gniazd)
+- [YouTube: historia okrętu ORP Orzeł](https://www.youtube.com/results?search_query=ORP+Orze%C5%82+1939+historia)
+- [YouTube: kania ruda w locie, wcięty ogon](https://www.youtube.com/results?search_query=red+kite+flight+forked+tail)
+
+## Źródła
+- [Wikipedia: Osady służebne](https://pl.wikipedia.org/wiki/Osady_s%C5%82u%C5%BCebne) i [Sokolniki](https://pl.wikipedia.org/wiki/Sokolniki)
+- [Wikipedia: Szlak Orlich Gniazd](https://pl.wikipedia.org/wiki/Szlak_Orlich_Gniazd)
+- [Wikipedia: Orla Perć](https://pl.wikipedia.org/wiki/Orla_Per%C4%87)
+- [Wikipedia: ORP Orzeł (1938)](https://pl.wikipedia.org/wiki/ORP_Orze%C5%82_(1938))
+- [Wikipedia: Polskie Towarzystwo Gimnastyczne „Sokół”](https://pl.wikipedia.org/wiki/Polskie_Towarzystwo_Gimnastyczne_%E2%80%9ESok%C3%B3%C5%82%E2%80%9D)
+
 ## Mini-quiz
 1. Co oznacza wyrażenie „łaknąć jak kania dżdżu” i jaki mit utrwala?
 2. Skąd wzięła się nazwa wielu wsi Sokolniki?

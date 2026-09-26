@@ -143,3 +143,16 @@ Rybołów jest dużo mniejszy, ma **biały spód**, skrzydła w „M” i ciemne
 8. **Krótkie okrągłe skrzydła, długi ogon, „uderzenia i ślizg”?** → krogulec albo jastrząb
 9. **Spiczaste skrzydła?** → sokół: zawisa = pustułka · sierpowate skrzydła, lato = kobuz · mały i niski, zima = drzemlik · masywny, pikuje = sokół wędrowny
 10. **Biały spód, skrzydła w „M”, nad wodą?** → rybołów
+
+## Filmy
+- [YouTube: bielik i orzeł przedni, porównanie w locie](https://www.youtube.com/results?search_query=white-tailed+eagle+vs+golden+eagle+flight+identification)
+- [YouTube: orlik krzykliwy i orlik grubodzioby, rozpoznawanie](https://www.youtube.com/results?search_query=lesser+spotted+eagle+greater+spotted+eagle+identification)
+- [YouTube: myszołów włochaty zawisa, biały ogon](https://www.youtube.com/results?search_query=rough-legged+buzzard+hovering)
+- [YouTube: pustułka, kobuz i drzemlik, porównanie](https://www.youtube.com/results?search_query=kestrel+hobby+merlin+identification)
+
+## Źródła
+- [Wikipedia: Bielik](https://pl.wikipedia.org/wiki/Bielik), [Orlik krzykliwy](https://pl.wikipedia.org/wiki/Orlik_krzykliwy), [Myszołów włochaty](https://pl.wikipedia.org/wiki/Myszo%C5%82%C3%B3w_w%C5%82ochaty)
+- [Wikipedia: Lesser spotted eagle](https://en.wikipedia.org/wiki/Lesser_spotted_eagle) i [Rough-legged buzzard](https://en.wikipedia.org/wiki/Rough-legged_buzzard)
+- [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków
+- [Hawk Migration Association of North America: Raptor Identification Resources](https://www.hawkmigration.org/raptor-identification-resources/)
+- Forsman D., *Flight Identification of Raptors of Europe, North Africa and the Middle East*
