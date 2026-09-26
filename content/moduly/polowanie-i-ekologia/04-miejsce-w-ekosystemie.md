@@ -13,6 +13,9 @@ Co z tego wynika:
 ## 2. Cykle gryzoni i ich drapieżniki
 W wielu miejscach Europy liczebność norników co kilka lat gwałtownie rośnie, a potem się załamuje. Najbardziej regularne są takie **cykle** na północy (w Skandynawii i Finlandii mniej więcej co 3–5 lat). W Polsce **nornik zwyczajny** też ma lata obfitości („gradacje”), ale zwykle mniej regularne.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Feldmaus_Microtus_arvalis.jpg/960px-Feldmaus_Microtus_arvalis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="793" alt="Mały brązowoszary gryzoń z krótkim ogonem i małymi uszami siedzi w trawie" podpis="Nornik zwyczajny, główna ofiara pustułki, myszołowa i wielu sów; jego liczebność co kilka lat gwałtownie rośnie" autor="Dieter TD, first upload in de wikipedia on 13:31, 28. Apr 2005 by Dieter TD" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg">
+</zdjecie>
+
 Drapieżniki reagują na to na dwa sposoby:
 - **odpowiedź funkcjonalna**: każdy ptak zjada więcej norników, bo łatwiej je złapać,
 - **odpowiedź liczebnościowa**: więcej ptaków przystępuje do lęgów, składa więcej jaj, a więcej młodych przeżywa. Ptaki koczownicze zlatują się tam, gdzie gryzoni jest najwięcej.
@@ -30,6 +33,9 @@ Drapieżniki reagują na to na dwa sposoby:
 ## 3. Drapieżniki jako „kontrola gryzoni”
 Rolnicy w wielu krajach wieszają budki dla płomykówek i pustułek oraz stawiają żerdzie dla myszołowów, żeby ograniczyć szkody wyrządzane przez gryzonie. Najbardziej znany przykład to program budek dla płomykówek w Izraelu, prowadzony od lat 80. XX wieku, także jako alternatywa dla trutek.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Barn_owl_conservation_in_Palestine.jpg/960px-Barn_owl_conservation_in_Palestine.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="466" alt="Wnętrze drewnianej budki: dorosła płomykówka i kilka puchatych, białych piskląt" podpis="Płomykówka z pisklętami w budce lęgowej w dolinie Jordanu: budki dla płomykówek zastępują tam trutki na gryzonie" autor="Mahmiyat PS" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Barn_owl_conservation_in_Palestine.jpg">
+</zdjecie>
+
 Uczciwie trzeba powiedzieć, że:
 - drapieżniki **ograniczają**, ale zwykle nie likwidują gradacji gryzoni,
 - efekt jest największy, gdy drapieżniki są na miejscu, zanim gryzoni zrobi się bardzo dużo,
@@ -40,12 +46,18 @@ Sępy szybko usuwają padlinę, zanim rozwiną się w niej bakterie i zanim dotr
 
 Co się dzieje, gdy sępy znikną, pokazały **Indie**. W latach 90. i na początku XXI wieku populacje kilku gatunków sępów z rodzaju *Gyps* spadły o ponad 90%, bo ptaki zatruwały się **diklofenakiem**, lekiem podawanym bydłu. Na wysypiskach padliny przybyło bezpańskich psów, a razem z nimi przypadków wścieklizny. Ekonomiści (Frank i Sudarshan, 2024) szacują, że zanik sępów mógł przyczynić się do nawet ok. pół miliona dodatkowych zgonów ludzi w ciągu kilku lat, głównie przez gorszą jakość wody i choroby. To szacunek, ale pokazuje skalę. Pełna historia w module [A6 · Ochrona](../ochrona/README.md).
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg/960px-Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1437" alt="Ciemny sęp z białą kryzą na szyi i łysą szarą głową stoi na piasku" podpis="Sęp bengalski w Radżastanie: jeden z sępów Indii, których liczebność przez diklofenak spadła o ponad 99%" autor="Ravi.sangeetha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Gyps_bengalensis_by_Ravi_Sangeetha_(cropped).jpg">
+</zdjecie>
+
 ## 5. Konkurencja i zabijanie mniejszych drapieżników
 Drapieżniki konkurują o pokarm, miejsca gniazdowe i terytoria. Czasem konkurencja przechodzi w coś więcej: **drapieżnictwo wewnątrzgildiowe**, czyli zabijanie (i często zjadanie) innych drapieżników.
 
 - **Puchacz** (*Bubo bubo*, ang. Eurasian Eagle-Owl) jest w Europie najgroźniejszym wrogiem innych drapieżników. Zabija m.in. myszołowy, jastrzębie, kanie, pustułki, puszczyki i uszatki, a także pisklęta sokołów wędrownych.
 - **Jastrząb** zabija krogulce, pustułki, puszczyki, uszatki i młode myszołowy.
 - **Sokół wędrowny** przegania i czasem zabija mniejsze sokoły i krukowate przy swoim gnieździe.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg/960px-Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Rozrzucone brązowe i białe pióra na kamienistym zboczu porośniętym roślinami" podpis="Oskubane pióra myszołowa przy gnieździe puchacza w Niemczech: ślad drapieżnictwa wewnątrzgildiowego" autor="Falkmart" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg">
+</zdjecie>
 
 Skutki są szersze niż pojedyncze ofiary. Mniejsze gatunki **unikają gniazdowania** w pobliżu puchacza czy jastrzębia i wybierają gorsze, ale bezpieczniejsze miejsca. Ekolodzy nazywają to „krajobrazem strachu”.
 
@@ -57,17 +69,11 @@ Skutki są szersze niż pojedyncze ofiary. Mniejsze gatunki **unikają gniazdowa
 - Liczebność ogranicza zwykle **pokarm** albo **miejsca na gniazda**. Pustułka potrafi zasiedlić teren bez drzew, jeśli ktoś zawiesi budki. Sokół wędrowny wrócił do polskich miast m.in. dzięki budkom na kominach i wieżach.
 - Są też wyjątki od życia w pojedynczych terytoriach: **pustułeczka** gniazduje w koloniach, a kanie czarne i sępy płowe często w luźnych grupach.
 
-## Mini-quiz
-1. Czym różni się odpowiedź funkcjonalna od liczebnościowej?
-2. Jakie były skutki zaniku sępów w Indiach?
-3. Podaj przykład drapieżnictwa wewnątrzgildiowego wśród ptaków drapieżnych.
-
-<details><summary>Odpowiedzi</summary>
-
-1. Funkcjonalna: każdy drapieżnik zjada więcej ofiar. Liczebnościowa: przybywa samych drapieżników (więcej lęgów, więcej młodych, napływ koczujących ptaków).
-2. Padlina zalegała dłużej, przybyło bezpańskich psów i przypadków wścieklizny, a według szacunków wzrosła liczba zgonów ludzi.
-3. Np. puchacz zabijający myszołowy i puszczyki albo jastrząb zabijający krogulce.
-</details>
+## Filmy
+- [YouTube: cykle norników i drapieżniki](https://www.youtube.com/results?search_query=vole+cycle+predators+kestrel+owl)
+- [YouTube: płomykówki zamiast trutek, budki w Izraelu](https://www.youtube.com/results?search_query=barn+owls+Israel+pest+control+nest+boxes)
+- [YouTube: sępy w Indiach i diklofenak](https://www.youtube.com/results?search_query=India+vulture+decline+diclofenac)
+- [YouTube: puchacz, szczytowy drapieżnik](https://www.youtube.com/results?search_query=eurasian+eagle+owl+apex+predator)
 
 ## Źródła i dalsza nauka
 - Ian Newton, *Population Ecology of Raptors* (1979) i *The Sparrowhawk* (1986): klasyka ekologii drapieżników, w tym terytoria i ograniczenia liczebności.
@@ -80,3 +86,15 @@ Skutki są szersze niż pojedyncze ofiary. Mniejsze gatunki **unikają gniazdowa
 - Ludwik Tomiałojć i Tadeusz Stawarczyk, *Awifauna Polski* (2003): rozmieszczenie i biologia gatunków w Polsce.
 - [Birds of the World](https://birdsoftheworld.org) (Cornell Lab of Ornithology): szczegółowe opisy diety i zachowań każdego gatunku (płatne).
 - Kurs Cornell Bird Academy „The Wonderful World of Raptors”.
+
+## Mini-quiz
+1. Czym różni się odpowiedź funkcjonalna od liczebnościowej?
+2. Jakie były skutki zaniku sępów w Indiach?
+3. Podaj przykład drapieżnictwa wewnątrzgildiowego wśród ptaków drapieżnych.
+
+<details><summary>Odpowiedzi</summary>
+
+1. Funkcjonalna: każdy drapieżnik zjada więcej ofiar. Liczebnościowa: przybywa samych drapieżników (więcej lęgów, więcej młodych, napływ koczujących ptaków).
+2. Padlina zalegała dłużej, przybyło bezpańskich psów i przypadków wścieklizny, a według szacunków wzrosła liczba zgonów ludzi.
+3. Np. puchacz zabijający myszołowy i puszczyki albo jastrząb zabijający krogulce.
+</details>

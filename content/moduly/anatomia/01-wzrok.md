@@ -9,6 +9,15 @@ Dla dziennego ptaka drapieżnego wzrok jest najważniejszym zmysłem. Myszołów
 - Nad okiem wystaje **wał nadoczodołowy** (kostny „daszek”). Daje ptakowi „groźne spojrzenie” i prawdopodobnie osłania oko przed słońcem i uszkodzeniem.
 - Jak wszystkie ptaki, drapieżne mają **migotkę**, półprzezroczystą trzecią powiekę, która przesuwa się poziomo, nawilża i chroni oko, np. w chwili uderzenia w zdobycz albo przy karmieniu młodych.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg/960px-Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Jasna czaszka ptaka z profilu, z wielkim okrągłym oczodołem i długim zakrzywionym dziobem, na czarnym tle" podpis="Czaszka orła klinosternego (zbiory Auckland Museum): oczodoły zajmują ogromną część głowy" autor="Auckland Museum  Collections from Auckland, Aotearoa New Zealand" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_(Wedge-tailed_Eagle)_(48719294161).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Aquila_chrysaetos_%28Linnaeus_1758%29.jpg/960px-Aquila_chrysaetos_%28Linnaeus_1758%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="677" alt="Głowa orła przedniego z profilu, złociste pióra karku, jasnobrązowe oko ocienione wystającym łukiem nad nim i haczykowaty dziób" podpis="Orzeł przedni z profilu: nad okiem wyraźny wał nadoczodołowy, kostny „daszek”, który daje groźne spojrzenie" autor="Michael Gäbler" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_(Linnaeus_1758).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Golden_eagle_capture-_mid_blink_nictitating_membrane_%2855082010211%29.jpg/960px-Golden_eagle_capture-_mid_blink_nictitating_membrane_%2855082010211%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Głowa orła przedniego z bliska, oko przykryte mlecznobiałą, półprzezroczystą błoną" podpis="Orzeł przedni w trakcie mrugnięcia: półprzezroczysta migotka zasłania oko od przodu ku tyłowi" autor="YellowstoneNPS" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Golden_eagle_capture-_mid_blink_nictitating_membrane_(55082010211).jpg">
+</zdjecie>
+
 ## Dlaczego obraz jest tak ostry?
 
 ### 1. Gęsto upakowane czopki
@@ -33,6 +42,9 @@ W popularnych tekstach często czytasz, że orły widzą 4, 5 albo 8 razy lepiej
 - Przewaga dotyczy **ostrości w jasnym świetle**. O zmierzchu człowiek widzi często lepiej niż dzienny ptak drapieżny.
 
 Czyli: bardzo dobry wzrok, najlepszy znany w świecie zwierząt, ale nie „lornetka w oku”.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Aquila_audax_-_Captain%27s_Flat.jpg/960px-Aquila_audax_-_Captain%27s_Flat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży ciemnobrązowy orzeł z jasnym karkiem stoi na suchym pniu na tle błękitnego nieba" podpis="Orzeł klinosterny w Australii: najlepiej zbadany rekordzista ostrości wzroku, ok. 2–2,5 raza lepszej niż u człowieka" autor="JJ Harrison (https://www.jjharrison.com.au/)" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_-_Captain%27s_Flat.jpg">
+</zdjecie>
 
 ## Pole widzenia
 Oczy ptaków drapieżnych patrzą częściowo w bok, częściowo do przodu. Stąd dwa rodzaje pola widzenia:
@@ -68,6 +80,22 @@ W oku każdego ptaka jest **grzebień** (pecten): pofałdowana, ciemna struktura
 Dzienne ptaki drapieżne polują przede wszystkim wzrokiem, a ich słuch jest mniej więcej taki jak u innych ptaków. Dwa wyjątki:
 - **Sowy** mają niesymetrycznie położone otwory uszne i szlarę, która kieruje dźwięk do uszu. Płomykówka potrafi upolować mysz w zupełnej ciemności. To temat [modułu o sowach](../sowy/README.md).
 - **Błotniaki**, np. błotniak zbożowy (*Circus cyaneus*, ang. Hen Harrier), mają wokół twarzy wyraźny **wianuszek piór**, podobny do szlary sów. Pomaga im usłyszeć gryzonie w wysokiej trawie, nad którą lecą nisko i wolno.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Blauwe_Kiekendief.jpg/960px-Blauwe_Kiekendief.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" alt="Brązowy drapieżnik o długich skrzydłach leci nisko nad trawą, jego twarz otacza jaśniejszy krąg piór" podpis="Młody błotniak zbożowy nisko nad łąką: wokół twarzy widać wianuszek piór podobny do szlary sowy" autor="Rob Zweers" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Blauwe_Kiekendief.jpg">
+</zdjecie>
+
+## Filmy
+- [YouTube: jak widzi orzeł, dwa dołki w siatkówce](https://www.youtube.com/results?search_query=how+eagles+see+two+fovea+raptor+vision)
+- [YouTube: migotka, trzecia powieka ptaka drapieżnego](https://www.youtube.com/results?search_query=raptor+nictitating+membrane+slow+motion)
+- [YouTube: ptak drapieżny kiwa i przekrzywia głowę](https://www.youtube.com/results?search_query=hawk+head+bobbing+depth+perception)
+- [YouTube: błotniak poluje nisko nad łąką](https://www.youtube.com/results?search_query=hen+harrier+hunting+low+flight)
+
+## Źródła
+- Reymond L. (1985). Spatial visual acuity of the eagle *Aquila audax*: a behavioural, optical and anatomical investigation. *Vision Research* 25: 1477–1491.
+- Potier S. i wsp. (2017). Eye size, fovea, and foraging ecology in accipitriform raptors. *Brain, Behavior and Evolution* 90: 232–242.
+- Viitala J. i wsp. (1995). Attraction of kestrels to vole scent marks visible in ultraviolet light. *Nature* 373: 425–427.
+- Lind O., Mitkus M., Olsson P., Kelber A. (2013). Ultraviolet sensitivity and colour vision in raptor foraging. *Journal of Experimental Biology* 216: 1819–1826.
+- [Wikipedia: Bird vision](https://en.wikipedia.org/wiki/Bird_vision)
 
 ## Mini-quiz
 1. Czym różnią się dwa dołki środkowe w oku ptaka drapieżnego?

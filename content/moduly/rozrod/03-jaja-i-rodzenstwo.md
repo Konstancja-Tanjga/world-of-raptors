@@ -14,7 +14,8 @@ Różnica zależy od tego, na co ptak poluje:
 
 Ogólna reguła: **im szybsza i zwinniejsza zdobycz, tym większa różnica**. Wśród padlinożerców, którzy nie muszą łapać niczego żywego, różnica prawie znika.
 
-{{TAG:r3_sparrow}}
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Keulemans_Onze_vogels_3_01.jpg/960px-Keulemans_Onze_vogels_3_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1341" alt="Dawna kolorowa litografia: mniejszy krogulec z rudawą piersią i większy, brązowo prążkowany" podpis="Krogulec: mały samiec (z lewej) i dużo większa samica. Ilustracja Keulemansa z XIX wieku" autor="John Gerrard Keulemans" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Keulemans_Onze_vogels_3_01.jpg">
+</zdjecie>
 
 ### Dlaczego? Hipotezy
 Nauka nie ma jednej odpowiedzi. To jedno z klasycznych nierozstrzygniętych pytań ornitologii. Najczęściej dyskutowane hipotezy:
@@ -42,7 +43,8 @@ Wielkość zniesienia (liczba jaj) wiąże się z wielkością ptaka: **duże ga
 
 Samica składa jaja **w odstępach kilku dni** (u dużych gatunków zwykle 2–4). Dlatego zniesienie powstaje przez tydzień lub dłużej.
 
-{{TAG:r3_clutch}}
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Peregrine-clutch.jpg/960px-Peregrine-clutch.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Cztery rudobrązowe, nakrapiane jaja w płytkim zagłębieniu wśród suchych traw" podpis="Zniesienie sokoła wędrownego: cztery jaja w skrzynce lęgowej (Niemcy)" autor="Peter Wegner" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine-clutch.jpg">
+</zdjecie>
 
 ## Kto wysiaduje?
 - U większości gatunków **wysiaduje głównie samica**. Ma na brzuchu **plamę lęgową**, czyli nagi, dobrze ukrwiony fragment skóry, który ogrzewa jaja.
@@ -53,15 +55,18 @@ Samica składa jaja **w odstępach kilku dni** (u dużych gatunków zwykle 2–4
 ## Asynchroniczne klucie
 Jeśli ptak zaczyna wysiadywać od **pierwszego jaja**, to pisklęta klują się w tej samej kolejności, co zostały złożone jaja, w odstępach kilku dni. Pierwsze pisklę jest wtedy wyraźnie **starsze i większe** od kolejnych. To **asynchroniczne klucie**, typowe dla orłów, myszołowów i sów.
 
-{{TAG:r3_harrier}}
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Rohrweihenk%C3%BCken_im_Nest_01.jpg/960px-Rohrweihenk%C3%BCken_im_Nest_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Trzy puchate pisklęta i trzy białe jaja w gnieździe z suchych traw" podpis="Gniazdo błotniaka stawowego: pisklęta już się wykluły, a trzy jaja jeszcze nie. Tak wygląda asynchroniczne klucie" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Rohrweihenk%C3%BCken_im_Nest_01.jpg">
+</zdjecie>
 
 Sokoły często zaczynają wysiadywać na dobre dopiero przy przedostatnim lub ostatnim jaju, więc ich pisklęta klują się w krótszym odstępie.
 
-{{TAG:r3_kestrel}}
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Common_Kestrel_Chicks.jpeg/960px-Common_Kestrel_Chicks.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sześć białych, puchatych piskląt pustułki stłoczonych obok siebie" podpis="Sześć piskląt pustułki w podobnym wieku: u sokołów różnice między rodzeństwem są mniejsze" autor="User:Revital9" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Kestrel_Chicks.jpeg">
+</zdjecie>
 
 Po co różnica wieku? Klasyczna hipoteza (**redukcja lęgu**, wiązana z nazwiskiem Davida Lacka): gdy pokarmu jest mało, najmłodsze pisklę słabnie i ginie, ale reszta ma szansę przeżyć. W dobrym roku przeżywają wszystkie. Rodzice nie „wiedzą” z góry, jaki będzie rok, więc składają więcej jaj, a o liczbie młodych decyduje pokarm.
 
-{{TAG:r3_kite}}
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/P6150074.JPG/960px-P6150074.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" alt="W gnieździe na drzewie większe, opierzone pisklę kani stoi nad mniejszym, puchatym" podpis="Dwa pisklęta kani czarnej: starsze jest wyraźnie większe i bardziej opierzone od młodszego (Brandenburgia)" autor="Buteo" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:P6150074.JPG">
+</zdjecie>
 
 ## Zabijanie rodzeństwa
 U niektórych gatunków starsze pisklę atakuje młodsze: dziobie je, odpycha od pokarmu, aż młodsze zginie. Mówimy o **zabijaniu rodzeństwa** (ang. *siblicide*), a gdy zdarza się niemal zawsze, o **kainizmie** (od biblijnego Kaina).
@@ -76,6 +81,17 @@ U niektórych gatunków starsze pisklę atakuje młodsze: dziobie je, odpycha od
 Po co więc drugie jajo? Najczęstsza hipoteza to **jajo „ubezpieczeniowe”**: jeśli pierwsze jajo okaże się niezapłodnione albo pierwsze pisklę zginie, drugie zastąpi je w tym samym sezonie.
 
 > 💡 Ponieważ orlików krzykliwych jest mało, w niektórych krajach (m.in. w Niemczech) prowadzono programy „ratowania drugiego pisklęcia”: młodsze pisklę zabierano z gniazda, odchowywano w ośrodku i później wypuszczano na wolność. Takie działania są kosztowne i kontrowersyjne, ale pokazują, jak ważne jest każde młode w małej populacji.
+
+## Filmy
+- [YouTube: rodzeństwo w gnieździe orlika krzykliwego (kainizm)](https://www.youtube.com/results?search_query=lesser+spotted+eagle+siblicide)
+- [YouTube: pisklęta w różnym wieku w jednym gnieździe](https://www.youtube.com/results?search_query=asynchronous+hatching+raptor+chicks)
+- [YouTube: wysiadywanie jaj, kamera na gnieździe pustułki](https://www.youtube.com/results?search_query=kestrel+nest+box+camera+incubation)
+
+## Źródła
+- Mock D. W., Parker G. A. (1997). *The Evolution of Sibling Rivalry*. Oxford University Press.
+- Meyburg B.-U. (1974). Sibling aggression and mortality among nestling eagles. *Ibis* 116: 224–228.
+- Newton I. (1979). *Population Ecology of Raptors*. T & A D Poyser (rozdział o odwróconym dymorfizmie płciowym).
+- [Wikipedia: Siblicide](https://en.wikipedia.org/wiki/Siblicide)
 
 ## Mini-quiz
 1. Jaka jest ogólna zależność między zwinnością zdobyczy a różnicą wielkości samicy i samca?

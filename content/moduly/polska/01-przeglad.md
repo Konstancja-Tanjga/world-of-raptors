@@ -28,6 +28,15 @@
 - **Góry:** orzeł przedni, orlik krzykliwy, jastrząb, sokół wędrowny.
 - **Miasta:** pustułka, sokół wędrowny (na wysokich budynkach), krogulec zimą przy karmnikach.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Breeding_habitat_of_the_aquatic_warbler_%28Acrocephalus_paludicola%29.JPG/960px-Breeding_habitat_of_the_aquatic_warbler_%28Acrocephalus_paludicola%29.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rozległa, płaska łąka turzycowa po horyzont, nad nią zachodzące słońce" podpis="Turzycowiska w Dolinie Biebrzy (widok z Długiej Luki): otwarte mokradła, siedlisko błotniaków i orlików" autor="112grammarpolice" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Breeding_habitat_of_the_aquatic_warbler_(Acrocephalus_paludicola).JPG">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/20230812_%C5%9Aniardwy_%28Spirdingsee%29.jpg/960px-20230812_%C5%9Aniardwy_%28Spirdingsee%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Szerokie jezioro z pasami trzcin i łąk na pierwszym planie, w tle linia lasu" podpis="Jezioro Śniardwy na Mazurach: duża woda z pasami trzcin, teren bielika, rybołowa i błotniaka stawowego" autor="Matthias Bethke" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:20230812_%C5%9Aniardwy_(Spirdingsee).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Peregrine_Falcons_in_Sheffield_-_geograph.org.uk_-_2993894.jpg/960px-Peregrine_Falcons_in_Sheffield_-_geograph.org.uk_-_2993894.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="648" alt="Brązowy, kreskowany młody sokół wędrowny siedzący na kamiennym gzymsie budynku" podpis="Młody sokół wędrowny na gzymsie budynku w Sheffield: miasta zastępują sokołom skalne ściany" autor="Dave Pickersgill" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcons_in_Sheffield_-_geograph.org.uk_-_2993894.jpg">
+</zdjecie>
+
 ## Filmy
 - [YouTube: ptaki drapieżne Polski, jak je rozpoznać](https://www.youtube.com/results?search_query=ptaki+drapie%C5%BCne+Polski+rozpoznawanie)
 - [YouTube: bielik w Polsce](https://www.youtube.com/results?search_query=white-tailed+eagle+Poland)

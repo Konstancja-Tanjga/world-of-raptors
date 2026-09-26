@@ -35,10 +35,16 @@ Jak dokładnie ptak łączy te informacje, badacze wciąż dyskutują.
 ### Obrączkowanie
 Naukowe obrączkowanie ptaków zapoczątkował w 1899 roku duński nauczyciel **Hans Christian Cornelius Mortensen**. W Polsce obrączki wydaje i gromadzi dane o wiadomościach powrotnych **Stacja Ornitologiczna Muzeum i Instytutu Zoologii PAN** w Gdańsku. Obrączkowanie mogą prowadzić tylko przeszkolone osoby z uprawnieniami.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg/960px-A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Dłoń trzyma małego żółto-oliwkowego ptaka z czarną maską, obok szczypce z nawleczonymi metalowymi obrączkami" podpis="Zakładanie obrączki specjalnymi szczypcami (tu na nodze małego ptaka śpiewającego): ptaki drapieżne dostają większe obrączki, ale metoda jest ta sama" autor="Lorie Shaull" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg">
+</zdjecie>
+
 > 💡 Znalazłaś martwego ptaka z obrączką? Zanotuj numer i napis, datę i miejsce i zgłoś to do centrali obrączkowania (dane kontaktowe są na obrączce). Każde takie zgłoszenie to cenny punkt na mapie wędrówki.
 
 ### Telemetria GPS
 Pierwsze nadajniki satelitarne na ptakach drapieżnych pojawiły się w latach 80.–90. XX wieku. Dziś nadajniki GPS z panelami słonecznymi ważą kilkanaście–kilkadziesiąt gramów, a dane przesyłają np. przez sieć komórkową. Przyjmuje się, że nadajnik nie powinien ważyć więcej niż kilka procent masy ptaka.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Golden_Eagle_at_Grayson_Highland_%286917346007%29.jpg/960px-Golden_Eagle_at_Grayson_Highland_%286917346007%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1440" alt="Kilka par rąk przytrzymuje ciemnego orła, na jego grzbiecie mocowany jest nadajnik, stopy owinięte niebieskim bandażem" podpis="Badacze zakładają nadajnik GPS orłowi przedniemu w Wirginii; szpony owinięto opatrunkiem, żeby ptak nikogo nie zranił" autor="Virginia State Parks staff" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Golden_Eagle_at_Grayson_Highland_(6917346007).jpg">
+</zdjecie>
 
 Czego nauczyła nas telemetria (przykłady, w uproszczeniu):
 - **Orliki krzykliwe** z Europy Środkowej lecą do zimowisk w południowej Afryce trasą wschodnią, okrążając Morze Śródziemne. W badaniach tego gatunku dużą rolę odegrał m.in. niemiecki badacz **Bernd-Ulrich Meyburg**.
@@ -60,12 +66,32 @@ Nie musisz być zawodowym ornitologiem, żeby pomagać:
 - **Wolontariat** na punktach obserwacyjnych (np. w programie Fundación Migres albo w Batumi): wiele z nich co roku przyjmuje obserwatorów.
 - **Odczyty obrączek barwnych**: zdjęcie ptaka z kolorową obrączką czy znacznikiem skrzydłowym warto zgłosić.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_03.jpg/960px-Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_03.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sęp w locie z rozpostartymi skrzydłami, na jednym skrzydle widać znacznik z numerem" podpis="Sęp płowy ze znacznikiem skrzydłowym nr 23 nad rezerwatem Uvac (Serbia): taki numer da się odczytać z daleka, bez łapania ptaka" autor="Ivanbuki" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac,_Serbia_03.jpg">
+</zdjecie>
+
 ## Zagrożenia na trasie (krótko)
 Szczegółowo omawia je [A6 · Ochrona](../ochrona/README.md). Najważniejsze:
 - **Nielegalne zabijanie**: w basenie Morza Śródziemnego co roku giną nielegalnie miliony ptaków (według szacunków BirdLife International od kilkunastu do kilkudziesięciu milionów, głównie ptaków wróblowych). Ptaki drapieżne są strzelane m.in. na Malcie, w Libanie i dawniej masowo w południowych Włoszech.
 - **Linie energetyczne**: porażenia prądem na słupach i kolizje z przewodami.
 - **Farmy wiatrowe**: kolizje z łopatami, zwłaszcza na trasach przelotu i w wąskich gardłach. W rejonie Gibraltaru stosuje się czasowe wyłączanie turbin, gdy zbliżają się sępy.
 - **Utrata siedlisk** na zimowiskach i miejscach odpoczynku, np. w Sahelu.
+
+## Filmy
+- [YouTube: zakładanie nadajnika GPS ptakowi drapieżnemu](https://www.youtube.com/results?search_query=GPS+transmitter+eagle+tagging)
+- [YouTube: obrączkowanie piskląt ptaków drapieżnych](https://www.youtube.com/results?search_query=ringing+raptor+chicks)
+- [YouTube: liczenie przelotu na Hawk Mountain](https://www.youtube.com/results?search_query=Hawk+Mountain+hawk+count)
+- [YouTube: Programa Migres, liczenie w Cieśninie Gibraltarskiej](https://www.youtube.com/results?search_query=Fundaci%C3%B3n+Migres+migraci%C3%B3n+rapaces)
+
+## Źródła i dalsza nauka
+- **Fundación Migres**, Programa Migres: [fundacionmigres.org](https://www.fundacionmigres.org/en/programa-migres/)
+- **Hawk Mountain Sanctuary**: [hawkmountain.org](https://www.hawkmountain.org)
+- **eBird**: [ebird.org](https://ebird.org)
+- **Batumi Raptor Count** (liczenia jesienne w Gruzji; strona i raporty pod tą nazwą)
+- **Falsterbo Bird Observatory** (wyniki liczeń od dziesięcioleci)
+- **BirdLife International**: raporty o nielegalnym zabijaniu ptaków w basenie Morza Śródziemnego
+- Ian Newton, *Bird Migration* (seria Collins New Naturalist) oraz *The Migration Ecology of Birds*: przystępne i rzetelne podręczniki
+- Dick Forsman, *Flight Identification of Raptors of Europe, North Africa and the Middle East*: do rozpoznawania ptaków na przelocie
+- Stacja Ornitologiczna MiIZ PAN w Gdańsku: informacje o obrączkowaniu w Polsce
 
 ## Mini-quiz
 1. Jaką przewagę ma telemetria GPS nad obrączkowaniem, a jaką obrączkowanie nad telemetrią?
@@ -78,14 +104,3 @@ Szczegółowo omawia je [A6 · Ochrona](../ochrona/README.md). Najważniejsze:
 2. Lecą same, kilka tygodni po dorosłych, a mimo to kierują się na południe, do Afryki.
 3. To pierwszy na świecie rezerwat chroniący ptaki drapieżne, w miejscu, gdzie wcześniej do nich strzelano.
 </details>
-
-## Źródła i dalsza nauka
-- **Fundación Migres**, Programa Migres: [fundacionmigres.org](https://www.fundacionmigres.org/en/programa-migres/)
-- **Hawk Mountain Sanctuary**: [hawkmountain.org](https://www.hawkmountain.org)
-- **eBird**: [ebird.org](https://ebird.org)
-- **Batumi Raptor Count** (liczenia jesienne w Gruzji; strona i raporty pod tą nazwą)
-- **Falsterbo Bird Observatory** (wyniki liczeń od dziesięcioleci)
-- **BirdLife International**: raporty o nielegalnym zabijaniu ptaków w basenie Morza Śródziemnego
-- Ian Newton, *Bird Migration* (seria Collins New Naturalist) oraz *The Migration Ecology of Birds*: przystępne i rzetelne podręczniki
-- Dick Forsman, *Flight Identification of Raptors of Europe, North Africa and the Middle East*: do rozpoznawania ptaków na przelocie
-- Stacja Ornitologiczna MiIZ PAN w Gdańsku: informacje o obrączkowaniu w Polsce

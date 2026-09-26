@@ -46,6 +46,9 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 - **Głos:** przeciągły, **syczący wrzask** „srrriii”; młode chrapią i syczą.
 - **Gdzie:** wieże kościołów, stodoły, pola. W Polsce jej liczebność silnie spadła, w Hiszpanii jest częstsza.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg/960px-Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="481" alt="Płomykówka leci prosto na obiektyw z szeroko rozpostartymi jasnymi skrzydłami, na tle błękitnego nieba i drzew" podpis="Płomykówka w locie z przodu: biała, sercowata twarz i prawie białe skrzydła od spodu" autor="Dannymoore1973" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg">
+</zdjecie>
+
 ---
 
 ## C. „Uszate” sowy średniej wielkości
@@ -70,6 +73,9 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 | Skrzydło (w locie) | tylna krawędź bez białego obrzeżenia, gęsto prążkowane | **biała tylna krawędź**, ciemne końce |
 | Aktywność | nocna | także dzienna |
 | Siedlisko | zadrzewienia | otwarte łąki |
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Flickr_-_Rainbirder_-_Short-eared_Owl_%28Asio_flammeus%29.jpg/960px-Flickr_-_Rainbirder_-_Short-eared_Owl_%28Asio_flammeus%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="652" alt="Sowa leci nisko nad rudą, suchą trawą ze skrzydłami uniesionymi w górę, widać żółte oczy w ciemnej obwódce" podpis="Uszatka błotna poluje za dnia nisko nad trawami, lotem podobnym do błotniaka (Szkocja, zima)" autor="Steve Garvie from Dunfermline, Fife, Scotland" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Short-eared_Owl_(Asio_flammeus).jpg">
+</zdjecie>
 
 ---
 
@@ -112,6 +118,9 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 ### ⚖️ Syczek vs pójdźka (latem na południu Hiszpanii)
 Syczek ma „uszka” i wzór kory, jest aktywny tylko w nocy i odzywa się monotonnym „tjuu”. Pójdźka: płaska głowa bez „uszu”, często widoczna za dnia, głos zawodzący i bardziej zróżnicowany.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Juvenile_Eurasian_Scops_Owl_%28Otus_scops%29.jpg/960px-Juvenile_Eurasian_Scops_Owl_%28Otus_scops%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1279" alt="Mała, szarobrązowa sowa z żółtymi oczami siedzi na ziemi wśród suchych liści, prawie niewidoczna" podpis="Młody syczek wśród suchych liści i żwiru: wzór piór zlewa się z otoczeniem" autor="Barnea Teodora-Maria" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Juvenile_Eurasian_Scops_Owl_(Otus_scops).jpg">
+</zdjecie>
+
 ---
 
 ## Drzewko decyzyjne: słyszysz sowę w nocy
@@ -123,3 +132,15 @@ Syczek ma „uszka” i wzór kory, jest aktywny tylko w nocy i odzywa się mono
 6. **Piszczenie jak skrzypiące drzwi w czerwcu?** → młode uszatki
 7. **Szybka seria „pu-pu-pu-pu” w starym lesie iglastym?** → włochatka
 8. **Gwizdy o zmierzchu w górskim świerczynie?** → sóweczka
+
+## Filmy
+- [YouTube: puchacz, głos i wygląd](https://www.youtube.com/results?search_query=Eurasian+eagle+owl+call)
+- [YouTube: uszatka błotna poluje za dnia](https://www.youtube.com/results?search_query=short-eared+owl+hunting)
+- [YouTube: płomykówka na polowaniu](https://www.youtube.com/results?search_query=barn+owl+hunting)
+- [YouTube: sóweczka, najmniejsza sowa Europy](https://www.youtube.com/results?search_query=Eurasian+pygmy+owl)
+
+## Źródła
+- [xeno-canto](https://xeno-canto.org): nagrania głosów
+- [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków (część treści płatna)
+- [Wikipedia: Płomykówka](https://pl.wikipedia.org/wiki/P%C5%82omyk%C3%B3wka) i [Uszatka](https://pl.wikipedia.org/wiki/Uszatka_(ptak))
+- Mikkola H., *Owls of the World: A Photographic Guide*

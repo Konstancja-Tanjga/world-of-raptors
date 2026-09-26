@@ -42,6 +42,9 @@ Pytanie do przemyślenia: czy któreś zagrożenie powtarza się u wszystkich tr
 3. Zapisz: kto wysiaduje lub karmi (samica jest większa), ile razy przyniesiono pokarm, co to było (jeśli widać).
 4. Zastanów się: które z tych obserwacji byłyby możliwe w terenie bez niepokojenia ptaków? Dlaczego kamery są tak cenne dla ochrony?
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Cal_Falcons_-_Chicks.png/960px-Cal_Falcons_-_Chicks.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="506" alt="Wnętrze skrzynki ze żwirem widziane z góry, siedzą w niej trzy białe, puchate pisklęta sokoła" podpis="Widok z kamery w skrzynce lęgowej sokołów wędrownych na wieży w Berkeley: trzy pisklęta w puchu na żwirze" autor="Sean Peterson" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Cal_Falcons_-_Chicks.png">
+</zdjecie>
+
 ## Projekt: „Moja cegiełka”
 Wybierz **jedno** zadanie i zrealizuj je w ciągu miesiąca:
 

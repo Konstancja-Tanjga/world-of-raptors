@@ -35,6 +35,9 @@ Najlepszy trening to setki obserwacji najpospolitszego gatunku. Wtedy każdy inn
 3. Naszkicuj sylwetkę co najmniej 3 z nich.
 4. Porównaj notatki. Co było stałe, a co się zmieniało?
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Common_Buzzard%28js%29_Lodz%28Poland%2901.jpg/960px-Common_Buzzard%28js%29_Lodz%28Poland%2901.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Myszołów w locie na tle błękitnego nieba, widoczne prążkowane lotki i ogon" podpis="Myszołów nad Łodzią: zacznij od najpospolitszego gatunku i opisz wzór brzucha, skrzydeł i ogona" autor="Jerzystrzelecki" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Buzzard(js)_Lodz(Poland)01.jpg">
+</zdjecie>
+
 ## 4. Zadanie terenowe: „Kolejność patrzenia”
 Przy każdym kolejnym drapieżniku, którego zobaczysz, zapisz obserwacje **dokładnie w kolejności z tego modułu**:
 1. grupa (sylwetka),

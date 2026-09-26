@@ -16,6 +16,12 @@ W ornitologii „ptaki drapieżne” (ang. *raptors* albo *birds of prey*) to um
 
 Kluczowe jest to, że **stopy są narzędziem polowania**. Czapla też ma świetny wzrok i ostry dziób, ale łowi dziobem, a stopy służą jej do chodzenia. Drapieżnik chwyta stopami.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Golden_Eagle_at_Grayson_Highlands_State_Park_%286917491073%29.jpg/960px-Golden_Eagle_at_Grayson_Highlands_State_Park_%286917491073%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Badacz trzyma w dłoni stopy orła przedniego z żółtymi palcami i długimi czarnymi pazurami" podpis="Stopy orła przedniego: grube palce i długie, zakrzywione szpony to główna broń drapieżnika" autor="Virginia State Parks staff" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Golden_Eagle_at_Grayson_Highlands_State_Park_(6917491073).jpg">
+</zdjecie>
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/a/af/Catching_fish_on_the_Camowen_River%2C_Omagh_-_geograph.org.uk_-_127294.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="707" alt="Głowa czapli siwej z dużą rybą trzymaną w długim, prostym dziobie" podpis="Czapla siwa łowi dziobem, nie stopami: tu z pstrągiem w dziobie" autor="Kenneth Allen" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Catching_fish_on_the_Camowen_River,_Omagh_-_geograph.org.uk_-_127294.jpg">
+</zdjecie>
+
 > 💡 U podstawy dzioba większości drapieżników jest **woskówka**: miękka, bezpióra skórka, w której leżą nozdrza. Ma ją także… papuga. To jeden z drobnych tropów, do których wrócisz w lekcji 2.
 
 ## Cechy „dodatkowe”, częste, ale nie obowiązkowe
@@ -37,6 +43,15 @@ Widać tu ważną rzecz: „ptak drapieżny” to po części **pojęcie ekologi
 | **Kruk** (*Corvus corax*, ang. Northern Raven) | zjada padlinę, bywa, że zabija małe zwierzęta | ptak wróblowy, wszystkożerny; brak szponów i haczykowatego dzioba |
 | **Kariamy** (seriemy) z Ameryki Południowej | polują na węże i jaszczurki | stopy do biegania, zdobycz zabijają uderzając nią o ziemię; ale są **bliskimi krewnymi sokołów** (lekcja 2) |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Neunt%C3%B6ter_mit_erbeutetem_Heupferd_im_Geo-Naturpark_Bergstra%C3%9Fe-Odenwald_%28cropped%29.jpg/960px-Neunt%C3%B6ter_mit_erbeutetem_Heupferd_im_Geo-Naturpark_Bergstra%C3%9Fe-Odenwald_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="961" alt="Mały ptak z szarą głową, czarną maską i rudym grzbietem siedzi na kolczastej gałęzi, w dziobie trzyma zielonego pasikonika" podpis="Samiec gąsiorka z pasikonikiem w dziobie: haczykowaty dziób, ale słabe stopy ptaka wróblowego" autor="Hwbund" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Neunt%C3%B6ter_mit_erbeutetem_Heupferd_im_Geo-Naturpark_Bergstra%C3%9Fe-Odenwald_(cropped).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Arctic_Skua_%28Stercorarius_parasiticus%29%2C_Ham_of_Muness_-_geograph.org.uk_-_4492949.jpg/960px-Arctic_Skua_%28Stercorarius_parasiticus%29%2C_Ham_of_Muness_-_geograph.org.uk_-_4492949.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="638" alt="Ciemnobrązowy ptak morski stoi na kamienistej plaży" podpis="Wydrzyk ostrosterny: haczykowaty dziób, ale stopy z błonami pławnymi zamiast szponów" autor="Mike Pennington" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Arctic_Skua_(Stercorarius_parasiticus),_Ham_of_Muness_-_geograph.org.uk_-_4492949.jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/174_Red-legged_seriema_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg/960px-174_Red-legged_seriema_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Szarobrązowy ptak na długich czerwonych nogach kroczy po suchej trawie, na czole ma sterczący czub" podpis="Kariama czerwononoga (seriema): długie nogi do biegania zamiast szponów, a mimo to bliska krewna sokołów" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:174_Red-legged_seriema_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg">
+</zdjecie>
+
 > 💡 Srokosza czasem nazywa się „małym drapieżnikiem wśród wróblowych”. Nabite na cierń myszy i chrząszcze to jego „spiżarnia”. Jeśli widziałaś kiedyś chrząszcza nabitego na kolec głogu, był to prawdopodobnie ślad dzierzby.
 
 ## Dzienne i nocne
@@ -45,6 +60,18 @@ Zwykle dzieli się ptaki drapieżne na:
 - **nocne**: sowy.
 
 Czy sowy to „prawdziwe” ptaki drapieżne? Zależy od autora. W wąskim znaczeniu (częstym w literaturze angielskiej) *raptors* to tylko ptaki dzienne. W szerszym, przyjętym w tym kursie, sowy też się liczą, bo mają wszystkie cztery cechy łowcy. Sowy mają własny moduł: [B5 · Sowy](../sowy/README.md).
+
+## Filmy
+- [YouTube: szpony orła z bliska](https://www.youtube.com/results?search_query=eagle+talons+close+up)
+- [YouTube: srokosz nabija zdobycz na ciernie](https://www.youtube.com/results?search_query=great+grey+shrike+impaling+prey)
+- [YouTube: kariama zabija zdobycz, uderzając nią o ziemię](https://www.youtube.com/results?search_query=seriema+killing+prey)
+- [YouTube: co to jest ptak drapieżny](https://www.youtube.com/results?search_query=what+makes+a+bird+of+prey+raptor)
+
+## Źródła
+- [Wikipedia: Bird of prey](https://en.wikipedia.org/wiki/Bird_of_prey)
+- [Wikipedia: Shrike](https://en.wikipedia.org/wiki/Shrike) i [Seriema](https://en.wikipedia.org/wiki/Seriema)
+- [Birds of the World (Cornell Lab of Ornithology)](https://birdsoftheworld.org)
+- Ferguson-Lees J., Christie D. A. *Raptors of the World*. Christopher Helm, 2001.
 
 ## Mini-quiz
 1. Jaka cecha odróżnia polowanie drapieżnika od polowania czapli?

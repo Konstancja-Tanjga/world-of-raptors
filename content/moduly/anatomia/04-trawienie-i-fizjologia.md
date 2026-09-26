@@ -16,10 +16,16 @@ Złapanie zdobyczy to połowa pracy. Drugą połową jest zjedzenie jej szybko, 
 - Po obfitym posiłku wole widać jako wyraźne zgrubienie na piersi. Sokolnicy mówią, że ptak ma „pełne wole”.
 - Większość ptaków drapieżnych **rzadko pije**. Dużą część wody dostaje z mięsa zdobyczy. Sępy i niektóre inne gatunki chętnie jednak piją i kąpią się.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Golden_Eagle_on_Seedskadee_NWR_%2823661983405%29.jpg/960px-Golden_Eagle_on_Seedskadee_NWR_%2823661983405%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="707" alt="Ciemnobrązowy orzeł leci na tle nieba, pod dziobem na piersi ma wyraźne zgrubienie" podpis="Orzeł przedni po obfitym posiłku: pod szyją widać wyraźnie wypchane wole" autor="USFWS Mountain-Prairie" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Golden_Eagle_on_Seedskadee_NWR_(23661983405).jpg">
+</zdjecie>
+
 ## Wypluwki dziennych drapieżników i sów
 Wypluwki robią i sowy, i dzienne drapieżniki, ale wyglądają inaczej:
 - W żołądku dziennych drapieżników jest **bardziej kwaśno**, więc kości są w dużej części strawione. Ich wypluwki to głównie sierść i pióra, z niewielką ilością kości.
 - Sowy trawią kości słabiej, więc w ich wypluwkach są **całe czaszki i kości**. Dlatego do badania diety częściej używa się wypluwek sów (zob. [moduł o sowach](../sowy/05-cwiczenia.md)).
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8c/AB017_Pellet_of_Tawny_Eagle.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Podłużna, jasnożółta grudka z łuskami i kolcami leży na piasku" podpis="Świeża wypluwka orła sawannowego (Aquila rapax, Indie): widać łuski i kolce zjedzonej jaszczurki" autor="Uploaded by AshLin with permission of Aashay Baindur." licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:AB017_Pellet_of_Tawny_Eagle.JPG">
+</zdjecie>
 
 ## Sępy: specjaliści od padliny
 
@@ -35,6 +41,9 @@ Badania mikroorganizmów w jelitach sępów amerykańskich (sępnika różowogł
 
 > 💡 Dziko żyjące orłosępy mają rdzawopomarańczową pierś, ale to nie jest kolor piór. Ptaki kąpią się w błocie bogatym w tlenki żelaza i same „farbują” pióra. Po co, nie wiadomo na pewno: możliwe, że to sygnał dla innych orłosępów.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg/960px-012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Orłosęp w locie widziany z boku, z pomarańczowo-rdzawym brzuchem i piersią, szarymi skrzydłami i opierzoną głową z czarną maską" podpis="Dziki orłosęp w Alpach szwajcarskich: rdzawopomarańczowy spód ciała to efekt kąpieli w błocie z tlenkami żelaza" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_(Switzerland)_Photo_by_Giles_Laurent.jpg">
+</zdjecie>
+
 ### Dlaczego sępy mają łyse głowy?
 Sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) i sęp kasztanowaty (*Aegypius monachus*, ang. Cinereous Vulture) mają głowę i szyję pokryte tylko krótkim puchem lub nagą skórą. Są dwie główne hipotezy, które się nie wykluczają:
 
@@ -44,6 +53,9 @@ Sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) i sęp kasztanowaty (*Aegypius
 | **Termoregulacja** | badania na sępach płowych pokazały, że w chłodzie ptaki chowają szyję w kryzę z piór, a w upale wyciągają ją i odsłaniają nagą skórę, oddając ciepło | lepiej udokumentowana; dziś uważana za co najmniej równie ważną |
 
 Ciekawostka zgodna z tym obrazem: **sęp płowy**, który sięga głęboko w padlinę, ma szyję długą i prawie nagą, a **orłosęp**, który je kości, ma głowę opierzoną.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Eurasian_Griffon_Vulture_on_cattle_carcass.jpg/960px-Eurasian_Griffon_Vulture_on_cattle_carcass.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży jasnobrązowy sęp z długą, jasną, słabo opierzoną szyją stoi przy rozerwanej padlinie" podpis="Sęp płowy przy padlinie krowy: długa, prawie naga szyja pozwala sięgać głęboko do wnętrza ciała" autor="Arindam Aditya" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_Griffon_Vulture_on_cattle_carcass.jpg">
+</zdjecie>
 
 ### Jedzenie na zapas
 Sępy nie wiedzą, kiedy znajdą następną padlinę. Potrafią **najeść się bardzo obficie**, czasem tak, że mają kłopot ze startem, a potem **pościć kilka dni** lub dłużej.
@@ -64,17 +76,11 @@ Ogólna reguła: im **zwinniejsza i szybsza zdobycz** (np. ptaki łapane w locie
 
 Dlaczego tak jest? Hipotez jest kilka i dotyczą podziału ról w rodzinie oraz polowania. Omawia je [A4 · Rozród i życie rodzinne](../rozrod/README.md).
 
-## Mini-quiz
-1. Które ptaki drapieżne nie mają wola?
-2. Dlaczego wypluwki sów zawierają więcej kości niż wypluwki myszołowa?
-3. Podaj dwie hipotezy wyjaśniające łyse głowy sępów. Która jest lepiej udokumentowana?
-
-<details><summary>Odpowiedzi</summary>
-
-1. Sowy.
-2. Dzienne drapieżniki mają bardziej kwaśne soki żołądkowe i trawią większą część kości. Sowy trawią kości słabiej, więc zostają one w wypluwce.
-3. Higiena (pióra brudziłyby się w padlinie) i termoregulacja (naga skóra pomaga oddawać lub zatrzymywać ciepło). Lepiej udokumentowana jest termoregulacja, choć obie mogą działać razem.
-</details>
+## Filmy
+- [YouTube: wypluwka ptaka drapieżnego, jak powstaje](https://www.youtube.com/results?search_query=raptor+casting+pellet+regurgitation)
+- [YouTube: orłosęp kąpie się w błocie i farbuje pióra](https://www.youtube.com/results?search_query=bearded+vulture+mud+bath+red+colour)
+- [YouTube: sępy płowe przy padlinie](https://www.youtube.com/results?search_query=griffon+vultures+feeding+carcass)
+- [YouTube: orłosęp zrzuca kości](https://www.youtube.com/results?search_query=bearded+vulture+dropping+bones)
 
 ## Źródła i dalsza nauka
 - J. Ferguson-Lees, D. A. Christie, *Raptors of the World* (Christopher Helm): przegląd wszystkich gatunków, budowy i biologii.
@@ -86,3 +92,15 @@ Dlaczego tak jest? Hipotez jest kilka i dotyczą podziału ról w rodzinie oraz 
 - J. Ward i in. (2008), termoregulacja i łyse głowy sępów płowych, *Journal of Thermal Biology*.
 - [Birds of the World](https://birdsoftheworld.org) (Cornell Lab of Ornithology): szczegółowe opisy gatunków (płatna subskrypcja).
 - Cornell Bird Academy, kurs *The Wonderful World of Raptors*.
+
+## Mini-quiz
+1. Które ptaki drapieżne nie mają wola?
+2. Dlaczego wypluwki sów zawierają więcej kości niż wypluwki myszołowa?
+3. Podaj dwie hipotezy wyjaśniające łyse głowy sępów. Która jest lepiej udokumentowana?
+
+<details><summary>Odpowiedzi</summary>
+
+1. Sowy.
+2. Dzienne drapieżniki mają bardziej kwaśne soki żołądkowe i trawią większą część kości. Sowy trawią kości słabiej, więc zostają one w wypluwce.
+3. Higiena (pióra brudziłyby się w padlinie) i termoregulacja (naga skóra pomaga oddawać lub zatrzymywać ciepło). Lepiej udokumentowana jest termoregulacja, choć obie mogą działać razem.
+</details>
