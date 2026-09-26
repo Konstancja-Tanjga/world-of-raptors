@@ -438,3 +438,22 @@ body {
   padding-block: var(--bh-padding-block);
   line-height: var(--bh-text-leading-tight);
 }
+
+/* "Na co patrzeć": the method checklist for one species */
+.cues {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  background: var(--bh-status-info-bg);
+  border: 1px solid var(--bh-status-info-border);
+  border-radius: var(--bh-radius-surface);
+}
+.cues__title {
+  margin: 0;
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-primary);
+}
+.cues__source {
+  font-size: var(--bh-text-size-dense);
+}

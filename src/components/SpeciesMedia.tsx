@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { zdjecia, znajdzGatunek } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { Photo } from './Photo';
+import { SpeciesCues } from './SpeciesCues';
 
 /**
  * The two reference photos of a species (perched and in flight), the species
@@ -35,6 +36,8 @@ export function SpeciesMedia({
           {z.lot && <Photo zdjecie={z.lot} alt={`${g.pl} w locie`} podpis="W locie" />}
         </div>
       )}
+
+      <SpeciesCues g={g} />
 
       {mylone.length > 0 && (
         <div className="confusion">

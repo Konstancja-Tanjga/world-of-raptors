@@ -17,6 +17,8 @@ export type Gatunek = {
   gdzie: string;
   aktywnosc: Aktywnosc;
   regiony: Region[];
+  /** What to look at, in the order taught in B1 (diurnal) or B5 (owls). */
+  sylwetka: Record<string, string>;
 };
 
 export type Lekcja = { slug: string; tytul: string };

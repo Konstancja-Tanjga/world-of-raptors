@@ -8,7 +8,7 @@ import type { Gatunek, Modul, Sciezka, ZdjeciaGatunku } from './types';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
-export const gatunki = gatunkiJson.gatunki as Gatunek[];
+export const gatunki = gatunkiJson.gatunki as unknown as Gatunek[];
 export const sciezki = modulyJson.sciezki as Sciezka[];
 export const moduly = modulyJson.moduly as Modul[];
 export const zdjecia = zdjeciaJson as Record<string, ZdjeciaGatunku>;
