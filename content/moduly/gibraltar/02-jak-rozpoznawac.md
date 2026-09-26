@@ -1,5 +1,7 @@
 # Lekcja 2: Jak patrzeć — metoda rozpoznawania w locie
 
+> 📘 To skrót metody. Pełna wersja z 8 grupami sylwetek, sposobem lotu, wiekiem i pułapkami jest w module [B1 · Metoda rozpoznawania w locie](../metoda/README.md).
+
 Nad cieśniną ptaki są zwykle **wysoko, pod światło i w ruchu**. Kolory często nie są widoczne. Dlatego doświadczeni obserwatorzy rozpoznają ptaki „od ogółu do szczegółu”.
 
 ## Metoda 4 kroków

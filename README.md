@@ -6,11 +6,13 @@ Prywatny kurs online o ptakach drapieżnych, do własnej nauki: biologia i rozpo
 - **Plan techniczny:** [TECH.md](TECH.md)
 
 ## Gotowe moduły
+- B1 · [Metoda rozpoznawania w locie](content/moduly/metoda/README.md)
+- B2 · [Ptaki drapieżne Polski](content/moduly/polska/README.md)
 - B3 · [Cieśnina Gibraltarska](content/moduly/gibraltar/README.md)
 - B4 · [Ptaki drapieżne południa Hiszpanii](content/moduly/poludnie-hiszpanii/README.md)
 - B5 · [Sowy, drapieżniki nocne](content/moduly/sowy/README.md)
 
-Do tego atlas 37 gatunków i checklista obserwacji.
+Do tego atlas 42 gatunki i checklista obserwacji.
 
 ## Uruchamianie
 ```bash

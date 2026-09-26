@@ -124,7 +124,9 @@
       ],
       "mylona_z": [
         "trzmielojad",
-        "kurhannik"
+        "kurhannik",
+        "myszolow-wlochaty",
+        "orlik-krzykliwy"
       ],
       "gdzie": "tereny otwarte i lasy w całym regionie",
       "aktywnosc": "dzienny",
@@ -285,7 +287,8 @@
         "ciemny pas przez oko"
       ],
       "mylona_z": [
-        "gadozer"
+        "gadozer",
+        "bielik"
       ],
       "gdzie": "wybrzeże, zatoka Algeciras, ujścia rzek",
       "aktywnosc": "dzienny",
@@ -594,7 +597,8 @@
         "czarne pazury"
       ],
       "mylona_z": [
-        "pustuleczka"
+        "pustuleczka",
+        "drzemlik"
       ],
       "gdzie": "cały region",
       "aktywnosc": "dzienny",
@@ -657,7 +661,8 @@
       ],
       "mylona_z": [
         "sokol-wedrowny",
-        "sokol-skalny"
+        "sokol-skalny",
+        "drzemlik"
       ],
       "gdzie": "punkty przelotu",
       "aktywnosc": "dzienny",
@@ -785,7 +790,8 @@
       ],
       "mylona_z": [
         "orzel-iberyjski",
-        "orzel-poludniowy"
+        "orzel-poludniowy",
+        "bielik"
       ],
       "gdzie": "góry: Sierra Nevada, Cazorla, Grazalema; w Polsce Karpaty",
       "aktywnosc": "dzienny",
@@ -1162,6 +1168,156 @@
       "regiony": [
         "polska"
       ]
+    },
+    {
+      "id": "bielik",
+      "pl": "Bielik",
+      "lat": "Haliaeetus albicilla",
+      "en": "White-tailed Eagle",
+      "es": "Pigargo europeo",
+      "grupa": "orły",
+      "status": [
+        "osiadly",
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        200,
+        245
+      ],
+      "sezon": "cały rok; toki od lutego",
+      "cechy": [
+        "skrzydła prostokątne jak „drzwi”, szybuje płasko",
+        "krótki klinowaty ogon, u dorosłego biały",
+        "ogromna głowa z masywnym dziobem wystaje daleko przed skrzydła"
+      ],
+      "mylona_z": [
+        "orzel-przedni",
+        "rybolow"
+      ],
+      "gdzie": "jeziora, duże rzeki, stawy rybne, wybrzeże",
+      "regiony": [
+        "polska"
+      ],
+      "aktywnosc": "dzienny"
+    },
+    {
+      "id": "orlik-krzykliwy",
+      "pl": "Orlik krzykliwy",
+      "lat": "Clanga pomarina",
+      "en": "Lesser Spotted Eagle",
+      "es": "Águila pomerana",
+      "grupa": "orły",
+      "status": [
+        "wedrowny"
+      ],
+      "rozpietosc_cm": [
+        135,
+        160
+      ],
+      "sezon": "koniec IV – IX",
+      "cechy": [
+        "mały orzeł: długie prostokątne skrzydła, 7 „palców”, krótki ogon",
+        "szybuje z opuszczoną „ręką”",
+        "pokrywy podskrzydłowe jaśniejsze lub tak jasne jak lotki"
+      ],
+      "mylona_z": [
+        "myszolow",
+        "orlik-grubodzioby"
+      ],
+      "gdzie": "podmokłe łąki na skraju lasów: wschodnia Polska, Karpaty",
+      "regiony": [
+        "polska"
+      ],
+      "aktywnosc": "dzienny"
+    },
+    {
+      "id": "orlik-grubodzioby",
+      "pl": "Orlik grubodzioby",
+      "lat": "Clanga clanga",
+      "en": "Greater Spotted Eagle",
+      "es": "Águila moteada",
+      "grupa": "orły",
+      "status": [
+        "wedrowny",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        155,
+        180
+      ],
+      "sezon": "IV – IX",
+      "cechy": [
+        "większy i ciemniejszy od orlika krzykliwego",
+        "pokrywy podskrzydłowe ciemniejsze od lotek",
+        "młody z białymi kropkami na wierzchu skrzydeł"
+      ],
+      "mylona_z": [
+        "orlik-krzykliwy"
+      ],
+      "gdzie": "Dolina Biebrzy, pojedyncze pary",
+      "regiony": [
+        "polska"
+      ],
+      "aktywnosc": "dzienny"
+    },
+    {
+      "id": "myszolow-wlochaty",
+      "pl": "Myszołów włochaty",
+      "lat": "Buteo lagopus",
+      "en": "Rough-legged Buzzard",
+      "es": "Busardo calzado",
+      "grupa": "myszołowate",
+      "status": [
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        120,
+        150
+      ],
+      "sezon": "X – IV",
+      "cechy": [
+        "biały ogon z szerokim ciemnym pasem końcowym",
+        "ciemna plama na brzuchu, duże ciemne nadgarstki",
+        "często zawisa"
+      ],
+      "mylona_z": [
+        "myszolow"
+      ],
+      "gdzie": "otwarte pola i łąki zimą",
+      "regiony": [
+        "polska"
+      ],
+      "aktywnosc": "dzienny"
+    },
+    {
+      "id": "drzemlik",
+      "pl": "Drzemlik",
+      "lat": "Falco columbarius",
+      "en": "Merlin",
+      "es": "Esmerejón",
+      "grupa": "sokoły",
+      "status": [
+        "zimuje"
+      ],
+      "rozpietosc_cm": [
+        50,
+        65
+      ],
+      "sezon": "zima i przeloty",
+      "cechy": [
+        "najmniejszy sokół Europy, krępy",
+        "krótkie skrzydła szerokie u nasady",
+        "szybki, niski lot tuż nad ziemią, nie zawisa"
+      ],
+      "mylona_z": [
+        "pustulka",
+        "kobuz"
+      ],
+      "gdzie": "otwarte pola, wybrzeże",
+      "regiony": [
+        "polska"
+      ],
+      "aktywnosc": "dzienny"
     }
   ]
 }

@@ -1,18 +1,122 @@
 {
   "sciezki": [
-    { "id": "a", "tytul": "Ścieżka A: Biologia ptaków drapieżnych" },
-    { "id": "b", "tytul": "Ścieżka B: Rozpoznawanie w terenie" }
+    {
+      "id": "a",
+      "tytul": "Ścieżka A: Biologia ptaków drapieżnych"
+    },
+    {
+      "id": "b",
+      "tytul": "Ścieżka B: Rozpoznawanie w terenie"
+    }
   ],
   "moduly": [
-    { "id": "A1", "slug": null, "sciezka": "a", "tytul": "Kim są ptaki drapieżne?", "gotowy": false },
-    { "id": "A2", "slug": null, "sciezka": "a", "tytul": "Anatomia łowcy", "gotowy": false },
-    { "id": "A3", "slug": null, "sciezka": "a", "tytul": "Polowanie i ekologia", "gotowy": false },
-    { "id": "A4", "slug": null, "sciezka": "a", "tytul": "Rozród i życie rodzinne", "gotowy": false },
-    { "id": "A5", "slug": null, "sciezka": "a", "tytul": "Wędrówki", "gotowy": false },
-    { "id": "A6", "slug": null, "sciezka": "a", "tytul": "Ochrona", "gotowy": false },
-    { "id": "A7", "slug": null, "sciezka": "a", "tytul": "Ludzie i drapieżniki", "gotowy": false },
-    { "id": "B1", "slug": null, "sciezka": "b", "tytul": "Metoda rozpoznawania w locie", "gotowy": false },
-    { "id": "B2", "slug": null, "sciezka": "b", "tytul": "Ptaki drapieżne Polski", "gotowy": false },
+    {
+      "id": "A1",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Kim są ptaki drapieżne?",
+      "gotowy": false
+    },
+    {
+      "id": "A2",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Anatomia łowcy",
+      "gotowy": false
+    },
+    {
+      "id": "A3",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Polowanie i ekologia",
+      "gotowy": false
+    },
+    {
+      "id": "A4",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Rozród i życie rodzinne",
+      "gotowy": false
+    },
+    {
+      "id": "A5",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Wędrówki",
+      "gotowy": false
+    },
+    {
+      "id": "A6",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Ochrona",
+      "gotowy": false
+    },
+    {
+      "id": "A7",
+      "slug": null,
+      "sciezka": "a",
+      "tytul": "Ludzie i drapieżniki",
+      "gotowy": false
+    },
+    {
+      "id": "B1",
+      "slug": "metoda",
+      "sciezka": "b",
+      "tytul": "Metoda rozpoznawania w locie",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-sylwetka",
+          "tytul": "Sylwetka: 8 grup"
+        },
+        {
+          "slug": "02-lot",
+          "tytul": "Sposób lotu"
+        },
+        {
+          "slug": "03-upierzenie-i-wiek",
+          "tytul": "Upierzenie, wiek i płeć"
+        },
+        {
+          "slug": "04-warunki-i-pulapki",
+          "tytul": "Warunki, prawdopodobieństwo i pułapki"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i zadanie terenowe"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "slug": "polska",
+      "sciezka": "b",
+      "tytul": "Ptaki drapieżne Polski",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-przeglad",
+          "tytul": "Przegląd: kto, gdzie, kiedy"
+        },
+        {
+          "slug": "02-gatunki-i-pary",
+          "tytul": "Gatunki i trudne pary"
+        },
+        {
+          "slug": "03-miejsca",
+          "tytul": "Najlepsze miejsca"
+        },
+        {
+          "slug": "04-kalendarz",
+          "tytul": "Kalendarz roku"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
+    },
     {
       "id": "B3",
       "slug": "gibraltar",
@@ -20,11 +124,26 @@
       "tytul": "Cieśnina Gibraltarska",
       "gotowy": true,
       "lekcje": [
-        { "slug": "01-ciesnina", "tytul": "Cieśnina, wiatry i kalendarz przelotu" },
-        { "slug": "02-jak-rozpoznawac", "tytul": "Jak patrzeć: metoda rozpoznawania w locie" },
-        { "slug": "03-gatunki-i-pary", "tytul": "Gatunki i trudne pary" },
-        { "slug": "04-gdzie-i-kiedy", "tytul": "Gdzie i kiedy: punkty obserwacyjne" },
-        { "slug": "05-cwiczenia", "tytul": "Ćwiczenia, quiz i projekt końcowy" }
+        {
+          "slug": "01-ciesnina",
+          "tytul": "Cieśnina, wiatry i kalendarz przelotu"
+        },
+        {
+          "slug": "02-jak-rozpoznawac",
+          "tytul": "Jak patrzeć: metoda rozpoznawania w locie"
+        },
+        {
+          "slug": "03-gatunki-i-pary",
+          "tytul": "Gatunki i trudne pary"
+        },
+        {
+          "slug": "04-gdzie-i-kiedy",
+          "tytul": "Gdzie i kiedy: punkty obserwacyjne"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia, quiz i projekt końcowy"
+        }
       ]
     },
     {
@@ -34,11 +153,26 @@
       "tytul": "Ptaki drapieżne południa Hiszpanii",
       "gotowy": true,
       "lekcje": [
-        { "slug": "01-region", "tytul": "Region i siedliska" },
-        { "slug": "02-gatunki-i-pary", "tytul": "Gatunki osiadłe i trudne pary" },
-        { "slug": "03-miejsca", "tytul": "Najlepsze miejsca" },
-        { "slug": "04-kalendarz", "tytul": "Kalendarz roku" },
-        { "slug": "05-cwiczenia", "tytul": "Ćwiczenia i projekt" }
+        {
+          "slug": "01-region",
+          "tytul": "Region i siedliska"
+        },
+        {
+          "slug": "02-gatunki-i-pary",
+          "tytul": "Gatunki osiadłe i trudne pary"
+        },
+        {
+          "slug": "03-miejsca",
+          "tytul": "Najlepsze miejsca"
+        },
+        {
+          "slug": "04-kalendarz",
+          "tytul": "Kalendarz roku"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
       ]
     },
     {
@@ -48,11 +182,26 @@
       "tytul": "Sowy, drapieżniki nocne",
       "gotowy": true,
       "lekcje": [
-        { "slug": "01-kim-sa-sowy", "tytul": "Kim są sowy?" },
-        { "slug": "02-jak-rozpoznawac", "tytul": "Jak rozpoznawać sowy" },
-        { "slug": "03-gatunki-i-pary", "tytul": "Gatunki i trudne pary" },
-        { "slug": "04-gdzie-i-kiedy", "tytul": "Gdzie i kiedy słuchać" },
-        { "slug": "05-cwiczenia", "tytul": "Ćwiczenia i projekt" }
+        {
+          "slug": "01-kim-sa-sowy",
+          "tytul": "Kim są sowy?"
+        },
+        {
+          "slug": "02-jak-rozpoznawac",
+          "tytul": "Jak rozpoznawać sowy"
+        },
+        {
+          "slug": "03-gatunki-i-pary",
+          "tytul": "Gatunki i trudne pary"
+        },
+        {
+          "slug": "04-gdzie-i-kiedy",
+          "tytul": "Gdzie i kiedy słuchać"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
       ]
     }
   ]

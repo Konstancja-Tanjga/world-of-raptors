@@ -24,7 +24,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 content/
   PLAN-KURSU.md            plan kursu
   moduly.json              ścieżki, moduły, lekcje (kolejność i tytuły)
-  gatunki.json             atlas: 37 gatunków (regiony, aktywność, cechy, pary do pomylenia)
+  gatunki.json             atlas: 42 gatunki (regiony, aktywność, cechy, pary do pomylenia)
   moduly/<slug>/README.md  opis modułu
   moduly/<slug>/NN-*.md    lekcje
 src/
@@ -70,7 +70,7 @@ npm run lint
 Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten ją otworzy. Jeśli ma być zamknięta: prosta blokada hasłem (HTTP Basic Auth) w `src/proxy.ts` (w Next.js 16 plik `middleware` nazywa się `proxy`), z hasłem w zmiennej środowiskowej na Vercel.
 
 ## Etapy
-1. ✅ **MVP:** moduły B3, B4, B5, atlas gatunków, checklista, deploy.
+1. ✅ **MVP:** moduły B1–B5, atlas gatunków, checklista, deploy.
 2. Zdjęcia i nagrania na licencjach CC (Wikimedia Commons, xeno-canto) z autorem i licencją przy każdym pliku.
 3. Interaktywne quizy i fiszki z powtórkami rozłożonymi w czasie (`ts-fsrs`).
 4. Mapa punktów obserwacyjnych (Leaflet + OpenStreetMap), quiz „porównaj”, „wirtualny punkt obserwacyjny”.

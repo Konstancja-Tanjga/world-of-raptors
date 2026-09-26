@@ -31,6 +31,7 @@ export function modulyGatunku(g: Gatunek) {
   else {
     if (g.regiony.includes('gibraltar')) slugi.add('gibraltar');
     if (g.regiony.includes('poludnie-hiszpanii')) slugi.add('poludnie-hiszpanii');
+    if (g.regiony.includes('polska')) slugi.add('polska');
   }
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
