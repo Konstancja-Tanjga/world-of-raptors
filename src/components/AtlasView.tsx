@@ -2,11 +2,18 @@
 
 import Link from 'next/link';
 import { useChecklista } from '@/lib/checklist';
-import type { Gatunek } from '@/lib/types';
+import type { Gatunek, Zdjecie } from '@/lib/types';
+import { Photo } from './Photo';
 import { Badge, Card, StateBlock } from './ds';
 import { SpeciesFilters, useFiltry } from './SpeciesFilters';
 
-export function AtlasView({ gatunki }: { gatunki: Gatunek[] }) {
+export function AtlasView({
+  gatunki,
+  miniatury,
+}: {
+  gatunki: Gatunek[];
+  miniatury: Record<string, Zdjecie | null>;
+}) {
   const { filtry, setFiltry, wynik } = useFiltry(gatunki);
   const { lista } = useChecklista();
 
@@ -30,6 +37,9 @@ export function AtlasView({ gatunki }: { gatunki: Gatunek[] }) {
             <li key={g.id}>
               <Card>
                 <div className="species-card">
+                  {miniatury[g.id] && (
+                    <Photo zdjecie={miniatury[g.id]!} alt={g.pl} maly />
+                  )}
                   <h2 className="species-card__title">
                     <Link href={`/gatunki/${g.id}`} className="text-link">
                       {g.pl}

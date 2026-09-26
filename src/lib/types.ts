@@ -44,3 +44,18 @@ export const STATUS_LABEL: Record<Status, string> = {
   zimuje: 'zimuje',
   rzadki: 'rzadki',
 };
+
+/** A Wikimedia Commons photo with the attribution its licence requires. */
+export type Zdjecie = {
+  src: string;
+  width: number;
+  height: number;
+  autor: string;
+  licencja: string;
+  licencjaUrl: string;
+  /** Commons file page. */
+  strona: string;
+  plik: string;
+};
+
+export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };

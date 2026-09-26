@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge, Breadcrumbs, DescriptionList } from '@/components/ds';
+import { SpeciesMedia } from '@/components/SpeciesMedia';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
 import { gatunki, modulyGatunku, znajdzGatunek } from '@/lib/content';
 import { REGIONY, STATUS_LABEL } from '@/lib/types';
@@ -22,7 +23,6 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
   const g = znajdzGatunek(id);
   if (!g) notFound();
 
-  const mylone = g.mylona_z.map(znajdzGatunek).filter((x) => x !== undefined);
   const moduly = modulyGatunku(g);
 
   return (
@@ -43,6 +43,8 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
           ))}
         </div>
       </div>
+
+      <SpeciesMedia id={g.id} ileMylonych={Infinity} />
 
       <SpeciesObservation id={g.id} nazwa={g.pl} />
 
@@ -73,26 +75,6 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
           { term: 'Nazwa hiszpańska', value: g.es },
         ]}
       />
-
-      {mylone.length > 0 && (
-        <section className="stack" aria-labelledby="mylony">
-          <h2 id="mylony" className="section-title">
-            Łatwo pomylić z
-          </h2>
-          <ul className="prose">
-            {mylone.map((m) => (
-              <li key={m.id}>
-                <Link href={`/gatunki/${m.id}`} className="text-link">
-                  {m.pl}
-                </Link>{' '}
-                <span className="latin">
-                  ({m.lat}, <span className="en">ang. {m.en}</span>)
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       {moduly.length > 0 && (
         <section className="stack" aria-labelledby="moduly">

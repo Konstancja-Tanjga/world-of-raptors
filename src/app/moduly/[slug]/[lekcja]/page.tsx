@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/ds';
+import { LessonMedia } from '@/components/LessonMedia';
 import { Markdown } from '@/components/Markdown';
-import { czytajMarkdown, gotoweModuly, znajdzModul } from '@/lib/content';
+import { czytajMarkdown, gotoweModuly, przygotujLekcje, znajdzModul } from '@/lib/content';
 
 export const dynamicParams = false;
 
@@ -27,7 +28,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
   const biezaca = modul.lekcje[index];
   const poprzednia = modul.lekcje[index - 1];
   const nastepna = modul.lekcje[index + 1];
-  const source = await czytajMarkdown(`moduly/${slug}/${lekcja}.md`);
+  const lekcjaMd = przygotujLekcje(await czytajMarkdown(`moduly/${slug}/${lekcja}.md`));
 
   return (
     <div className="page page--reading">
@@ -38,7 +39,8 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
           { label: `Lekcja ${index + 1}: ${biezaca.tytul}` },
         ]}
       />
-      <Markdown source={source} baseDir={`moduly/${slug}`} />
+      <Markdown source={lekcjaMd.md} baseDir={`moduly/${slug}`} />
+      <LessonMedia ids={lekcjaMd.wszystkie} juzPokazane={lekcjaMd.wNaglowkach} />
       <nav className="lesson-nav" aria-label="Nawigacja lekcji">
         {poprzednia ? (
           <Link href={`/moduly/${slug}/${poprzednia.slug}`} className="text-link">

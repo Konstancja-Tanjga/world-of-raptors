@@ -320,3 +320,109 @@ body {
 .prose tr:last-child td {
   border-bottom: 0;
 }
+
+/* Photos (Wikimedia Commons, with attribution) */
+.photo {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  min-width: 0;
+}
+.photo__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* Perched birds usually have the head in the top third of a portrait photo. */
+  object-position: center 25%;
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-sunken);
+}
+.photo--small .photo__img {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--bh-radius-control);
+}
+.photo__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-hairline);
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-muted);
+  line-height: var(--bh-text-leading-tight);
+}
+.photo__caption a {
+  color: var(--bh-text-link);
+}
+.photo__title {
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-secondary);
+}
+.prose .photo {
+  margin-block: var(--bh-gap-normal);
+}
+
+.species-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+  margin-block-end: var(--bh-gap-normal);
+}
+.photo-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--bh-gap-normal);
+}
+
+.confusion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  background: var(--bh-status-warning-bg);
+  border: 1px solid var(--bh-status-warning-border);
+  border-radius: var(--bh-radius-surface);
+}
+.confusion__title {
+  margin: 0;
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-primary);
+}
+.confusion__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: var(--bh-gap-normal);
+}
+.confusion__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+
+.media-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug) var(--bh-gap-normal);
+  font-size: var(--bh-text-size-dense);
+}
+.media-links li {
+  margin: 0;
+}
+
+.lesson-media {
+  padding-block-start: var(--bh-gap-loose);
+  border-top: 1px solid var(--bh-border-subtle);
+}
+.lesson-media__species {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
