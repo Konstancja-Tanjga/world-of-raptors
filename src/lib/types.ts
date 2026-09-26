@@ -66,3 +66,15 @@ export type Zdjecie = {
 };
 
 export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };
+
+/** A curiosity shown in rotating "Ciekawostka" cards; `tekst` is inline Markdown. */
+export type Ciekawostka = {
+  id: string;
+  tekst: string;
+  modul: string;
+  lekcja: string | null;
+  gatunki: string[];
+};
+
+/** A curiosity ready to render: where to read more about it. */
+export type CiekawostkaDoPokazania = { id: string; tekst: string; href: string; zrodlo: string };

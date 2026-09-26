@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { ButtonLink } from '@/components/ButtonLink';
 import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/ds';
+import { Ciekawostka } from '@/components/Ciekawostka';
 import { LessonComplete } from '@/components/LessonComplete';
 import { LessonMedia } from '@/components/LessonMedia';
 import { Markdown } from '@/components/Markdown';
-import { czytajMarkdown, gotoweModuly, przygotujLekcje, znajdzModul } from '@/lib/content';
+import { ciekawostkiDla, czytajMarkdown, gotoweModuly, przygotujLekcje, znajdzModul } from '@/lib/content';
 
 export const dynamicParams = false;
 
@@ -42,6 +43,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
       />
       <Markdown source={lekcjaMd.md} baseDir={`moduly/${slug}`} />
       <LessonMedia ids={lekcjaMd.wszystkie} juzPokazane={lekcjaMd.wNaglowkach} />
+      <Ciekawostka {...ciekawostkiDla({ modul: slug, lekcja })} />
       <LessonComplete modul={slug} lekcja={lekcja} ostatnia={!nastepna} />
       <nav className="lesson-nav" aria-label="Nawigacja lekcji">
         {poprzednia ? (

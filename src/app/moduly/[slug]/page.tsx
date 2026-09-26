@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { ButtonLink } from '@/components/ButtonLink';
+import { Ciekawostka } from '@/components/Ciekawostka';
 import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/ds';
 import { Markdown } from '@/components/Markdown';
-import { czytajMarkdown, gotoweModuly, znajdzModul } from '@/lib/content';
+import { ciekawostkiDla, czytajMarkdown, gotoweModuly, znajdzModul } from '@/lib/content';
 
 export const dynamicParams = false;
 
@@ -28,6 +29,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
     <div className="page page--reading">
       <Breadcrumbs items={[{ label: 'Start', href: '/' }, { label: `${modul.id} · ${modul.tytul}` }]} />
       <Markdown source={source} baseDir={`moduly/${slug}`} />
+      <Ciekawostka {...ciekawostkiDla({ modul: slug })} />
       {pierwsza && (
         <nav className="lesson-nav" aria-label="Nawigacja modułu">
           <span />

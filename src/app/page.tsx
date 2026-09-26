@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { Ciekawostka } from '@/components/Ciekawostka';
 import { ChecklistSummary } from '@/components/ChecklistSummary';
 import { Badge, Card } from '@/components/ds';
-import { gatunki, moduly, sciezki } from '@/lib/content';
+import { ciekawostkiDla, gatunki, moduly, sciezki } from '@/lib/content';
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
           Polskę, południe Hiszpanii i Cieśninę Gibraltarską.
         </p>
       </div>
+
+      <Ciekawostka {...ciekawostkiDla()} />
 
       <ChecklistSummary ids={gatunki.map((g) => g.id)} />
 

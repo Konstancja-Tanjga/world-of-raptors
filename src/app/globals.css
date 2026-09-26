@@ -499,3 +499,35 @@ body {
   justify-content: space-between;
   gap: var(--bh-gap-snug);
 }
+
+/* Rotating "Ciekawostka" card */
+.ciekawostka {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  padding: var(--bh-padding-block) var(--bh-padding-inline);
+  background: var(--bh-status-info-bg);
+  border: 1px solid var(--bh-status-info-border);
+  border-radius: var(--bh-radius-surface);
+}
+.ciekawostka__tytul {
+  margin: 0;
+  font-size: var(--bh-text-size-label);
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-status-info-fg);
+  text-transform: uppercase;
+}
+.ciekawostka__tekst {
+  margin: 0;
+  font-size: var(--bh-text-size-body);
+  line-height: var(--bh-text-leading-normal);
+  color: var(--bh-text-primary);
+}
+.ciekawostka__stopka {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug);
+  font-size: var(--bh-text-size-dense);
+}
