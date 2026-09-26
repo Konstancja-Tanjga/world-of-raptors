@@ -6,7 +6,7 @@ import { dzisiaj, utworzMagazyn } from './magazyn';
 /** Finished lessons, keyed "modul/lekcja", valued with the local date (YYYY-MM-DD) finished. */
 export type Postep = Record<string, string>;
 
-function isPostep(value: unknown): value is Postep {
+export function isPostep(value: unknown): value is Postep {
   return (
     typeof value === 'object' &&
     value !== null &&
@@ -35,5 +35,7 @@ export function usePostep() {
     return magazyn.zapisz(next);
   }, []);
 
-  return { postep, ustaw };
+  const zastapPostep = useCallback((next: Postep) => magazyn.zapisz(next), []);
+
+  return { postep, ustaw, zastapPostep };
 }

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useChecklista } from '@/lib/checklist';
 import { Card, Checkbox, StateBlock } from './ds';
+import { OwnPhotos } from './OwnPhotos';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 /** The checklist entry for one species, shown on its atlas card. */
@@ -32,6 +33,7 @@ export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string })
           Otwórz checklistę
         </Link>
       </div>
+      <OwnPhotos gatunek={id} nazwa={nazwa} />
     </Card>
   );
 }

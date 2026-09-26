@@ -25,6 +25,15 @@ U dużych drapieżników **młode wyglądają inaczej niż dorosłe**, czasem pr
 - **Ogólna zasada:** młode często mają **równiejszą tylną krawędź skrzydła** (wszystkie pióra z jednego pokolenia), a dorosłe **wyraźniejszy pas końcowy** i czasem „schodkową” krawędź, bo pierzą się stopniowo.
 - **Pierzenie:** brakujące lotki widać latem jako „dziury” w skrzydle. Symetryczne dziury w obu skrzydłach to pierzenie, nie uszkodzenie.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/An_adult_and_a_juvenile_white-tailed_eagle_%28Haliaeetus_albicilla%29_fighting.jpg/960px-An_adult_and_a_juvenile_white-tailed_eagle_%28Haliaeetus_albicilla%29_fighting.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" alt="Kilka bielików na ziemi i w powietrzu; jeden ptak ma biały ogon i jasną głowę, pozostałe są ciemnobrązowe i pstre" podpis="Bieliki na zimowisku w Polsce: dorosły z białym ogonem i jasną głową wśród ciemnych, pstrych młodych" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:An_adult_and_a_juvenile_white-tailed_eagle_(Haliaeetus_albicilla)_fighting.jpg">
+</zdjecie>
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Aquila_chrysaetos_USFWS.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1319" alt="Ciemny orzeł w locie od spodu, z dużymi białymi plamami u nasady lotek i białym ogonem zakończonym czarnym pasem" podpis="Młody orzeł przedni (pierwsza zima): białe plamy na skrzydłach i biały ogon z czarnym pasem końcowym" autor="Dewhurst, Donna" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_USFWS.jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/20240508_broad_winged_hawk_south_meadows_PD203773.jpg/960px-20240508_broad_winged_hawk_south_meadows_PD203773.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="960" alt="Ptak drapieżny w locie od spodu; w obu skrzydłach brakuje kilku lotek, a w środku ogona jest przerwa" podpis="Pierzenie: symetryczne luki w lotkach obu skrzydeł i „rozdwojony” ogon (myszołów szerokoskrzydły, gatunek amerykański)" autor="Paul Danese" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:20240508_broad_winged_hawk_south_meadows_PD203773.jpg">
+</zdjecie>
+
 ## Płeć
 - U **większości drapieżników samica jest większa** od samca, najbardziej u krogulca, gdzie samica bywa prawie dwa razy cięższa.
 - U niektórych gatunków płci różnią się kolorami: **błotniaki** (samce szare, samice brązowe), **pustułka** (samiec z szarą głową i ogonem), **krogulec** (samiec z rudymi policzkami).
@@ -35,6 +44,12 @@ Niektóre gatunki mają osobniki jasne, pośrednie i ciemne:
 - **myszołów:** od prawie białych do czekoladowych,
 - **trzmielojad:** jeszcze większa zmienność,
 - **orzełek włochaty:** wyraźna odmiana jasna i ciemna.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Common_Buzzard_%28Buteo_buteo%29%2C_Aldringen%2C_Eastern_Belgium_%286778246611%29.jpg/960px-Common_Buzzard_%28Buteo_buteo%29%2C_Aldringen%2C_Eastern_Belgium_%286778246611%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Myszołów o jasnej, białawej piersi siedzący na gałęzi na tle szarego nieba" podpis="Jasny myszołów: biała pierś z brązowymi plamami" autor="Frank Vassen from Brussels, Belgium" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_Buzzard_(Buteo_buteo),_Aldringen,_Eastern_Belgium_(6778246611).jpg">
+</zdjecie>
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Buteo_buteo_-Butterfly_and_Wildlife_Park%2C_Lincolnshire-8a.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1440" alt="Ciemnobrązowy myszołów siedzący na drewnianym płocie" podpis="Ciemny myszołów: prawie jednolicie czekoladowy, a to ten sam gatunek" autor="Martin Pettitt" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_buteo_-Butterfly_and_Wildlife_Park,_Lincolnshire-8a.jpg">
+</zdjecie>
 
 Dlatego u tych gatunków **nie opieraj się na kolorze**, tylko na sylwetce, proporcjach i wzorze ogona.
 

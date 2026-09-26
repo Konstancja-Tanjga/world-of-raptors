@@ -50,6 +50,9 @@ Wyobraź sobie trzy dni pod koniec sierpnia na punkcie obserwacyjnym nad Bosfore
 ## 4. Ćwiczenie: myszołów latem i zimą
 Zimą widzisz myszołowa na słupie przy polu. Wypisz trzy możliwości, skąd może pochodzić ten ptak (np. miejscowy ptak osiadły, przybysz ze Skandynawii, ptak w drodze dalej na zachód). Jak można by to sprawdzić? Podpowiedź: lekcja 4.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Buse_variable_et_Beaufortain_enneig%C3%A9_%28janvier_2026%29.JPG/960px-Buse_variable_et_Beaufortain_enneig%C3%A9_%28janvier_2026%29.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="725" alt="Myszołów siedzi na drewnianym słupku ogrodzenia, w tle ośnieżone góry i błękitne niebo" podpis="Myszołów na słupku w styczniu, w ośnieżonej Sabaudii (Francja): czy to ptak miejscowy, czy przybysz z północy?" autor="Florian Pépellin" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Buse_variable_et_Beaufortain_enneig%C3%A9_(janvier_2026).JPG">
+</zdjecie>
+
 ## Projekt: „Mój dzień na przelocie”
 Wybierz jeden wariant.
 

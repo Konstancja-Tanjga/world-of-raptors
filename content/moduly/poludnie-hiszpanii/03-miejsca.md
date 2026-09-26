@@ -17,6 +17,18 @@
 | **Stepy Almerii** (np. Cabo de Gata, Tabernas) | półpustynia | kurhannik, orzeł południowy, pustułeczka | cały rok |
 | **Arcos de la Frontera** i inne „białe miasteczka” | miasto | pustułeczka | III–VIII |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Pinar_de_la_algaida_sanl%C3%BAcar_de_barrameda.jpg/960px-Pinar_de_la_algaida_sanl%C3%BAcar_de_barrameda.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Piaszczysta droga między rozłożystymi sosnami pinia, nad nimi kłębiaste chmury" podpis="Pinar de la Algaida koło Sanlúcar de Barrameda: sosnowe lasy na skraju marismy to część Doñany" autor="Antonio M. Romero Dorado" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Pinar_de_la_algaida_sanl%C3%BAcar_de_barrameda.jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Cazorla_%2814277746254%29.jpg/960px-Cazorla_%2814277746254%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Skalisty klif nad głęboką doliną porośniętą lasem sosnowym, w tle pasma gór" podpis="Sierra de Cazorla: wapienne klify nad lasami sosnowymi, dom orłosępa, sępa płowego i orła przedniego" autor="Jorge Cancela" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Cazorla_(14277746254).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Male_Iberian_Lynx_%28Lynx_pardinus%29%2C_La_Lancha%2C_Parque_natural_de_la_Sierra_de_And%C3%BAjar%2C_Espa%C3%B1a_%2832609200053%29.jpg/960px-Male_Iberian_Lynx_%28Lynx_pardinus%29%2C_La_Lancha%2C_Parque_natural_de_la_Sierra_de_And%C3%BAjar%2C_Espa%C3%B1a_%2832609200053%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="629" alt="Cętkowany ryś z pędzelkami na uszach leży na trawie przy omszałych głazach" podpis="Ryś iberyjski w Sierra de Andújar: dehesa, w której żyją także orły iberyjskie i sępy kasztanowate" autor="Frank Vassen from Brussels, Belgium" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Male_Iberian_Lynx_(Lynx_pardinus),_La_Lancha,_Parque_natural_de_la_Sierra_de_And%C3%BAjar,_Espa%C3%B1a_(32609200053).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Almeria_02.jpg/960px-Almeria_02.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="536" alt="Sucha, płaska równina porośnięta niskimi krzewami, w tle niskie wzgórza pod błękitnym niebem" podpis="Pustynia Tabernas koło Almerii: półpustynne stepy, teren kurhannika i orła południowego" autor="Graeme Maclean" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Almeria_02.jpg">
+</zdjecie>
+
 ## Trzy przykładowe trasy
 
 ### 1. „Wielka piątka gór” (3–4 dni)
@@ -32,6 +44,11 @@ Tarifa (przelot) → La Janda → Doñana. Największa różnorodność w najkr�
 - Kolonie sępów i gniazda orłów są chronione. Obserwuj tylko z wyznaczonych punktów i ścieżek.
 - W parkach narodowych (np. Doñana) obowiązują strefy zamknięte. Do części terenów wejdziesz tylko z licencjonowanym przewodnikiem.
 - Nie publikuj dokładnych lokalizacji gniazd gatunków rzadkich (orzeł iberyjski, orłosęp).
+
+## Filmy
+- [YouTube: Sierra de Andújar: orły iberyjskie i rysie](https://www.youtube.com/results?search_query=Sierra+de+Andujar+imperial+eagle+lynx)
+- [YouTube: orłosęp w Sierra de Cazorla](https://www.youtube.com/results?search_query=bearded+vulture+Cazorla)
+- [YouTube: ptaki Doñany](https://www.youtube.com/results?search_query=Donana+birdwatching)
 
 ## Źródła
 - [SEO/BirdLife](https://seo.org/): hiszpańskie towarzystwo ornitologiczne, informacje o gatunkach i miejscach

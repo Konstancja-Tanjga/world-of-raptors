@@ -2,7 +2,11 @@
 
 import Link from 'next/link';
 import { useMemo, useRef, useState } from 'react';
-import { dzisiaj, isChecklista, useChecklista, type Checklista } from '@/lib/checklist';
+import { dzisiaj, useChecklista } from '@/lib/checklist';
+import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
+import { usePostep } from '@/lib/postep';
+import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
+import { OwnPhotos } from './OwnPhotos';
 import type { Gatunek } from '@/lib/types';
 import {
   Button,
@@ -27,6 +31,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const fileInput = useRef<HTMLInputElement>(null);
   const { notify } = useToast();
   const sprawdzZapis = useOstrzezenieZapisu();
+  const { postep, zastapPostep } = usePostep();
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
@@ -47,34 +52,95 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const liczba = Object.keys(lista).filter((id) => znane.has(id)).length;
   const wFiltrze = wynik.filter((g) => lista[g.id]).length;
 
-  const eksportuj = () => {
-    const blob = new Blob([JSON.stringify(lista, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `checklista-${dzisiaj()}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const importuj = async (file: File) => {
+  const eksportuj = async () => {
     try {
-      const parsed: unknown = JSON.parse(await file.text());
-      if (!isChecklista(parsed)) throw new Error('format');
-      sprawdzZapis(zastap(parsed as Checklista));
-      notify({
-        tone: 'success',
-        title: 'Checklista zaimportowana',
-        description: `Wczytano ${Object.keys(parsed).length} obserwacji.`,
-      });
-    } catch {
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {});
+      const url = URL.createObjectURL(plik);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `checklista-${dzisiaj()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      if (bezZdjec) {
+        notify({
+          tone: 'warning',
+          title: 'Kopia bez zdjęć',
+          description:
+            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Import tego pliku nie usunie zdjęć na innym urządzeniu.',
+          duration: null,
+        });
+      }
+    } catch (err) {
+      console.error('[kopia] export failed', err);
       notify({
         tone: 'critical',
-        title: 'Nie udało się zaimportować pliku',
-        description: 'Wybierz plik JSON wyeksportowany z tej checklisty.',
+        title: 'Nie udało się utworzyć pliku kopii',
+        description: 'Spróbuj jeszcze raz. Jeśli zdjęć jest bardzo dużo, przeglądarce mogło zabraknąć pamięci.',
         duration: null,
       });
     }
+  };
+
+  // Order matters: validate everything, then write photos (most likely to
+  // fail, and aborted atomically), then progress, then the checklist.
+  const importuj = async (file: File) => {
+    let kopia: OdczytanaKopia;
+    try {
+      kopia = await odczytajKopie(await file.text());
+    } catch (err) {
+      console.error('[kopia] invalid backup', err);
+      notify({
+        tone: 'critical',
+        title: 'Nie udało się zaimportować pliku',
+        description: `${err instanceof NiepoprawnaKopia ? err.message[0].toUpperCase() + err.message.slice(1) : 'Nie udało się odczytać pliku'}. Nic nie zostało zmienione.`,
+        duration: null,
+      });
+      return;
+    }
+
+    if (kopia.zdjecia) {
+      try {
+        await zastapZdjecia(kopia.zdjecia);
+      } catch (err) {
+        console.error('[kopia] could not store photos', err);
+        notify({
+          tone: 'critical',
+          title: 'Nie udało się zapisać zdjęć z kopii',
+          description:
+            err instanceof DOMException && err.name === 'QuotaExceededError'
+              ? 'Brak miejsca w pamięci przeglądarki. Nic nie zostało zmienione: checklista, postęp i dotychczasowe zdjęcia są bez zmian.'
+              : 'Przeglądarka odmówiła zapisu. Nic nie zostało zmienione: checklista, postęp i dotychczasowe zdjęcia są bez zmian.',
+          duration: null,
+        });
+        return;
+      }
+    }
+
+    const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
+    const checklistaOk = zastap(kopia.checklista);
+    const nieZapisane = [!checklistaOk && 'checklisty', !postepOk && 'postępu nauki'].filter(Boolean);
+    const wczytano = [
+      `${Object.keys(kopia.checklista).length} obserwacji`,
+      kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
+      kopia.postep ? 'postęp nauki' : null,
+    ].filter(Boolean);
+    const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)'].filter(
+      Boolean,
+    );
+    notify({
+      tone: nieZapisane.length ? 'warning' : 'success',
+      title: nieZapisane.length ? 'Kopia zaimportowana częściowo' : 'Kopia zaimportowana',
+      description: [
+        `Wczytano: ${wczytano.join(', ')}.`,
+        pominiete.length ? `Plik nie zawierał ${pominiete.join(' ani ')}.` : '',
+        nieZapisane.length
+          ? `Przeglądarka nie zapisała ${nieZapisane.join(' ani ')}: te zmiany znikną po odświeżeniu.`
+          : '',
+      ]
+        .filter(Boolean)
+        .join(' '),
+      duration: nieZapisane.length ? null : undefined,
+    });
   };
 
   return (
@@ -163,6 +229,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
                           />
                         </div>
                       )}
+                      {obs && <OwnPhotos gatunek={g.id} nazwa={g.pl} edycja />}
                     </Card>
                   </li>
                 );
@@ -177,11 +244,12 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista jest zapisana w tej przeglądarce. Eksportuj ją co jakiś czas, żeby nie stracić
-          obserwacji, i importuj, żeby przenieść ją na inne urządzenie.
+          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Eksportuj
+          je co jakiś czas do jednego pliku, żeby ich nie stracić, i importuj, żeby przenieść je na
+          inne urządzenie.
         </p>
         <div className="row">
-          <Button variant="secondary" onClick={eksportuj}>
+          <Button variant="secondary" onClick={() => void eksportuj()}>
             Eksportuj do pliku
           </Button>
           <Button variant="secondary" onClick={() => fileInput.current?.click()}>

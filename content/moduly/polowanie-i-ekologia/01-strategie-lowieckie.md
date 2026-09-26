@@ -9,12 +9,18 @@ Ptak siedzi na słupie, drzewie albo skarpie i obserwuje teren. Kiedy wypatrzy o
 - Myszołów często chodzi też po świeżo zaoranym polu i zbiera **dżdżownice**, a po deszczu wyłapuje je na łąkach.
 - Z posterunku polują też pustułka (zwłaszcza zimą), jastrząb i wiele sów.
 
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/7/75/Anyone_know_the_way_to_Staffin%5E_-_geograph.org.uk_-_1051005.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="656" alt="Ciemny myszołów siedzi na szczycie białej tablicy drogowej z nazwą miejscowości" podpis="Myszołów czatuje na znaku drogowym na wyspie Skye: przydrożne słupy i znaki to typowe posterunki" autor="Richard Dorrell" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Anyone_know_the_way_to_Staffin%5E_-_geograph.org.uk_-_1051005.jpg">
+</zdjecie>
+
 ## 2. Zawisanie
 Ptak trzepocze skrzydłami w miejscu, pod wiatr, z nieruchomą głową. Z wysokości kilku–kilkunastu metrów przeczesuje wzrokiem trawę, a potem opada etapami i rzuca się na zdobycz.
 
 - **Pustułka** (*Falco tinnunculus*, ang. Common Kestrel) jest mistrzynią zawisania. Głowa pozostaje prawie nieruchoma, nawet gdy ciało kołysze się na wietrze.
 - Zawisają też **myszołów włochaty** (*Buteo lagopus*, ang. Rough-legged Buzzard; zimą w Polsce), **gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle), **kaniuk** (*Elanus caeruleus*, ang. Black-winged Kite), a czasem myszołów.
 - Przy silnym wietrze zawisanie jest tańsze, bo ptak może się „położyć” na wietrze i prawie nie machać skrzydłami.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Common_kestrel_hovering_in_flight_near_Bad_Urach_%282026%29.jpg/960px-Common_kestrel_hovering_in_flight_near_Bad_Urach_%282026%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="526" alt="Pustułka wisi w powietrzu z rozłożonymi skrzydłami i wachlarzem ogona na tle rozmytej zieleni" podpis="Pustułka w zawisie: rozpostarte skrzydła i szeroko rozłożony ogon utrzymują ją w miejscu nad łąką" autor="Paul Colin Hennig firstdorsal.eu" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering_in_flight_near_Bad_Urach_(2026).jpg">
+</zdjecie>
 
 > 💡 Holenderskie badania pustułek (Rijnsdorp, Daan i współpracownicy) pokazały, że polowanie z zawisania kosztuje wielokrotnie więcej energii na minutę niż czatowanie z posterunku, ale daje więcej upolowanych norników na godzinę. Pustułki przełączają się między obiema metodami zależnie od pogody i pory roku: zimą, gdy liczy się każda kaloria, częściej siedzą.
 
@@ -47,10 +53,16 @@ Ptak leci wolno, kilka metrów nad trzcinami, łąką albo polem, i przeczesuje 
 - Kobuz wyprowadza lęgi późno, w lipcu i sierpniu, kiedy w powietrzu jest najwięcej młodych, niedoświadczonych jaskółek i wróbli.
 - Owadami żywi się też **pustułeczka** (*Falco naumanni*, ang. Lesser Kestrel) w Hiszpanii: łapie szarańczaki i chrząszcze na ziemi i w locie.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/On_Target_%2818992198614%29.jpg/960px-On_Target_%2818992198614%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Mały sokół z wyciągniętymi do przodu nogami dotyka szponami tafli wody" podpis="Młody kobuz chwyta stopami ważkę tuż nad powierzchnią jeziora" autor="Andy Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:On_Target_(18992198614).jpg">
+</zdjecie>
+
 ## 7. Nurkowanie do wody
 - **Rybołów** (*Pandion haliaetus*, ang. Osprey) krąży lub zawisa nad wodą, a potem wpada do niej **nogami naprzód**, czasem prawie cały znika pod powierzchnią.
 - Ma kolce na spodzie palców, odwracalny palec zewnętrzny (chwyt dwa na dwa, jak sowy) i nozdrza, które zamyka pod wodą.
 - Należy do skuteczniejszych łowców: w wielu badaniach udane było mniej więcej co trzecie–czwarte nurkowanie albo więcej, ale wyniki silnie zależą od wody i pogody.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Osprey_-_Rutland_Water_%284738686521%29.jpg/960px-Osprey_-_Rutland_Water_%284738686521%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rybołów z rozłożonymi skrzydłami na powierzchni wody przy kamienistym brzegu" podpis="Rybołów na jeziorze Rutland Water tuż po nurkowaniu: siedzi w wodzie z uniesionymi skrzydłami, zanim się z niej wybije" autor="Tim Felce (Airwolfhound)" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Osprey_-_Rutland_Water_(4738686521).jpg">
+</zdjecie>
 
 ## Podsumowanie
 
@@ -69,6 +81,19 @@ Większość polowań kończy się **porażką**. Skuteczność bardzo się ró�
 - łowcy ptaków (krogulec, jastrząb, sokół wędrowny) mają zwykle niską skuteczność: w różnych badaniach od kilku do kilkudziesięciu procent ataków,
 - łowcy gryzoni i ryb radzą sobie zwykle lepiej,
 - młode ptaki w pierwszej jesieni polują znacznie gorzej niż dorosłe, a wiele z nich nie przeżywa pierwszej zimy.
+
+## Filmy
+- [YouTube: pustułka zawisa i poluje na norniki](https://www.youtube.com/results?search_query=kestrel+hovering+hunting+vole)
+- [YouTube: sokół wędrowny pikuje na ptaka](https://www.youtube.com/results?search_query=peregrine+falcon+stoop+hunting)
+- [YouTube: krogulec atakuje przy karmniku](https://www.youtube.com/results?search_query=sparrowhawk+attack+bird+feeder)
+- [YouTube: rybołów nurkuje po rybę](https://www.youtube.com/results?search_query=osprey+diving+catching+fish)
+
+## Źródła
+- Rijnsdorp A., Daan S., Dijkstra C. (1981). Hunting in the kestrel, *Falco tinnunculus*, and the adaptive significance of daily habits. *Oecologia* 50: 391–406.
+- Newton I. (1986). *The Sparrowhawk*. T & A D Poyser.
+- Ratcliffe D. (1993). *The Peregrine Falcon*. 2nd ed. T & A D Poyser.
+- [Wikipedia: Bird of prey, sekcja o polowaniu](https://en.wikipedia.org/wiki/Bird_of_prey)
+- [Birds of the World (Cornell Lab of Ornithology)](https://birdsoftheworld.org)
 
 ## Mini-quiz
 1. Dlaczego pustułka zimą częściej czatuje, a latem częściej zawisa?

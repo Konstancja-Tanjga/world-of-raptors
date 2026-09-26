@@ -463,3 +463,35 @@ body {
 .cues__source {
   font-size: var(--bh-text-size-dense);
 }
+
+/* My own photos (IndexedDB) on checklist entries and species pages */
+.own-photos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  padding-block-start: var(--bh-gap-normal);
+}
+.own-photos__title {
+  margin: 0;
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.own-photos__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: var(--bh-gap-normal);
+}
+.own-photos__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+.own-photos__item .photo__caption {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug);
+}

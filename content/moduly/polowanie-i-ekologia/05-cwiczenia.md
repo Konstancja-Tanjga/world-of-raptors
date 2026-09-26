@@ -56,6 +56,9 @@ Do każdego gatunku przypisz główną strategię łowiecką (niektóre strategi
 4. Zrób tabelę: grupa ofiar, liczba osobników, procent wszystkich ofiar.
 5. Odpowiedz: która grupa dominuje? Czy wynik pasuje do siedliska, w którym zebrałaś wypluwki (pola, łąki, las)?
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Uszatka_na_zimowisku.jpg/960px-Uszatka_na_zimowisku.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1344" alt="Sowa z długimi pęczkami piór na głowie i pomarańczowymi oczami siedzi ukryta między gałęziami świerka" podpis="Uszatka na zimowisku w Polsce: pod drzewami, na których zimą nocują uszatki, zbiera się najwięcej wypluwek" autor="Aneta p" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Uszatka_na_zimowisku.jpg">
+</zdjecie>
+
 ## 4. Projekt: „Dziennik polowań”
 Przez co najmniej **3 wyjścia w teren** zapisuj każde zachowanie łowieckie, które zobaczysz.
 

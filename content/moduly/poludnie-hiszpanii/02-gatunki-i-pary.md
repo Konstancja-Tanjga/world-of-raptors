@@ -41,6 +41,9 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 | Białe plamy | **na skrzydłach i ogonie** | brak | brak |
 | Ogon | biały z czarnym pasem | ciemny | jasny, drobno prążkowany |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Adalberti_1.jpg/960px-Adalberti_1.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Orzeł w locie od spodu: jasnopłowy tułów i przód skrzydeł, ciemne lotki i ogon" podpis="Młody orzeł iberyjski: płowy tułów i pokrywy, ciemne lotki, bez białych plam jak u młodego orła przedniego" autor="Juan lacruz" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Adalberti_1.jpg">
+</zdjecie>
+
 ---
 
 ## B. Orłosęp i jego „sobowtóry”
@@ -61,12 +64,21 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 | Ogon | **długi, klinowaty** | klinowaty, krótszy | **bardzo krótki** |
 | Dorosły | rdzawy spód, ciemny wierzch | biało-czarny | płowy |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/010e_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg/960px-010e_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1200" alt="Orłosęp w locie na tle skalnego zbocza, z rdzawopomarańczowym spodem i długim ogonem" podpis="Orłosęp z kawałkiem padliny w szponach: długie, wąskie skrzydła, klinowaty ogon i rdzawy spód" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:010e_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_(Switzerland)_Photo_by_Giles_Laurent.jpg">
+</zdjecie>
+
 ---
 
 ## C. Sęp kasztanowaty w Sierra Morena
 
 Pełna karta: [moduł o cieśninie, sekcja D](../gibraltar/03-gatunki-i-pary.md). W cieśninie jest rzadkością, ale w **Sierra Morena** (Andújar, Hornachuelos) gniazduje w koloniach **na drzewach**, nie na skałach jak sęp płowy.
 - **Klucz:** jednolicie ciemny, skrzydła **płasko jak deska**, lekko klinowaty ogon.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/6_Aegypius_monachus%2C_2_Gyps_fulvus.jpg/960px-6_Aegypius_monachus%2C_2_Gyps_fulvus.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Kilka dużych, ciemnych sępów stoi na zielonym pastwisku we mgle, między nimi dwa jaśniejsze" podpis="Sześć ciemnych sępów kasztanowatych i dwa jaśniejsze sępy płowe na pastwisku na północ od Madrytu" autor="antlewis" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:6_Aegypius_monachus,_2_Gyps_fulvus.jpg">
+</zdjecie>
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Aegypius_monachus_%28RPS_27-08-2023%29_buitre_negro.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1559" alt="Ciemna sylwetka sępa w locie od spodu na tle jasnego nieba, z długimi, prostymi skrzydłami" podpis="Sęp kasztanowaty od spodu: jednolicie ciemny, skrzydła szerokie jak deska" autor="Raimundo Pastor" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Aegypius_monachus_(RPS_27-08-2023)_buitre_negro.png">
+</zdjecie>
 
 ---
 
@@ -87,6 +99,9 @@ Pełna karta: [moduł o cieśninie, sekcja D](../gibraltar/03-gatunki-i-pary.md)
 | Pokrywy podogonowe | białe, puszyste, wyraźne | mniej widoczne |
 
 > ⚠️ Samica krogulca i samiec jastrzębia mogą mieć podobną wielkość. Wtedy rozstrzyga kształt: ogon, głowa i proporcje skrzydeł.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Accipiter_gentilis_265902467.jpg/960px-Accipiter_gentilis_265902467.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Szary jastrząb w locie od spodu z rozpostartymi, drobno prążkowanymi skrzydłami" podpis="Jastrząb od spodu: masywny tułów, wysunięta głowa i jasne pokrywy podogonowe" autor="Кучкаев Марат" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Accipiter_gentilis_265902467.jpg">
+</zdjecie>
 
 ---
 
@@ -111,3 +126,15 @@ Pełna karta: [moduł o cieśninie, sekcja D](../gibraltar/03-gatunki-i-pary.md)
 5. **Ciemny orzeł z białymi epoletami?** → orzeł iberyjski (dorosły)
 6. **Płowy orzeł z ciemnymi lotkami?** → młody orzeł iberyjski
 7. **Ciemny orzeł, skrzydła w „S”, lekkie V, może z białymi plamami?** → orzeł przedni
+
+## Filmy
+- [YouTube: orzeł iberyjski w locie](https://www.youtube.com/results?search_query=Spanish+imperial+eagle+flight)
+- [YouTube: orłosęp zrzucający kości](https://www.youtube.com/results?search_query=bearded+vulture+dropping+bones)
+- [YouTube: sęp kasztanowaty i sęp płowy](https://www.youtube.com/results?search_query=cinereous+vulture+griffon+vulture+Spain)
+- [YouTube: jastrząb a krogulec, rozpoznawanie](https://www.youtube.com/results?search_query=goshawk+vs+sparrowhawk+identification)
+
+## Źródła
+- [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków (część treści płatna)
+- [Wikipedia: Orzeł iberyjski](https://pl.wikipedia.org/wiki/Orze%C5%82_iberyjski) i [Orłosęp](https://pl.wikipedia.org/wiki/Or%C5%82os%C4%99p)
+- [SEO/BirdLife](https://seo.org): hiszpańskie towarzystwo ornitologiczne
+- Forsman D., *Flight Identification of Raptors of Europe, North Africa and the Middle East*

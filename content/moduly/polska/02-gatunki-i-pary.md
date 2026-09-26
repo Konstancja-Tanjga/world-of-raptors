@@ -29,6 +29,9 @@ Pełna karta: [moduł o południu Hiszpanii](../poludnie-hiszpanii/02-gatunki-i-
 | Ułożenie skrzydeł | płasko | lekkie V |
 | Siedlisko | woda, niziny | góry |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg/960px-Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="587" alt="Dorosły bielik w locie nisko nad łąką, z szeroko rozpostartymi skrzydłami, żółtym dziobem i białym ogonem" podpis="Dorosły bielik w centralnej Polsce: ogromny żółty dziób, jasna głowa i biały, klinowaty ogon" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Adult_white-tailed_eagle_(Haliaeetus_albicilla)_of_central_Poland_in_flight_(2).jpg">
+</zdjecie>
+
 ### Orlik krzykliwy — *Clanga pomarina* (ang. Lesser Spotted Eagle) 🏠
 - **Rozpiętość:** ok. 135–160 cm
 - **Sylwetka:** mały orzeł, wielkości dużego myszołowa, ale z **dłuższymi, bardziej prostokątnymi skrzydłami**, 7 „palcami” i **krótkim ogonem**. Szybuje z **lekko opuszczoną „ręką”**.
@@ -72,6 +75,9 @@ Pełna karta: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md)
 | Zawisanie | rzadko | **często** |
 | Sezon | cały rok | tylko zimą |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Buteo_lagopus_%2845356682994%29.jpg/960px-Buteo_lagopus_%2845356682994%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="639" alt="Jasny myszołów w locie na tle błękitnego nieba, z ciemnym brzuchem i ciemnymi plamami na zgięciu skrzydeł" podpis="Myszołów włochaty od spodu: ciemna plama na brzuchu i duże, ciemne plamy nadgarstkowe na jasnym skrzydle (Kanada)" autor="David A Mitchell from Calgary, Canada" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_lagopus_(45356682994).jpg">
+</zdjecie>
+
 ### Trzmielojad — *Pernis apivorus* (ang. European Honey Buzzard) 🏠🔁
 Pełna karta i porównanie z myszołowem: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md). W Polsce od maja do sierpnia, lasy z polanami.
 
@@ -94,6 +100,9 @@ Pełne karty i porównania: [moduł o cieśninie, sekcje A i E](../gibraltar/03-
 Pełne porównanie: [moduł o południu Hiszpanii, sekcja D](../poludnie-hiszpanii/02-gatunki-i-pary.md).
 - **Krogulec** 🏠❄️: zimą często poluje przy karmnikach w miastach i na wsiach.
 - **Jastrząb** 🏠: lasy, coraz częściej także duże parki miejskie.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Accipiter_nisus_kill.jpg/960px-Accipiter_nisus_kill.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="746" alt="Szaroniebieski krogulec z rudymi policzkami stoi na żwirze i trzyma w szponach upolowanego ptaka" podpis="Samiec krogulca skubie zdobycz na podjeździe przed domem: rude policzki, prążkowana pierś, żółte szpony" autor="Eddy Van 3000" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Accipiter_nisus_kill.jpg">
+</zdjecie>
 
 ---
 
@@ -129,6 +138,9 @@ Pełna karta: [moduł o cieśninie, sekcja C](../gibraltar/03-gatunki-i-pary.md)
 
 ### ⚖️ Rybołów vs młody bielik nad jeziorem
 Rybołów jest dużo mniejszy, ma **biały spód**, skrzydła w „M” i ciemne nadgarstki. Młody bielik: ogromny, ciemny, skrzydła jak deska, masywna głowa.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Juvenile_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg/960px-Juvenile_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" alt="Ciemnobrązowy młody bielik w locie nisko nad ziemią, skrzydła rozpostarte na całą szerokość kadru" podpis="Młody bielik: ciemny i pstry, ale sylwetka ta sama, szerokie skrzydła jak deska i masywna głowa" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Juvenile_white-tailed_eagle_(Haliaeetus_albicilla)_of_central_Poland_in_flight_(2).jpg">
+</zdjecie>
 
 ---
 

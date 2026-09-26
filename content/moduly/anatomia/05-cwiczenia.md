@@ -39,6 +39,9 @@ W czasie najbliższego wyjścia w teren (albo przed kamerą na gnieździe) poszu
 3. **Sęp albo orzeł szybuje:** o której godzinie ptaki zaczęły krążyć? Jaka była pogoda?
 4. **Pełne wole:** jeśli zobaczysz ptaka z wyraźnym zgrubieniem na piersi, zanotuj gatunek i porę dnia.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Common_kestrel_hovering.jpg/960px-Common_kestrel_hovering.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rdzawa pustułka wisi w powietrzu z uniesionymi skrzydłami i szeroko rozłożonym ogonem, głowę trzyma skierowaną w dół" podpis="Pustułka w zawisie: skrzydła i rozłożony ogon pracują, a głowa pozostaje prawie nieruchoma" autor="Alexis LOURS" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering.jpg">
+</zdjecie>
+
 Zapisz notatki przy obserwacjach w [checkliście](/checklista).
 
 ## Projekt: „Karta anatomiczna gatunku”

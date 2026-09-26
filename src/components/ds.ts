@@ -15,6 +15,7 @@ export {
   Card,
   Checkbox,
   DescriptionList,
+  FileDropzone,
   FilterChip,
   Input,
   NavGroup,

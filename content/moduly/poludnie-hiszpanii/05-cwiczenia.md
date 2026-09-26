@@ -37,3 +37,6 @@ Zaplanuj 5–7 dni:
 3. Przy każdym miejscu wypisz gatunki „pewne”, „możliwe” i „marzenie”.
 4. Dodaj plan na upał lub deszcz.
 5. Po powrocie odhacz obserwacje w [checkliście](/checklista) i porównaj je z planem.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Campos_de_Hern%C3%A1n_Perea_-_Sierra_de_Cazorla_-_Spain.jpg/960px-Campos_de_Hern%C3%A1n_Perea_-_Sierra_de_Cazorla_-_Spain.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rozległy, kamienisty płaskowyż z rzadką roślinnością, w tle niskie góry" podpis="Campos de Hernán Perea, wysoki płaskowyż Sierra de Cazorla: dobry przystanek na trasie po Andaluzji" autor="Bouke ten Cate" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Campos_de_Hern%C3%A1n_Perea_-_Sierra_de_Cazorla_-_Spain.jpg">
+</zdjecie>

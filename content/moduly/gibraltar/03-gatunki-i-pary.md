@@ -56,6 +56,9 @@ Obie ciemnobrązowe. Błotniak: skrzydła w **wyraźne V**, ogon zaokrąglony (n
 | Lot aktywny | głębokie, elastyczne uderzenia | krótsze, sztywniejsze |
 | Sezon w cieśninie | masowo koniec VIII – pocz. IX | nieliczny |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_%2851408192504%29.jpg/960px-Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_%2851408192504%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Trzmielojad w locie od spodu na tle błękitnego nieba, z rozłożonym, prążkowanym ogonem" podpis="Trzmielojad od spodu: mała, wysunięta głowa i ogon z pasami, dwa wąskie u nasady i szeroki na końcu" autor="Pierre-Marie Epiney" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_(51408192504).jpg">
+</zdjecie>
+
 ### Kurhannik — *Buteo rufinus* (ang. Long-legged Buzzard) ⭐🏠
 Większy od myszołowa, długie skrzydła; dorosły z **rudawym, niemal nieprążkowanym ogonem** i jasną głową, ciemne plamy nadgarstkowe. W regionie coraz częściej spotykany (ekspansja z Afryki Północnej).
 
@@ -91,14 +94,26 @@ Większy od myszołowa, długie skrzydła; dorosły z **rudawym, niemal nieprą�
 | Głowa | brązowawa, pierzasta | naga, żółta twarz |
 | Od przodu | białe „światła do lądowania” | — |
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Booted_Eagle_%28Hieraaetus_pennatus%29_%2853435153609%29.jpg/960px-Booted_Eagle_%28Hieraaetus_pennatus%29_%2853435153609%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Orzełek w locie od spodu: biały tułów i przód skrzydeł, czarne lotki na tylnej krawędzi i końcach skrzydeł" podpis="Jasny orzełek włochaty: kremowobiały spód, czarne lotki i prosto ścięty, jaśniejszy ogon" autor="Birds of Gilgit-Baltistan from Aliabad, Hunza, Pakistan" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_(Hieraaetus_pennatus)_(53435153609).jpg">
+</zdjecie>
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/2/22/Egyptian_Vulture_%28Neophron_percnopterus%29_-_Flickr_-_Lip_Kee_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="768" alt="Biało-czarny ścierwnik w locie od spodu, z klinowatym ogonem i żółtą głową" podpis="Dorosły ścierwnik: biało-czarny jak jasny orzełek, ale z klinowatym białym ogonem i żółtą twarzą" autor="Lip Kee from Singapore, Republic of Singapore" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Egyptian_Vulture_(Neophron_percnopterus)_-_Flickr_-_Lip_Kee_(2).jpg">
+</zdjecie>
+
 ### ⚖️ Jasny orzełek vs gadożer
 Gadożer jest dużo większy, nie ma kontrastu „biały spód / czarne lotki” (lotki jasne z prążkami), ma ciemną głowę i zawisa. Orzełek: czarne lotki, kompaktowy, nie zawisa długo.
 
 ### ⚖️ Ciemny orzełek vs kania czarna
 Orzełek: ogon prosty i **jaśniejszy od ciała**, „światła do lądowania” także w ciemnej odmianie, jaśniejszy klin w skrzydle, sztywniejszy lot. Kania: ogon wcięty, dłuższe i węższe skrzydła, ciągle kręci ogonem.
 
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Booted_Eagle_I_IMG_3234.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Ciemnobrązowy orzełek w locie od spodu z rozpostartymi skrzydłami i jasnym, prosto ściętym ogonem" podpis="Ciemny orzełek włochaty: ciemnobrązowy spód, ale ogon wyraźnie jaśniejszy od ciała" autor="J.M.Garg" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_I_IMG_3234.jpg">
+</zdjecie>
+
 ### ⚖️ Gadożer vs rybołów
 Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: skrzydła płasko, brak ciemnych nadgarstków, ciemny kaptur, zawisa nad lądem.
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Circaetus_gallicus%28Short-toed_snake_eagle%29.jpg/960px-Circaetus_gallicus%28Short-toed_snake_eagle%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1242" alt="Gadożer w locie od spodu z jasnymi, gęsto prążkowanymi skrzydłami i ogonem" podpis="Gadożer od spodu: jasny, bez ciemnych plam nadgarstkowych, skrzydła i ogon w rzędach prążków" autor="Shino jacob koottanad" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Circaetus_gallicus(Short-toed_snake_eagle).jpg">
+</zdjecie>
 
 ---
 
@@ -219,3 +234,16 @@ Sowy regionu (puchacz, płomykówka, pójdźka, syczek, puszczyk, uszatka błotn
 8. **Skrzydła w „M”, nad wodą?** → rybołów
 9. **Ostre, spiczaste skrzydła?** → sokół (H)
 10. **Krótkie, okrągłe skrzydła, długi ogon, „uderzenia + ślizg”?** → krogulec
+
+## Filmy
+- [YouTube: orzełek włochaty, odmiana jasna i ciemna](https://www.youtube.com/results?search_query=booted+eagle+pale+dark+morph)
+- [YouTube: trzmielojad a myszołów w locie](https://www.youtube.com/results?search_query=honey+buzzard+vs+common+buzzard+flight)
+- [YouTube: sęp plamisty wśród sępów płowych](https://www.youtube.com/results?search_query=Ruppells+vulture+Spain+griffon)
+- [YouTube: kania czarna i kania ruda w locie](https://www.youtube.com/results?search_query=black+kite+red+kite+identification)
+
+## Źródła
+- [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków (część treści płatna)
+- [eBird: Andaluzja](https://ebird.org/region/ES-AN): aktualne obserwacje i hotspoty
+- [Wikipedia: Orzełek włochaty](https://pl.wikipedia.org/wiki/Orze%C5%82ek_w%C5%82ochaty) i [Trzmielojad](https://pl.wikipedia.org/wiki/Trzmielojad)
+- [xeno-canto](https://xeno-canto.org): nagrania głosów
+- Forsman D., *Flight Identification of Raptors of Europe, North Africa and the Middle East*
