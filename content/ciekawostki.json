@@ -1,0 +1,484 @@
+{
+  "uwaga": "Ciekawostki pokazywane rotacyjnie w aplikacji. Źródło: ramki 💡 z lekcji i zdania otwierające moduły. tekst: Markdown inline (**pogrubienie**, *kursywa*, [link](..) → sam tekst).",
+  "ciekawostki": [
+    {
+      "id": "anatomia-01-wzrok-0",
+      "tekst": "Głęboki dołek ma kształt lejka. Według jednej z hipotez działa trochę jak soczewka powiększająca: dodatkowo „rozciąga” obraz w najostrzejszym punkcie. To wyjaśnienie jest przekonujące, ale nie w pełni udowodnione.",
+      "modul": "anatomia",
+      "lekcja": "01-wzrok",
+      "gatunki": []
+    },
+    {
+      "id": "anatomia-02-szpony-stopy-dziob-1",
+      "tekst": "To jeden z powodów, dla których sokoły nie są „małymi jastrzębiami”. Genetycznie są bliżej papug niż jastrzębi, a podobny wygląd to efekt podobnego trybu życia. Więcej w [A1 · Kim są ptaki drapieżne?](../kim-sa-drapiezniki/README.md).",
+      "modul": "anatomia",
+      "lekcja": "02-szpony-stopy-dziob",
+      "gatunki": [
+        "jastrzab"
+      ]
+    },
+    {
+      "id": "anatomia-03-skrzydla-i-lot-3",
+      "tekst": "Duże sępy mają ogromne skrzydła, ale są też bardzo ciężkie. Dlatego zwykle startują dopiero wtedy, gdy słońce nagrzeje ziemię i pojawią się silne kominy termiczne. Rano częściej widać je siedzące na skałach. O kominach i wędrówce więcej w [A5 · Wędrówki](../wedrowki/README.md).",
+      "modul": "anatomia",
+      "lekcja": "03-skrzydla-i-lot",
+      "gatunki": []
+    },
+    {
+      "id": "anatomia-03-skrzydla-i-lot-4",
+      "tekst": "Sowy mają specjalną budowę piór wyciszającą lot (grzebyk, postrzępiona krawędź, aksamitna powierzchnia). Dzienne drapieżniki jej nie mają, bo ich zdobycz zwykle i tak widzi atak. Zobacz [moduł o sowach](../sowy/01-kim-sa-sowy.md).",
+      "modul": "anatomia",
+      "lekcja": "03-skrzydla-i-lot",
+      "gatunki": []
+    },
+    {
+      "id": "anatomia-04-trawienie-i-fizjologia-5",
+      "tekst": "Dziko żyjące orłosępy mają rdzawopomarańczową pierś, ale to nie jest kolor piór. Ptaki kąpią się w błocie bogatym w tlenki żelaza i same „farbują” pióra. Po co, nie wiadomo na pewno: możliwe, że to sygnał dla innych orłosępów.",
+      "modul": "anatomia",
+      "lekcja": "04-trawienie-i-fizjologia",
+      "gatunki": [
+        "orlosep"
+      ]
+    },
+    {
+      "id": "anatomia-04-trawienie-i-fizjologia-6",
+      "tekst": "W sokolnictwie samca sokoła nazywa się po angielsku *tercel*, od łacińskiego słowa „trzeci”. Tradycyjnie tłumaczy się to tym, że samiec jest mniej więcej o jedną trzecią mniejszy od samicy.",
+      "modul": "anatomia",
+      "lekcja": "04-trawienie-i-fizjologia",
+      "gatunki": []
+    },
+    {
+      "id": "gibraltar-01-ciesnina-7",
+      "tekst": "**La Milanada:** tak miejscowi nazywają zgromadzenia dziesiątek tysięcy kani czarnych czekających na dobre warunki do przelotu.",
+      "modul": "gibraltar",
+      "lekcja": "01-ciesnina",
+      "gatunki": [
+        "kania-czarna"
+      ]
+    },
+    {
+      "id": "gibraltar-01-ciesnina-8",
+      "tekst": "Ptaki wędrujące z Europy Środkowej i Wschodniej (także wiele z Polski) korzystają z innego „wąskiego gardła” — Bosforu i Bliskiego Wschodu. Gibraltar to głównie trasa ptaków z Europy Zachodniej, Francji i Półwyspu Iberyjskiego.",
+      "modul": "gibraltar",
+      "lekcja": "01-ciesnina",
+      "gatunki": []
+    },
+    {
+      "id": "gibraltar-01-ciesnina-9",
+      "tekst": "Przelot w lipcu to nie efekt zmian klimatu — bociany i kanie czarne po prostu wcześnie kończą lęgi. W odróżnieniu od innych „wąskich gardeł” cieśnina działa praktycznie **przez cały rok**.",
+      "modul": "gibraltar",
+      "lekcja": "01-ciesnina",
+      "gatunki": [
+        "kania-czarna"
+      ]
+    },
+    {
+      "id": "gibraltar-01-ciesnina-10",
+      "tekst": "Dorosłe ptaki zwykle wędrują wcześniej niż młode (jesienią), a młode, niedojrzałe osobniki niektórych gatunków (np. sępów) przelatują wiosną później lub zostają w Afryce na kilka lat.",
+      "modul": "gibraltar",
+      "lekcja": "01-ciesnina",
+      "gatunki": []
+    },
+    {
+      "id": "gibraltar-04-gdzie-i-kiedy-11",
+      "tekst": "Rano ptaki często czekają, aż słońce rozgrzeje ziemię i powstaną termiki — szczyt przelotu zwykle przypada **od późnego przedpołudnia do wczesnego popołudnia**.",
+      "modul": "gibraltar",
+      "lekcja": "04-gdzie-i-kiedy",
+      "gatunki": []
+    },
+    {
+      "id": "kim-sa-drapiezniki-01-co-czyni-drapieznika-12",
+      "tekst": "U podstawy dzioba większości drapieżników jest **woskówka**: miękka, bezpióra skórka, w której leżą nozdrza. Ma ją także… papuga. To jeden z drobnych tropów pokrewieństwa sokołów i papug.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "kim-sa-drapiezniki-01-co-czyni-drapieznika-13",
+      "tekst": "Srokosza czasem nazywa się „małym drapieżnikiem wśród wróblowych”. Nabite na cierń myszy i chrząszcze to jego „spiżarnia”. Jeśli widziałaś kiedyś chrząszcza nabitego na kolec głogu, był to prawdopodobnie ślad dzierzby.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "kim-sa-drapiezniki-02-drzewo-rodowe-14",
+      "tekst": "Jeśli szukasz „dowodów z wyglądu”: sokół i papuga mają woskówkę i mocny, zakrzywiony dziób. To jednak słaba wskazówka, bo woskówkę mają też jastrzębie. O pokrewieństwie przesądziło DNA, nie wygląd.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "02-drzewo-rodowe",
+      "gatunki": [
+        "jastrzab"
+      ]
+    },
+    {
+      "id": "kim-sa-drapiezniki-03-rodziny-i-roznorodnosc-15",
+      "tekst": "Harpia poluje w koronach lasu deszczowego głównie na leniwce i małpy. Ma skrzydła stosunkowo krótkie i szerokie, bo musi manewrować między gałęziami, a nie szybować nad otwartym terenem.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "03-rodziny-i-roznorodnosc",
+      "gatunki": []
+    },
+    {
+      "id": "kim-sa-drapiezniki-03-rodziny-i-roznorodnosc-16",
+      "tekst": "Systematyka krogulców i jastrzębi właśnie się zmienia. Badania DNA pokazały, że rodzaj *Accipiter* w dawnym ujęciu nie jest jednolity, a błotniaki są w nim „zagnieżdżone”. Na nowszych listach jastrząb bywa przenoszony do rodzaju *Astur*. Jeśli spotkasz nazwę *Astur gentilis* (ang. Northern Goshawk), to ten sam ptak.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "03-rodziny-i-roznorodnosc",
+      "gatunki": [
+        "krogulec",
+        "jastrzab"
+      ]
+    },
+    {
+      "id": "kim-sa-drapiezniki-04-europa-i-polska-18",
+      "tekst": "Sokół wędrowny prawie zniknął z Polski w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Wrócił dzięki programowi reintrodukcji i dziś gnieździ się m.in. na wysokich budynkach w miastach. Ta historia jest w module [A6 · Ochrona](../ochrona/README.md).",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "04-europa-i-polska",
+      "gatunki": [
+        "sokol-wedrowny"
+      ]
+    },
+    {
+      "id": "ludzie-i-drapiezniki-02-symbole-i-mity-20",
+      "tekst": "Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami. Więcej o systematyce w [module A1](../kim-sa-drapiezniki/README.md).",
+      "modul": "ludzie-i-drapiezniki",
+      "lekcja": "02-symbole-i-mity",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "ludzie-i-drapiezniki-02-symbole-i-mity-21",
+      "tekst": "Bielik amerykański to bliski krewny naszego bielika, z tego samego rodzaju *Haliaeetus*. Polski i amerykański symbol narodowy to więc, przynajmniej według popularnej interpretacji, niemal „kuzyni”.",
+      "modul": "ludzie-i-drapiezniki",
+      "lekcja": "02-symbole-i-mity",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "ludzie-i-drapiezniki-03-polska-kultura-22",
+      "tekst": "„Łaknąć jak kania dżdżu” to przykład, jak idiom utrwala biologiczny mit. Kanie piją wodę jak inne ptaki; skąd dokładnie wzięło się to wierzenie, nie wiadomo na pewno.",
+      "modul": "ludzie-i-drapiezniki",
+      "lekcja": "03-polska-kultura",
+      "gatunki": []
+    },
+    {
+      "id": "ludzie-i-drapiezniki-03-polska-kultura-23",
+      "tekst": "Pomyśl, ile razy dziennie widzisz orła: na monetach, w dokumentach, na budynkach urzędów. To najczęściej oglądany przez Polaków „ptak drapieżny”, choć z prawdziwym bielikiem większość z nas nigdy się nie spotkała.",
+      "modul": "ludzie-i-drapiezniki",
+      "lekcja": "03-polska-kultura",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "metoda-04-warunki-i-pulapki-26",
+      "tekst": "Zasada ornitologów: *„Kiedy słyszysz tętent kopyt, pomyśl o koniu, a nie o zebrze.”* Rzadki gatunek to ostatnia hipoteza, a nie pierwsza.",
+      "modul": "metoda",
+      "lekcja": "04-warunki-i-pulapki",
+      "gatunki": []
+    },
+    {
+      "id": "ochrona-01-zagrozenia-27",
+      "tekst": "W Polsce jastrząb jeszcze w drugiej połowie XX wieku był gatunkiem łownym. Dziś, jak wszystkie ptaki drapieżne i sowy, jest objęty ochroną ścisłą.",
+      "modul": "ochrona",
+      "lekcja": "01-zagrozenia",
+      "gatunki": [
+        "jastrzab"
+      ]
+    },
+    {
+      "id": "ochrona-02-trucizny-28",
+      "tekst": "Brytyjski badacz Derek Ratcliffe porównał grubość skorupek jaj sokoła wędrownego z kolekcji muzealnych sprzed wojny i z lat 60. Okazało się, że skorupki zaczęły cienieć pod koniec lat 40., dokładnie wtedy, gdy wprowadzono DDT. Stare kolekcje jajek, owoc XIX-wiecznej mody, pomogły więc uratować ptaki.",
+      "modul": "ochrona",
+      "lekcja": "02-trucizny",
+      "gatunki": []
+    },
+    {
+      "id": "ochrona-03-historie-sukcesu-29",
+      "tekst": "Bielik to dobry przykład „cichego” sukcesu: dziś widok bielika nad Wisłą czy stawami w Dolinie Baryczy jest czymś zwykłym, a jeszcze kilka dekad temu był wielkim przeżyciem. Więcej o miejscach w [module o Polsce](../polska/README.md).",
+      "modul": "ochrona",
+      "lekcja": "03-historie-sukcesu",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "ochrona-04-ochrona-w-praktyce-30",
+      "tekst": "Strefy ochronne w Polsce wprowadzono w latach 80. XX wieku z myślą o bieliku i innych orłach. Wiele osób uważa je za jedną z przyczyn spektakularnego powrotu bielika.",
+      "modul": "ochrona",
+      "lekcja": "04-ochrona-w-praktyce",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-01-strategie-lowieckie-31",
+      "tekst": "Holenderskie badania pustułek (Rijnsdorp, Daan i współpracownicy) pokazały, że polowanie z zawisania kosztuje wielokrotnie więcej energii na minutę niż czatowanie z posterunku, ale daje więcej upolowanych norników na godzinę. Pustułki przełączają się między obiema metodami zależnie od pogody i pory roku: zimą, gdy liczy się każda kaloria, częściej siedzą.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "01-strategie-lowieckie",
+      "gatunki": [
+        "pustulka"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-01-strategie-lowieckie-32",
+      "tekst": "U krogulca samica bywa prawie dwa razy cięższa od samca. Samiec łapie głównie sikory i wróble, samica także drozdy, a nawet gołębie. Dzięki temu para nie konkuruje o te same ofiary. Więcej o różnicy wielkości płci w module [A4 · Rozród](../rozrod/README.md).",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "01-strategie-lowieckie",
+      "gatunki": [
+        "krogulec"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-02-specjalisci-i-padlinozercy-33",
+      "tekst": "Często pisze się, że pióra trzmielojada mają chemiczną ochronę odstraszającą osy. To hipoteza, nie ustalony fakt: pewne jest, że ptak bywa użądlony znacznie rzadziej, niż można by się spodziewać, ale dlaczego, wciąż się dyskutuje.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "02-specjalisci-i-padlinozercy",
+      "gatunki": [
+        "trzmielojad"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-02-specjalisci-i-padlinozercy-34",
+      "tekst": "Bielik jest znacznie bardziej „oportunistą” niż wspaniałym łowcą, jak przedstawiają go herby. Zimą w dużej mierze żywi się padliną, martwymi rybami i kradzieżą.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "02-specjalisci-i-padlinozercy",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-02-specjalisci-i-padlinozercy-35",
+      "tekst": "Ścierwnik w Afryce potrafi rozbijać jaja strusi, rzucając w nie kamieniami. To jeden z nielicznych przykładów używania narzędzi przez ptaki drapieżne.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "02-specjalisci-i-padlinozercy",
+      "gatunki": [
+        "scierwnik"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-03-dieta-i-wypluwki-36",
+      "tekst": "Wiele drapieżników ma **wole**: rozszerzenie przełyku, w którym gromadzi pokarm. Najedzony ptak ma wyraźne „wybrzuszenie” na piersi. U sępów po uczcie wole widać z daleka.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "03-dieta-i-wypluwki",
+      "gatunki": []
+    },
+    {
+      "id": "polowanie-i-ekologia-03-dieta-i-wypluwki-37",
+      "tekst": "Rozbiór wypluwek sów to też sposób na badanie drobnych ssaków w okolicy. Płomykówka łapie to, co jest pospolite, więc jej wypluwki dobrze pokazują, jakie gatunki gryzoni i ryjówek żyją w danym miejscu.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "03-dieta-i-wypluwki",
+      "gatunki": [
+        "plomykowka"
+      ]
+    },
+    {
+      "id": "polowanie-i-ekologia-04-miejsce-w-ekosystemie-38",
+      "tekst": "Czy to drapieżniki powodują cykle gryzoni? To wciąż **przedmiot dyskusji**. Wiele badań z Finlandii (m.in. zespół Erkkiego Korpimäkiego) wskazuje, że kluczową rolę mogą grać drobne łasicowate, zwłaszcza łasica, które polują na norniki nawet w norach. Ptaki drapieżne i sowy raczej **wygładzają** szczyty i przyspieszają spadki, a do tego dochodzą pogoda, pokarm roślinny i choroby.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "04-miejsce-w-ekosystemie",
+      "gatunki": []
+    },
+    {
+      "id": "polowanie-i-ekologia-04-miejsce-w-ekosystemie-39",
+      "tekst": "W niektórych regionach, gdzie wraca puchacz, lokalnie spada liczebność innych sów i niektórych drapieżników dziennych. To naturalny proces, choć bywa trudny do zaakceptowania, gdy dotyczy gatunków, które też chronimy.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "04-miejsce-w-ekosystemie",
+      "gatunki": [
+        "puchacz"
+      ]
+    },
+    {
+      "id": "polska-01-przeglad-41",
+      "tekst": "Polska to jeden z europejskich „bastionów” **bielika** i **orlika krzykliwego**. Dla obu gatunków nasz kraj ma bardzo duże znaczenie w skali kontynentu.",
+      "modul": "polska",
+      "lekcja": "01-przeglad",
+      "gatunki": [
+        "bielik",
+        "orlik-krzykliwy"
+      ]
+    },
+    {
+      "id": "polska-04-kalendarz-42",
+      "tekst": "Zima to paradoksalnie świetna pora na drapieżniki w Polsce: nie ma liści, ptaki siedzą na widoku przy polach, a przylatują gatunki z północy.",
+      "modul": "polska",
+      "lekcja": "04-kalendarz",
+      "gatunki": []
+    },
+    {
+      "id": "poludnie-hiszpanii-04-kalendarz-43",
+      "tekst": "Latem na południu Hiszpanii jest bardzo gorąco. Ptaki drapieżne latają głównie od późnego przedpołudnia (termiki) do wczesnego popołudnia, a w środku dnia bywa pusto. Wschód słońca to dobra pora na drobniejsze sokoły i sowy.",
+      "modul": "poludnie-hiszpanii",
+      "lekcja": "04-kalendarz",
+      "gatunki": []
+    },
+    {
+      "id": "rozrod-01-pary-i-toki-44",
+      "tekst": "Bieliki są razem cały rok, ale także u nich para co zimę „odnawia” więź: wspólne loty, głosy w duecie i poprawianie gniazda zaczynają się już w grudniu i styczniu.",
+      "modul": "rozrod",
+      "lekcja": "01-pary-i-toki",
+      "gatunki": [
+        "bielik"
+      ]
+    },
+    {
+      "id": "rozrod-01-pary-i-toki-45",
+      "tekst": "U błotniaków przekazywanie pokarmu trwa cały sezon. Samica wysiadująca jaja w trzcinach wylatuje na chwilę, łapie zdobycz od samca i wraca. Jeśli zobaczysz to w maju nad szuwarami, gniazdo jest w pobliżu: obserwuj z daleka i nie podchodź.",
+      "modul": "rozrod",
+      "lekcja": "01-pary-i-toki",
+      "gatunki": []
+    },
+    {
+      "id": "rozrod-02-gniazda-46",
+      "tekst": "Jeśli widziałaś wiosną zieleń na brzegu dużego gniazda w lesie, to znak, że gniazdo jest w tym roku zajęte. To dobry powód, żeby się od niego oddalić.",
+      "modul": "rozrod",
+      "lekcja": "02-gniazda",
+      "gatunki": []
+    },
+    {
+      "id": "rozrod-02-gniazda-47",
+      "tekst": "W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną. Więcej w [A6 · Ochrona](../ochrona/README.md).",
+      "modul": "rozrod",
+      "lekcja": "02-gniazda",
+      "gatunki": [
+        "sokol-wedrowny"
+      ]
+    },
+    {
+      "id": "rozrod-03-jaja-i-rodzenstwo-48",
+      "tekst": "Ponieważ orlików krzykliwych jest mało, w niektórych krajach (m.in. w Niemczech) prowadzono programy „ratowania drugiego pisklęcia”: młodsze pisklę zabierano z gniazda, odchowywano w ośrodku i później wypuszczano na wolność. Takie działania są kosztowne i kontrowersyjne, ale pokazują, jak ważne jest każde młode w małej populacji.",
+      "modul": "rozrod",
+      "lekcja": "03-jaja-i-rodzenstwo",
+      "gatunki": [
+        "orlik-krzykliwy"
+      ]
+    },
+    {
+      "id": "rozrod-04-dorastanie-49",
+      "tekst": "Sokolnicy i badacze często płeć piskląt sokoła wędrownego poznają po **grubości nóg**: samice, które urosną większe, mają wyraźnie grubsze skoki już w gnieździe. To dlatego przy obrączkowaniu dobiera się dla nich większe obrączki.",
+      "modul": "rozrod",
+      "lekcja": "04-dorastanie",
+      "gatunki": []
+    },
+    {
+      "id": "sowy-01-kim-sa-sowy-50",
+      "tekst": "Rybołów i orły nie muszą latać cicho. Dlatego ciche lotki to jedna z cech odróżniających sowy od ptaków dziennych.",
+      "modul": "sowy",
+      "lekcja": "01-kim-sa-sowy",
+      "gatunki": [
+        "rybolow"
+      ]
+    },
+    {
+      "id": "wedrowki-01-dlaczego-i-jak-51",
+      "tekst": "Prosta reguła: **im bardziej wyspecjalizowana dieta, tym dalsza wędrówka.** Trzmielojad, który żyje głównie z larw os, leci do tropikalnej Afryki. Myszołów, który zje prawie wszystko, często zostaje w Polsce.",
+      "modul": "wedrowki",
+      "lekcja": "01-dlaczego-i-jak",
+      "gatunki": [
+        "trzmielojad",
+        "myszolow"
+      ]
+    },
+    {
+      "id": "wedrowki-01-dlaczego-i-jak-52",
+      "tekst": "U wielu wędrowców częściowych **młode i samice** częściej odlatują niż stare samce. Jedno z wyjaśnień: samiec, który zostaje, może zająć najlepsze terytorium wcześnie wiosną. Nie jest to jednak reguła dla wszystkich gatunków.",
+      "modul": "wedrowki",
+      "lekcja": "01-dlaczego-i-jak",
+      "gatunki": []
+    },
+    {
+      "id": "wedrowki-01-dlaczego-i-jak-53",
+      "tekst": "**Kobczyk amurski** (*Falco amurensis*, ang. Amur Falcon), mały sokół z Azji Wschodniej, leci z Indii do Afryki nad Oceanem Indyjskim, korzystając z wiatrów monsunowych. To jeden z najdłuższych przelotów nad morzem wśród ptaków drapieżnych i dobry przykład, co potrafi migrant lotu aktywnego.",
+      "modul": "wedrowki",
+      "lekcja": "01-dlaczego-i-jak",
+      "gatunki": []
+    },
+    {
+      "id": "wedrowki-02-fizyka-szybowania-54",
+      "tekst": "Cumulusy to drogowskazy dla ptaków i pilotów szybowców: pod młodą, rosnącą chmurą zwykle jest komin. Przy silnym wietrze kominy i chmury mogą ustawiać się w długie rzędy, tzw. **ulice chmur**, wzdłuż których ptak leci prawie bez krążenia.",
+      "modul": "wedrowki",
+      "lekcja": "02-fizyka-szybowania",
+      "gatunki": []
+    },
+    {
+      "id": "wedrowki-02-fizyka-szybowania-55",
+      "tekst": "Nad punktem obserwacyjnym widać czasem „kocioł”: dziesiątki albo setki trzmielojadów czy bocianów krążących razem w jednym kominie. Ptaki pomagają sobie nawzajem: kto widzi, że inny ptak szybko się wznosi, leci w to samo miejsce.",
+      "modul": "wedrowki",
+      "lekcja": "02-fizyka-szybowania",
+      "gatunki": [
+        "trzmielojad"
+      ]
+    },
+    {
+      "id": "wedrowki-02-fizyka-szybowania-56",
+      "tekst": "Sahara to dla migrantów szybujących przeszkoda zupełnie innego rodzaju niż morze. Nad pustynią termiki są bardzo silne, więc wiele gatunków przelatuje przez nią szerokim frontem. Problemem są brak wody i pokarmu, upał i burze piaskowe, a nie brak noszeń.",
+      "modul": "wedrowki",
+      "lekcja": "02-fizyka-szybowania",
+      "gatunki": []
+    },
+    {
+      "id": "wedrowki-03-szlaki-i-waskie-gardla-57",
+      "tekst": "Na trasie przez Mesynę i Cap Bon ptaki przelatują nad morzem **dużo dłużej** niż nad Gibraltarem. Dlatego liczniejsze są tu błotniaki i trzmielojady niż orły czy sępy.",
+      "modul": "wedrowki",
+      "lekcja": "03-szlaki-i-waskie-gardla",
+      "gatunki": [
+        "trzmielojad"
+      ]
+    },
+    {
+      "id": "wedrowki-03-szlaki-i-waskie-gardla-58",
+      "tekst": "W samej Polsce nie ma wąskiego gardła na miarę Bosforu. Przelot jest **rozproszony**, choć wybrzeże Bałtyku (np. Mierzeja Wiślana czy Półwysep Helski) skupia część ptaków, zwłaszcza krogulce i myszołowy z północy, które lecą wzdłuż brzegu. W dobry jesienny dzień można tam zobaczyć zaskakująco dużo drapieżników.",
+      "modul": "wedrowki",
+      "lekcja": "03-szlaki-i-waskie-gardla",
+      "gatunki": [
+        "myszolow",
+        "krogulec"
+      ]
+    },
+    {
+      "id": "wedrowki-04-jak-badamy-59",
+      "tekst": "Szwedzkie badania telemetryczne trzmielojadów pokazały, że dorosłe ptaki leciały do Afryki głównie przez Gibraltar lub Włochy, a młode rozpraszały się szerzej i częściej ryzykowały przelot nad morzem. To dobry przykład różnicy między programem wrodzonym a wiedzą zdobytą z doświadczeniem.",
+      "modul": "wedrowki",
+      "lekcja": "04-jak-badamy",
+      "gatunki": [
+        "trzmielojad"
+      ]
+    },
+    {
+      "id": "kim-sa-drapiezniki-wstep",
+      "tekst": "Sokół jest bliżej spokrewniony z papugą niż z jastrzębiem. Moduł A1 wyjaśnia, jak to możliwe i co w ogóle znaczy słowo „drapieżnik”.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": null,
+      "gatunki": []
+    },
+    {
+      "id": "wedrowki-wstep",
+      "tekst": "Orlik krzykliwy z Biebrzy leci na zimę do południowej Afryki, a prawie całą drogę pokonuje, nie machając skrzydłami.",
+      "modul": "wedrowki",
+      "lekcja": null,
+      "gatunki": [
+        "orlik-krzykliwy"
+      ]
+    },
+    {
+      "id": "ochrona-wstep",
+      "tekst": "Jeszcze kilkadziesiąt lat temu za zabicie jastrzębia dostawało się nagrodę, a sokół wędrowny znikał z Europy. Dziś bieliki gniazdują pod Warszawą, a kondory znów latają nad Kalifornią.",
+      "modul": "ochrona",
+      "lekcja": null,
+      "gatunki": [
+        "sokol-wedrowny",
+        "jastrzab",
+        "bielik"
+      ]
+    },
+    {
+      "id": "rozrod-wstep",
+      "tekst": "Para bielików może być razem przez wiele lat, a młody orlik krzykliwy zwykle zabija w gnieździe młodsze rodzeństwo.",
+      "modul": "rozrod",
+      "lekcja": null,
+      "gatunki": [
+        "bielik",
+        "orlik-krzykliwy"
+      ]
+    }
+  ]
+}

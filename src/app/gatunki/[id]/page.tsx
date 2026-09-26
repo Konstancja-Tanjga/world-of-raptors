@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge, Breadcrumbs, DescriptionList } from '@/components/ds';
+import { Ciekawostka } from '@/components/Ciekawostka';
 import { SpeciesMedia } from '@/components/SpeciesMedia';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
-import { gatunki, modulyGatunku, znajdzGatunek } from '@/lib/content';
+import { ciekawostkiDla, gatunki, modulyGatunku, znajdzGatunek } from '@/lib/content';
 import { REGIONY, STATUS_LABEL } from '@/lib/types';
 
 export const dynamicParams = false;
@@ -47,6 +48,8 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
       <SpeciesMedia id={g.id} ileMylonych={Infinity} />
 
       <SpeciesObservation id={g.id} nazwa={g.pl} />
+
+      <Ciekawostka {...ciekawostkiDla({ gatunek: g.id })} />
 
       <section className="stack" aria-labelledby="klucz">
         <h2 id="klucz" className="section-title">

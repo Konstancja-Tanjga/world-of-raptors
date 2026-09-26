@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { AtlasView } from '@/components/AtlasView';
-import { gatunki, zdjecia } from '@/lib/content';
+import { Ciekawostka } from '@/components/Ciekawostka';
+import { ciekawostkiDla, gatunki, zdjecia } from '@/lib/content';
 
 export const metadata: Metadata = { title: 'Atlas gatunków' };
 
@@ -14,6 +15,7 @@ export default function GatunkiPage() {
           Hiszpanii.
         </p>
       </div>
+      <Ciekawostka {...ciekawostkiDla()} />
       <AtlasView
         gatunki={gatunki}
         miniatury={Object.fromEntries(
