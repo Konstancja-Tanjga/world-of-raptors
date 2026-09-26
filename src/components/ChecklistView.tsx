@@ -3,6 +3,15 @@
 import Link from 'next/link';
 import { useMemo, useRef, useState } from 'react';
 import { dzisiaj, isChecklista, useChecklista, type Checklista } from '@/lib/checklist';
+import { isPostep, usePostep } from '@/lib/postep';
+import {
+  blobNaDataUrl,
+  dataUrlNaBlob,
+  wszystkieZdjecia,
+  zastapZdjecia,
+  type ZdjecieWlasne,
+} from '@/lib/zdjeciaWlasne';
+import { OwnPhotos } from './OwnPhotos';
 import type { Gatunek } from '@/lib/types';
 import {
   Button,
@@ -27,6 +36,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const fileInput = useRef<HTMLInputElement>(null);
   const { notify } = useToast();
   const sprawdzZapis = useOstrzezenieZapisu();
+  const { postep, zastapPostep } = usePostep();
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
@@ -47,8 +57,25 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const liczba = Object.keys(lista).filter((id) => znane.has(id)).length;
   const wFiltrze = wynik.filter((g) => lista[g.id]).length;
 
-  const eksportuj = () => {
-    const blob = new Blob([JSON.stringify(lista, null, 2)], { type: 'application/json' });
+  // Backup format v2: checklist, lesson progress and my photos in one file.
+  // v1 files (a bare checklist object) still import.
+  const eksportuj = async () => {
+    let zdjecia: (Omit<ZdjecieWlasne, 'blob'> & { dataUrl: string })[] = [];
+    try {
+      zdjecia = await Promise.all(
+        (await wszystkieZdjecia()).map(async ({ blob, ...z }) => ({ ...z, dataUrl: await blobNaDataUrl(blob) })),
+      );
+    } catch (err) {
+      console.error('[wor-zdjecia] could not read photos for export', err);
+      notify({
+        tone: 'warning',
+        title: 'Kopia bez zdjęć',
+        description: 'Nie udało się odczytać moich zdjęć. Checklista i postęp zostały wyeksportowane.',
+        duration: null,
+      });
+    }
+    const kopia = { wersja: 2, checklista: lista, postep: postep ?? {}, zdjecia };
+    const blob = new Blob([JSON.stringify(kopia)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -60,12 +87,31 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const importuj = async (file: File) => {
     try {
       const parsed: unknown = JSON.parse(await file.text());
-      if (!isChecklista(parsed)) throw new Error('format');
-      sprawdzZapis(zastap(parsed as Checklista));
+      const v2 =
+        typeof parsed === 'object' && parsed !== null && (parsed as { wersja?: unknown }).wersja === 2
+          ? (parsed as { checklista: unknown; postep?: unknown; zdjecia?: unknown })
+          : null;
+      const checklista = v2 ? v2.checklista : parsed;
+      if (!isChecklista(checklista)) throw new Error('format');
+      sprawdzZapis(zastap(checklista as Checklista));
+      let ileZdjec = 0;
+      if (v2) {
+        if (v2.postep !== undefined && isPostep(v2.postep)) sprawdzZapis(zastapPostep(v2.postep));
+        if (Array.isArray(v2.zdjecia)) {
+          const zdjecia = await Promise.all(
+            (v2.zdjecia as (Omit<ZdjecieWlasne, 'blob'> & { dataUrl: string })[]).map(async ({ dataUrl, ...z }) => ({
+              ...z,
+              blob: await dataUrlNaBlob(dataUrl),
+            })),
+          );
+          await zastapZdjecia(zdjecia);
+          ileZdjec = zdjecia.length;
+        }
+      }
       notify({
         tone: 'success',
-        title: 'Checklista zaimportowana',
-        description: `Wczytano ${Object.keys(parsed).length} obserwacji.`,
+        title: 'Kopia zaimportowana',
+        description: `Wczytano ${Object.keys(checklista).length} obserwacji${v2 ? `, ${ileZdjec} zdjęć i postęp nauki` : ''}.`,
       });
     } catch {
       notify({
@@ -163,6 +209,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
                           />
                         </div>
                       )}
+                      {obs && <OwnPhotos gatunek={g.id} nazwa={g.pl} edycja />}
                     </Card>
                   </li>
                 );
@@ -177,11 +224,12 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista jest zapisana w tej przeglądarce. Eksportuj ją co jakiś czas, żeby nie stracić
-          obserwacji, i importuj, żeby przenieść ją na inne urządzenie.
+          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Eksportuj
+          je co jakiś czas do jednego pliku, żeby ich nie stracić, i importuj, żeby przenieść je na
+          inne urządzenie.
         </p>
         <div className="row">
-          <Button variant="secondary" onClick={eksportuj}>
+          <Button variant="secondary" onClick={() => void eksportuj()}>
             Eksportuj do pliku
           </Button>
           <Button variant="secondary" onClick={() => fileInput.current?.click()}>

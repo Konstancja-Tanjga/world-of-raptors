@@ -2,8 +2,8 @@ import Image from 'next/image';
 import type { Zdjecie } from '@/lib/types';
 
 /**
- * A Commons photo with the attribution its licence requires: author,
- * licence and a link back to the file page.
+ * A photo with the attribution its licence requires: author, licence and,
+ * for Wikimedia Commons files, a link back to the file page.
  */
 export function Photo({
   zdjecie,
@@ -37,11 +37,17 @@ export function Photo({
               </a>
             ) : (
               zdjecie.licencja
-            )}{' '}
-            ·{' '}
-            <a href={zdjecie.strona} target="_blank" rel="noreferrer">
-              Wikimedia Commons
-            </a>
+            )}
+            {/* Own photos have no Commons page to credit. */}
+            {zdjecie.strona && (
+              <>
+                {' '}
+                ·{' '}
+                <a href={zdjecie.strona} target="_blank" rel="noreferrer">
+                  Wikimedia Commons
+                </a>
+              </>
+            )}
           </span>
         )}
       </figcaption>

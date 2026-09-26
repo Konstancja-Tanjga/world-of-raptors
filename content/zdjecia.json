@@ -727,14 +727,14 @@
   },
   "pojdzka": {
     "siedzacy": {
-      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Athene_noctua_-_the_little_owl.jpg/960px-Athene_noctua_-_the_little_owl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "src": "/zdjecia/pojdzka.jpg",
       "width": 960,
-      "height": 720,
-      "autor": "Artemy Voikhansky",
-      "licencja": "CC BY-SA 4.0",
-      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "strona": "https://commons.wikimedia.org/wiki/File:Athene_noctua_-_the_little_owl.jpg",
-      "plik": "File:Athene noctua - the little owl.jpg"
+      "height": 685,
+      "autor": "Konstancja Tanjga",
+      "licencja": "zdjęcie własne",
+      "licencjaUrl": "",
+      "strona": "",
+      "plik": "Images/pojdzka.JPG"
     },
     "lot": {
       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/%C4%8Cuvar_no%C4%87i.jpg/960px-%C4%8Cuvar_no%C4%87i.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
