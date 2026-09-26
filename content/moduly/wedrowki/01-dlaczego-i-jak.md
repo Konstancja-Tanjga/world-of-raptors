@@ -27,15 +27,15 @@ Wędrówka ma swoją cenę: ryzyko, stracona energia, czas. Opłaca się tylko w
 Granice między tymi grupami są płynne. Młode bieliki i jastrzębie potrafią wędrować setki kilometrów, choć dorosłe są osiadłe.
 
 ## Wędrowcy częściowi: myszołów i krogulec
-**Myszołów** (*Buteo buteo*) widziany w Polsce zimą to często inny ptak niż ten, który gniazdował tu latem. Część naszych myszołowów przesuwa się na zachód i południowy zachód, a na ich miejsce przylatują ptaki ze Skandynawii i z północnego wschodu. Im surowsza i bardziej śnieżna zima, tym mniej myszołowów zostaje.
+**Myszołów** (*Buteo buteo*, ang. Common Buzzard) widziany w Polsce zimą to często inny ptak niż ten, który gniazdował tu latem. Część naszych myszołowów przesuwa się na zachód i południowy zachód, a na ich miejsce przylatują ptaki ze Skandynawii i z północnego wschodu. Im surowsza i bardziej śnieżna zima, tym mniej myszołowów zostaje.
 
-**Krogulec** (*Accipiter nisus*) zachowuje się podobnie. Ptaki ze Skandynawii i Rosji wędrują masowo przez Bałtyk i Polskę, a polskie w dużej części zostają. Zimą krogulce chętnie polują w miastach, przy karmnikach.
+**Krogulec** (*Accipiter nisus*, ang. Eurasian Sparrowhawk) zachowuje się podobnie. Ptaki ze Skandynawii i Rosji wędrują masowo przez Bałtyk i Polskę, a polskie w dużej części zostają. Zimą krogulce chętnie polują w miastach, przy karmnikach.
 
 > 💡 U wielu wędrowców częściowych **młode i samice** częściej odlatują niż stare samce. Jedno z wyjaśnień: samiec, który zostaje, może zająć najlepsze terytorium wcześnie wiosną. Nie jest to jednak reguła dla wszystkich gatunków.
 
 ## Goście zimowi
-- **Myszołów włochaty** (*Buteo lagopus*): gniazduje w tundrze i w górach Skandynawii. W Polsce zwykle od października do kwietnia, na otwartych polach. Liczebność w danym roku zależy m.in. od tego, jak udał się sezon lęgowy na północy, a to wiąże się z liczebnością lemingów i nornic.
-- **Drzemlik** (*Falco columbarius*): mały sokół z północy. U nas przelotny i zimujący, poluje na małe ptaki nad polami i wybrzeżem.
+- **Myszołów włochaty** (*Buteo lagopus*, ang. Rough-legged Buzzard): gniazduje w tundrze i w górach Skandynawii. W Polsce zwykle od października do kwietnia, na otwartych polach. Liczebność w danym roku zależy m.in. od tego, jak udał się sezon lęgowy na północy, a to wiąże się z liczebnością lemingów i nornic.
+- **Drzemlik** (*Falco columbarius*, ang. Merlin): mały sokół z północy. U nas przelotny i zimujący, poluje na małe ptaki nad polami i wybrzeżem.
 
 ## Migranci szybujący i migranci lotu aktywnego
 To najważniejszy podział w tym module.
@@ -51,10 +51,10 @@ To najważniejszy podział w tym module.
 
 Błotniaki i rybołów są pośrodku: dobrze szybują, ale mają dość lekkie ciało i długie skrzydła, więc stosunkowo łatwo przelatują nad morzem, np. przez środek Morza Śródziemnego.
 
-> 💡 **Kobczyk amurski** (*Falco amurensis*), mały sokół z Azji Wschodniej, leci z Indii do Afryki nad Oceanem Indyjskim, korzystając z wiatrów monsunowych. To jeden z najdłuższych przelotów nad morzem wśród ptaków drapieżnych i dobry przykład, co potrafi migrant lotu aktywnego.
+> 💡 **Kobczyk amurski** (*Falco amurensis*, ang. Amur Falcon), mały sokół z Azji Wschodniej, leci z Indii do Afryki nad Oceanem Indyjskim, korzystając z wiatrów monsunowych. To jeden z najdłuższych przelotów nad morzem wśród ptaków drapieżnych i dobry przykład, co potrafi migrant lotu aktywnego.
 
 ## Jak wygląda rok wędrowca
-Na przykładzie orlika krzykliwego (*Clanga pomarina*, dawniej *Aquila pomarina*):
+Na przykładzie orlika krzykliwego (*Clanga pomarina*, ang. Lesser Spotted Eagle; dawniej *Aquila pomarina* (ang. Lesser Spotted Eagle)):
 1. **Kwiecień:** przylot do Polski, zajęcie terytorium.
 2. **Maj–sierpień:** lęgi, wychowanie jednego pisklęcia (o zabijaniu rodzeństwa w gnieździe mówi [A4 · Rozród](../rozrod/README.md)).
 3. **Koniec sierpnia–wrzesień:** odlot. Ptak leci na południowy wschód, przez Bosfor, Bliski Wschód i Afrykę Wschodnią.

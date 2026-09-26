@@ -8,19 +8,19 @@ Gatunki z modułu o cieśninie (kanie, trzmielojad, orzełek włochaty, gadożer
 
 ## A. Trzy duże orły
 
-### Orzeł przedni — *Aquila chrysaetos* 🏠
+### Orzeł przedni — *Aquila chrysaetos* (ang. Golden Eagle) 🏠
 - **Rozpiętość:** ok. 190–225 cm
 - **Sylwetka:** długie skrzydła, **zwężone u nasady**, więc tylna krawędź tworzy kształt litery „S”; dość długi ogon; szybuje ze skrzydłami w **lekkie V**.
 - **Dorosły:** ciemnobrązowy, **złocisty kark**, od góry jaśniejsze pole na pokrywach skrzydeł.
 - **Młody:** **białe plamy** u nasady lotek na skrzydłach i **biały ogon z czarnym pasem końcowym**. Z wiekiem biel stopniowo znika.
 - **Gdzie:** góry: Sierra Nevada, Cazorla, Grazalema, Sierra Morena.
 
-### Orzeł iberyjski — *Aquila adalberti* 🏠
+### Orzeł iberyjski — *Aquila adalberti* (ang. Spanish Imperial Eagle) 🏠
 Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md).
 - **Klucz dorosłego:** ciemny, **białe „epolety”** na przedniej krawędzi skrzydła, jasna głowa. Skrzydła szerokie, **o prostej krawędzi**, trzymane płasko.
 - **Klucz młodego:** jednolicie **płowy/rudawy** tułów i pokrywy, ciemne lotki.
 
-### Orzeł południowy — *Aquila fasciata* 🏠
+### Orzeł południowy — *Aquila fasciata* (ang. Bonelli's Eagle) 🏠
 Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md).
 - **Klucz dorosłego:** jasny spód tułowia, **ciemny pas przez spód skrzydła**, ogon z szerokim ciemnym pasem końcowym. Mniejszy i smuklejszy od dwóch pozostałych.
 - **Klucz młodego:** rudawo-płowy spód, bez ciemnego pasa.
@@ -45,7 +45,7 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 
 ## B. Orłosęp i jego „sobowtóry”
 
-### Orłosęp — *Gypaetus barbatus* 🏠⭐
+### Orłosęp — *Gypaetus barbatus* (ang. Bearded Vulture) 🏠⭐
 - **Rozpiętość:** ok. 265–285 cm
 - **Sylwetka:** jak **ogromny sokół**: długie, wąskie, spiczaste skrzydła i długi **klinowaty (rombowy) ogon**. Tej sylwetki nie da się pomylić z żadnym innym dużym ptakiem.
 - **Dorosły:** ciemnoszary wierzch, **rdzawopomarańczowy spód**. Ten kolor nie jest wrodzony: ptak kąpie się w błocie bogatym w żelazo. Na twarzy czarna „broda”.
@@ -72,7 +72,7 @@ Pełna karta: [moduł o cieśninie, sekcja D](../gibraltar/03-gatunki-i-pary.md)
 
 ## D. Jastrząb i krogulec
 
-### Jastrząb — *Accipiter gentilis* 🏠
+### Jastrząb — *Accipiter gentilis* (ang. Northern Goshawk) 🏠
 - **Rozpiętość:** ok. 95–125 cm (samica wyraźnie większa)
 - **Klucz:** masywny, „beczkowaty”; ogon **zaokrąglony**, z wyraźnie białymi pokrywami podogonowymi; wyraźna jasna **brew**; skrzydła dłuższe niż u krogulca, z bardziej wysuniętą „ręką”.
 - **Gdzie:** lasy górskie i sosnowe, np. Cazorla i Sierra Nevada.

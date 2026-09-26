@@ -35,7 +35,9 @@ export function AtlasView({ gatunki }: { gatunki: Gatunek[] }) {
                       {g.pl}
                     </Link>
                   </h2>
-                  <p className="latin">{g.lat}</p>
+                  <p className="latin">
+                    {g.lat} <span className="en">(ang. {g.en})</span>
+                  </p>
                   <div className="chips">
                     <Badge>{g.grupa}</Badge>
                     {g.status.includes('rzadki') && <Badge tone="warning">rzadki</Badge>}

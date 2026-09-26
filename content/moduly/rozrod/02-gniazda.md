@@ -32,7 +32,7 @@ Sokoły (rodzaj *Falco*) **nie budują gniazd**. To ciekawe, bo są z orłami ty
 |---|---|
 | **Sokół wędrowny** | płytkie zagłębienie („skrobanka”) na półce skalnej; w miastach na wysokich budynkach, kominach, w skrzynkach lęgowych; w Polsce także w starych gniazdach innych ptaków na drzewach i w koszach zawieszanych na drzewach |
 | **Kobuz** | prawie zawsze **stare gniazda wron i kruków**, zwykle na skraju lasu lub w zadrzewieniu |
-| **Pustułka** (*Falco tinnunculus*) | nisze budynków, balkony, skrzynki lęgowe, stare gniazda srok i wron, dziuple |
+| **Pustułka** (*Falco tinnunculus*, ang. Common Kestrel) | nisze budynków, balkony, skrzynki lęgowe, stare gniazda srok i wron, dziuple |
 | **Pustułeczka** | szczeliny i dachy starych budynków, kolonijnie; także specjalne skrzynki i „wieże” dla pustułeczek w Hiszpanii |
 
 Samica sokoła tylko wygrzebuje w podłożu płytki dołek, żeby jaja się nie toczyły. Do cudzych gniazd też nie dokłada gałęzi.
@@ -42,8 +42,8 @@ Samica sokoła tylko wygrzebuje w podłożu płytki dołek, żeby jaja się nie 
 ## Sępy: skała albo drzewo
 Na południu Hiszpanii żyją dwa duże sępy o zupełnie różnych zwyczajach:
 - **Sęp płowy** gniazduje **kolonijnie na skalnych ścianach**, w niszach i na półkach. Gniazdo jest skromne: płaska platforma z gałęzi i traw. Kolonie łatwo obserwować z daleka, np. w wąwozach Andaluzji.
-- **Sęp kasztanowaty** (*Aegypius monachus*) buduje **ogromne gniazda na drzewach**, zwykle na wierzchołkach dębów lub sosen na zboczach, w luźnych skupiskach. Jest bardzo wrażliwy na niepokojenie w pobliżu gniazda.
-- **Orłosęp** (*Gypaetus barbatus*) i **ścierwnik** (*Neophron percnopterus*) gniazdują w niszach i jaskiniach skalnych.
+- **Sęp kasztanowaty** (*Aegypius monachus*, ang. Cinereous Vulture) buduje **ogromne gniazda na drzewach**, zwykle na wierzchołkach dębów lub sosen na zboczach, w luźnych skupiskach. Jest bardzo wrażliwy na niepokojenie w pobliżu gniazda.
+- **Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) i **ścierwnik** (*Neophron percnopterus*, ang. Egyptian Vulture) gniazdują w niszach i jaskiniach skalnych.
 
 ## Błotniaki: gniazdo na ziemi
 - **Błotniak stawowy**: gniazdo z trzcin w gęstych szuwarach, często nad wodą.

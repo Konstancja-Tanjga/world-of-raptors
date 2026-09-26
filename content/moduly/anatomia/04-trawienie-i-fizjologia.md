@@ -31,12 +31,12 @@ Soki żołądkowe sępów Starego Świata są **niezwykle kwaśne, o pH ok. 1** 
 Badania mikroorganizmów w jelitach sępów amerykańskich (sępnika różowogłowego i urubu) pokazały, że ich przewód pokarmowy jest też **zasiedlony przez bakterie odporne na te warunki**, typowe dla gnijącego mięsa. Ochrona to więc połączenie kwasu, odporności i wyspecjalizowanej flory jelitowej. Sępy Nowego Świata to jednak inna grupa niż sępy europejskie (zob. [A1](../kim-sa-drapiezniki/README.md)), więc wyników nie można w pełni przenosić.
 
 ### Orłosęp, który je kości
-**Orłosęp** (*Gypaetus barbatus*) żywi się przede wszystkim **kośćmi i szpikiem**. Mniejsze kości połyka w całości, większe zrzuca z wysokości na skały, żeby je rozbić. Bardzo kwaśny żołądek pozwala mu strawić kość, która u większości zwierząt przeszłaby przez przewód pokarmowy niemal nietknięta.
+**Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) żywi się przede wszystkim **kośćmi i szpikiem**. Mniejsze kości połyka w całości, większe zrzuca z wysokości na skały, żeby je rozbić. Bardzo kwaśny żołądek pozwala mu strawić kość, która u większości zwierząt przeszłaby przez przewód pokarmowy niemal nietknięta.
 
 > 💡 Dziko żyjące orłosępy mają rdzawopomarańczową pierś, ale to nie jest kolor piór. Ptaki kąpią się w błocie bogatym w tlenki żelaza i same „farbują” pióra. Po co, nie wiadomo na pewno: możliwe, że to sygnał dla innych orłosępów.
 
 ### Dlaczego sępy mają łyse głowy?
-Sęp płowy (*Gyps fulvus*) i sęp kasztanowaty (*Aegypius monachus*) mają głowę i szyję pokryte tylko krótkim puchem lub nagą skórą. Są dwie główne hipotezy, które się nie wykluczają:
+Sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) i sęp kasztanowaty (*Aegypius monachus*, ang. Cinereous Vulture) mają głowę i szyję pokryte tylko krótkim puchem lub nagą skórą. Są dwie główne hipotezy, które się nie wykluczają:
 
 | Hipoteza | Argumenty | Ocena |
 |---|---|---|

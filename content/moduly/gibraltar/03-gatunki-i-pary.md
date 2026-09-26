@@ -9,13 +9,13 @@ Rozpiętości skrzydeł są orientacyjne.
 
 ## A. Kanie
 
-### Kania czarna — *Milvus migrans* 🔁🏠
+### Kania czarna — *Milvus migrans* (ang. Black Kite) 🔁🏠
 - **Rozpiętość:** ok. 135–155 cm
 - **Klucz:** ciemnobrązowa, mało kontrastowa; ogon **płytko wcięty** — gdy rozłożony, wygląda prawie prosto; skrzydła trzymane płasko, lekko „złamane” w nadgarstku; stale kręci ogonem.
 - **Szczegóły:** jaśniejszy pas na górnych pokrywach skrzydeł, niewyraźne jaśniejsze „okno” u nasady lotek I-rzędowych od spodu.
 - **W regionie:** najliczniejszy wędrowiec; „La Milanada” — ogromne zgromadzenia przed przelotem.
 
-### Kania ruda — *Milvus milvus* 🏠❄️🔁
+### Kania ruda — *Milvus milvus* (ang. Red Kite) 🏠❄️🔁
 - **Rozpiętość:** ok. 145–170 cm
 - **Klucz:** **głęboko wcięty, rudy ogon** (widoczny nawet gdy rozłożony); duże **białe okna** na spodzie „ręki”; kontrastowa — rudy tułów, jasna głowa, czarne końce skrzydeł.
 - **W regionie:** mniej liczna, częściej zimą i w październiku.
@@ -35,14 +35,14 @@ Obie ciemnobrązowe. Błotniak: skrzydła w **wyraźne V**, ogon zaokrąglony (n
 
 ## B. Trzmielojad i myszołowate
 
-### Trzmielojad — *Pernis apivorus* 🔁
+### Trzmielojad — *Pernis apivorus* (ang. European Honey Buzzard) 🔁
 - **Rozpiętość:** ok. 135–150 cm
 - **Klucz:** **mała, wysunięta głowa** na długiej szyi (jak u kukułki/gołębia); długi ogon; skrzydła trzymane **płasko lub lekko opuszczone** („ręka” w dół).
 - **Ogon (dorosły):** dwa wąskie ciemne pasy przy nasadzie + **szeroki ciemny pas końcowy** — charakterystyczny wzór „1-1-szeroki”.
 - **Zmienność:** bardzo duża — od prawie białych po niemal czarne. Samiec: szarawa głowa, wyraźny ciemny pas na tylnej krawędzi skrzydła. Młode: ciemniejsze, więcej wąskich prążków, żółta woskówka (nasada dzioba).
 - **Ciekawostka:** żywi się larwami os i trzmieli; ma łuskowate piórka na twarzy chroniące przed użądleniami.
 
-### Myszołów — *Buteo buteo* 🏠❄️
+### Myszołów — *Buteo buteo* (ang. Common Buzzard) 🏠❄️
 - **Rozpiętość:** ok. 110–130 cm
 - **Klucz:** **krótka szyja, duża głowa**; krótszy ogon z gęstymi drobnymi prążkami; skrzydła szerokie, przy szybowaniu w **płytkie V**; często ciemna „pierś” i jaśniejszy pas przez brzuch.
 - **W regionie:** raczej lokalne ptaki, w cieśninie przelatuje ich stosunkowo niewiele.
@@ -56,30 +56,30 @@ Obie ciemnobrązowe. Błotniak: skrzydła w **wyraźne V**, ogon zaokrąglony (n
 | Lot aktywny | głębokie, elastyczne uderzenia | krótsze, sztywniejsze |
 | Sezon w cieśninie | masowo koniec VIII – pocz. IX | nieliczny |
 
-### Kurhannik — *Buteo rufinus* ⭐🏠
+### Kurhannik — *Buteo rufinus* (ang. Long-legged Buzzard) ⭐🏠
 Większy od myszołowa, długie skrzydła; dorosły z **rudawym, niemal nieprążkowanym ogonem** i jasną głową, ciemne plamy nadgarstkowe. W regionie coraz częściej spotykany (ekspansja z Afryki Północnej).
 
 ---
 
 ## C. Orzełek, gadożer, rybołów — „jasne ptaki z ciemnymi lotkami”
 
-### Orzełek włochaty — *Aquila pennata* 🔁🏠
+### Orzełek włochaty — *Aquila pennata* (ang. Booted Eagle) 🔁🏠
 - **Rozpiętość:** ok. 110–135 cm (wielkość myszołowa!)
 - **Klucz:** ogon **prosto ścięty**, dość długi, od spodu jaśniejszy; **„światła do lądowania”** — dwie białe plamki u nasady skrzydeł, widoczne gdy ptak leci w twoją stronę; od góry jasny pas na pokrywach tworzący kształt litery **V/U** na grzbiecie; jaśniejszy klin na wewnętrznych lotkach I-rzędowych.
 - **Dwie odmiany:**
   - **jasna** — kremowobiały spód, czarne lotki (najczęstsza),
   - **ciemna** — cała ciemnobrązowa, ogon jaśniejszy od ciała.
 
-### Ścierwnik — *Neophron percnopterus* 🔁🏠
+### Ścierwnik — *Neophron percnopterus* (ang. Egyptian Vulture) 🔁🏠
 - **Rozpiętość:** ok. 155–170 cm
 - **Klucz (dorosły):** biało-czarny, **klinowaty (rombowy) biały ogon**, żółta naga twarz, długie skrzydła.
 - **Młode:** ciemnobrązowe, ale z tym samym **klinowatym ogonem** — to cecha na każdy wiek.
 
-### Gadożer — *Circaetus gallicus* 🔁🏠
+### Gadożer — *Circaetus gallicus* (ang. Short-toed Snake Eagle) 🔁🏠
 - **Rozpiętość:** ok. 170–190 cm
 - **Klucz:** duży, **jasny spód bez ciemnych plam nadgarstkowych**; często **ciemny „kaptur”** — głowa i pierś; duża, okrągła „sowia” głowa z żółtymi oczami; **zawisa w powietrzu**, wypatrując węży; na spodzie skrzydeł rzędy delikatnych kreseczek.
 
-### Rybołów — *Pandion haliaetus* 🔁
+### Rybołów — *Pandion haliaetus* (ang. Osprey) 🔁
 - **Rozpiętość:** ok. 145–170 cm
 - **Klucz:** skrzydła wygięte w **„M” jak u mewy**; biały spód, **ciemne plamy nadgarstkowe**; ciemny pas przez oko; wierzch ciemny. Zwykle nad wodą.
 
@@ -104,17 +104,17 @@ Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: 
 
 ## D. Sępy
 
-### Sęp płowy — *Gyps fulvus* 🔁🏠
+### Sęp płowy — *Gyps fulvus* (ang. Griffon Vulture) 🔁🏠
 - **Rozpiętość:** ok. 240–280 cm
 - **Klucz:** ogromny, płowobrązowy; kontrast **jaśniejszych pokryw i ciemnych lotek** od spodu; skrzydła w lekkie V; bardzo krótki, ciemny ogon; mała jasna głowa.
 - **W regionie:** kolonie na klifach (np. Sierra de la Plata koło Bolonii); przelot jesienny głównie w październiku — młode sępy często długo krążą i zawracają.
 
-### Sęp plamisty (sęp Rüppella) — *Gyps rueppelli* ⭐🔁
+### Sęp plamisty (sęp Rüppella) — *Gyps rueppelli* (ang. Rüppell's Vulture) ⭐🔁
 - **Rozpiętość:** ok. 220–250 cm
 - **Klucz:** podobny do płowego, ale **ciemniejszy**, dorosłe z łuskowatym wzorem (jasne obrzeżenia piór); na spodzie skrzydła **2–3 jasne linie** wzdłuż pokryw; nieco smuklejszy.
 - **Historia:** gatunek z Afryki subsaharyjskiej, który coraz regularniej trafia z sępami płowymi do Hiszpanii. Wypatrywanie go w stadzie płowych to jedna z atrakcji regionu.
 
-### Sęp kasztanowaty — *Aegypius monachus* ⭐
+### Sęp kasztanowaty — *Aegypius monachus* (ang. Cinereous Vulture) ⭐
 - **Rozpiętość:** ok. 250–295 cm
 - **Klucz:** **jednolicie ciemny**, skrzydła trzymane **płasko jak deska** (bez V), głęboko rozcapierzone „palce”.
 
@@ -130,13 +130,13 @@ Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: 
 
 ## E. Błotniaki
 
-### Błotniak łąkowy — *Circus pygargus* 🔁🏠
+### Błotniak łąkowy — *Circus pygargus* (ang. Montagu's Harrier) 🔁🏠
 - **Rozpiętość:** ok. 100–120 cm
 - **Samiec:** szary, **jeden czarny pasek na wierzchu skrzydła**, na spodzie dwa ciemne paski na lotkach II-rzędowych i **rdzawe kreski** na pokrywach; czarny koniec skrzydła.
 - **Samica:** brązowa, biały kuper („ringtail”), prążkowany ogon — bardzo podobna do samic innych błotniaków (zbożowego, stepowego).
 - **W regionie:** gniazduje na polach La Jandy.
 
-### Błotniak stawowy — *Circus aeruginosus* 🔁🏠
+### Błotniak stawowy — *Circus aeruginosus* (ang. Western Marsh Harrier) 🔁🏠
 - **Rozpiętość:** ok. 115–130 cm (największy błotniak)
 - **Samiec:** **trzykolorowy** — brązowy tułów, szare lotki II-rzędowe i ogon, czarne końce skrzydeł.
 - **Samica:** ciemnobrązowa z **kremową głową** i kremowymi „ramionami”.
@@ -148,13 +148,13 @@ Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: 
 
 ## F. Orły osiadłe
 
-### Orzeł iberyjski — *Aquila adalberti* 🏠
+### Orzeł iberyjski — *Aquila adalberti* (ang. Spanish Imperial Eagle) 🏠
 - **Rozpiętość:** ok. 190–210 cm
 - **Dorosły:** ciemnobrązowy z **białymi „epoletami”** na przedniej krawędzi skrzydła (widoczne na siedząco i w locie) i jasną głową/karkiem.
 - **Młody:** **jednolicie płowy/rudawy**, ciemne lotki.
 - **Historia:** endemit Półwyspu Iberyjskiego, jeden z najrzadszych orłów świata; dzięki ochronie i reintrodukcji (m.in. w La Jandzie w prowincji Kadyks) populacja rośnie.
 
-### Orzeł południowy — *Aquila fasciata* 🏠
+### Orzeł południowy — *Aquila fasciata* (ang. Bonelli's Eagle) 🏠
 - **Rozpiętość:** ok. 150–170 cm
 - **Dorosły:** jasny spód tułowia z ciemnymi kreseczkami, **ciemny pas przez spód skrzydła** (na pokrywach), jasne lotki, ogon z **szerokim ciemnym pasem końcowym**; od góry często biała plama na grzbiecie.
 - **Młody:** rudawo-płowy spód.
@@ -164,7 +164,7 @@ Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: 
 
 ## G. Kaniuk
 
-### Kaniuk — *Elanus caeruleus* 🏠
+### Kaniuk — *Elanus caeruleus* (ang. Black-winged Kite) 🏠
 - **Rozpiętość:** ok. 75–85 cm
 - **Klucz:** mały, **biało-szary** z **czarnymi „ramionami”**, czerwone oczy; zawisa jak pustułka; siedzi na słupach i drutach.
 - **Gdzie:** otwarte równiny, szczególnie La Janda. Łatwy — nie da się go z niczym pomylić!
@@ -173,10 +173,10 @@ Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: 
 
 ## H. Sokoły i krogulec
 
-### Pustułka — *Falco tinnunculus* 🏠🔁
+### Pustułka — *Falco tinnunculus* (ang. Common Kestrel) 🏠🔁
 - **Klucz:** zawisa; samiec — rudy grzbiet **w ciemne plamki**, szara głowa; **czarne pazury**.
 
-### Pustułeczka — *Falco naumanni* 🔁🏠
+### Pustułeczka — *Falco naumanni* (ang. Lesser Kestrel) 🔁🏠
 - **Klucz:** mniejsza i smuklejsza; samiec — **grzbiet rudy bez plamek**, **szaroniebieski pas na skrzydle**, czystszy spód skrzydła, środkowe sterówki lekko wystające (ogon klinowaty); **jasne pazury**.
 - **Gdzie:** kolonie w starych budynkach i kościołach andaluzyjskich miasteczek (np. Arcos de la Frontera).
 
@@ -189,16 +189,16 @@ Rybołów: skrzydła w „M”, **ciemne nadgarstki**, pas przez oko. Gadożer: 
 | Tryb życia | pojedynczo | kolonie |
 | Samice | bardzo podobne — patrz pazury i czystszy spód skrzydła | |
 
-### Kobuz — *Falco subbuteo* 🔁
+### Kobuz — *Falco subbuteo* (ang. Eurasian Hobby) 🔁
 Smukły sokół o sierpowatych skrzydłach (jak duży jerzyk); ciemne „wąsy”, gęsto kreskowana pierś, **rude „portki”** u dorosłych. Łowi ważki i ptaki w locie.
 
-### Sokół wędrowny — *Falco peregrinus* 🏠🔁
+### Sokół wędrowny — *Falco peregrinus* (ang. Peregrine Falcon) 🏠🔁
 Masywny, „beczkowaty” tułów, szerokie u nasady trójkątne skrzydła, **szerokie czarne wąsy**, poprzecznie prążkowany spód. Pikuje z ogromną prędkością.
 
-### Sokół skalny (sokół Eleonory) — *Falco eleonorae* ⭐🔁
+### Sokół skalny (sokół Eleonory) — *Falco eleonorae* (ang. Eleonora's Falcon) ⭐🔁
 Długoskrzydły i długoogoniasty; dwie odmiany (jasna i ciemna); od spodu **ciemne pokrywy kontrastujące z jaśniejszymi nasadami lotek**. Pojawia się sporadycznie, zwykle późnym latem i jesienią.
 
-### Krogulec — *Accipiter nisus* 🔁🏠❄️
+### Krogulec — *Accipiter nisus* (ang. Eurasian Sparrowhawk) 🔁🏠❄️
 Krótkie, zaokrąglone skrzydła, długi prosty ogon; lot: **seria szybkich uderzeń + ślizg**. Jesienią przelatuje w dużych liczbach, zwykle nisko.
 
 ---

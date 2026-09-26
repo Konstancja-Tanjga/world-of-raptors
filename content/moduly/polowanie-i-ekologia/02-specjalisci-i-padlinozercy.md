@@ -9,7 +9,7 @@ Nie każdy ptak drapieżny zabija. Część wyspecjalizowała się w jednym rodz
 Większość gatunków leży gdzieś pomiędzy. Nawet specjaliści w trudnym okresie jedzą coś innego.
 
 ## 2. Trzmielojad: łowca larw os
-**Trzmielojad** (*Pernis apivorus*) wbrew nazwie żywi się głównie **larwami i poczwarkami os** (a także trzmieli). Wypatruje latające osy, śledzi je do gniazda, a potem **wygrzebuje gniazdo z ziemi** stopami i wynosi całe plastry.
+**Trzmielojad** (*Pernis apivorus*, ang. European Honey Buzzard) wbrew nazwie żywi się głównie **larwami i poczwarkami os** (a także trzmieli). Wypatruje latające osy, śledzi je do gniazda, a potem **wygrzebuje gniazdo z ziemi** stopami i wynosi całe plastry.
 
 Przystosowania:
 - gęste, drobne, łuskowate pióra na „twarzy”, które chronią przed żądłami,
@@ -21,7 +21,7 @@ Trzmielojad przylatuje z Afryki późno, zwykle w maju, kiedy kolonie os zaczyna
 > 💡 Często pisze się, że pióra trzmielojada mają chemiczną ochronę odstraszającą osy. To hipoteza, nie ustalony fakt: pewne jest, że ptak bywa użądlony znacznie rzadziej, niż można by się spodziewać, ale dlaczego, wciąż się dyskutuje.
 
 ## 3. Gadożer: łowca węży
-**Gadożer** (*Circaetus gallicus*) żywi się przede wszystkim **wężami**, a także jaszczurkami. W Polsce jest bardzo rzadki, w Hiszpanii częsty.
+**Gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle) żywi się przede wszystkim **wężami**, a także jaszczurkami. W Polsce jest bardzo rzadki, w Hiszpanii częsty.
 
 - Poluje z zawisania albo z posterunku, wysoko nad suchymi, ciepłymi zboczami.
 - Ma grube łuski na nogach i gęste upierzenie. Nie jest odporny na jad, chroni go szybkość i te „zbroje”.
@@ -31,16 +31,16 @@ Trzmielojad przylatuje z Afryki późno, zwykle w maju, kiedy kolonie os zaczyna
 Gadożer przylatuje z Afryki wiosną, gdy robi się na tyle ciepło, że gady stają się aktywne.
 
 ## 4. Orzeł iberyjski i królik
-**Orzeł iberyjski** (*Aquila adalberti*) to przykład specjalisty uzależnionego od jednej ofiary: **dzikiego królika**. Kiedy choroby królików (myksomatoza, a potem krwotoczna choroba królików) załamały ich populacje, cierpiał także orzeł. Ochrona orła iberyjskiego to w dużej mierze ochrona królików. Więcej w module [A6 · Ochrona](../ochrona/README.md).
+**Orzeł iberyjski** (*Aquila adalberti*, ang. Spanish Imperial Eagle) to przykład specjalisty uzależnionego od jednej ofiary: **dzikiego królika**. Kiedy choroby królików (myksomatoza, a potem krwotoczna choroba królików) załamały ich populacje, cierpiał także orzeł. Ochrona orła iberyjskiego to w dużej mierze ochrona królików. Więcej w module [A6 · Ochrona](../ochrona/README.md).
 
 ## 5. Piraci: kleptopasożytnictwo
 **Kleptopasożytnictwo** to kradzież pokarmu zdobytego przez inne zwierzę. Wiele drapieżników robi to przy okazji, kilka regularnie.
 
 | Gatunek | Od kogo kradnie |
 |---|---|
-| **Bielik** (*Haliaeetus albicilla*) | rybołowy, kormorany, mewy, inne bieliki, wydry |
-| **Kania czarna** (*Milvus migrans*) | inne drapieżniki, mewy, czaple, bociany |
-| **Kania ruda** (*Milvus milvus*) | inne drapieżniki, krukowate |
+| **Bielik** (*Haliaeetus albicilla*, ang. White-tailed Eagle) | rybołowy, kormorany, mewy, inne bieliki, wydry |
+| **Kania czarna** (*Milvus migrans*, ang. Black Kite) | inne drapieżniki, mewy, czaple, bociany |
+| **Kania ruda** (*Milvus milvus*, ang. Red Kite) | inne drapieżniki, krukowate |
 | **Błotniak stawowy** | inne błotniaki, pustułki |
 
 Kradzież opłaca się, bo złodziej nie traci energii na wyszukanie i złapanie ofiary. Ma jednak swoje ryzyko: pogoń też kosztuje energię, a ofiara czasem skutecznie się broni.
@@ -53,10 +53,10 @@ Sępy nie zabijają, szukają padliny, szybując godzinami w kominach termicznyc
 
 | Gatunek | Co je z padliny |
 |---|---|
-| **Sęp płowy** (*Gyps fulvus*) | miękkie tkanki i wnętrzności, wsuwa długą szyję do wnętrza tuszy |
-| **Sęp kasztanowaty** (*Aegypius monachus*) | twardsze tkanki: skórę, ścięgna, mięśnie; silnym dziobem rozrywa tuszę |
-| **Ścierwnik** (*Neophron percnopterus*) | resztki, drobne kawałki; także odpadki, owady, jaja |
-| **Orłosęp** (*Gypaetus barbatus*) | **kości** i szpik |
+| **Sęp płowy** (*Gyps fulvus*, ang. Griffon Vulture) | miękkie tkanki i wnętrzności, wsuwa długą szyję do wnętrza tuszy |
+| **Sęp kasztanowaty** (*Aegypius monachus*, ang. Cinereous Vulture) | twardsze tkanki: skórę, ścięgna, mięśnie; silnym dziobem rozrywa tuszę |
+| **Ścierwnik** (*Neophron percnopterus*, ang. Egyptian Vulture) | resztki, drobne kawałki; także odpadki, owady, jaja |
+| **Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) | **kości** i szpik |
 
 Sępy mają bardzo kwaśny żołądek, który niszczy wiele bakterii obecnych w padlinie. Więcej o tym w module [A2 · Anatomia łowcy](../anatomia/README.md).
 

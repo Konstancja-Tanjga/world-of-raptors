@@ -90,6 +90,9 @@ body {
   font-style: italic;
   color: var(--bh-text-secondary);
 }
+.latin .en {
+  font-style: normal;
+}
 
 .text-link {
   color: var(--bh-text-link);

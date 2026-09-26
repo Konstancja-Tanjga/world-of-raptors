@@ -63,7 +63,7 @@ Ta różnica ma ogromne znaczenie dla ochrony. Populacja sępów czy orłów, kt
 
 ## Obserwacja bez szkody
 ### Strefy ochronne w Polsce
-Wokół gniazd niektórych gatunków (m.in. **bielika**, **orła przedniego**, **orlików**, **rybołowa**, **kani**, **gadożera** (*Circaetus gallicus*), **puchacza**, **sokoła wędrownego**) można wyznaczyć **strefy ochrony**. Szczegóły określa rozporządzenie w sprawie ochrony gatunkowej zwierząt, a strefy wyznacza regionalny dyrektor ochrony środowiska (RDOŚ).
+Wokół gniazd niektórych gatunków (m.in. **bielika**, **orła przedniego**, **orlików**, **rybołowa**, **kani**, **gadożera** (*Circaetus gallicus*, ang. Short-toed Snake Eagle), **puchacza**, **sokoła wędrownego**) można wyznaczyć **strefy ochrony**. Szczegóły określa rozporządzenie w sprawie ochrony gatunkowej zwierząt, a strefy wyznacza regionalny dyrektor ochrony środowiska (RDOŚ).
 - **Strefa całoroczna**: w najbliższym otoczeniu gniazda; nie wolno do niej wchodzić przez cały rok.
 - **Strefa okresowa**: szersza; nie wolno do niej wchodzić **w okresie lęgowym**.
 - Promienie stref (zwykle rzędu od ok. 100 do kilkuset metrów) i terminy zależą od gatunku. Nie musisz ich znać na pamięć: wystarczy zasada, że **do gniazd tych gatunków się nie podchodzi**.

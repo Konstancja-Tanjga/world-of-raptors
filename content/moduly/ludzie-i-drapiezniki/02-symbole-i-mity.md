@@ -15,7 +15,7 @@ To **legenda**, a nie opis prawdziwych wydarzeń. Motyw trzech braci pojawia si�
 - Od tej pory orzeł zmieniał kształt (korona, jej brak w PRL, przywrócenie w 1990 r.), ale zawsze był **biały na czerwonym polu**.
 
 ### Który to gatunek?
-Heraldyczny orzeł jest **stylizowany** i nie odpowiada wiernie żadnemu gatunkowi. Najczęściej za pierwowzór uważa się **bielika** (*Haliaeetus albicilla*): to największy ptak drapieżny Polski, a stare bieliki mają bardzo jasną głowę i biały ogon. Inni wskazują na orła przedniego albo uważają, że biel to po prostu **barwa heraldyczna** (srebro), a nie cecha ptaka. Sprawy nie da się rozstrzygnąć, więc najuczciwiej mówić: *bielik jest często uważany za wzór Orła Białego*.
+Heraldyczny orzeł jest **stylizowany** i nie odpowiada wiernie żadnemu gatunkowi. Najczęściej za pierwowzór uważa się **bielika** (*Haliaeetus albicilla*, ang. White-tailed Eagle): to największy ptak drapieżny Polski, a stare bieliki mają bardzo jasną głowę i biały ogon. Inni wskazują na orła przedniego albo uważają, że biel to po prostu **barwa heraldyczna** (srebro), a nie cecha ptaka. Sprawy nie da się rozstrzygnąć, więc najuczciwiej mówić: *bielik jest często uważany za wzór Orła Białego*.
 
 > 💡 Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami. Więcej o systematyce w [module A1](../kim-sa-drapiezniki/README.md).
 
@@ -27,7 +27,7 @@ Heraldyczny orzeł jest **stylizowany** i nie odpowiada wiernie żadnemu gatunko
 | **orzeł dwugłowy** | Bizancjum, potem m.in. Rosja, Serbia, Albania | dwie głowy tłumaczy się często jako władzę nad Wschodem i Zachodem; to interpretacja, nie pewność |
 | **orzeł dwugłowy Habsburgów** | Święte Cesarstwo Rzymskie, Austria | symbol cesarskiej władzy przez stulecia |
 | **Bundesadler** | Niemcy | jednogłowy czarny orzeł, następca orła cesarskiego |
-| **bielik amerykański** (*Haliaeetus leucocephalus*) | USA | ptak narodowy, na Wielkiej Pieczęci od 1782 r. |
+| **bielik amerykański** (*Haliaeetus leucocephalus*, ang. Bald Eagle) | USA | ptak narodowy, na Wielkiej Pieczęci od 1782 r. |
 | **orzeł z wężem na kaktusie** | Meksyk | nawiązuje do azteckiej legendy o założeniu Tenochtitlán; o gatunek (orzeł przedni czy karakara) wciąż się dyskutuje |
 
 > 💡 Bielik amerykański to bliski krewny naszego bielika, z tego samego rodzaju *Haliaeetus*. Polski i amerykański symbol narodowy to więc, przynajmniej według popularnej interpretacji, niemal „kuzyni”.
@@ -37,7 +37,7 @@ W chrześcijaństwie orzeł jest symbolem **św. Jana Ewangelisty**, a w mitolog
 ## Horus: sokół Egiptu
 **Horus** był jednym z najważniejszych bogów starożytnego Egiptu, przedstawianym jako **sokół** albo człowiek z głową sokoła. Faraon uchodził za ziemskie wcielenie Horusa. **Oko Horusa** (*udżat*) było amuletem ochronnym.
 
-Jaki to sokół? Wizerunki są stylizowane. Najczęściej wskazuje się **sokoła wędrownego** albo spokrewnionego z nim **raroga górskiego** (*Falco biarmicus*), ale pewności nie ma. Egipcjanie mumifikowali też ogromne ilości ptaków drapieżnych jako dary dla bogów.
+Jaki to sokół? Wizerunki są stylizowane. Najczęściej wskazuje się **sokoła wędrownego** albo spokrewnionego z nim **raroga górskiego** (*Falco biarmicus*, ang. Lanner Falcon), ale pewności nie ma. Egipcjanie mumifikowali też ogromne ilości ptaków drapieżnych jako dary dla bogów.
 
 ## Garuda
 **Garuda** to mityczny ptak z tradycji hinduistycznej i buddyjskiej, **wierzchowiec boga Wisznu** i wróg węży (nagów). Przedstawia się go jako potężnego ptaka lub pół-ptaka, pół-człowieka. Dziś Garuda jest m.in. w **godle Indonezji** (Garuda Pancasila) i w **godle Tajlandii**, a nazwę nosi indonezyjska linia lotnicza. Nie odpowiada jednemu gatunkowi; to postać mityczna, choć bywa łączona z dużymi orłami i kaniami Azji.
@@ -57,7 +57,7 @@ Te wierzenia miały realne skutki: sowy przybijano do drzwi stodół „na odstr
 ## Mini-quiz
 1. Dlaczego nie można z całą pewnością powiedzieć, że Orzeł Biały to bielik?
 2. Z jakim ptakiem kojarzony był egipski bóg Horus?
-3. Skąd wzięła się łacińska nazwa pójdźki *Athene noctua*?
+3. Skąd wzięła się łacińska nazwa pójdźki *Athene noctua* (ang. Little Owl)?
 
 <details><summary>Odpowiedzi</summary>
 

@@ -7,7 +7,7 @@ Różnica zależy od tego, na co ptak poluje:
 
 | Gatunek | Główna zdobycz | Różnica wielkości |
 |---|---|---|
-| **Krogulec** (*Accipiter nisus*) | małe ptaki | bardzo duża: samica bywa prawie dwa razy cięższa od samca |
+| **Krogulec** (*Accipiter nisus*, ang. Eurasian Sparrowhawk) | małe ptaki | bardzo duża: samica bywa prawie dwa razy cięższa od samca |
 | **Sokół wędrowny** | ptaki łapane w locie | duża: samica wyraźnie większa (w sokolnictwie samca nazywa się „tercel”; nazwę tradycyjnie tłumaczy się tym, że jest o ok. jedną trzecią mniejszy) |
 | **Myszołów** | gryzonie | umiarkowana |
 | **Sępy** | padlina | mała albo prawie żadna |
@@ -59,7 +59,7 @@ U niektórych gatunków starsze pisklę atakuje młodsze: dziobie je, odpycha od
 | Typ | Co się dzieje | Przykłady |
 |---|---|---|
 | **Fakultatywne** | zdarza się głównie przy niedoborze pokarmu | orzeł przedni, bielik (rzadziej), myszołów |
-| **Obligatoryjne (kainizm)** | zdarza się prawie zawsze, nawet przy obfitości pokarmu | **orlik krzykliwy**, orlik grubodzioby (*Clanga clanga*), orłosęp |
+| **Obligatoryjne (kainizm)** | zdarza się prawie zawsze, nawet przy obfitości pokarmu | **orlik krzykliwy**, orlik grubodzioby (*Clanga clanga*, ang. Greater Spotted Eagle), orłosęp |
 
 **Orlik krzykliwy** składa zwykle dwa jaja, ale prawie zawsze wylatuje z gniazda **tylko jedno młode**. Starsze pisklę atakuje młodsze w pierwszych dniach życia. Rodzice nie interweniują.
 

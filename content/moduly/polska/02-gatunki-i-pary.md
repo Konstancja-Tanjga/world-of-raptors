@@ -8,14 +8,14 @@ Rozpiętości skrzydeł są orientacyjne.
 
 ## A. Orły
 
-### Bielik — *Haliaeetus albicilla* 🏠❄️
+### Bielik — *Haliaeetus albicilla* (ang. White-tailed Eagle) 🏠❄️
 - **Rozpiętość:** ok. 200–245 cm, największy drapieżnik Polski
 - **Sylwetka:** skrzydła **bardzo długie i szerokie, prostokątne jak drzwi**, z głębokimi „palcami”; **krótki, klinowaty ogon**; **duża głowa z masywnym dziobem** wystaje daleko przed skrzydła. Szybuje na płasko.
 - **Dorosły:** brązowy, jasna głowa, **biały ogon**, żółty dziób.
 - **Młody:** ciemny, pstry, ciemny ogon i dziób. Pełne ubarwienie osiąga dopiero po ok. 5 latach.
 - **Gdzie:** jeziora, duże rzeki, stawy rybne, wybrzeże. Zimą także na otwartych polach przy padlinie.
 
-### Orzeł przedni — *Aquila chrysaetos* 🏠⭐
+### Orzeł przedni — *Aquila chrysaetos* (ang. Golden Eagle) 🏠⭐
 Pełna karta: [moduł o południu Hiszpanii](../poludnie-hiszpanii/02-gatunki-i-pary.md).
 - **Klucz:** skrzydła zwężone u nasady (tylna krawędź w kształcie „S”), dłuższy ogon, szybowanie w lekkie V.
 - **Gdzie:** w Polsce kilkadziesiąt par, głównie w Karpatach.
@@ -29,14 +29,14 @@ Pełna karta: [moduł o południu Hiszpanii](../poludnie-hiszpanii/02-gatunki-i-
 | Ułożenie skrzydeł | płasko | lekkie V |
 | Siedlisko | woda, niziny | góry |
 
-### Orlik krzykliwy — *Clanga pomarina* 🏠
+### Orlik krzykliwy — *Clanga pomarina* (ang. Lesser Spotted Eagle) 🏠
 - **Rozpiętość:** ok. 135–160 cm
 - **Sylwetka:** mały orzeł, wielkości dużego myszołowa, ale z **dłuższymi, bardziej prostokątnymi skrzydłami**, 7 „palcami” i **krótkim ogonem**. Szybuje z **lekko opuszczoną „ręką”**.
 - **Wzór (spód):** pokrywy podskrzydłowe **jaśniejsze albo tak samo jasne jak lotki**; u dorosłego mały jasny klin u nasady lotek I-rzędowych.
 - **Wzór (wierzch):** jaśniejsze pokrywy, często **jasna plamka u nasady ogona** (na kuprze), jasne „okna” na nasadzie lotek I-rzędowych.
 - **Gdzie:** wschodnia i północno-wschodnia Polska, Karpaty: podmokłe łąki na skraju lasów. Przylatuje pod koniec kwietnia, odlatuje we wrześniu.
 
-### Orlik grubodzioby — *Clanga clanga* 🏠⭐
+### Orlik grubodzioby — *Clanga clanga* (ang. Greater Spotted Eagle) 🏠⭐
 - **Rozpiętość:** ok. 155–180 cm
 - **Klucz:** większy i masywniejszy od orlika krzykliwego, **ciemniejszy**. Pokrywy podskrzydłowe **ciemniejsze od lotek** (odwrotnie niż u krzykliwego). Młode mają białe kropkowanie na wierzchu skrzydeł.
 - **Gdzie:** skrajnie rzadki, pojedyncze pary, głównie w Dolinie Biebrzy. Występują też mieszańce z orlikiem krzykliwym, co jeszcze utrudnia rozpoznanie.
@@ -54,11 +54,11 @@ Pełna karta: [moduł o południu Hiszpanii](../poludnie-hiszpanii/02-gatunki-i-
 
 ## B. Myszołowy
 
-### Myszołów — *Buteo buteo* 🏠❄️
+### Myszołów — *Buteo buteo* (ang. Common Buzzard) 🏠❄️
 Pełna karta: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md).
 - **Klucz:** krępy, krótka szyja, szerokie skrzydła w płytkie V, krótki ogon; bardzo zmienny kolor (od prawie białego do czekoladowego). **Najpospolitszy drapieżnik Polski.**
 
-### Myszołów włochaty — *Buteo lagopus* ❄️
+### Myszołów włochaty — *Buteo lagopus* (ang. Rough-legged Buzzard) ❄️
 - **Rozpiętość:** ok. 120–150 cm
 - **Klucz:** **biały ogon z szerokim ciemnym pasem końcowym**; **ciemna plama na brzuchu**; duże, wyraźne **ciemne plamy nadgarstkowe** na jasnym spodzie skrzydła; skrzydła dłuższe niż u myszołowa; **często zawisa**.
 - **Gdzie:** przylatuje z północy na zimę (X–IV), otwarte pola i łąki.
@@ -72,7 +72,7 @@ Pełna karta: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md)
 | Zawisanie | rzadko | **często** |
 | Sezon | cały rok | tylko zimą |
 
-### Trzmielojad — *Pernis apivorus* 🏠🔁
+### Trzmielojad — *Pernis apivorus* (ang. European Honey Buzzard) 🏠🔁
 Pełna karta i porównanie z myszołowem: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md). W Polsce od maja do sierpnia, lasy z polanami.
 
 ---
@@ -99,18 +99,18 @@ Pełne porównanie: [moduł o południu Hiszpanii, sekcja D](../poludnie-hiszpan
 
 ## E. Sokoły
 
-### Pustułka — *Falco tinnunculus* 🏠
+### Pustułka — *Falco tinnunculus* (ang. Common Kestrel) 🏠
 Najpospolitszy sokół w Polsce: zawisa nad łąkami, gniazduje w miastach, na budynkach i w budkach.
 
-### Kobuz — *Falco subbuteo* 🏠
+### Kobuz — *Falco subbuteo* (ang. Eurasian Hobby) 🏠
 Smukły, sierpowate skrzydła, rude „portki”. Od maja do września, łowi ważki i jaskółki.
 
-### Drzemlik — *Falco columbarius* ❄️
+### Drzemlik — *Falco columbarius* (ang. Merlin) ❄️
 - **Rozpiętość:** ok. 50–65 cm, najmniejszy sokół Europy
 - **Klucz:** mały, krępy, **krótkie, dość szerokie u nasady skrzydła**; lot **szybki i niski, tuż nad ziemią**, w pościgu za małymi ptakami. Samiec niebieskoszary z rdzawym spodem, samica brązowa, gęsto prążkowana. **Nie zawisa.**
 - **Gdzie:** zimą i na przelotach, otwarte pola, wybrzeże.
 
-### Sokół wędrowny — *Falco peregrinus* 🏠
+### Sokół wędrowny — *Falco peregrinus* (ang. Peregrine Falcon) 🏠
 Wrócił do Polski dzięki programowi restytucji. Dziś gniazduje m.in. na wysokich budynkach w miastach i na kominach elektrowni. Pełna karta: [moduł o cieśninie, sekcja H](../gibraltar/03-gatunki-i-pary.md).
 
 ### ⚖️ Pustułka vs kobuz vs drzemlik

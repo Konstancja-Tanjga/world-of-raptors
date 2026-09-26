@@ -8,20 +8,20 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 
 ## A. Duże sowy
 
-### Puchacz — *Bubo bubo* 🇵🇱🇪🇸
+### Puchacz — *Bubo bubo* (ang. Eurasian Eagle-Owl) 🇵🇱🇪🇸
 - **Rozpiętość:** ok. 155–190 cm (największa sowa Europy)
 - **Klucz:** ogromny, z **długimi „uszami”**, **pomarańczowe oczy**, rdzawobrązowy.
 - **Głos:** bardzo niskie, dwusylabowe **„uu-hu”**, słyszalne z daleka; tokuje od zimy do wczesnej wiosny.
 - **Gdzie:** skały, wąwozy, kamieniołomy, stare lasy. W Hiszpanii dość częsty w sierras, w Polsce nieliczny.
 
-### Puszczyk uralski — *Strix uralensis* 🇵🇱
+### Puszczyk uralski — *Strix uralensis* (ang. Ural Owl) 🇵🇱
 - **Rozpiętość:** ok. 125–135 cm
 - **Klucz:** duży, **jasnoszary**, okrągła głowa bez „uszu”, **małe ciemne oczy** w gładkiej szarej szlarze, **długi ogon**.
 - **Głos:** głębokie **„wuhu… wuhu-wuhu”**.
 - **Uwaga:** przy gnieździe potrafi zaatakować człowieka, więc trzymaj się z daleka.
 - **Gdzie:** Karpaty, stare lasy wschodniej Polski.
 
-### Puszczyk — *Strix aluco* 🇵🇱🇪🇸
+### Puszczyk — *Strix aluco* (ang. Tawny Owl) 🇵🇱🇪🇸
 - **Rozpiętość:** ok. 80–95 cm
 - **Klucz:** okrągła głowa bez „uszu”, **ciemne oczy**, odmiany szara i rdzawa.
 - **Głos:** samiec: drżące **„huuu… hu-hu-hu-huuuu”**; samica: ostre **„kju-wik”**.
@@ -40,7 +40,7 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 
 ## B. Płomykówka
 
-### Płomykówka — *Tyto alba* 🇵🇱🇪🇸
+### Płomykówka — *Tyto alba* (ang. Western Barn Owl) 🇵🇱🇪🇸
 - **Rozpiętość:** ok. 85–95 cm
 - **Klucz:** **biała, sercowata twarz**, **czarne oczy**, jasny spód, złotawy wierzch; w locie wygląda na prawie białą.
 - **Głos:** przeciągły, **syczący wrzask** „srrriii”; młode chrapią i syczą.
@@ -50,13 +50,13 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 
 ## C. „Uszate” sowy średniej wielkości
 
-### Uszatka — *Asio otus* 🇵🇱🇪🇸
+### Uszatka — *Asio otus* (ang. Long-eared Owl) 🇵🇱🇪🇸
 - **Rozpiętość:** ok. 90–100 cm
 - **Klucz:** **długie „uszy”**, **pomarańczowe oczy**, smukła; gęsto kreskowany spód aż do brzucha.
 - **Głos:** samiec: miękkie, niskie **„huu”** co 2–3 sekundy. Młode (VI–VII): piskliwe **„pii-e”**, jak nienaoliwione drzwi.
 - **Ciekawostka:** zimą tworzy **grupowe noclegowiska**, nawet kilkadziesiąt ptaków na jednym drzewie w mieście (także w Polsce).
 
-### Uszatka błotna — *Asio flammeus* 🇵🇱🇪🇸
+### Uszatka błotna — *Asio flammeus* (ang. Short-eared Owl) 🇵🇱🇪🇸
 - **Rozpiętość:** ok. 95–110 cm
 - **Klucz:** **żółte oczy w czarnej obwódce** (wygląda, jakby miała makijaż), krótkie, rzadko widoczne „uszy”; **poluje za dnia** nisko nad łąkami, lotem podobnym do błotniaka.
 - **Gdzie:** łąki i mokradła. W Hiszpanii zimuje, np. na La Jandzie. W Polsce nieliczna, zimą i w czasie przelotów częstsza.
@@ -75,25 +75,25 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 
 ## D. Małe sowy
 
-### Pójdźka — *Athene noctua* 🇵🇱🇪🇸
+### Pójdźka — *Athene noctua* (ang. Little Owl) 🇵🇱🇪🇸
 - **Rozpiętość:** ok. 55–60 cm
 - **Klucz:** mała, **płaska głowa**, **żółte oczy**, białe „brwi” (wygląda na złą albo zdziwioną); często siedzi **za dnia** na murkach, słupach i dachach; kiwa się, gdy jest zaniepokojona.
 - **Głos:** zawodzące **„guuk”** i ostre **„kiju”**.
 - **Gdzie:** w Hiszpanii pospolita (gaje oliwne, ruiny, pola). W Polsce rzadka: stare wierzby, zabudowania wiejskie.
 
-### Włochatka — *Aegolius funereus* 🇵🇱
+### Włochatka — *Aegolius funereus* (ang. Boreal Owl) 🇵🇱
 - **Rozpiętość:** ok. 50–60 cm
 - **Klucz:** **duża kwadratowa głowa**, **żółte oczy**, wyraźna jasna szlara z ciemnym obramowaniem, więc mina „wiecznie zdziwiona”; nogi pokryte gęstym pierzem.
 - **Głos:** szybka seria **„pu-pu-pu-pu-pu”** (5–8 dźwięków), zwykle w marcu i kwietniu, w nocy.
 - **Gdzie:** stare lasy iglaste w górach i na północnym wschodzie. Gniazduje w dziuplach dzięcioła czarnego.
 
-### Sóweczka — *Glaucidium passerinum* 🇵🇱
+### Sóweczka — *Glaucidium passerinum* (ang. Eurasian Pygmy Owl) 🇵🇱
 - **Rozpiętość:** ok. 32–39 cm (najmniejsza sowa Europy, wielkości szpaka)
 - **Klucz:** **mała głowa**, żółte oczy, jasne „brwi”, **długi ogon**, którym kręci i podrzuca; aktywna **o zmierzchu i o świcie**.
 - **Głos:** monotonne gwizdy **„djuu… djuu”**, a jesienią wznosząca się „gama”.
 - **Gdzie:** stare lasy iglaste: Karpaty, Sudety, Puszcza Białowieska.
 
-### Syczek — *Otus scops* 🇪🇸 (🇵🇱⭐) 🔁
+### Syczek — *Otus scops* (ang. Eurasian Scops Owl) 🇪🇸 (🇵🇱⭐) 🔁
 - **Rozpiętość:** ok. 47–54 cm
 - **Klucz:** malutki, **małe „uszka”**, szarobrązowy wzór **jak kora drzewa**, żółte oczy; prawie niewidoczny w dzień.
 - **Głos:** czysty, monotonny gwizd **„tjuu”** co 2–3 sekundy, przez całą noc; często dwa ptaki „rozmawiają” w nieco innej tonacji.

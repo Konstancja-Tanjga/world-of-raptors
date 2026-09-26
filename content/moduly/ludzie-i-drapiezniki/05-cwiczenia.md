@@ -14,7 +14,7 @@
    a) orzeł przedni b) orlik krzykliwy c) **bielik** d) rybołów
 6. Egipski bóg przedstawiany z głową sokoła:
    a) Anubis b) Ra-Atum c) Thot d) **Horus**
-7. Łacińska nazwa pójdźki *Athene noctua* nawiązuje do:
+7. Łacińska nazwa pójdźki *Athene noctua* (ang. Little Owl) nawiązuje do:
    a) miasta Ateny b) **bogini Ateny** c) nocnego nieba d) łacińskiego słowa „oko”
 8. „Łaknąć jak kania dżdżu” oznacza:
    a) być bardzo głodnym b) **bardzo czegoś pragnąć** c) mieć sokoli wzrok d) bać się deszczu

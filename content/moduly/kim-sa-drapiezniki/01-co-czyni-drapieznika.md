@@ -32,9 +32,9 @@ Widać tu ważną rzecz: „ptak drapieżny” to po części **pojęcie ekologi
 
 | Ptak | Co ma z drapieżnika | Dlaczego nie jest drapieżnikiem |
 |---|---|---|
-| **Dzierzby**, np. gąsiorek (*Lanius collurio*) i srokosz (*Lanius excubitor*) | haczykowaty dziób z ząbkiem, poluje na owady, jaszczurki, myszy, małe ptaki | to **ptaki wróblowe**; stopy są słabe, więc zdobycz nabija na ciernie, żeby móc ją rozrywać |
-| **Wydrzyki**, np. wydrzyk ostrosterny (*Stercorarius parasiticus*) | haczykowaty dziób, ściga inne ptaki, zabija pisklęta | krewni mew; mają **błony pławne** zamiast szponów, zdobycz chwytają dziobem |
-| **Kruk** (*Corvus corax*) | zjada padlinę, bywa, że zabija małe zwierzęta | ptak wróblowy, wszystkożerny; brak szponów i haczykowatego dzioba |
+| **Dzierzby**, np. gąsiorek (*Lanius collurio*, ang. Red-backed Shrike) i srokosz (*Lanius excubitor*, ang. Great Grey Shrike) | haczykowaty dziób z ząbkiem, poluje na owady, jaszczurki, myszy, małe ptaki | to **ptaki wróblowe**; stopy są słabe, więc zdobycz nabija na ciernie, żeby móc ją rozrywać |
+| **Wydrzyki**, np. wydrzyk ostrosterny (*Stercorarius parasiticus*, ang. Parasitic Jaeger) | haczykowaty dziób, ściga inne ptaki, zabija pisklęta | krewni mew; mają **błony pławne** zamiast szponów, zdobycz chwytają dziobem |
+| **Kruk** (*Corvus corax*, ang. Northern Raven) | zjada padlinę, bywa, że zabija małe zwierzęta | ptak wróblowy, wszystkożerny; brak szponów i haczykowatego dzioba |
 | **Kariamy** (seriemy) z Ameryki Południowej | polują na węże i jaszczurki | stopy do biegania, zdobycz zabijają uderzając nią o ziemię; ale są **bliskimi krewnymi sokołów** (lekcja 2) |
 
 > 💡 Srokosza czasem nazywa się „małym drapieżnikiem wśród wróblowych”. Nabite na cierń myszy i chrząszcze to jego „spiżarnia”. Jeśli widziałaś kiedyś chrząszcza nabitego na kolec głogu, był to prawdopodobnie ślad dzierzby.

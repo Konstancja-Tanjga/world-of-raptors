@@ -26,12 +26,12 @@ Wiele polskich nazw to gotowa ściągawka z biologii:
 
 | Nazwa | Co mówi |
 |---|---|
-| **myszołów** (*Buteo buteo*) | łowi myszy i nornice |
-| **rybołów** (*Pandion haliaetus*) | łowi ryby |
-| **trzmielojad** (*Pernis apivorus*) | zjada larwy os i trzmieli, rozkopując gniazda |
-| **gadożer** (*Circaetus gallicus*) | poluje głównie na węże i jaszczurki |
-| **błotniak** (np. *Circus aeruginosus*) | związany z mokradłami i trzcinowiskami |
-| **orłosęp** (*Gypaetus barbatus*) | wyglądem łączy cechy orła i sępa |
+| **myszołów** (*Buteo buteo*, ang. Common Buzzard) | łowi myszy i nornice |
+| **rybołów** (*Pandion haliaetus*, ang. Osprey) | łowi ryby |
+| **trzmielojad** (*Pernis apivorus*, ang. European Honey Buzzard) | zjada larwy os i trzmieli, rozkopując gniazda |
+| **gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle) | poluje głównie na węże i jaszczurki |
+| **błotniak** (np. *Circus aeruginosus* (ang. Western Marsh Harrier)) | związany z mokradłami i trzcinowiskami |
+| **orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) | wyglądem łączy cechy orła i sępa |
 
 To nie zawsze dokładna prawda (myszołów zjada też dżdżownice i płazy), ale zawsze dobry punkt zaczepienia do nauki. Szczegóły diety poznasz w [module o polowaniu i ekologii](../polowanie-i-ekologia/README.md).
 

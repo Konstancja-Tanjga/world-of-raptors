@@ -30,7 +30,9 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
       <Breadcrumbs items={[{ label: 'Atlas gatunków', href: '/gatunki' }, { label: g.pl }]} />
       <div className="stack">
         <h1 className="page-title">{g.pl}</h1>
-        <p className="latin">{g.lat}</p>
+        <p className="latin">
+          {g.lat} <span className="en">(ang. {g.en})</span>
+        </p>
         <div className="chips">
           <Badge>{g.grupa}</Badge>
           <Badge>{g.aktywnosc === 'nocny' ? 'nocny' : 'dzienny'}</Badge>
@@ -83,7 +85,9 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
                 <Link href={`/gatunki/${m.id}`} className="text-link">
                   {m.pl}
                 </Link>{' '}
-                <span className="latin">({m.lat})</span>
+                <span className="latin">
+                  ({m.lat}, <span className="en">ang. {m.en}</span>)
+                </span>
               </li>
             ))}
           </ul>

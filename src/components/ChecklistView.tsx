@@ -132,7 +132,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
                       <div className="checklist__row">
                         <Checkbox
                           label={g.pl}
-                          description={g.lat}
+                          description={`${g.lat} (ang. ${g.en})`}
                           checked={Boolean(obs)}
                           onChange={() => przelacz(g.id)}
                         />

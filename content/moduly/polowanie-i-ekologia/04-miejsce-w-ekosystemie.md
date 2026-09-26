@@ -20,7 +20,7 @@ Drapieżniki reagują na to na dwa sposoby:
 | Gatunek | Jak reaguje na lata norników |
 |---|---|
 | **Pustułka** | większe zniesienia, więcej udanych lęgów |
-| **Uszatka błotna** (*Asio flammeus*) | koczuje i gniazduje tam, gdzie akurat jest gradacja; w słabe lata może prawie nie gniazdować |
+| **Uszatka błotna** (*Asio flammeus*, ang. Short-eared Owl) | koczuje i gniazduje tam, gdzie akurat jest gradacja; w słabe lata może prawie nie gniazdować |
 | **Myszołów włochaty** | w tundrze gniazduje licznie w latach lemingów i norników; liczba zimujących w Polsce zmienia się z roku na rok |
 | **Płomykówka, uszatka** | liczba lęgów i młodych mocno zależy od norników |
 | **Myszołów** | generalista, reaguje słabiej, bo przestawia się na inny pokarm |
@@ -43,7 +43,7 @@ Co się dzieje, gdy sępy znikną, pokazały **Indie**. W latach 90. i na począ
 ## 5. Konkurencja i zabijanie mniejszych drapieżników
 Drapieżniki konkurują o pokarm, miejsca gniazdowe i terytoria. Czasem konkurencja przechodzi w coś więcej: **drapieżnictwo wewnątrzgildiowe**, czyli zabijanie (i często zjadanie) innych drapieżników.
 
-- **Puchacz** (*Bubo bubo*) jest w Europie najgroźniejszym wrogiem innych drapieżników. Zabija m.in. myszołowy, jastrzębie, kanie, pustułki, puszczyki i uszatki, a także pisklęta sokołów wędrownych.
+- **Puchacz** (*Bubo bubo*, ang. Eurasian Eagle-Owl) jest w Europie najgroźniejszym wrogiem innych drapieżników. Zabija m.in. myszołowy, jastrzębie, kanie, pustułki, puszczyki i uszatki, a także pisklęta sokołów wędrownych.
 - **Jastrząb** zabija krogulce, pustułki, puszczyki, uszatki i młode myszołowy.
 - **Sokół wędrowny** przegania i czasem zabija mniejsze sokoły i krukowate przy swoim gnieździe.
 

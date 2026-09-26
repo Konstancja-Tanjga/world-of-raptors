@@ -5,15 +5,15 @@ Drapieżnik ma do wyboru dwa podstawowe podejścia: **czekać** albo **szukać**
 ## 1. Czatowanie z posterunku
 Ptak siedzi na słupie, drzewie albo skarpie i obserwuje teren. Kiedy wypatrzy ofiarę, spada na nią krótkim lotem ślizgowym.
 
-- **Myszołów** (*Buteo buteo*) to podręcznikowy przykład. Siedzi na słupach przy drogach i na skrajach lasu, wypatrując norników. Zimą większość dnia spędza właśnie tak, bo oszczędza energię.
+- **Myszołów** (*Buteo buteo*, ang. Common Buzzard) to podręcznikowy przykład. Siedzi na słupach przy drogach i na skrajach lasu, wypatrując norników. Zimą większość dnia spędza właśnie tak, bo oszczędza energię.
 - Myszołów często chodzi też po świeżo zaoranym polu i zbiera **dżdżownice**, a po deszczu wyłapuje je na łąkach.
 - Z posterunku polują też pustułka (zwłaszcza zimą), jastrząb i wiele sów.
 
 ## 2. Zawisanie
 Ptak trzepocze skrzydłami w miejscu, pod wiatr, z nieruchomą głową. Z wysokości kilku–kilkunastu metrów przeczesuje wzrokiem trawę, a potem opada etapami i rzuca się na zdobycz.
 
-- **Pustułka** (*Falco tinnunculus*) jest mistrzynią zawisania. Głowa pozostaje prawie nieruchoma, nawet gdy ciało kołysze się na wietrze.
-- Zawisają też **myszołów włochaty** (*Buteo lagopus*, zimą w Polsce), **gadożer** (*Circaetus gallicus*), **kaniuk** (*Elanus caeruleus*), a czasem myszołów.
+- **Pustułka** (*Falco tinnunculus*, ang. Common Kestrel) jest mistrzynią zawisania. Głowa pozostaje prawie nieruchoma, nawet gdy ciało kołysze się na wietrze.
+- Zawisają też **myszołów włochaty** (*Buteo lagopus*, ang. Rough-legged Buzzard; zimą w Polsce), **gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle), **kaniuk** (*Elanus caeruleus*, ang. Black-winged Kite), a czasem myszołów.
 - Przy silnym wietrze zawisanie jest tańsze, bo ptak może się „położyć” na wietrze i prawie nie machać skrzydłami.
 
 > 💡 Holenderskie badania pustułek (Rijnsdorp, Daan i współpracownicy) pokazały, że polowanie z zawisania kosztuje wielokrotnie więcej energii na minutę niż czatowanie z posterunku, ale daje więcej upolowanych norników na godzinę. Pustułki przełączają się między obiema metodami zależnie od pogody i pory roku: zimą, gdy liczy się każda kaloria, częściej siedzą.
@@ -21,7 +21,7 @@ Ptak trzepocze skrzydłami w miejscu, pod wiatr, z nieruchomą głową. Z wysoko
 ## 3. Pikowanie
 Ptak atakuje z dużej wysokości, składa skrzydła i spada stromo na ofiarę, najczęściej na innego ptaka w locie.
 
-- **Sokół wędrowny** (*Falco peregrinus*) jest najszybszym zwierzęciem świata w pikowaniu. Przy pomiarach z ptakami sokolników notowano prędkości powyżej 300 km/h. Dzikie ptaki w zwykłym polowaniu pikują zwykle wolniej, a dokładne wartości trudno zmierzyć.
+- **Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) jest najszybszym zwierzęciem świata w pikowaniu. Przy pomiarach z ptakami sokolników notowano prędkości powyżej 300 km/h. Dzikie ptaki w zwykłym polowaniu pikują zwykle wolniej, a dokładne wartości trudno zmierzyć.
 - Uderza stopami w locie albo chwyta ofiarę. Sokoły dobijają zdobycz **dziobem**: na krawędzi górnej szczęki mają „ząb” (wyrostek), który pomaga przerwać kręgi szyjne.
 - Łupem są głównie ptaki średniej wielkości: gołębie, szpaki, drozdy, ptaki wodne.
 - Pikowanie z zamkniętymi skrzydłami stosują też orzeł przedni i inne orły, ale krócej i częściej na ofiarę na ziemi.
@@ -29,8 +29,8 @@ Ptak atakuje z dużej wysokości, składa skrzydła i spada stromo na ofiarę, n
 ## 4. Niski lot z zaskoczenia
 Ptak leci nisko, wykorzystuje żywopłoty, zabudowania i skraj lasu jako osłonę. Wyskakuje zza przeszkody i atakuje, zanim ofiara zdąży uciec.
 
-- **Krogulec** (*Accipiter nisus*) poluje głównie na małe ptaki: wróble, sikory, zięby, drozdy. Często atakuje przy karmnikach.
-- **Jastrząb** (*Accipiter gentilis*) poluje podobnie, ale na większe ofiary: gołębie, krukowate, kuraki, wiewiórki, zające. Często czatuje krótko na drzewie, przelatuje dalej i znów czatuje.
+- **Krogulec** (*Accipiter nisus*, ang. Eurasian Sparrowhawk) poluje głównie na małe ptaki: wróble, sikory, zięby, drozdy. Często atakuje przy karmnikach.
+- **Jastrząb** (*Accipiter gentilis*, ang. Northern Goshawk) poluje podobnie, ale na większe ofiary: gołębie, krukowate, kuraki, wiewiórki, zające. Często czatuje krótko na drzewie, przelatuje dalej i znów czatuje.
 - Oba mają krótkie, zaokrąglone skrzydła i długi ogon: dobre do zwrotów między drzewami, słabe do szybowania.
 
 > 💡 U krogulca samica bywa prawie dwa razy cięższa od samca. Samiec łapie głównie sikory i wróble, samica także drozdy, a nawet gołębie. Dzięki temu para nie konkuruje o te same ofiary. Więcej o różnicy wielkości płci w module [A4 · Rozród](../rozrod/README.md).
@@ -38,17 +38,17 @@ Ptak leci nisko, wykorzystuje żywopłoty, zabudowania i skraj lasu jako osłon�
 ## 5. Przeszukiwanie terenu nisko nad ziemią
 Ptak leci wolno, kilka metrów nad trzcinami, łąką albo polem, i przeczesuje teren tam i z powrotem. Nagle zawraca i spada w trawę.
 
-- **Błotniaki**: stawowy (*Circus aeruginosus*), łąkowy (*Circus pygargus*) i zbożowy (*Circus cyaneus*).
+- **Błotniaki**: stawowy (*Circus aeruginosus*, ang. Western Marsh Harrier), łąkowy (*Circus pygargus*, ang. Montagu's Harrier) i zbożowy (*Circus cyaneus*, ang. Hen Harrier).
 - Mają lekkie ciało i długie skrzydła, więc mogą lecieć bardzo wolno bez utraty wysokości.
 - Mają też **szlarę** podobną do sowiej, która pomaga słyszeć gryzonie i ptaki w gęstej roślinności. To przykład ewolucji zbieżnej z sowami.
 
 ## 6. Łapanie owadów w locie
-- **Kobuz** (*Falco subbuteo*) łapie ważki i chrząszcze stopami w locie i zjada je w powietrzu. Poluje też na jaskółki, oknówki i jerzyki, co wymaga ogromnej szybkości i zwrotności.
+- **Kobuz** (*Falco subbuteo*, ang. Eurasian Hobby) łapie ważki i chrząszcze stopami w locie i zjada je w powietrzu. Poluje też na jaskółki, oknówki i jerzyki, co wymaga ogromnej szybkości i zwrotności.
 - Kobuz wyprowadza lęgi późno, w lipcu i sierpniu, kiedy w powietrzu jest najwięcej młodych, niedoświadczonych jaskółek i wróbli.
-- Owadami żywi się też **pustułeczka** (*Falco naumanni*) w Hiszpanii: łapie szarańczaki i chrząszcze na ziemi i w locie.
+- Owadami żywi się też **pustułeczka** (*Falco naumanni*, ang. Lesser Kestrel) w Hiszpanii: łapie szarańczaki i chrząszcze na ziemi i w locie.
 
 ## 7. Nurkowanie do wody
-- **Rybołów** (*Pandion haliaetus*) krąży lub zawisa nad wodą, a potem wpada do niej **nogami naprzód**, czasem prawie cały znika pod powierzchnią.
+- **Rybołów** (*Pandion haliaetus*, ang. Osprey) krąży lub zawisa nad wodą, a potem wpada do niej **nogami naprzód**, czasem prawie cały znika pod powierzchnią.
 - Ma kolce na spodzie palców, odwracalny palec zewnętrzny (chwyt dwa na dwa, jak sowy) i nozdrza, które zamyka pod wodą.
 - Należy do skuteczniejszych łowców: w wielu badaniach udane było mniej więcej co trzecie–czwarte nurkowanie albo więcej, ale wyniki silnie zależą od wody i pogody.
 

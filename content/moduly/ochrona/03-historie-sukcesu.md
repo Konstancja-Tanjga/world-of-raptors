@@ -3,7 +3,7 @@
 Ochrona ptaków drapieżnych to jedna z największych historii sukcesu w ochronie przyrody. Poniżej znajdziesz najważniejsze przykłady. Przy każdym zwróć uwagę na pytanie: **co właściwie zadziałało?**
 
 ## Bielik: z krawędzi do tysięcy par
-**Bielik** (*Haliaeetus albicilla*) w XX wieku zniknął z dużej części Europy Zachodniej i Środkowej. Przyczyny: prześladowanie, a potem DDT i inne związki chloroorganiczne (np. PCB), które szczególnie mocno kumulowały się w rybach Bałtyku.
+**Bielik** (*Haliaeetus albicilla*, ang. White-tailed Eagle) w XX wieku zniknął z dużej części Europy Zachodniej i Środkowej. Przyczyny: prześladowanie, a potem DDT i inne związki chloroorganiczne (np. PCB), które szczególnie mocno kumulowały się w rybach Bałtyku.
 
 W Polsce w połowie XX wieku zostało niewiele par, zaledwie kilkadziesiąt do ok. stu według różnych szacunków. Dziś bielik gniazduje w całym kraju, także w pobliżu dużych miast, a krajowa populacja liczy **ponad tysiąc par** i należy do największych w Unii Europejskiej.
 
@@ -19,7 +19,7 @@ Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holand
 > 💡 Bielik to dobry przykład „cichego” sukcesu: dziś widok bielika nad Wisłą czy stawami w Dolinie Baryczy jest czymś zwykłym, a jeszcze kilka dekad temu był wielkim przeżyciem. Więcej o miejscach w [module o Polsce](../polska/README.md).
 
 ## Sokół wędrowny w Polsce: powrót na drzewa
-**Sokół wędrowny** (*Falco peregrinus*) gniazdował w Polsce głównie **na drzewach**, w starych gniazdach innych ptaków w borach sosnowych. To nietypowe, bo w większości Europy sokoły gniazdują na skałach. W wyniku DDT i prześladowania populacja drzewna **wymarła** w Polsce w drugiej połowie XX wieku (ostatnie lęgi w latach 60.–70., według różnych źródeł).
+**Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) gniazdował w Polsce głównie **na drzewach**, w starych gniazdach innych ptaków w borach sosnowych. To nietypowe, bo w większości Europy sokoły gniazdują na skałach. W wyniku DDT i prześladowania populacja drzewna **wymarła** w Polsce w drugiej połowie XX wieku (ostatnie lęgi w latach 60.–70., według różnych źródeł).
 
 ### Program restytucji
 - Od lat 90. **Stowarzyszenie na rzecz Dzikich Zwierząt „Sokół”** ([sokoly.pl](https://www.sokoly.pl)) prowadzi program przywracania gatunku.
@@ -32,7 +32,7 @@ Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holand
 - Łącznie w Polsce gniazduje dziś od kilkudziesięciu do ponad stu par (liczba rośnie; aktualne dane znajdziesz u Stowarzyszenia „Sokół”).
 
 ## Orzeł iberyjski: prąd i króliki
-**Orzeł iberyjski** (*Aquila adalberti*) żyje prawie wyłącznie na Półwyspie Iberyjskim. W latach 70. XX wieku zostało go zaledwie **kilkadziesiąt par**, był jednym z najrzadszych drapieżników świata.
+**Orzeł iberyjski** (*Aquila adalberti*, ang. Spanish Imperial Eagle) żyje prawie wyłącznie na Półwyspie Iberyjskim. W latach 70. XX wieku zostało go zaledwie **kilkadziesiąt par**, był jednym z najrzadszych drapieżników świata.
 
 | Zagrożenie | Działanie |
 |---|---|
@@ -44,7 +44,7 @@ Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holand
 Dziś liczebność wzrosła do **wielu setek par** (według najnowszych spisów wyraźnie ponad 500) i orzeł iberyjski rozszerza zasięg. IUCN obniżyła jego kategorię zagrożenia. To jednak wciąż gatunek zależny od ochrony. Zobacz też [moduł o południu Hiszpanii](../poludnie-hiszpanii/README.md).
 
 ## Kondor kalifornijski: 27 ptaków w niewoli
-**Kondor kalifornijski** (*Gymnogyps californianus*) ginął od ołowiu, trucizn i odstrzału. Na początku lat 80. na świecie żyło ok. 22 kondorów. W **1987 r.** schwytano ostatniego dzikiego ptaka i cały gatunek, wtedy ok. 27 osobników, znalazł się w ośrodkach hodowlanych. W naturze nie było ani jednego kondora.
+**Kondor kalifornijski** (*Gymnogyps californianus*, ang. California Condor) ginął od ołowiu, trucizn i odstrzału. Na początku lat 80. na świecie żyło ok. 22 kondorów. W **1987 r.** schwytano ostatniego dzikiego ptaka i cały gatunek, wtedy ok. 27 osobników, znalazł się w ośrodkach hodowlanych. W naturze nie było ani jednego kondora.
 
 - Hodowla zachowawcza: od samic odbierano pierwsze jajo, żeby złożyły kolejne (tzw. **podwójne zniesienie**), a pisklęta karmiono kukiełkami w kształcie głowy dorosłego kondora, żeby nie przywiązywały się do ludzi.
 - Od 1992 r. wypuszcza się ptaki w Kalifornii, później także w Arizonie, Utah i Meksyku.
@@ -55,16 +55,16 @@ Problem: ołów z amunicji wciąż zabija kondory, a wiele ptaków trzeba regula
 ## Sępy i orłosęp w Europie
 
 ### Sęp płowy
-**Sęp płowy** (*Gyps fulvus*) był w Hiszpanii tępiony i truty, ale od lat 70.–80. jego liczebność bardzo wzrosła. Hiszpania ma dziś zdecydowaną większość europejskiej populacji. Reintrodukcje przywróciły go m.in. we francuskich Cevennach i Alpach, a ptaki coraz częściej zalatują daleko na północ, czasem także do Polski.
+**Sęp płowy** (*Gyps fulvus*, ang. Griffon Vulture) był w Hiszpanii tępiony i truty, ale od lat 70.–80. jego liczebność bardzo wzrosła. Hiszpania ma dziś zdecydowaną większość europejskiej populacji. Reintrodukcje przywróciły go m.in. we francuskich Cevennach i Alpach, a ptaki coraz częściej zalatują daleko na północ, czasem także do Polski.
 
 ### Orłosęp
-**Orłosęp** (*Gypaetus barbatus*) zniknął z Alp na początku XX wieku.
+**Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) zniknął z Alp na początku XX wieku.
 - **Alpy:** międzynarodowy projekt reintrodukcji od 1986 r. (pierwsze wypuszczenia w Austrii). Pierwszy lęg na wolności w 1997 r. we Francji. Dziś w Alpach gniazduje kilkadziesiąt par.
 - **Andaluzja:** program w Sierra de Cazorla (Jaén) od połowy lat 2000. Pierwszy udany lęg po kilku latach, a obecnie gniazduje tam kilka par.
 - Podobne projekty prowadzi się w Pirenejach (stamtąd pochodzi naturalna populacja hiszpańska), Maestrazgo, na Korsyce i Krecie.
 
 ## Rybołów w Andaluzji
-**Rybołów** (*Pandion haliaetus*) przestał gniazdować w kontynentalnej Hiszpanii w XX wieku. Od początku lat 2000. przywraca się go w **Andaluzji** (Kadyks, Huelva): młode z Niemiec, Szkocji i Finlandii wypuszczano metodą hackingu. Pierwsze lęgi pojawiły się pod koniec lat 2000., a dziś przy zbiornikach i ujściach rzek gniazduje kilkadziesiąt par.
+**Rybołów** (*Pandion haliaetus*, ang. Osprey) przestał gniazdować w kontynentalnej Hiszpanii w XX wieku. Od początku lat 2000. przywraca się go w **Andaluzji** (Kadyks, Huelva): młode z Niemiec, Szkocji i Finlandii wypuszczano metodą hackingu. Pierwsze lęgi pojawiły się pod koniec lat 2000., a dziś przy zbiornikach i ujściach rzek gniazduje kilkadziesiąt par.
 
 ## Co łączy te historie?
 

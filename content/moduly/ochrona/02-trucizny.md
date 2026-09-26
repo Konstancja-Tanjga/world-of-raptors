@@ -5,7 +5,7 @@ Trzy substancje, trzy różne mechanizmy i trzy lekcje dla ochrony przyrody. Wsz
 ## 1. DDT: cienkie skorupki
 
 ### Co się stało?
-DDT to insektycyd stosowany masowo od lat 40. XX wieku w rolnictwie, leśnictwie i do zwalczania komarów. W latach 50. i 60. w Europie i Ameryce Północnej zaczęły gwałtownie ubywać **sokoły wędrowne** (*Falco peregrinus*), **bieliki** (*Haliaeetus albicilla*), **rybołowy** (*Pandion haliaetus*) i krogulce.
+DDT to insektycyd stosowany masowo od lat 40. XX wieku w rolnictwie, leśnictwie i do zwalczania komarów. W latach 50. i 60. w Europie i Ameryce Północnej zaczęły gwałtownie ubywać **sokoły wędrowne** (*Falco peregrinus*, ang. Peregrine Falcon), **bieliki** (*Haliaeetus albicilla*, ang. White-tailed Eagle), **rybołowy** (*Pandion haliaetus*, ang. Osprey) i krogulce.
 
 ### Mechanizm
 1. DDT rozkłada się w organizmie do **DDE**, związku bardzo trwałego i dobrze rozpuszczalnego w tłuszczach.
@@ -23,7 +23,7 @@ Dorosłe ptaki często przeżywały, ale **nie miały potomstwa**. Populacja wym
 ## 2. Diklofenak: katastrofa sępów w Azji Południowej
 
 ### Co się stało?
-W latach 90. w Indiach, Pakistanie i Nepalu zaczęły masowo ginąć sępy z rodzaju *Gyps*, m.in. sęp bengalski (*Gyps bengalensis*), jeszcze niedawno jeden z najliczniejszych dużych drapieżników świata. W ciągu kilkunastu lat liczebność kilku gatunków spadła o **ponad 95%**, a sępa bengalskiego według szacunków o ponad 99%.
+W latach 90. w Indiach, Pakistanie i Nepalu zaczęły masowo ginąć sępy z rodzaju *Gyps*, m.in. sęp bengalski (*Gyps bengalensis*, ang. White-rumped Vulture), jeszcze niedawno jeden z najliczniejszych dużych drapieżników świata. W ciągu kilkunastu lat liczebność kilku gatunków spadła o **ponad 95%**, a sępa bengalskiego według szacunków o ponad 99%.
 
 ### Mechanizm
 - **Diklofenak** to popularny lek przeciwzapalny (ten sam, który znasz z maści i tabletek). W Azji Południowej podawano go bydłu.

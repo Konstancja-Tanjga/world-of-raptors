@@ -25,7 +25,7 @@ Cieśnina w środku Stambułu, w najwęższym miejscu szeroka na niecały kilome
 ### Bliski Wschód i Ejlat
 Z Turcji ptaki lecą wzdłuż wschodniego wybrzeża Morza Śródziemnego, przez Izrael, Synaj i Kanał Sueski do Afryki. Cały ten pas bywa nazywany **szlakiem Rift Valley i Morza Czerwonego**. W Izraelu łączą się ptaki z Europy i z zachodniej Azji, więc w jednym sezonie przelatuje tu według liczeń **od kilkuset tysięcy do ponad miliona** ptaków drapieżnych.
 
-Ejlat, na samym południu Izraela, słynie z **przelotu wiosennego**: ptaki wracające z Afryki przez Synaj mijają miasto w drodze na północ. Najliczniejszy bywa **myszołów stepowy** (*Buteo buteo vulpinus*), wschodni podgatunek myszołowa, liczony w dziesiątkach, a w dobrych latach w setkach tysięcy.
+Ejlat, na samym południu Izraela, słynie z **przelotu wiosennego**: ptaki wracające z Afryki przez Synaj mijają miasto w drodze na północ. Najliczniejszy bywa **myszołów stepowy** (*Buteo buteo vulpinus*, ang. Steppe Buzzard), wschodni podgatunek myszołowa, liczony w dziesiątkach, a w dobrych latach w setkach tysięcy.
 
 ### Batumi
 Między Morzem Czarnym a górami Małego Kaukazu zostaje wąski pas lądu. Ptaki z rozległych terenów Rosji i Europy Wschodniej przeciskają się tędy jesienią. Od 2008 roku przelot liczy tu międzynarodowy zespół (**Batumi Raptor Count**) i w wielu sezonach wynik przekracza **milion ptaków drapieżnych**, co czyni Batumi jednym z najbardziej imponujących miejsc na świecie. Najliczniejsze są trzmielojad i myszołów stepowy.

@@ -32,13 +32,13 @@ Sokoły nie mają „palców”: ich spiczaste skrzydło z niewielkimi wcięciam
 
 | Grupa | Skrzydło | Wydłużenie | Obciążenie | Styl lotu i polowania |
 |---|---|---|---|---|
-| **Sokoły**, np. sokół wędrowny (*Falco peregrinus*) | spiczaste, bez „palców” | duże | duże | szybki lot aktywny, pikowanie na ptaki w powietrzu |
-| **Pustułka** (*Falco tinnunculus*) | spiczaste, dość długie | duże | średnie | **zawisanie** pod wiatr nad łąką, z nieruchomą głową |
-| **Krogulce**, np. krogulec (*Accipiter nisus*) | krótkie, zaokrąglone | małe | średnie | zasadzka, krótki, wybuchowy pościg między drzewami |
-| **Błotniaki**, np. błotniak stawowy (*Circus aeruginosus*) | długie, wąskie, w „V” | duże | **małe** | wolny, niski lot nad trzcinami i polami, nagłe opadnięcie na zdobycz |
-| **Kanie**, np. kania ruda (*Milvus milvus*) | długie, „złamane” w nadgarstku | średnie | małe | lekkie szybowanie, sterowanie długim ogonem, zbieranie pokarmu |
+| **Sokoły**, np. sokół wędrowny (*Falco peregrinus*, ang. Peregrine Falcon) | spiczaste, bez „palców” | duże | duże | szybki lot aktywny, pikowanie na ptaki w powietrzu |
+| **Pustułka** (*Falco tinnunculus*, ang. Common Kestrel) | spiczaste, dość długie | duże | średnie | **zawisanie** pod wiatr nad łąką, z nieruchomą głową |
+| **Krogulce**, np. krogulec (*Accipiter nisus*, ang. Eurasian Sparrowhawk) | krótkie, zaokrąglone | małe | średnie | zasadzka, krótki, wybuchowy pościg między drzewami |
+| **Błotniaki**, np. błotniak stawowy (*Circus aeruginosus*, ang. Western Marsh Harrier) | długie, wąskie, w „V” | duże | **małe** | wolny, niski lot nad trzcinami i polami, nagłe opadnięcie na zdobycz |
+| **Kanie**, np. kania ruda (*Milvus milvus*, ang. Red Kite) | długie, „złamane” w nadgarstku | średnie | małe | lekkie szybowanie, sterowanie długim ogonem, zbieranie pokarmu |
 | **Orły i sępy** | długie, szerokie, głębokie „palce” | średnie | średnie do dużego | szybowanie w kominach termicznych i wiatrach zboczowych |
-| **Rybołów** (*Pandion haliaetus*) | długie, wąskie, zgięte w „M” | duże | średnie | szybowanie i zawisanie nad wodą, nurkowanie nogami do przodu |
+| **Rybołów** (*Pandion haliaetus*, ang. Osprey) | długie, wąskie, zgięte w „M” | duże | średnie | szybowanie i zawisanie nad wodą, nurkowanie nogami do przodu |
 
 ## Pikowanie sokoła wędrownego
 Sokół wędrowny w pikowaniu składa skrzydła przy ciele i spada niemal pionowo. Uważa się go za **najszybsze zwierzę świata**. Zmierzone prędkości to według różnych badań **ponad 300 km/h**, ale najwyższe podawane wartości pochodzą z nielicznych pomiarów (m.in. z ptakami szkolonymi przez sokolników) i warto je traktować jako przybliżone. W zwykłym polowaniu sokół pikuje zwykle wolniej.

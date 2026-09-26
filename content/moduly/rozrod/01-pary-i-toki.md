@@ -5,9 +5,9 @@ Większość ptaków drapieżnych jest **monogamiczna**: w sezonie lęgowym jedn
 
 | Wzór | Przykłady | Co się dzieje |
 |---|---|---|
-| **Para na wiele lat** | **bielik** (*Haliaeetus albicilla*), **orzeł przedni** (*Aquila chrysaetos*), sępy | Ptaki osiadłe, cały rok w pobliżu terytorium. Para zwykle trwa, dopóki jeden z partnerów nie zginie. |
-| **Wierność miejscu** | **orlik krzykliwy** (*Clanga pomarina*), **rybołów** (*Pandion haliaetus*) | Partnerzy zimują osobno, w Afryce. Wiosną wracają do tego samego gniazda i często znów tworzą parę. Uważa się, że parę utrzymuje głównie przywiązanie obu ptaków do miejsca. |
-| **Poligynia (czasem)** | **błotniaki**, np. **błotniak zbożowy** (*Circus cyaneus*) | Jeden samiec może mieć dwie (rzadko więcej) samice i dokarmiać oba gniazda. Zdarza się to zwłaszcza w latach obfitości gryzoni. |
+| **Para na wiele lat** | **bielik** (*Haliaeetus albicilla*, ang. White-tailed Eagle), **orzeł przedni** (*Aquila chrysaetos*, ang. Golden Eagle), sępy | Ptaki osiadłe, cały rok w pobliżu terytorium. Para zwykle trwa, dopóki jeden z partnerów nie zginie. |
+| **Wierność miejscu** | **orlik krzykliwy** (*Clanga pomarina*, ang. Lesser Spotted Eagle), **rybołów** (*Pandion haliaetus*, ang. Osprey) | Partnerzy zimują osobno, w Afryce. Wiosną wracają do tego samego gniazda i często znów tworzą parę. Uważa się, że parę utrzymuje głównie przywiązanie obu ptaków do miejsca. |
+| **Poligynia (czasem)** | **błotniaki**, np. **błotniak zbożowy** (*Circus cyaneus*, ang. Hen Harrier) | Jeden samiec może mieć dwie (rzadko więcej) samice i dokarmiać oba gniazda. Zdarza się to zwłaszcza w latach obfitości gryzoni. |
 
 „Rozwody” u dużych orłów zdarzają się rzadko. Gdy jeden ptak zginie, drugi zwykle szybko znajduje nowego partnera, bo w okolicy krążą dorosłe ptaki bez terytorium, czekające na wolne miejsce (więcej w lekcji 4).
 
@@ -17,9 +17,9 @@ Większość ptaków drapieżnych jest **monogamiczna**: w sezonie lęgowym jedn
 Para broni **terytorium**, czyli obszaru wokół gniazda. Duże orły potrzebują kilku do kilkudziesięciu kilometrów kwadratowych. Terytorium nie zawsze obejmuje całe łowisko: bieliki bronią głównie okolicy gniazda, a żerować mogą na wspólnych dla wielu ptaków stawach.
 
 Są też gatunki **kolonijne** albo gniazdujące w luźnych grupach:
-- **sęp płowy** (*Gyps fulvus*): kolonie na skalnych ścianach, czasem kilkadziesiąt par,
-- **pustułeczka** (*Falco naumanni*): kolonie na starych budynkach, kościołach i murach Andaluzji,
-- **błotniak łąkowy** (*Circus pygargus*): często kilka par blisko siebie.
+- **sęp płowy** (*Gyps fulvus*, ang. Griffon Vulture): kolonie na skalnych ścianach, czasem kilkadziesiąt par,
+- **pustułeczka** (*Falco naumanni*, ang. Lesser Kestrel): kolonie na starych budynkach, kościołach i murach Andaluzji,
+- **błotniak łąkowy** (*Circus pygargus*, ang. Montagu's Harrier): często kilka par blisko siebie.
 
 Gatunki kolonijne bronią tylko najbliższego otoczenia gniazda, a żerują wspólnie.
 
@@ -28,8 +28,8 @@ Toki (pokazy godowe) służą do dwóch rzeczy naraz: do **zdobycia i utrzymania
 
 ### 1. Loty tokowe („sky-dancing”)
 Ptak na przemian wznosi się i nurkuje, rysując w powietrzu falistą linię. Czasem na szczycie każdej fali zawisa albo przewraca się na bok.
-- **Myszołów** (*Buteo buteo*): falisty lot tokowy nad lasem, zwykle z głośnym „hijee”, wczesną wiosną.
-- **Błotniaki**: samiec błotniaka stawowego (*Circus aeruginosus*) czy łąkowego wykonuje nad trzcinami lub łąką serię wzlotów i ostrych nurkowań, czasem z przewrotami.
+- **Myszołów** (*Buteo buteo*, ang. Common Buzzard): falisty lot tokowy nad lasem, zwykle z głośnym „hijee”, wczesną wiosną.
+- **Błotniaki**: samiec błotniaka stawowego (*Circus aeruginosus*, ang. Western Marsh Harrier) czy łąkowego wykonuje nad trzcinami lub łąką serię wzlotów i ostrych nurkowań, czasem z przewrotami.
 - **Orzeł przedni**: głębokie „fale” nad granią, widoczne z odległości kilku kilometrów.
 
 ### 2. Wspólne szybowanie
@@ -56,9 +56,9 @@ Terminy zależą od gatunku. W Polsce:
 | Okres | Co się dzieje |
 |---|---|
 | XII–II | bielik i orzeł przedni: toki, poprawianie gniazd; bieliki składają jaja już w lutym–marcu |
-| II–III | myszołów, jastrząb (*Accipiter gentilis*), sokół wędrowny (*Falco peregrinus*): loty tokowe |
+| II–III | myszołów, jastrząb (*Accipiter gentilis*, ang. Northern Goshawk), sokół wędrowny (*Falco peregrinus*, ang. Peregrine Falcon): loty tokowe |
 | IV | przylot orlików, rybołowów, błotniaków; szybkie toki i zajmowanie gniazd |
-| V–VI | **trzmielojad** (*Pernis apivorus*) i **kobuz** (*Falco subbuteo*) zaczynają najpóźniej |
+| V–VI | **trzmielojad** (*Pernis apivorus*, ang. European Honey Buzzard) i **kobuz** (*Falco subbuteo*, ang. Eurasian Hobby) zaczynają najpóźniej |
 
 Trzmielojad i kobuz późno przylatują z Afryki. Uważa się, że ich lęgi są dopasowane do pokarmu: u trzmielojada do szczytu rozwoju gniazd os, u kobuza do okresu, kiedy latają młode jaskółki i ważki.
 

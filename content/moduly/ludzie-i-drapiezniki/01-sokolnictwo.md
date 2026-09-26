@@ -7,10 +7,10 @@ Sokolnicy tradycyjnie dzielą ptaki na dwie grupy:
 
 | Grupa | Przykłady | Styl polowania |
 |---|---|---|
-| **Ptaki wysokiego lotu** | sokół wędrowny (*Falco peregrinus*), raróg (*Falco cherrug*), białozór (*Falco rusticolus*) | krążą wysoko nad sokolnikiem i spadają na podrywaną zdobycz |
-| **Ptaki niskiego lotu** | jastrząb (*Accipiter gentilis*), krogulec (*Accipiter nisus*), myszołów towarzyski (*Parabuteo unicinctus*) | startują z rękawicy i gonią zdobycz nisko, w pościgu |
+| **Ptaki wysokiego lotu** | sokół wędrowny (*Falco peregrinus*, ang. Peregrine Falcon), raróg (*Falco cherrug*, ang. Saker Falcon), białozór (*Falco rusticolus*, ang. Gyrfalcon) | krążą wysoko nad sokolnikiem i spadają na podrywaną zdobycz |
+| **Ptaki niskiego lotu** | jastrząb (*Accipiter gentilis*, ang. Northern Goshawk), krogulec (*Accipiter nisus*, ang. Eurasian Sparrowhawk), myszołów towarzyski (*Parabuteo unicinctus*, ang. Harris's Hawk) | startują z rękawicy i gonią zdobycz nisko, w pościgu |
 
-W niektórych krajach Azji Środkowej, zwłaszcza u Kazachów i Kirgizów, do dziś poluje się też z **orłem przednim** (*Aquila chrysaetos*), głównie na lisy.
+W niektórych krajach Azji Środkowej, zwłaszcza u Kazachów i Kirgizów, do dziś poluje się też z **orłem przednim** (*Aquila chrysaetos*, ang. Golden Eagle), głównie na lisy.
 
 > 💡 Podział na dwie grupy odpowiada biologii, którą znasz z [modułu o polowaniu](../polowanie-i-ekologia/README.md): sokoły to specjaliści od ataku z nurkowania, a jastrzębie od krótkiego, zwrotnego pościgu między drzewami.
 
@@ -39,10 +39,10 @@ W późnym średniowieczu krążyły listy, które przypisywały gatunki do stan
 | orzeł | cesarz |
 | białozór | król |
 | sokół wędrowny | książę, hrabia |
-| drzemlik (*Falco columbarius*) | dama |
+| drzemlik (*Falco columbarius*, ang. Merlin) | dama |
 | jastrząb | wolny chłop (yeoman) |
 | krogulec | duchowny |
-| pustułka (*Falco tinnunculus*) | pachołek |
+| pustułka (*Falco tinnunculus*, ang. Common Kestrel) | pachołek |
 
 Traktuj tę listę z dystansem: historycy uważają, że była raczej **literacką ciekawostką** niż prawem przestrzeganym w praktyce. Dobrze jednak pokazuje, jak wysoko ceniono duże sokoły, a jak nisko pustułkę, która do łowów na ptaki się nie nadaje.
 

@@ -29,13 +29,13 @@ Kształt stopy zdradza specjalizację.
 
 | Gatunek | Cecha stopy | Po co |
 |---|---|---|
-| **Rybołów** (*Pandion haliaetus*) | **odwracalny palec zewnętrzny** (dwa palce z przodu, dwa z tyłu), **kolce na spodzie palców**, długie, mocno zakrzywione szpony podobnej długości | utrzymanie śliskiej ryby; ptak niesie ją głową do przodu |
-| **Krogulec** (*Accipiter nisus*) | **bardzo długie, cienkie nogi i palce**, zwłaszcza długi palec środkowy | chwytanie małych ptaków w locie, „sięganie” w gęste gałęzie |
-| **Jastrząb** (*Accipiter gentilis*) | krótsze i dużo grubsze palce niż u krogulca | silny chwyt większej zdobyczy (gołębie, kuraki, zające) |
-| **Sokół wędrowny** (*Falco peregrinus*) | długie palce | chwytanie albo uderzanie ptaków w powietrzu |
-| **Gadożer** (*Circaetus gallicus*) | **krótkie, grube palce**, skok pokryty twardymi łuskami | mocne przytrzymanie węża; łuski utrudniają ukąszenie |
-| **Sępy**, np. sęp płowy (*Gyps fulvus*) | stosunkowo **słabe stopy, tępe szpony**, płaska stopa | chodzenie po ziemi i przytrzymywanie padliny, nie zabijanie |
-| **Orzełek włochaty** (*Hieraaetus pennatus*), **orzeł przedni** (*Aquila chrysaetos*) | **skok opierzony aż do palców** („w spodniach”) | to cecha wspólna całej grupy orłów „w spodniach” (podrodzina *Aquilinae*); pióra mogą chronić przed zimnem i ugryzieniem, ale to raczej przypuszczenie niż wynik badań |
+| **Rybołów** (*Pandion haliaetus*, ang. Osprey) | **odwracalny palec zewnętrzny** (dwa palce z przodu, dwa z tyłu), **kolce na spodzie palców**, długie, mocno zakrzywione szpony podobnej długości | utrzymanie śliskiej ryby; ptak niesie ją głową do przodu |
+| **Krogulec** (*Accipiter nisus*, ang. Eurasian Sparrowhawk) | **bardzo długie, cienkie nogi i palce**, zwłaszcza długi palec środkowy | chwytanie małych ptaków w locie, „sięganie” w gęste gałęzie |
+| **Jastrząb** (*Accipiter gentilis*, ang. Northern Goshawk) | krótsze i dużo grubsze palce niż u krogulca | silny chwyt większej zdobyczy (gołębie, kuraki, zające) |
+| **Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) | długie palce | chwytanie albo uderzanie ptaków w powietrzu |
+| **Gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle) | **krótkie, grube palce**, skok pokryty twardymi łuskami | mocne przytrzymanie węża; łuski utrudniają ukąszenie |
+| **Sępy**, np. sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) | stosunkowo **słabe stopy, tępe szpony**, płaska stopa | chodzenie po ziemi i przytrzymywanie padliny, nie zabijanie |
+| **Orzełek włochaty** (*Hieraaetus pennatus*, ang. Booted Eagle), **orzeł przedni** (*Aquila chrysaetos*, ang. Golden Eagle) | **skok opierzony aż do palców** („w spodniach”) | to cecha wspólna całej grupy orłów „w spodniach” (podrodzina *Aquilinae*); pióra mogą chronić przed zimnem i ugryzieniem, ale to raczej przypuszczenie niż wynik badań |
 
 > 💡 Sowy też mają odwracalny palec zewnętrzny, jak rybołów. Przypomnienie w [module o sowach](../sowy/01-kim-sa-sowy.md).
 
@@ -50,11 +50,11 @@ Dziób ptaka drapieżnego jest **haczykowaty**: górna szczęka zakrzywia się w
 
 | Gatunek | Dziób | Dieta |
 |---|---|---|
-| **Sęp kasztanowaty** (*Aegypius monachus*) | bardzo masywny | rozrywa twardą skórę, ścięgna, chrząstki |
+| **Sęp kasztanowaty** (*Aegypius monachus*, ang. Cinereous Vulture) | bardzo masywny | rozrywa twardą skórę, ścięgna, chrząstki |
 | **Sęp płowy** | mocny, na długiej szyi | wnętrzności, miękkie mięso, sięga głęboko w padlinę |
-| **Ścierwnik** (*Neophron percnopterus*) | cienki i długi | resztki, drobne kawałki; znany z rozbijania jaj kamieniami (w Afryce) |
-| **Orłosęp** (*Gypaetus barbatus*) | średni, z „brodą” z piór | głównie **kości**: połyka je w całości albo zrzuca z wysokości, żeby je rozbić |
-| **Trzmielojad** (*Pernis apivorus*) | słaby, nozdrza jak szczeliny, twarz pokryta **gęstymi, łuskowatymi piórkami** | larwy os i trzmieli; piórka i wąskie nozdrza prawdopodobnie chronią przed żądłami i ziemią |
+| **Ścierwnik** (*Neophron percnopterus*, ang. Egyptian Vulture) | cienki i długi | resztki, drobne kawałki; znany z rozbijania jaj kamieniami (w Afryce) |
+| **Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) | średni, z „brodą” z piór | głównie **kości**: połyka je w całości albo zrzuca z wysokości, żeby je rozbić |
+| **Trzmielojad** (*Pernis apivorus*, ang. European Honey Buzzard) | słaby, nozdrza jak szczeliny, twarz pokryta **gęstymi, łuskowatymi piórkami** | larwy os i trzmieli; piórka i wąskie nozdrza prawdopodobnie chronią przed żądłami i ziemią |
 | **Rybołów** | mocno zakrzywiony hak, nozdrza zamykane przy nurkowaniu | ryby |
 
 ## Mini-quiz
