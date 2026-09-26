@@ -5,6 +5,7 @@ import gatunkiJson from '../../content/gatunki.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
+import { resolveContentHref } from './links';
 import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
@@ -97,9 +98,11 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   const modul = znajdzModul(c.modul);
   const lekcja = modul?.lekcje.find((l) => l.slug === c.lekcja);
   const numer = modul && lekcja ? modul.lekcje.indexOf(lekcja) + 1 : 0;
+  // Lesson callouts link with repo-relative .md paths; turn them into app routes.
+  const tekst = c.tekst.replace(/\]\(([^)]+)\)/g, (_, href: string) => `](${resolveContentHref(href, `moduly/${c.modul}`)})`);
   return {
     id: c.id,
-    tekst: c.tekst,
+    tekst,
     href: lekcja ? `/moduly/${c.modul}/${lekcja.slug}` : `/moduly/${c.modul}`,
     zrodlo: modul
       ? lekcja
@@ -117,7 +120,8 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
 export function ciekawostkiDla({ modul, lekcja, gatunek }: { modul?: string; lekcja?: string; gatunek?: string } = {}) {
   const pasuje = (c: Ciekawostka) =>
     (gatunek !== undefined && c.gatunki.includes(gatunek)) || (modul !== undefined && c.modul === modul);
-  const pula = ciekawostki.filter((c) => !(modul && lekcja && c.modul === modul && c.lekcja === lekcja));
+  // Skip the page's own text: a lesson's callouts, or a module's intro on its overview page.
+  const pula = ciekawostki.filter((c) => !(modul && c.modul === modul && (c.lekcja ?? undefined) === lekcja));
   return {
     preferowane: pula.filter(pasuje).map(doPokazania),
     pozostale: pula.filter((c) => !pasuje(c)).map(doPokazania),

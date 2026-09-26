@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useId, useState, type ReactNode } from 'react';
 import type { CiekawostkaDoPokazania } from '@/lib/types';
-import { Button } from './ds';
+import { Button, StateBlock } from './ds';
 
 const KLUCZ = 'wor:ciekawostki:widziane';
 
@@ -44,10 +44,10 @@ function wybierz(preferowane: CiekawostkaDoPokazania[], pozostale: CiekawostkaDo
   return [...kandydaci].sort((a, b) => byly.indexOf(a.id) - byly.indexOf(b.id))[0];
 }
 
-/** **bold**, *italic*, `code` and [text](link) → text; enough for the lesson callouts. */
+/** **bold**, *italic*, `code` and [text](/route) links; enough for the lesson callouts. */
 function inline(tekst: string): ReactNode[] {
   const czesci: ReactNode[] = [];
-  const re = /\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`|\[(.+?)\]\((?:[^)]+)\)/g;
+  const re = /\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`|\[(.+?)\]\(([^)]+)\)/g;
   let ostatni = 0;
   let m: RegExpExecArray | null;
   while ((m = re.exec(tekst))) {
@@ -56,7 +56,12 @@ function inline(tekst: string): ReactNode[] {
     if (m[1]) czesci.push(<strong key={k}>{m[1]}</strong>);
     else if (m[2]) czesci.push(<em key={k}>{m[2]}</em>);
     else if (m[3]) czesci.push(<code key={k}>{m[3]}</code>);
-    else czesci.push(m[4]);
+    else
+      czesci.push(
+        <Link key={k} href={m[5]} className="text-link">
+          {m[4]}
+        </Link>,
+      );
     ostatni = re.lastIndex;
   }
   czesci.push(tekst.slice(ostatni));
@@ -85,9 +90,8 @@ export function Ciekawostka({
     setBiezaca(c);
   }, [preferowane, pozostale]);
 
-  if (!biezaca) return null;
-
   const nastepna = () => {
+    if (!biezaca) return;
     const c = wybierz(preferowane, pozostale, biezaca.id);
     if (c) {
       zapamietaj(c.id);
@@ -98,19 +102,26 @@ export function Ciekawostka({
   return (
     <aside className="ciekawostka" aria-labelledby={tytulId}>
       <p className="ciekawostka__tytul" id={tytulId}>
-        💡 Ciekawostka
+        <span aria-hidden="true">💡 </span>Ciekawostka
       </p>
-      <p className="ciekawostka__tekst" aria-live="polite">
-        {inline(biezaca.tekst)}
-      </p>
-      <div className="ciekawostka__stopka">
-        <Link href={biezaca.href} className="text-link">
-          Więcej: {biezaca.zrodlo}
-        </Link>
-        <Button variant="ghost" size="sm" onClick={nastepna}>
-          Inna ciekawostka
-        </Button>
-      </div>
+      {biezaca ? (
+        <>
+          <p className="ciekawostka__tekst" aria-live="polite">
+            {inline(biezaca.tekst)}
+          </p>
+          <div className="ciekawostka__stopka">
+            <Link href={biezaca.href} className="text-link">
+              Więcej: {biezaca.zrodlo}
+            </Link>
+            <Button variant="ghost" size="sm" onClick={nastepna}>
+              Inna ciekawostka
+            </Button>
+          </div>
+        </>
+      ) : (
+        // Chosen after mount (see above); the card keeps its place meanwhile.
+        <StateBlock state="loading" title="Wczytywanie ciekawostki" scope="inline" />
+      )}
     </aside>
   );
 }
