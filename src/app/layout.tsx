@@ -16,7 +16,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="pl">
       <body className="bh-root">
         <ToastProvider>
-          <AppFrame moduly={gotoweModuly.map(({ id, slug, tytul }) => ({ id, slug, tytul }))}>
+          <AppFrame moduly={gotoweModuly.map(({ id, slug, tytul, sciezka }) => ({ id, slug, tytul, sciezka }))}>
             {children}
           </AppFrame>
         </ToastProvider>

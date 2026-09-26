@@ -10,7 +10,7 @@ export function AppFrame({
   moduly,
   children,
 }: {
-  moduly: { slug: string; id: string; tytul: string }[];
+  moduly: { slug: string; id: string; tytul: string; sciezka: 'a' | 'b' }[];
   children: ReactNode;
 }) {
   const pathname = usePathname();
@@ -25,11 +25,12 @@ export function AppFrame({
     { id: 'gatunki', label: 'Atlas gatunków', href: '/gatunki' },
     { id: 'checklista', label: 'Moja checklista', href: '/checklista' },
   ];
-  const lekcje: NavEntry[] = moduly.map((m) => ({
-    id: m.slug,
-    label: `${m.id} · ${m.tytul}`,
-    href: `/moduly/${m.slug}`,
-  }));
+  const modulySciezki = (sciezka: 'a' | 'b'): NavEntry[] =>
+    moduly
+      .filter((m) => m.sciezka === sciezka)
+      .map((m) => ({ id: m.slug, label: `${m.id} · ${m.tytul}`, href: `/moduly/${m.slug}` }));
+  const biologia = modulySciezki('a');
+  const teren = modulySciezki('b');
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
@@ -78,7 +79,12 @@ export function AppFrame({
         sidebar={
           <nav aria-label="Nawigacja kursu" className="sidebar">
             <NavList ariaLabel="Główne">{renderItems(glowne)}</NavList>
-            <NavGroup label="Moduły">{renderItems(lekcje)}</NavGroup>
+            {biologia.length > 0 && (
+              <NavGroup label="Ścieżka A: Biologia">{renderItems(biologia)}</NavGroup>
+            )}
+            {teren.length > 0 && (
+              <NavGroup label="Ścieżka B: W terenie">{renderItems(teren)}</NavGroup>
+            )}
             <NavGroup label="Narzędzia">{renderItems(narzedzia)}</NavGroup>
           </nav>
         }

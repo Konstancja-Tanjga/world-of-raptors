@@ -15,15 +15,15 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 
 ## Ścieżka A: Biologia ptaków drapieżnych
 
-| # | Moduł | Najważniejsze wątki |
-|---|---|---|
-| A1 | **Kim są ptaki drapieżne?** | Taksonomia: szponiaste, sokołowe, sowy, sępy Nowego Świata; sokoły bliżej papug niż jastrzębi; co czyni drapieżnika drapieżnikiem |
-| A2 | **Anatomia łowcy** | Wzrok (dwa dołki środkowe, UV), niesymetryczne uszy sów, ciche lotki, szpony vs dziób, łyse głowy sępów, bardzo kwaśny żołądek |
-| A3 | **Polowanie i ekologia** | Strategie łowieckie (zasadzka, pikowanie, zawisanie, padlinożerność), dieta, wypluwki, rola w ekosystemie |
-| A4 | **Rozród i życie rodzinne** | Toki, gniazda, samica większa od samca, zabijanie rodzeństwa w gnieździe, rozwój piskląt |
-| A5 | **Wędrówki** | Termiki i szybowanie, „wąskie gardła” (Gibraltar, Bosfor, Falsterbo, Ejlat), telemetria GPS, trasy zachodnia i wschodnia |
-| A6 | **Ochrona** | DDT, diklofenak i sępy w Indiach, ołów, elektrokucje; historie sukcesu: sokół wędrowny w Polsce, orzeł iberyjski, kondor kalifornijski |
-| A7 | **Ludzie i drapieżniki** | Sokolnictwo (UNESCO), mitologia i herby, nauka obywatelska (eBird, Observation.org) |
+| # | Moduł | Najważniejsze wątki | Status |
+|---|---|---|---|
+| A1 | **Kim są ptaki drapieżne?** | Taksonomia: szponiaste, sokołowe, sowy, sępy Nowego Świata; sokoły bliżej papug niż jastrzębi; co czyni drapieżnika drapieżnikiem | ✅ [gotowy](moduly/kim-sa-drapiezniki/README.md) |
+| A2 | **Anatomia łowcy** | Wzrok (dwa dołki środkowe, UV), niesymetryczne uszy sów, ciche lotki, szpony vs dziób, łyse głowy sępów, bardzo kwaśny żołądek | ✅ [gotowy](moduly/anatomia/README.md) |
+| A3 | **Polowanie i ekologia** | Strategie łowieckie (zasadzka, pikowanie, zawisanie, padlinożerność), dieta, wypluwki, rola w ekosystemie | ✅ [gotowy](moduly/polowanie-i-ekologia/README.md) |
+| A4 | **Rozród i życie rodzinne** | Toki, gniazda, samica większa od samca, zabijanie rodzeństwa w gnieździe, rozwój piskląt | ✅ [gotowy](moduly/rozrod/README.md) |
+| A5 | **Wędrówki** | Termiki i szybowanie, „wąskie gardła” (Gibraltar, Bosfor, Falsterbo, Ejlat), telemetria GPS, trasy zachodnia i wschodnia | ✅ [gotowy](moduly/wedrowki/README.md) |
+| A6 | **Ochrona** | DDT, diklofenak i sępy w Indiach, ołów, elektrokucje; historie sukcesu: sokół wędrowny w Polsce, orzeł iberyjski, kondor kalifornijski | ✅ [gotowy](moduly/ochrona/README.md) |
+| A7 | **Ludzie i drapieżniki** | Sokolnictwo (UNESCO), mitologia i herby, nauka obywatelska (eBird, Observation.org) | ✅ [gotowy](moduly/ludzie-i-drapiezniki/README.md) |
 
 ## Ścieżka B: Rozpoznawanie w terenie
 

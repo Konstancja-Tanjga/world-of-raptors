@@ -12,52 +12,206 @@
   "moduly": [
     {
       "id": "A1",
-      "slug": null,
+      "slug": "kim-sa-drapiezniki",
       "sciezka": "a",
       "tytul": "Kim są ptaki drapieżne?",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-co-czyni-drapieznika",
+          "tytul": "Co czyni drapieżnika drapieżnikiem"
+        },
+        {
+          "slug": "02-drzewo-rodowe",
+          "tytul": "Drzewo rodowe, czyli taksonomia i filogeneza"
+        },
+        {
+          "slug": "03-rodziny-i-roznorodnosc",
+          "tytul": "Rodziny i ich różnorodność na świecie"
+        },
+        {
+          "slug": "04-europa-i-polska",
+          "tytul": "Drapieżniki Europy i Polski, czyli przegląd grup"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "A2",
-      "slug": null,
+      "slug": "anatomia",
       "sciezka": "a",
       "tytul": "Anatomia łowcy",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-wzrok",
+          "tytul": "Wzrok"
+        },
+        {
+          "slug": "02-szpony-stopy-dziob",
+          "tytul": "Szpony, stopy i dziób"
+        },
+        {
+          "slug": "03-skrzydla-i-lot",
+          "tytul": "Skrzydła, lot i pióra"
+        },
+        {
+          "slug": "04-trawienie-i-fizjologia",
+          "tytul": "Trawienie i fizjologia"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "A3",
-      "slug": null,
+      "slug": "polowanie-i-ekologia",
       "sciezka": "a",
       "tytul": "Polowanie i ekologia",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-strategie-lowieckie",
+          "tytul": "Strategie łowieckie"
+        },
+        {
+          "slug": "02-specjalisci-i-padlinozercy",
+          "tytul": "Specjaliści, piraci i padlinożercy"
+        },
+        {
+          "slug": "03-dieta-i-wypluwki",
+          "tytul": "Dieta i jak ją badamy"
+        },
+        {
+          "slug": "04-miejsce-w-ekosystemie",
+          "tytul": "Miejsce w ekosystemie"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "A4",
-      "slug": null,
+      "slug": "rozrod",
       "sciezka": "a",
       "tytul": "Rozród i życie rodzinne",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-pary-i-toki",
+          "tytul": "Pary, toki i terytoria"
+        },
+        {
+          "slug": "02-gniazda",
+          "tytul": "Gniazda"
+        },
+        {
+          "slug": "03-jaja-i-rodzenstwo",
+          "tytul": "Jaja, wysiadywanie i rodzeństwo"
+        },
+        {
+          "slug": "04-dorastanie",
+          "tytul": "Dorastanie i życie dorosłe"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "A5",
-      "slug": null,
+      "slug": "wedrowki",
       "sciezka": "a",
       "tytul": "Wędrówki",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-dlaczego-i-jak",
+          "tytul": "Dlaczego i jak wędrują"
+        },
+        {
+          "slug": "02-fizyka-szybowania",
+          "tytul": "Fizyka szybowania"
+        },
+        {
+          "slug": "03-szlaki-i-waskie-gardla",
+          "tytul": "Szlaki i wąskie gardła"
+        },
+        {
+          "slug": "04-jak-badamy",
+          "tytul": "Jak badamy wędrówki"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "A6",
-      "slug": null,
+      "slug": "ochrona",
       "sciezka": "a",
       "tytul": "Ochrona",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-zagrozenia",
+          "tytul": "Zagrożenia dawniej i dziś"
+        },
+        {
+          "slug": "02-trucizny",
+          "tytul": "Trucizny: DDT, diklofenak, ołów"
+        },
+        {
+          "slug": "03-historie-sukcesu",
+          "tytul": "Historie sukcesu"
+        },
+        {
+          "slug": "04-ochrona-w-praktyce",
+          "tytul": "Ochrona w praktyce"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "A7",
-      "slug": null,
+      "slug": "ludzie-i-drapiezniki",
       "sciezka": "a",
       "tytul": "Ludzie i drapieżniki",
-      "gotowy": false
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-sokolnictwo",
+          "tytul": "Sokolnictwo: od stepów do lotnisk"
+        },
+        {
+          "slug": "02-symbole-i-mity",
+          "tytul": "Symbole i mity"
+        },
+        {
+          "slug": "03-polska-kultura",
+          "tytul": "Drapieżniki w polskim języku i kulturze"
+        },
+        {
+          "slug": "04-nauka-obywatelska",
+          "tytul": "Nauka obywatelska i pomoc ptakom"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
     },
     {
       "id": "B1",

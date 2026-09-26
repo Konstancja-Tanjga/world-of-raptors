@@ -70,9 +70,8 @@ npm run lint
 Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten ją otworzy. Jeśli ma być zamknięta: prosta blokada hasłem (HTTP Basic Auth) w `src/proxy.ts` (w Next.js 16 plik `middleware` nazywa się `proxy`), z hasłem w zmiennej środowiskowej na Vercel.
 
 ## Etapy
-1. ✅ **MVP:** moduły B1–B5, atlas gatunków, checklista, deploy.
+1. ✅ **MVP:** moduły A1–A7 i B1–B5, atlas gatunków, checklista, deploy.
 2. Zdjęcia i nagrania na licencjach CC (Wikimedia Commons, xeno-canto) z autorem i licencją przy każdym pliku.
 3. Interaktywne quizy i fiszki z powtórkami rozłożonymi w czasie (`ts-fsrs`).
 4. Mapa punktów obserwacyjnych (Leaflet + OpenStreetMap), quiz „porównaj”, „wirtualny punkt obserwacyjny”.
-5. Kolejne moduły (B1, B2, ścieżka A).
-6. Opcjonalnie: checklista zapisywana w bazie (np. Supabase albo Neon przez Vercel Marketplace), żeby była wspólna na telefonie i komputerze.
+5. Opcjonalnie: checklista zapisywana w bazie (np. Supabase albo Neon przez Vercel Marketplace), żeby była wspólna na telefonie i komputerze.
