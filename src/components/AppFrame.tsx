@@ -2,20 +2,28 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, type ReactNode } from 'react';
+import { kluczLekcji, usePostep } from '@/lib/postep';
 import { AppBar, AppShell, Button, NavGroup, NavItem, NavList, SkipLink } from './ds';
 
-type NavEntry = { id: string; label: string; href: string };
+type NavEntry = {
+  id: string;
+  label: string;
+  href: string;
+  subline?: string;
+  icon?: ReactNode;
+};
 
 export function AppFrame({
   moduly,
   children,
 }: {
-  moduly: { slug: string; id: string; tytul: string; sciezka: 'a' | 'b' }[];
+  moduly: { slug: string; id: string; tytul: string; sciezka: 'a' | 'b'; lekcje: string[] }[];
   children: ReactNode;
 }) {
   const pathname = usePathname();
   const router = useRouter();
   const [navOpen, setNavOpen] = useState(false);
+  const { postep } = usePostep();
 
   const glowne: NavEntry[] = [
     { id: 'start', label: 'Start', href: '/' },
@@ -28,7 +36,19 @@ export function AppFrame({
   const modulySciezki = (sciezka: 'a' | 'b'): NavEntry[] =>
     moduly
       .filter((m) => m.sciezka === sciezka)
-      .map((m) => ({ id: m.slug, label: `${m.id} · ${m.tytul}`, href: `/moduly/${m.slug}` }));
+      .map((m) => {
+        // Ticks appear once the browser copy of progress is read; the text in
+        // the subline carries the state, the icon only echoes it.
+        const done = postep ? m.lekcje.filter((l) => postep[kluczLekcji(m.slug, l)]).length : 0;
+        const zaliczony = m.lekcje.length > 0 && done === m.lekcje.length;
+        return {
+          id: m.slug,
+          label: `${m.id} · ${m.tytul}`,
+          href: `/moduly/${m.slug}`,
+          icon: postep ? (zaliczony ? '✓' : '○') : undefined,
+          subline: zaliczony ? 'Zaliczony' : done > 0 ? `${done} z ${m.lekcje.length} lekcji` : undefined,
+        };
+      });
   const biologia = modulySciezki('a');
   const teren = modulySciezki('b');
 
@@ -46,7 +66,7 @@ export function AppFrame({
     entries.map((e) => (
       <NavItem
         key={e.id}
-        item={{ id: e.id, label: e.label }}
+        item={{ id: e.id, label: e.label, subline: e.subline, icon: e.icon }}
         active={isActive(e.href)}
         onSelect={go(entries)}
       />

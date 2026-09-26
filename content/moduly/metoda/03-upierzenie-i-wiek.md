@@ -38,6 +38,18 @@ Niektóre gatunki mają osobniki jasne, pośrednie i ciemne:
 
 Dlatego u tych gatunków **nie opieraj się na kolorze**, tylko na sylwetce, proporcjach i wzorze ogona.
 
+## Filmy
+- [YouTube: odmiany barwne myszołowa](https://www.youtube.com/results?search_query=common+buzzard+colour+morphs)
+- [YouTube: wiek bielika po upierzeniu](https://www.youtube.com/results?search_query=white-tailed+eagle+juvenile+vs+adult)
+- [YouTube: pierzenie ptaków drapieżnych, lotki](https://www.youtube.com/results?search_query=raptor+moult+primaries)
+
+## Źródła
+- [Wikipedia: Pierzenie](https://pl.wikipedia.org/wiki/Pierzenie) i [Moulting](https://en.wikipedia.org/wiki/Moulting)
+- [Wikipedia: Polymorphism (biology)](https://en.wikipedia.org/wiki/Polymorphism_(biology)): odmiany barwne
+- [Hawk Migration Association of North America: Raptor Identification Resources](https://www.hawkmigration.org/raptor-identification-resources/)
+- [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): opisy upierzenia w kolejnych latach życia
+- Forsman D., *The Raptors of Europe and the Middle East: A Handbook of Field Identification*
+
 ## Mini-quiz
 1. Jak się nazywa ciemna plama na zgięciu skrzydła od spodu?
 2. Latem widzisz myszołowa z symetrycznymi „dziurami” w obu skrzydłach. Co się dzieje?

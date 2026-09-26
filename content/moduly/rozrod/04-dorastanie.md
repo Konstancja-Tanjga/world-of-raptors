@@ -3,6 +3,8 @@
 ## Pisklę: od puchu do piór
 Pisklęta ptaków drapieżnych to **gniazdowniki**: przez tygodnie zostają w gnieździe i zależą od rodziców. Nie są jednak zupełnie bezbronne jak nagie pisklęta wróbli: klują się **pokryte puchem**, a oczy otwierają od razu lub bardzo szybko.
 
+{{TAG:r4_harrierchick}}
+
 Rozwój przebiega podobnie u wszystkich gatunków, różni się tylko tempem:
 
 | Etap | Co widać (np. na kamerze) |
@@ -12,6 +14,10 @@ Rozwój przebiega podobnie u wszystkich gatunków, różni się tylko tempem:
 | **Wyrastanie piór** | spod puchu wychodzą lotki i sterówki; pisklę wygląda „łaciato”; zaczyna samo rozrywać pokarm |
 | **Trening** | machanie skrzydłami, podskoki na brzegu gniazda; u orłów i sów młode wychodzą na gałęzie obok gniazda |
 | **Wylot** | pierwszy lot; młode często wraca do gniazda na nocleg i po pokarm |
+
+{{TAG:r4_wtechick}}
+
+{{TAG:r4_buzzard}}
 
 Czas od wyklucia do wylotu jest mniej więcej tym dłuższy, im większy ptak:
 
@@ -24,7 +30,11 @@ Czas od wyklucia do wylotu jest mniej więcej tym dłuższy, im większy ptak:
 | **Bielik**, **orzeł przedni** | ok. 10–12 tygodni |
 | **Sęp płowy**, **sęp kasztanowaty** | ok. 3,5–4 miesięcy |
 
+{{TAG:r4_wtejuv}}
+
 > 💡 Sokolnicy i badacze często płeć piskląt sokoła wędrownego poznają po **grubości nóg**: samice, które urosną większe, mają wyraźnie grubsze skoki już w gnieździe. To dlatego przy obrączkowaniu dobiera się dla nich większe obrączki.
+
+{{TAG:r4_band}}
 
 ## Po wylocie: szkoła latania i polowania
 Wylot nie oznacza samodzielności. Przez kolejne tygodnie młode zostają w terytorium rodziców i **nadal są karmione**. To **okres zależności po wylocie**.
@@ -81,6 +91,8 @@ Najlepszy sposób, żeby zobaczyć życie rodzinne z bliska, nie szkodząc ptako
 - **Sokoły wędrowne**: transmisje Stowarzyszenia na rzecz Dzikich Zwierząt „Sokół” ([sokoly.pl](https://www.sokoly.pl)), m.in. z Warszawy i Płocka.
 - **Bieliki** i inne gatunki: kamery udostępniane przez Lasy Państwowe i organizacje przyrodnicze. Aktualną listę znajdziesz w wyszukiwarce.
 - **Kamery na świecie**: projekt Bird Cams Cornell Lab of Ornithology ([allaboutbirds.org](https://www.allaboutbirds.org)).
+
+{{TAG:r4_cam}}
 
 Więcej o miejscach i kamerach w Polsce w [lekcji o miejscach modułu B2](../polska/03-miejsca.md).
 

@@ -11,12 +11,15 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 | Dane | `content/gatunki.json`, `content/moduly.json` | jedno źródło dla atlasu, checklisty i nawigacji |
 | Style | `src/app/globals.css`, tylko tokeny `--bh-*` | bez Tailwinda: zasady design systemu zabraniają wartości wpisanych na sztywno |
 | Checklista | `localStorage` + eksport i import do pliku JSON | bez logowania i bez bazy danych |
+| Postęp nauki | `localStorage` (`src/lib/postep.ts`) | ukończone lekcje; moduł jest „zaliczony”, gdy wszystkie lekcje są ukończone, co widać w menu (✓) |
+| Zdjęcia | Wikimedia Commons (`content/zdjecia.json`, znacznik `<zdjecie>` w lekcjach) | autor i licencja przy każdym zdjęciu; `scripts/commons.py` szuka i tworzy znaczniki |
 
 ## Zasady design systemu w tym projekcie
 - Komponenty importuj z `@/components/ds`, **nigdy** bezpośrednio z `@bighat/ui`. Pakiet nie ma dyrektyw `"use client"`, więc `ds.ts` owija go w moduł kliencki.
 - Komponenty nie przyjmują `className` ani `style`. Własny układ strony (np. `.page`, `.stack`, `.grid`) jest w `globals.css`.
 - Kolory, odstępy, rozmiary tekstu i promienie zaokrągleń tylko z tokenów semantycznych. Wyjątki: `1px` dla obramowań i szerokość kolumny tekstu, dla której nie ma tokenu.
 - Stany pusty, ładowanie i błąd zawsze przez `StateBlock`.
+- **Nawigacja wyglądająca jak przycisk:** `ButtonLink` (`src/components/ButtonLink.tsx`) to **komponent lokalny**, nie z Big Hat. Kontrakt `Button` wyklucza nawigację („that is an anchor”), więc to link `<a>` z klasami `bh-button`. Jeśli taki wzorzec powtórzy się w innym projekcie, to kandydat na zgłoszenie do design systemu (patrz `agent/REQUESTS.md`).
 - Pełne zasady: `node_modules/@bighat/ui/agent/SKILL.md` i `react.md`.
 
 ## Struktura

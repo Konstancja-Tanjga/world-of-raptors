@@ -14,6 +14,8 @@ Różnica zależy od tego, na co ptak poluje:
 
 Ogólna reguła: **im szybsza i zwinniejsza zdobycz, tym większa różnica**. Wśród padlinożerców, którzy nie muszą łapać niczego żywego, różnica prawie znika.
 
+{{TAG:r3_sparrow}}
+
 ### Dlaczego? Hipotezy
 Nauka nie ma jednej odpowiedzi. To jedno z klasycznych nierozstrzygniętych pytań ornitologii. Najczęściej dyskutowane hipotezy:
 
@@ -40,6 +42,8 @@ Wielkość zniesienia (liczba jaj) wiąże się z wielkością ptaka: **duże ga
 
 Samica składa jaja **w odstępach kilku dni** (u dużych gatunków zwykle 2–4). Dlatego zniesienie powstaje przez tydzień lub dłużej.
 
+{{TAG:r3_clutch}}
+
 ## Kto wysiaduje?
 - U większości gatunków **wysiaduje głównie samica**. Ma na brzuchu **plamę lęgową**, czyli nagi, dobrze ukrwiony fragment skóry, który ogrzewa jaja.
 - **Samiec poluje** i przynosi pokarm samicy. Często przekazuje go w stałym miejscu niedaleko gniazda.
@@ -49,9 +53,15 @@ Samica składa jaja **w odstępach kilku dni** (u dużych gatunków zwykle 2–4
 ## Asynchroniczne klucie
 Jeśli ptak zaczyna wysiadywać od **pierwszego jaja**, to pisklęta klują się w tej samej kolejności, co zostały złożone jaja, w odstępach kilku dni. Pierwsze pisklę jest wtedy wyraźnie **starsze i większe** od kolejnych. To **asynchroniczne klucie**, typowe dla orłów, myszołowów i sów.
 
+{{TAG:r3_harrier}}
+
 Sokoły często zaczynają wysiadywać na dobre dopiero przy przedostatnim lub ostatnim jaju, więc ich pisklęta klują się w krótszym odstępie.
 
+{{TAG:r3_kestrel}}
+
 Po co różnica wieku? Klasyczna hipoteza (**redukcja lęgu**, wiązana z nazwiskiem Davida Lacka): gdy pokarmu jest mało, najmłodsze pisklę słabnie i ginie, ale reszta ma szansę przeżyć. W dobrym roku przeżywają wszystkie. Rodzice nie „wiedzą” z góry, jaki będzie rok, więc składają więcej jaj, a o liczbie młodych decyduje pokarm.
+
+{{TAG:r3_kite}}
 
 ## Zabijanie rodzeństwa
 U niektórych gatunków starsze pisklę atakuje młodsze: dziobie je, odpycha od pokarmu, aż młodsze zginie. Mówimy o **zabijaniu rodzeństwa** (ang. *siblicide*), a gdy zdarza się niemal zawsze, o **kainizmie** (od biblijnego Kaina).

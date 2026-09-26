@@ -426,3 +426,15 @@ body {
   flex-direction: column;
   gap: var(--bh-gap-snug);
 }
+
+/* ButtonLink (local): the system's button look on an anchor. Anchors are
+   underlined by default and long lesson titles must wrap on phones. */
+.button-link {
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+  height: auto;
+  min-height: var(--bh-control-md);
+  padding-block: var(--bh-padding-block);
+  line-height: var(--bh-text-leading-tight);
+}

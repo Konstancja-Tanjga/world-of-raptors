@@ -40,6 +40,18 @@ Siedzącego drapieżnika też można rozpoznać po sylwetce:
 - **Bielik:** ogromny, masywny dziób, na starym drzewie nad wodą.
 - **Sokół wędrowny:** wyprostowany, „w garniturze”, na kominach, wieżach i słupach energetycznych.
 
+## Filmy
+- [YouTube: pustułka zawisa nad polem](https://www.youtube.com/results?search_query=kestrel+hovering)
+- [YouTube: błotniak stawowy nad trzcinami, skrzydła w V](https://www.youtube.com/results?search_query=marsh+harrier+hunting+reedbed)
+- [YouTube: sokół wędrowny pikuje](https://www.youtube.com/results?search_query=peregrine+falcon+stoop+slow+motion)
+- [YouTube: ptaki drapieżne w kominie termicznym](https://www.youtube.com/results?search_query=raptors+kettle+thermal+migration)
+
+## Źródła
+- [HawkWatch International: Raptor ID](https://hawkwatch.org/raptor-id/): sposób lotu jako cecha rozpoznawcza
+- [Wikipedia: Bird flight](https://en.wikipedia.org/wiki/Bird_flight): szybowanie, zawisanie, lot trzepoczący
+- [Wikipedia: Dihedral (aeronautics)](https://en.wikipedia.org/wiki/Dihedral_(aeronautics)): skąd bierze się ułożenie skrzydeł w V
+- Dunne P., Sibley D., Sutton C., *Hawks in Flight*: klasyka metody „GISS” (ogólne wrażenie, sylwetka, lot)
+
 ## Mini-quiz
 1. Ptak leci prosto na Ciebie, skrzydła trzyma w wyraźne V, lata nisko nad polem. Jaka to grupa?
 2. Kto zawisa w powietrzu nad polem w Polsce? Podaj dwa gatunki.

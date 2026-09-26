@@ -15,7 +15,11 @@ Orły i myszołowy budują gniazda z gałęzi, a do wnętrza (tzw. **wyściółk
 - Takie gniazdo bywa w końcu za ciężkie: łamie konar albo spada razem z nim w czasie wichury.
 - Para często ma w terytorium **kilka gniazd** i co jakiś czas zmienia to, w którym się lęgnie.
 
+{{TAG:r2_wte}}
+
 **Orzeł przedni** robi podobnie: ma zwykle kilka gniazd, na skałach albo na drzewach, i używa ich na zmianę przez lata.
+
+{{TAG:r2_golden}}
 
 ### Zielone gałązki
 Wiele gatunków (m.in. bielik, myszołów, jastrząb, trzmielojad) znosi do gniazda **świeże, zielone gałązki**, także w czasie, gdy w gnieździe są już pisklęta. Po co? Nie wiadomo na pewno. Najczęściej wymieniane hipotezy:
@@ -37,6 +41,8 @@ Sokoły (rodzaj *Falco*) **nie budują gniazd**. To ciekawe, bo są z orłami ty
 
 Samica sokoła tylko wygrzebuje w podłożu płytki dołek, żeby jaja się nie toczyły. Do cudzych gniazd też nie dokłada gałęzi.
 
+{{TAG:r2_perbox}}
+
 > 💡 W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną. Więcej w [A6 · Ochrona](../ochrona/README.md).
 
 ## Sępy: skała albo drzewo
@@ -45,14 +51,20 @@ Na południu Hiszpanii żyją dwa duże sępy o zupełnie różnych zwyczajach:
 - **Sęp kasztanowaty** (*Aegypius monachus*, ang. Cinereous Vulture) buduje **ogromne gniazda na drzewach**, zwykle na wierzchołkach dębów lub sosen na zboczach, w luźnych skupiskach. Jest bardzo wrażliwy na niepokojenie w pobliżu gniazda.
 - **Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) i **ścierwnik** (*Neophron percnopterus*, ang. Egyptian Vulture) gniazdują w niszach i jaskiniach skalnych.
 
+{{TAG:r2_griffon}}
+
 ## Błotniaki: gniazdo na ziemi
 - **Błotniak stawowy**: gniazdo z trzcin w gęstych szuwarach, często nad wodą.
 - **Błotniak łąkowy**: na podmokłych łąkach, a coraz częściej **w zbożu**. Żniwa mogą zniszczyć gniazdo z młodymi, zanim nauczą się latać. W wielu krajach (m.in. we Francji, w Hiszpanii i w Holandii) wolontariusze odszukują gniazda i ogradzają je albo umawiają się z rolnikami na pozostawienie kawałka pola.
+
+{{TAG:r2_montagu}}
 
 ## Kiedy i kto buduje
 - U większości gatunków gniazdo budują **oboje partnerzy**, ale udział bywa różny: często samiec znosi więcej materiału, a samica go układa.
 - Nowe gniazdo powstaje zwykle w kilka tygodni. Stare gniazdo wystarczy poprawić.
 - Gniazdo nie zawsze oznacza lęg: para może naprawić kilka gniazd, a jaja złożyć tylko w jednym.
+
+{{TAG:r2_osprey}}
 
 ## Mini-quiz
 1. Dlaczego stare gniazda bielików bywają niebezpieczne dla samych siebie?

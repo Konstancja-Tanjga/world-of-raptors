@@ -28,6 +28,19 @@
 - **Góry:** orzeł przedni, orlik krzykliwy, jastrząb, sokół wędrowny.
 - **Miasta:** pustułka, sokół wędrowny (na wysokich budynkach), krogulec zimą przy karmnikach.
 
+## Filmy
+- [YouTube: ptaki drapieżne Polski, jak je rozpoznać](https://www.youtube.com/results?search_query=ptaki+drapie%C5%BCne+Polski+rozpoznawanie)
+- [YouTube: bielik w Polsce](https://www.youtube.com/results?search_query=white-tailed+eagle+Poland)
+- [YouTube: orlik krzykliwy](https://www.youtube.com/results?search_query=orlik+krzykliwy+Clanga+pomarina)
+- [YouTube: sokół wędrowny w mieście](https://www.youtube.com/results?search_query=peregrine+falcon+city+building+nest)
+
+## Źródła
+- [Wikipedia: Ptaki Polski](https://pl.wikipedia.org/wiki/Ptaki_Polski): lista gatunków i ich status
+- [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): liczebności i trendy gatunków lęgowych
+- [OTOP](https://otop.org.pl): Ogólnopolskie Towarzystwo Ochrony Ptaków
+- [eBird: Polska](https://ebird.org/region/PL): aktualne obserwacje i hotspoty
+- [Stowarzyszenie „Sokół”](https://www.sokoly.pl): sokoły wędrowne w polskich miastach
+
 ## Mini-quiz
 1. Jaki jest najpospolitszy drapieżnik w Polsce?
 2. Mały drapieżnik zawisa nad łąką w lipcu. Co to najpewniej jest?

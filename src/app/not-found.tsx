@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { ButtonLink } from '@/components/ButtonLink';
 import { StateBlock } from '@/components/ds';
 
 export default function NotFound() {
@@ -10,9 +10,9 @@ export default function NotFound() {
         title="Nie ma takiej strony"
         description="Ten moduł, lekcja albo gatunek nie istnieje."
         action={
-          <Link href="/" className="text-link">
+          <ButtonLink href="/" size="sm">
             Wróć na start
-          </Link>
+          </ButtonLink>
         }
         scope="page"
       />
