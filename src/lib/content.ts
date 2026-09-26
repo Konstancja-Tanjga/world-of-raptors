@@ -8,10 +8,26 @@ import type { Gatunek, Modul, Sciezka, ZdjeciaGatunku } from './types';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
-export const gatunki = gatunkiJson.gatunki as unknown as Gatunek[];
+export const gatunki = gatunkiJson.gatunki as Gatunek[];
 export const sciezki = modulyJson.sciezki as Sciezka[];
 export const moduly = modulyJson.moduly as Modul[];
-export const zdjecia = zdjeciaJson as Record<string, ZdjeciaGatunku>;
+export const zdjecia = zdjeciaJson as Partial<Record<string, ZdjeciaGatunku>>;
+
+// JSON can't be checked against the key sets at compile time, so check once
+// at build: a typo in a cue key would otherwise just hide that row.
+const KLUCZE_CECH = {
+  dzienny: ['grupa', 'skrzydla', 'palce', 'ogon', 'glowa', 'lot'],
+  nocny: ['glos', 'uszy', 'oczy', 'glowa', 'sylwetka'],
+} as const;
+for (const g of gatunki) {
+  const dozwolone: readonly string[] = KLUCZE_CECH[g.aktywnosc];
+  const klucze = Object.keys(g.sylwetka ?? {});
+  const zle = klucze.filter((k) => !dozwolone.includes(k));
+  const brak = dozwolone.filter((k) => !klucze.includes(k));
+  if (zle.length || brak.length) {
+    throw new Error(`gatunki.json: ${g.id} sylwetka — nieznane: ${zle.join(', ') || '—'}; brak: ${brak.join(', ') || '—'}`);
+  }
+}
 
 const poLacinie = new Map(gatunki.map((g) => [g.lat, g]));
 const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;

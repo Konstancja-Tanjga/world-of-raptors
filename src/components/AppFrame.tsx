@@ -37,8 +37,9 @@ export function AppFrame({
     moduly
       .filter((m) => m.sciezka === sciezka)
       .map((m) => {
-        // Ticks appear once the browser copy of progress is read; the text in
-        // the subline carries the state, the icon only echoes it.
+        // Icons appear once the browser copy of progress is read. The subline
+        // carries partial and complete states in words; ○ with no subline
+        // means not started.
         const done = postep ? m.lekcje.filter((l) => postep[kluczLekcji(m.slug, l)]).length : 0;
         const zaliczony = m.lekcje.length > 0 && done === m.lekcje.length;
         return {

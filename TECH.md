@@ -19,7 +19,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 - Komponenty nie przyjmują `className` ani `style`. Własny układ strony (np. `.page`, `.stack`, `.grid`) jest w `globals.css`.
 - Kolory, odstępy, rozmiary tekstu i promienie zaokrągleń tylko z tokenów semantycznych. Wyjątki: `1px` dla obramowań i szerokość kolumny tekstu, dla której nie ma tokenu.
 - Stany pusty, ładowanie i błąd zawsze przez `StateBlock`.
-- **Nawigacja wyglądająca jak przycisk:** `ButtonLink` (`src/components/ButtonLink.tsx`) to **komponent lokalny**, nie z Big Hat. Kontrakt `Button` wyklucza nawigację („that is an anchor”), więc to link `<a>` z klasami `bh-button`. Jeśli taki wzorzec powtórzy się w innym projekcie, to kandydat na zgłoszenie do design systemu (patrz `agent/REQUESTS.md`).
+- **Nawigacja wyglądająca jak przycisk:** `ButtonLink` (`src/components/ButtonLink.tsx`) to **komponent lokalny**, nie z Big Hat. Kontrakt `Button` wyklucza nawigację („that is an anchor”), więc to link `<a>` z klasami `bh-button`. Zapisane jako luka w [DS-GAPS.md](DS-GAPS.md). Jeśli taki wzorzec powtórzy się w innym projekcie, to kandydat na zgłoszenie do design systemu (patrz `agent/REQUESTS.md`).
 - Pełne zasady: `node_modules/@bighat/ui/agent/SKILL.md` i `react.md`.
 
 ## Struktura

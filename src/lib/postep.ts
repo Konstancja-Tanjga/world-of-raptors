@@ -1,14 +1,10 @@
 'use client';
 
-import { useCallback, useSyncExternalStore } from 'react';
-import { dzisiaj } from './checklist';
+import { useCallback } from 'react';
+import { dzisiaj, utworzMagazyn } from './magazyn';
 
-/** Finished lessons, keyed "modul/lekcja", valued with the ISO date finished. */
+/** Finished lessons, keyed "modul/lekcja", valued with the local date (YYYY-MM-DD) finished. */
 export type Postep = Record<string, string>;
-
-const KEY = 'wor:postep:v1';
-const listeners = new Set<() => void>();
-let cache: Postep | null = null;
 
 function isPostep(value: unknown): value is Postep {
   return (
@@ -19,57 +15,24 @@ function isPostep(value: unknown): value is Postep {
   );
 }
 
-function read(): Postep {
-  if (cache) return cache;
-  try {
-    const raw = window.localStorage.getItem(KEY);
-    const parsed: unknown = raw ? JSON.parse(raw) : {};
-    cache = isPostep(parsed) ? parsed : {};
-  } catch {
-    cache = {};
-  }
-  return cache;
-}
-
-function write(next: Postep) {
-  cache = next;
-  try {
-    window.localStorage.setItem(KEY, JSON.stringify(next));
-  } catch {
-    // Storage full or blocked: progress still works for this visit.
-  }
-  listeners.forEach((l) => l());
-}
-
-function subscribe(listener: () => void) {
-  listeners.add(listener);
-  const onStorage = (e: StorageEvent) => {
-    if (e.key === KEY) {
-      cache = null;
-      listener();
-    }
-  };
-  window.addEventListener('storage', onStorage);
-  return () => {
-    listeners.delete(listener);
-    window.removeEventListener('storage', onStorage);
-  };
-}
+const magazyn = utworzMagazyn<Postep>('wor:postep:v1', isPostep);
 
 export const kluczLekcji = (modul: string, lekcja: string) => `${modul}/${lekcja}`;
 
 /**
  * Course progress in localStorage. `postep` is `null` until the browser copy
- * has been read, so nothing claims "0 of 5" before the real value is known.
+ * has been read, so the menu shows no ✓/○ and the lesson checkbox does not
+ * render unchecked before the real value is known. `ustaw` returns whether
+ * the change was actually saved.
  */
 export function usePostep() {
-  const postep = useSyncExternalStore(subscribe, read, () => null);
+  const postep = magazyn.useMagazyn();
 
   const ustaw = useCallback((klucz: string, ukonczona: boolean) => {
-    const next = { ...read() };
+    const next = { ...magazyn.odczytaj() };
     if (ukonczona) next[klucz] = dzisiaj();
     else delete next[klucz];
-    write(next);
+    return magazyn.zapisz(next);
   }, []);
 
   return { postep, ustaw };

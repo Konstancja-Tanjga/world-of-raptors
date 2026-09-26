@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import type { Gatunek } from '@/lib/types';
+import type { Gatunek, SylwetkaDzienna, SylwetkaNocna } from '@/lib/types';
 import { DescriptionList } from './ds';
 
-const DZIENNE: [string, string][] = [
+// Order as taught: B1 lesson 1 (group, wings, tip, tail, head), then lesson 2 (flight).
+const DZIENNE: [keyof SylwetkaDzienna, string][] = [
   ['grupa', 'Grupa sylwetki'],
   ['skrzydla', 'Skrzydła'],
   ['palce', 'Koniec skrzydła („palce”)'],
@@ -10,12 +11,14 @@ const DZIENNE: [string, string][] = [
   ['glowa', 'Głowa'],
   ['lot', 'Ułożenie skrzydeł i lot'],
 ];
-const NOCNE: [string, string][] = [
+// Order as taught in B5 lesson 2: voice, then silhouette and "ears", then eyes.
+// (Season and habitat, steps 2–3, are per-lesson context, not per-species.)
+const NOCNE: [keyof SylwetkaNocna, string][] = [
   ['glos', 'Głos'],
   ['uszy', '„Uszy”'],
-  ['oczy', 'Oczy'],
-  ['glowa', 'Głowa i szlara'],
   ['sylwetka', 'Sylwetka'],
+  ['glowa', 'Głowa i szlara'],
+  ['oczy', 'Oczy'],
 ];
 
 /**
@@ -24,7 +27,8 @@ const NOCNE: [string, string][] = [
  */
 export function SpeciesCues({ g }: { g: Gatunek }) {
   const nocny = g.aktywnosc === 'nocny';
-  const pola = (nocny ? NOCNE : DZIENNE).filter(([k]) => g.sylwetka?.[k]);
+  const cechy = g.sylwetka as Partial<Record<string, string>>;
+  const pola = (nocny ? NOCNE : DZIENNE).filter(([k]) => cechy[k]);
   if (pola.length === 0) return null;
   return (
     <div className="cues">
@@ -33,7 +37,7 @@ export function SpeciesCues({ g }: { g: Gatunek }) {
         layout="columns"
         density="compact"
         ariaLabel={`Na co patrzeć: ${g.pl}`}
-        items={pola.map(([k, term]) => ({ term, value: g.sylwetka[k] }))}
+        items={pola.map(([k, term]) => ({ term, value: cechy[k] }))}
       />
       <p className="muted cues__source">
         Kolejność jak w lekcji{' '}

@@ -438,6 +438,12 @@ body {
   padding-block: var(--bh-padding-block);
   line-height: var(--bh-text-leading-tight);
 }
+.button-link.bh-button--sm {
+  min-height: var(--bh-control-sm);
+}
+.button-link.bh-button--lg {
+  min-height: var(--bh-control-lg);
+}
 
 /* "Na co patrzeć": the method checklist for one species */
 .cues {

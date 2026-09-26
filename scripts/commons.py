@@ -35,11 +35,16 @@ def fetch(url):
             if e.code != 429 or attempt == 5:
                 raise
             time.sleep(5 * (attempt + 1))
-    return b''
+    raise RuntimeError('unreachable: the retry loop always returns or raises')
 
 
 def get(params):
-    return json.loads(fetch(API + '?' + urllib.parse.urlencode({'format': 'json', **params})))
+    d = json.loads(fetch(API + '?' + urllib.parse.urlencode({'format': 'json', **params})))
+    # The API reports errors (bad parameters, rate limits) as HTTP 200 + "error";
+    # without this they would look like "no results" or "not found".
+    if 'error' in d:
+        sys.exit(f"Commons API error {d['error'].get('code')}: {d['error'].get('info')}")
+    return d
 
 
 def strip(s):
@@ -61,7 +66,7 @@ def imageinfo(titles, width):
             'page': ii.get('descriptionurl'),
             'license': strip(meta.get('LicenseShortName', {}).get('value')),
             'licenseUrl': strip(meta.get('LicenseUrl', {}).get('value')),
-            'artist': strip(meta.get('Artist', {}).get('value'))[:120] or 'nieznany autor',
+            'artist': strip(meta.get('Artist', {}).get('value')),
             'desc': strip(meta.get('ImageDescription', {}).get('value'))[:160],
         })
     return out
@@ -78,7 +83,7 @@ def search(query, out, limit):
         with open(path, 'wb') as fh:
             fh.write(fetch(f['thumb']))
         time.sleep(0.5)
-        print(f"[{i:02d}] {f['title']}\n     {f['w']}x{f['h']} · {f['license']} · {f['artist'][:50]}\n     {f['desc']}\n     preview: {path}")
+        print(f"[{i:02d}] {f['title']}\n     {f['w']}x{f['h']} · {f['license']} · {(f['artist'] or '?')[:50]}\n     {f['desc']}\n     preview: {path}")
     if not files:
         print('no freely licensed results')
 
@@ -90,6 +95,12 @@ def tag(title, podpis, alt):
     f = files[0]
     if not OK_LICENSE.match(f['license'] or ''):
         sys.exit(f"licence not allowed: {f['license']}")
+    # CC BY / CC BY-SA require attribution: never emit a tag that silently lacks it.
+    needs_attribution = f['license'].upper().startswith('CC BY')
+    if needs_attribution and (not f['artist'] or not f['licenseUrl']):
+        sys.exit(f"{title}: no author or licence URL in the metadata; attribution is required. "
+                 f"Pick another file or fill autor/licencja-url by hand from {f['page']}")
+    f['artist'] = f['artist'] or 'autor nieznany (domena publiczna)'
     q = lambda s: html.escape(s, quote=True)
     print(
         f'<zdjecie src="{q(f["thumb"])}" width="{f["tw"]}" height="{f["th"]}" alt="{q(alt)}" '

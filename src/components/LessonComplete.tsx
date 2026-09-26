@@ -2,6 +2,7 @@
 
 import { kluczLekcji, usePostep } from '@/lib/postep';
 import { Card, Checkbox, StateBlock } from './ds';
+import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 /** "I finished this lesson" — feeds the ticks in the sidebar. */
 export function LessonComplete({
@@ -15,6 +16,7 @@ export function LessonComplete({
   ostatnia: boolean;
 }) {
   const { postep, ustaw } = usePostep();
+  const sprawdzZapis = useOstrzezenieZapisu();
 
   if (!postep) return <StateBlock state="loading" title="Wczytywanie postępu" scope="inline" />;
 
@@ -32,7 +34,7 @@ export function LessonComplete({
               : 'Zaznacz, żeby w menu było widać postęp modułu.'
         }
         checked={Boolean(data)}
-        onChange={(e) => ustaw(klucz, e.target.checked)}
+        onChange={(e) => sprawdzZapis(ustaw(klucz, e.target.checked))}
       />
     </Card>
   );
