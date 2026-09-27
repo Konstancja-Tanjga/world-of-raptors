@@ -17,7 +17,7 @@ Nawet jeśli nigdy nie widziałaś sokoła, używasz go w mowie codziennej. Pols
 | **sowa** (i **skowronek**) | osoba, która najlepiej funkcjonuje wieczorem i w nocy (lub rano) | sowy są aktywne nocą |
 | **mądra sowa**, **sowa mądra głowa** | ktoś mądry, zwłaszcza w języku dzieci | echo antycznego symbolu Ateny (zob. [lekcja 2](02-symbole-i-mity.md)) |
 
-> 💡 „Łaknąć jak kania dżdżu” to przykład, jak idiom utrwala biologiczny mit. Kanie piją wodę jak inne ptaki; skąd dokładnie wzięło się to wierzenie, nie wiadomo na pewno.
+> „Łaknąć jak kania dżdżu” to przykład, jak idiom utrwala biologiczny mit. Kanie piją wodę jak inne ptaki; skąd dokładnie wzięło się to wierzenie, nie wiadomo na pewno.
 
 Uwaga na **sępa**: język przypina mu złą łatkę, a tymczasem sępy są niezwykle pożyteczne. Usuwając padlinę, ograniczają szerzenie się chorób. Zobaczysz je w [module o południu Hiszpanii](../poludnie-hiszpanii/README.md).
 
@@ -55,7 +55,7 @@ Ostrożnie z interpretacją: nazwiska na *-owski*/*-ski* pochodzą często **od 
 - **Skrzydła husarii:** często mówi się o piórach orlich, ale w praktyce używano piór różnych dużych ptaków. To przykład, jak „orzeł” dopisuje się do legendy.
 - **Orzeł na koszulkach** reprezentacji sportowych i w wielu herbach miast.
 
-> 💡 Pomyśl, ile razy dziennie widzisz orła: na monetach, w dokumentach, na budynkach urzędów. To najczęściej oglądany przez Polaków „ptak drapieżny”, choć z prawdziwym bielikiem większość z nas nigdy się nie spotkała.
+> Pomyśl, ile razy dziennie widzisz orła: na monetach, w dokumentach, na budynkach urzędów. To najczęściej oglądany przez Polaków „ptak drapieżny”, choć z prawdziwym bielikiem większość z nas nigdy się nie spotkała.
 
 ## Od uprzedzeń do sympatii
 Przez długi czas ptaki drapieżne w Polsce i w całej Europie uważano za **„szkodniki”** i tępiono, a w wielu krajach za ich zabijanie płacono nagrody. Dziś niemal wszystkie gatunki są objęte ochroną, a bielik czy sokół wędrowny stały się **symbolem sukcesu ochrony przyrody**. Jak do tego doszło, dowiesz się w [module o ochronie](../ochrona/README.md).

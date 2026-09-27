@@ -8,7 +8,7 @@ Zanim sięgniesz po rzadki gatunek, zapytaj:
 - **Czy to właściwe siedlisko?** Ogromny drapieżnik nad jeziorem na Mazurach to najpewniej bielik, nie orzeł przedni.
 - **Co jest tu najpospolitsze?** W Polsce **większość** „dużych brązowych ptaków nad polem” to myszołowy.
 
-> 💡 Zasada ornitologów: *„Kiedy słyszysz tętent kopyt, pomyśl o koniu, a nie o zebrze.”* Rzadki gatunek to ostatnia hipoteza, a nie pierwsza.
+> Zasada ornitologów: *„Kiedy słyszysz tętent kopyt, pomyśl o koniu, a nie o zebrze.”* Rzadki gatunek to ostatnia hipoteza, a nie pierwsza.
 
 ## 2. Światło
 - **Pod światło** każdy ptak wygląda na ciemny, a jasne „okna” w skrzydle świecą mocniej, niż są naprawdę. Oceniaj tylko sylwetkę.
@@ -33,7 +33,7 @@ Zanim sięgniesz po rzadki gatunek, zapytaj:
 | **Kolor pod światło** | Oceniaj kolor tylko przy dobrym świetle |
 | **Mylenie z innymi ptakami** | Kruk, bocian, czapla, mewa, gołąb, kukułka też szybują lub „udają” drapieżniki. Kukułka w locie łudząco przypomina krogulca albo małego sokoła |
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Cuckoo_%2851190988411%29.jpg/960px-Cuckoo_%2851190988411%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Szara kukułka z poprzecznie prążkowanym brzuchem lecąca nisko nad wrzosowiskiem" podpis="Kukułka w locie: prążkowany spód i długi ogon jak u krogulca, ale skrzydła spiczaste, a głowa mała" autor="Andy  Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Cuckoo_(51190988411).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Cuckoo_%2851190988411%29.jpg/960px-Cuckoo_%2851190988411%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Szara kukułka z poprzecznie prążkowanym brzuchem lecąca nisko nad wrzosowiskiem" podpis="Kukułka w locie: prążkowany spód i długi ogon jak u krogulca, ale skrzydła spiczaste, a głowa mała" autor="Andy Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Cuckoo_(51190988411).jpg">
 </zdjecie>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Common_Raven_-_Corvus_corax_%2841514446920%29.jpg/960px-Common_Raven_-_Corvus_corax_%2841514446920%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Czarna sylwetka kruka w locie na tle błękitnego nieba, z rozcapierzonymi lotkami i klinowatym ogonem" podpis="Kruk szybuje jak drapieżnik i ma „palce”, ale zdradza go klinowaty ogon i masywny dziób" autor="Björn S..." licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_Raven_-_Corvus_corax_(41514446920).jpg">

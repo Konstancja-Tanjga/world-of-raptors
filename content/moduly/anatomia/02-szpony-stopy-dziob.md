@@ -22,7 +22,7 @@ Dwie duże grupy dziennych drapieżników zabijają na dwa różne sposoby:
 | Rola stopy | chwyt i zabicie | chwyt albo uderzenie w locie (sokół wędrowny często uderza ptaka stopą) |
 | Dziób | haczykowaty, do rozrywania | haczykowaty, z **ząbkiem** do przegryzania karku |
 
-> 💡 To jeden z powodów, dla których sokoły nie są „małymi jastrzębiami”. Genetycznie są bliżej papug niż jastrzębi, a podobny wygląd to efekt podobnego trybu życia. Więcej w [A1 · Kim są ptaki drapieżne?](../kim-sa-drapiezniki/README.md).
+> To jeden z powodów, dla których sokoły nie są „małymi jastrzębiami”. Genetycznie są bliżej papug niż jastrzębi, a podobny wygląd to efekt podobnego trybu życia. Więcej w [A1 · Kim są ptaki drapieżne?](../kim-sa-drapiezniki/README.md).
 
 ## Siła chwytu: ostrożnie z liczbami
 Duże orły mają bardzo silny chwyt i potrafią zabić zdobycz wielkości lisa albo młodej sarny. W internecie krążą jednak dokładne liczby (np. „setki kilogramów na centymetr kwadratowy”), które zwykle pochodzą z pojedynczych, trudnych do sprawdzenia pomiarów. Bezpieczniej zapamiętać: **chwyt dużego orła jest wielokrotnie silniejszy od uścisku ludzkiej dłoni** i u sokolników bywa groźny nawet przez grubą rękawicę.
@@ -46,7 +46,7 @@ Kształt stopy zdradza specjalizację.
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Booted_Eagle_%28Hieraaetus_pennatus%29_%2849815252166%29.jpg/960px-Booted_Eagle_%28Hieraaetus_pennatus%29_%2849815252166%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="677" alt="Jasny orzeł z brązowymi skrzydłami siedzi na gałęzi, jego nogi są pokryte białymi piórami aż do żółtych palców" podpis="Orzełek włochaty (jasna odmiana): skoki opierzone aż do palców, czyli orzeł „w spodniach”" autor="Imran Shah from Islamabad, Pakistan" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_(Hieraaetus_pennatus)_(49815252166).jpg">
 </zdjecie>
 
-> 💡 Sowy też mają odwracalny palec zewnętrzny, jak rybołów. Przypomnienie w [module o sowach](../sowy/01-kim-sa-sowy.md).
+> Sowy też mają odwracalny palec zewnętrzny, jak rybołów. Przypomnienie w [module o sowach](../sowy/01-kim-sa-sowy.md).
 
 ## Dziób
 Dziób ptaka drapieżnego jest **haczykowaty**: górna szczęka zakrzywia się w ostry hak, którym ptak odrywa kawałki mięsa. Dziób to kość pokryta rogową pochewką, która stale rośnie i się ściera (w niewoli czasem trzeba ją przycinać).
@@ -69,7 +69,7 @@ Dziób ptaka drapieżnego jest **haczykowaty**: górna szczęka zakrzywia się w
 | **Trzmielojad** (*Pernis apivorus*, ang. European Honey Buzzard) | słaby, nozdrza jak szczeliny, twarz pokryta **gęstymi, łuskowatymi piórkami** | larwy os i trzmieli; piórka i wąskie nozdrza prawdopodobnie chronią przed żądłami i ziemią |
 | **Rybołów** | mocno zakrzywiony hak, nozdrza zamykane przy nurkowaniu | ryby |
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Honey_Buzzard_Portrait.jpg/960px-Honey_Buzzard_Portrait.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Głowa trzmielojada z żółtym okiem, szarą, gładko opierzoną twarzą i małym ciemnym dziobem" podpis="Trzmielojad: twarz pokryta gęstymi, łuskowatymi piórkami, słaby dziób i szczelinowate nozdrza" autor="Andy  Morffew" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Honey_Buzzard_Portrait.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Honey_Buzzard_Portrait.jpg/960px-Honey_Buzzard_Portrait.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Głowa trzmielojada z żółtym okiem, szarą, gładko opierzoną twarzą i małym ciemnym dziobem" podpis="Trzmielojad: twarz pokryta gęstymi, łuskowatymi piórkami, słaby dziób i szczelinowate nozdrza" autor="Andy Morffew" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Honey_Buzzard_Portrait.jpg">
 </zdjecie>
 
 ## Filmy

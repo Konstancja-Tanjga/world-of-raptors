@@ -51,6 +51,17 @@ def strip(s):
     return html.unescape(re.sub(r'<[^>]+>', '', s or '')).strip()
 
 
+def clean_author(a):
+    """Commons 'Artist' often carries upload notes; keep only the credit."""
+    a = re.sub(r'\s+', ' ', (a or '').replace('\xa0', ' ')).strip()
+    a = re.sub(r'\s*This file was uploaded with Commonist\.?', '', a, flags=re.I)
+    a = re.sub(r'\s*\(https?://[^)]*\)', '', a)
+    a = re.sub(r'\bUser:', '', a)
+    if re.fullmatch(r'(?:\s*(?:Unknown (?:author|artist)|Anonymous))+', a):
+        a = ''
+    return a.strip()
+
+
 def imageinfo(titles, width):
     d = get({'action': 'query', 'titles': '|'.join(titles), 'prop': 'imageinfo',
              'iiprop': 'url|size|mime|extmetadata', 'iiurlwidth': width})
@@ -66,7 +77,7 @@ def imageinfo(titles, width):
             'page': ii.get('descriptionurl'),
             'license': strip(meta.get('LicenseShortName', {}).get('value')),
             'licenseUrl': strip(meta.get('LicenseUrl', {}).get('value')),
-            'artist': strip(meta.get('Artist', {}).get('value')),
+            'artist': clean_author(strip(meta.get('Artist', {}).get('value'))),
             'desc': strip(meta.get('ImageDescription', {}).get('value'))[:160],
         })
     return out

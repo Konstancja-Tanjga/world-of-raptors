@@ -22,7 +22,7 @@ Ptak trzepocze skrzydłami w miejscu, pod wiatr, z nieruchomą głową. Z wysoko
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Common_kestrel_hovering_in_flight_near_Bad_Urach_%282026%29.jpg/960px-Common_kestrel_hovering_in_flight_near_Bad_Urach_%282026%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="526" alt="Pustułka wisi w powietrzu z rozłożonymi skrzydłami i wachlarzem ogona na tle rozmytej zieleni" podpis="Pustułka w zawisie: rozpostarte skrzydła i szeroko rozłożony ogon utrzymują ją w miejscu nad łąką" autor="Paul Colin Hennig firstdorsal.eu" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering_in_flight_near_Bad_Urach_(2026).jpg">
 </zdjecie>
 
-> 💡 Holenderskie badania pustułek (Rijnsdorp, Daan i współpracownicy) pokazały, że polowanie z zawisania kosztuje wielokrotnie więcej energii na minutę niż czatowanie z posterunku, ale daje więcej upolowanych norników na godzinę. Pustułki przełączają się między obiema metodami zależnie od pogody i pory roku: zimą, gdy liczy się każda kaloria, częściej siedzą.
+> Holenderskie badania pustułek (Rijnsdorp, Daan i współpracownicy) pokazały, że polowanie z zawisania kosztuje wielokrotnie więcej energii na minutę niż czatowanie z posterunku, ale daje więcej upolowanych norników na godzinę. Pustułki przełączają się między obiema metodami zależnie od pogody i pory roku: zimą, gdy liczy się każda kaloria, częściej siedzą.
 
 ## 3. Pikowanie
 Ptak atakuje z dużej wysokości, składa skrzydła i spada stromo na ofiarę, najczęściej na innego ptaka w locie.
@@ -39,7 +39,7 @@ Ptak leci nisko, wykorzystuje żywopłoty, zabudowania i skraj lasu jako osłon�
 - **Jastrząb** (*Accipiter gentilis*, ang. Northern Goshawk) poluje podobnie, ale na większe ofiary: gołębie, krukowate, kuraki, wiewiórki, zające. Często czatuje krótko na drzewie, przelatuje dalej i znów czatuje.
 - Oba mają krótkie, zaokrąglone skrzydła i długi ogon: dobre do zwrotów między drzewami, słabe do szybowania.
 
-> 💡 U krogulca samica bywa prawie dwa razy cięższa od samca. Samiec łapie głównie sikory i wróble, samica także drozdy, a nawet gołębie. Dzięki temu para nie konkuruje o te same ofiary. Więcej o różnicy wielkości płci w module [A4 · Rozród](../rozrod/README.md).
+> U krogulca samica bywa prawie dwa razy cięższa od samca. Samiec łapie głównie sikory i wróble, samica także drozdy, a nawet gołębie. Dzięki temu para nie konkuruje o te same ofiary. Więcej o różnicy wielkości płci w module [A4 · Rozród](../rozrod/README.md).
 
 ## 5. Przeszukiwanie terenu nisko nad ziemią
 Ptak leci wolno, kilka metrów nad trzcinami, łąką albo polem, i przeczesuje teren tam i z powrotem. Nagle zawraca i spada w trawę.

@@ -14,7 +14,7 @@ W [B1 · Metoda](../metoda/README.md) uczysz się rozpoznawać grupy po sylwetce
 - **Małe obciążenie:** ptak lata wolno, lekko, długo utrzymuje się w powietrzu przy słabym wznoszeniu. Przykłady: błotniaki, kanie.
 - **Duże obciążenie:** ptak lata szybciej, lepiej przebija się przez wiatr, ale potrzebuje silniejszych prądów wznoszących, żeby szybować. Przykłady: sokół wędrowny, duże sępy.
 
-> 💡 Duże sępy mają ogromne skrzydła, ale są też bardzo ciężkie. Dlatego zwykle startują dopiero wtedy, gdy słońce nagrzeje ziemię i pojawią się silne kominy termiczne. Rano częściej widać je siedzące na skałach. O kominach i wędrówce więcej w [A5 · Wędrówki](../wedrowki/README.md).
+> Duże sępy mają ogromne skrzydła, ale są też bardzo ciężkie. Dlatego zwykle startują dopiero wtedy, gdy słońce nagrzeje ziemię i pojawią się silne kominy termiczne. Rano częściej widać je siedzące na skałach. O kominach i wędrówce więcej w [A5 · Wędrówki](../wedrowki/README.md).
 
 ## „Palce”, czyli szczeliny w skrzydle
 Na końcu skrzydła sępów, orłów i myszołowów widać rozcapierzone lotki I-rzędowe. To nie przypadek:
@@ -68,7 +68,7 @@ W terenie przydaje się to do określania wieku: skrzydło z piórami z jednego 
 <zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Honey_buzzard%2C_Krantzkloof_NR%2C_Anthony_Paton.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1280" alt="Drapieżnik w locie od spodu, w prążkowanych skrzydłach widać przerwy między lotkami różnej długości" podpis="Pierzący się samiec trzmielojada na zimowisku w RPA: w skrzydłach widać luki po wymienianych lotkach" autor="APaton62" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard,_Krantzkloof_NR,_Anthony_Paton.jpg">
 </zdjecie>
 
-> 💡 Sowy mają specjalną budowę piór wyciszającą lot (grzebyk, postrzępiona krawędź, aksamitna powierzchnia). Dzienne drapieżniki jej nie mają, bo ich zdobycz zwykle i tak widzi atak. Zobacz [moduł o sowach](../sowy/01-kim-sa-sowy.md).
+> Sowy mają specjalną budowę piór wyciszającą lot (grzebyk, postrzępiona krawędź, aksamitna powierzchnia). Dzienne drapieżniki jej nie mają, bo ich zdobycz zwykle i tak widzi atak. Zobacz [moduł o sowach](../sowy/01-kim-sa-sowy.md).
 
 ## Filmy
 - [YouTube: sokół wędrowny pikuje w zwolnionym tempie](https://www.youtube.com/results?search_query=peregrine+falcon+stoop+slow+motion)

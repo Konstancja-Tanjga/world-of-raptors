@@ -10,7 +10,7 @@
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Falco_tinnunculus_Paslieres_20190601_110820.jpg/960px-Falco_tinnunculus_Paslieres_20190601_110820.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="639" alt="Rdzawa pustułka stoi na dachówkach i trzyma w dziobie małego brązowego gryzonia" podpis="Samica pustułki z nornikiem w dziobie: 2–3 takie gryzonie dziennie pokrywają jej zapotrzebowanie" autor="Marie-Lan Nguyen" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Falco_tinnunculus_Paslieres_20190601_110820.jpg">
 </zdjecie>
 
-> 💡 Wiele drapieżników ma **wole**: rozszerzenie przełyku, w którym gromadzi pokarm. Najedzony ptak ma wyraźne „wybrzuszenie” na piersi. U sępów po uczcie wole widać z daleka.
+> Wiele drapieżników ma **wole**: rozszerzenie przełyku, w którym gromadzi pokarm. Najedzony ptak ma wyraźne „wybrzuszenie” na piersi. U sępów po uczcie wole widać z daleka.
 
 ## 2. Wypluwki
 **Wypluwka** to zbita kulka z niestrawionych resztek: sierści, piór, łusek, chitynowych pancerzy owadów i kości. Ptak zwraca ją dziobem, zwykle raz na dobę.
@@ -62,7 +62,7 @@ Każda metoda przekłamuje wynik w inną stronę:
 
 Dlatego najlepsze badania diety łączą dwie–trzy metody i porównują wyniki.
 
-> 💡 Rozbiór wypluwek sów to też sposób na badanie drobnych ssaków w okolicy. Płomykówka łapie to, co jest pospolite, więc jej wypluwki dobrze pokazują, jakie gatunki gryzoni i ryjówek żyją w danym miejscu.
+> Rozbiór wypluwek sów to też sposób na badanie drobnych ssaków w okolicy. Płomykówka łapie to, co jest pospolite, więc jej wypluwki dobrze pokazują, jakie gatunki gryzoni i ryjówek żyją w danym miejscu.
 
 ## 5. Etyka i bezpieczeństwo
 - Nie podchodź do czynnych gniazd, żeby szukać resztek. Zbieraj wypluwki poza sezonem lęgowym albo tam, gdzie ptaki tylko odpoczywają.

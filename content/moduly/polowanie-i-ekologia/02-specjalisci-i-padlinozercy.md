@@ -18,7 +18,7 @@ Przystosowania:
 
 Trzmielojad przylatuje z Afryki późno, zwykle w maju, kiedy kolonie os zaczynają się rozrastać, a pisklęta karmi plastrami z larwami. W chłodne, deszczowe lata, gdy os jest mało, zjada więcej żab, jaszczurek i piskląt ptaków.
 
-> 💡 Często pisze się, że pióra trzmielojada mają chemiczną ochronę odstraszającą osy. To hipoteza, nie ustalony fakt: pewne jest, że ptak bywa użądlony znacznie rzadziej, niż można by się spodziewać, ale dlaczego, wciąż się dyskutuje.
+> Często pisze się, że pióra trzmielojada mają chemiczną ochronę odstraszającą osy. To hipoteza, nie ustalony fakt: pewne jest, że ptak bywa użądlony znacznie rzadziej, niż można by się spodziewać, ale dlaczego, wciąż się dyskutuje.
 
 ## 3. Gadożer: łowca węży
 **Gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle) żywi się przede wszystkim **wężami**, a także jaszczurkami. W Polsce jest bardzo rzadki, w Hiszpanii częsty.
@@ -46,12 +46,12 @@ Gadożer przylatuje z Afryki wiosną, gdy robi się na tyle ciepło, że gady st
 | **Kania ruda** (*Milvus milvus*, ang. Red Kite) | inne drapieżniki, krukowate |
 | **Błotniak stawowy** | inne błotniaki, pustułki |
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1228" alt="Stara czarno-biała rycina: duży orzeł w locie atakuje od góry mniejszego ptaka, pod nimi spada ryba" podpis="Kleptopasożytnictwo na drzeworycie z 1832 r.: bielik amerykański atakuje rybołowa, który upuszcza rybę" autor="Unknown authorUnknown author" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1228" alt="Stara czarno-biała rycina: duży orzeł w locie atakuje od góry mniejszego ptaka, pod nimi spada ryba" podpis="Kleptopasożytnictwo na drzeworycie z 1832 r.: bielik amerykański atakuje rybołowa, który upuszcza rybę" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg">
 </zdjecie>
 
 Kradzież opłaca się, bo złodziej nie traci energii na wyszukanie i złapanie ofiary. Ma jednak swoje ryzyko: pogoń też kosztuje energię, a ofiara czasem skutecznie się broni.
 
-> 💡 Bielik jest znacznie bardziej „oportunistą” niż wspaniałym łowcą, jak przedstawiają go herby. Zimą w dużej mierze żywi się padliną, martwymi rybami i kradzieżą.
+> Bielik jest znacznie bardziej „oportunistą” niż wspaniałym łowcą, jak przedstawiają go herby. Zimą w dużej mierze żywi się padliną, martwymi rybami i kradzieżą.
 
 ## 6. Padlinożercy
 ### Sępy: wyspecjalizowani padlinożercy
@@ -72,7 +72,7 @@ Sępy mają bardzo kwaśny żołądek, który niszczy wiele bakterii obecnych w 
 ### Orłosęp: jedzący kości
 **Orłosęp** żywi się głównie kośćmi: szacuje się, że stanowią one ok. 70–90% jego diety. Mniejsze kości połyka w całości. Większe **zrzuca z wysokości kilkudziesięciu metrów na skały**, żeby je rozbić, i wraca po odłamki. Takie miejsca rozbijania kości ptak odwiedza latami.
 
-> 💡 Ścierwnik w Afryce potrafi rozbijać jaja strusi, rzucając w nie kamieniami. To jeden z nielicznych przykładów używania narzędzi przez ptaki drapieżne.
+> Ścierwnik w Afryce potrafi rozbijać jaja strusi, rzucając w nie kamieniami. To jeden z nielicznych przykładów używania narzędzi przez ptaki drapieżne.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Aasgier_%2848794413228%29_%28cropped%29.jpg/960px-Aasgier_%2848794413228%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="618" alt="Biały sęp z żółtą twarzą trzyma w dziobie kamień i stoi obok dużego białego jaja na trawie" podpis="Ścierwnik z kamieniem w dziobie przy dużym jaju (ptak w niewoli, pokaz tego naturalnego zachowania)" autor="Tim Strater from Rotterdam, Nederland" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Aasgier_(48794413228)_(cropped).jpg">
 </zdjecie>

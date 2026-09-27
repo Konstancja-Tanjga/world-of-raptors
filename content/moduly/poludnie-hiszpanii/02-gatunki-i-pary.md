@@ -1,31 +1,38 @@
 # Lekcja 2: Gatunki osiadłe i trudne pary
 
-Legenda statusu: 🏠 osiadły · 🔁 wędrowny · ❄️ zimuje · ⭐ rzadki
-
 Gatunki z modułu o cieśninie (kanie, trzmielojad, orzełek włochaty, gadożer, ścierwnik, sępy, błotniaki, kaniuk, sokoły) mają pełne karty w [lekcji 3 tamtego modułu](../gibraltar/03-gatunki-i-pary.md). Tutaj opisane są gatunki nowe i pary, które trzeba znać w Andaluzji.
 
 ---
 
 ## A. Trzy duże orły
 
-### Orzeł przedni — *Aquila chrysaetos* (ang. Golden Eagle) 🏠
+### Orzeł przedni — *Aquila chrysaetos* (ang. Golden Eagle)
+
+Status: osiadły.
+
 - **Rozpiętość:** ok. 190–225 cm
 - **Sylwetka:** długie skrzydła, **zwężone u nasady**, więc tylna krawędź tworzy kształt litery „S”; dość długi ogon; szybuje ze skrzydłami w **lekkie V**.
 - **Dorosły:** ciemnobrązowy, **złocisty kark**, od góry jaśniejsze pole na pokrywach skrzydeł.
 - **Młody:** **białe plamy** u nasady lotek na skrzydłach i **biały ogon z czarnym pasem końcowym**. Z wiekiem biel stopniowo znika.
 - **Gdzie:** góry: Sierra Nevada, Cazorla, Grazalema, Sierra Morena.
 
-### Orzeł iberyjski — *Aquila adalberti* (ang. Spanish Imperial Eagle) 🏠
+### Orzeł iberyjski — *Aquila adalberti* (ang. Spanish Imperial Eagle)
+
+Status: osiadły.
+
 Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md).
 - **Klucz dorosłego:** ciemny, **białe „epolety”** na przedniej krawędzi skrzydła, jasna głowa. Skrzydła szerokie, **o prostej krawędzi**, trzymane płasko.
 - **Klucz młodego:** jednolicie **płowy/rudawy** tułów i pokrywy, ciemne lotki.
 
-### Orzeł południowy — *Aquila fasciata* (ang. Bonelli's Eagle) 🏠
+### Orzeł południowy — *Aquila fasciata* (ang. Bonelli's Eagle)
+
+Status: osiadły.
+
 Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md).
 - **Klucz dorosłego:** jasny spód tułowia, **ciemny pas przez spód skrzydła**, ogon z szerokim ciemnym pasem końcowym. Mniejszy i smuklejszy od dwóch pozostałych.
 - **Klucz młodego:** rudawo-płowy spód, bez ciemnego pasa.
 
-### ⚖️ Trzy orły: porównanie dorosłych
+### Trzy orły: porównanie dorosłych
 | Cecha | Przedni | Iberyjski | Południowy |
 |---|---|---|---|
 | Rozmiar | największy | duży | średni |
@@ -34,7 +41,7 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 | Spód tułowia | ciemny | ciemny | **jasny** |
 | Znak rozpoznawczy | złocisty kark | **białe epolety** | **ciemny pas na spodzie skrzydła** |
 
-### ⚖️ Młode orły: porównanie
+### Młode orły: porównanie
 | Cecha | Przedni | Iberyjski | Południowy |
 |---|---|---|---|
 | Tułów | ciemny | **płowy/rudawy** | rudawo-płowy |
@@ -48,7 +55,10 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 
 ## B. Orłosęp i jego „sobowtóry”
 
-### Orłosęp — *Gypaetus barbatus* (ang. Bearded Vulture) 🏠⭐
+### Orłosęp — *Gypaetus barbatus* (ang. Bearded Vulture)
+
+Status: osiadły, rzadki.
+
 - **Rozpiętość:** ok. 265–285 cm
 - **Sylwetka:** jak **ogromny sokół**: długie, wąskie, spiczaste skrzydła i długi **klinowaty (rombowy) ogon**. Tej sylwetki nie da się pomylić z żadnym innym dużym ptakiem.
 - **Dorosły:** ciemnoszary wierzch, **rdzawopomarańczowy spód**. Ten kolor nie jest wrodzony: ptak kąpie się w błocie bogatym w żelazo. Na twarzy czarna „broda”.
@@ -56,7 +66,7 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 - **Ciekawostka:** żywi się głównie **kośćmi**. Duże kości zrzuca z wysokości na skały, żeby je rozbić.
 - **Gdzie:** Sierra de Cazorla, gdzie trwa program reintrodukcji. Pojedyncze ptaki zalatują też w inne pasma gór.
 
-### ⚖️ Orłosęp vs ścierwnik vs sęp płowy
+### Orłosęp, ścierwnik czy sęp płowy?
 | Cecha | Orłosęp | Ścierwnik | Sęp płowy |
 |---|---|---|---|
 | Rozmiar | ogromny | średni | ogromny |
@@ -84,12 +94,15 @@ Pełna karta: [moduł o cieśninie, sekcja D](../gibraltar/03-gatunki-i-pary.md)
 
 ## D. Jastrząb i krogulec
 
-### Jastrząb — *Accipiter gentilis* (ang. Northern Goshawk) 🏠
+### Jastrząb — *Accipiter gentilis* (ang. Northern Goshawk)
+
+Status: osiadły.
+
 - **Rozpiętość:** ok. 95–125 cm (samica wyraźnie większa)
 - **Klucz:** masywny, „beczkowaty”; ogon **zaokrąglony**, z wyraźnie białymi pokrywami podogonowymi; wyraźna jasna **brew**; skrzydła dłuższe niż u krogulca, z bardziej wysuniętą „ręką”.
 - **Gdzie:** lasy górskie i sosnowe, np. Cazorla i Sierra Nevada.
 
-### ⚖️ Jastrząb vs krogulec
+### Jastrząb czy krogulec?
 | Cecha | Jastrząb | Krogulec |
 |---|---|---|
 | Wielkość | jak myszołów | jak gołąb (samica), mniejszy (samiec) |
@@ -98,7 +111,7 @@ Pełna karta: [moduł o cieśninie, sekcja D](../gibraltar/03-gatunki-i-pary.md)
 | Lot | wolniejsze, mocne uderzenia | szybkie, „trzepoczące” uderzenia + ślizg |
 | Pokrywy podogonowe | białe, puszyste, wyraźne | mniej widoczne |
 
-> ⚠️ Samica krogulca i samiec jastrzębia mogą mieć podobną wielkość. Wtedy rozstrzyga kształt: ogon, głowa i proporcje skrzydeł.
+> **Uwaga:** Samica krogulca i samiec jastrzębia mogą mieć podobną wielkość. Wtedy rozstrzyga kształt: ogon, głowa i proporcje skrzydeł.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Accipiter_gentilis_265902467.jpg/960px-Accipiter_gentilis_265902467.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Szary jastrząb w locie od spodu z rozpostartymi, drobno prążkowanymi skrzydłami" podpis="Jastrząb od spodu: masywny tułów, wysunięta głowa i jasne pokrywy podogonowe" autor="Кучкаев Марат" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Accipiter_gentilis_265902467.jpg">
 </zdjecie>

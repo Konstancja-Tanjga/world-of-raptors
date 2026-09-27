@@ -29,7 +29,7 @@ Wiele gatunków (m.in. bielik, myszołów, jastrząb, trzmielojad) znosi do gnia
 - **sygnał**: świeża zieleń pokazuje innym ptakom, że gniazdo jest zajęte,
 - **cień i wilgotność** dla piskląt.
 
-> 💡 Jeśli widziałaś wiosną zieleń na brzegu dużego gniazda w lesie, to znak, że gniazdo jest w tym roku zajęte. To dobry powód, żeby się od niego oddalić.
+> Jeśli widziałaś wiosną zieleń na brzegu dużego gniazda w lesie, to znak, że gniazdo jest w tym roku zajęte. To dobry powód, żeby się od niego oddalić.
 
 ## Sokoły: nie budują wcale
 Sokoły (rodzaj *Falco*) **nie budują gniazd**. To ciekawe, bo są z orłami tylko daleko spokrewnione (patrz [A1 · Kim są ptaki drapieżne?](../kim-sa-drapiezniki/README.md)). Mają kilka sposobów:
@@ -46,7 +46,7 @@ Samica sokoła tylko wygrzebuje w podłożu płytki dołek, żeby jaja się nie 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cal_Falcons_-_Grinnell_in_Nest_Box.png/960px-Cal_Falcons_-_Grinnell_in_Nest_Box.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="507" alt="Sokół wędrowny leży na rudych jajach w drewnianej skrzynce wysypanej drobnym żwirem" podpis="Samiec sokoła wędrownego wysiaduje jaja w skrzynce lęgowej ze żwirem na wieży w Berkeley: bez żadnego gniazda" autor="Sean Peterson" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Cal_Falcons_-_Grinnell_in_Nest_Box.png">
 </zdjecie>
 
-> 💡 W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną. Więcej w [A6 · Ochrona](../ochrona/README.md).
+> W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną. Więcej w [A6 · Ochrona](../ochrona/README.md).
 
 ## Sępy: skała albo drzewo
 Na południu Hiszpanii żyją dwa duże sępy o zupełnie różnych zwyczajach:

@@ -17,7 +17,7 @@ To **legenda**, a nie opis prawdziwych wydarzeń. Motyw trzech braci pojawia si�
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Przemysl_II_seal_1295_%2816839933%29.png/960px-Przemysl_II_seal_1295_%2816839933%29.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="947" alt="Okrągła pieczęć z tarczą, na której widnieje orzeł z rozpostartymi skrzydłami, wokół napis" podpis="Pieczęć Przemysła II z 1295 r. z orłem w koronie (rycina z XIX-wiecznego wydawnictwa)" autor="Franciszek Piekosiński" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Przemysl_II_seal_1295_(16839933).png">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Coat_of_arms_of_Poland-official.png/960px-Coat_of_arms_of_Poland-official.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1135" alt="Biały orzeł ze złotą koroną, dziobem i szponami, z rozpostartymi skrzydłami, na czerwonej tarczy" podpis="Godło Rzeczypospolitej Polskiej: biały orzeł w koronie na czerwonym polu" autor="original: Polish government; digitized by User:Aotearoa; calculation by: User:DeJotPe)" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Poland-official.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Coat_of_arms_of_Poland-official.png/960px-Coat_of_arms_of_Poland-official.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1135" alt="Biały orzeł ze złotą koroną, dziobem i szponami, z rozpostartymi skrzydłami, na czerwonej tarczy" podpis="Godło Rzeczypospolitej Polskiej: biały orzeł w koronie na czerwonym polu" autor="Rząd RP, opracowanie cyfrowe: Aotearoa, DeJotPe" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Poland-official.png">
 </zdjecie>
 
 ### Który to gatunek?
@@ -26,7 +26,7 @@ Heraldyczny orzeł jest **stylizowany** i nie odpowiada wiernie żadnemu gatunko
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg/960px-Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="587" alt="Dorosły bielik leci nisko nad łąką, widać jasną głowę, żółty dziób, białe pióra ogona i brązowe skrzydła" podpis="Dorosły bielik w Polsce: jasna głowa, żółty dziób i biały ogon" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Adult_white-tailed_eagle_(Haliaeetus_albicilla)_of_central_Poland_in_flight_(2).jpg">
 </zdjecie>
 
-> 💡 Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami. Więcej o systematyce w [module A1](../kim-sa-drapiezniki/README.md).
+> Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami. Więcej o systematyce w [module A1](../kim-sa-drapiezniki/README.md).
 
 ## Orły imperiów
 
@@ -39,7 +39,7 @@ Heraldyczny orzeł jest **stylizowany** i nie odpowiada wiernie żadnemu gatunko
 | **bielik amerykański** (*Haliaeetus leucocephalus*, ang. Bald Eagle) | USA | ptak narodowy, na Wielkiej Pieczęci od 1782 r. |
 | **orzeł z wężem na kaktusie** | Meksyk | nawiązuje do azteckiej legendy o założeniu Tenochtitlán; o gatunek (orzeł przedni czy karakara) wciąż się dyskutuje |
 
-> 💡 Bielik amerykański to bliski krewny naszego bielika, z tego samego rodzaju *Haliaeetus*. Polski i amerykański symbol narodowy to więc, przynajmniej według popularnej interpretacji, niemal „kuzyni”.
+> Bielik amerykański to bliski krewny naszego bielika, z tego samego rodzaju *Haliaeetus*. Polski i amerykański symbol narodowy to więc, przynajmniej według popularnej interpretacji, niemal „kuzyni”.
 
 W chrześcijaństwie orzeł jest symbolem **św. Jana Ewangelisty**, a w mitologii greckiej ptakiem **Zeusa**. To orzeł Zeusa miał codziennie wyjadać wątrobę przykutemu Prometeuszowi.
 

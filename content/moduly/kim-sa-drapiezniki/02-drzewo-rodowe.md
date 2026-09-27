@@ -48,9 +48,9 @@ Telluraves
     └── sokołowe + (papugi + wróblowe)
 ```
 
-> 💡 Jeśli szukasz „dowodów z wyglądu”: sokół i papuga mają woskówkę i mocny, zakrzywiony dziób. To jednak słaba wskazówka, bo woskówkę mają też jastrzębie. O pokrewieństwie przesądziło DNA, nie wygląd.
+> Jeśli szukasz „dowodów z wyglądu”: sokół i papuga mają woskówkę i mocny, zakrzywiony dziób. To jednak słaba wskazówka, bo woskówkę mają też jastrzębie. O pokrewieństwie przesądziło DNA, nie wygląd.
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Blue_Budgerigars.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1593" alt="Dwie niebieskie papużki faliste wśród gałązek choinki; nad zakrzywionymi dziobami widać gładką skórkę z nozdrzami" podpis="Papużki faliste: nad dziobem widać woskówkę, u samicy jasną, u samca niebieską" autor="The original uploader was Workman at English Wikipedia." licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Blue_Budgerigars.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Blue_Budgerigars.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1593" alt="Dwie niebieskie papużki faliste wśród gałązek choinki; nad zakrzywionymi dziobami widać gładką skórkę z nozdrzami" podpis="Papużki faliste: nad dziobem widać woskówkę, u samicy jasną, u samca niebieską" autor="Workman (Wikipedia)" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Blue_Budgerigars.jpg">
 </zdjecie>
 
 ## Ewolucja zbieżna
@@ -63,7 +63,7 @@ Wśród drapieżników zbieżność pojawia się wielokrotnie:
 
 Różnice zdradzają osobne pochodzenie. **Sokoły** często zabijają zdobycz **ugryzieniem w kark**, do czego służy „ząb” na krawędzi dzioba. **Jastrzębiowate** zabijają głównie **stopami**, zaciskając szpony.
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Peregrine_Falcon_%281807432822%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Głowa sokoła wędrownego z profilu, ciemna czapka, żółta woskówka i haczykowaty dziób z wyraźnym ząbkiem na krawędzi" podpis="Dziób sokoła wędrownego z profilu: na krawędzi górnej szczęki widać „ząb”, którym sokół przegryza kark zdobyczy" autor="Jean from Shelbyville,  KY" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcon_(1807432822).jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Peregrine_Falcon_%281807432822%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Głowa sokoła wędrownego z profilu, ciemna czapka, żółta woskówka i haczykowaty dziób z wyraźnym ząbkiem na krawędzi" podpis="Dziób sokoła wędrownego z profilu: na krawędzi górnej szczęki widać „ząb”, którym sokół przegryza kark zdobyczy" autor="Jean from Shelbyville, KY" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcon_(1807432822).jpg">
 </zdjecie>
 
 ## Czy przodek był drapieżnikiem?

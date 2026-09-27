@@ -21,7 +21,7 @@
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Falco_tinnunculus_WE_Faucons_LPO_20260621_n01.jpg/960px-Falco_tinnunculus_WE_Faucons_LPO_20260621_n01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Dwa młode, brązowo kreskowane sokoły siedzą obok siebie na kamiennym gzymsie" podpis="Dwie młode pustułki na murze zamku w Vincennes: w lipcu młode wyglądają jak samice, co utrudnia rozpoznanie" autor="Marie-Lan Taÿ Pamart" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Falco_tinnunculus_WE_Faucons_LPO_20260621_n01.jpg">
 </zdjecie>
 
-> 💡 Zima to paradoksalnie świetna pora na drapieżniki w Polsce: nie ma liści, ptaki siedzą na widoku przy polach, a przylatują gatunki z północy.
+> Zima to paradoksalnie świetna pora na drapieżniki w Polsce: nie ma liści, ptaki siedzą na widoku przy polach, a przylatują gatunki z północy.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Buse_variable_et_Beaufortain_enneig%C3%A9_%28janvier_2026%29.JPG/960px-Buse_variable_et_Beaufortain_enneig%C3%A9_%28janvier_2026%29.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="725" alt="Myszołów siedzący na drewnianym słupku ogrodzenia na tle zaśnieżonego górskiego szczytu" podpis="Myszołów na słupku w styczniu: zimą drapieżniki siedzą na widoku" autor="Florian Pépellin" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Buse_variable_et_Beaufortain_enneig%C3%A9_(janvier_2026).JPG">
 </zdjecie>

@@ -19,7 +19,7 @@ Jak dokładnie ptak łączy te informacje, badacze wciąż dyskutują.
 - Z wiekiem trasy wielu ptaków stają się bardziej przewidywalne. Uważa się, że ptaki **uczą się mapy**: wybrzeży, łańcuchów górskich, dolin rzecznych i konkretnych miejsc odpoczynku.
 - U gatunków, które lecą w grupach (np. bociany, częściowo kanie czarne), młode mogą uczyć się trasy od starszych. U trzmielojada, który odlatuje osobno, to niemożliwe przy pierwszej wędrówce.
 
-> 💡 Szwedzkie badania telemetryczne trzmielojadów pokazały, że dorosłe ptaki leciały do Afryki głównie przez Gibraltar lub Włochy, a młode rozpraszały się szerzej i częściej ryzykowały przelot nad morzem. To dobry przykład różnicy między programem wrodzonym a wiedzą zdobytą z doświadczeniem.
+> Szwedzkie badania telemetryczne trzmielojadów pokazały, że dorosłe ptaki leciały do Afryki głównie przez Gibraltar lub Włochy, a młode rozpraszały się szerzej i częściej ryzykowały przelot nad morzem. To dobry przykład różnicy między programem wrodzonym a wiedzą zdobytą z doświadczeniem.
 
 ## Metody badań
 
@@ -38,7 +38,7 @@ Naukowe obrączkowanie ptaków zapoczątkował w 1899 roku duński nauczyciel **
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg/960px-A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Dłoń trzyma małego żółto-oliwkowego ptaka z czarną maską, obok szczypce z nawleczonymi metalowymi obrączkami" podpis="Zakładanie obrączki specjalnymi szczypcami (tu na nodze małego ptaka śpiewającego): ptaki drapieżne dostają większe obrączki, ale metoda jest ta sama" autor="Lorie Shaull" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg">
 </zdjecie>
 
-> 💡 Znalazłaś martwego ptaka z obrączką? Zanotuj numer i napis, datę i miejsce i zgłoś to do centrali obrączkowania (dane kontaktowe są na obrączce). Każde takie zgłoszenie to cenny punkt na mapie wędrówki.
+> Znalazłaś martwego ptaka z obrączką? Zanotuj numer i napis, datę i miejsce i zgłoś to do centrali obrączkowania (dane kontaktowe są na obrączce). Każde takie zgłoszenie to cenny punkt na mapie wędrówki.
 
 ### Telemetria GPS
 Pierwsze nadajniki satelitarne na ptakach drapieżnych pojawiły się w latach 80.–90. XX wieku. Dziś nadajniki GPS z panelami słonecznymi ważą kilkanaście–kilkadziesiąt gramów, a dane przesyłają np. przez sieć komórkową. Przyjmuje się, że nadajnik nie powinien ważyć więcej niż kilka procent masy ptaka.

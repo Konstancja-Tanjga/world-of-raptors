@@ -16,7 +16,7 @@ Co zadziałało:
 
 Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holandii. W Szkocji i Irlandii przywrócono go przez reintrodukcję (ptaki sprowadzone m.in. z Norwegii).
 
-> 💡 Bielik to dobry przykład „cichego” sukcesu: dziś widok bielika nad Wisłą czy stawami w Dolinie Baryczy jest czymś zwykłym, a jeszcze kilka dekad temu był wielkim przeżyciem. Więcej o miejscach w [module o Polsce](../polska/README.md).
+> Bielik to dobry przykład „cichego” sukcesu: dziś widok bielika nad Wisłą czy stawami w Dolinie Baryczy jest czymś zwykłym, a jeszcze kilka dekad temu był wielkim przeżyciem. Więcej o miejscach w [module o Polsce](../polska/README.md).
 
 ## Sokół wędrowny w Polsce: powrót na drzewa
 **Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) gniazdował w Polsce głównie **na drzewach**, w starych gniazdach innych ptaków w borach sosnowych. To nietypowe, bo w większości Europy sokoły gniazdują na skałach. W wyniku DDT i prześladowania populacja drzewna **wymarła** w Polsce w drugiej połowie XX wieku (ostatnie lęgi w latach 60.–70., według różnych źródeł).
@@ -56,7 +56,7 @@ Dziś liczebność wzrosła do **wielu setek par** (według najnowszych spisów 
 - Od 1992 r. wypuszcza się ptaki w Kalifornii, później także w Arizonie, Utah i Meksyku.
 - Dziś żyje **ponad 500 kondorów**, z czego ponad połowa na wolności.
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Gymnogyps_californianus1-2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1458" alt="Łyse, puchate pisklę kondora na niebieskim ręczniku przyjmuje pokarm z dzioba kukiełki przypominającej głowę dorosłego kondora" podpis="Pisklę kondora kalifornijskiego karmione kukiełką w kształcie głowy dorosłego ptaka (San Diego Zoo)" autor="Gymnogyps_californianus1.jpg: San Diego Zoo, Ron Garrison derivative work: mik@ni" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Gymnogyps_californianus1-2.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Gymnogyps_californianus1-2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1458" alt="Łyse, puchate pisklę kondora na niebieskim ręczniku przyjmuje pokarm z dzioba kukiełki przypominającej głowę dorosłego kondora" podpis="Pisklę kondora kalifornijskiego karmione kukiełką w kształcie głowy dorosłego ptaka (San Diego Zoo)" autor="Ron Garrison (San Diego Zoo), opracowanie: mik@ni" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Gymnogyps_californianus1-2.jpg">
 </zdjecie>
 
 Problem: ołów z amunicji wciąż zabija kondory, a wiele ptaków trzeba regularnie odławiać i leczyć. Populacja dzika nie jest jeszcze samowystarczalna.

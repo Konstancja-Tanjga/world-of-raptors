@@ -11,7 +11,7 @@ Większość ptaków drapieżnych jest **monogamiczna**: w sezonie lęgowym jedn
 
 „Rozwody” u dużych orłów zdarzają się rzadko. Gdy jeden ptak zginie, drugi zwykle szybko znajduje nowego partnera, bo w okolicy krążą dorosłe ptaki bez terytorium, czekające na wolne miejsce (więcej w lekcji 4).
 
-> 💡 Bieliki są razem cały rok, ale także u nich para co zimę „odnawia” więź: wspólne loty, głosy w duecie i poprawianie gniazda zaczynają się już w grudniu i styczniu.
+> Bieliki są razem cały rok, ale także u nich para co zimę „odnawia” więź: wspólne loty, głosy w duecie i poprawianie gniazda zaczynają się już w grudniu i styczniu.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg/960px-Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1153" alt="Dwa duże brązowe orły z jasnymi głowami i żółtymi dziobami siedzą obok siebie na omszałym głazie nad wodą" podpis="Para dorosłych bielików na nadmorskim głazie w Norwegii: bieliki trzymają się razem przez cały rok" autor="Bouke ten Cate" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg">
 </zdjecie>
@@ -54,7 +54,7 @@ Znak rozpoznawczy **błotniaków**. Samiec z ofiarą w szponach woła samicę. T
 
 Karmienie w czasie toków (przynoszenie pokarmu samicy) występuje u wielu gatunków. Jedna z interpretacji: samica ocenia, czy samiec będzie dobrym „żywicielem”, a jednocześnie gromadzi zapasy energii na złożenie jaj.
 
-> 💡 U błotniaków przekazywanie pokarmu trwa cały sezon. Samica wysiadująca jaja w trzcinach wylatuje na chwilę, łapie zdobycz od samca i wraca. Jeśli zobaczysz to w maju nad szuwarami, gniazdo jest w pobliżu: obserwuj z daleka i nie podchodź.
+> U błotniaków przekazywanie pokarmu trwa cały sezon. Samica wysiadująca jaja w trzcinach wylatuje na chwilę, łapie zdobycz od samca i wraca. Jeśli zobaczysz to w maju nad szuwarami, gniazdo jest w pobliżu: obserwuj z daleka i nie podchodź.
 
 ### 5. Toki przy gnieździe
 Nie wszystko dzieje się w powietrzu. Para **przynosi gałęzie**, poprawia gniazdo, woła w duecie, siada obok siebie. U sokołów samiec pokazuje samicy możliwe miejsca lęgowe: siada na półce skalnej i „drapie” w niej płytkie zagłębienie.

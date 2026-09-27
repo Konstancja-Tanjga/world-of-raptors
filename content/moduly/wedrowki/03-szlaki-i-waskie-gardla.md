@@ -45,7 +45,7 @@ Południowy cypel Szwecji. Ptaki ze Skandynawii zbierają się tu jesienią prze
 ### Cieśnina Mesyńska
 Między „czubkiem buta” Włoch a Sycylią. Najciekawsza **wiosną**, kiedy ptaki wracające z Afryki przez Tunezję i Sycylię lecą dalej na północ Półwyspu Apenińskiego. Główne gwiazdy to trzmielojad i błotniaki. Przez dziesięciolecia było to miejsce masowego kłusownictwa. Dziś jest go dużo mniej, m.in. dzięki obozom wolontariuszy i pracy strażników.
 
-> 💡 Na trasie przez Mesynę i Cap Bon ptaki przelatują nad morzem **dużo dłużej** niż nad Gibraltarem. Dlatego liczniejsze są tu błotniaki i trzmielojady niż orły czy sępy.
+> Na trasie przez Mesynę i Cap Bon ptaki przelatują nad morzem **dużo dłużej** niż nad Gibraltarem. Dlatego liczniejsze są tu błotniaki i trzmielojady niż orły czy sępy.
 
 ## Którędy lecą ptaki z Polski?
 Przez Europę Środkową przebiega **przedział wędrówkowy** (ang. *migratory divide*): ptaki z zachodu lecą zwykle przez Gibraltar, ptaki ze wschodu przez Bosfor. Polska leży blisko tej granicy, więc odpowiedź zależy od gatunku, a czasem od konkretnego ptaka.
@@ -58,7 +58,7 @@ Przez Europę Środkową przebiega **przedział wędrówkowy** (ang. *migratory 
 | **Kania ruda** | krótka trasa na południowy zachód (Francja, Hiszpania); coraz więcej ptaków zimuje bliżej | dobrze udokumentowana obrączkowaniem |
 | **Błotniaki, kobuz, rybołów** | szeroki front przez Europę i Morze Śródziemne | trasy bardzo zróżnicowane |
 
-> 💡 W samej Polsce nie ma wąskiego gardła na miarę Bosforu. Przelot jest **rozproszony**, choć wybrzeże Bałtyku (np. Mierzeja Wiślana czy Półwysep Helski) skupia część ptaków, zwłaszcza krogulce i myszołowy z północy, które lecą wzdłuż brzegu. W dobry jesienny dzień można tam zobaczyć zaskakująco dużo drapieżników.
+> W samej Polsce nie ma wąskiego gardła na miarę Bosforu. Przelot jest **rozproszony**, choć wybrzeże Bałtyku (np. Mierzeja Wiślana czy Półwysep Helski) skupia część ptaków, zwłaszcza krogulce i myszołowy z północy, które lecą wzdłuż brzegu. W dobry jesienny dzień można tam zobaczyć zaskakująco dużo drapieżników.
 
 ## Jesień i wiosna nie są takie same
 - **Jesienią** leci więcej ptaków, bo do dorosłych dołączają tegoroczne młode. Lot bywa wolniejszy, z przerwami na odpoczynek i żerowanie.
