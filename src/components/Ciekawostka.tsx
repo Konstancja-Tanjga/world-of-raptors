@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useId, useState, type ReactNode } from 'react';
 import type { CiekawostkaDoPokazania } from '@/lib/types';
-import { Button, StateBlock } from './ds';
+import { Button, Card, StateBlock } from './ds';
 
 const KLUCZ = 'wor:ciekawostki:widziane';
 
@@ -44,7 +44,10 @@ function wybierz(preferowane: CiekawostkaDoPokazania[], pozostale: CiekawostkaDo
   return [...kandydaci].sort((a, b) => byly.indexOf(a.id) - byly.indexOf(b.id))[0];
 }
 
-/** **bold**, *italic*, `code` and [text](/route) links; enough for the lesson callouts. */
+/**
+ * **bold**, *italic*, `code`; links in the text become emphasis, because the
+ * card keeps one action (the "Więcej" link) as Big Hat's Card contract asks.
+ */
 function inline(tekst: string): ReactNode[] {
   const czesci: ReactNode[] = [];
   const re = /\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`|\[(.+?)\]\(([^)]+)\)/g;
@@ -56,12 +59,7 @@ function inline(tekst: string): ReactNode[] {
     if (m[1]) czesci.push(<strong key={k}>{m[1]}</strong>);
     else if (m[2]) czesci.push(<em key={k}>{m[2]}</em>);
     else if (m[3]) czesci.push(<code key={k}>{m[3]}</code>);
-    else
-      czesci.push(
-        <Link key={k} href={m[5]} className="text-link">
-          {m[4]}
-        </Link>,
-      );
+    else czesci.push(<em key={k}>{m[4]}</em>);
     ostatni = re.lastIndex;
   }
   czesci.push(tekst.slice(ostatni));
@@ -71,6 +69,11 @@ function inline(tekst: string): ReactNode[] {
 /**
  * A rotating "did you know" card. Chosen in the browser after mount: the
  * pages are static, so a server-side pick would be frozen at build time.
+ *
+ * Built on Big Hat's Card, which is for "content the user might act on as a
+ * unit" and not for "cards with two actions inside": the card holds the
+ * curiosity and its one action (read more in the lesson); "Inna ciekawostka"
+ * sits outside it.
  */
 export function Ciekawostka({
   preferowane,
@@ -101,26 +104,32 @@ export function Ciekawostka({
 
   return (
     <aside className="ciekawostka" aria-labelledby={tytulId}>
-      <p className="ciekawostka__tytul" id={tytulId}>
-        Ciekawostka
-      </p>
-      {biezaca ? (
-        <>
-          <p className="ciekawostka__tekst" aria-live="polite">
-            {inline(biezaca.tekst)}
+      <Card elevation="raised" accent="info">
+        <div className="ciekawostka__tresc">
+          <p className="ciekawostka__tytul" id={tytulId}>
+            Ciekawostka
           </p>
-          <div className="ciekawostka__stopka">
-            <Link href={biezaca.href} className="text-link">
-              Więcej: {biezaca.zrodlo}
-            </Link>
-            <Button variant="ghost" size="sm" onClick={nastepna}>
-              Inna ciekawostka
-            </Button>
-          </div>
-        </>
-      ) : (
-        // Chosen after mount (see above); the card keeps its place meanwhile.
-        <StateBlock state="loading" title="Wczytywanie ciekawostki" scope="inline" />
+          {biezaca ? (
+            <>
+              <p className="ciekawostka__tekst" aria-live="polite">
+                {inline(biezaca.tekst)}
+              </p>
+              <Link href={biezaca.href} className="text-link ciekawostka__zrodlo">
+                Więcej: {biezaca.zrodlo}
+              </Link>
+            </>
+          ) : (
+            // Chosen after mount (see above); the card keeps its place meanwhile.
+            <StateBlock state="loading" title="Wczytywanie ciekawostki" scope="inline" />
+          )}
+        </div>
+      </Card>
+      {biezaca && (
+        <div className="ciekawostka__akcje">
+          <Button variant="secondary" size="sm" onClick={nastepna}>
+            Inna ciekawostka
+          </Button>
+        </div>
       )}
     </aside>
   );
