@@ -538,18 +538,22 @@ body {
   font-size: var(--bh-text-size-body);
 }
 
-/* Curiosity: a line from a lesson, not another box */
+/* Curiosity: Big Hat Card (raised, info accent) with the button outside it */
 .ciekawostka {
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-snug);
-  padding-block-start: var(--bh-gap-normal);
-  border-top: 1px solid var(--bh-border-strong);
+}
+.ciekawostka__tresc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
 }
 .ciekawostka__tytul {
   margin: 0;
-  font-weight: var(--bh-text-weight-emphasis);
-  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-heading);
+  color: var(--bh-status-info-fg);
 }
 .ciekawostka__tekst {
   margin: 0;
@@ -558,11 +562,10 @@ body {
   line-height: var(--bh-text-leading-normal);
   color: var(--bh-text-primary);
 }
-.ciekawostka__stopka {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--bh-gap-snug);
+.ciekawostka__zrodlo {
   font-size: var(--bh-text-size-dense);
+}
+.ciekawostka__akcje {
+  display: flex;
+  justify-content: flex-end;
 }
