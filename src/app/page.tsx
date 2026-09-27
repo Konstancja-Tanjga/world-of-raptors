@@ -4,9 +4,10 @@ import { Ciekawostka } from '@/components/Ciekawostka';
 import { SpeciesMedia } from '@/components/SpeciesMedia';
 import { ciekawostkiDla, gatunki, moduly, sciezki, zdjecia } from '@/lib/content';
 
-// The species of the day is picked on the server, so the page is rebuilt
-// hourly instead of once at deploy time.
-export const revalidate = 3600;
+// Rendered per request: the species of the day must change at midnight, and
+// a revalidated static page would show yesterday's to the first visitor.
+// Cheap, because everything comes from local JSON.
+export const dynamic = 'force-dynamic';
 
 /** Same species all day (Polish time), a different one tomorrow. */
 function gatunekDnia() {
@@ -29,7 +30,7 @@ export default function Home() {
         <p className="latin today__latin">
           {g.lat} <span className="en">(ang. {g.en})</span>
         </p>
-        <SpeciesMedia id={g.id} linki={false} ileMylonych={1} />
+        <SpeciesMedia id={g.id} linki={false} ileMylonych={1} glowne />
         <p>
           <Link href={`/gatunki/${g.id}`} className="text-link">
             Karta gatunku: {g.pl}
