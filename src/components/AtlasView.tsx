@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useChecklista } from '@/lib/checklist';
 import type { Gatunek, Zdjecie } from '@/lib/types';
 import { Photo } from './Photo';
-import { Badge, Card, StateBlock } from './ds';
-import { SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { Badge, Button, Card, StateBlock } from './ds';
+import { PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 
 export function AtlasView({
   gatunki,
@@ -27,7 +27,12 @@ export function AtlasView({
         <StateBlock
           state="empty"
           title="Brak gatunków w tym filtrze"
-          description="Zmień region, aktywność albo wyszukiwaną nazwę."
+          description="Zmień region, aktywność albo wpisaną nazwę."
+          action={
+            <Button size="sm" variant="secondary" onClick={() => setFiltry(PUSTE_FILTRY)}>
+              Wyczyść filtry
+            </Button>
+          }
           scope="section"
         />
       ) : (

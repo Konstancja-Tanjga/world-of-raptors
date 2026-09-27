@@ -19,7 +19,7 @@ import {
   Textarea,
   useToast,
 } from './ds';
-import { SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
@@ -61,6 +61,9 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       a.download = `checklista-${dzisiaj()}.json`;
       a.click();
       URL.revokeObjectURL(url);
+      if (!bezZdjec) {
+        notify({ tone: 'success', title: 'Kopia zapisana', description: `Plik ${a.download} jest w pobranych.` });
+      }
       if (bezZdjec) {
         notify({
           tone: 'warning',
@@ -74,7 +77,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       console.error('[kopia] export failed', err);
       notify({
         tone: 'critical',
-        title: 'Nie udało się utworzyć pliku kopii',
+        title: 'Nie udało się zapisać kopii',
         description: 'Spróbuj jeszcze raz. Jeśli zdjęć jest bardzo dużo, przeglądarce mogło zabraknąć pamięci.',
         duration: null,
       });
@@ -91,7 +94,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       console.error('[kopia] invalid backup', err);
       notify({
         tone: 'critical',
-        title: 'Nie udało się zaimportować pliku',
+        title: 'Nie udało się wczytać kopii',
         description: `${err instanceof NiepoprawnaKopia ? err.message[0].toUpperCase() + err.message.slice(1) : 'Nie udało się odczytać pliku'}. Nic nie zostało zmienione.`,
         duration: null,
       });
@@ -129,7 +132,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
     );
     notify({
       tone: nieZapisane.length ? 'warning' : 'success',
-      title: nieZapisane.length ? 'Kopia zaimportowana częściowo' : 'Kopia zaimportowana',
+      title: nieZapisane.length ? 'Kopia wczytana częściowo' : 'Kopia wczytana',
       description: [
         `Wczytano: ${wczytano.join(', ')}.`,
         pominiete.length ? `Plik nie zawierał ${pominiete.join(' ani ')}.` : '',
@@ -178,7 +181,19 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
         <StateBlock
           state="empty"
           title={widok === 'zaobserwowane' ? 'Brak obserwacji w tym filtrze' : 'Brak gatunków w tym filtrze'}
-          description="Zmień region, aktywność albo wyszukiwaną nazwę."
+          description="Zmień region, aktywność albo wpisaną nazwę."
+          action={
+            <Button
+              size="sm"
+              variant="secondary"
+              onClick={() => {
+                setFiltry(PUSTE_FILTRY);
+                setWidok('wszystkie');
+              }}
+            >
+              Wyczyść filtry
+            </Button>
+          }
           scope="section"
         />
       ) : (
@@ -243,16 +258,16 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Eksportuj
-          je co jakiś czas do jednego pliku, żeby ich nie stracić, i importuj, żeby przenieść je na
-          inne urządzenie.
+          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Co jakiś
+          czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
+          też je mieć.
         </p>
         <div className="row">
           <Button variant="secondary" onClick={() => void eksportuj()}>
-            Eksportuj do pliku
+            Zapisz kopię w pliku
           </Button>
           <Button variant="secondary" onClick={() => fileInput.current?.click()}>
-            Importuj z pliku
+            Wczytaj kopię z pliku
           </Button>
           <input
             ref={fileInput}

@@ -46,7 +46,7 @@ function wybierz(preferowane: CiekawostkaDoPokazania[], pozostale: CiekawostkaDo
 
 /**
  * **bold**, *italic*, `code`. No links: the card keeps one action (the
- * "Więcej" link), as Big Hat's Card contract asks, so a stray [link](…) in
+ * "Czytaj dalej" link), as Big Hat's Card contract asks, so a stray [link](…) in
  * content/ciekawostki.json shows up literally instead of being hidden.
  */
 function inline(tekst: string): ReactNode[] {
@@ -72,7 +72,7 @@ function inline(tekst: string): ReactNode[] {
  *
  * Built on Big Hat's Card, which is for "content the user might act on as a
  * unit" and not for "cards with two actions inside": the card holds the
- * curiosity and its one action (read more in the lesson); "Inna ciekawostka"
+ * curiosity and its one action (read more in the lesson); "Pokaż inną ciekawostkę"
  * sits outside it.
  */
 export function Ciekawostka({
@@ -115,7 +115,7 @@ export function Ciekawostka({
                 {inline(biezaca.tekst)}
               </p>
               <Link href={biezaca.href} className="text-link ciekawostka__zrodlo">
-                Więcej: {biezaca.zrodlo}
+                Czytaj dalej: {biezaca.zrodlo}
               </Link>
             </>
           ) : (
@@ -127,7 +127,7 @@ export function Ciekawostka({
       {biezaca && (
         <div className="ciekawostka__akcje">
           <Button variant="secondary" size="sm" onClick={nastepna}>
-            Inna ciekawostka
+            Pokaż inną ciekawostkę
           </Button>
         </div>
       )}

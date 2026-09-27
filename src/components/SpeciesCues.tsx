@@ -33,7 +33,6 @@ export function SpeciesCues({ g }: { g: Gatunek }) {
       <p className="plate__label">Na co patrzeć</p>
       <DescriptionList
         layout="columns"
-        density="compact"
         ariaLabel={`Na co patrzeć: ${g.pl}`}
         items={pola.map(([k, term]) => ({ term, value: cechy[k] }))}
       />

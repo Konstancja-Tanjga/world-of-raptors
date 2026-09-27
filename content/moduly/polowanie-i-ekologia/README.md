@@ -1,6 +1,6 @@
 # Moduł A3: Polowanie i ekologia
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Każdy ptak drapieżny rozwiązuje ten sam problem: jak zdobyć jedzenie, zanim skończy się energia. Ten moduł pokazuje, jak różnie można go rozwiązać.
 

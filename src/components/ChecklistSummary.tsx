@@ -23,7 +23,7 @@ export function ChecklistSummary({ ids }: { ids: string[] }) {
         )}
         <div>
           <ButtonLink href="/checklista" variant="secondary">
-            Odhacz obserwacje
+            Otwórz checklistę
           </ButtonLink>
         </div>
       </div>

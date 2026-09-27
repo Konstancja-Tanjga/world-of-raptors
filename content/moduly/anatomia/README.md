@@ -1,6 +1,6 @@
 # Moduł A2: Anatomia łowcy
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Każdy ptak drapieżny to zestaw narzędzi dopasowanych do jednej pracy: znaleźć, złapać i zjeść zdobycz. W tym module rozkładasz ten zestaw na części.
 

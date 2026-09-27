@@ -1,6 +1,6 @@
 # Moduł A6: Ochrona ptaków drapieżnych
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Jeszcze kilkadziesiąt lat temu za zabicie jastrzębia dostawało się nagrodę, a sokół wędrowny znikał z Europy. Dziś bieliki gniazdują pod Warszawą, a kondory znów latają nad Kalifornią. Ten moduł opowiada, jak do tego doszło i co wciąż jest zagrożeniem.
 

@@ -19,8 +19,10 @@ function toggle<T>(list: T[], value: T) {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 }
 
+export const PUSTE_FILTRY: Filtry = { regiony: [], aktywnosc: [], szukaj: '' };
+
 export function useFiltry(gatunki: Gatunek[]) {
-  const [filtry, setFiltry] = useState<Filtry>({ regiony: [], aktywnosc: [], szukaj: '' });
+  const [filtry, setFiltry] = useState<Filtry>(PUSTE_FILTRY);
 
   const wynik = useMemo(() => {
     const q = filtry.szukaj.trim().toLowerCase();

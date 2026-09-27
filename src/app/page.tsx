@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="page">
       <section className="today" aria-labelledby="gatunek-dnia">
-        <p className="today__intro">Gatunek na dziś. Jutro będzie inny.</p>
+        <p className="today__intro">Gatunek na dziś. Codziennie inny.</p>
         <h1 id="gatunek-dnia" className="today__name">
           {g.pl}
         </h1>
