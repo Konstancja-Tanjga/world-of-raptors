@@ -3,13 +3,18 @@
 ## Prawo w Polsce
 
 ### Ochrona gatunkowa
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Belvoir-fortress-S-058.jpg/960px-Belvoir-fortress-S-058.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="690" alt="Kilka sępów siedzi na kamieniach za ogrodzeniem na suchym wzgórzu, w dali równina" podpis="Miejsce dokarmiania sępów płowych przy twierdzy Belvoir (Izrael): wykładanie bezpiecznej padliny to jedna z form ochrony czynnej" autor="Bukvoed" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Belvoir-fortress-S-058.jpg">
+</zdjecie>
+
+</margines>
+
 - **Wszystkie** dziko żyjące gatunki ptaków drapieżnych i sów w Polsce są objęte **ochroną ścisłą**. Podstawą jest ustawa o ochronie przyrody i rozporządzenie w sprawie ochrony gatunkowej zwierząt.
 - Oznacza to m.in. zakaz zabijania, chwytania, niszczenia gniazd i jaj, umyślnego płoszenia i niepokojenia, a także przetrzymywania i sprzedaży ptaków (z wyjątkami, np. na podstawie zezwoleń).
 - Część gatunków wymaga **ochrony czynnej**, czyli aktywnych działań: np. budowy platform gniazdowych, dokarmiania, ochrony siedlisk.
 - Zabicie chronionego zwierzęcia może być **przestępstwem**, nie tylko wykroczeniem.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Belvoir-fortress-S-058.jpg/960px-Belvoir-fortress-S-058.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="690" alt="Kilka sępów siedzi na kamieniach za ogrodzeniem na suchym wzgórzu, w dali równina" podpis="Miejsce dokarmiania sępów płowych przy twierdzy Belvoir (Izrael): wykładanie bezpiecznej padliny to jedna z form ochrony czynnej" autor="Bukvoed" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Belvoir-fortress-S-058.jpg">
-</zdjecie>
 
 ### Strefy ochronne wokół gniazd
 To jedno z najskuteczniejszych polskich narzędzi ochrony. Wokół gniazd wybranych gatunków **regionalny dyrektor ochrony środowiska (RDOŚ)** może wyznaczyć strefę ochronną. Dotyczy to m.in.:
@@ -26,9 +31,13 @@ Strefa ma zwykle dwie części:
 - **całoroczną** (bezpośrednio wokół gniazda, zwykle do ok. 200 m) – tu obowiązuje zakaz przebywania i wycinki przez cały rok,
 - **okresową** (szerszą, zwykle do ok. 500 m) – ograniczenia obowiązują w sezonie lęgowym.
 
-Dokładne zasięgi i terminy zależą od gatunku i decyzji RDOŚ. Lokalizacje stref **nie są publikowane**, żeby nie ułatwiać życia fotografom i przestępcom.
+<margines>
 
 > Strefy ochronne w Polsce wprowadzono w latach 80. XX wieku z myślą o bieliku i innych orłach. Wiele osób uważa je za jedną z przyczyn spektakularnego powrotu bielika.
+
+</margines>
+
+Dokładne zasięgi i terminy zależą od gatunku i decyzji RDOŚ. Lokalizacje stref **nie są publikowane**, żeby nie ułatwiać życia fotografom i przestępcom.
 
 ## Prawo międzynarodowe
 
@@ -53,17 +62,29 @@ Sygnały ostrzegawcze: kilka martwych zwierząt w jednym miejscu, martwy ptak ob
 5. Nie zabieraj ptaka sama, chyba że poproszą o to służby. To dowód w sprawie.
 
 ### Ranny ptak
-- Zadzwoń do najbliższego **ośrodka rehabilitacji dzikich zwierząt** albo do weterynarza, który z takim ośrodkiem współpracuje.
-- Jeśli musisz przenieść ptaka: gruby koc lub ręcznik, karton z otworami, ciemno i cicho. **Nie karm i nie pój** go na własną rękę.
-- Uważaj na szpony: to one, a nie dziób, są główną bronią drapieżnika.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/161004-Z-KL308-001_%2830196697471%29.jpg/960px-161004-Z-KL308-001_%2830196697471%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="685" alt="Mężczyzna w skórzanych rękawicach i kurtce trzyma w ramionach dużego orła z białą głową, przytrzymując jego nogi" podpis="Bielik amerykański wypuszczany po trzech miesiącach rehabilitacji (Minnesota, USA): trzymany w grubych rękawicach, z unieruchomionymi nogami" autor="Minnesota National Guard from St Paul, MN, USA" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:161004-Z-KL308-001_(30196697471).jpg">
 </zdjecie>
+
+</margines>
+
+- Zadzwoń do najbliższego **ośrodka rehabilitacji dzikich zwierząt** albo do weterynarza, który z takim ośrodkiem współpracuje.
+- Jeśli musisz przenieść ptaka: gruby koc lub ręcznik, karton z otworami, ciemno i cicho. **Nie karm i nie pój** go na własną rękę.
+- Uważaj na szpony: to one, a nie dziób, są główną bronią drapieżnika.
 
 ### Ptak z obrączką
 Odczytaną obrączkę (także martwego ptaka) zgłoś do **Stacji Ornitologicznej** (Muzeum i Instytut Zoologii PAN). Każde zgłoszenie to dane o wędrówkach i długości życia. Więcej o obrączkowaniu i telemetrii w [module o wędrówkach](../wedrowki/README.md).
 
 ## Co możesz zrobić na co dzień
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Faucon_cr%C3%A9cerelle_Falco_tinnunculus_aDSC_9067_%2851306752858%29.jpg/960px-Faucon_cr%C3%A9cerelle_Falco_tinnunculus_aDSC_9067_%2851306752858%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Drewniana budka na słupie, w jej otworze siedzą dwie młode pustułki, trzecia na dachu budki" podpis="Młode pustułki w budce lęgowej na słupie w sadzie w Szwajcarii: tak działa budka dla pustułki" autor="Pierre-Marie Epiney" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Faucon_cr%C3%A9cerelle_Falco_tinnunculus_aDSC_9067_(51306752858).jpg">
+</zdjecie>
+
+</margines>
 
 | Działanie | Jak |
 |---|---|
@@ -74,9 +95,6 @@ Odczytaną obrączkę (także martwego ptaka) zgłoś do **Stacji Ornitologiczne
 | **Nie niepokoić** | nie podchodź do gniazd, nie puszczaj drona w pobliżu, nie publikuj lokalizacji gniazd (zasady z [modułu o Polsce](../polska/README.md)) |
 | **Wsparcie organizacji** | darowizna, wolontariat, adopcja gniazda lub sokoła (programy prowadzą m.in. Stowarzyszenie „Sokół” i KOO) |
 | **Mówienie o tym** | wielu ludzi wciąż uważa jastrzębia za „szkodnika”; rozmowa z sąsiadem hodującym gołębie też jest ochroną |
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Faucon_cr%C3%A9cerelle_Falco_tinnunculus_aDSC_9067_%2851306752858%29.jpg/960px-Faucon_cr%C3%A9cerelle_Falco_tinnunculus_aDSC_9067_%2851306752858%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Drewniana budka na słupie, w jej otworze siedzą dwie młode pustułki, trzecia na dachu budki" podpis="Młode pustułki w budce lęgowej na słupie w sadzie w Szwajcarii: tak działa budka dla pustułki" autor="Pierre-Marie Epiney" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Faucon_cr%C3%A9cerelle_Falco_tinnunculus_aDSC_9067_(51306752858).jpg">
-</zdjecie>
 
 ## Filmy
 - [YouTube: budka lęgowa dla pustułki, jak zawiesić](https://www.youtube.com/results?search_query=budka+dla+pustu%C5%82ki)

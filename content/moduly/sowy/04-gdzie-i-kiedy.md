@@ -18,6 +18,17 @@
 ## Gdzie szukać
 
 ### Polska
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Uszatka_na_zimowisku.jpg/960px-Uszatka_na_zimowisku.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1344" alt="Uszatka z uniesionymi pęczkami piór i pomarańczowymi oczami siedzi wśród gałęzi świerka" podpis="Uszatka na zimowym noclegowisku w Polsce: w gęstym świerku za dnia trudno ją wypatrzyć" autor="Aneta p" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Uszatka_na_zimowisku.jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Strix_aluco%2C_Neuss_%28DE%29_--_2022_--_0132.jpg/960px-Strix_aluco%2C_Neuss_%28DE%29_--_2022_--_0132.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rdzawy puszczyk wygląda zza pnia drzewa wśród zielonych liści" podpis="Puszczyk za dnia w miejskim lesie w Neuss: najpospolitsza sowa parków i starych alei" autor="Anil Öztas" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Strix_aluco,_Neuss_(DE)_--_2022_--_0132.jpg">
+</zdjecie>
+
+</margines>
+
 | Miejsce | Gatunki |
 |---|---|
 | Parki miejskie, cmentarze, stare aleje | puszczyk, uszatka (zimowe noclegowiska) |
@@ -27,13 +38,15 @@
 | Stare wierzby i wsie (np. Mazowsze, Kujawy) | pójdźka |
 | Kamieniołomy, skaliste doliny | puchacz |
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Uszatka_na_zimowisku.jpg/960px-Uszatka_na_zimowisku.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1344" alt="Uszatka z uniesionymi pęczkami piór i pomarańczowymi oczami siedzi wśród gałęzi świerka" podpis="Uszatka na zimowym noclegowisku w Polsce: w gęstym świerku za dnia trudno ją wypatrzyć" autor="Aneta p" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Uszatka_na_zimowisku.jpg">
-</zdjecie>
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Strix_aluco%2C_Neuss_%28DE%29_--_2022_--_0132.jpg/960px-Strix_aluco%2C_Neuss_%28DE%29_--_2022_--_0132.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rdzawy puszczyk wygląda zza pnia drzewa wśród zielonych liści" podpis="Puszczyk za dnia w miejskim lesie w Neuss: najpospolitsza sowa parków i starych alei" autor="Anil Öztas" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Strix_aluco,_Neuss_(DE)_--_2022_--_0132.jpg">
-</zdjecie>
-
 ### Południe Hiszpanii
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Olivares_en_Ja%C3%A9n.jpg/960px-Olivares_en_Ja%C3%A9n.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Pagórkowaty krajobraz pokryty rzędami drzew oliwnych, na pierwszym planie sosny i głazy" podpis="Gaje oliwne w prowincji Jaén: nocą słychać tu pójdźki i syczki" autor="Allie_Caulfield" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Olivares_en_Ja%C3%A9n.jpg">
+</zdjecie>
+
+</margines>
+
 | Miejsce | Gatunki |
 |---|---|
 | Gaje oliwne i wioski | pójdźka, syczek (lato), płomykówka |
@@ -41,9 +54,6 @@
 | Los Alcornocales | puszczyk, puchacz |
 | La Janda, Doñana (zima) | uszatka błotna |
 | Parki w miastach (np. Sewilla, Kadyks) | syczek (lato) |
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Olivares_en_Ja%C3%A9n.jpg/960px-Olivares_en_Ja%C3%A9n.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Pagórkowaty krajobraz pokryty rzędami drzew oliwnych, na pierwszym planie sosny i głazy" podpis="Gaje oliwne w prowincji Jaén: nocą słychać tu pójdźki i syczki" autor="Allie_Caulfield" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Olivares_en_Ja%C3%A9n.jpg">
-</zdjecie>
 
 ## Jak słuchać: praktyka
 1. Wybierz **bezwietrzną, suchą noc**. Wiatr i deszcz zagłuszają głosy.

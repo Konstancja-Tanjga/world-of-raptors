@@ -9,12 +9,16 @@ Większość ptaków drapieżnych jest **monogamiczna**: w sezonie lęgowym jedn
 | **Wierność miejscu** | **orlik krzykliwy** (*Clanga pomarina*, ang. Lesser Spotted Eagle), **rybołów** (*Pandion haliaetus*, ang. Osprey) | Partnerzy zimują osobno, w Afryce. Wiosną wracają do tego samego gniazda i często znów tworzą parę. Uważa się, że parę utrzymuje głównie przywiązanie obu ptaków do miejsca. |
 | **Poligynia (czasem)** | **błotniaki**, np. **błotniak zbożowy** (*Circus cyaneus*, ang. Hen Harrier) | Jeden samiec może mieć dwie (rzadko więcej) samice i dokarmiać oba gniazda. Zdarza się to zwłaszcza w latach obfitości gryzoni. |
 
-„Rozwody” u dużych orłów zdarzają się rzadko. Gdy jeden ptak zginie, drugi zwykle szybko znajduje nowego partnera, bo w okolicy krążą dorosłe ptaki bez terytorium, czekające na wolne miejsce (więcej w lekcji 4).
+<margines>
 
 > Bieliki są razem cały rok, ale także u nich para co zimę „odnawia” więź: wspólne loty, głosy w duecie i poprawianie gniazda zaczynają się już w grudniu i styczniu.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg/960px-Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1153" alt="Dwa duże brązowe orły z jasnymi głowami i żółtymi dziobami siedzą obok siebie na omszałym głazie nad wodą" podpis="Para dorosłych bielików na nadmorskim głazie w Norwegii: bieliki trzymają się razem przez cały rok" autor="Bouke ten Cate" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg">
 </zdjecie>
+
+</margines>
+
+„Rozwody” u dużych orłów zdarzają się rzadko. Gdy jeden ptak zginie, drugi zwykle szybko znajduje nowego partnera, bo w okolicy krążą dorosłe ptaki bez terytorium, czekające na wolne miejsce (więcej w lekcji 4).
 
 ## Terytorium
 Para broni **terytorium**, czyli obszaru wokół gniazda. Duże orły potrzebują kilku do kilkudziesięciu kilometrów kwadratowych. Terytorium nie zawsze obejmuje całe łowisko: bieliki bronią głównie okolicy gniazda, a żerować mogą na wspólnych dla wielu ptaków stawach.
@@ -24,10 +28,14 @@ Są też gatunki **kolonijne** albo gniazdujące w luźnych grupach:
 - **pustułeczka** (*Falco naumanni*, ang. Lesser Kestrel): kolonie na starych budynkach, kościołach i murach Andaluzji,
 - **błotniak łąkowy** (*Circus pygargus*, ang. Montagu's Harrier): często kilka par blisko siebie.
 
-Gatunki kolonijne bronią tylko najbliższego otoczenia gniazda, a żerują wspólnie.
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Mechinales_iglesia_Saucedilla.JPG/960px-Mechinales_iglesia_Saucedilla.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="643" alt="Kamienna ściana starego kościoła z rzędami niewielkich otworów w murze pod dachem" podpis="Pustułeczka: otwory w murze kościoła w Saucedilli (Estremadura), w których gniazduje kolonia" autor="Lito Encinas" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Mechinales_iglesia_Saucedilla.JPG">
 </zdjecie>
+
+</margines>
+
+Gatunki kolonijne bronią tylko najbliższego otoczenia gniazda, a żerują wspólnie.
 
 ## Toki, czyli jak drapieżnik się „oświadcza”
 Toki (pokazy godowe) służą do dwóch rzeczy naraz: do **zdobycia i utrzymania partnera** oraz do **ogłoszenia sąsiadom**, że terytorium jest zajęte. Dlatego wiele toków odbywa się wysoko w powietrzu, dobrze widocznych z daleka.
@@ -44,23 +52,36 @@ Para krąży razem w kominie termicznym, blisko siebie. Samiec czasem nurkuje w 
 ### 3. Sczepianie się szponami
 Najbardziej widowiskowy pokaz: dwa ptaki chwytają się szponami w powietrzu i **spadają, koziołkując**, by rozdzielić się tuż przed ziemią lub wodą. Robią to m.in. **bieliki** i **kanie**.
 
-Uwaga: sczepianie się szponami **nie zawsze** jest tokiem. Czasem to walka dwóch ptaków o terytorium albo młodego z dorosłym. Bez wiedzy, kim są uczestnicy, trudno to rozstrzygnąć, i badacze opisują oba przypadki.
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%281%29.jpg/960px-Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" alt="Dwa bieliki z rozpostartymi skrzydłami nisko nad ziemią, jeden wyciąga szpony ku drugiemu, wokół wrony" podpis="Bieliki sczepione szponami na zimowisku w Polsce: tu to walka, nie tok" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Fighting_white-tailed_eagles_(Haliaeetus_albicilla)_(1).jpg">
 </zdjecie>
 
+</margines>
+
+Uwaga: sczepianie się szponami **nie zawsze** jest tokiem. Czasem to walka dwóch ptaków o terytorium albo młodego z dorosłym. Bez wiedzy, kim są uczestnicy, trudno to rozstrzygnąć, i badacze opisują oba przypadki.
+
 ### 4. Przekazywanie pokarmu w powietrzu
 Znak rozpoznawczy **błotniaków**. Samiec z ofiarą w szponach woła samicę. Ta podlatuje pod niego, a on **upuszcza zdobycz**, którą samica łapie w locie, często obracając się na grzbiet. Podobnie zachowują się niektóre sokoły.
 
-Karmienie w czasie toków (przynoszenie pokarmu samicy) występuje u wielu gatunków. Jedna z interpretacji: samica ocenia, czy samiec będzie dobrym „żywicielem”, a jednocześnie gromadzi zapasy energii na złożenie jaj.
+<margines>
 
 > U błotniaków przekazywanie pokarmu trwa cały sezon. Samica wysiadująca jaja w trzcinach wylatuje na chwilę, łapie zdobycz od samca i wraca. Jeśli zobaczysz to w maju nad szuwarami, gniazdo jest w pobliżu: obserwuj z daleka i nie podchodź.
 
+</margines>
+
+Karmienie w czasie toków (przynoszenie pokarmu samicy) występuje u wielu gatunków. Jedna z interpretacji: samica ocenia, czy samiec będzie dobrym „żywicielem”, a jednocześnie gromadzi zapasy energii na złożenie jaj.
+
 ### 5. Toki przy gnieździe
-Nie wszystko dzieje się w powietrzu. Para **przynosi gałęzie**, poprawia gniazdo, woła w duecie, siada obok siebie. U sokołów samiec pokazuje samicy możliwe miejsca lęgowe: siada na półce skalnej i „drapie” w niej płytkie zagłębienie.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Peregrine_Falcons_%28Falco_peregrinus%29_mating_on_Morro_Rock.jpg/960px-Peregrine_Falcons_%28Falco_peregrinus%29_mating_on_Morro_Rock.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Mniejszy samiec sokoła wędrownego z uniesionymi skrzydłami na grzbiecie samicy, na szczycie skały" podpis="Kopulacja sokołów wędrownych na szczycie skały Morro Rock (Kalifornia): samiec jest wyraźnie mniejszy" autor="Mike Baird" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcons_(Falco_peregrinus)_mating_on_Morro_Rock.jpg">
 </zdjecie>
+
+</margines>
+
+Nie wszystko dzieje się w powietrzu. Para **przynosi gałęzie**, poprawia gniazdo, woła w duecie, siada obok siebie. U sokołów samiec pokazuje samicy możliwe miejsca lęgowe: siada na półce skalnej i „drapie” w niej płytkie zagłębienie.
 
 ## Kalendarz: kto zaczyna pierwszy
 Terminy zależą od gatunku. W Polsce:

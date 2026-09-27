@@ -15,11 +15,16 @@ Ptaki potrafią określać kierunek na kilka sposobów:
 Jak dokładnie ptak łączy te informacje, badacze wciąż dyskutują.
 
 ### Nauka i punkty orientacyjne
+
+<margines>
+
+> Szwedzkie badania telemetryczne trzmielojadów pokazały, że dorosłe ptaki leciały do Afryki głównie przez Gibraltar lub Włochy, a młode rozpraszały się szerzej i częściej ryzykowały przelot nad morzem. To dobry przykład różnicy między programem wrodzonym a wiedzą zdobytą z doświadczeniem.
+
+</margines>
+
 - Z telemetrii wiadomo, że **dorosłe ptaki lecą bardziej prostymi trasami** niż młode i lepiej korygują znoszenie przez wiatr. Młode, zwłaszcza nad morzem lub pustynią, częściej dają się znieść.
 - Z wiekiem trasy wielu ptaków stają się bardziej przewidywalne. Uważa się, że ptaki **uczą się mapy**: wybrzeży, łańcuchów górskich, dolin rzecznych i konkretnych miejsc odpoczynku.
 - U gatunków, które lecą w grupach (np. bociany, częściowo kanie czarne), młode mogą uczyć się trasy od starszych. U trzmielojada, który odlatuje osobno, to niemożliwe przy pierwszej wędrówce.
-
-> Szwedzkie badania telemetryczne trzmielojadów pokazały, że dorosłe ptaki leciały do Afryki głównie przez Gibraltar lub Włochy, a młode rozpraszały się szerzej i częściej ryzykowały przelot nad morzem. To dobry przykład różnicy między programem wrodzonym a wiedzą zdobytą z doświadczeniem.
 
 ## Metody badań
 
@@ -33,18 +38,28 @@ Jak dokładnie ptak łączy te informacje, badacze wciąż dyskutują.
 | **Izotopy stałe w piórach** | Skład chemiczny pióra zależy od miejsca, w którym rosło | przybliżony region, w którym wyrosło pióro | tylko przybliżona lokalizacja |
 
 ### Obrączkowanie
-Naukowe obrączkowanie ptaków zapoczątkował w 1899 roku duński nauczyciel **Hans Christian Cornelius Mortensen**. W Polsce obrączki wydaje i gromadzi dane o wiadomościach powrotnych **Stacja Ornitologiczna Muzeum i Instytutu Zoologii PAN** w Gdańsku. Obrączkowanie mogą prowadzić tylko przeszkolone osoby z uprawnieniami.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg/960px-A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Dłoń trzyma małego żółto-oliwkowego ptaka z czarną maską, obok szczypce z nawleczonymi metalowymi obrączkami" podpis="Zakładanie obrączki specjalnymi szczypcami (tu na nodze małego ptaka śpiewającego): ptaki drapieżne dostają większe obrączki, ale metoda jest ta sama" autor="Lorie Shaull" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:A_researcher_uses_a_banding_pliers_to_attach_a_band_to_the_leg_of_a_Common_Yellowthroat.jpg">
 </zdjecie>
 
 > Znalazłaś martwego ptaka z obrączką? Zanotuj numer i napis, datę i miejsce i zgłoś to do centrali obrączkowania (dane kontaktowe są na obrączce). Każde takie zgłoszenie to cenny punkt na mapie wędrówki.
 
+</margines>
+
+Naukowe obrączkowanie ptaków zapoczątkował w 1899 roku duński nauczyciel **Hans Christian Cornelius Mortensen**. W Polsce obrączki wydaje i gromadzi dane o wiadomościach powrotnych **Stacja Ornitologiczna Muzeum i Instytutu Zoologii PAN** w Gdańsku. Obrączkowanie mogą prowadzić tylko przeszkolone osoby z uprawnieniami.
+
 ### Telemetria GPS
-Pierwsze nadajniki satelitarne na ptakach drapieżnych pojawiły się w latach 80.–90. XX wieku. Dziś nadajniki GPS z panelami słonecznymi ważą kilkanaście–kilkadziesiąt gramów, a dane przesyłają np. przez sieć komórkową. Przyjmuje się, że nadajnik nie powinien ważyć więcej niż kilka procent masy ptaka.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Golden_Eagle_at_Grayson_Highland_%286917346007%29.jpg/960px-Golden_Eagle_at_Grayson_Highland_%286917346007%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1440" alt="Kilka par rąk przytrzymuje ciemnego orła, na jego grzbiecie mocowany jest nadajnik, stopy owinięte niebieskim bandażem" podpis="Badacze zakładają nadajnik GPS orłowi przedniemu w Wirginii; szpony owinięto opatrunkiem, żeby ptak nikogo nie zranił" autor="Virginia State Parks staff" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Golden_Eagle_at_Grayson_Highland_(6917346007).jpg">
 </zdjecie>
+
+</margines>
+
+Pierwsze nadajniki satelitarne na ptakach drapieżnych pojawiły się w latach 80.–90. XX wieku. Dziś nadajniki GPS z panelami słonecznymi ważą kilkanaście–kilkadziesiąt gramów, a dane przesyłają np. przez sieć komórkową. Przyjmuje się, że nadajnik nie powinien ważyć więcej niż kilka procent masy ptaka.
 
 Czego nauczyła nas telemetria (przykłady, w uproszczeniu):
 - **Orliki krzykliwe** z Europy Środkowej lecą do zimowisk w południowej Afryce trasą wschodnią, okrążając Morze Śródziemne. W badaniach tego gatunku dużą rolę odegrał m.in. niemiecki badacz **Bernd-Ulrich Meyburg**.
@@ -60,14 +75,19 @@ Czego nauczyła nas telemetria (przykłady, w uproszczeniu):
 Dlaczego to ważne? Wieloletnie serie liczeń pokazują **trendy**: czy dany gatunek przybywa, czy ubywa, i czy przelot przesuwa się w kalendarzu (np. w związku ze zmianą klimatu).
 
 ## Nauka obywatelska
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_03.jpg/960px-Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_03.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sęp w locie z rozpostartymi skrzydłami, na jednym skrzydle widać znacznik z numerem" podpis="Sęp płowy ze znacznikiem skrzydłowym nr 23 nad rezerwatem Uvac (Serbia): taki numer da się odczytać z daleka, bez łapania ptaka" autor="Ivanbuki" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac,_Serbia_03.jpg">
+</zdjecie>
+
+</margines>
+
 Nie musisz być zawodowym ornitologiem, żeby pomagać:
 - **eBird** ([ebird.org](https://ebird.org)): zapisujesz swoje obserwacje z listą gatunków i liczbą ptaków; dane trafiają do badań na całym świecie.
 - **Observation.org** i **Trektellen**: popularne w Europie; Trektellen gromadzi wyniki liczeń przelotu z punktów obserwacyjnych.
 - **Wolontariat** na punktach obserwacyjnych (np. w programie Fundación Migres albo w Batumi): wiele z nich co roku przyjmuje obserwatorów.
 - **Odczyty obrączek barwnych**: zdjęcie ptaka z kolorową obrączką czy znacznikiem skrzydłowym warto zgłosić.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_03.jpg/960px-Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_03.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sęp w locie z rozpostartymi skrzydłami, na jednym skrzydle widać znacznik z numerem" podpis="Sęp płowy ze znacznikiem skrzydłowym nr 23 nad rezerwatem Uvac (Serbia): taki numer da się odczytać z daleka, bez łapania ptaka" autor="Ivanbuki" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac,_Serbia_03.jpg">
-</zdjecie>
 
 ## Zagrożenia na trasie (krótko)
 Szczegółowo omawia je [A6 · Ochrona](../ochrona/README.md). Najważniejsze:

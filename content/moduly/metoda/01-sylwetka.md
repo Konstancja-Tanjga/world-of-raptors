@@ -22,7 +22,7 @@ Zanim zapytasz „jaki to gatunek?”, zapytaj **„z jakiej to grupy?”**. Gru
 | **Sokoły** | **spiczaste**, bez „palców” | średni do długiego | krótka | pustułka, kobuz, sokół wędrowny |
 | **Rybołów** | długie, wąskie, wygięte w **„M”** | krótki | mała | rybołów |
 
-\* Trzmielojad ma podobną sylwetkę do myszołowa, ale dłuższy ogon i małą, wysuniętą głowę. Szczegóły w [module o Polsce](../polska/02-gatunki-i-pary.md).
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Buitre_leonado_en_los_Montes_de_Oca_de_Burgos.jpg/960px-Buitre_leonado_en_los_Montes_de_Oca_de_Burgos.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Sęp płowy szybujący, widziany od spodu, na tle jasnego nieba" podpis="Sęp płowy od spodu: ogromne, szerokie skrzydła z głębokimi „palcami”, bardzo krótki ogon i mała głowa" autor="Luis Martín Martín" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Buitre_leonado_en_los_Montes_de_Oca_de_Burgos.jpg">
 </zdjecie>
@@ -36,6 +36,10 @@ Zanim zapytasz „jaki to gatunek?”, zapytaj **„z jakiej to grupy?”**. Gru
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Falco_peregrinus_-England_-flying-8_%282%29.jpg/960px-Falco_peregrinus_-England_-flying-8_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Sokół wędrowny w locie od spodu na tle błękitnego nieba" podpis="Sokół wędrowny: spiczaste skrzydła bez „palców”, typowe dla sokołów" autor="Steve Childs" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Falco_peregrinus_-England_-flying-8_(2).jpg">
 </zdjecie>
 
+</margines>
+
+\* Trzmielojad ma podobną sylwetkę do myszołowa, ale dłuższy ogon i małą, wysuniętą głowę. Szczegóły w [module o Polsce](../polska/02-gatunki-i-pary.md).
+
 ## Proporcje zamiast rozmiaru
 Rozmiar na niebie jest bardzo zwodniczy: bez punktu odniesienia duży ptak daleko wygląda jak mały ptak blisko. Dlatego zapamiętuj **proporcje**, np.:
 - „ogon krótszy niż szerokość skrzydła”: sęp, orły,
@@ -45,14 +49,19 @@ Rozmiar na niebie jest bardzo zwodniczy: bez punktu odniesienia duży ptak dalek
 Rozmiar ocenisz dopiero wtedy, gdy obok leci ptak, którego znasz, np. wrona, mewa albo bocian.
 
 ## Liczenie „palców”
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/016_Wild_Golden_Eagle_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg/960px-016_Wild_Golden_Eagle_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Orzeł przedni w locie na tle zaśnieżonego zbocza, lotki na końcach skrzydeł rozchylone jak palce" podpis="Orzeł przedni: na końcach długich, szerokich skrzydeł rozcapierzone „palce”, głowa wyraźnie wystaje" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:016_Wild_Golden_Eagle_in_flight_at_Pfyn-Finges_(Switzerland)_Photo_by_Giles_Laurent.jpg">
+</zdjecie>
+
+</margines>
+
 Na końcu skrzydła wielu dużych ptaków widać rozcapierzone lotki, które wyglądają jak palce:
 - **sępy, orły:** 6–7, głęboko rozcapierzone,
 - **myszołowy, kanie:** 5, płytsze,
 - **krogulce:** 5–6, krótkie, przy zaokrąglonym skrzydle,
 - **sokoły:** brak, koniec skrzydła jest ostry.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/016_Wild_Golden_Eagle_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg/960px-016_Wild_Golden_Eagle_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Orzeł przedni w locie na tle zaśnieżonego zbocza, lotki na końcach skrzydeł rozchylone jak palce" podpis="Orzeł przedni: na końcach długich, szerokich skrzydeł rozcapierzone „palce”, głowa wyraźnie wystaje" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:016_Wild_Golden_Eagle_in_flight_at_Pfyn-Finges_(Switzerland)_Photo_by_Giles_Laurent.jpg">
-</zdjecie>
 
 ## Filmy
 - [YouTube: rozpoznawanie ptaków drapieżnych po sylwetce w locie](https://www.youtube.com/results?search_query=raptor+identification+in+flight+silhouettes)

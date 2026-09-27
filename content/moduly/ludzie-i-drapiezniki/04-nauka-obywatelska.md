@@ -20,9 +20,14 @@ Warunek jest jeden: dane muszą być **rzetelne**. Lepiej zapisać „myszołów
 4. Przy rzadkim gatunku dodaj opis lub zdjęcie.
 
 ### Monitoring Ptaków Polski (MPP)
-MPP to państwowy program monitoringu, w którym część liczeń prowadzą wolontariusze. Najbardziej dostępny dla początkujących jest monitoring **pospolitych ptaków lęgowych**, ale wymaga on rozpoznawania ptaków również po głosie. Szczegóły i zapisy znajdziesz na stronie programu. Dobrym celem na pierwszy rok nauki jest regularne wysyłanie list do eBird, a potem dołączenie do MPP.
+
+<margines>
 
 > Sprawdź się metodą z [modułu o metodzie nauki](../metoda/README.md): zanim wyślesz listę, zaznacz przy każdym gatunku, na ile jesteś pewna. Po roku zobaczysz, jak rośnie odsetek pewnych oznaczeń.
+
+</margines>
+
+MPP to państwowy program monitoringu, w którym część liczeń prowadzą wolontariusze. Najbardziej dostępny dla początkujących jest monitoring **pospolitych ptaków lęgowych**, ale wymaga on rozpoznawania ptaków również po głosie. Szczegóły i zapisy znajdziesz na stronie programu. Dobrym celem na pierwszy rok nauki jest regularne wysyłanie list do eBird, a potem dołączenie do MPP.
 
 ## Obrączki i nadajniki
 Wiele ptaków drapieżnych nosi **obrączki**, a np. bieliki czy rybołowy często także **obrączki barwne** z kodem czytelnym przez lornetkę lub na zdjęciu.
@@ -53,9 +58,13 @@ Dzikie ptaki drapieżne i sowy są w Polsce **pod ochroną**. Wolno udzielić im
 5. Jeśli nie możesz nikogo znaleźć, zadzwoń do **urzędu gminy** (odpowiada za pomoc zwierzętom w swojej okolicy) lub **Regionalnej Dyrekcji Ochrony Środowiska (RDOŚ)**.
 6. Jak najmniej dotykaj i nie oglądaj ptaka co chwilę. Stres może zabić szybciej niż rana.
 
-Numery ośrodków sprawdź **zanim będą potrzebne** i zapisz w telefonie. Przykładem znanego ośrodka jest Ptasi Azyl przy warszawskim ZOO.
+<margines>
 
 > Martwego ptaka z podejrzeniem otrucia lub postrzału nie wyrzucaj. Zrób zdjęcia, zapisz miejsce i zgłoś sprawę na policję lub do RDOŚ. Takie zgłoszenia pomagają wykrywać nielegalne zabijanie ptaków.
+
+</margines>
+
+Numery ośrodków sprawdź **zanim będą potrzebne** i zapisz w telefonie. Przykładem znanego ośrodka jest Ptasi Azyl przy warszawskim ZOO.
 
 ## Fotografia i etyka
 - **Dobro ptaka jest ważniejsze niż zdjęcie.** Jeśli ptak zmienia zachowanie przez ciebie, jesteś za blisko.

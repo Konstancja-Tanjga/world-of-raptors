@@ -48,10 +48,15 @@ Wyobraź sobie trzy dni pod koniec sierpnia na punkcie obserwacyjnym nad Bosfore
 </details>
 
 ## 4. Ćwiczenie: myszołów latem i zimą
-Zimą widzisz myszołowa na słupie przy polu. Wypisz trzy możliwości, skąd może pochodzić ten ptak (np. miejscowy ptak osiadły, przybysz ze Skandynawii, ptak w drodze dalej na zachód). Jak można by to sprawdzić? Podpowiedź: lekcja 4.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Buse_variable_et_Beaufortain_enneig%C3%A9_%28janvier_2026%29.JPG/960px-Buse_variable_et_Beaufortain_enneig%C3%A9_%28janvier_2026%29.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="725" alt="Myszołów siedzi na drewnianym słupku ogrodzenia, w tle ośnieżone góry i błękitne niebo" podpis="Myszołów na słupku w styczniu, w ośnieżonej Sabaudii (Francja): czy to ptak miejscowy, czy przybysz z północy?" autor="Florian Pépellin" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Buse_variable_et_Beaufortain_enneig%C3%A9_(janvier_2026).JPG">
 </zdjecie>
+
+</margines>
+
+Zimą widzisz myszołowa na słupie przy polu. Wypisz trzy możliwości, skąd może pochodzić ten ptak (np. miejscowy ptak osiadły, przybysz ze Skandynawii, ptak w drodze dalej na zachód). Jak można by to sprawdzić? Podpowiedź: lekcja 4.
 
 ## Projekt: „Mój dzień na przelocie”
 Wybierz jeden wariant.
@@ -63,10 +68,14 @@ Wybierz jeden wariant.
 4. Wpisz wynik do [eBird](https://ebird.org) jako listę kompletną, a nowe gatunki odhacz w [checkliście](/checklista).
 5. Napisz krótkie podsumowanie: o której godzinie leciało najwięcej ptaków? Czy widziałaś ptaki krążące w kominach? Jak wpływał na nie wiatr?
 
+<margines>
+
+> Jeśli planujesz wyjazd do Tarify, połącz ten projekt z projektem z [modułu o cieśninie](../gibraltar/README.md). Wiedza z tego modułu podpowie Ci, w które dni i o której godzinie stanąć na punkcie obserwacyjnym.
+
+</margines>
+
 **Wariant badawczy** (z domu):
 1. Wybierz jedno wąskie gardło z lekcji 3.
 2. Znajdź dla niego wyniki liczeń z co najmniej kilku lat (strony programów liczeń, raporty, eBird lub Trektellen).
 3. Opisz: które 5 gatunków jest najliczniejszych, kiedy wypada szczyt ich przelotu i czy liczby zmieniają się z roku na rok.
 4. Zastanów się, co może powodować różnice: pogoda, liczba obserwatorów, zmiany w populacjach? Pamiętaj, że jeden rok to jeszcze nie trend.
-
-> Jeśli planujesz wyjazd do Tarify, połącz ten projekt z projektem z [modułu o cieśninie](../gibraltar/README.md). Wiedza z tego modułu podpowie Ci, w które dni i o której godzinie stanąć na punkcie obserwacyjnym.

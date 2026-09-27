@@ -11,14 +11,25 @@ Co z tego wynika:
 - dobra kondycja populacji drapieżników często świadczy o dobrym stanie całego ekosystemu. Dlatego bywają nazywane **gatunkami wskaźnikowymi**.
 
 ## 2. Cykle gryzoni i ich drapieżniki
-W wielu miejscach Europy liczebność norników co kilka lat gwałtownie rośnie, a potem się załamuje. Najbardziej regularne są takie **cykle** na północy (w Skandynawii i Finlandii mniej więcej co 3–5 lat). W Polsce **nornik zwyczajny** też ma lata obfitości („gradacje”), ale zwykle mniej regularne.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Feldmaus_Microtus_arvalis.jpg/960px-Feldmaus_Microtus_arvalis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="793" alt="Mały brązowoszary gryzoń z krótkim ogonem i małymi uszami siedzi w trawie" podpis="Nornik zwyczajny, główna ofiara pustułki, myszołowa i wielu sów; jego liczebność co kilka lat gwałtownie rośnie" autor="Dieter TD" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg">
 </zdjecie>
 
+</margines>
+
+W wielu miejscach Europy liczebność norników co kilka lat gwałtownie rośnie, a potem się załamuje. Najbardziej regularne są takie **cykle** na północy (w Skandynawii i Finlandii mniej więcej co 3–5 lat). W Polsce **nornik zwyczajny** też ma lata obfitości („gradacje”), ale zwykle mniej regularne.
+
 Drapieżniki reagują na to na dwa sposoby:
 - **odpowiedź funkcjonalna**: każdy ptak zjada więcej norników, bo łatwiej je złapać,
 - **odpowiedź liczebnościowa**: więcej ptaków przystępuje do lęgów, składa więcej jaj, a więcej młodych przeżywa. Ptaki koczownicze zlatują się tam, gdzie gryzoni jest najwięcej.
+
+<margines>
+
+> Czy to drapieżniki powodują cykle gryzoni? To wciąż **przedmiot dyskusji**. Wiele badań z Finlandii (m.in. zespół Erkkiego Korpimäkiego) wskazuje, że kluczową rolę mogą grać drobne łasicowate, zwłaszcza łasica, które polują na norniki nawet w norach. Ptaki drapieżne i sowy raczej **wygładzają** szczyty i przyspieszają spadki, a do tego dochodzą pogoda, pokarm roślinny i choroby.
+
+</margines>
 
 | Gatunek | Jak reaguje na lata norników |
 |---|---|
@@ -28,13 +39,16 @@ Drapieżniki reagują na to na dwa sposoby:
 | **Płomykówka, uszatka** | liczba lęgów i młodych mocno zależy od norników |
 | **Myszołów** | generalista, reaguje słabiej, bo przestawia się na inny pokarm |
 
-> Czy to drapieżniki powodują cykle gryzoni? To wciąż **przedmiot dyskusji**. Wiele badań z Finlandii (m.in. zespół Erkkiego Korpimäkiego) wskazuje, że kluczową rolę mogą grać drobne łasicowate, zwłaszcza łasica, które polują na norniki nawet w norach. Ptaki drapieżne i sowy raczej **wygładzają** szczyty i przyspieszają spadki, a do tego dochodzą pogoda, pokarm roślinny i choroby.
-
 ## 3. Drapieżniki jako „kontrola gryzoni”
-Rolnicy w wielu krajach wieszają budki dla płomykówek i pustułek oraz stawiają żerdzie dla myszołowów, żeby ograniczyć szkody wyrządzane przez gryzonie. Najbardziej znany przykład to program budek dla płomykówek w Izraelu, prowadzony od lat 80. XX wieku, także jako alternatywa dla trutek.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Barn_owl_conservation_in_Palestine.jpg/960px-Barn_owl_conservation_in_Palestine.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="466" alt="Wnętrze drewnianej budki: dorosła płomykówka i kilka puchatych, białych piskląt" podpis="Płomykówka z pisklętami w budce lęgowej w dolinie Jordanu: budki dla płomykówek zastępują tam trutki na gryzonie" autor="Mahmiyat PS" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Barn_owl_conservation_in_Palestine.jpg">
 </zdjecie>
+
+</margines>
+
+Rolnicy w wielu krajach wieszają budki dla płomykówek i pustułek oraz stawiają żerdzie dla myszołowów, żeby ograniczyć szkody wyrządzane przez gryzonie. Najbardziej znany przykład to program budek dla płomykówek w Izraelu, prowadzony od lat 80. XX wieku, także jako alternatywa dla trutek.
 
 Uczciwie trzeba powiedzieć, że:
 - drapieżniki **ograniczają**, ale zwykle nie likwidują gradacji gryzoni,
@@ -44,24 +58,36 @@ Uczciwie trzeba powiedzieć, że:
 ## 4. Sępy jako służba sanitarna
 Sępy szybko usuwają padlinę, zanim rozwiną się w niej bakterie i zanim dotrą do niej psy i szczury. W Hiszpanii przez stulecia sprzątały martwe zwierzęta gospodarskie z pastwisk.
 
-Co się dzieje, gdy sępy znikną, pokazały **Indie**. W latach 90. i na początku XXI wieku populacje kilku gatunków sępów z rodzaju *Gyps* spadły o ponad 90%, bo ptaki zatruwały się **diklofenakiem**, lekiem podawanym bydłu. Na wysypiskach padliny przybyło bezpańskich psów, a razem z nimi przypadków wścieklizny. Ekonomiści (Frank i Sudarshan, 2024) szacują, że zanik sępów mógł przyczynić się do nawet ok. pół miliona dodatkowych zgonów ludzi w ciągu kilku lat, głównie przez gorszą jakość wody i choroby. To szacunek, ale pokazuje skalę. Pełna historia w module [A6 · Ochrona](../ochrona/README.md).
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg/960px-Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1437" alt="Ciemny sęp z białą kryzą na szyi i łysą szarą głową stoi na piasku" podpis="Sęp bengalski w Radżastanie: jeden z sępów Indii, których liczebność przez diklofenak spadła o ponad 99%" autor="Ravi.sangeetha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Gyps_bengalensis_by_Ravi_Sangeetha_(cropped).jpg">
 </zdjecie>
 
+</margines>
+
+Co się dzieje, gdy sępy znikną, pokazały **Indie**. W latach 90. i na początku XXI wieku populacje kilku gatunków sępów z rodzaju *Gyps* spadły o ponad 90%, bo ptaki zatruwały się **diklofenakiem**, lekiem podawanym bydłu. Na wysypiskach padliny przybyło bezpańskich psów, a razem z nimi przypadków wścieklizny. Ekonomiści (Frank i Sudarshan, 2024) szacują, że zanik sępów mógł przyczynić się do nawet ok. pół miliona dodatkowych zgonów ludzi w ciągu kilku lat, głównie przez gorszą jakość wody i choroby. To szacunek, ale pokazuje skalę. Pełna historia w module [A6 · Ochrona](../ochrona/README.md).
+
 ## 5. Konkurencja i zabijanie mniejszych drapieżników
 Drapieżniki konkurują o pokarm, miejsca gniazdowe i terytoria. Czasem konkurencja przechodzi w coś więcej: **drapieżnictwo wewnątrzgildiowe**, czyli zabijanie (i często zjadanie) innych drapieżników.
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg/960px-Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Rozrzucone brązowe i białe pióra na kamienistym zboczu porośniętym roślinami" podpis="Oskubane pióra myszołowa przy gnieździe puchacza w Niemczech: ślad drapieżnictwa wewnątrzgildiowego" autor="Falkmart" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg">
+</zdjecie>
+
+</margines>
 
 - **Puchacz** (*Bubo bubo*, ang. Eurasian Eagle-Owl) jest w Europie najgroźniejszym wrogiem innych drapieżników. Zabija m.in. myszołowy, jastrzębie, kanie, pustułki, puszczyki i uszatki, a także pisklęta sokołów wędrownych.
 - **Jastrząb** zabija krogulce, pustułki, puszczyki, uszatki i młode myszołowy.
 - **Sokół wędrowny** przegania i czasem zabija mniejsze sokoły i krukowate przy swoim gnieździe.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg/960px-Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Rozrzucone brązowe i białe pióra na kamienistym zboczu porośniętym roślinami" podpis="Oskubane pióra myszołowa przy gnieździe puchacza w Niemczech: ślad drapieżnictwa wewnątrzgildiowego" autor="Falkmart" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg">
-</zdjecie>
-
-Skutki są szersze niż pojedyncze ofiary. Mniejsze gatunki **unikają gniazdowania** w pobliżu puchacza czy jastrzębia i wybierają gorsze, ale bezpieczniejsze miejsca. Ekolodzy nazywają to „krajobrazem strachu”.
+<margines>
 
 > W niektórych regionach, gdzie wraca puchacz, lokalnie spada liczebność innych sów i niektórych drapieżników dziennych. To naturalny proces, choć bywa trudny do zaakceptowania, gdy dotyczy gatunków, które też chronimy.
+
+</margines>
+
+Skutki są szersze niż pojedyncze ofiary. Mniejsze gatunki **unikają gniazdowania** w pobliżu puchacza czy jastrzębia i wybierają gorsze, ale bezpieczniejsze miejsca. Ekolodzy nazywają to „krajobrazem strachu”.
 
 ## 6. Terytoria i siedlisko
 - Większość ptaków drapieżnych broni **terytorium** wokół gniazda. Pary tego samego gatunku gniazdują w mniej więcej regularnych odstępach, co opisał m.in. Ian Newton w badaniach krogulców.

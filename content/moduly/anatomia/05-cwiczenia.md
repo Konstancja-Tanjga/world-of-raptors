@@ -33,14 +33,19 @@ Wybierz z [atlasu gatunków](../../gatunki.json) **pięć gatunków z różnych 
 Cel: przy każdym gatunku umieć jednym zdaniem połączyć **budowę** z **zachowaniem**, np. „krogulec: krótkie skrzydła i długie palce, więc poluje z zasadzki na małe ptaki między drzewami”.
 
 ## 3. Ćwiczenie terenowe: obserwacja zachowań
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Common_kestrel_hovering.jpg/960px-Common_kestrel_hovering.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rdzawa pustułka wisi w powietrzu z uniesionymi skrzydłami i szeroko rozłożonym ogonem, głowę trzyma skierowaną w dół" podpis="Pustułka w zawisie: skrzydła i rozłożony ogon pracują, a głowa pozostaje prawie nieruchoma" autor="Alexis LOURS" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering.jpg">
+</zdjecie>
+
+</margines>
+
 W czasie najbliższego wyjścia w teren (albo przed kamerą na gnieździe) poszukaj zachowań, które wynikają z budowy:
 1. **Pustułka zawisa:** zobacz, że głowa pozostaje prawie nieruchoma, a skrzydła i ogon pracują. Dlaczego nieruchoma głowa jest ważna dla wzroku?
 2. **Myszołów na słupie przekrzywia głowę:** policz, ile razy zmienia kierunek patrzenia w ciągu minuty.
 3. **Sęp albo orzeł szybuje:** o której godzinie ptaki zaczęły krążyć? Jaka była pogoda?
 4. **Pełne wole:** jeśli zobaczysz ptaka z wyraźnym zgrubieniem na piersi, zanotuj gatunek i porę dnia.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Common_kestrel_hovering.jpg/960px-Common_kestrel_hovering.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rdzawa pustułka wisi w powietrzu z uniesionymi skrzydłami i szeroko rozłożonym ogonem, głowę trzyma skierowaną w dół" podpis="Pustułka w zawisie: skrzydła i rozłożony ogon pracują, a głowa pozostaje prawie nieruchoma" autor="Alexis LOURS" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering.jpg">
-</zdjecie>
 
 Zapisz notatki przy obserwacjach w [checkliście](/checklista).
 

@@ -78,3 +78,9 @@ export type Ciekawostka = {
 
 /** A curiosity ready to render: where to read more about it. */
 export type CiekawostkaDoPokazania = { id: string; tekst: string; href: string; zrodlo: string };
+
+/** One quiz question; `poprawna` is the index into `odpowiedzi`. */
+export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: number };
+
+/** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
+export type Quiz = { prog: number; pytania: PytanieQuizu[] };

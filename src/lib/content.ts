@@ -10,9 +10,12 @@ import type {
   CiekawostkaDoPokazania,
   Gatunek,
   Modul,
+  PytanieQuizu,
+  Quiz,
   Sciezka,
   ZdjeciaGatunku,
 } from './types';
+import { idNaglowkow } from './naglowki';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
@@ -74,6 +77,95 @@ export function przygotujLekcje(md: string) {
   }
   if (oczekujacy) wynik.push(...tag(oczekujacy));
   return { md: wynik.join('\n'), wNaglowkach, wszystkie };
+}
+
+const QUIZ_NAGLOWEK = /^##\s.*Quiz.*próg zaliczenia:\s*(\d+)\s*%/;
+const PYTANIE = /^(\d+)\.\s+(.+)$/;
+const ODPOWIEDZ = /(?:^|\s)[a-h]\)\s+/;
+const POGRUBIONA = /^\*\*[^*]+\*\*$/;
+const bezPogrubien = (s: string) => s.replace(/\*\*/g, '').trim();
+
+/**
+ * Takes the quiz out of a lesson: the `## … Quiz (próg zaliczenia: N%)`
+ * section's numbered questions, each followed by an indented line of options
+ * `a) … b) … c) …` with the correct one in bold. The questions are replaced
+ * with a `<quiz-krokowy>` tag, so the answers never reach the page as text.
+ * A question without exactly one bold option fails the build.
+ */
+export function wyodrebnijQuiz(md: string, plik: string): { md: string; quiz: Quiz | null } {
+  const linie = md.split('\n');
+  const start = linie.findIndex((l) => QUIZ_NAGLOWEK.test(l));
+  if (start < 0) return { md, quiz: null };
+  const prog = Number(QUIZ_NAGLOWEK.exec(linie[start])![1]);
+
+  const pytania: { pytanie: string; opcje: string[] }[] = [];
+  let pierwsza = -1;
+  let ostatnia = -1;
+  for (let i = start + 1; i < linie.length && !/^#{1,2}\s/.test(linie[i]); i++) {
+    const m = PYTANIE.exec(linie[i]);
+    if (m) {
+      if (pierwsza < 0) pierwsza = i;
+      pytania.push({ pytanie: bezPogrubien(m[2]), opcje: [] });
+      ostatnia = i;
+    } else if (/^\s+\S/.test(linie[i]) && pytania.length > 0) {
+      const opcje = linie[i].trim().split(ODPOWIEDZ).map((o) => o.trim()).filter(Boolean);
+      pytania[pytania.length - 1].opcje.push(...opcje);
+      ostatnia = i;
+    }
+  }
+  if (pytania.length === 0) return { md, quiz: null };
+
+  const gotowe = pytania.map(({ pytanie, opcje }, i): PytanieQuizu => {
+    const poprawne = opcje.flatMap((o, j) => (POGRUBIONA.test(o) ? [j] : []));
+    if (opcje.length < 2 || poprawne.length !== 1) {
+      throw new Error(`${plik}: pytanie ${i + 1} quizu musi mieć odpowiedzi i dokładnie jedną pogrubioną`);
+    }
+    return { pytanie, odpowiedzi: opcje.map(bezPogrubien), poprawna: poprawne[0] };
+  });
+
+  const wynik = [...linie.slice(0, pierwsza), '<quiz-krokowy>', '</quiz-krokowy>', ...linie.slice(ostatnia + 1)];
+  return { md: wynik.join('\n'), quiz: { prog, pytania: gotowe } };
+}
+
+/** The quiz pass mark of a lesson, in percent, or null for a lesson without a quiz. */
+export function progQuizu(md: string) {
+  const m = md.split('\n').map((l) => QUIZ_NAGLOWEK.exec(l)).find(Boolean);
+  return m ? Number(m[1]) : null;
+}
+
+/** Reading time: words without tags and their attributes, at about 200 a minute. */
+function minutyCzytania(md: string) {
+  const slowa = md.replace(/<[^>]*>/g, ' ').split(/\s+/).filter((w) => /\p{L}/u.test(w)).length;
+  return Math.max(1, Math.round(slowa / 200));
+}
+
+/**
+ * Everything a lesson page shows, from its Markdown:
+ * - the `#` title is dropped (the page shows the lesson title from moduly.json),
+ * - a single paragraph right under it becomes the lead,
+ * - the quiz is taken out (see `wyodrebnijQuiz`),
+ * - species plates are attached (see `przygotujLekcje`),
+ * - the `##` headings become the table of contents.
+ */
+export function przygotujStroneLekcji(zrodlo: string, plik: string) {
+  const bloki = zrodlo.replace(/^#\s.*\n+/, '').split(/\n\s*\n/);
+  const pierwszy = bloki[0]?.trim() ?? '';
+  const lead = /^(?!\*\s)[\p{L}„(*]/u.test(pierwszy) && !pierwszy.includes('\n') ? pierwszy : null;
+
+  const { md, quiz } = wyodrebnijQuiz((lead ? bloki.slice(1) : bloki).join('\n\n'), plik);
+  const lekcja = przygotujLekcje(md);
+  const naglowki = lekcja.md
+    .split('\n')
+    .filter((l) => /^##\s/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').replace(/\s+#*\s*$/, ''));
+  const ids = idNaglowkow(naglowki);
+  return {
+    ...lekcja,
+    lead,
+    quiz,
+    toc: naglowki.map((label, i) => ({ id: ids[i], label })),
+    minuty: minutyCzytania(zrodlo),
+  };
 }
 
 export const gotoweModuly = moduly.filter(
