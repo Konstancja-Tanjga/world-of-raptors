@@ -12,3 +12,10 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
   - Nadpisuje `white-space: nowrap` i stałą wysokość przycisku.
   - Nie dziedziczy przyszłych zmian z komponentu `Button` (np. `iconStart`).
 - **Dowód na drugie wystąpienie:** jeszcze go nie ma. To pierwszy ekran z takim wzorcem.
+
+## Etykiety wersalikami wbudowane w komponenty
+
+- **Co zauważyłam:** przy przeglądzie „nie wyglądać jak wygenerowane” okazało się, że Big Hat sam zamienia na wersaliki etykiety w `DescriptionList` (`.bh-dl__term`), `Divider`, `NavGroup` (`.bh-navgroup__label`) i nagłówkach `Table` (`.bh-table thead th`). Wersaliki z rozstrzelonymi literami nad treścią to jeden z najczęstszych sygnałów szablonowego wyglądu.
+- **Czego nie zrobiłam:** nie nadpisałam tego w `globals.css`. Klasy `bh-*` należą do design systemu, a nadpisanie ich w produkcie tworzy drugą, niczyją warstwę stylów.
+- **Co widać w kursie:** grupy w menu („ŚCIEŻKA A: BIOLOGIA”) i nagłówki kolumn w porównaniu cech („CECHA”, nazwy gatunków).
+- **Pytanie do design systemu:** czy wersaliki mają być domyślne, czy powinna o nich decydować aplikacja (np. przez prop albo token `text-transform`)?

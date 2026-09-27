@@ -37,7 +37,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
       <Breadcrumbs
         items={[
           { label: 'Start', href: '/' },
-          { label: `${modul.id} · ${modul.tytul}`, href: `/moduly/${slug}` },
+          { label: `${modul.id}\u00a0${modul.tytul}`, href: `/moduly/${slug}` },
           { label: `Lekcja ${index + 1}: ${biezaca.tytul}` },
         ]}
       />
@@ -48,19 +48,19 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
       <nav className="lesson-nav" aria-label="Nawigacja lekcji">
         {poprzednia ? (
           <ButtonLink href={`/moduly/${slug}/${poprzednia.slug}`} variant="secondary">
-            ← Lekcja {index}: {poprzednia.tytul}
+            Poprzednia: {poprzednia.tytul}
           </ButtonLink>
         ) : (
           <ButtonLink href={`/moduly/${slug}`} variant="secondary">
-            ← O module
+            Wróć do opisu modułu
           </ButtonLink>
         )}
         {nastepna ? (
           <ButtonLink href={`/moduly/${slug}/${nastepna.slug}`}>
-            Lekcja {index + 2}: {nastepna.tytul} →
+            Następna: {nastepna.tytul}
           </ButtonLink>
         ) : (
-          <ButtonLink href="/checklista">Odhacz obserwacje w checkliście →</ButtonLink>
+          <ButtonLink href="/checklista">Odhacz obserwacje w checkliście</ButtonLink>
         )}
       </nav>
     </div>

@@ -23,7 +23,7 @@ export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string })
             obs
               ? [obs.data && `Data: ${obs.data}`, obs.miejsce && `Miejsce: ${obs.miejsce}`]
                   .filter(Boolean)
-                  .join(' · ') || undefined
+                  .join(', ') || undefined
               : 'Zaznacz, żeby dodać gatunek do checklisty.'
           }
           checked={Boolean(obs)}

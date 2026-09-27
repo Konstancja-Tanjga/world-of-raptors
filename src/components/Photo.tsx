@@ -30,7 +30,7 @@ export function Photo({
         {podpis && <span className="photo__title">{podpis}</span>}
         {!maly && (
           <span>
-            Fot. {zdjecie.autor} ·{' '}
+            Fot. {zdjecie.autor},{' '}
             {zdjecie.licencjaUrl ? (
               <a href={zdjecie.licencjaUrl} target="_blank" rel="noreferrer">
                 {zdjecie.licencja}
@@ -41,8 +41,7 @@ export function Photo({
             {/* Own photos have no Commons page to credit. */}
             {zdjecie.strona && (
               <>
-                {' '}
-                ·{' '}
+,{' '}
                 <a href={zdjecie.strona} target="_blank" rel="noreferrer">
                   Wikimedia Commons
                 </a>

@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import { zdjecia, znajdzGatunek } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
+import { CuesTable } from './CuesTable';
 import { Photo } from './Photo';
-import { SpeciesCues } from './SpeciesCues';
+import { CECHY_DZIENNE, CECHY_NOCNE, SpeciesCues } from './SpeciesCues';
 
 /**
- * The two reference photos of a species (perched and in flight), what to look
- * at in them, the species it is most often confused with, and where to see and
- * hear more.
+ * A field-guide plate for one species: the reference photos (in flight first
+ * for diurnal raptors, perched first for owls, because that is how each is
+ * usually seen), the ID cues side by side with its look-alikes, and where to
+ * see and hear more.
  */
 export function SpeciesMedia({
   id,
@@ -16,54 +18,65 @@ export function SpeciesMedia({
 }: {
   id: string;
   linki?: boolean;
-  /** How many look-alikes to show; lessons show two, the species page all. */
+  /** How many look-alikes to compare; lessons use two, the species page all. */
   ileMylonych?: number;
 }) {
   const g = znajdzGatunek(id);
   if (!g) return null;
   const z = zdjecia[id];
+  const nocny = g.aktywnosc === 'nocny';
   const mylone = g.mylona_z
     .map(znajdzGatunek)
     .filter((m) => m !== undefined)
     .slice(0, ileMylonych);
 
+  const zdjeciaPlanszy = [
+    z?.lot && { foto: z.lot, alt: `${g.pl} w locie`, podpis: 'W locie' },
+    z?.siedzacy && { foto: z.siedzacy, alt: `${g.pl}, ptak siedzący`, podpis: 'Siedzący' },
+  ].filter((x) => !!x);
+  if (nocny) zdjeciaPlanszy.reverse();
+
+  const kolumna = (x: NonNullable<typeof g>) => ({
+    id: x.id,
+    pl: x.pl,
+    cechy: x.sylwetka as Record<string, string>,
+  });
+
   return (
-    <div className="species-media">
-      {z && (z.siedzacy || z.lot) && (
-        <div className="photo-pair">
-          {z.siedzacy && (
-            <Photo zdjecie={z.siedzacy} alt={`${g.pl}, ptak siedzący`} podpis="Siedzący" />
-          )}
-          {z.lot && <Photo zdjecie={z.lot} alt={`${g.pl} w locie`} podpis="W locie" />}
+    <div className="plate">
+      {zdjeciaPlanszy.length > 0 && (
+        <div className={zdjeciaPlanszy.length > 1 ? 'plate__photos' : 'plate__photos plate__photos--single'}>
+          {zdjeciaPlanszy.map((p) => (
+            <Photo key={p.podpis} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} />
+          ))}
         </div>
       )}
 
-      <SpeciesCues g={g} />
-
-      {mylone.length > 0 && (
-        <div className="confusion">
-          <p className="confusion__title">⚠️ Łatwo pomylić z…</p>
-          <ul className="confusion__list">
+      {mylone.length > 0 ? (
+        <>
+          <CuesTable
+            podpis={`Na co patrzeć: ${g.pl} obok gatunków, z którymi łatwo go pomylić`}
+            cechy={nocny ? CECHY_NOCNE : CECHY_DZIENNE}
+            gatunki={[kolumna(g), ...mylone.map(kolumna)]}
+          />
+          <ul className="plate__lookalikes" aria-label={`Gatunki podobne do: ${g.pl}`}>
             {mylone.map((m) => {
               const mz = zdjecia[m.id];
-              const foto = mz?.lot ?? mz?.siedzacy;
+              const foto = nocny ? (mz?.siedzacy ?? mz?.lot) : (mz?.lot ?? mz?.siedzacy);
               return (
-                <li key={m.id} className="confusion__item">
+                <li key={m.id}>
                   {foto && <Photo zdjecie={foto} alt={m.pl} maly />}
-                  <span>
-                    <Link href={`/gatunki/${m.id}`} className="text-link">
-                      {m.pl}
-                    </Link>
-                    <span className="latin">
-                      {' '}
-                      {m.lat} <span className="en">(ang. {m.en})</span>
-                    </span>
-                  </span>
+                  <Link href={`/gatunki/${m.id}`} className="text-link">
+                    {m.pl}
+                  </Link>{' '}
+                  <span className="latin">{m.lat}</span>
                 </li>
               );
             })}
           </ul>
-        </div>
+        </>
+      ) : (
+        <SpeciesCues g={g} />
       )}
 
       {linki && (

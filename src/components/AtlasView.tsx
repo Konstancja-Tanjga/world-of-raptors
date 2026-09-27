@@ -26,7 +26,6 @@ export function AtlasView({
       {wynik.length === 0 ? (
         <StateBlock
           state="empty"
-          icon="🔭"
           title="Brak gatunków w tym filtrze"
           description="Zmień region, aktywność albo wyszukiwaną nazwę."
           scope="section"

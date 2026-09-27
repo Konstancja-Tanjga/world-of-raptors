@@ -102,7 +102,7 @@ export function Ciekawostka({
   return (
     <aside className="ciekawostka" aria-labelledby={tytulId}>
       <p className="ciekawostka__tytul" id={tytulId}>
-        <span aria-hidden="true">💡 </span>Ciekawostka
+        Ciekawostka
       </p>
       {biezaca ? (
         <>

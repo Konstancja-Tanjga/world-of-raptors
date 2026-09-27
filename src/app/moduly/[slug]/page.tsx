@@ -27,14 +27,14 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
 
   return (
     <div className="page page--reading">
-      <Breadcrumbs items={[{ label: 'Start', href: '/' }, { label: `${modul.id} · ${modul.tytul}` }]} />
+      <Breadcrumbs items={[{ label: 'Start', href: '/' }, { label: `${modul.id}\u00a0${modul.tytul}` }]} />
       <Markdown source={source} baseDir={`moduly/${slug}`} />
       <Ciekawostka {...ciekawostkiDla({ modul: slug })} />
       {pierwsza && (
         <nav className="lesson-nav" aria-label="Nawigacja modułu">
           <span />
           <ButtonLink href={`/moduly/${slug}/${pierwsza.slug}`}>
-            Zacznij: lekcja 1, {pierwsza.tytul} →
+            Zacznij od lekcji 1
           </ButtonLink>
         </nav>
       )}

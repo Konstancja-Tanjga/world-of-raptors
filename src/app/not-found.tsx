@@ -6,7 +6,6 @@ export default function NotFound() {
     <div className="page">
       <StateBlock
         state="empty"
-        icon="🪶"
         title="Nie ma takiej strony"
         description="Ten moduł, lekcja albo gatunek nie istnieje."
         action={

@@ -93,7 +93,7 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
 
   return (
     <div className="own-photos" ref={kontener}>
-      <p className="own-photos__title">📷 Moje zdjęcia</p>
+      <p className="plate__label">Moje zdjęcia</p>
       <p className="visually-hidden" aria-live="polite">
         {komunikat}
       </p>
