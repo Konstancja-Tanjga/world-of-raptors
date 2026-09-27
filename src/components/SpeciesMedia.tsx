@@ -88,6 +88,7 @@ export function SpeciesMedia({
             <li key={l.href}>
               <a href={l.href} target="_blank" rel="noreferrer" className="text-link">
                 {l.label}
+                <span className="visually-hidden">: {g.pl}, otwiera się w nowej karcie</span>
               </a>
             </li>
           ))}

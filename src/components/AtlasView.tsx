@@ -29,7 +29,11 @@ export function AtlasView({
           title="Brak gatunków w tym filtrze"
           description="Zmień region, aktywność albo wpisaną nazwę."
           action={
-            <Button size="sm" variant="secondary" onClick={() => setFiltry(PUSTE_FILTRY)}>
+            <Button size="sm" variant="secondary" onClick={() => {
+                setFiltry(PUSTE_FILTRY);
+                // The button disappears with the empty state; keep keyboard focus on the page.
+                requestAnimationFrame(() => document.querySelector<HTMLInputElement>('input[type=search]')?.focus());
+              }}>
               Wyczyść filtry
             </Button>
           }

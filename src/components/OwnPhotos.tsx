@@ -84,7 +84,7 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
       notify({
         tone: 'critical',
         title: 'Nie udało się usunąć zdjęcia',
-        description: 'Przeglądarka nie pozwoliła na zmianę zapisanych danych. Wyjdź z trybu prywatnego i spróbuj ponownie.',
+        description: `Zdjęcie nadal jest zapisane. Spróbuj ponownie, a jeśli to nie pomoże, odśwież stronę. Przyczyna: ${powodBledu(err)}.`,
         duration: null,
       });
     }

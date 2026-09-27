@@ -1,5 +1,5 @@
 {
-  "uwaga": "Ciekawostki pokazywane rotacyjnie w aplikacji. Źródło: ramki 💡 z lekcji i zdania otwierające moduły. tekst: Markdown inline (**pogrubienie**, *kursywa*, [link](..) → sam tekst).",
+  "uwaga": "Ciekawostki pokazywane rotacyjnie w aplikacji. Źródło: ramki 💡 z lekcji i zdania otwierające moduły. tekst: tylko **pogrubienie** i *kursywa*, bez linków (karta ma jedną akcję: „Czytaj dalej” do lekcji). Tekst musi być zrozumiały bez kontekstu lekcji.",
   "ciekawostki": [
     {
       "id": "anatomia-01-wzrok-0",

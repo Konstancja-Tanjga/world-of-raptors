@@ -28,6 +28,12 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
   const { filtry, setFiltry, wynik } = useFiltry(gatunki);
   const [widok, setWidok] = useState<Widok>('wszystkie');
+  const filtryAktywne = filtry.szukaj.trim() !== '' || filtry.regiony.length > 0 || filtry.aktywnosc.length > 0;
+  const wyczyscFiltry = () => {
+    setFiltry(PUSTE_FILTRY);
+    // The button disappears with the empty state; keep keyboard focus on the page.
+    requestAnimationFrame(() => document.querySelector<HTMLInputElement>('input[type=search]')?.focus());
+  };
   const fileInput = useRef<HTMLInputElement>(null);
   const { notify } = useToast();
   const sprawdzZapis = useOstrzezenieZapisu();
@@ -69,7 +75,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           tone: 'warning',
           title: 'Kopia bez zdjęć',
           description:
-            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Import tego pliku nie usunie zdjęć na innym urządzeniu.',
+            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Wczytanie tej kopii nie usunie zdjęć na innym urządzeniu.',
           duration: null,
         });
       }
@@ -178,24 +184,36 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       </div>
 
       {grupy.length === 0 ? (
-        <StateBlock
-          state="empty"
-          title={widok === 'zaobserwowane' ? 'Brak obserwacji w tym filtrze' : 'Brak gatunków w tym filtrze'}
-          description="Zmień region, aktywność albo wpisaną nazwę."
-          action={
-            <Button
-              size="sm"
-              variant="secondary"
-              onClick={() => {
-                setFiltry(PUSTE_FILTRY);
-                setWidok('wszystkie');
-              }}
-            >
-              Wyczyść filtry
-            </Button>
-          }
-          scope="section"
-        />
+        filtryAktywne ? (
+          <StateBlock
+            state="empty"
+            title="Brak gatunków w tym filtrze"
+            description="Zmień region, aktywność albo wpisaną nazwę."
+            action={
+              <Button size="sm" variant="secondary" onClick={wyczyscFiltry}>
+                Wyczyść filtry
+              </Button>
+            }
+            scope="section"
+          />
+        ) : (
+          // Only the view ("Zaobserwowane" / "Brakujące") empties the list: say why, offer the way back.
+          <StateBlock
+            state="empty"
+            title={widok === 'zaobserwowane' ? 'Nie masz jeszcze obserwacji' : 'Masz już wszystkie gatunki'}
+            description={
+              widok === 'zaobserwowane'
+                ? 'Zaznacz gatunek na liście, kiedy go zobaczysz.'
+                : 'Każdy gatunek z atlasu jest już na Twojej liście obserwacji.'
+            }
+            action={
+              <Button size="sm" variant="secondary" onClick={() => setWidok('wszystkie')}>
+                Pokaż wszystkie gatunki
+              </Button>
+            }
+            scope="section"
+          />
+        )
       ) : (
         grupy.map(([grupa, lista_]) => (
           <section key={grupa} className="stack" aria-labelledby={`grupa-${grupa}`}>
