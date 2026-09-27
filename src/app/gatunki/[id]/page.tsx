@@ -88,7 +88,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
             {moduly.map((m) => (
               <li key={m.slug}>
                 <Link href={`/moduly/${m.slug}`} className="text-link">
-                  {m.id} · {m.tytul}
+                  {m.id}&nbsp;{m.tytul}
                 </Link>
               </li>
             ))}

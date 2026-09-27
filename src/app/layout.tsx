@@ -6,7 +6,7 @@ import { ToastProvider } from '@/components/ds';
 import { gotoweModuly } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: { default: 'World of Raptors', template: '%s · World of Raptors' },
+  title: { default: 'World of Raptors', template: '%s, World of Raptors' },
   description: 'Prywatny kurs o ptakach drapieżnych: biologia i rozpoznawanie w terenie.',
   robots: { index: false, follow: false },
 };

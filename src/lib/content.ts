@@ -106,8 +106,8 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
     href: lekcja ? `/moduly/${c.modul}/${lekcja.slug}` : `/moduly/${c.modul}`,
     zrodlo: modul
       ? lekcja
-        ? `${modul.id} · lekcja ${numer}: ${lekcja.tytul}`
-        : `${modul.id} · ${modul.tytul}`
+        ? `${modul.id}, lekcja ${numer}: ${lekcja.tytul}`
+        : `${modul.id}\u00a0${modul.tytul}`
       : 'kurs',
   };
 }

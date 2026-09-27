@@ -25,6 +25,7 @@ export {
   SegmentedControl,
   SkipLink,
   StateBlock,
+  Table,
   Textarea,
   ToastProvider,
   useToast,

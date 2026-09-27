@@ -44,7 +44,7 @@ export function AppFrame({
         const zaliczony = m.lekcje.length > 0 && done === m.lekcje.length;
         return {
           id: m.slug,
-          label: `${m.id} · ${m.tytul}`,
+          label: `${m.id}\u00a0${m.tytul}`,
           href: `/moduly/${m.slug}`,
           icon: postep ? (zaliczony ? '✓' : '○') : undefined,
           subline: zaliczony ? 'Zaliczony' : done > 0 ? `${done} z ${m.lekcje.length} lekcji` : undefined,
@@ -81,7 +81,7 @@ export function AppFrame({
         onNavToggle={() => setNavOpen((o) => !o)}
         header={
           <AppBar
-            brand={<span className="brand">🦅 World of Raptors</span>}
+            brand={<span className="brand">World of Raptors</span>}
             titleAsHeading={false}
             actions={
               <span className="nav-toggle">

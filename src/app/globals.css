@@ -367,47 +367,6 @@ body {
   margin-block: var(--bh-gap-normal);
 }
 
-.species-media {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-normal);
-  margin-block-end: var(--bh-gap-normal);
-}
-.photo-pair {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--bh-gap-normal);
-}
-
-.confusion {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-status-warning-bg);
-  border: 1px solid var(--bh-status-warning-border);
-  border-radius: var(--bh-radius-surface);
-}
-.confusion__title {
-  margin: 0;
-  font-weight: var(--bh-text-weight-emphasis);
-  color: var(--bh-text-primary);
-}
-.confusion__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: var(--bh-gap-normal);
-}
-.confusion__item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-tight);
-  margin: 0;
-}
-
 .media-links {
   list-style: none;
   margin: 0;
@@ -449,35 +408,12 @@ body {
   min-height: var(--bh-control-lg);
 }
 
-/* "Na co patrzeć": the method checklist for one species */
-.cues {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-status-info-bg);
-  border: 1px solid var(--bh-status-info-border);
-  border-radius: var(--bh-radius-surface);
-}
-.cues__title {
-  margin: 0;
-  font-weight: var(--bh-text-weight-emphasis);
-  color: var(--bh-text-primary);
-}
-.cues__source {
-  font-size: var(--bh-text-size-dense);
-}
-
 /* My own photos (IndexedDB) on checklist entries and species pages */
 .own-photos {
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-snug);
   padding-block-start: var(--bh-gap-normal);
-}
-.own-photos__title {
-  margin: 0;
-  font-weight: var(--bh-text-weight-emphasis);
 }
 .own-photos__grid {
   list-style: none;
@@ -500,26 +436,125 @@ body {
   gap: var(--bh-gap-snug);
 }
 
-/* Rotating "Ciekawostka" card */
+
+/* Field-guide plate: photos, cues compared with look-alikes, links */
+.plate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-loose);
+  margin-block-end: var(--bh-gap-loose);
+}
+.plate__photos {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--bh-gap-normal);
+}
+.plate__photos--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (max-width: 600px) {
+  .plate__photos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.plate__label {
+  margin: 0;
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-secondary);
+}
+.plate__cues {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.plate__lookalikes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-normal);
+}
+.plate__lookalikes li {
+  width: 12rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+}
+
+/* Home: species of the day */
+.today {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.today__intro {
+  margin: 0;
+  color: var(--bh-text-muted);
+}
+.today__name {
+  margin: 0;
+  font-size: var(--bh-text-size-display);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+}
+.today__latin {
+  margin-block-end: var(--bh-gap-snug);
+}
+.home-aside {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--bh-gap-loose);
+}
+@media (max-width: 900px) {
+  .home-aside {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Module list: a numbered catalogue, not a wall of cards */
+.module-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.module-list__item {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--bh-gap-normal);
+  padding-block: var(--bh-gap-snug);
+  border-bottom: 1px solid var(--bh-border-subtle);
+}
+.module-list__id {
+  font-weight: var(--bh-text-weight-emphasis);
+  color: var(--bh-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.module-list__title {
+  font-size: var(--bh-text-size-body);
+}
+
+/* Curiosity: a line from a lesson, not another box */
 .ciekawostka {
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-snug);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-status-info-bg);
-  border: 1px solid var(--bh-status-info-border);
-  border-radius: var(--bh-radius-surface);
+  padding-block-start: var(--bh-gap-normal);
+  border-top: 1px solid var(--bh-border-strong);
 }
 .ciekawostka__tytul {
   margin: 0;
-  font-size: var(--bh-text-size-label);
   font-weight: var(--bh-text-weight-emphasis);
-  color: var(--bh-status-info-fg);
-  text-transform: uppercase;
+  color: var(--bh-text-secondary);
 }
 .ciekawostka__tekst {
   margin: 0;
-  font-size: var(--bh-text-size-body);
+  max-width: 60ch;
+  font-size: var(--bh-text-size-heading);
   line-height: var(--bh-text-leading-normal);
   color: var(--bh-text-primary);
 }

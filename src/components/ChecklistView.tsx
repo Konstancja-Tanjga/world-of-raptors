@@ -177,7 +177,6 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       {grupy.length === 0 ? (
         <StateBlock
           state="empty"
-          icon="🔭"
           title={widok === 'zaobserwowane' ? 'Brak obserwacji w tym filtrze' : 'Brak gatunków w tym filtrze'}
           description="Zmień region, aktywność albo wyszukiwaną nazwę."
           scope="section"
