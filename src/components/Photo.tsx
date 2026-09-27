@@ -10,11 +10,14 @@ export function Photo({
   alt,
   podpis,
   maly = false,
+  wazne = false,
 }: {
   zdjecie: Zdjecie;
   alt: string;
   podpis?: string;
   maly?: boolean;
+  /** The page's main image (above the fold): load it first, not lazily. */
+  wazne?: boolean;
 }) {
   return (
     <figure className={maly ? 'photo photo--small' : 'photo'}>
@@ -23,7 +26,8 @@ export function Photo({
         alt={alt}
         width={zdjecie.width}
         height={zdjecie.height}
-        loading="lazy"
+        loading={wazne ? 'eager' : 'lazy'}
+        fetchPriority={wazne ? 'high' : undefined}
         className="photo__img"
       />
       <figcaption className="photo__caption">
@@ -41,7 +45,7 @@ export function Photo({
             {/* Own photos have no Commons page to credit. */}
             {zdjecie.strona && (
               <>
-,{' '}
+                ,{' '}
                 <a href={zdjecie.strona} target="_blank" rel="noreferrer">
                   Wikimedia Commons
                 </a>

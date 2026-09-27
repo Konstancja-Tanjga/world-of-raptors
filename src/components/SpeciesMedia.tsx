@@ -15,11 +15,14 @@ export function SpeciesMedia({
   id,
   linki = true,
   ileMylonych = 2,
+  glowne = false,
 }: {
   id: string;
   linki?: boolean;
   /** How many look-alikes to compare; lessons use two, the species page all. */
   ileMylonych?: number;
+  /** The plate is the page's hero: its first photo loads eagerly. */
+  glowne?: boolean;
 }) {
   const g = znajdzGatunek(id);
   if (!g) return null;
@@ -46,8 +49,8 @@ export function SpeciesMedia({
     <div className="plate">
       {zdjeciaPlanszy.length > 0 && (
         <div className={zdjeciaPlanszy.length > 1 ? 'plate__photos' : 'plate__photos plate__photos--single'}>
-          {zdjeciaPlanszy.map((p) => (
-            <Photo key={p.podpis} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} />
+          {zdjeciaPlanszy.map((p, i) => (
+            <Photo key={p.podpis} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} wazne={glowne && i === 0} />
           ))}
         </div>
       )}
@@ -55,7 +58,7 @@ export function SpeciesMedia({
       {mylone.length > 0 ? (
         <>
           <CuesTable
-            podpis={`Na co patrzeć: ${g.pl} obok gatunków, z którymi łatwo go pomylić`}
+            podpis={`Na co patrzeć: ${g.pl} i podobne gatunki`}
             cechy={nocny ? CECHY_NOCNE : CECHY_DZIENNE}
             gatunki={[kolumna(g), ...mylone.map(kolumna)]}
           />

@@ -34,12 +34,11 @@ export function CuesTable({
       rowKey={([k]) => k}
       rows={wiersze}
       columns={[
-        { key: 'cecha', header: 'Cecha', cell: ([, nazwa]) => nazwa, width: 'minmax(8rem, 0.8fr)' },
+        { key: 'cecha', header: 'Cecha', cell: ([, nazwa]) => nazwa },
         {
           key: glowny.id,
           header: glowny.pl,
           cell: ([k]) => glowny.cechy[k] ?? '',
-          width: 'minmax(10rem, 1.2fr)',
         },
         ...podobne.map((g) => ({
           key: g.id,
@@ -49,7 +48,6 @@ export function CuesTable({
             </Link>
           ),
           cell: ([k]: [string, string]) => g.cechy[k] ?? '',
-          width: 'minmax(10rem, 1fr)',
         })),
       ]}
     />
