@@ -57,7 +57,7 @@ def clean_author(a):
     a = re.sub(r'\s*This file was uploaded with Commonist\.?', '', a, flags=re.I)
     a = re.sub(r'\s*\(https?://[^)]*\)', '', a)
     a = re.sub(r'\bUser:', '', a)
-    if re.fullmatch(r'(Unknown author|Anonymous)+', a):
+    if re.fullmatch(r'(?:\s*(?:Unknown (?:author|artist)|Anonymous))+', a):
         a = ''
     return a.strip()
 

@@ -58,7 +58,7 @@ Status: osiadły w regionie, zimuje.
 - **Klucz:** **krótka szyja, duża głowa**; krótszy ogon z gęstymi drobnymi prążkami; skrzydła szerokie, przy szybowaniu w **płytkie V**; często ciemna „pierś” i jaśniejszy pas przez brzuch.
 - **W regionie:** raczej lokalne ptaki, w cieśninie przelatuje ich stosunkowo niewiele.
 
-### Trzmielojad czy myszołów — klasyka!?
+### Trzmielojad czy myszołów? Klasyka
 | Cecha | Trzmielojad | Myszołów |
 |---|---|---|
 | Głowa | mała, wysunięta do przodu | duża, „wciśnięta” w barki |
