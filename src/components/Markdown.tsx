@@ -96,8 +96,9 @@ const link = (baseDir: string): Components['a'] =>
 
 /**
  * Renders lesson Markdown from `content/`. Raw HTML is allowed for the lesson
- * tags above, and the content is authored in this repository, never taken
- * from users. `quiz` is rendered where the lesson has `<quiz-krokowy>`.
+ * tags above and the `<details>` answers of the mini-quizzes; the content is
+ * authored in this repository, never taken from users. `quiz` is rendered
+ * where the lesson has `<quiz-krokowy>`, which only `wyodrebnijQuiz` inserts.
  */
 export function Markdown({ source, baseDir, quiz }: { source: string; baseDir: string; quiz?: ReactNode }) {
   return (

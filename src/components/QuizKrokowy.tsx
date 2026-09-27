@@ -24,7 +24,7 @@ export function QuizKrokowy({ quiz, modul, lekcja }: { quiz: Quiz; modul: string
   const [etap, setEtap] = useState<Etap>({ nazwa: 'start' });
   const [odpowiedzi, setOdpowiedzi] = useState<number[]>([]);
   const [zapisano, setZapisano] = useState(true);
-  const { ustaw } = usePostep();
+  const { postep, ustaw } = usePostep();
   const sprawdzZapis = useOstrzezenieZapisu();
   const obszar = useRef<HTMLDivElement>(null);
   const wynikRef = useRef<HTMLHeadingElement>(null);
@@ -133,7 +133,8 @@ export function QuizKrokowy({ quiz, modul, lekcja }: { quiz: Quiz; modul: string
       return;
     }
     const wynik = odpowiedzi.filter((o, i) => o === pytania[i].poprawna).length;
-    if (wynik >= potrzebne) {
+    // Passing again keeps the date the lesson was first finished.
+    if (wynik >= potrzebne && !postep?.[kluczLekcji(modul, lekcja)]) {
       const ok = ustaw(kluczLekcji(modul, lekcja), true);
       setZapisano(ok);
       sprawdzZapis(ok);

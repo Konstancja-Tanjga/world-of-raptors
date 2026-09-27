@@ -21,7 +21,7 @@ const nawigacja = Promise.all(
       lekcje.map(async (l) => ({
         slug: l.slug,
         tytul: l.tytul,
-        progQuizu: progQuizu(await czytajMarkdown(`moduly/${slug}/${l.slug}.md`)),
+        progQuizu: progQuizu(await czytajMarkdown(`moduly/${slug}/${l.slug}.md`), `moduly/${slug}/${l.slug}.md`),
       })),
     ),
   })),
