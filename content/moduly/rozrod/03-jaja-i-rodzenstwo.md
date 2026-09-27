@@ -60,7 +60,7 @@ Jeśli ptak zaczyna wysiadywać od **pierwszego jaja**, to pisklęta klują się
 
 Sokoły często zaczynają wysiadywać na dobre dopiero przy przedostatnim lub ostatnim jaju, więc ich pisklęta klują się w krótszym odstępie.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Common_Kestrel_Chicks.jpeg/960px-Common_Kestrel_Chicks.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sześć białych, puchatych piskląt pustułki stłoczonych obok siebie" podpis="Sześć piskląt pustułki w podobnym wieku: u sokołów różnice między rodzeństwem są mniejsze" autor="User:Revital9" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Kestrel_Chicks.jpeg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Common_Kestrel_Chicks.jpeg/960px-Common_Kestrel_Chicks.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sześć białych, puchatych piskląt pustułki stłoczonych obok siebie" podpis="Sześć piskląt pustułki w podobnym wieku: u sokołów różnice między rodzeństwem są mniejsze" autor="Revital9" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Kestrel_Chicks.jpeg">
 </zdjecie>
 
 Po co różnica wieku? Klasyczna hipoteza (**redukcja lęgu**, wiązana z nazwiskiem Davida Lacka): gdy pokarmu jest mało, najmłodsze pisklę słabnie i ginie, ale reszta ma szansę przeżyć. W dobrym roku przeżywają wszystkie. Rodzice nie „wiedzą” z góry, jaki będzie rok, więc składają więcej jaj, a o liczbie młodych decyduje pokarm.
@@ -80,7 +80,7 @@ U niektórych gatunków starsze pisklę atakuje młodsze: dziobie je, odpycha od
 
 Po co więc drugie jajo? Najczęstsza hipoteza to **jajo „ubezpieczeniowe”**: jeśli pierwsze jajo okaże się niezapłodnione albo pierwsze pisklę zginie, drugie zastąpi je w tym samym sezonie.
 
-> 💡 Ponieważ orlików krzykliwych jest mało, w niektórych krajach (m.in. w Niemczech) prowadzono programy „ratowania drugiego pisklęcia”: młodsze pisklę zabierano z gniazda, odchowywano w ośrodku i później wypuszczano na wolność. Takie działania są kosztowne i kontrowersyjne, ale pokazują, jak ważne jest każde młode w małej populacji.
+> Ponieważ orlików krzykliwych jest mało, w niektórych krajach (m.in. w Niemczech) prowadzono programy „ratowania drugiego pisklęcia”: młodsze pisklę zabierano z gniazda, odchowywano w ośrodku i później wypuszczano na wolność. Takie działania są kosztowne i kontrowersyjne, ale pokazują, jak ważne jest każde młode w małej populacji.
 
 ## Filmy
 - [YouTube: rodzeństwo w gnieździe orlika krzykliwego (kainizm)](https://www.youtube.com/results?search_query=lesser+spotted+eagle+siblicide)

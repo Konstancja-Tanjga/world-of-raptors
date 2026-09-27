@@ -9,7 +9,7 @@ Dla dziennego ptaka drapieżnego wzrok jest najważniejszym zmysłem. Myszołów
 - Nad okiem wystaje **wał nadoczodołowy** (kostny „daszek”). Daje ptakowi „groźne spojrzenie” i prawdopodobnie osłania oko przed słońcem i uszkodzeniem.
 - Jak wszystkie ptaki, drapieżne mają **migotkę**, półprzezroczystą trzecią powiekę, która przesuwa się poziomo, nawilża i chroni oko, np. w chwili uderzenia w zdobycz albo przy karmieniu młodych.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg/960px-Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Jasna czaszka ptaka z profilu, z wielkim okrągłym oczodołem i długim zakrzywionym dziobem, na czarnym tle" podpis="Czaszka orła klinosternego (zbiory Auckland Museum): oczodoły zajmują ogromną część głowy" autor="Auckland Museum  Collections from Auckland, Aotearoa New Zealand" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_(Wedge-tailed_Eagle)_(48719294161).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg/960px-Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Jasna czaszka ptaka z profilu, z wielkim okrągłym oczodołem i długim zakrzywionym dziobem, na czarnym tle" podpis="Czaszka orła klinosternego (zbiory Auckland Museum): oczodoły zajmują ogromną część głowy" autor="Auckland Museum Collections from Auckland, Aotearoa New Zealand" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_(Wedge-tailed_Eagle)_(48719294161).jpg">
 </zdjecie>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Aquila_chrysaetos_%28Linnaeus_1758%29.jpg/960px-Aquila_chrysaetos_%28Linnaeus_1758%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="677" alt="Głowa orła przedniego z profilu, złociste pióra karku, jasnobrązowe oko ocienione wystającym łukiem nad nim i haczykowaty dziób" podpis="Orzeł przedni z profilu: nad okiem wyraźny wał nadoczodołowy, kostny „daszek”, który daje groźne spojrzenie" autor="Michael Gäbler" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_(Linnaeus_1758).jpg">
@@ -33,7 +33,7 @@ Człowiek ma w każdym oku jeden **dołek środkowy** (fovea), małe zagłębien
 
 Dlatego ptak drapieżny, który coś wypatrzył z daleka, często **przekrzywia głowę bokiem**: patrzy wtedy głębokim dołkiem jednego oka. Gdy zbliża się do zdobyczy, patrzy obydwoma oczami do przodu.
 
-> 💡 Głęboki dołek ma kształt lejka. Według jednej z hipotez działa trochę jak soczewka powiększająca: dodatkowo „rozciąga” obraz w najostrzejszym punkcie. To wyjaśnienie jest przekonujące, ale nie w pełni udowodnione.
+> Głęboki dołek ma kształt lejka. Według jednej z hipotez działa trochę jak soczewka powiększająca: dodatkowo „rozciąga” obraz w najostrzejszym punkcie. To wyjaśnienie jest przekonujące, ale nie w pełni udowodnione.
 
 ### 3. Mit o „ośmiokrotnie lepszym wzroku”
 W popularnych tekstach często czytasz, że orły widzą 4, 5 albo 8 razy lepiej od ludzi. Pomiary mówią co innego:
@@ -43,7 +43,7 @@ W popularnych tekstach często czytasz, że orły widzą 4, 5 albo 8 razy lepiej
 
 Czyli: bardzo dobry wzrok, najlepszy znany w świecie zwierząt, ale nie „lornetka w oku”.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Aquila_audax_-_Captain%27s_Flat.jpg/960px-Aquila_audax_-_Captain%27s_Flat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży ciemnobrązowy orzeł z jasnym karkiem stoi na suchym pniu na tle błękitnego nieba" podpis="Orzeł klinosterny w Australii: najlepiej zbadany rekordzista ostrości wzroku, ok. 2–2,5 raza lepszej niż u człowieka" autor="JJ Harrison (https://www.jjharrison.com.au/)" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_-_Captain%27s_Flat.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Aquila_audax_-_Captain%27s_Flat.jpg/960px-Aquila_audax_-_Captain%27s_Flat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży ciemnobrązowy orzeł z jasnym karkiem stoi na suchym pniu na tle błękitnego nieba" podpis="Orzeł klinosterny w Australii: najlepiej zbadany rekordzista ostrości wzroku, ok. 2–2,5 raza lepszej niż u człowieka" autor="JJ Harrison" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_-_Captain%27s_Flat.jpg">
 </zdjecie>
 
 ## Pole widzenia

@@ -22,7 +22,7 @@ Warunek jest jeden: dane muszą być **rzetelne**. Lepiej zapisać „myszołów
 ### Monitoring Ptaków Polski (MPP)
 MPP to państwowy program monitoringu, w którym część liczeń prowadzą wolontariusze. Najbardziej dostępny dla początkujących jest monitoring **pospolitych ptaków lęgowych**, ale wymaga on rozpoznawania ptaków również po głosie. Szczegóły i zapisy znajdziesz na stronie programu. Dobrym celem na pierwszy rok nauki jest regularne wysyłanie list do eBird, a potem dołączenie do MPP.
 
-> 💡 Sprawdź się metodą z [modułu o metodzie nauki](../metoda/README.md): zanim wyślesz listę, zaznacz przy każdym gatunku, na ile jesteś pewna. Po roku zobaczysz, jak rośnie odsetek pewnych oznaczeń.
+> Sprawdź się metodą z [modułu o metodzie nauki](../metoda/README.md): zanim wyślesz listę, zaznacz przy każdym gatunku, na ile jesteś pewna. Po roku zobaczysz, jak rośnie odsetek pewnych oznaczeń.
 
 ## Obrączki i nadajniki
 Wiele ptaków drapieżnych nosi **obrączki**, a np. bieliki czy rybołowy często także **obrączki barwne** z kodem czytelnym przez lornetkę lub na zdjęciu.
@@ -55,7 +55,7 @@ Dzikie ptaki drapieżne i sowy są w Polsce **pod ochroną**. Wolno udzielić im
 
 Numery ośrodków sprawdź **zanim będą potrzebne** i zapisz w telefonie. Przykładem znanego ośrodka jest Ptasi Azyl przy warszawskim ZOO.
 
-> 💡 Martwego ptaka z podejrzeniem otrucia lub postrzału nie wyrzucaj. Zrób zdjęcia, zapisz miejsce i zgłoś sprawę na policję lub do RDOŚ. Takie zgłoszenia pomagają wykrywać nielegalne zabijanie ptaków.
+> Martwego ptaka z podejrzeniem otrucia lub postrzału nie wyrzucaj. Zrób zdjęcia, zapisz miejsce i zgłoś sprawę na policję lub do RDOŚ. Takie zgłoszenia pomagają wykrywać nielegalne zabijanie ptaków.
 
 ## Fotografia i etyka
 - **Dobro ptaka jest ważniejsze niż zdjęcie.** Jeśli ptak zmienia zachowanie przez ciebie, jesteś za blisko.

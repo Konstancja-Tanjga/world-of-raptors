@@ -28,7 +28,7 @@ Strefa ma zwykle dwie części:
 
 Dokładne zasięgi i terminy zależą od gatunku i decyzji RDOŚ. Lokalizacje stref **nie są publikowane**, żeby nie ułatwiać życia fotografom i przestępcom.
 
-> 💡 Strefy ochronne w Polsce wprowadzono w latach 80. XX wieku z myślą o bieliku i innych orłach. Wiele osób uważa je za jedną z przyczyn spektakularnego powrotu bielika.
+> Strefy ochronne w Polsce wprowadzono w latach 80. XX wieku z myślą o bieliku i innych orłach. Wiele osób uważa je za jedną z przyczyn spektakularnego powrotu bielika.
 
 ## Prawo międzynarodowe
 

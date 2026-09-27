@@ -13,7 +13,7 @@
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Gibraltar%2C_The_Rock_of_Gibraltar.JPG/960px-Gibraltar%2C_The_Rock_of_Gibraltar.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" alt="Wapienny grzbiet skały opadający stromo ku morzu, w dole zabudowa nad zatoką, w tle ląd i góry" podpis="Grzbiet Skały Gibraltarskiej widziany z góry, w tle wybrzeże Hiszpanii: przy Poniente ptaki przelatują tu nisko nad skałą" autor="PookieFugglestein" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Gibraltar,_The_Rock_of_Gibraltar.JPG">
 </zdjecie>
 
-> 💡 Rano ptaki często czekają, aż słońce rozgrzeje ziemię i powstaną termiki — szczyt przelotu zwykle przypada **od późnego przedpołudnia do wczesnego popołudnia**.
+> Rano ptaki często czekają, aż słońce rozgrzeje ziemię i powstaną termiki — szczyt przelotu zwykle przypada **od późnego przedpołudnia do wczesnego popołudnia**.
 
 ## Miejsca na gatunki lokalne
 

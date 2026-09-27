@@ -14,7 +14,7 @@ Szybujący ptak cały czas powoli opada względem otaczającego powietrza. Żeby
 4. Powietrze w kominie wznosi się zwykle z prędkością od ok. 1 do kilku metrów na sekundę.
 5. Wysoko powietrze się ochładza. Jeśli jest wilgotne, para wodna skrapla się i na szczycie komina powstaje **chmura kłębiasta (cumulus)**.
 
-> 💡 Cumulusy to drogowskazy dla ptaków i pilotów szybowców: pod młodą, rosnącą chmurą zwykle jest komin. Przy silnym wietrze kominy i chmury mogą ustawiać się w długie rzędy, tzw. **ulice chmur**, wzdłuż których ptak leci prawie bez krążenia.
+> Cumulusy to drogowskazy dla ptaków i pilotów szybowców: pod młodą, rosnącą chmurą zwykle jest komin. Przy silnym wietrze kominy i chmury mogą ustawiać się w długie rzędy, tzw. **ulice chmur**, wzdłuż których ptak leci prawie bez krążenia.
 
 ### Pora dnia
 - **Rano** ziemia jest jeszcze chłodna i termik brak. Migranci szybujący siedzą wtedy na drzewach albo lecą nisko, z mozołem.
@@ -35,7 +35,7 @@ Duże ptaki drapieżne w ślizgu przelatują w poziomie **kilkanaście metrów**
 
 W dobrych warunkach migranci szybujący pokonują w ten sposób **kilkaset kilometrów dziennie**.
 
-> 💡 Nad punktem obserwacyjnym widać czasem „kocioł”: dziesiątki albo setki trzmielojadów czy bocianów krążących razem w jednym kominie. Ptaki pomagają sobie nawzajem: kto widzi, że inny ptak szybko się wznosi, leci w to samo miejsce.
+> Nad punktem obserwacyjnym widać czasem „kocioł”: dziesiątki albo setki trzmielojadów czy bocianów krążących razem w jednym kominie. Ptaki pomagają sobie nawzajem: kto widzi, że inny ptak szybko się wznosi, leci w to samo miejsce.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/HoneyBuzzardFlock.jpg/960px-HoneyBuzzardFlock.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="708" alt="Kilkadziesiąt ciemnych sylwetek drapieżników rozrzuconych na szarym niebie" podpis="Stado trzmielojadów krąży w kominie termicznym podczas wiosennego przelotu (Pierre-Aiguille, Francja)" autor="P.Adlam" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:HoneyBuzzardFlock.jpg">
 </zdjecie>
@@ -66,7 +66,7 @@ Dlatego migranci szybujący:
 - przed przeprawą **wznoszą się jak najwyżej**, żeby jak najdłużej się ślizgać,
 - przy złym wietrze **czekają** na brzegu, czasem kilka dni.
 
-> 💡 Sahara to dla migrantów szybujących przeszkoda zupełnie innego rodzaju niż morze. Nad pustynią termiki są bardzo silne, więc wiele gatunków przelatuje przez nią szerokim frontem. Problemem są brak wody i pokarmu, upał i burze piaskowe, a nie brak noszeń.
+> Sahara to dla migrantów szybujących przeszkoda zupełnie innego rodzaju niż morze. Nad pustynią termiki są bardzo silne, więc wiele gatunków przelatuje przez nią szerokim frontem. Problemem są brak wody i pokarmu, upał i burze piaskowe, a nie brak noszeń.
 
 ## Filmy
 - [YouTube: jak ptaki korzystają z kominów termicznych](https://www.youtube.com/results?search_query=how+birds+use+thermals+soaring)

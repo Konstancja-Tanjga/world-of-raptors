@@ -13,22 +13,22 @@ Poniższa tabela łączy systematykę z tej lekcji z gatunkami z [atlasu gatunk�
 
 | Rząd / rodzina | Grupa | Gatunki w Europie (przykłady) | PL |
 |---|---|---|---|
-| Szponiaste / jastrzębiowate | **trzmielojady** | trzmielojad | ✅ |
-| | **kanie** | kania ruda, kania czarna | ✅ |
-| | **sępy** | sęp płowy, sęp kasztanowaty, ścierwnik, orłosęp | ❌ (tylko zalatują) |
-| | **orły węże** | gadożer | ✅ (nieliczny) |
-| | **orły „w spodniach”** | orzeł przedni, orzeł iberyjski, orzeł południowy, orzelek włochaty, orliki | ✅ (orliki, orzeł przedni) |
-| | **bieliki** | bielik | ✅ |
-| | **błotniaki** | błotniak stawowy, łąkowy, zbożowy, stepowy | ✅ |
-| | **krogulce i jastrzębie** | krogulec, jastrząb | ✅ |
-| | **myszołowy** | myszołów, kurhannik, myszołów włochaty | ✅ (myszołów) |
-| | **kaniuki** | kaniuk | ❌ |
-| Szponiaste / rybołowy | **rybołów** | rybołów | ✅ (nieliczny) |
-| Sokołowe / sokołowate | **sokoły** | pustułka, pustułeczka, kobuz, sokół wędrowny, sokół skalny, drzemlik, kobczyk, raróg, białozór | ✅ (pustułka, kobuz, sokół wędrowny) |
-| Sowy / płomykówkowate | **płomykówka** | płomykówka | ✅ |
-| Sowy / puszczykowate | **pozostałe sowy** | puchacz, puszczyk, puszczyk uralski, uszatka, uszatka błotna, pójdźka, syczek, włochatka, sóweczka | ✅ |
+| Szponiaste / jastrzębiowate | **trzmielojady** | trzmielojad | tak |
+| | **kanie** | kania ruda, kania czarna | tak |
+| | **sępy** | sęp płowy, sęp kasztanowaty, ścierwnik, orłosęp | nie (tylko zalatują) |
+| | **orły węże** | gadożer | tak (nieliczny) |
+| | **orły „w spodniach”** | orzeł przedni, orzeł iberyjski, orzeł południowy, orzelek włochaty, orliki | tak (orliki, orzeł przedni) |
+| | **bieliki** | bielik | tak |
+| | **błotniaki** | błotniak stawowy, łąkowy, zbożowy, stepowy | tak |
+| | **krogulce i jastrzębie** | krogulec, jastrząb | tak |
+| | **myszołowy** | myszołów, kurhannik, myszołów włochaty | tak (myszołów) |
+| | **kaniuki** | kaniuk | nie |
+| Szponiaste / rybołowy | **rybołów** | rybołów | tak (nieliczny) |
+| Sokołowe / sokołowate | **sokoły** | pustułka, pustułeczka, kobuz, sokół wędrowny, sokół skalny, drzemlik, kobczyk, raróg, białozór | tak (pustułka, kobuz, sokół wędrowny) |
+| Sowy / płomykówkowate | **płomykówka** | płomykówka | tak |
+| Sowy / puszczykowate | **pozostałe sowy** | puchacz, puszczyk, puszczyk uralski, uszatka, uszatka błotna, pójdźka, syczek, włochatka, sóweczka | tak |
 
-> 💡 Zwróć uwagę, że „grupy sylwetek” z modułu B1 nie zawsze pokrywają się z systematyką. Sokoły to osobny rząd, ale sępy, orły, myszołowy, kanie i krogulce to wszystko jedna rodzina. Sylwetka mówi o **stylu życia**, a nie o pokrewieństwie.
+> Zwróć uwagę, że „grupy sylwetek” z modułu B1 nie zawsze pokrywają się z systematyką. Sokoły to osobny rząd, ale sępy, orły, myszołowy, kanie i krogulce to wszystko jedna rodzina. Sylwetka mówi o **stylu życia**, a nie o pokrewieństwie.
 
 ## Polska: kto tu gnieździ się regularnie
 W Polsce regularnie gnieździ się około dwudziestu gatunków dziennych ptaków drapieżnych i około dziesięciu gatunków sów. Pełny przegląd z rozpoznawaniem jest w module [B2 · Polska](../polska/README.md). Tu tylko przypisanie do grup:
@@ -41,7 +41,7 @@ W Polsce regularnie gnieździ się około dwudziestu gatunków dziennych ptaków
 
 Zimą i na przelotach dochodzą m.in. **myszołów włochaty** i **drzemlik** z północy.
 
-> 💡 Sokół wędrowny prawie zniknął z Polski w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Wrócił dzięki programowi reintrodukcji i dziś gnieździ się m.in. na wysokich budynkach w miastach. Ta historia jest w module [A6 · Ochrona](../ochrona/README.md).
+> Sokół wędrowny prawie zniknął z Polski w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Wrócił dzięki programowi reintrodukcji i dziś gnieździ się m.in. na wysokich budynkach w miastach. Ta historia jest w module [A6 · Ochrona](../ochrona/README.md).
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/A_peregrine_falcon_takes_off_from_Winchester_Cathedral.jpg/960px-A_peregrine_falcon_takes_off_from_Winchester_Cathedral.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Sokół z rozpostartymi skrzydłami odlatuje z kamiennego szczytu budynku na tle nieba" podpis="Sokół wędrowny startuje z wieży katedry w Winchester: wysokie budowle zastępują mu skalne urwiska" autor="Andy Morffew" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:A_peregrine_falcon_takes_off_from_Winchester_Cathedral.jpg">
 </zdjecie>

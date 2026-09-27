@@ -36,7 +36,7 @@ Mysz nie słyszy nadlatującej sowy, a sowa słyszy mysz przez własny lot.
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Barn_Owl_feather_macro.jpg/960px-Barn_Owl_feather_macro.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1078" alt="Makrofotografia pióra: wzdłuż jednej krawędzi biegnie rząd drobnych, sterczących ząbków" podpis="Grzebyk na przedniej krawędzi lotki płomykówki: drobne ząbki rozbijają strumień powietrza" autor="Vedant Raju Kasambe" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Barn_Owl_feather_macro.jpg">
 </zdjecie>
 
-> 💡 Rybołów i orły nie muszą latać cicho. Dlatego ciche lotki to jedna z cech odróżniających sowy od ptaków dziennych.
+> Rybołów i orły nie muszą latać cicho. Dlatego ciche lotki to jedna z cech odróżniających sowy od ptaków dziennych.
 
 ### 4. Szpony i palce
 Zewnętrzny palec jest **odwracalny**: sowa może chwycić zdobycz dwoma palcami z przodu i dwoma z tyłu.

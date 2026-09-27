@@ -22,7 +22,7 @@ Kluczowe jest to, że **stopy są narzędziem polowania**. Czapla też ma świet
 <zdjecie src="https://upload.wikimedia.org/wikipedia/commons/a/af/Catching_fish_on_the_Camowen_River%2C_Omagh_-_geograph.org.uk_-_127294.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="707" alt="Głowa czapli siwej z dużą rybą trzymaną w długim, prostym dziobie" podpis="Czapla siwa łowi dziobem, nie stopami: tu z pstrągiem w dziobie" autor="Kenneth Allen" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Catching_fish_on_the_Camowen_River,_Omagh_-_geograph.org.uk_-_127294.jpg">
 </zdjecie>
 
-> 💡 U podstawy dzioba większości drapieżników jest **woskówka**: miękka, bezpióra skórka, w której leżą nozdrza. Ma ją także… papuga. To jeden z drobnych tropów, do których wrócisz w lekcji 2.
+> U podstawy dzioba większości drapieżników jest **woskówka**: miękka, bezpióra skórka, w której leżą nozdrza. Ma ją także… papuga. To jeden z drobnych tropów, do których wrócisz w lekcji 2.
 
 ## Cechy „dodatkowe”, częste, ale nie obowiązkowe
 - **Samica większa od samca.** U wielu drapieżników samica jest wyraźnie większa (tzw. odwrócony dymorfizm płciowy). Różnica jest największa u gatunków polujących na ptaki, np. u krogulca, a najmniejsza u sępów. Więcej w module [A4 · Rozród](../rozrod/README.md).
@@ -52,7 +52,7 @@ Widać tu ważną rzecz: „ptak drapieżny” to po części **pojęcie ekologi
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/174_Red-legged_seriema_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg/960px-174_Red-legged_seriema_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Szarobrązowy ptak na długich czerwonych nogach kroczy po suchej trawie, na czole ma sterczący czub" podpis="Kariama czerwononoga (seriema): długie nogi do biegania zamiast szponów, a mimo to bliska krewna sokołów" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:174_Red-legged_seriema_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg">
 </zdjecie>
 
-> 💡 Srokosza czasem nazywa się „małym drapieżnikiem wśród wróblowych”. Nabite na cierń myszy i chrząszcze to jego „spiżarnia”. Jeśli widziałaś kiedyś chrząszcza nabitego na kolec głogu, był to prawdopodobnie ślad dzierzby.
+> Srokosza czasem nazywa się „małym drapieżnikiem wśród wróblowych”. Nabite na cierń myszy i chrząszcze to jego „spiżarnia”. Jeśli widziałaś kiedyś chrząszcza nabitego na kolec głogu, był to prawdopodobnie ślad dzierzby.
 
 ## Dzienne i nocne
 Zwykle dzieli się ptaki drapieżne na:

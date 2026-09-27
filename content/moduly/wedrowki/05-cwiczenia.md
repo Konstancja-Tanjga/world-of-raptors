@@ -69,4 +69,4 @@ Wybierz jeden wariant.
 3. Opisz: które 5 gatunków jest najliczniejszych, kiedy wypada szczyt ich przelotu i czy liczby zmieniają się z roku na rok.
 4. Zastanów się, co może powodować różnice: pogoda, liczba obserwatorów, zmiany w populacjach? Pamiętaj, że jeden rok to jeszcze nie trend.
 
-> 💡 Jeśli planujesz wyjazd do Tarify, połącz ten projekt z projektem z [modułu o cieśninie](../gibraltar/README.md). Wiedza z tego modułu podpowie Ci, w które dni i o której godzinie stanąć na punkcie obserwacyjnym.
+> Jeśli planujesz wyjazd do Tarify, połącz ten projekt z projektem z [modułu o cieśninie](../gibraltar/README.md). Wiedza z tego modułu podpowie Ci, w które dni i o której godzinie stanąć na punkcie obserwacyjnym.

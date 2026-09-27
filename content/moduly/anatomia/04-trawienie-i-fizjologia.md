@@ -24,7 +24,7 @@ Wypluwki robią i sowy, i dzienne drapieżniki, ale wyglądają inaczej:
 - W żołądku dziennych drapieżników jest **bardziej kwaśno**, więc kości są w dużej części strawione. Ich wypluwki to głównie sierść i pióra, z niewielką ilością kości.
 - Sowy trawią kości słabiej, więc w ich wypluwkach są **całe czaszki i kości**. Dlatego do badania diety częściej używa się wypluwek sów (zob. [moduł o sowach](../sowy/05-cwiczenia.md)).
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8c/AB017_Pellet_of_Tawny_Eagle.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Podłużna, jasnożółta grudka z łuskami i kolcami leży na piasku" podpis="Świeża wypluwka orła sawannowego (Aquila rapax, Indie): widać łuski i kolce zjedzonej jaszczurki" autor="Uploaded by AshLin with permission of Aashay Baindur." licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:AB017_Pellet_of_Tawny_Eagle.JPG">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8c/AB017_Pellet_of_Tawny_Eagle.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Podłużna, jasnożółta grudka z łuskami i kolcami leży na piasku" podpis="Świeża wypluwka orła sawannowego (Aquila rapax, Indie): widać łuski i kolce zjedzonej jaszczurki" autor="Aashay Baindur" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:AB017_Pellet_of_Tawny_Eagle.JPG">
 </zdjecie>
 
 ## Sępy: specjaliści od padliny
@@ -39,7 +39,7 @@ Badania mikroorganizmów w jelitach sępów amerykańskich (sępnika różowogł
 ### Orłosęp, który je kości
 **Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) żywi się przede wszystkim **kośćmi i szpikiem**. Mniejsze kości połyka w całości, większe zrzuca z wysokości na skały, żeby je rozbić. Bardzo kwaśny żołądek pozwala mu strawić kość, która u większości zwierząt przeszłaby przez przewód pokarmowy niemal nietknięta.
 
-> 💡 Dziko żyjące orłosępy mają rdzawopomarańczową pierś, ale to nie jest kolor piór. Ptaki kąpią się w błocie bogatym w tlenki żelaza i same „farbują” pióra. Po co, nie wiadomo na pewno: możliwe, że to sygnał dla innych orłosępów.
+> Dziko żyjące orłosępy mają rdzawopomarańczową pierś, ale to nie jest kolor piór. Ptaki kąpią się w błocie bogatym w tlenki żelaza i same „farbują” pióra. Po co, nie wiadomo na pewno: możliwe, że to sygnał dla innych orłosępów.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg/960px-012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Orłosęp w locie widziany z boku, z pomarańczowo-rdzawym brzuchem i piersią, szarymi skrzydłami i opierzoną głową z czarną maską" podpis="Dziki orłosęp w Alpach szwajcarskich: rdzawopomarańczowy spód ciała to efekt kąpieli w błocie z tlenkami żelaza" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_(Switzerland)_Photo_by_Giles_Laurent.jpg">
 </zdjecie>
@@ -72,7 +72,7 @@ U większości ptaków drapieżnych **samica jest większa od samca**. U ssaków
 
 Ogólna reguła: im **zwinniejsza i szybsza zdobycz** (np. ptaki łapane w locie), tym różnica większa. U padlinożerców jest najmniejsza.
 
-> 💡 W sokolnictwie samca sokoła nazywa się po angielsku *tercel*, od łacińskiego słowa „trzeci”. Tradycyjnie tłumaczy się to tym, że samiec jest mniej więcej o jedną trzecią mniejszy od samicy.
+> W sokolnictwie samca sokoła nazywa się po angielsku *tercel*, od łacińskiego słowa „trzeci”. Tradycyjnie tłumaczy się to tym, że samiec jest mniej więcej o jedną trzecią mniejszy od samicy.
 
 Dlaczego tak jest? Hipotez jest kilka i dotyczą podziału ról w rodzinie oraz polowania. Omawia je [A4 · Rozród i życie rodzinne](../rozrod/README.md).
 

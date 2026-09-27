@@ -73,7 +73,7 @@ Przez co najmniej **3 wyjścia w teren** zapisuj każde zachowanie łowieckie, k
 4. Sprawdź, czy pustułki częściej zawisały w dni wietrzne, a częściej siedziały w dni bezwietrzne lub zimne.
 5. Gatunki, które widziałaś, odhacz w [checkliście](/checklista), a obserwacje możesz też wpisać do eBird albo Observation.org (więcej o nauce obywatelskiej w module [A7 · Ludzie i drapieżniki](../ludzie-i-drapiezniki/README.md)).
 
-> 💡 Nie podchodź blisko do polującego ptaka i nie płosz go. Każdy przerwany atak to dla niego strata energii, a zimą może to mieć znaczenie dla przeżycia.
+> Nie podchodź blisko do polującego ptaka i nie płosz go. Każdy przerwany atak to dla niego strata energii, a zimą może to mieć znaczenie dla przeżycia.
 
 ## 5. Zadanie z kamerą na gnieździe (w sezonie lęgowym)
 Znajdź transmisję z kamery na gnieździe ptaka drapieżnego (np. bielika, sokoła wędrownego, rybołowa albo pustułki). Przez kilka sesji po 30 minut notuj każde karmienie: godzinę, rodzaj ofiary (ssak, ptak, ryba, owad, inne) i kto przyniósł pokarm (samiec czy samica). Porównaj dietę gatunku z tym, co przeczytałaś w lekcjach 1–3.

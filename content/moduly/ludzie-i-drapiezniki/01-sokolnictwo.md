@@ -15,7 +15,7 @@ W niektórych krajach Azji Środkowej, zwłaszcza u Kazachów i Kirgizów, do dz
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region%2C_Mongolia.jpg/960px-Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region%2C_Mongolia.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="738" alt="Starszy mężczyzna w tradycyjnej czapce, obok niego orzeł przedni siedzący na jego ręce w grubej rękawicy" podpis="Kazachski myśliwy z orłem przednim, region Bajan-Ölgij w Mongolii" autor="Ceyhun Kavakci" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region,_Mongolia.jpg">
 </zdjecie>
 
-> 💡 Podział na dwie grupy odpowiada biologii, którą znasz z [modułu o polowaniu](../polowanie-i-ekologia/README.md): sokoły to specjaliści od ataku z nurkowania, a jastrzębie od krótkiego, zwrotnego pościgu między drzewami.
+> Podział na dwie grupy odpowiada biologii, którą znasz z [modułu o polowaniu](../polowanie-i-ekologia/README.md): sokoły to specjaliści od ataku z nurkowania, a jastrzębie od krótkiego, zwrotnego pościgu między drzewami.
 
 ## Skąd się wzięło
 Nikt nie wie dokładnie, gdzie i kiedy ktoś pierwszy raz zapolował z ptakiem. Najczęściej wskazuje się **stepy Azji Środkowej i Bliski Wschód**, a początki szacuje się na co najmniej kilka tysięcy lat wstecz. Najstarsze przypuszczalne przedstawienia są dyskusyjne, dlatego ostrożnie: sokolnictwo jest **bardzo stare**, ale konkretnych dat „pierwszego sokolnika” nie znamy.
@@ -25,13 +25,13 @@ Pewniejsze jest to, co działo się później:
 - **Chiny, Korea, Japonia:** długa, niezależnie rozwinięta tradycja łowów z jastrzębiami i sokołami.
 - **Europa:** sokolnictwo upowszechniło się we wczesnym średniowieczu i przez stulecia było rozrywką oraz symbolem statusu możnych.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Abdullah_Khan_Uzbeg_out_hawking.jpg/960px-Abdullah_Khan_Uzbeg_out_hawking.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1371" alt="Miniatura: jeździec na koniu, przed nim sokolnik w białym stroju z ptakiem na ręce, obok pies" podpis="Abdullah Chan II, władca Buchary (XVI w.), na łowach: sokolnik podaje mu ptaka w kapturze" autor="Unknown authorUnknown author" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Abdullah_Khan_Uzbeg_out_hawking.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Abdullah_Khan_Uzbeg_out_hawking.jpg/960px-Abdullah_Khan_Uzbeg_out_hawking.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1371" alt="Miniatura: jeździec na koniu, przed nim sokolnik w białym stroju z ptakiem na ręce, obok pies" podpis="Abdullah Chan II, władca Buchary (XVI w.), na łowach: sokolnik podaje mu ptaka w kapturze" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Abdullah_Khan_Uzbeg_out_hawking.jpg">
 </zdjecie>
 
 ## Fryderyk II i „De arte venandi cum avibus”
 **Fryderyk II Hohenstauf** (1194–1250), cesarz rzymsko-niemiecki i król Sycylii, był zapalonym sokolnikiem. Około połowy XIII w. napisał po łacinie traktat ***De arte venandi cum avibus*** („O sztuce polowania z ptakami”).
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png/960px-De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="599" alt="Średniowieczna miniatura: król na tronie, przed nim klęczą dwaj sokolnicy z ptakami na rękach" podpis="Fryderyk II z sokolnikami: francuski przekład jego traktatu, rękopis z XIII w." autor="AnonymousUnknown author" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png/960px-De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="599" alt="Średniowieczna miniatura: król na tronie, przed nim klęczą dwaj sokolnicy z ptakami na rękach" podpis="Fryderyk II z sokolnikami: francuski przekład jego traktatu, rękopis z XIII w." autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png">
 </zdjecie>
 
 Co w nim niezwykłego:

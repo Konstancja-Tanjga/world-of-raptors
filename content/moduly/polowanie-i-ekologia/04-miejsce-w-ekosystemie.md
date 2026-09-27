@@ -13,7 +13,7 @@ Co z tego wynika:
 ## 2. Cykle gryzoni i ich drapieżniki
 W wielu miejscach Europy liczebność norników co kilka lat gwałtownie rośnie, a potem się załamuje. Najbardziej regularne są takie **cykle** na północy (w Skandynawii i Finlandii mniej więcej co 3–5 lat). W Polsce **nornik zwyczajny** też ma lata obfitości („gradacje”), ale zwykle mniej regularne.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Feldmaus_Microtus_arvalis.jpg/960px-Feldmaus_Microtus_arvalis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="793" alt="Mały brązowoszary gryzoń z krótkim ogonem i małymi uszami siedzi w trawie" podpis="Nornik zwyczajny, główna ofiara pustułki, myszołowa i wielu sów; jego liczebność co kilka lat gwałtownie rośnie" autor="Dieter TD, first upload in de wikipedia on 13:31, 28. Apr 2005 by Dieter TD" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Feldmaus_Microtus_arvalis.jpg/960px-Feldmaus_Microtus_arvalis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="793" alt="Mały brązowoszary gryzoń z krótkim ogonem i małymi uszami siedzi w trawie" podpis="Nornik zwyczajny, główna ofiara pustułki, myszołowa i wielu sów; jego liczebność co kilka lat gwałtownie rośnie" autor="Dieter TD" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg">
 </zdjecie>
 
 Drapieżniki reagują na to na dwa sposoby:
@@ -28,7 +28,7 @@ Drapieżniki reagują na to na dwa sposoby:
 | **Płomykówka, uszatka** | liczba lęgów i młodych mocno zależy od norników |
 | **Myszołów** | generalista, reaguje słabiej, bo przestawia się na inny pokarm |
 
-> 💡 Czy to drapieżniki powodują cykle gryzoni? To wciąż **przedmiot dyskusji**. Wiele badań z Finlandii (m.in. zespół Erkkiego Korpimäkiego) wskazuje, że kluczową rolę mogą grać drobne łasicowate, zwłaszcza łasica, które polują na norniki nawet w norach. Ptaki drapieżne i sowy raczej **wygładzają** szczyty i przyspieszają spadki, a do tego dochodzą pogoda, pokarm roślinny i choroby.
+> Czy to drapieżniki powodują cykle gryzoni? To wciąż **przedmiot dyskusji**. Wiele badań z Finlandii (m.in. zespół Erkkiego Korpimäkiego) wskazuje, że kluczową rolę mogą grać drobne łasicowate, zwłaszcza łasica, które polują na norniki nawet w norach. Ptaki drapieżne i sowy raczej **wygładzają** szczyty i przyspieszają spadki, a do tego dochodzą pogoda, pokarm roślinny i choroby.
 
 ## 3. Drapieżniki jako „kontrola gryzoni”
 Rolnicy w wielu krajach wieszają budki dla płomykówek i pustułek oraz stawiają żerdzie dla myszołowów, żeby ograniczyć szkody wyrządzane przez gryzonie. Najbardziej znany przykład to program budek dla płomykówek w Izraelu, prowadzony od lat 80. XX wieku, także jako alternatywa dla trutek.
@@ -61,7 +61,7 @@ Drapieżniki konkurują o pokarm, miejsca gniazdowe i terytoria. Czasem konkuren
 
 Skutki są szersze niż pojedyncze ofiary. Mniejsze gatunki **unikają gniazdowania** w pobliżu puchacza czy jastrzębia i wybierają gorsze, ale bezpieczniejsze miejsca. Ekolodzy nazywają to „krajobrazem strachu”.
 
-> 💡 W niektórych regionach, gdzie wraca puchacz, lokalnie spada liczebność innych sów i niektórych drapieżników dziennych. To naturalny proces, choć bywa trudny do zaakceptowania, gdy dotyczy gatunków, które też chronimy.
+> W niektórych regionach, gdzie wraca puchacz, lokalnie spada liczebność innych sów i niektórych drapieżników dziennych. To naturalny proces, choć bywa trudny do zaakceptowania, gdy dotyczy gatunków, które też chronimy.
 
 ## 6. Terytoria i siedlisko
 - Większość ptaków drapieżnych broni **terytorium** wokół gniazda. Pary tego samego gatunku gniazdują w mniej więcej regularnych odstępach, co opisał m.in. Ian Newton w badaniach krogulców.

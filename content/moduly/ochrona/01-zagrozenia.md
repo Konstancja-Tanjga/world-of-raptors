@@ -27,7 +27,7 @@ Przez większą część XIX i XX wieku ptaki drapieżne w Europie uważano za *
 
 Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybołów z Wysp Brytyjskich i dużej części Europy Zachodniej, a bielik z wielu krajów, gdzie wcześniej był pospolity.
 
-> 💡 W Polsce jastrząb jeszcze w drugiej połowie XX wieku był gatunkiem łownym. Dziś, jak wszystkie ptaki drapieżne i sowy, jest objęty ochroną ścisłą.
+> W Polsce jastrząb jeszcze w drugiej połowie XX wieku był gatunkiem łownym. Dziś, jak wszystkie ptaki drapieżne i sowy, jest objęty ochroną ścisłą.
 
 ## Dziś: stare i nowe zagrożenia
 
@@ -44,7 +44,7 @@ Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybo�
 
 Rozwiązanie jest znane i stosunkowo tanie: przebudowa niebezpiecznych słupów, osłony izolacyjne, spirale i znaczniki na przewodach.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head%2C_Md.%2C_is_retrofitted_with_flight_diverters_on_utility_lines%2C_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1274" alt="Drewniany słup z izolatorami w osłonach, na przewodach wiszą małe kolorowe tabliczki odblaskowe" podpis="Linia przebudowana dla ptaków (Maryland, USA): osłony na izolatorach i kolorowe znaczniki na przewodach, dzięki którym ptaki widzą linię" autor="U.S. Navy photo by Mass Communication Specialist 1st Class R. Jason Brunson" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head,_Md.,_is_retrofitted_with_flight_diverters_on_utility_lines,_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head%2C_Md.%2C_is_retrofitted_with_flight_diverters_on_utility_lines%2C_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1274" alt="Drewniany słup z izolatorami w osłonach, na przewodach wiszą małe kolorowe tabliczki odblaskowe" podpis="Linia przebudowana dla ptaków (Maryland, USA): osłony na izolatorach i kolorowe znaczniki na przewodach, dzięki którym ptaki widzą linię" autor="R. Jason Brunson (U.S. Navy)" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head,_Md.,_is_retrofitted_with_flight_diverters_on_utility_lines,_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg">
 </zdjecie>
 
 ### 3. Farmy wiatrowe

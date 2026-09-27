@@ -24,3 +24,10 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 
 - **`width` w `Column`:** typ opisuje go jako „Any CSS grid track value — `1fr`, `160px`, `minmax(120px, 1fr)`”, ale `Table` renderuje prawdziwy `<table>` i przekazuje tę wartość jako `style.width` na `<th>`. Wartości `fr` i `minmax()` są tam niepoprawne i przeglądarka je pomija. W porównaniu cech (`src/components/CuesTable.tsx`) zrezygnowałam z `width`. Kontrakt i implementacja się nie zgadzają: to błąd do zgłoszenia, a nie do obchodzenia.
 - **Nagłówki wierszy:** `Table` renderuje każdą komórkę treści jako `<td>` i nie da się oznaczyć pierwszej kolumny jako `<th scope="row">`. W tabeli porównawczej czytnik ekranu czyta wtedy wartość z nazwą gatunku (nagłówkiem kolumny), ale bez nazwy cechy (nagłówka wiersza), co osłabia relację wymaganą przez WCAG 1.3.1. Nie da się tego obejść bez furtki `className`, więc zostawiam to jako lukę.
+
+## Brak rozmiaru tekstu dla nagłówka „hero”
+
+- **Po co sięgnęłam:** nazwa gatunku na dziś otwiera stronę startową i powinna być najmocniejszym tekstem na stronie, mocniejszym niż nagłówki sekcji.
+- **Co jest w skali:** największy rozmiar to `--bh-text-size-display` (20 px), tylko 4 px więcej niż `heading` (16 px). Na stronie ze zdjęciem 800 px szerokości nazwa gatunku przegrywa ze zdjęciem i z jego podpisem.
+- **Czego nie zrobiłam:** nie użyłam `calc(var(--bh-text-size-display) * 2)` ani wartości wpisanej na sztywno. Reguła 2 wyklucza rozmiary spoza skali, a mnożnik byłby rozmiarem „na oko”.
+- **Pytanie do design systemu:** czy skala powinna mieć stopień dla pojedynczego nagłówka strony (np. `text-size-hero`), skoro jest już `padding-hero`?

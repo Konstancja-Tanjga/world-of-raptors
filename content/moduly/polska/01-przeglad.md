@@ -7,7 +7,7 @@
 | **Lęgowe, nieliczne lub rzadkie** | orlik krzykliwy, kania czarna, błotniak łąkowy, sokół wędrowny, rybołów, orzeł przedni, orlik grubodzioby, gadożer, błotniak zbożowy (lęgowy bardzo rzadko) |
 | **Zimujące i przelotne** | myszołów włochaty, drzemlik, błotniak zbożowy; na przelotach dodatkowo m.in. błotniak stepowy i orzeł przedni z północy |
 
-> 💡 Polska to jeden z europejskich „bastionów” **bielika** i **orlika krzykliwego**. Dla obu gatunków nasz kraj ma bardzo duże znaczenie w skali kontynentu.
+> Polska to jeden z europejskich „bastionów” **bielika** i **orlika krzykliwego**. Dla obu gatunków nasz kraj ma bardzo duże znaczenie w skali kontynentu.
 
 ## Typowe sytuacje i „pierwsze podejrzenie”
 | Sytuacja | Najpewniej | Sprawdź też |

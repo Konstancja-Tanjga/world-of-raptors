@@ -16,11 +16,11 @@ Problem: **nad morzem termik prawie nie ma.** Długi przelot nad wodą oznacza w
 
 Efekt: według Fundación Migres co roku przelatuje tu **ponad 400 000 ptaków szybujących** — ok. 300 000 ptaków drapieżnych i ok. 150 000 bocianów. Regularnie można tu zobaczyć **28 gatunków** drapieżników. Najliczniejsze są kania czarna i trzmielojad, dalej orzełek włochaty, gadożer, sęp płowy.
 
-> 💡 **La Milanada:** tak miejscowi nazywają zgromadzenia dziesiątek tysięcy kani czarnych czekających na dobre warunki do przelotu.
+> **La Milanada:** tak miejscowi nazywają zgromadzenia dziesiątek tysięcy kani czarnych czekających na dobre warunki do przelotu.
 
 Nad samą wodą ptaki nie mają termik, ale potrafią wykorzystywać wiatr znad morza — „halsują” jak żaglówka.
 
-> 💡 **Ciekawostka:** Ptaki wędrujące z Europy Środkowej i Wschodniej (także wiele z Polski) korzystają z innego „wąskiego gardła” — Bosforu i Bliskiego Wschodu. Gibraltar to głównie trasa ptaków z Europy Zachodniej, Francji i Półwyspu Iberyjskiego.
+> **Ciekawostka:** Ptaki wędrujące z Europy Środkowej i Wschodniej (także wiele z Polski) korzystają z innego „wąskiego gardła” — Bosforu i Bliskiego Wschodu. Gibraltar to głównie trasa ptaków z Europy Zachodniej, Francji i Półwyspu Iberyjskiego.
 
 ## Wiatr decyduje, gdzie stanąć
 W cieśninie dominują dwa wiatry:
@@ -43,7 +43,7 @@ Przy bardzo silnym wietrze ptaki często **czekają** — krążą nad wzgórzam
 | połowa września – pocz. października | szczyt **gadożera** i **orzełka włochatego**, bocian czarny, ścierwnik, rybołów |
 | październik | **sęp płowy**, kania ruda, krogulec |
 
-> 💡 Przelot w lipcu to nie efekt zmian klimatu — bociany i kanie czarne po prostu wcześnie kończą lęgi. W odróżnieniu od innych „wąskich gardeł” cieśnina działa praktycznie **przez cały rok**.
+> Przelot w lipcu to nie efekt zmian klimatu — bociany i kanie czarne po prostu wcześnie kończą lęgi. W odróżnieniu od innych „wąskich gardeł” cieśnina działa praktycznie **przez cały rok**.
 
 ### Wiosna (luty–maj)
 | Okres | Gatunki |
@@ -53,7 +53,7 @@ Przy bardzo silnym wietrze ptaki często **czekają** — krążą nad wzgórzam
 | luty – maj | orły, orzełki, błotniaki, ścierwnik |
 | koniec kwietnia – czerwiec | **trzmielojad** (przylatuje najpóźniej) |
 
-> 💡 Dorosłe ptaki zwykle wędrują wcześniej niż młode (jesienią), a młode, niedojrzałe osobniki niektórych gatunków (np. sępów) przelatują wiosną później lub zostają w Afryce na kilka lat.
+> Dorosłe ptaki zwykle wędrują wcześniej niż młode (jesienią), a młode, niedojrzałe osobniki niektórych gatunków (np. sępów) przelatują wiosną później lub zostają w Afryce na kilka lat.
 
 ## Filmy
 - [YouTube: przelot ptaków drapieżnych nad Cieśniną Gibraltarską](https://www.youtube.com/results?search_query=raptor+migration+Strait+of+Gibraltar)
