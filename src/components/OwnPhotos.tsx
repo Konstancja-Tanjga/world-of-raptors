@@ -81,7 +81,12 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
       kontener.current?.querySelector<HTMLInputElement>('input[type=file]')?.focus();
     } catch (err) {
       console.error('[wor-zdjecia] could not delete photo', err);
-      notify({ tone: 'critical', title: 'Nie udało się usunąć zdjęcia', description: powodBledu(err), duration: null });
+      notify({
+        tone: 'critical',
+        title: 'Nie udało się usunąć zdjęcia',
+        description: `Zdjęcie nadal jest zapisane. Spróbuj ponownie, a jeśli to nie pomoże, odśwież stronę. Przyczyna: ${powodBledu(err)}.`,
+        duration: null,
+      });
     }
   };
 
@@ -126,13 +131,18 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
       {edycja && (
         <FileDropzone
           label={`Moje zdjęcia: ${nazwa}`}
-          description={`JPG lub PNG do ${MAKS_MB} MB (HEIC tylko w Safari). Zdjęcie zostanie zmniejszone, a dane o lokalizacji usunięte. Zostaje w tej przeglądarce i trafia do kopii zapasowej.`}
+          description={`JPG lub PNG, do ${MAKS_MB} MB. HEIC działa tylko w Safari.`}
           prompt={dodaje ? 'Dodawanie…' : 'Upuść zdjęcie tutaj albo wybierz z urządzenia'}
           accept="image/*,.heic,.heif"
           multiple
           error={bladPliku}
           onFiles={(pliki) => void dodaj(pliki)}
         />
+      )}
+      {edycja && (
+        <p className="muted own-photos__uwaga">
+          Zdjęcia zostają w tej przeglądarce, bez danych o lokalizacji. Trafiają do kopii zapasowej.
+        </p>
       )}
     </div>
   );

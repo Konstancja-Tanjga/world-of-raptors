@@ -5,7 +5,6 @@ import gatunkiJson from '../../content/gatunki.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
-import { resolveContentHref } from './links';
 import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
@@ -42,9 +41,10 @@ const poLacinie = new Map(gatunki.map((g) => [g.lat, g]));
 const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;
 
 /**
- * Prepares lesson Markdown: every `###` species heading gets that species'
- * photos right below it, and every atlas species named in the text is listed
- * (in order of first mention) for the lesson's media section.
+ * Prepares lesson Markdown: each `###` species heading gets that species'
+ * plate at the end of its section (before the next heading or rule), so the
+ * lesson reads heading → description → plate. Every atlas species named in
+ * the text is also listed, in order of first mention, for the media section.
  */
 export function przygotujLekcje(md: string) {
   const wNaglowkach = new Set<string>();
@@ -53,14 +53,27 @@ export function przygotujLekcje(md: string) {
     const g = poLacinie.get(m[1]);
     if (g && !wszystkie.includes(g.id)) wszystkie.push(g.id);
   }
-  const zTagami = md.replace(/^(###\s.*)$/gm, (line) => {
-    const lat = [...line.matchAll(LATIN)][0]?.[1];
-    const g = lat ? poLacinie.get(lat) : undefined;
-    if (!g || wNaglowkach.has(g.id)) return line;
-    wNaglowkach.add(g.id);
-    return `${line}\n\n<species-photos data-id="${g.id}">\n</species-photos>\n`;
-  });
-  return { md: zTagami, wNaglowkach, wszystkie };
+  const tag = (id: string) => ['', `<species-photos data-id="${id}">`, '</species-photos>', ''];
+  const wynik: string[] = [];
+  let oczekujacy: string | null = null;
+  for (const line of md.split('\n')) {
+    const koniecSekcji = /^#{1,3}\s/.test(line) || /^---\s*$/.test(line);
+    if (koniecSekcji && oczekujacy) {
+      wynik.push(...tag(oczekujacy));
+      oczekujacy = null;
+    }
+    wynik.push(line);
+    if (/^###\s/.test(line)) {
+      const lat = [...line.matchAll(LATIN)][0]?.[1];
+      const g = lat ? poLacinie.get(lat) : undefined;
+      if (g && !wNaglowkach.has(g.id)) {
+        wNaglowkach.add(g.id);
+        oczekujacy = g.id;
+      }
+    }
+  }
+  if (oczekujacy) wynik.push(...tag(oczekujacy));
+  return { md: wynik.join('\n'), wNaglowkach, wszystkie };
 }
 
 export const gotoweModuly = moduly.filter(
@@ -98,16 +111,14 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   const modul = znajdzModul(c.modul);
   const lekcja = modul?.lekcje.find((l) => l.slug === c.lekcja);
   const numer = modul && lekcja ? modul.lekcje.indexOf(lekcja) + 1 : 0;
-  // Lesson callouts link with repo-relative .md paths; turn them into app routes.
-  const tekst = c.tekst.replace(/\]\(([^)]+)\)/g, (_, href: string) => `](${resolveContentHref(href, `moduly/${c.modul}`)})`);
   return {
     id: c.id,
-    tekst,
+    tekst: c.tekst,
     href: lekcja ? `/moduly/${c.modul}/${lekcja.slug}` : `/moduly/${c.modul}`,
     zrodlo: modul
       ? lekcja
-        ? `${modul.id}, lekcja ${numer}: ${lekcja.tytul}`
-        : `${modul.id}\u00a0${modul.tytul}`
+        ? `${lekcja.tytul} (${modul.id}, lekcja ${numer})`
+        : `${modul.tytul} (${modul.id})`
       : 'kurs',
   };
 }

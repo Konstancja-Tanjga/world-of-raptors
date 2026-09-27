@@ -1,6 +1,6 @@
 # Moduł A7: Ludzie i drapieżniki
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Od tysięcy lat polujemy z sokołami, malujemy orły na sztandarach i boimy się pohukiwania sowy. Dziś możemy też ptakom drapieżnym realnie pomagać, choćby jedną dobrze zapisaną obserwacją.
 

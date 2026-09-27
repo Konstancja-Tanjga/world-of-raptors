@@ -19,7 +19,7 @@ import {
   Textarea,
   useToast,
 } from './ds';
-import { SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
@@ -28,6 +28,12 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
   const { filtry, setFiltry, wynik } = useFiltry(gatunki);
   const [widok, setWidok] = useState<Widok>('wszystkie');
+  const filtryAktywne = filtry.szukaj.trim() !== '' || filtry.regiony.length > 0 || filtry.aktywnosc.length > 0;
+  const wyczyscFiltry = () => {
+    setFiltry(PUSTE_FILTRY);
+    // The button disappears with the empty state; keep keyboard focus on the page.
+    requestAnimationFrame(() => document.querySelector<HTMLInputElement>('input[type=search]')?.focus());
+  };
   const fileInput = useRef<HTMLInputElement>(null);
   const { notify } = useToast();
   const sprawdzZapis = useOstrzezenieZapisu();
@@ -61,12 +67,15 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       a.download = `checklista-${dzisiaj()}.json`;
       a.click();
       URL.revokeObjectURL(url);
+      if (!bezZdjec) {
+        notify({ tone: 'success', title: 'Kopia zapisana', description: `Plik ${a.download} jest w pobranych.` });
+      }
       if (bezZdjec) {
         notify({
           tone: 'warning',
           title: 'Kopia bez zdjęć',
           description:
-            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Import tego pliku nie usunie zdjęć na innym urządzeniu.',
+            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Wczytanie tej kopii nie usunie zdjęć na innym urządzeniu.',
           duration: null,
         });
       }
@@ -74,7 +83,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       console.error('[kopia] export failed', err);
       notify({
         tone: 'critical',
-        title: 'Nie udało się utworzyć pliku kopii',
+        title: 'Nie udało się zapisać kopii',
         description: 'Spróbuj jeszcze raz. Jeśli zdjęć jest bardzo dużo, przeglądarce mogło zabraknąć pamięci.',
         duration: null,
       });
@@ -91,7 +100,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       console.error('[kopia] invalid backup', err);
       notify({
         tone: 'critical',
-        title: 'Nie udało się zaimportować pliku',
+        title: 'Nie udało się wczytać kopii',
         description: `${err instanceof NiepoprawnaKopia ? err.message[0].toUpperCase() + err.message.slice(1) : 'Nie udało się odczytać pliku'}. Nic nie zostało zmienione.`,
         duration: null,
       });
@@ -129,7 +138,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
     );
     notify({
       tone: nieZapisane.length ? 'warning' : 'success',
-      title: nieZapisane.length ? 'Kopia zaimportowana częściowo' : 'Kopia zaimportowana',
+      title: nieZapisane.length ? 'Kopia wczytana częściowo' : 'Kopia wczytana',
       description: [
         `Wczytano: ${wczytano.join(', ')}.`,
         pominiete.length ? `Plik nie zawierał ${pominiete.join(' ani ')}.` : '',
@@ -175,12 +184,36 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       </div>
 
       {grupy.length === 0 ? (
-        <StateBlock
-          state="empty"
-          title={widok === 'zaobserwowane' ? 'Brak obserwacji w tym filtrze' : 'Brak gatunków w tym filtrze'}
-          description="Zmień region, aktywność albo wyszukiwaną nazwę."
-          scope="section"
-        />
+        filtryAktywne ? (
+          <StateBlock
+            state="empty"
+            title="Brak gatunków w tym filtrze"
+            description="Zmień region, aktywność albo wpisaną nazwę."
+            action={
+              <Button size="sm" variant="secondary" onClick={wyczyscFiltry}>
+                Wyczyść filtry
+              </Button>
+            }
+            scope="section"
+          />
+        ) : (
+          // Only the view ("Zaobserwowane" / "Brakujące") empties the list: say why, offer the way back.
+          <StateBlock
+            state="empty"
+            title={widok === 'zaobserwowane' ? 'Nie masz jeszcze obserwacji' : 'Masz już wszystkie gatunki'}
+            description={
+              widok === 'zaobserwowane'
+                ? 'Zaznacz gatunek na liście, kiedy go zobaczysz.'
+                : 'Każdy gatunek z atlasu jest już na Twojej liście obserwacji.'
+            }
+            action={
+              <Button size="sm" variant="secondary" onClick={() => setWidok('wszystkie')}>
+                Pokaż wszystkie gatunki
+              </Button>
+            }
+            scope="section"
+          />
+        )
       ) : (
         grupy.map(([grupa, lista_]) => (
           <section key={grupa} className="stack" aria-labelledby={`grupa-${grupa}`}>
@@ -243,16 +276,16 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Eksportuj
-          je co jakiś czas do jednego pliku, żeby ich nie stracić, i importuj, żeby przenieść je na
-          inne urządzenie.
+          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Co jakiś
+          czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
+          też je mieć.
         </p>
         <div className="row">
           <Button variant="secondary" onClick={() => void eksportuj()}>
-            Eksportuj do pliku
+            Zapisz kopię w pliku
           </Button>
           <Button variant="secondary" onClick={() => fileInput.current?.click()}>
-            Importuj z pliku
+            Wczytaj kopię z pliku
           </Button>
           <input
             ref={fileInput}

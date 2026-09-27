@@ -1,6 +1,6 @@
 # Moduł A1: Kim są ptaki drapieżne?
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Sokół jest bliżej spokrewniony z papugą niż z jastrzębiem. Ten moduł wyjaśnia, jak to możliwe i co w ogóle znaczy słowo „drapieżnik”.
 

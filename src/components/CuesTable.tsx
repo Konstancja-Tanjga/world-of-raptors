@@ -29,7 +29,6 @@ export function CuesTable({
   return (
     <Table
       caption={podpis}
-      density="compact"
       responsive="scroll"
       rowKey={([k]) => k}
       rows={wiersze}

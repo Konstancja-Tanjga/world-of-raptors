@@ -352,12 +352,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-hairline);
-  font-size: var(--bh-text-size-caption);
+  font-size: var(--bh-text-size-dense);
   color: var(--bh-text-muted);
   line-height: var(--bh-text-leading-tight);
 }
 .photo__caption a {
-  color: var(--bh-text-link);
+  /* Credits are required, not the point: underlined but in the muted text colour. */
+  color: inherit;
 }
 .photo__title {
   font-weight: var(--bh-text-weight-emphasis);
@@ -568,4 +569,8 @@ body {
 .ciekawostka__akcje {
   display: flex;
   justify-content: flex-end;
+}
+
+.own-photos__uwaga {
+  font-size: var(--bh-text-size-dense);
 }

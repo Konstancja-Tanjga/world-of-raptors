@@ -1,6 +1,6 @@
 # Moduł A4: Rozród i życie rodzinne
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Para bielików może być razem przez wiele lat, a młody orlik krzykliwy zwykle zabija w gnieździe młodsze rodzeństwo. Życie rodzinne drapieżników bywa bardzo czułe i bardzo brutalne.
 

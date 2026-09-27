@@ -60,7 +60,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
             Następna: {nastepna.tytul}
           </ButtonLink>
         ) : (
-          <ButtonLink href="/checklista">Odhacz obserwacje w checkliście</ButtonLink>
+          <ButtonLink href="/checklista">Otwórz checklistę</ButtonLink>
         )}
       </nav>
     </div>

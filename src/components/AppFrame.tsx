@@ -104,7 +104,7 @@ export function AppFrame({
               <NavGroup label="Ścieżka A: Biologia">{renderItems(biologia)}</NavGroup>
             )}
             {teren.length > 0 && (
-              <NavGroup label="Ścieżka B: W terenie">{renderItems(teren)}</NavGroup>
+              <NavGroup label="Ścieżka B: Rozpoznawanie w terenie">{renderItems(teren)}</NavGroup>
             )}
             <NavGroup label="Narzędzia">{renderItems(narzedzia)}</NavGroup>
           </nav>

@@ -1,6 +1,6 @@
 # Moduł A5: Wędrówki
 
-Ścieżka A: Biologia ptaków drapieżnych. Zobacz [plan kursu](../../PLAN-KURSU.md).
+Ścieżka A: Biologia. Zobacz [plan kursu](../../PLAN-KURSU.md).
 
 > Orlik krzykliwy z Biebrzy leci na zimę do południowej Afryki, a prawie całą drogę pokonuje, nie machając skrzydłami. W tym module dowiesz się, jak to możliwe.
 

@@ -13,7 +13,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 
 ---
 
-## Ścieżka A: Biologia ptaków drapieżnych
+## Ścieżka A: Biologia
 
 | # | Moduł | Najważniejsze wątki | Status |
 |---|---|---|---|

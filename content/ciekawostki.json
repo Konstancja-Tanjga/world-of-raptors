@@ -1,5 +1,5 @@
 {
-  "uwaga": "Ciekawostki pokazywane rotacyjnie w aplikacji. Źródło: ramki 💡 z lekcji i zdania otwierające moduły. tekst: Markdown inline (**pogrubienie**, *kursywa*, [link](..) → sam tekst).",
+  "uwaga": "Ciekawostki pokazywane rotacyjnie w aplikacji. Źródło: ramki 💡 z lekcji i zdania otwierające moduły. tekst: tylko **pogrubienie** i *kursywa*, bez linków (karta ma jedną akcję: „Czytaj dalej” do lekcji). Tekst musi być zrozumiały bez kontekstu lekcji.",
   "ciekawostki": [
     {
       "id": "anatomia-01-wzrok-0",
@@ -10,7 +10,7 @@
     },
     {
       "id": "anatomia-02-szpony-stopy-dziob-1",
-      "tekst": "To jeden z powodów, dla których sokoły nie są „małymi jastrzębiami”. Genetycznie są bliżej papug niż jastrzębi, a podobny wygląd to efekt podobnego trybu życia. Więcej w [A1 Kim są ptaki drapieżne?](../kim-sa-drapiezniki/README.md).",
+      "tekst": "To jeden z powodów, dla których sokoły nie są „małymi jastrzębiami”. Genetycznie są bliżej papug niż jastrzębi, a podobny wygląd to efekt podobnego trybu życia.",
       "modul": "anatomia",
       "lekcja": "02-szpony-stopy-dziob",
       "gatunki": [
@@ -19,14 +19,14 @@
     },
     {
       "id": "anatomia-03-skrzydla-i-lot-3",
-      "tekst": "Duże sępy mają ogromne skrzydła, ale są też bardzo ciężkie. Dlatego zwykle startują dopiero wtedy, gdy słońce nagrzeje ziemię i pojawią się silne kominy termiczne. Rano częściej widać je siedzące na skałach. O kominach i wędrówce więcej w [A5 Wędrówki](../wedrowki/README.md).",
+      "tekst": "Duże sępy mają ogromne skrzydła, ale są też bardzo ciężkie. Dlatego zwykle startują dopiero wtedy, gdy słońce nagrzeje ziemię i pojawią się silne kominy termiczne. Rano częściej widać je siedzące na skałach.",
       "modul": "anatomia",
       "lekcja": "03-skrzydla-i-lot",
       "gatunki": []
     },
     {
       "id": "anatomia-03-skrzydla-i-lot-4",
-      "tekst": "Sowy mają specjalną budowę piór wyciszającą lot (grzebyk, postrzępiona krawędź, aksamitna powierzchnia). Dzienne drapieżniki jej nie mają, bo ich zdobycz zwykle i tak widzi atak. Zobacz [moduł o sowach](../sowy/01-kim-sa-sowy.md).",
+      "tekst": "Sowy mają specjalną budowę piór wyciszającą lot (grzebyk, postrzępiona krawędź, aksamitna powierzchnia). Dzienne drapieżniki jej nie mają, bo ich zdobycz zwykle i tak widzi atak.",
       "modul": "anatomia",
       "lekcja": "03-skrzydla-i-lot",
       "gatunki": []
@@ -128,7 +128,7 @@
     },
     {
       "id": "kim-sa-drapiezniki-04-europa-i-polska-18",
-      "tekst": "Sokół wędrowny prawie zniknął z Polski w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Wrócił dzięki programowi reintrodukcji i dziś gnieździ się m.in. na wysokich budynkach w miastach. Ta historia jest w module [A6 Ochrona](../ochrona/README.md).",
+      "tekst": "Sokół wędrowny prawie zniknął z Polski w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Wrócił dzięki programowi reintrodukcji i dziś gnieździ się m.in. na wysokich budynkach w miastach.",
       "modul": "kim-sa-drapiezniki",
       "lekcja": "04-europa-i-polska",
       "gatunki": [
@@ -137,7 +137,7 @@
     },
     {
       "id": "ludzie-i-drapiezniki-02-symbole-i-mity-20",
-      "tekst": "Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami. Więcej o systematyce w [module A1](../kim-sa-drapiezniki/README.md).",
+      "tekst": "Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami.",
       "modul": "ludzie-i-drapiezniki",
       "lekcja": "02-symbole-i-mity",
       "gatunki": [
@@ -194,7 +194,7 @@
     },
     {
       "id": "ochrona-03-historie-sukcesu-29",
-      "tekst": "Bielik to dobry przykład „cichego” sukcesu: dziś widok bielika nad Wisłą czy stawami w Dolinie Baryczy jest czymś zwykłym, a jeszcze kilka dekad temu był wielkim przeżyciem. Więcej o miejscach w [module o Polsce](../polska/README.md).",
+      "tekst": "Bielik to dobry przykład „cichego” sukcesu: dziś widok bielika nad Wisłą czy stawami w Dolinie Baryczy jest czymś zwykłym, a jeszcze kilka dekad temu był wielkim przeżyciem.",
       "modul": "ochrona",
       "lekcja": "03-historie-sukcesu",
       "gatunki": [
@@ -221,7 +221,7 @@
     },
     {
       "id": "polowanie-i-ekologia-01-strategie-lowieckie-32",
-      "tekst": "U krogulca samica bywa prawie dwa razy cięższa od samca. Samiec łapie głównie sikory i wróble, samica także drozdy, a nawet gołębie. Dzięki temu para nie konkuruje o te same ofiary. Więcej o różnicy wielkości płci w module [A4 Rozród](../rozrod/README.md).",
+      "tekst": "U krogulca samica bywa prawie dwa razy cięższa od samca. Samiec łapie głównie sikory i wróble, samica także drozdy, a nawet gołębie. Dzięki temu para nie konkuruje o te same ofiary.",
       "modul": "polowanie-i-ekologia",
       "lekcja": "01-strategie-lowieckie",
       "gatunki": [
@@ -336,7 +336,7 @@
     },
     {
       "id": "rozrod-02-gniazda-47",
-      "tekst": "W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną. Więcej w [A6 Ochrona](../ochrona/README.md).",
+      "tekst": "W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną.",
       "modul": "rozrod",
       "lekcja": "02-gniazda",
       "gatunki": [
