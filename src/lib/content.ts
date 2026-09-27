@@ -5,7 +5,6 @@ import gatunkiJson from '../../content/gatunki.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
-import { resolveContentHref } from './links';
 import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
@@ -98,11 +97,9 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   const modul = znajdzModul(c.modul);
   const lekcja = modul?.lekcje.find((l) => l.slug === c.lekcja);
   const numer = modul && lekcja ? modul.lekcje.indexOf(lekcja) + 1 : 0;
-  // Lesson callouts link with repo-relative .md paths; turn them into app routes.
-  const tekst = c.tekst.replace(/\]\(([^)]+)\)/g, (_, href: string) => `](${resolveContentHref(href, `moduly/${c.modul}`)})`);
   return {
     id: c.id,
-    tekst,
+    tekst: c.tekst,
     href: lekcja ? `/moduly/${c.modul}/${lekcja.slug}` : `/moduly/${c.modul}`,
     zrodlo: modul
       ? lekcja

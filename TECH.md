@@ -55,7 +55,7 @@ src/
 2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`.
 3. Nowy gatunek: wpis w `content/gatunki.json`. Sprawdź, czy każde `mylona_z` wskazuje istniejące `id`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
-5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` w Markdown inline, `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
+5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo karta ma jedną akcję: link „Więcej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
 
 ## Uruchamianie
 ```bash

@@ -8,7 +8,7 @@ export function ChecklistSummary({ ids }: { ids: string[] }) {
   const { lista } = useChecklista();
 
   return (
-    <Card>
+    <Card elevation="raised" accent="success">
       <div className="stack">
         <h2 className="section-title">Moja checklista</h2>
         {lista ? (
