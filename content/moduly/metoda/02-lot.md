@@ -5,6 +5,16 @@ Sylwetka mówi, **jak ptak jest zbudowany**. Sposób lotu mówi, **jak tej budow
 ## 1. Ułożenie skrzydeł przy szybowaniu
 Najlepiej widać je, gdy ptak leci **prosto na Ciebie albo od Ciebie**.
 
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/A_Montagu%27s_Harrier_Flying_away_%2851038755691%29.jpg/960px-A_Montagu%27s_Harrier_Flying_away_%2851038755691%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Szaro-biały błotniak z czarnymi końcami skrzydeł leci nisko nad suchą trawą, skrzydła uniesione ku górze" podpis="Samiec błotniaka łąkowego nisko nad trawami: skrzydła uniesione w wyraźne V" autor="Hari K Patibanda" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:A_Montagu%27s_Harrier_Flying_away_(51038755691).jpg">
+</zdjecie>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Osprey%2C_Pandion_haliaetus%2C_2015-5932.jpg/960px-Osprey%2C_Pandion_haliaetus%2C_2015-5932.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Rybołów widziany z przodu na tle nieba, skrzydła wygięte łukiem w kształt litery M" podpis="Rybołów lecący prosto na obserwatora: nadgarstki uniesione, końce skrzydeł opuszczone, czyli „M”" autor="Bengt Nyman" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Osprey,_Pandion_haliaetus,_2015-5932.jpg">
+</zdjecie>
+
+</margines>
+
 | Ułożenie | Jak wygląda | Kto tak lata |
 |---|---|---|
 | **Płasko** | skrzydła w jednej linii | bielik, trzmielojad, kania czarna, sęp kasztanowaty, orliki (z lekko opuszczoną „ręką”) |
@@ -12,12 +22,6 @@ Najlepiej widać je, gdy ptak leci **prosto na Ciebie albo od Ciebie**.
 | **Wyraźne V** | skrzydła wysoko uniesione | błotniaki |
 | **„M”, łuk** | nadgarstki uniesione, końce opuszczone | rybołów |
 | **Opuszczona „ręka”** | ramię poziomo, końce skrzydeł w dół | orliki, trzmielojad, kania ruda |
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/A_Montagu%27s_Harrier_Flying_away_%2851038755691%29.jpg/960px-A_Montagu%27s_Harrier_Flying_away_%2851038755691%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Szaro-biały błotniak z czarnymi końcami skrzydeł leci nisko nad suchą trawą, skrzydła uniesione ku górze" podpis="Samiec błotniaka łąkowego nisko nad trawami: skrzydła uniesione w wyraźne V" autor="Hari K Patibanda" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:A_Montagu%27s_Harrier_Flying_away_(51038755691).jpg">
-</zdjecie>
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Osprey%2C_Pandion_haliaetus%2C_2015-5932.jpg/960px-Osprey%2C_Pandion_haliaetus%2C_2015-5932.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Rybołów widziany z przodu na tle nieba, skrzydła wygięte łukiem w kształt litery M" podpis="Rybołów lecący prosto na obserwatora: nadgarstki uniesione, końce skrzydeł opuszczone, czyli „M”" autor="Bengt Nyman" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Osprey,_Pandion_haliaetus,_2015-5932.jpg">
-</zdjecie>
 
 ## 2. Rytm lotu aktywnego
 - **Seria szybkich uderzeń i krótki ślizg**, jak „trzy, cztery uderzenia i ślizg”: krogulec, jastrząb (uderzenia wolniejsze, mocniejsze).
@@ -27,6 +31,14 @@ Najlepiej widać je, gdy ptak leci **prosto na Ciebie albo od Ciebie**.
 - **Powolne, ciężkie uderzenia:** bielik, sępy (i to tylko kiedy muszą).
 
 ## 3. Zachowania charakterystyczne
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Common_kestrel_hovering.jpg/960px-Common_kestrel_hovering.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Pustułka trzepocząca skrzydłami w miejscu, z rozpostartym ogonem i głową skierowaną w dół" podpis="Pustułka zawisa w miejscu: szybkie uderzenia skrzydeł, rozłożony ogon, głowa nieruchoma" autor="Alexis LOURS" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering.jpg">
+</zdjecie>
+
+</margines>
+
 | Zachowanie | Kto |
 |---|---|
 | **Zawisanie** (trzepotanie w miejscu) | pustułka, myszołów włochaty, gadożer, kaniuk, czasem myszołów |
@@ -38,19 +50,21 @@ Najlepiej widać je, gdy ptak leci **prosto na Ciebie albo od Ciebie**.
 | **Nurkowanie do wody nogami naprzód** | rybołów |
 | **Długie krążenie w kominie termicznym** | myszołowy, orły, sępy, bociany (!) |
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Common_kestrel_hovering.jpg/960px-Common_kestrel_hovering.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Pustułka trzepocząca skrzydłami w miejscu, z rozpostartym ogonem i głową skierowaną w dół" podpis="Pustułka zawisa w miejscu: szybkie uderzenia skrzydeł, rozłożony ogon, głowa nieruchoma" autor="Alexis LOURS" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_kestrel_hovering.jpg">
+## 4. Ptak siedzący
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Buteo_buteo_%285571928172%29.jpg/960px-Buteo_buteo_%285571928172%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1443" alt="Myszołów siedzący na metalowym słupku z drutem kolczastym, na tle błękitnego nieba" podpis="Myszołów na słupku ogrodzenia: krępa sylwetka, zaokrąglona głowa" autor="Björn Strey" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_buteo_(5571928172).jpg">
 </zdjecie>
 
-## 4. Ptak siedzący
+</margines>
+
 Siedzącego drapieżnika też można rozpoznać po sylwetce:
 - **Myszołów:** krępy, zaokrąglona głowa, siedzi na słupach przy drogach.
 - **Pustułka:** smukła, długi ogon, na drutach i słupach.
 - **Krogulec, jastrząb:** ukryte w koronie drzewa, długi ogon zwisa w dół.
 - **Bielik:** ogromny, masywny dziób, na starym drzewie nad wodą.
 - **Sokół wędrowny:** wyprostowany, „w garniturze”, na kominach, wieżach i słupach energetycznych.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Buteo_buteo_%285571928172%29.jpg/960px-Buteo_buteo_%285571928172%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1443" alt="Myszołów siedzący na metalowym słupku z drutem kolczastym, na tle błękitnego nieba" podpis="Myszołów na słupku ogrodzenia: krępa sylwetka, zaokrąglona głowa" autor="Björn Strey" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_buteo_(5571928172).jpg">
-</zdjecie>
 
 ## Filmy
 - [YouTube: pustułka zawisa nad polem](https://www.youtube.com/results?search_query=kestrel+hovering)

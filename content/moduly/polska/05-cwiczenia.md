@@ -31,12 +31,17 @@ Dla każdej pary zapisz **dwie** różnice widoczne z daleka:
 - pustułka / kobuz / drzemlik
 
 ## 3. Zadanie terenowe: „Drapieżniki z samochodu”
-Podczas jazdy (jako pasażerka) albo spaceru wzdłuż drogi przez pola licz wszystkie drapieżniki na słupach i nad polami przez 30 minut.
-- Zapisz gatunek (albo grupę, jeśli nie jesteś pewna) i sytuację: siedzi, krąży, zawisa.
-- Powtórz raz latem i raz zimą. Porównaj: jaki odsetek to myszołowy? Co pojawiło się tylko zimą?
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/20210930_Falco_tinnunculus.jpg/960px-20210930_Falco_tinnunculus.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Linie energetyczne na tle nieba z chmurami, na jednym z przewodów siedzi mała sylwetka pustułki" podpis="Pustułka na linii energetycznej: tak zwykle wygląda drapieżnik widziany z samochodu" autor="Flocci Nivis" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:20210930_Falco_tinnunculus.jpg">
 </zdjecie>
+
+</margines>
+
+Podczas jazdy (jako pasażerka) albo spaceru wzdłuż drogi przez pola licz wszystkie drapieżniki na słupach i nad polami przez 30 minut.
+- Zapisz gatunek (albo grupę, jeśli nie jesteś pewna) i sytuację: siedzi, krąży, zawisa.
+- Powtórz raz latem i raz zimą. Porównaj: jaki odsetek to myszołowy? Co pojawiło się tylko zimą?
 
 ## 4. Projekt: „Mój rok z drapieżnikami”
 1. Wybierz 3 miejsca z lekcji 3, do których możesz dojechać.

@@ -5,6 +5,12 @@ Nawet jeśli nigdy nie widziałaś sokoła, używasz go w mowie codziennej. Pols
 
 ## Idiomy i wyrażenia
 
+<margines>
+
+> „Łaknąć jak kania dżdżu” to przykład, jak idiom utrwala biologiczny mit. Kanie piją wodę jak inne ptaki; skąd dokładnie wzięło się to wierzenie, nie wiadomo na pewno.
+
+</margines>
+
 | Wyrażenie | Znaczenie | Skąd to się wzięło |
 |---|---|---|
 | **sokoli wzrok**, **sokole oko** | ktoś widzi bardzo dobrze i dostrzega szczegóły | sokoły naprawdę mają jeden z najostrzejszych wzroków w świecie zwierząt |
@@ -16,8 +22,6 @@ Nawet jeśli nigdy nie widziałaś sokoła, używasz go w mowie codziennej. Pols
 | **jastrzębie i gołębie** | w polityce: zwolennicy twardej i miękkiej linii | wyrażenie przyszło z angielskiego (*hawks and doves*) |
 | **sowa** (i **skowronek**) | osoba, która najlepiej funkcjonuje wieczorem i w nocy (lub rano) | sowy są aktywne nocą |
 | **mądra sowa**, **sowa mądra głowa** | ktoś mądry, zwłaszcza w języku dzieci | echo antycznego symbolu Ateny (zob. [lekcja 2](02-symbole-i-mity.md)) |
-
-> „Łaknąć jak kania dżdżu” to przykład, jak idiom utrwala biologiczny mit. Kanie piją wodę jak inne ptaki; skąd dokładnie wzięło się to wierzenie, nie wiadomo na pewno.
 
 Uwaga na **sępa**: język przypina mu złą łatkę, a tymczasem sępy są niezwykle pożyteczne. Usuwając padlinę, ograniczają szerzenie się chorób. Zobaczysz je w [module o południu Hiszpanii](../poludnie-hiszpanii/README.md).
 
@@ -49,13 +53,18 @@ Ostrożnie z interpretacją: nazwiska na *-owski*/*-ski* pochodzą często **od 
 - **Góry Sowie:** pasmo w Sudetach; pochodzenie nazwy nie jest pewne.
 
 ## Orzeł i sokół w historii Polski
+
+<margines>
+
+> Pomyśl, ile razy dziennie widzisz orła: na monetach, w dokumentach, na budynkach urzędów. To najczęściej oglądany przez Polaków „ptak drapieżny”, choć z prawdziwym bielikiem większość z nas nigdy się nie spotkała.
+
+</margines>
+
 - **Towarzystwo Gimnastyczne „Sokół”**, założone we Lwowie w 1867 r. na wzór czeskiego Sokoła, było w czasie zaborów ważną organizacją sportową i patriotyczną.
 - **Orlęta Lwowskie:** tak nazwano młodych obrońców Lwowa z lat 1918–1919.
 - **ORP „Orzeł”:** okręt podwodny, który w 1939 r. uciekł z internowania w Tallinie i przedostał się do Wielkiej Brytanii bez map.
 - **Skrzydła husarii:** często mówi się o piórach orlich, ale w praktyce używano piór różnych dużych ptaków. To przykład, jak „orzeł” dopisuje się do legendy.
 - **Orzeł na koszulkach** reprezentacji sportowych i w wielu herbach miast.
-
-> Pomyśl, ile razy dziennie widzisz orła: na monetach, w dokumentach, na budynkach urzędów. To najczęściej oglądany przez Polaków „ptak drapieżny”, choć z prawdziwym bielikiem większość z nas nigdy się nie spotkała.
 
 ## Od uprzedzeń do sympatii
 Przez długi czas ptaki drapieżne w Polsce i w całej Europie uważano za **„szkodniki”** i tępiono, a w wielu krajach za ich zabijanie płacono nagrody. Dziś niemal wszystkie gatunki są objęte ochroną, a bielik czy sokół wędrowny stały się **symbolem sukcesu ochrony przyrody**. Jak do tego doszło, dowiesz się w [module o ochronie](../ochrona/README.md).

@@ -1,16 +1,18 @@
 # Lekcja 2: Jak patrzeć — metoda rozpoznawania w locie
 
+<margines>
+
 > To skrót metody. Pełna wersja z 8 grupami sylwetek, sposobem lotu, wiekiem i pułapkami jest w module [B1 · Metoda rozpoznawania w locie](../metoda/README.md).
+
+</margines>
 
 Nad cieśniną ptaki są zwykle **wysoko, pod światło i w ruchu**. Kolory często nie są widoczne. Dlatego doświadczeni obserwatorzy rozpoznają ptaki „od ogółu do szczegółu”.
 
 ## Metoda 4 kroków
 
 ### 1. Sylwetka (proporcje)
-- **Skrzydła:** długie i wąskie (kanie, błotniaki), szerokie jak „deska” (sępy, orły), krótkie i zaokrąglone (krogulec), ostre i sierpowate (sokoły).
-- **„Palce”:** ile wyraźnie rozcapierzonych lotek na końcu skrzydła? Sępy i orły — dużo, głębokie; sokoły — brak (ostry koniec).
-- **Ogon:** wcięty (kanie), klinowaty (ścierwnik), prosto ścięty (orzełek), długi (trzmielojad, błotniaki), krótki (sępy).
-- **Głowa:** wysunięta i mała (trzmielojad), duża i „sowia” (gadożer), prawie niewidoczna (sępy — krótka szyja wciągnięta).
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Circaetus_gallicus_01.jpg/960px-Circaetus_gallicus_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="638" alt="Zbliżenie głowy gadożera z dużymi żółtymi oczami i jasnym, prążkowanym upierzeniem" podpis="Głowa gadożera: duża, okrągła, „sowia”, z jaskrawożółtymi oczami" autor="MarioM" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Circaetus_gallicus_01.jpg">
 </zdjecie>
@@ -18,7 +20,22 @@ Nad cieśniną ptaki są zwykle **wysoko, pod światło i w ruchu**. Kolory czę
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Egyptian_Vulture_%2849643401142%29.jpg/960px-Egyptian_Vulture_%2849643401142%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Ciemnobrązowy ptak drapieżny w locie z rozcapierzonymi lotkami i klinowatym ogonem" podpis="Młody ścierwnik: cały ciemnobrązowy, ale już z klinowatym ogonem, cechą na każdy wiek" autor="Mike Prince from Bangalore, India" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Egyptian_Vulture_(49643401142).jpg">
 </zdjecie>
 
+</margines>
+
+- **Skrzydła:** długie i wąskie (kanie, błotniaki), szerokie jak „deska” (sępy, orły), krótkie i zaokrąglone (krogulec), ostre i sierpowate (sokoły).
+- **„Palce”:** ile wyraźnie rozcapierzonych lotek na końcu skrzydła? Sępy i orły — dużo, głębokie; sokoły — brak (ostry koniec).
+- **Ogon:** wcięty (kanie), klinowaty (ścierwnik), prosto ścięty (orzełek), długi (trzmielojad, błotniaki), krótki (sępy).
+- **Głowa:** wysunięta i mała (trzmielojad), duża i „sowia” (gadożer), prawie niewidoczna (sępy — krótka szyja wciągnięta).
+
 ### 2. Sposób lotu
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg/960px-Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Jasny gadożer w powietrzu z uniesionymi skrzydłami i głową skierowaną w dół, na tle błękitnego nieba" podpis="Gadożer na polowaniu we francuskich Alpach: zawisa i wypatruje w dole węży" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Schlangenadler_(Circaetus_gallicus)_bei_der_Jagd_01.jpg">
+</zdjecie>
+
+</margines>
+
 - **Ułożenie skrzydeł przy szybowaniu (widok z przodu):**
   - płasko — trzmielojad, kania czarna, orzeł iberyjski
   - płytkie **V** — błotniaki (wyraźnie), myszołów, sęp płowy
@@ -26,9 +43,6 @@ Nad cieśniną ptaki są zwykle **wysoko, pod światło i w ruchu**. Kolory czę
 - **Zawisanie w miejscu (tzw. „trzepotanie”):** gadożer, kaniuk, pustułki — to świetna wskazówka!
 - **Ogon w ruchu:** kanie stale nim „sterują” i skręcają.
 - **Lot niski, kołyszący, nad polami:** błotniaki.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg/960px-Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Jasny gadożer w powietrzu z uniesionymi skrzydłami i głową skierowaną w dół, na tle błękitnego nieba" podpis="Gadożer na polowaniu we francuskich Alpach: zawisa i wypatruje w dole węży" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Schlangenadler_(Circaetus_gallicus)_bei_der_Jagd_01.jpg">
-</zdjecie>
 
 ### 3. Wzór upierzenia
 Dopiero teraz patrzymy na kolory i kontrasty: jasny/ciemny spód, pasy na ogonie, plamy nadgarstkowe, „okna” w skrzydle, ciemna głowa.

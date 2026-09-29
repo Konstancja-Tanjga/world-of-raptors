@@ -50,6 +50,12 @@ body {
   max-width: 52rem;
 }
 
+/* Article sizes itself by its own width and needs 50rem for the margin
+   beside the text; the page padding would leave it just short of that. */
+.page--article {
+  padding-inline: var(--bh-padding-hero);
+}
+
 @media (max-width: 900px) {
   .page {
     padding: var(--bh-padding-section);
@@ -323,6 +329,87 @@ body {
 }
 .prose tr:last-child td {
   border-bottom: 0;
+}
+
+/*
+ * Lesson pages. Big Hat's Article lays out the text, its margin and the table
+ * of contents; the text itself is styled here, as the Article contract asks.
+ */
+.prose h2,
+.lesson-media .section-title {
+  scroll-margin-top: var(--bh-padding-section);
+}
+/* A section starts below the margin notes of the section before, so a photo
+   never ends up beside text it does not belong to. */
+.prose h2 {
+  clear: right;
+}
+.margines {
+  font-size: var(--bh-text-size-dense);
+}
+.margines > * + * {
+  margin-top: var(--bh-gap-normal);
+}
+.margines > :last-child,
+.prose .margines .photo {
+  margin-block: 0;
+}
+.margines > * + .photo {
+  margin-top: var(--bh-gap-normal);
+}
+.next__label,
+.next__title {
+  margin: 0;
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.next__label {
+  color: var(--bh-text-secondary);
+}
+.next__title {
+  margin-top: var(--bh-gap-hairline);
+}
+
+/* Step-by-step quiz. Prefixed with .quiz to win over .prose element rules. */
+.quiz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+}
+.quiz .quiz__tytul {
+  margin: 0;
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+}
+.quiz .quiz__podtytul {
+  margin: 0;
+  font-size: var(--bh-text-size-body);
+  font-weight: var(--bh-text-weight-heading);
+}
+.quiz .quiz__tekst {
+  margin: 0;
+}
+.quiz__feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.quiz .quiz__bledy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.quiz .quiz__bledy li {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.quiz__pytanie {
+  font-weight: var(--bh-text-weight-emphasis);
 }
 
 /* Photos (Wikimedia Commons, with attribution) */

@@ -36,13 +36,18 @@ Rytm: 10–15 fiszek dziennie; powtórki po 1, 3, 7, 14, 30 dniach (lub algorytm
     a) orzeł południowy b) **orzeł iberyjski** c) orzełek włochaty d) orzeł przedni
 
 ## 3. Ćwiczenie „wirtualny punkt obserwacyjny”
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg/960px-29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Kilkadziesiąt małych sylwetek sępów rozsianych po szarym, pochmurnym niebie" podpis="Trening liczenia: ile sępów płowych krąży nad Monfragüe? Według autora zdjęcia 29" autor="Fernando Losada Rodríguez" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:29_Gyps_fulvus_(volando).102_-_Monfrague.jpg">
+</zdjecie>
+
+</margines>
+
 Pomysł na interaktywne ćwiczenie w aplikacji:
 - Na ekranie przez 3 minuty „przelatują” sylwetki (zdjęcia lub animacje) w tempie prawdziwego przelotu.
 - Klikasz ptaka i wybierasz gatunek; na końcu porównujesz swoje liczenie z „oficjalnym”.
 - Poziomy trudności: 1) same sylwetki kontrastowe, 2) podobne pary, 3) pod światło i z daleka.
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg/960px-29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Kilkadziesiąt małych sylwetek sępów rozsianych po szarym, pochmurnym niebie" podpis="Trening liczenia: ile sępów płowych krąży nad Monfragüe? Według autora zdjęcia 29" autor="Fernando Losada Rodríguez" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:29_Gyps_fulvus_(volando).102_-_Monfrague.jpg">
-</zdjecie>
 
 ## 4. Zadania z kamer i nagrań
 - Obejrzyj 20 minut transmisji z gniazda (np. sokoła wędrownego lub bielika) i zapisz zachowania co 1 minutę: karmienie, wysiadywanie, czyszczenie piór, odpoczynek. Policz proporcje.

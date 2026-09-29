@@ -50,17 +50,28 @@ Do każdego gatunku przypisz główną strategię łowiecką (niektóre strategi
 </details>
 
 ## 3. Ćwiczenie: rozbiór wypluwki i tabela diety
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Uszatka_na_zimowisku.jpg/960px-Uszatka_na_zimowisku.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1344" alt="Sowa z długimi pęczkami piór na głowie i pomarańczowymi oczami siedzi ukryta między gałęziami świerka" podpis="Uszatka na zimowisku w Polsce: pod drzewami, na których zimą nocują uszatki, zbiera się najwięcej wypluwek" autor="Aneta p" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Uszatka_na_zimowisku.jpg">
+</zdjecie>
+
+</margines>
+
 1. Zbierz 5–10 wypluwek sowy (np. spod drzewa, na którym zimą siedzą uszatki, albo ze stodoły, w której mieszka płomykówka). Możesz też kupić zestaw edukacyjny.
 2. Rozbierz je w rękawiczkach, jak w [module o sowach](../sowy/README.md).
 3. Policz czaszki (albo pary żuchw) i przypisz je do grup: norniki, myszy, nornice, ryjówki, ptaki, inne.
 4. Zrób tabelę: grupa ofiar, liczba osobników, procent wszystkich ofiar.
 5. Odpowiedz: która grupa dominuje? Czy wynik pasuje do siedliska, w którym zebrałaś wypluwki (pola, łąki, las)?
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Uszatka_na_zimowisku.jpg/960px-Uszatka_na_zimowisku.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1344" alt="Sowa z długimi pęczkami piór na głowie i pomarańczowymi oczami siedzi ukryta między gałęziami świerka" podpis="Uszatka na zimowisku w Polsce: pod drzewami, na których zimą nocują uszatki, zbiera się najwięcej wypluwek" autor="Aneta p" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Uszatka_na_zimowisku.jpg">
-</zdjecie>
-
 ## 4. Projekt: „Dziennik polowań”
 Przez co najmniej **3 wyjścia w teren** zapisuj każde zachowanie łowieckie, które zobaczysz.
+
+<margines>
+
+> Nie podchodź blisko do polującego ptaka i nie płosz go. Każdy przerwany atak to dla niego strata energii, a zimą może to mieć znaczenie dla przeżycia.
+
+</margines>
 
 1. Wybierz miejsce z otwartym terenem: pola, łąki, stawy rybne albo dolinę rzeki. Zimą dobrze sprawdzają się pola z norami norników.
 2. Przy każdej obserwacji zanotuj:
@@ -72,8 +83,6 @@ Przez co najmniej **3 wyjścia w teren** zapisuj każde zachowanie łowieckie, k
 3. Na koniec policz, jaki odsetek ataków widziałaś jako udany dla każdego gatunku. Porównaj go z ogólnymi tendencjami z lekcji 1 i zastanów się, czemu Twoje liczby mogą być inne (mała próba, trudność w dostrzeżeniu wyniku).
 4. Sprawdź, czy pustułki częściej zawisały w dni wietrzne, a częściej siedziały w dni bezwietrzne lub zimne.
 5. Gatunki, które widziałaś, odhacz w [checkliście](/checklista), a obserwacje możesz też wpisać do eBird albo Observation.org (więcej o nauce obywatelskiej w module [A7 · Ludzie i drapieżniki](../ludzie-i-drapiezniki/README.md)).
-
-> Nie podchodź blisko do polującego ptaka i nie płosz go. Każdy przerwany atak to dla niego strata energii, a zimą może to mieć znaczenie dla przeżycia.
 
 ## 5. Zadanie z kamerą na gnieździe (w sezonie lęgowym)
 Znajdź transmisję z kamery na gnieździe ptaka drapieżnego (np. bielika, sokoła wędrownego, rybołowa albo pustułki). Przez kilka sesji po 30 minut notuj każde karmienie: godzinę, rodzaj ofiary (ssak, ptak, ryba, owad, inne) i kto przyniósł pokarm (samiec czy samica). Porównaj dietę gatunku z tym, co przeczytałaś w lekcjach 1–3.

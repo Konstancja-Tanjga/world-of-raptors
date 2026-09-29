@@ -14,7 +14,7 @@ W ornitologii „ptaki drapieżne” (ang. *raptors* albo *birds of prey*) to um
 | **Bardzo dobry wzrok** (u sów także słuch) | wypatrzenie zdobyczy z daleka lub w ciemności | szczegóły w module [A2 · Anatomia łowcy](../anatomia/README.md) |
 | **Mięsożerność** | dieta z kręgowców lub dużych bezkręgowców | od ryb i ssaków po osy, ślimaki i padlinę |
 
-Kluczowe jest to, że **stopy są narzędziem polowania**. Czapla też ma świetny wzrok i ostry dziób, ale łowi dziobem, a stopy służą jej do chodzenia. Drapieżnik chwyta stopami.
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Golden_Eagle_at_Grayson_Highlands_State_Park_%286917491073%29.jpg/960px-Golden_Eagle_at_Grayson_Highlands_State_Park_%286917491073%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Badacz trzyma w dłoni stopy orła przedniego z żółtymi palcami i długimi czarnymi pazurami" podpis="Stopy orła przedniego: grube palce i długie, zakrzywione szpony to główna broń drapieżnika" autor="Virginia State Parks staff" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Golden_Eagle_at_Grayson_Highlands_State_Park_(6917491073).jpg">
 </zdjecie>
@@ -23,6 +23,10 @@ Kluczowe jest to, że **stopy są narzędziem polowania**. Czapla też ma świet
 </zdjecie>
 
 > U podstawy dzioba większości drapieżników jest **woskówka**: miękka, bezpióra skórka, w której leżą nozdrza. Ma ją także… papuga. To jeden z drobnych tropów, do których wrócisz w lekcji 2.
+
+</margines>
+
+Kluczowe jest to, że **stopy są narzędziem polowania**. Czapla też ma świetny wzrok i ostry dziób, ale łowi dziobem, a stopy służą jej do chodzenia. Drapieżnik chwyta stopami.
 
 ## Cechy „dodatkowe”, częste, ale nie obowiązkowe
 - **Samica większa od samca.** U wielu drapieżników samica jest wyraźnie większa (tzw. odwrócony dymorfizm płciowy). Różnica jest największa u gatunków polujących na ptaki, np. u krogulca, a najmniejsza u sępów. Więcej w module [A4 · Rozród](../rozrod/README.md).
@@ -36,12 +40,7 @@ Widać tu ważną rzecz: „ptak drapieżny” to po części **pojęcie ekologi
 
 ## Przypadki graniczne: kto NIE jest drapieżnikiem
 
-| Ptak | Co ma z drapieżnika | Dlaczego nie jest drapieżnikiem |
-|---|---|---|
-| **Dzierzby**, np. gąsiorek (*Lanius collurio*, ang. Red-backed Shrike) i srokosz (*Lanius excubitor*, ang. Great Grey Shrike) | haczykowaty dziób z ząbkiem, poluje na owady, jaszczurki, myszy, małe ptaki | to **ptaki wróblowe**; stopy są słabe, więc zdobycz nabija na ciernie, żeby móc ją rozrywać |
-| **Wydrzyki**, np. wydrzyk ostrosterny (*Stercorarius parasiticus*, ang. Parasitic Jaeger) | haczykowaty dziób, ściga inne ptaki, zabija pisklęta | krewni mew; mają **błony pławne** zamiast szponów, zdobycz chwytają dziobem |
-| **Kruk** (*Corvus corax*, ang. Northern Raven) | zjada padlinę, bywa, że zabija małe zwierzęta | ptak wróblowy, wszystkożerny; brak szponów i haczykowatego dzioba |
-| **Kariamy** (seriemy) z Ameryki Południowej | polują na węże i jaszczurki | stopy do biegania, zdobycz zabijają uderzając nią o ziemię; ale są **bliskimi krewnymi sokołów** (lekcja 2) |
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Neunt%C3%B6ter_mit_erbeutetem_Heupferd_im_Geo-Naturpark_Bergstra%C3%9Fe-Odenwald_%28cropped%29.jpg/960px-Neunt%C3%B6ter_mit_erbeutetem_Heupferd_im_Geo-Naturpark_Bergstra%C3%9Fe-Odenwald_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="961" alt="Mały ptak z szarą głową, czarną maską i rudym grzbietem siedzi na kolczastej gałęzi, w dziobie trzyma zielonego pasikonika" podpis="Samiec gąsiorka z pasikonikiem w dziobie: haczykowaty dziób, ale słabe stopy ptaka wróblowego" autor="Hwbund" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Neunt%C3%B6ter_mit_erbeutetem_Heupferd_im_Geo-Naturpark_Bergstra%C3%9Fe-Odenwald_(cropped).jpg">
 </zdjecie>
@@ -53,6 +52,15 @@ Widać tu ważną rzecz: „ptak drapieżny” to po części **pojęcie ekologi
 </zdjecie>
 
 > Srokosza czasem nazywa się „małym drapieżnikiem wśród wróblowych”. Nabite na cierń myszy i chrząszcze to jego „spiżarnia”. Jeśli widziałaś kiedyś chrząszcza nabitego na kolec głogu, był to prawdopodobnie ślad dzierzby.
+
+</margines>
+
+| Ptak | Co ma z drapieżnika | Dlaczego nie jest drapieżnikiem |
+|---|---|---|
+| **Dzierzby**, np. gąsiorek (*Lanius collurio*, ang. Red-backed Shrike) i srokosz (*Lanius excubitor*, ang. Great Grey Shrike) | haczykowaty dziób z ząbkiem, poluje na owady, jaszczurki, myszy, małe ptaki | to **ptaki wróblowe**; stopy są słabe, więc zdobycz nabija na ciernie, żeby móc ją rozrywać |
+| **Wydrzyki**, np. wydrzyk ostrosterny (*Stercorarius parasiticus*, ang. Parasitic Jaeger) | haczykowaty dziób, ściga inne ptaki, zabija pisklęta | krewni mew; mają **błony pławne** zamiast szponów, zdobycz chwytają dziobem |
+| **Kruk** (*Corvus corax*, ang. Northern Raven) | zjada padlinę, bywa, że zabija małe zwierzęta | ptak wróblowy, wszystkożerny; brak szponów i haczykowatego dzioba |
+| **Kariamy** (seriemy) z Ameryki Południowej | polują na węże i jaszczurki | stopy do biegania, zdobycz zabijają uderzając nią o ziemię; ale są **bliskimi krewnymi sokołów** (lekcja 2) |
 
 ## Dzienne i nocne
 Zwykle dzieli się ptaki drapieżne na:

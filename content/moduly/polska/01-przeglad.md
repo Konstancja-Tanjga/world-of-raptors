@@ -1,13 +1,18 @@
 # Lekcja 1: Przegląd, czyli kto, gdzie, kiedy
 
 ## Trzy kategorie
+
+<margines>
+
+> Polska to jeden z europejskich „bastionów” **bielika** i **orlika krzykliwego**. Dla obu gatunków nasz kraj ma bardzo duże znaczenie w skali kontynentu.
+
+</margines>
+
 | Kategoria | Gatunki |
 |---|---|
 | **Lęgowe, pospolite** | myszołów, pustułka, krogulec, jastrząb, błotniak stawowy, trzmielojad, kania ruda (coraz liczniejsza), bielik (liczny jak na orła), kobuz |
 | **Lęgowe, nieliczne lub rzadkie** | orlik krzykliwy, kania czarna, błotniak łąkowy, sokół wędrowny, rybołów, orzeł przedni, orlik grubodzioby, gadożer, błotniak zbożowy (lęgowy bardzo rzadko) |
 | **Zimujące i przelotne** | myszołów włochaty, drzemlik, błotniak zbożowy; na przelotach dodatkowo m.in. błotniak stepowy i orzeł przedni z północy |
-
-> Polska to jeden z europejskich „bastionów” **bielika** i **orlika krzykliwego**. Dla obu gatunków nasz kraj ma bardzo duże znaczenie w skali kontynentu.
 
 ## Typowe sytuacje i „pierwsze podejrzenie”
 | Sytuacja | Najpewniej | Sprawdź też |
@@ -22,11 +27,8 @@
 | Sokół na kominie lub wieżowcu w mieście | **pustułka** albo **sokół wędrowny** | |
 
 ## Siedliska
-- **Mozaika pól i lasów:** myszołów, jastrząb, krogulec, trzmielojad, kania ruda.
-- **Doliny rzek i mokradła:** błotniaki, orlik krzykliwy, orlik grubodzioby (Biebrza), bielik.
-- **Jeziora i duże kompleksy stawów:** bielik, rybołów, błotniak stawowy.
-- **Góry:** orzeł przedni, orlik krzykliwy, jastrząb, sokół wędrowny.
-- **Miasta:** pustułka, sokół wędrowny (na wysokich budynkach), krogulec zimą przy karmnikach.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Breeding_habitat_of_the_aquatic_warbler_%28Acrocephalus_paludicola%29.JPG/960px-Breeding_habitat_of_the_aquatic_warbler_%28Acrocephalus_paludicola%29.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Rozległa, płaska łąka turzycowa po horyzont, nad nią zachodzące słońce" podpis="Turzycowiska w Dolinie Biebrzy (widok z Długiej Luki): otwarte mokradła, siedlisko błotniaków i orlików" autor="112grammarpolice" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Breeding_habitat_of_the_aquatic_warbler_(Acrocephalus_paludicola).JPG">
 </zdjecie>
@@ -36,6 +38,14 @@
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Peregrine_Falcons_in_Sheffield_-_geograph.org.uk_-_2993894.jpg/960px-Peregrine_Falcons_in_Sheffield_-_geograph.org.uk_-_2993894.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="648" alt="Brązowy, kreskowany młody sokół wędrowny siedzący na kamiennym gzymsie budynku" podpis="Młody sokół wędrowny na gzymsie budynku w Sheffield: miasta zastępują sokołom skalne ściany" autor="Dave Pickersgill" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcons_in_Sheffield_-_geograph.org.uk_-_2993894.jpg">
 </zdjecie>
+
+</margines>
+
+- **Mozaika pól i lasów:** myszołów, jastrząb, krogulec, trzmielojad, kania ruda.
+- **Doliny rzek i mokradła:** błotniaki, orlik krzykliwy, orlik grubodzioby (Biebrza), bielik.
+- **Jeziora i duże kompleksy stawów:** bielik, rybołów, błotniak stawowy.
+- **Góry:** orzeł przedni, orlik krzykliwy, jastrząb, sokół wędrowny.
+- **Miasta:** pustułka, sokół wędrowny (na wysokich budynkach), krogulec zimą przy karmnikach.
 
 ## Filmy
 - [YouTube: ptaki drapieżne Polski, jak je rozpoznać](https://www.youtube.com/results?search_query=ptaki+drapie%C5%BCne+Polski+rozpoznawanie)

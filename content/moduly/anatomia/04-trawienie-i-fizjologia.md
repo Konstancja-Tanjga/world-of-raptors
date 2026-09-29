@@ -12,20 +12,29 @@ Złapanie zdobyczy to połowa pracy. Drugą połową jest zjedzenie jej szybko, 
 | **Wypluwka** | zbite resztki ptak zwraca dziobem, zwykle kilka godzin po posiłku, zanim znów zacznie jeść |
 | **Jelita** | wchłanianie składników odżywczych; odchody ptaków drapieżnych są płynne i białe (kwas moczowy) |
 
-- **Wole** mają dzienne ptaki drapieżne. **Sowy wola nie mają**, pokarm trafia od razu do żołądka.
-- Po obfitym posiłku wole widać jako wyraźne zgrubienie na piersi. Sokolnicy mówią, że ptak ma „pełne wole”.
-- Większość ptaków drapieżnych **rzadko pije**. Dużą część wody dostaje z mięsa zdobyczy. Sępy i niektóre inne gatunki chętnie jednak piją i kąpią się.
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Golden_Eagle_on_Seedskadee_NWR_%2823661983405%29.jpg/960px-Golden_Eagle_on_Seedskadee_NWR_%2823661983405%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="707" alt="Ciemnobrązowy orzeł leci na tle nieba, pod dziobem na piersi ma wyraźne zgrubienie" podpis="Orzeł przedni po obfitym posiłku: pod szyją widać wyraźnie wypchane wole" autor="USFWS Mountain-Prairie" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Golden_Eagle_on_Seedskadee_NWR_(23661983405).jpg">
 </zdjecie>
 
+</margines>
+
+- **Wole** mają dzienne ptaki drapieżne. **Sowy wola nie mają**, pokarm trafia od razu do żołądka.
+- Po obfitym posiłku wole widać jako wyraźne zgrubienie na piersi. Sokolnicy mówią, że ptak ma „pełne wole”.
+- Większość ptaków drapieżnych **rzadko pije**. Dużą część wody dostaje z mięsa zdobyczy. Sępy i niektóre inne gatunki chętnie jednak piją i kąpią się.
+
 ## Wypluwki dziennych drapieżników i sów
-Wypluwki robią i sowy, i dzienne drapieżniki, ale wyglądają inaczej:
-- W żołądku dziennych drapieżników jest **bardziej kwaśno**, więc kości są w dużej części strawione. Ich wypluwki to głównie sierść i pióra, z niewielką ilością kości.
-- Sowy trawią kości słabiej, więc w ich wypluwkach są **całe czaszki i kości**. Dlatego do badania diety częściej używa się wypluwek sów (zob. [moduł o sowach](../sowy/05-cwiczenia.md)).
+
+<margines>
 
 <zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8c/AB017_Pellet_of_Tawny_Eagle.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Podłużna, jasnożółta grudka z łuskami i kolcami leży na piasku" podpis="Świeża wypluwka orła sawannowego (Aquila rapax, Indie): widać łuski i kolce zjedzonej jaszczurki" autor="Aashay Baindur" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:AB017_Pellet_of_Tawny_Eagle.JPG">
 </zdjecie>
+
+</margines>
+
+Wypluwki robią i sowy, i dzienne drapieżniki, ale wyglądają inaczej:
+- W żołądku dziennych drapieżników jest **bardziej kwaśno**, więc kości są w dużej części strawione. Ich wypluwki to głównie sierść i pióra, z niewielką ilością kości.
+- Sowy trawią kości słabiej, więc w ich wypluwkach są **całe czaszki i kości**. Dlatego do badania diety częściej używa się wypluwek sów (zob. [moduł o sowach](../sowy/05-cwiczenia.md)).
 
 ## Sępy: specjaliści od padliny
 
@@ -37,12 +46,17 @@ Soki żołądkowe sępów Starego Świata są **niezwykle kwaśne, o pH ok. 1** 
 Badania mikroorganizmów w jelitach sępów amerykańskich (sępnika różowogłowego i urubu) pokazały, że ich przewód pokarmowy jest też **zasiedlony przez bakterie odporne na te warunki**, typowe dla gnijącego mięsa. Ochrona to więc połączenie kwasu, odporności i wyspecjalizowanej flory jelitowej. Sępy Nowego Świata to jednak inna grupa niż sępy europejskie (zob. [A1](../kim-sa-drapiezniki/README.md)), więc wyników nie można w pełni przenosić.
 
 ### Orłosęp, który je kości
-**Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) żywi się przede wszystkim **kośćmi i szpikiem**. Mniejsze kości połyka w całości, większe zrzuca z wysokości na skały, żeby je rozbić. Bardzo kwaśny żołądek pozwala mu strawić kość, która u większości zwierząt przeszłaby przez przewód pokarmowy niemal nietknięta.
+
+<margines>
 
 > Dziko żyjące orłosępy mają rdzawopomarańczową pierś, ale to nie jest kolor piór. Ptaki kąpią się w błocie bogatym w tlenki żelaza i same „farbują” pióra. Po co, nie wiadomo na pewno: możliwe, że to sygnał dla innych orłosępów.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg/960px-012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_%28Switzerland%29_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Orłosęp w locie widziany z boku, z pomarańczowo-rdzawym brzuchem i piersią, szarymi skrzydłami i opierzoną głową z czarną maską" podpis="Dziki orłosęp w Alpach szwajcarskich: rdzawopomarańczowy spód ciała to efekt kąpieli w błocie z tlenkami żelaza" autor="Giles Laurent" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:012_Wild_Bearded_Vulture_in_flight_at_Pfyn-Finges_(Switzerland)_Photo_by_Giles_Laurent.jpg">
 </zdjecie>
+
+</margines>
+
+**Orłosęp** (*Gypaetus barbatus*, ang. Bearded Vulture) żywi się przede wszystkim **kośćmi i szpikiem**. Mniejsze kości połyka w całości, większe zrzuca z wysokości na skały, żeby je rozbić. Bardzo kwaśny żołądek pozwala mu strawić kość, która u większości zwierząt przeszłaby przez przewód pokarmowy niemal nietknięta.
 
 ### Dlaczego sępy mają łyse głowy?
 Sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) i sęp kasztanowaty (*Aegypius monachus*, ang. Cinereous Vulture) mają głowę i szyję pokryte tylko krótkim puchem lub nagą skórą. Są dwie główne hipotezy, które się nie wykluczają:
@@ -52,10 +66,14 @@ Sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) i sęp kasztanowaty (*Aegypius
 | **Higiena** | sęp płowy wkłada głowę głęboko do wnętrza padliny; na gęstych piórach zostawałaby krew i resztki, w których rozwijałyby się bakterie | klasyczne, logiczne wyjaśnienie, ale słabo sprawdzone doświadczalnie |
 | **Termoregulacja** | badania na sępach płowych pokazały, że w chłodzie ptaki chowają szyję w kryzę z piór, a w upale wyciągają ją i odsłaniają nagą skórę, oddając ciepło | lepiej udokumentowana; dziś uważana za co najmniej równie ważną |
 
-Ciekawostka zgodna z tym obrazem: **sęp płowy**, który sięga głęboko w padlinę, ma szyję długą i prawie nagą, a **orłosęp**, który je kości, ma głowę opierzoną.
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Eurasian_Griffon_Vulture_on_cattle_carcass.jpg/960px-Eurasian_Griffon_Vulture_on_cattle_carcass.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży jasnobrązowy sęp z długą, jasną, słabo opierzoną szyją stoi przy rozerwanej padlinie" podpis="Sęp płowy przy padlinie krowy: długa, prawie naga szyja pozwala sięgać głęboko do wnętrza ciała" autor="Arindam Aditya" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_Griffon_Vulture_on_cattle_carcass.jpg">
 </zdjecie>
+
+</margines>
+
+Ciekawostka zgodna z tym obrazem: **sęp płowy**, który sięga głęboko w padlinę, ma szyję długą i prawie nagą, a **orłosęp**, który je kości, ma głowę opierzoną.
 
 ### Jedzenie na zapas
 Sępy nie wiedzą, kiedy znajdą następną padlinę. Potrafią **najeść się bardzo obficie**, czasem tak, że mają kłopot ze startem, a potem **pościć kilka dni** lub dłużej.
@@ -70,9 +88,13 @@ U większości ptaków drapieżnych **samica jest większa od samca**. U ssaków
 | **Myszołów, orły** | umiarkowana |
 | **Sępy** | niewielka lub prawie żadna |
 
-Ogólna reguła: im **zwinniejsza i szybsza zdobycz** (np. ptaki łapane w locie), tym różnica większa. U padlinożerców jest najmniejsza.
+<margines>
 
 > W sokolnictwie samca sokoła nazywa się po angielsku *tercel*, od łacińskiego słowa „trzeci”. Tradycyjnie tłumaczy się to tym, że samiec jest mniej więcej o jedną trzecią mniejszy od samicy.
+
+</margines>
+
+Ogólna reguła: im **zwinniejsza i szybsza zdobycz** (np. ptaki łapane w locie), tym różnica większa. U padlinożerców jest najmniejsza.
 
 Dlaczego tak jest? Hipotez jest kilka i dotyczą podziału ról w rodzinie oraz polowania. Omawia je [A4 · Rozród i życie rodzinne](../rozrod/README.md).
 

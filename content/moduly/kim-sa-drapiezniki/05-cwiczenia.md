@@ -37,6 +37,13 @@ Przy każdym ptaku zdecyduj: **drapieżnik** czy **nie**, i napisz jednym zdanie
 
 <details><summary>Odpowiedzi</summary>
 
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/GreatSkuaInWater.jpg/960px-GreatSkuaInWater.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży brązowy ptak morski siedzi na wodzie z uniesionymi skrzydłami z białymi plamami" podpis="Wydrzyk wielki pływa jak mewa: ma haczykowaty dziób, ale stopy z błonami pławnymi zamiast szponów" autor="Psychofox at English Wikipedia" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:GreatSkuaInWater.jpg">
+</zdjecie>
+
+</margines>
+
 1. Nie: łowi dziobem, nie szponami; krewniak pelikanów, nie drapieżników.
 2. Tak: szponiaste, wyspecjalizowany łowca ryb.
 3. Nie: ptak wróblowy (dzierzba), słabe stopy.
@@ -46,9 +53,6 @@ Przy każdym ptaku zdecyduj: **drapieżnik** czy **nie**, i napisz jednym zdanie
 7. Nie w sensie systematycznym, choć poluje na kręgowce; ciekawostka: to bliski krewny sokołów.
 8. Tak: sowa, drapieżnik nocny.
 </details>
-
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/GreatSkuaInWater.jpg/960px-GreatSkuaInWater.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży brązowy ptak morski siedzi na wodzie z uniesionymi skrzydłami z białymi plamami" podpis="Wydrzyk wielki pływa jak mewa: ma haczykowaty dziób, ale stopy z błonami pławnymi zamiast szponów" autor="Psychofox at English Wikipedia" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:GreatSkuaInWater.jpg">
-</zdjecie>
 
 ## 3. Ćwiczenie: narysuj drzewo
 Bez zaglądania do lekcji 2 narysuj na kartce uproszczone drzewo pokrewieństw z tymi grupami: **sokoły, papugi, wróblowe, kariamy, szponiaste, kondory, sowy**. Potem porównaj z lekcją 2.

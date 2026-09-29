@@ -33,11 +33,8 @@ Najważniejsza cecha. Zwróć uwagę na:
 - **Sercowata twarz:** płomykówka.
 
 ### 5. Kolor oczu
-| Kolor | Gatunki |
-|---|---|
-| **pomarańczowy** | puchacz, uszatka |
-| **żółty** | pójdźka, syczek, sóweczka, włochatka, uszatka błotna |
-| **ciemny/czarny** | puszczyk, puszczyk uralski, płomykówka |
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Eurasian_Eagle_Owl_Bubo_Bubo_Bird_Up_Close.jpg/960px-Eurasian_Eagle_Owl_Bubo_Bubo_Bird_Up_Close.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Zbliżenie głowy puchacza z dużymi, pomarańczowoczerwonymi oczami i haczykowatym dziobem" podpis="Oczy puchacza: pomarańczowe, tak jak u uszatki" autor="DomenicBlair" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Eurasian_Eagle_Owl_Bubo_Bubo_Bird_Up_Close.jpg">
 </zdjecie>
@@ -47,6 +44,14 @@ Najważniejsza cecha. Zwróć uwagę na:
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Strix_aluco_aluco.jpg/960px-Strix_aluco_aluco.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1344" alt="Puszczyk z ciemnymi oczami siedzi na gałęzi na tle drewnianej ściany" podpis="Oczy puszczyka: ciemne, prawie czarne" autor="Chrumps" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Strix_aluco_aluco.jpg">
 </zdjecie>
+
+</margines>
+
+| Kolor | Gatunki |
+|---|---|
+| **pomarańczowy** | puchacz, uszatka |
+| **żółty** | pójdźka, syczek, sóweczka, włochatka, uszatka błotna |
+| **ciemny/czarny** | puszczyk, puszczyk uralski, płomykówka |
 
 ## Ślady obecności
 - **Wypluwki** pod drzewem lub w stodole,

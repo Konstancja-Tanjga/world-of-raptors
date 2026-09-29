@@ -7,7 +7,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 |---|---|---|
 | Framework | **Next.js 16** (App Router, TypeScript) | wszystkie strony generowane statycznie przy buildzie |
 | UI | **Big Hat design system** (`@bighat/ui`) | instalowany z GitHuba (`git+https://…bighat-design-system.git#<commit>`), bo nie ma go w npm |
-| Treść lekcji | Markdown w `content/`, renderowany przez `react-markdown` + `remark-gfm` + `rehype-raw` | lekcje czytelne także na GitHubie; `rehype-raw` pozwala na `<details>` z odpowiedziami do quizów |
+| Treść lekcji | Markdown w `content/`, renderowany przez `react-markdown` + `remark-gfm` + `rehype-raw` | lekcje czytelne także na GitHubie; `rehype-raw` pozwala na własne znaczniki (`<zdjecie>`, `<margines>`) |
 | Dane | `content/gatunki.json`, `content/moduly.json` | jedno źródło dla atlasu, checklisty i nawigacji |
 | Style | `src/app/globals.css`, tylko tokeny `--bh-*` | bez Tailwinda: zasady design systemu zabraniają wartości wpisanych na sztywno |
 | Checklista | `localStorage` + eksport i import do pliku JSON | bez logowania i bez bazy danych |
@@ -56,6 +56,18 @@ src/
 3. Nowy gatunek: wpis w `content/gatunki.json`. Sprawdź, czy każde `mylona_z` wskazuje istniejące `id`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
 5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo karta ma jedną akcję: link „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
+6. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:
+   ```
+   <margines>
+
+   > Krótka uwaga obok akapitu.
+
+   </margines>
+
+   Akapit, do którego należy uwaga.
+   ```
+   Na szerokim ekranie notatka stoi obok akapitu, na wąskim nad nim. Nagłówki `##` tworzą spis treści lekcji, więc pisz je zwykłym tekstem, bez pogrubień i linków.
+7. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Pytanie bez dokładnie jednej pogrubionej odpowiedzi zatrzymuje build.
 
 ## Uruchamianie
 ```bash

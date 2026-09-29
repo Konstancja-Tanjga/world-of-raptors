@@ -3,11 +3,8 @@
 Dla dziennego ptaka drapieżnego wzrok jest najważniejszym zmysłem. Myszołów (*Buteo buteo*, ang. Common Buzzard) siedzący na słupie, pustułka (*Falco tinnunculus*, ang. Common Kestrel) zawieszona nad łąką i orzeł krążący wysoko nad zboczem robią to samo: przeszukują teren oczami. W tej lekcji zobaczysz, co sprawia, że te oczy są tak dobre, i gdzie kończą się ich możliwości.
 
 ## Duże oczy w małej głowie
-- Oczy ptaków drapieżnych są **bardzo duże w stosunku do głowy**. U dużych orłów gałka oczna jest w wartościach bezwzględnych podobnej wielkości jak ludzka, choć cały ptak waży kilkanaście razy mniej od człowieka.
-- Oko nie jest kuliste, tylko spłaszczone lub (u sów) wydłużone jak rurka. Utrzymuje je w kształcie **pierścień twardówkowy**, czyli pierścień drobnych kostek w ścianie oka.
-- Ptaki drapieżne **słabo ruszają oczami** w oczodołach. Zamiast tego ruszają głową: stąd charakterystyczne kiwanie i przekrzywianie głowy przed atakiem. Ruch głowy pomaga też ocenić odległość.
-- Nad okiem wystaje **wał nadoczodołowy** (kostny „daszek”). Daje ptakowi „groźne spojrzenie” i prawdopodobnie osłania oko przed słońcem i uszkodzeniem.
-- Jak wszystkie ptaki, drapieżne mają **migotkę**, półprzezroczystą trzecią powiekę, która przesuwa się poziomo, nawilża i chroni oko, np. w chwili uderzenia w zdobycz albo przy karmieniu młodych.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg/960px-Aquila_audax_%28Wedge-tailed_Eagle%29_%2848719294161%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Jasna czaszka ptaka z profilu, z wielkim okrągłym oczodołem i długim zakrzywionym dziobem, na czarnym tle" podpis="Czaszka orła klinosternego (zbiory Auckland Museum): oczodoły zajmują ogromną część głowy" autor="Auckland Museum Collections from Auckland, Aotearoa New Zealand" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_(Wedge-tailed_Eagle)_(48719294161).jpg">
 </zdjecie>
@@ -17,6 +14,14 @@ Dla dziennego ptaka drapieżnego wzrok jest najważniejszym zmysłem. Myszołów
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Golden_eagle_capture-_mid_blink_nictitating_membrane_%2855082010211%29.jpg/960px-Golden_eagle_capture-_mid_blink_nictitating_membrane_%2855082010211%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Głowa orła przedniego z bliska, oko przykryte mlecznobiałą, półprzezroczystą błoną" podpis="Orzeł przedni w trakcie mrugnięcia: półprzezroczysta migotka zasłania oko od przodu ku tyłowi" autor="YellowstoneNPS" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Golden_eagle_capture-_mid_blink_nictitating_membrane_(55082010211).jpg">
 </zdjecie>
+
+</margines>
+
+- Oczy ptaków drapieżnych są **bardzo duże w stosunku do głowy**. U dużych orłów gałka oczna jest w wartościach bezwzględnych podobnej wielkości jak ludzka, choć cały ptak waży kilkanaście razy mniej od człowieka.
+- Oko nie jest kuliste, tylko spłaszczone lub (u sów) wydłużone jak rurka. Utrzymuje je w kształcie **pierścień twardówkowy**, czyli pierścień drobnych kostek w ścianie oka.
+- Ptaki drapieżne **słabo ruszają oczami** w oczodołach. Zamiast tego ruszają głową: stąd charakterystyczne kiwanie i przekrzywianie głowy przed atakiem. Ruch głowy pomaga też ocenić odległość.
+- Nad okiem wystaje **wał nadoczodołowy** (kostny „daszek”). Daje ptakowi „groźne spojrzenie” i prawdopodobnie osłania oko przed słońcem i uszkodzeniem.
+- Jak wszystkie ptaki, drapieżne mają **migotkę**, półprzezroczystą trzecią powiekę, która przesuwa się poziomo, nawilża i chroni oko, np. w chwili uderzenia w zdobycz albo przy karmieniu młodych.
 
 ## Dlaczego obraz jest tak ostry?
 
@@ -31,9 +36,13 @@ Człowiek ma w każdym oku jeden **dołek środkowy** (fovea), małe zagłębien
 | **Głęboki (centralny)** | w środku siatkówki | w bok, pod kątem ok. 45° od osi dzioba | najostrzejsze widzenie, wypatrywanie zdobyczy z daleka jednym okiem |
 | **Płytki (skroniowy)** | bliżej tylnej części siatkówki | do przodu, oba oczy razem | widzenie obuoczne, ocena odległości przy ataku |
 
-Dlatego ptak drapieżny, który coś wypatrzył z daleka, często **przekrzywia głowę bokiem**: patrzy wtedy głębokim dołkiem jednego oka. Gdy zbliża się do zdobyczy, patrzy obydwoma oczami do przodu.
+<margines>
 
 > Głęboki dołek ma kształt lejka. Według jednej z hipotez działa trochę jak soczewka powiększająca: dodatkowo „rozciąga” obraz w najostrzejszym punkcie. To wyjaśnienie jest przekonujące, ale nie w pełni udowodnione.
+
+</margines>
+
+Dlatego ptak drapieżny, który coś wypatrzył z daleka, często **przekrzywia głowę bokiem**: patrzy wtedy głębokim dołkiem jednego oka. Gdy zbliża się do zdobyczy, patrzy obydwoma oczami do przodu.
 
 ### 3. Mit o „ośmiokrotnie lepszym wzroku”
 W popularnych tekstach często czytasz, że orły widzą 4, 5 albo 8 razy lepiej od ludzi. Pomiary mówią co innego:
@@ -41,10 +50,14 @@ W popularnych tekstach często czytasz, że orły widzą 4, 5 albo 8 razy lepiej
 - Wiele mniejszych drapieżników (np. pustułki, krogulec *Accipiter nisus* (ang. Eurasian Sparrowhawk)) widzi **podobnie jak człowiek albo niewiele lepiej**, czasem nawet gorzej.
 - Przewaga dotyczy **ostrości w jasnym świetle**. O zmierzchu człowiek widzi często lepiej niż dzienny ptak drapieżny.
 
-Czyli: bardzo dobry wzrok, najlepszy znany w świecie zwierząt, ale nie „lornetka w oku”.
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Aquila_audax_-_Captain%27s_Flat.jpg/960px-Aquila_audax_-_Captain%27s_Flat.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży ciemnobrązowy orzeł z jasnym karkiem stoi na suchym pniu na tle błękitnego nieba" podpis="Orzeł klinosterny w Australii: najlepiej zbadany rekordzista ostrości wzroku, ok. 2–2,5 raza lepszej niż u człowieka" autor="JJ Harrison" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Aquila_audax_-_Captain%27s_Flat.jpg">
 </zdjecie>
+
+</margines>
+
+Czyli: bardzo dobry wzrok, najlepszy znany w świecie zwierząt, ale nie „lornetka w oku”.
 
 ## Pole widzenia
 Oczy ptaków drapieżnych patrzą częściowo w bok, częściowo do przodu. Stąd dwa rodzaje pola widzenia:
@@ -77,12 +90,17 @@ Uczciwie: **to hipoteza sporna**. Nie traktuj jej jako pewnego faktu.
 W oku każdego ptaka jest **grzebień** (pecten): pofałdowana, ciemna struktura pełna naczyń krwionośnych, wystająca z siatkówki do wnętrza oka. Ptasia siatkówka nie ma własnych naczyń krwionośnych (nie zasłaniają więc obrazu), a grzebień najpewniej **dostarcza jej tlenu i składników odżywczych**. Inne proponowane funkcje (np. osłanianie przed oślepieniem) są mniej pewne.
 
 ## A słuch?
-Dzienne ptaki drapieżne polują przede wszystkim wzrokiem, a ich słuch jest mniej więcej taki jak u innych ptaków. Dwa wyjątki:
-- **Sowy** mają niesymetrycznie położone otwory uszne i szlarę, która kieruje dźwięk do uszu. Płomykówka potrafi upolować mysz w zupełnej ciemności. To temat [modułu o sowach](../sowy/README.md).
-- **Błotniaki**, np. błotniak zbożowy (*Circus cyaneus*, ang. Hen Harrier), mają wokół twarzy wyraźny **wianuszek piór**, podobny do szlary sów. Pomaga im usłyszeć gryzonie w wysokiej trawie, nad którą lecą nisko i wolno.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Blauwe_Kiekendief.jpg/960px-Blauwe_Kiekendief.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" alt="Brązowy drapieżnik o długich skrzydłach leci nisko nad trawą, jego twarz otacza jaśniejszy krąg piór" podpis="Młody błotniak zbożowy nisko nad łąką: wokół twarzy widać wianuszek piór podobny do szlary sowy" autor="Rob Zweers" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Blauwe_Kiekendief.jpg">
 </zdjecie>
+
+</margines>
+
+Dzienne ptaki drapieżne polują przede wszystkim wzrokiem, a ich słuch jest mniej więcej taki jak u innych ptaków. Dwa wyjątki:
+- **Sowy** mają niesymetrycznie położone otwory uszne i szlarę, która kieruje dźwięk do uszu. Płomykówka potrafi upolować mysz w zupełnej ciemności. To temat [modułu o sowach](../sowy/README.md).
+- **Błotniaki**, np. błotniak zbożowy (*Circus cyaneus*, ang. Hen Harrier), mają wokół twarzy wyraźny **wianuszek piór**, podobny do szlary sów. Pomaga im usłyszeć gryzonie w wysokiej trawie, nad którą lecą nisko i wolno.
 
 ## Filmy
 - [YouTube: jak widzi orzeł, dwa dołki w siatkówce](https://www.youtube.com/results?search_query=how+eagles+see+two+fovea+raptor+vision)

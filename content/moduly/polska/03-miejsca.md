@@ -1,16 +1,6 @@
 # Lekcja 3: Najlepsze miejsca
 
-| Miejsce | Siedlisko | Najważniejsze gatunki | Najlepsza pora |
-|---|---|---|---|
-| **Biebrzański Park Narodowy** | bagna, łąki | orlik krzykliwy, **orlik grubodzioby**, bielik, błotniaki: stawowy i łąkowy | V–VII |
-| **Dolina Baryczy** (Stawy Milickie) | stawy rybne, lasy | bielik, błotniak stawowy, kania ruda i czarna, rybołów na przelotach | cały rok, najlepiej IV–VI i IX–X |
-| **Pojezierze Mazurskie** | jeziora, lasy | bielik, rybołów, orlik krzykliwy | IV–IX |
-| **Puszcza Białowieska** | stary las | orlik krzykliwy, trzmielojad, jastrząb, krogulec | V–VII |
-| **Bieszczady** | góry, łąki | orzeł przedni, orlik krzykliwy, jastrząb, trzmielojad | V–IX |
-| **Park Narodowy Ujście Warty** | rozlewiska | bielik (zimą dużo), błotniaki, kania ruda, myszołów włochaty | cały rok, zimą bieliki |
-| **Dolina Dolnej Wisły / Żuławy** | pola, rozlewiska | błotniaki, myszołów włochaty, drzemlik (zima) | X–III |
-| **Mierzeja Helska** | wybrzeże | przelot jesienny: **krogulce**, myszołowy, pustułki, drzemliki | IX–X |
-| **Duże miasta** (np. Warszawa, Płock, Wrocław) | budynki | sokół wędrowny, pustułka, krogulec (zima) | cały rok |
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Biebrza%C5%84ski_Park_Narodowy%2C_wiosenne_rozlewiska%2C_kacze%C5%84ce%2C_bocian_bia%C5%82y.jpg/960px-Biebrza%C5%84ski_Park_Narodowy%2C_wiosenne_rozlewiska%2C_kacze%C5%84ce%2C_bocian_bia%C5%82y.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Zalana łąka pokryta żółtymi kwiatami kaczeńców, na pierwszym planie brodzi bocian biały" podpis="Wiosenne rozlewiska Biebrzy z kaczeńcami i bocianem: tak wyglądają łowiska orlików i błotniaków w maju" autor="Dariusz Kowalczyk" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Biebrza%C5%84ski_Park_Narodowy,_wiosenne_rozlewiska,_kacze%C5%84ce,_bocian_bia%C5%82y.jpg">
 </zdjecie>
@@ -26,6 +16,20 @@
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Hel_Flugzeug.JPG/960px-Hel_Flugzeug.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Widok z lotu ptaka na długi, wąski półwysep wcinający się w morze, obok zatoka" podpis="Mierzeja Helska z samolotu: wąski pas lądu, wzdłuż którego jesienią ciągną krogulce, myszołowy i pustułki" autor="Martin Hoffmann" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Hel_Flugzeug.JPG">
 </zdjecie>
+
+</margines>
+
+| Miejsce | Siedlisko | Najważniejsze gatunki | Najlepsza pora |
+|---|---|---|---|
+| **Biebrzański Park Narodowy** | bagna, łąki | orlik krzykliwy, **orlik grubodzioby**, bielik, błotniaki: stawowy i łąkowy | V–VII |
+| **Dolina Baryczy** (Stawy Milickie) | stawy rybne, lasy | bielik, błotniak stawowy, kania ruda i czarna, rybołów na przelotach | cały rok, najlepiej IV–VI i IX–X |
+| **Pojezierze Mazurskie** | jeziora, lasy | bielik, rybołów, orlik krzykliwy | IV–IX |
+| **Puszcza Białowieska** | stary las | orlik krzykliwy, trzmielojad, jastrząb, krogulec | V–VII |
+| **Bieszczady** | góry, łąki | orzeł przedni, orlik krzykliwy, jastrząb, trzmielojad | V–IX |
+| **Park Narodowy Ujście Warty** | rozlewiska | bielik (zimą dużo), błotniaki, kania ruda, myszołów włochaty | cały rok, zimą bieliki |
+| **Dolina Dolnej Wisły / Żuławy** | pola, rozlewiska | błotniaki, myszołów włochaty, drzemlik (zima) | X–III |
+| **Mierzeja Helska** | wybrzeże | przelot jesienny: **krogulce**, myszołowy, pustułki, drzemliki | IX–X |
+| **Duże miasta** (np. Warszawa, Płock, Wrocław) | budynki | sokół wędrowny, pustułka, krogulec (zima) | cały rok |
 
 ## Kamery na gniazdach
 Transmisje z gniazd to świetny sposób, żeby oglądać ptaki, których w terenie nie wolno niepokoić:

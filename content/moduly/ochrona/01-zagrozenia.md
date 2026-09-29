@@ -17,17 +17,25 @@ Dlatego ekolodzy mówią, że drapieżniki to **gatunki wskaźnikowe**: jeśli i
 ## Dawniej: wojna ze „szkodnikami”
 Przez większą część XIX i XX wieku ptaki drapieżne w Europie uważano za **szkodniki**: konkurencję dla myśliwych i zagrożenie dla drobiu.
 
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Honey_buzzard_at_the_Beaney_2021_%281%29.jpg/960px-Honey_buzzard_at_the_Beaney_2021_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1681" alt="Wypchany brązowy drapieżnik stoi w muzealnej gablocie obok innych okazów" podpis="Wypchany trzmielojad w muzeum Beaney w Canterbury, zastrzelony niegdyś w Deal (Kent): ślad dawnego strzelania i kolekcjonerstwa" autor="Storye book" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard_at_the_Beaney_2021_(1).jpg">
+</zdjecie>
+
+</margines>
+
 - **Nagrody za odstrzał.** W wielu krajach, także na ziemiach polskich, płacono za zabite „ptaki szkodliwe”. Dowodem były szpony, dzioby albo całe ptaki.
 - **Strzelanie przy gniazdach i niszczenie lęgów.** Gajowi i leśnicy często mieli obowiązek „tępić” jastrzębie, krogulce i orły.
 - **Słupołapki (pole traps).** Wnyk albo żelazo na szczycie słupka, na którym drapieżnik chętnie przysiadał. Ptak łapał się za nogi i zwisał, aż zginął. W Wielkiej Brytanii zakazano ich już na początku XX wieku, ale nielegalne przypadki zdarzają się do dziś.
 - **Kolekcjonerstwo.** W XIX wieku modne były kolekcje jaj i wypchanych ptaków. Rzadkie gatunki, jak orłosęp czy rybołów, były szczególnie pożądane.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Honey_buzzard_at_the_Beaney_2021_%281%29.jpg/960px-Honey_buzzard_at_the_Beaney_2021_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1681" alt="Wypchany brązowy drapieżnik stoi w muzealnej gablocie obok innych okazów" podpis="Wypchany trzmielojad w muzeum Beaney w Canterbury, zastrzelony niegdyś w Deal (Kent): ślad dawnego strzelania i kolekcjonerstwa" autor="Storye book" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard_at_the_Beaney_2021_(1).jpg">
-</zdjecie>
-
-Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybołów z Wysp Brytyjskich i dużej części Europy Zachodniej, a bielik z wielu krajów, gdzie wcześniej był pospolity.
+<margines>
 
 > W Polsce jastrząb jeszcze w drugiej połowie XX wieku był gatunkiem łownym. Dziś, jak wszystkie ptaki drapieżne i sowy, jest objęty ochroną ścisłą.
+
+</margines>
+
+Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybołów z Wysp Brytyjskich i dużej części Europy Zachodniej, a bielik z wielu krajów, gdzie wcześniej był pospolity.
 
 ## Dziś: stare i nowe zagrożenia
 
@@ -36,22 +44,36 @@ Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybo�
 - **Skutki uboczne legalnej chemii:** trutki na gryzonie (drapieżnik zjada otrutą mysz), pozostałości leków weterynaryjnych, ołów z amunicji. To temat [lekcji 2](02-trucizny.md).
 
 ### 2. Linie energetyczne
-- **Elektrokucja (porażenie prądem).** Duży ptak siada na słupie linii średniego napięcia i dotyka jednocześnie dwóch przewodów albo przewodu i uziemionej części słupa. Szczególnie groźne są słupy o złej konstrukcji, np. z izolatorami stojącymi nad poprzeczką. W Hiszpanii elektrokucja była przez lata **główną przyczyną śmierci orła iberyjskiego**.
-- **Kolizje z przewodami**, zwłaszcza z cienkimi, słabo widocznymi linkami odgromowymi.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg/960px-Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="695" alt="Szczyt betonowego słupa na tle nieba, na metalowej poprzeczce stoją brązowe ceramiczne izolatory z przewodami" podpis="Groźny dla ptaków słup średniego napięcia: izolatory stoją nad poprzeczką, a osłona chroni tylko środkowy" autor="Wolfgang Ellsässer (Geryones)" licencja="CC BY-SA 3.0 de" licencja-url="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" strona="https://commons.wikimedia.org/wiki/File:Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg">
 </zdjecie>
 
-Rozwiązanie jest znane i stosunkowo tanie: przebudowa niebezpiecznych słupów, osłony izolacyjne, spirale i znaczniki na przewodach.
+</margines>
+
+- **Elektrokucja (porażenie prądem).** Duży ptak siada na słupie linii średniego napięcia i dotyka jednocześnie dwóch przewodów albo przewodu i uziemionej części słupa. Szczególnie groźne są słupy o złej konstrukcji, np. z izolatorami stojącymi nad poprzeczką. W Hiszpanii elektrokucja była przez lata **główną przyczyną śmierci orła iberyjskiego**.
+- **Kolizje z przewodami**, zwłaszcza z cienkimi, słabo widocznymi linkami odgromowymi.
+
+<margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head%2C_Md.%2C_is_retrofitted_with_flight_diverters_on_utility_lines%2C_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1274" alt="Drewniany słup z izolatorami w osłonach, na przewodach wiszą małe kolorowe tabliczki odblaskowe" podpis="Linia przebudowana dla ptaków (Maryland, USA): osłony na izolatorach i kolorowe znaczniki na przewodach, dzięki którym ptaki widzą linię" autor="R. Jason Brunson (U.S. Navy)" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head,_Md.,_is_retrofitted_with_flight_diverters_on_utility_lines,_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg">
 </zdjecie>
 
+</margines>
+
+Rozwiązanie jest znane i stosunkowo tanie: przebudowa niebezpiecznych słupów, osłony izolacyjne, spirale i znaczniki na przewodach.
+
 ### 3. Farmy wiatrowe
-Wirujące łopaty zabijają m.in. sępy płowe (np. w okolicach Tarify), bieliki (dobrze opisany przypadek z wyspy Smøla w Norwegii) i kanie rude. Skala problemu **bardzo zależy od lokalizacji**: turbina na trasie przelotu albo obok gniazda jest dużo groźniejsza niż na polu daleko od korytarzy. Stosuje się m.in. staranny wybór lokalizacji, zatrzymywanie turbin, gdy zbliżają się duże ptaki (obserwatorzy lub radar), i malowanie jednej łopaty na czarno. Skuteczność tych metod wciąż jest badana.
+
+<margines>
 
 <zdjecie src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Windenergieanlagen_Tarifa2004.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="637" alt="Rząd turbin wiatrowych na kratownicowych masztach wzdłuż zielonego wzgórza" podpis="Turbiny wiatrowe na grzbiecie koło Tarify, tuż przy jednym z głównych szlaków przelotu sępów i orłów przez Cieśninę Gibraltarską" autor="Manfred Werner" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Windenergieanlagen_Tarifa2004.jpg">
 </zdjecie>
+
+</margines>
+
+Wirujące łopaty zabijają m.in. sępy płowe (np. w okolicach Tarify), bieliki (dobrze opisany przypadek z wyspy Smøla w Norwegii) i kanie rude. Skala problemu **bardzo zależy od lokalizacji**: turbina na trasie przelotu albo obok gniazda jest dużo groźniejsza niż na polu daleko od korytarzy. Stosuje się m.in. staranny wybór lokalizacji, zatrzymywanie turbin, gdy zbliżają się duże ptaki (obserwatorzy lub radar), i malowanie jednej łopaty na czarno. Skuteczność tych metod wciąż jest badana.
 
 ### 4. Utrata i zmiana siedlisk
 - wycinka starych drzew z gniazdami, osuszanie mokradeł (błotniaki, orlik grubodzioby),
