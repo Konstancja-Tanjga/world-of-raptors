@@ -65,7 +65,19 @@ export type Zdjecie = {
   plik: string;
 };
 
-export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };
+/**
+ * The plate's third photo: the view that most helps to tell the species apart
+ * and that the other two do not show (the other sex, a juvenile, a colour
+ * morph, a field mark). `podpis` names that view ("Samica", "Młody ptak");
+ * `alt` describes the photo, since the label alone does not.
+ */
+export type ZdjecieCechy = Zdjecie & { podpis: string; alt: string };
+
+export type ZdjeciaGatunku = {
+  siedzacy: Zdjecie | null;
+  lot: Zdjecie | null;
+  cecha?: ZdjecieCechy | null;
+};
 
 /** A curiosity shown in rotating "Ciekawostka" cards; `tekst` is inline Markdown. */
 export type Ciekawostka = {

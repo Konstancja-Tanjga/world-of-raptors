@@ -541,9 +541,16 @@ body {
 .plate__photos--single {
   grid-template-columns: minmax(0, 1fr);
 }
+/* Three photos: the main one on the left, the other two stacked on the right. */
+.plate__photos--three > :first-child {
+  grid-row: span 2;
+}
 @media (max-width: 600px) {
   .plate__photos {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .plate__photos--three > :first-child {
+    grid-row: auto;
   }
 }
 .plate__label {

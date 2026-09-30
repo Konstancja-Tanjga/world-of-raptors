@@ -8,8 +8,8 @@ import { CECHY_DZIENNE, CECHY_NOCNE, SpeciesCues } from './SpeciesCues';
 /**
  * A field-guide plate for one species: the reference photos (in flight first
  * for diurnal raptors, perched first for owls, because that is how each is
- * usually seen), the ID cues side by side with its look-alikes, and where to
- * see and hear more.
+ * usually seen, then an identification view such as the other sex), the ID
+ * cues side by side with its look-alikes, and where to see and hear more.
  */
 export function SpeciesMedia({
   id,
@@ -38,6 +38,8 @@ export function SpeciesMedia({
     z?.siedzacy && { foto: z.siedzacy, alt: `${g.pl}, ptak siedzący`, podpis: 'Siedzący' },
   ].filter((x) => !!x);
   if (nocny) zdjeciaPlanszy.reverse();
+  // Always last: it only makes sense next to the two views it adds to.
+  if (z?.cecha) zdjeciaPlanszy.push({ foto: z.cecha, alt: z.cecha.alt, podpis: z.cecha.podpis });
 
   const kolumna = (x: NonNullable<typeof g>) => ({
     id: x.id,
@@ -48,7 +50,15 @@ export function SpeciesMedia({
   return (
     <div className="plate">
       {zdjeciaPlanszy.length > 0 && (
-        <div className={zdjeciaPlanszy.length > 1 ? 'plate__photos' : 'plate__photos plate__photos--single'}>
+        <div
+          className={
+            zdjeciaPlanszy.length === 1
+              ? 'plate__photos plate__photos--single'
+              : zdjeciaPlanszy.length === 3
+                ? 'plate__photos plate__photos--three'
+                : 'plate__photos'
+          }
+        >
           {zdjeciaPlanszy.map((p, i) => (
             <Photo key={p.podpis} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} wazne={glowne && i === 0} />
           ))}
