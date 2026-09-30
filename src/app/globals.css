@@ -412,6 +412,57 @@ body {
   font-weight: var(--bh-text-weight-emphasis);
 }
 
+/* Flashcards */
+.fiszka {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+  max-width: 40rem;
+}
+.fiszka .muted {
+  margin: 0;
+}
+.fiszka__akcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__odpowiedz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__nazwa {
+  margin: 0;
+  font-size: var(--bh-text-size-display);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+}
+.fiszka__lat,
+.fiszka__cechy {
+  margin: 0;
+}
+.fiszka__cechy {
+  padding-left: var(--bh-padding-section);
+}
+.fiszka__oceny {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: var(--bh-gap-normal);
+  padding-top: var(--bh-gap-snug);
+}
+.fiszka__ocena {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+}
+/* Keyboard hints mean nothing on a touch screen. */
+@media (hover: none) {
+  .fiszka__klawisz {
+    display: none;
+  }
+}
+
 /* Photos (Wikimedia Commons, with attribution) */
 .photo {
   margin: 0;

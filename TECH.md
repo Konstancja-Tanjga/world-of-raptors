@@ -67,7 +67,7 @@ src/
    Akapit, do którego należy uwaga.
    ```
    Na szerokim ekranie notatka stoi obok akapitu, na wąskim nad nim. Nagłówki `##` tworzą spis treści lekcji, więc pisz je zwykłym tekstem, bez pogrubień i linków.
-7. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Pytanie bez dokładnie jednej pogrubionej odpowiedzi zatrzymuje build.
+7. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w treści pytań znikają (zob. `DS-GAPS.md`).
 
 ## Uruchamianie
 ```bash
@@ -88,6 +88,6 @@ Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten j
 ## Etapy
 1. Gotowe: **MVP:** moduły A1–A7 i B1–B5, atlas gatunków, checklista, deploy.
 2. Zdjęcia i nagrania na licencjach CC (Wikimedia Commons, xeno-canto) z autorem i licencją przy każdym pliku.
-3. Interaktywne quizy i fiszki z powtórkami rozłożonymi w czasie (`ts-fsrs`).
+3. Gotowe: quiz krok po kroku w lekcjach „Ćwiczenia i projekt” i fiszki ze zdjęć atlasu z powtórkami rozłożonymi w czasie (`ts-fsrs`, `/fiszki`).
 4. Mapa punktów obserwacyjnych (Leaflet + OpenStreetMap), quiz „porównaj”, „wirtualny punkt obserwacyjny”.
 5. Opcjonalnie: checklista zapisywana w bazie (np. Supabase albo Neon przez Vercel Marketplace), żeby była wspólna na telefonie i komputerze.

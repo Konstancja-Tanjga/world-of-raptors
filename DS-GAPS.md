@@ -31,3 +31,10 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co jest w skali:** największy rozmiar to `--bh-text-size-display` (20 px), tylko 4 px więcej niż `heading` (16 px). Na stronie ze zdjęciem 800 px szerokości nazwa gatunku przegrywa ze zdjęciem i z jego podpisem.
 - **Czego nie zrobiłam:** nie użyłam `calc(var(--bh-text-size-display) * 2)` ani wartości wpisanej na sztywno. Reguła 2 wyklucza rozmiary spoza skali, a mnożnik byłby rozmiarem „na oko”.
 - **Pytanie do design systemu:** czy skala powinna mieć stopień dla pojedynczego nagłówka strony (np. `text-size-hero`), skoro jest już `padding-hero`?
+
+## RadioGroup: pytanie tylko jako tekst
+
+- **Po co sięgnęłam:** quiz krok po kroku (`src/components/QuizKrokowy.tsx`) wstawia pytanie jako `legend` w `RadioGroup`. Część pytań ma łacińską nazwę gatunku, np. „Łacińska nazwa pójdźki *Athene noctua*…”, a kurs zawsze pisze ją kursywą.
+- **Co jest w API:** `legend: string`, a `label` opcji przyjmuje `ReactNode`. Pytania nie da się więc sformatować.
+- **Co zrobiłam:** usuwam znaczniki kursywy i pogrubienia z tekstu quizu, więc nazwa łacińska jest bez kursywy. Nie zbudowałam własnego `<fieldset>`, bo straciłabym to, co daje komponent: wspólny `name`, strzałki i powiązanie błędu z grupą.
+- **Pytanie do design systemu:** czy `legend` może przyjmować `ReactNode` z samym formatowaniem tekstu (kursywa, pogrubienie), skoro `label` opcji już to umie?

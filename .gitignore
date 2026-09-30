@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+# iCloud skips *.nosync; node_modules is a symlink into it (see CLAUDE.md)
+/node_modules.nosync
 /.pnp
 .pnp.*
 .yarn/*
@@ -15,6 +17,8 @@
 
 # next.js
 /.next/
+/.next
+/.next.nosync
 /out/
 
 # production

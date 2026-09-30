@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useMemo, useRef, useState } from 'react';
 import { dzisiaj, useChecklista } from '@/lib/checklist';
+import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
 import { usePostep } from '@/lib/postep';
 import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
@@ -38,6 +39,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   const { notify } = useToast();
   const sprawdzZapis = useOstrzezenieZapisu();
   const { postep, zastapPostep } = usePostep();
+  const { fiszki, zastapFiszki } = useFiszki();
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
@@ -60,7 +62,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
 
   const eksportuj = async () => {
     try {
-      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {});
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki ?? {});
       const url = URL.createObjectURL(plik);
       const a = document.createElement('a');
       a.href = url;
@@ -75,7 +77,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           tone: 'warning',
           title: 'Kopia bez zdjęć',
           description:
-            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę i postęp. Wczytanie tej kopii nie usunie zdjęć na innym urządzeniu.',
+            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę, postęp i fiszki. Wczytanie tej kopii nie usunie zdjęć na innym urządzeniu.',
           duration: null,
         });
       }
@@ -91,7 +93,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
   };
 
   // Order matters: validate everything, then write photos (most likely to
-  // fail, and aborted atomically), then progress, then the checklist.
+  // fail, and aborted atomically), then progress and flashcards, then the checklist.
   const importuj = async (file: File) => {
     let kopia: OdczytanaKopia;
     try {
@@ -117,8 +119,8 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           title: 'Nie udało się zapisać zdjęć z kopii',
           description:
             err instanceof DOMException && err.name === 'QuotaExceededError'
-              ? 'Brak miejsca w pamięci przeglądarki. Nic nie zostało zmienione: checklista, postęp i dotychczasowe zdjęcia są bez zmian.'
-              : 'Przeglądarka odmówiła zapisu. Nic nie zostało zmienione: checklista, postęp i dotychczasowe zdjęcia są bez zmian.',
+              ? 'Brak miejsca w pamięci przeglądarki. Nic nie zostało zmienione: checklista, postęp, fiszki i dotychczasowe zdjęcia są bez zmian.'
+              : 'Przeglądarka odmówiła zapisu. Nic nie zostało zmienione: checklista, postęp, fiszki i dotychczasowe zdjęcia są bez zmian.',
           duration: null,
         });
         return;
@@ -126,14 +128,16 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
     }
 
     const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
+    const fiszkiOk = kopia.fiszki ? zastapFiszki(kopia.fiszki) : true;
     const checklistaOk = zastap(kopia.checklista);
-    const nieZapisane = [!checklistaOk && 'checklisty', !postepOk && 'postępu nauki'].filter(Boolean);
+    const nieZapisane = [!checklistaOk && 'checklisty', !postepOk && 'postępu nauki', !fiszkiOk && 'fiszek'].filter(Boolean);
     const wczytano = [
       `${Object.keys(kopia.checklista).length} obserwacji`,
       kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
       kopia.postep ? 'postęp nauki' : null,
+      kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
     ].filter(Boolean);
-    const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)'].filter(
+    const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)', !kopia.fiszki && 'fiszek (dotychczasowe zostały)'].filter(
       Boolean,
     );
     notify({
@@ -276,7 +280,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia i postęp nauki są zapisane tylko w tej przeglądarce. Co jakiś
+          Checklista, moje zdjęcia, postęp nauki i fiszki są zapisane tylko w tej przeglądarce. Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>

@@ -1,6 +1,7 @@
 'use client';
 
 import { isChecklista, type Checklista } from './checklist';
+import { isFiszki, type Fiszki } from './fiszki';
 import { isPostep, type Postep } from './postep';
 import {
   blobNaDataUrl,
@@ -14,14 +15,15 @@ import {
 /**
  * Backup file format.
  *
- * v2: `{ wersja: 2, checklista, postep, zdjecia }`. `zdjecia` is left out
+ * v2: `{ wersja: 2, checklista, postep, fiszki, zdjecia }`. `fiszki` was added
+ * later, so older v2 files lack it. `zdjecia` is left out
  * (not `[]`) when the photos could not be read, so importing such a file
  * keeps the photos already on the target device instead of erasing them.
  * v1: a bare checklist object; still importable.
  */
-type KopiaV2 = { wersja: 2; checklista: Checklista; postep: Postep; zdjecia?: ZdjecieKopii[] };
+type KopiaV2 = { wersja: 2; checklista: Checklista; postep: Postep; fiszki?: Fiszki; zdjecia?: ZdjecieKopii[] };
 
-export async function utworzKopie(checklista: Checklista, postep: Postep) {
+export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki: Fiszki) {
   let zdjecia: ZdjecieKopii[] | undefined;
   try {
     zdjecia = await Promise.all(
@@ -31,7 +33,7 @@ export async function utworzKopie(checklista: Checklista, postep: Postep) {
     console.error('[kopia] could not read photos for export', err);
     zdjecia = undefined;
   }
-  const kopia: KopiaV2 = { wersja: 2, checklista, postep, ...(zdjecia ? { zdjecia } : {}) };
+  const kopia: KopiaV2 = { wersja: 2, checklista, postep, fiszki, ...(zdjecia ? { zdjecia } : {}) };
   return { plik: new Blob([JSON.stringify(kopia)], { type: 'application/json' }), bezZdjec: !zdjecia };
 }
 
@@ -40,6 +42,8 @@ export type OdczytanaKopia = {
   checklista: Checklista;
   /** undefined: the file has no progress (v1, or v2 without it) — leave current progress alone. */
   postep?: Postep;
+  /** undefined: the file has no flashcards (v1, or an older v2) — leave current ones alone. */
+  fiszki?: Fiszki;
   /** undefined: the file has no photos — leave current photos alone. */
   zdjecia?: ZdjecieWlasne[];
 };
@@ -67,6 +71,9 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   }
 
   if (!isChecklista(obiekt.checklista)) throw new NiepoprawnaKopia('uszkodzona checklista w pliku');
+  if (obiekt.fiszki !== undefined && !isFiszki(obiekt.fiszki)) {
+    throw new NiepoprawnaKopia('uszkodzone fiszki w pliku');
+  }
   if (obiekt.postep !== undefined && !isPostep(obiekt.postep)) {
     throw new NiepoprawnaKopia('uszkodzony postęp nauki w pliku');
   }
@@ -83,5 +90,10 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
       throw new NiepoprawnaKopia('nie udało się odczytać zdjęć z pliku');
     }
   }
-  return { checklista: obiekt.checklista, postep: obiekt.postep as Postep | undefined, zdjecia };
+  return {
+    checklista: obiekt.checklista,
+    postep: obiekt.postep as Postep | undefined,
+    fiszki: obiekt.fiszki as Fiszki | undefined,
+    zdjecia,
+  };
 }
