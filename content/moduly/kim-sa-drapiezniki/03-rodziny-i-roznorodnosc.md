@@ -51,7 +51,7 @@ Jastrzębiowate to „wielki worek”, w którym mieści się większość znany
 | **Kanie** | kania ruda (*Milvus milvus*, ang. Red Kite), kania czarna (*Milvus migrans*, ang. Black Kite) | wcięty ogon, oportunizm, często padlina |
 | **Sępy Starego Świata** (dwie odrębne linie) | sęp płowy (*Gyps fulvus*, ang. Griffon Vulture), ścierwnik (*Neophron percnopterus*, ang. Egyptian Vulture), orłosęp (*Gypaetus barbatus*, ang. Bearded Vulture) | padlinożercy; orłosęp żywi się w dużej mierze kośćmi |
 | **Orły węże** | gadożer (*Circaetus gallicus*, ang. Short-toed Snake Eagle) | duże oczy, poluje głównie na węże |
-| **Orły „w spodniach”** | orzeł przedni (*Aquila chrysaetos*, ang. Golden Eagle), orzełek włochaty (*Aquila pennata*, dawniej *Hieraaetus pennatus*, ang. Booted Eagle) | skoki opierzone aż do palców |
+| **Orły „w spodniach”** | orzeł przedni (*Aquila chrysaetos*, ang. Golden Eagle), orzełek włochaty (*Aquila pennata*, na części list *Hieraaetus pennatus*, ang. Booted Eagle) | skoki opierzone aż do palców |
 | **Błotniaki** | błotniak stawowy (*Circus aeruginosus*, ang. Western Marsh Harrier) | niski lot nad otwartym terenem, twarz lekko „sowia” |
 | **Krogulce i jastrzębie** | krogulec (*Accipiter nisus*, ang. Eurasian Sparrowhawk), jastrząb (*Accipiter gentilis*, ang. Northern Goshawk) | krótkie skrzydła, długi ogon, polowanie z zaskoczenia |
 | **Bieliki** | bielik (*Haliaeetus albicilla*, ang. White-tailed Eagle) | ryby i ptaki wodne, masywny dziób |

@@ -58,7 +58,7 @@ Kształt stopy zdradza specjalizację.
 | **Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) | długie palce | chwytanie albo uderzanie ptaków w powietrzu |
 | **Gadożer** (*Circaetus gallicus*, ang. Short-toed Snake Eagle) | **krótkie, grube palce**, skok pokryty twardymi łuskami | mocne przytrzymanie węża; łuski utrudniają ukąszenie |
 | **Sępy**, np. sęp płowy (*Gyps fulvus*, ang. Griffon Vulture) | stosunkowo **słabe stopy, tępe szpony**, płaska stopa | chodzenie po ziemi i przytrzymywanie padliny, nie zabijanie |
-| **Orzełek włochaty** (*Aquila pennata*, dawniej *Hieraaetus pennatus*, ang. Booted Eagle), **orzeł przedni** (*Aquila chrysaetos*, ang. Golden Eagle) | **skok opierzony aż do palców** („w spodniach”) | to cecha wspólna całej grupy orłów „w spodniach” (podrodzina *Aquilinae*); pióra mogą chronić przed zimnem i ugryzieniem, ale to raczej przypuszczenie niż wynik badań |
+| **Orzełek włochaty** (*Aquila pennata*, na części list *Hieraaetus pennatus*, ang. Booted Eagle), **orzeł przedni** (*Aquila chrysaetos*, ang. Golden Eagle) | **skok opierzony aż do palców** („w spodniach”) | to cecha wspólna całej grupy orłów „w spodniach” (podrodzina *Aquilinae*); pióra mogą chronić przed zimnem i ugryzieniem, ale to raczej przypuszczenie niż wynik badań |
 
 ## Dziób
 Dziób ptaka drapieżnego jest **haczykowaty**: górna szczęka zakrzywia się w ostry hak, którym ptak odrywa kawałki mięsa. Dziób to kość pokryta rogową pochewką, która stale rośnie i się ściera (w niewoli czasem trzeba ją przycinać).
