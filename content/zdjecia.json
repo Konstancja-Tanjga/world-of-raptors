@@ -362,8 +362,8 @@
     },
     "cecha": {
       "src": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Ruppell%27s_griffon_vulture_juvenile_-_Flickr_-_Lip_Kee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "width": 640,
-      "height": 800,
+      "width": 960,
+      "height": 1200,
       "autor": "Lip Kee from Singapore, Republic of Singapore",
       "licencja": "CC BY-SA 2.0",
       "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
@@ -531,16 +531,16 @@
       "plik": "File:Suelta de águilas y linces en la finca ‘El Borril’ 4.jpg"
     },
     "cecha": {
-      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Aquila_adalberti_2014-02-08_1.jpg/960px-Aquila_adalberti_2014-02-08_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Aquila_adalberti_%28ad.%29.jpg/960px-Aquila_adalberti_%28ad.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "width": 960,
       "height": 540,
-      "autor": "Juan Lacruz",
-      "licencja": "CC BY-SA 3.0",
-      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "strona": "https://commons.wikimedia.org/wiki/File:Aquila_adalberti_2014-02-08_1.jpg",
-      "plik": "File:Aquila adalberti 2014-02-08 1.jpg",
-      "podpis": "Młody ptak",
-      "alt": "Młody orzeł iberyjski leci na tle nieba, ma płowe, rdzawobrązowe ciało i pokrywy skrzydeł oraz ciemne lotki."
+      "autor": "Juan lacruz",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Aquila_adalberti_(ad.).jpg",
+      "plik": "File:Aquila adalberti (ad.).jpg",
+      "podpis": "Dorosły w locie",
+      "alt": "Dorosły orzeł iberyjski w locie od spodu, ciemnobrązowy, z jaśniejszą głową."
     }
   },
   "orzel-poludniowy": {
@@ -574,7 +574,7 @@
       "strona": "https://commons.wikimedia.org/wiki/File:Aquila_Fasciata.jpg",
       "plik": "File:Aquila Fasciata.jpg",
       "podpis": "Dorosły z wierzchu",
-      "alt": "Orzeł południowy w locie widziany z góry, z białą plamą na grzbiecie między skrzydłami"
+      "alt": "Orzeł południowy w locie widziany z góry, z białą plamą na grzbiecie między skrzydłami."
     }
   },
   "kaniuk": {
@@ -710,7 +710,7 @@
       "strona": "https://commons.wikimedia.org/wiki/File:Hobby_(Falco_subbuteo)_juvenile_Danube_delta.jpg",
       "plik": "File:Hobby (Falco subbuteo) juvenile Danube delta.jpg",
       "podpis": "Młody ptak",
-      "alt": "Młody kobuz siedzi na przewodzie, ma płowe obrzeżenia piór na grzbiecie, mocno kreskowaną jasną pierś i nie ma rdzawych portek."
+      "alt": "Młody kobuz siedzi na przewodzie, ma płowe obrzeżenia piór na grzbiecie i mocno kreskowaną jasną pierś."
     }
   },
   "sokol-wedrowny": {
@@ -846,7 +846,7 @@
       "strona": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_USFWS.jpg",
       "plik": "File:Aquila chrysaetos USFWS.jpg",
       "podpis": "Młody ptak",
-      "alt": "Młody orzeł przedni w locie od spodu, z dużymi białymi plamami na skrzydłach i białym ogonem z szerokim ciemnym końcem."
+      "alt": "Młody orzeł przedni w locie od spodu, z białą plamą na skrzydle i białym ogonem z szerokim ciemnym końcem."
     }
   },
   "orlosep": {
@@ -1049,8 +1049,8 @@
       "licencjaUrl": "https://creativecommons.org/licenses/by/3.0",
       "strona": "https://commons.wikimedia.org/wiki/File:Barn_Owl_Tyto_alba_guttata,_Germany_(92598303).jpg",
       "plik": "File:Barn Owl Tyto alba guttata, Germany (92598303).jpg",
-      "podpis": "Podgatunek ciemnopierśny",
-      "alt": "Płomykówka z podgatunku środkowoeuropejskiego ląduje z rozłożonymi skrzydłami, jej pierś i brzuch są rdzawopłowe i drobno nakrapiane."
+      "podpis": "Rdzawy spód",
+      "alt": "Płomykówka ląduje z rozłożonymi skrzydłami, jej pierś i brzuch są rdzawopłowe i drobno nakrapiane."
     }
   },
   "uszatka": {
@@ -1109,16 +1109,16 @@
       "plik": "File:A short-eared owl flies towards a red fox that is trotting along the park road west of Eielson Visitor Center in Denali National (697e39f5-95ca-4e08-bc93-7bd8bd6565a7).JPG"
     },
     "cecha": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Asio_flammeus_Downsview_Park_Toronto_in_flight_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Asio_flammeus_Downsview_Park_Toronto_in_flight_3.jpg/960px-Asio_flammeus_Downsview_Park_Toronto_in_flight_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "width": 960,
-      "height": 1208,
+      "height": 704,
       "autor": "Mykola Swarnyk",
       "licencja": "CC BY-SA 4.0",
       "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "strona": "https://commons.wikimedia.org/wiki/File:Asio_flammeus_Downsview_Park_Toronto_in_flight_4.jpg",
-      "plik": "File:Asio flammeus Downsview Park Toronto in flight 4.jpg",
+      "strona": "https://commons.wikimedia.org/wiki/File:Asio_flammeus_Downsview_Park_Toronto_in_flight_3.jpg",
+      "plik": "File:Asio flammeus Downsview Park Toronto in flight 3.jpg",
       "podpis": "Od spodu",
-      "alt": "Uszatka błotna w locie widziana od spodu, z jasnym spodem skrzydeł, ciemnymi plamami na nadgarstkach i ciemnymi końcami lotek."
+      "alt": "Uszatka błotna w locie od spodu, z jasnymi skrzydłami, ciemnymi plamami na nadgarstkach i ciemnymi końcami lotek."
     }
   },
   "pojdzka": {

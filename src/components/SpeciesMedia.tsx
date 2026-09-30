@@ -60,7 +60,7 @@ export function SpeciesMedia({
           }
         >
           {zdjeciaPlanszy.map((p, i) => (
-            <Photo key={p.podpis} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} wazne={glowne && i === 0} />
+            <Photo key={p.foto.plik} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} wazne={glowne && i === 0} />
           ))}
         </div>
       )}
