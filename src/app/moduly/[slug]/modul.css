@@ -97,13 +97,13 @@
   gap: var(--bh-gap-tight);
   margin: 0;
   font-family: var(--wor-font-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   letter-spacing: var(--wor-tracking-display);
 }
 .otwarcie__id {
   color: var(--wor-zloto);
   font-size: var(--wor-size-display);
-  line-height: 1;
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums;
 }
 .otwarcie__nazwa {
@@ -118,11 +118,11 @@
   max-width: 36rem;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .otwarcie__zajawka strong {
   color: var(--wor-zloto);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .otwarcie__fakty {
   display: flex;
@@ -141,7 +141,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .otwarcie__fakty dt {
@@ -244,8 +244,8 @@
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
-  line-height: 1.1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-title);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .sylabus__tresc {
@@ -255,7 +255,7 @@
 .sylabus__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .sylabus__lekcja:hover .sylabus__tytul {
@@ -272,7 +272,7 @@
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .sylabus__meta {
   display: flex;
@@ -285,7 +285,7 @@
   color: var(--wor-akcent);
   font-weight: var(--bh-text-weight-heading);
 }
-/* A finished lesson: its number filled, so the column of numbers reads as progress. */
+/* A finished lesson: its number struck through in the accent colour, so the column of numbers reads as progress. */
 .sylabus__lekcja[data-gotowa] .sylabus__nr {
   color: var(--bh-text-muted);
   text-decoration: line-through;

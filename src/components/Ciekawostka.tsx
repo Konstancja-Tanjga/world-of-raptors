@@ -70,10 +70,9 @@ function inline(tekst: string): ReactNode[] {
  * A rotating "did you know" card. Chosen in the browser after mount: the
  * pages are static, so a server-side pick would be frozen at build time.
  *
- * An editorial block rather than a Big Hat Card: a passage set large between
- * two hairlines, with the way to the lesson it comes from and a button for
- * another one. (It used to be a Card holding one action, with the second
- * outside it; as a passage there is no card to keep to one action.)
+ * Not a Big Hat Card, so the one-action rule does not apply: a passage set
+ * large between two hairlines, with the way to the lesson it comes from and a
+ * button for another one.
  */
 export function Ciekawostka({
   preferowane,
@@ -109,10 +108,13 @@ export function Ciekawostka({
       </p>
       {biezaca ? (
         <>
-          {/* Keyed by the curiosity, so a new one enters with its own fade instead of swapping in place. */}
-          <p key={biezaca.id} className="ciekawostka__tekst" aria-live="polite">
-            {inline(biezaca.tekst)}
-          </p>
+          {/* The live region stays mounted, so screen readers announce the next one; the passage inside
+              is keyed by the curiosity, so a new one enters with its own fade instead of swapping in place. */}
+          <div aria-live="polite">
+            <p key={biezaca.id} className="ciekawostka__tekst">
+              {inline(biezaca.tekst)}
+            </p>
+          </div>
           <div className="ciekawostka__stopka">
             <Link href={biezaca.href} className="ciekawostka__zrodlo">
               Czytaj dalej: {biezaca.zrodlo}

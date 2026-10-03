@@ -4,9 +4,9 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 
 ## Link wyglądający jak przycisk
 
-- **Po co sięgnęłam:** `Button` dla „Zacznij: lekcja 1”, poprzedniej i następnej lekcji oraz „Odhacz obserwacje”.
+- **Po co sięgnęłam:** `Button` dla linków w stanach pustych i błędu: „Wróć na start” i „Otwórz atlas” na stronie, której nie ma, i „Wróć na start” na stronach błędu. (Przed przeprojektowaniem także „Zacznij: lekcja 1”, poprzednia i następna lekcja oraz „Odhacz obserwacje”.)
 - **Dlaczego nie `Button`:** kontrakt `spec/components/button.json` wyklucza nawigację: „Navigation to another page — that is an anchor, and a button breaks middle-click, cmd-click, copy-link-address and the browser's history model”.
-- **Co zbudowałam lokalnie:** `src/components/ButtonLink.tsx`, czyli `next/link` z klasami `bh-button bh-button--{variant} bh-button--{size} bh-focusable`, oraz `.button-link` w `globals.css`. Ta klasa wyłącza podkreślenie i pozwala długim tytułom lekcji zawijać się na telefonie.
+- **Co zbudowałam lokalnie:** `src/components/ButtonLink.tsx`, czyli `next/link` z klasami `bh-button bh-button--{variant} bh-button--{size} bh-focusable`, oraz `.button-link` w `globals.css`. Ta klasa wyłącza podkreślenie i pozwala dłuższej etykiecie zawinąć się na telefonie.
 - **Co robi gorzej:**
   - Opiera się na wewnętrznych nazwach klas (`bh-button*`), które nie są wersjonowanym API. Zmiana w CSS design systemu może zepsuć wygląd bez żadnego błędu typów.
   - Nadpisuje `white-space: nowrap` i stałą wysokość przycisku.
@@ -17,7 +17,7 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 
 - **Co zauważyłam:** przy przeglądzie „nie wyglądać jak wygenerowane” okazało się, że Big Hat sam zamienia na wersaliki etykiety w `DescriptionList` (`.bh-dl__term`), `Divider`, `NavGroup` (`.bh-navgroup__label`) i nagłówkach `Table` (`.bh-table thead th`). Wersaliki z rozstrzelonymi literami nad treścią to jeden z najczęstszych sygnałów szablonowego wyglądu.
 - **Czego nie zrobiłam:** nie nadpisałam tego w `globals.css`. Klasy `bh-*` należą do design systemu, a nadpisanie ich w produkcie tworzy drugą, niczyją warstwę stylów.
-- **Co widać w kursie:** grupy w menu („ŚCIEŻKA A: BIOLOGIA”) i nagłówki kolumn w porównaniu cech („CECHA”, nazwy gatunków).
+- **Co widać w kursie:** nagłówki kolumn w porównaniu cech („CECHA”, nazwy gatunków) i etykiety `DescriptionList` na planszach gatunków w lekcjach.
 - **Pytanie do design systemu:** czy wersaliki mają być domyślne, czy powinna o nich decydować aplikacja (np. przez prop albo token `text-transform`)?
 
 ## Table: szerokość kolumn i nagłówki wierszy
@@ -27,8 +27,8 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 
 ## Brak rozmiaru tekstu dla nagłówka „hero”
 
-- **Po co sięgnęłam:** nazwa gatunku na dziś otwiera stronę startową i powinna być najmocniejszym tekstem na stronie, mocniejszym niż nagłówki sekcji.
-- **Co jest w skali:** największy rozmiar to `--bh-text-size-display` (20 px), tylko 4 px więcej niż `heading` (16 px). Na stronie ze zdjęciem 800 px szerokości nazwa gatunku przegrywa ze zdjęciem i z jego podpisem.
+- **Po co sięgnęłam:** tytuły, które otwierają stronę („Naucz się czytać niebo”, otwarcie modułu, nazwa na karcie gatunku), muszą być najmocniejszym tekstem na stronie, mocniejszym niż nagłówki sekcji.
+- **Co jest w skali:** w Big Hat największy rozmiar to `--bh-text-size-display` (20 px), tylko 4 px więcej niż `heading` (16 px); ten produkt podnosi go w `motyw.css` do 22 px. Przy zdjęciu na całą szerokość ekranu i to za mało.
 - **Co zbudowałam lokalnie (przy przeprojektowaniu):** skalę tytułów w warstwie `--wor-*` (zob. niżej): `--wor-size-hero`, `-display`, `-title`, `-subtitle`, płynną między telefonem a desktopem (`clamp()`). Wartości są w jednym miejscu, `motyw.css`, a strony używają ich po nazwie.
 - **Co robi gorzej:** to druga skala obok skali Big Hat. Komponent Big Hat nie zna tych rozmiarów, więc tytuł w karcie Big Hat nadal ma najwyżej 22 px.
 - **Pytanie do design systemu:** czy skala powinna mieć stopnie dla pojedynczego nagłówka strony (np. `text-size-hero`), skoro jest już `padding-hero`?
@@ -43,33 +43,33 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 ## Motyw produktu: kolory i rozmiar tekstu
 
 - **Po co sięgnęłam:** kurs ma własny charakter: w trybie jasnym ciepły „papier terenowy” z rdzawym akcentem (kania ruda), w ciemnym „zmierzch” ze złotym (oko drapieżnika). Big Hat ma jeden jasny i jeden ciemny motyw, oba chłodne, z miętowym przyciskiem.
-- **Co zbudowałam lokalnie:** `src/app/motyw.css` nadaje semantycznym tokenom `--bh-*` wartości tego produktu, tymi samymi selektorami, którymi Big Hat ustawia swój motyw (`:root`, `:root[data-theme='dark']`, `prefers-color-scheme`). Żadna klasa `bh-*` nie jest nadpisana, więc każdy komponent idzie za rolą. Kontrast każdej pary tekstu i tła sprawdziłam skryptem (WCAG AA: tekst co najmniej 4,5:1, obramowania 3:1). Rozmiary tekstu są o stopień większe (tekst 15 px zamiast 13 px), bo to kurs do czytania, a nie gęsta aplikacja.
+- **Co zbudowałam lokalnie:** `src/app/motyw.css` nadaje semantycznym tokenom `--bh-*` wartości tego produktu, tymi samymi selektorami, którymi Big Hat ustawia swój motyw (`:root`, `:root[data-theme='dark']`, `prefers-color-scheme`). Żadna klasa `bh-*` nie jest nadpisana, więc każdy komponent idzie za rolą. Kontrast każdej pary tekstu i tła zmierzyłam w przeglądarce (WCAG AA: tekst co najmniej 4,5:1, obramowania 3:1): pary tokenów policzyłam wprost, a tekst w scenach jednorazowym skryptem: robi zrzut strony z ukrytym tekstem w trybie jasnym i ciemnym, przy 1440 i 390 px, i porównuje kolor tekstu z najmniej korzystnym fragmentem tła pod nim (w blokach 12 px), także na zdjęciach i niebie. Rozmiary tekstu są o stopień większe (tekst 15 px zamiast 13 px), bo to kurs do czytania, a nie gęsta aplikacja.
 - **Co robi gorzej:**
-  - Kontrastu pilnuje jednorazowy skrypt, a nie CI design systemu. Zmiana koloru w `motyw.css` wymaga ponownego sprawdzenia.
+  - Kontrastu pilnuje jednorazowy skrypt, którego nie ma w repozytorium, a nie CI design systemu. Zmiana koloru albo cienia w `motyw.css` wymaga ponownego pomiaru.
   - Komponenty projektowane przy 13 px mają przy 15 px tę samą wysokość, więc są ciaśniejsze.
   - Ciemny motyw jest wpisany dwa razy (dla `data-theme` i dla `prefers-color-scheme`), jak w Big Hat.
 - **Pytanie do design systemu:** czy Big Hat powinien mieć motyw marki (np. `data-brand`) z testem kontrastu dla wartości produktu, zamiast zostawiać to każdej aplikacji?
 
 ## Warstwa ekspresyjna `--wor-*`
 
-- **Po co sięgnęłam:** po tytuły większe niż 20 px, kroje redakcyjne, ruch dłuższy niż 320 ms (opowiadanie, nie informacja zwrotna), niebo o różnych porach dnia i ciemne „sceny”, które niosą historię w obu motywach.
-- **Co zbudowałam lokalnie:** tokeny `--wor-*` w `motyw.css`: kroje (`--wor-font-display`: Półtawski Nowy, `--wor-font-text`: Newsreader), skalę tytułów, rytm sekcji, krzywe i czasy ruchu (krótki „produktywny” i długi „ekspresyjny”), mnożnik ruchu `--wor-ruch` (0 przy `prefers-reduced-motion`, więc przesunięcia znikają, a przenikania zostają), kolory scen i gradienty nieba. Strony używają tylko tych nazw, nie wartości.
+- **Po co sięgnęłam:** po tytuły większe niż 22 px, kroje redakcyjne, ruch dłuższy niż 320 ms (opowiadanie, nie informacja zwrotna), niebo o różnych porach dnia i ciemne „sceny”, które niosą historię w obu motywach.
+- **Co zbudowałam lokalnie:** tokeny `--wor-*` w `motyw.css`: kroje (`--wor-font-display`: Półtawski Nowy, `--wor-font-text`: Newsreader), skalę tytułów i interlinii, rytm sekcji, krzywe i czasy ruchu (krótki „produktywny” i długi „ekspresyjny”), mnożnik ruchu `--wor-ruch`, kolory scen i gradienty nieba. Mnożnik jest 0 przy `prefers-reduced-motion`: drobne ruchy (uniesienie po najechaniu, menu, odsłonięcie odpowiedzi) tracą wtedy przesunięcie i tylko się przenikają, a wejścia, efekty przewijania i przejścia stron są wyłączone. Strony używają tych nazw zamiast wartości; wyjątki (obramowania 1px, obrysy fokusu, choreografia pojedynczej sceny) wymienia `CLAUDE.md`.
 - **Co robi gorzej:** to warstwa poza Big Hat: bez kontraktów, bez testu dryfu. Jej zasady opisuje komentarz na górze `motyw.css`.
 - **Pytanie do design systemu:** czy skala ruchu powinna mieć rejestr „ekspresyjny” (400–1200 ms) obok obecnego, krótkiego?
 
 ## AppShell zastąpiony ramą strony
 
-- **Po co sięgnęłam:** przy przeprojektowaniu kurs stał się publikacją: start z pełnoekranową sceną, czytanie lekcji bez bocznego panelu. Kontrakt `spec/components/app-shell.json` mówi w `notFor`: „Documentation and marketing pages — use height="flow" or no shell at all”.
-- **Co zbudowałam lokalnie:** `src/components/AppFrame.tsx`: `SkipLink` z Big Hat, `<header>` z nawigacją (półprzezroczysty pasek, jasny nad ciemną sceną), pasek modułu na stronach modułów i lekcji (lekcje z ich stanem, które wcześniej pokazywał boczny panel), `<main id="main-content">` jako cel skip linka i `<footer>`.
+- **Po co sięgnęłam:** przy przeprojektowaniu kurs stał się publikacją: start z pełnoekranową sceną, czytanie lekcji bez bocznego panelu. Kontrakt `spec/components/app-shell.json` mówi w `notFor`: „Documentation and marketing pages — use height="flow" or no shell at all”. Nawet z `height="flow"` nagłówek powłoki jest systemowy i nie przyjmuje klas, a ten musi ciemnieć nad sceną, wpuszczać ją pod siebie i odjeżdżać na stronach modułów.
+- **Co zbudowałam lokalnie:** `src/components/AppFrame.tsx`: `SkipLink` z Big Hat, `<header>` z nawigacją (półprzezroczysty pasek; nad ciemną sceną ciemne szkło i jasny tekst), pasek modułu na stronach modułów i lekcji (lekcje z ich stanem, które wcześniej pokazywał boczny panel), `<main id="main-content">` jako cel skip linka i `<footer>`.
 - **Co robi gorzej:**
   - Punkty orientacyjne (landmarks) są pisane ręcznie, a nie wymuszone komponentem.
   - Strony reagują na szerokość okna (`@media`), a nie na szerokość powłoki (container queries, które daje `AppShell`).
-  - Menu na telefonie jest lokalne: przycisk z `aria-expanded`, Escape zamyka, fokus wraca na przycisk.
+  - Menu na telefonie jest lokalne: przycisk z `aria-expanded`, Escape zamyka, fokus wraca na przycisk. Pasek ma rozmycie tła (`backdrop-filter`), a ono robi z niego blok zawierający dla elementów `position: fixed`, więc przy otwartym menu pasek traci rozmycie, inaczej arkusz menu skurczyłby się do wysokości paska.
 - **Dowód na drugie wystąpienie:** jeszcze go nie ma.
 
 ## Przejścia między stronami
 
 - **Po co sięgnęłam:** przejście między stronami, które mówi, co się dzieje: strona odchodzi, następna przychodzi, a nazwa gatunku przelatuje z karty w atlasie do tytułu jego strony.
 - **Co zbudowałam lokalnie:** React `ViewTransition` w `AppFrame` (kluczem jest adres strony) i nazwy `nazwa-<id>` na kartach i tytułach, a animacje w `globals.css`. Big Hat nie ma ani komponentu, ani tokenów dla przejść między stronami.
-- **Co robi gorzej:** półprzezroczyste paski (materiał `chrome` z Big Hat) nie mają w zrzucie przejścia czego rozmywać, więc ich zrzut dostaje pełne tło. Ten wyjątek trzeba pamiętać przy każdym nowym pasku.
+- **Co robi gorzej:** półprzezroczyste paski (materiał `chrome` z Big Hat) nie mają w zrzucie przejścia czego rozmywać, więc zrzut paska, który się pojawia, dostaje pełne tło (zrzut paska, który znika, nie jest rysowany, żeby nie zostawiał pustego pasa). Ten wyjątek trzeba pamiętać przy każdym nowym pasku.
 - **Pytanie do design systemu:** czy materiały (`--bh-material-*`) powinny mieć wariant dla przejść, skoro rozmycie tła nie przenosi się na zrzut?

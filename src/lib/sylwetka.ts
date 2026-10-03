@@ -200,8 +200,8 @@ function palce(k: Ksztalt, W: P, T: P, H: P, luk: (t: number) => P): P[] {
 /**
  * The right half of the outline, from the front of the head to the centre of
  * the tail tip, in pose `p`. Wing points are generated with how much they
- * belong to the hand, so folding the hand and raising the wing move the right
- * ones.
+ * belong to the hand, so folding moves the hand and not the arm; raising the
+ * wing foreshortens the whole wing (by cos of `wznios`).
  */
 function polowa(k: Ksztalt, p: Poza): P[] {
   const S: P = [k.tulow / 2, 0];
@@ -341,7 +341,8 @@ function polowa(k: Ksztalt, p: Poza): P[] {
   const koniecOgona = probki((t) => bezier2(C, kontrolka, M, t), 14);
 
   let polowa: P[] = [...glowa, ...szyja, ...ulozone, ...bokTulowia, ...bokOgona, ...koniecOgona];
-  // Round the joints, from the tail forward so earlier indices stay valid.
+  // Round the joints. Each corner is found again before it is rounded, so the
+  // order only matters if one rounding swallowed another corner.
   const indeks = (p: P) => polowa.indexOf(p);
   polowa = zaokraglij(polowa, indeks(bokOgona[bokOgona.length - 1]), k.ogonRogi);
   polowa = zaokraglij(polowa, indeks(ulozone[ulozone.length - 1]), 2.5);

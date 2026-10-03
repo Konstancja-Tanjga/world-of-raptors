@@ -14,8 +14,7 @@ const OPISY: Record<'a' | 'b', string> = {
  * progress. `naglowek={false}` leaves out the section heading, for a page
  * whose own title already says what this is.
  */
-export async function Kurs({ naglowek = true }: { naglowek?: boolean }) {
-  const zajawki = new Map(await Promise.all(gotoweModuly.map(async (m) => [m.slug, await zajawkaModulu(m.slug)] as const)));
+export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
   const ileModulow = gotoweModuly.length;
 
   return (
@@ -47,7 +46,7 @@ export async function Kurs({ naglowek = true }: { naglowek?: boolean }) {
               .filter((m) => m.sciezka === s.id)
               .map((m) => {
                 const gotowy = gotoweModuly.find((g) => g.id === m.id);
-                const zajawka = gotowy && zajawki.get(gotowy.slug);
+                const zajawka = gotowy && zajawkaModulu(gotowy.slug);
                 return (
                   <li key={m.id}>
                     {gotowy ? (

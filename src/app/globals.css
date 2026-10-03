@@ -1,8 +1,11 @@
 /*
- * App-level styles. Values come from tokens only: Big Hat's semantic scale
- * for components and spacing, and this product's `--wor-*` layer (motyw.css)
- * for display type, the scenes and motion. Literals: 1px borders and the
- * reading measure, as before.
+ * App-level styles. Colour, type, spacing, radii and motion timing come from
+ * tokens: Big Hat's semantic scale, and this product's `--wor-*` layer
+ * (motyw.css) for display type, leading, the scenes and motion. Literals are
+ * allowed for 1px borders, focus outlines, reading measures, breakpoints,
+ * backdrops stacked at z-index −1/−2 inside an isolated scene, and the
+ * choreography of a single scene (keyframe offsets, one-off durations,
+ * illustration sizes).
  */
 
 html {
@@ -76,6 +79,14 @@ li {
   background: var(--wor-scena-szklo);
   border-bottom-color: var(--wor-scena-linia);
 }
+/* With the menu open the bar is solid paper, like the sheet under it. It also
+   drops the blur: a backdrop filter makes the bar the containing block of the
+   fixed sheet, which would shrink the sheet to the bar's height. */
+.nav[data-menu] {
+  background: var(--wor-tlo);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 .nav__pasek {
   box-sizing: border-box;
   display: flex;
@@ -94,7 +105,7 @@ li {
   text-decoration: none;
   font-family: var(--wor-font-display);
   font-size: var(--bh-text-size-heading);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   letter-spacing: var(--wor-tracking-display);
   white-space: nowrap;
 }
@@ -224,7 +235,7 @@ li {
   color: inherit;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   text-decoration: none;
   transition:
     opacity var(--wor-dur-expressive) var(--wor-ease-out),
@@ -232,6 +243,9 @@ li {
 }
 .nav__arkusz-link[aria-current] {
   color: var(--wor-akcent);
+  text-decoration: underline;
+  text-decoration-thickness: var(--bh-gap-hairline);
+  text-underline-offset: 0.25em;
 }
 .nav__arkusz li:nth-child(2) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 1); }
 .nav__arkusz li:nth-child(3) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 2); }
@@ -289,6 +303,8 @@ li {
   view-transition-name: pasek-modulu;
 }
 .pasek__wnetrze {
+  /* Positioned, so the visually hidden lesson titles inside are clipped by this scroller instead of widening the page. */
+  position: relative;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -316,7 +332,7 @@ li {
 .pasek__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--bh-text-size-heading);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .pasek__modul[aria-current] .pasek__tytul {
   text-decoration: underline;
@@ -454,7 +470,7 @@ li {
   color: var(--bh-text-primary);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .stopka__autorzy {
   color: var(--bh-text-secondary);
@@ -492,12 +508,6 @@ li {
 
 .page--reading {
   max-width: 56rem;
-}
-
-/* Article sizes itself by its own width and needs 50rem for the margin
-   beside the text; the page padding would leave it just short of that. */
-.page--article {
-  padding-inline: var(--wor-gutter);
 }
 
 /* A control that cannot wrap scrolls inside its own box instead of widening the page. */
@@ -622,7 +632,7 @@ li {
   border-top: 1px solid var(--wor-linia);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .checklist__licznik {
@@ -721,7 +731,7 @@ li {
 .prose h2,
 .prose h3 {
   font-family: var(--wor-font-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   letter-spacing: var(--wor-tracking-display);
   font-variant-numeric: lining-nums;
 }
@@ -755,7 +765,7 @@ li {
 .prose h3 em {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
-  font-weight: 400;
+  font-weight: var(--bh-text-weight-body);
 }
 .prose p,
 .prose ul,
@@ -777,7 +787,7 @@ li {
   font-weight: var(--bh-text-weight-heading);
 }
 .prose strong {
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .prose a {
   color: var(--bh-text-link);
@@ -939,7 +949,7 @@ li {
   padding-block: 0.05em;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -952,11 +962,11 @@ li {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 .lekcja__lead strong {
   color: var(--bh-text-primary);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 
 /* The way on: a small dusk scene, the whole card one link. */
@@ -999,7 +1009,7 @@ li {
 .dalej__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .dalej__akcja {
@@ -1090,7 +1100,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   padding-block: 0.06em;
@@ -1100,7 +1110,7 @@ li {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 
 /* Flashcards */
@@ -1223,7 +1233,7 @@ li {
   /* Sized by the card, so "Sęp kasztanowaty" fits as well as "Kobuz". */
   font-size: clamp(2rem, 11cqi, 5rem);
   text-wrap: balance;
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -1249,7 +1259,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .fiszka__akcje {
@@ -1285,7 +1295,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -1300,7 +1310,7 @@ li {
   padding-left: var(--bh-padding-section);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .fiszka__cechy-sylwetki {
   display: grid;
@@ -1322,9 +1332,14 @@ li {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.4;
+  line-height: var(--wor-leading-compact);
 }
 .fiszka__ilustracja {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.fiszka__ilustracja-obrazy {
   display: flex;
   align-items: center;
   gap: var(--bh-padding-section);
@@ -1479,7 +1494,7 @@ li {
 }
 
 /* ButtonLink (local): the system's button look on an anchor. Anchors are
-   underlined by default and long lesson titles must wrap on phones. */
+   underlined by default, and a longer label must wrap on phones. */
 .button-link {
   text-decoration: none;
   white-space: normal;
@@ -1591,7 +1606,7 @@ li {
   max-width: 34em;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-subtitle);
-  line-height: 1.35;
+  line-height: var(--wor-leading-snug);
   transition:
     opacity var(--wor-dur-expressive) var(--wor-ease-out),
     translate var(--wor-dur-expressive) var(--wor-ease-out);
@@ -1666,7 +1681,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -1675,7 +1690,7 @@ li {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 
 /* Calls to action: a link that looks like a big pill (see ButtonLink and DS-GAPS.md). */
@@ -1767,7 +1782,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.4;
+  line-height: var(--wor-leading-compact);
 }
 
 /* Wingspan to scale */
@@ -1929,7 +1944,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .suwak-morfu__strona dl {
   display: grid;
@@ -1947,7 +1962,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.35;
+  line-height: var(--wor-leading-snug);
 }
 
 /* ---------- The course: two paths of module cards (home and plan) ---------- */
@@ -1976,7 +1991,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .sciezka__opis {
   margin: 0;
@@ -2022,21 +2037,21 @@ a.modul:focus-visible {
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-numer);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums;
 }
 .modul__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .modul__zajawka {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .modul__stopka {
   display: flex;
@@ -2098,8 +2113,10 @@ a.modul:focus-visible {
   animation: strona-pojawienie var(--wor-dur-base) var(--wor-ease-out) var(--wor-dur-quick) both;
 }
 /* The bars are glass; a snapshot of glass has nothing to blur, so the page
-   would show through it sharp. Each bar's snapshot gets a solid backing in
-   the colour it sits on: night over a scene, the page colour elsewhere. */
+   would show through it sharp. The incoming bar's snapshot gets a solid
+   backing in the colour it sits on: night over a scene, the page colour
+   elsewhere. The outgoing snapshot is not drawn, so a bar the next page does
+   not have (the module bar, leaving a lesson) leaves no band behind. */
 .nav[data-nad-scena] {
   view-transition-name: nawigacja-scena;
 }
@@ -2108,10 +2125,6 @@ a.modul:focus-visible {
 ::view-transition-group(pasek-modulu) {
   z-index: var(--bh-layer-sticky);
   animation: none;
-  background: var(--wor-tlo);
-}
-::view-transition-group(nawigacja-scena) {
-  background: var(--wor-scena-tlo);
 }
 ::view-transition-old(nawigacja),
 ::view-transition-old(nawigacja-scena),
@@ -2122,6 +2135,10 @@ a.modul:focus-visible {
 ::view-transition-new(nawigacja-scena),
 ::view-transition-new(pasek-modulu) {
   animation: none;
+  background: var(--wor-tlo);
+}
+::view-transition-new(nawigacja-scena) {
+  background: var(--wor-scena-tlo);
 }
 /* A species' name flying from its card to its page's title: blurred for a
    moment mid-flight, which hides the scaling of a small snapshot. */

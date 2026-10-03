@@ -3,39 +3,30 @@ import Link from 'next/link';
 import './o-projekcie.css';
 import { MarkdownInline } from '@/components/Markdown';
 import { Anatomia } from '@/components/oprojekcie/Anatomia';
-import { SuwakMorfu, type StronaMorfu } from '@/components/SuwakMorfu';
+import { SuwakMorfu } from '@/components/SuwakMorfu';
 import { Sylwetka } from '@/components/Sylwetka';
-import { autorzyZdjec, ideaKursu, statystykiKursu, taliaFiszek, znajdzGatunek } from '@/lib/content';
+import { autorzyZdjec, ideaKursu, statystykiKursu, stronaMorfu, taliaFiszek, znajdzGatunek } from '@/lib/content';
+import type { PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
-import { SYLWETKI } from '@/lib/sylwetki';
-import type { SylwetkaDzienna } from '@/lib/types';
 
 export const metadata: Metadata = {
   title: 'O projekcie',
   description: 'Jak powstał World of Raptors: pomysł i treść Konstancji Tanjgi, projekt, ruch i kod razem z Claude.',
 };
 
-/** A species' cues for the morph, in the order of B1: wings, fingers, tail, head. */
-function strona(id: string): StronaMorfu {
-  const g = znajdzGatunek(id)!;
-  const c = g.sylwetka as SylwetkaDzienna;
-  return {
-    id,
-    pl: g.pl,
-    cechy: [
-      { etykieta: 'Skrzydła', tekst: c.skrzydla },
-      { etykieta: 'Ogon', tekst: c.ogon },
-      { etykieta: 'Głowa', tekst: c.glowa },
-    ],
-  };
+/** A diurnal atlas species for the morph slider; the build would fail if the id stopped being one. */
+function strona(id: string) {
+  const g = znajdzGatunek(id);
+  if (!g || g.aktywnosc !== 'dzienny') throw new Error(`o-projekcie: „${id}” nie jest gatunkiem dziennym z atlasu`);
+  return stronaMorfu(g);
 }
 
-const PORY = [
+const PORY: readonly { pora: PoraDnia; nazwa: string; opis: string }[] = [
   { pora: 'swit', nazwa: 'Świt', opis: 'Sowy wracają, myszołowy czekają na termikę.' },
   { pora: 'dzien', nazwa: 'Dzień', opis: 'Kocioł ptaków krąży w kominie ciepłego powietrza.' },
   { pora: 'zmierzch', nazwa: 'Zmierzch', opis: 'Ostatnie ptaki dzienne, pierwsze sowy.' },
   { pora: 'noc', nazwa: 'Noc', opis: 'Gwiazdy, księżyc i od czasu do czasu sowa.' },
-] as const;
+];
 
 const PALETY = [
   {
@@ -78,13 +69,13 @@ const ZASADY = [
   {
     tytul: 'Mniej ruchu to nie brak ruchu',
     tekst:
-      'Przy ograniczonym ruchu w systemie przesunięcia znikają, a przenikania zostają, a sceny stoją. Każdy ruch, który się powtarza (niebo, pokaz sylwetek, lot ptaka), ma przycisk pauzy.',
+      'Przy ograniczonym ruchu w systemie drobne ruchy tylko się przenikają, a wejścia, przejścia między stronami i sceny stoją. Każdy ruch, który się powtarza (niebo, pokaz sylwetek, lot ptaka), ma przycisk pauzy.',
   },
 ];
 
 export default async function OProjekcie() {
   const [liczby, fotografowie, idea] = await Promise.all([statystykiKursu(), autorzyZdjec(), ideaKursu()]);
-  const fiszek = taliaFiszek((id) => Boolean(SYLWETKI[id])).length;
+  const fiszek = taliaFiszek().length;
   const tysiace = Math.round(liczby.slowa / 1000);
 
   const statystyki = [
@@ -161,7 +152,7 @@ export default async function OProjekcie() {
         <div className="op-sekcja__bok">
           <p className="eyebrow">Sylwetki</p>
           <h2 id="silnik" className="sekcja__tytul">
-            Ptak z dwudziestu liczb
+            Ptak z dwudziestu kilku liczb
           </h2>
           <p className="sekcja__lead">
             Żadna sylwetka w kursie nie jest narysowana ręcznie ani wycięta ze zdjęcia. Każda to dwadzieścia kilka liczb: szerokość skrzydła przy

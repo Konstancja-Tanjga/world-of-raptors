@@ -6,8 +6,9 @@ import { POZY, SYLWETKI } from '@/lib/sylwetki';
  * the B1 lessons teach. Decorative by default; pass `opis` when the drawing
  * itself carries information (e.g. an identification plate).
  *
- * `skala` draws it at true relative size: 1 = the widest atlas wingspan fills
- * the box, so several silhouettes side by side compare like on a plate.
+ * `skala` draws it at true relative size: the box is as wide as a bird of
+ * wingspan `maks`, and this one takes `cm / maks` of it, so several
+ * silhouettes side by side compare like on a plate.
  */
 export function Sylwetka({
   id,

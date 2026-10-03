@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Rating, type Grade } from 'ts-fsrs';
 import { kartaFsrs, planista, useFiszki, type Fiszki } from '@/lib/fiszki';
 import { dzisiaj } from '@/lib/magazyn';
-import { REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type SylwetkaDzienna } from '@/lib/types';
+import { gatunekFiszki, KIERUNKI_NAZW, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Button, Progress, SegmentedControl, StateBlock } from './ds';
 import { ScenaSylwetki } from './ScenaSylwetki';
@@ -28,10 +28,10 @@ const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
 type Talia = 'wszystkie' | Region;
 type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy';
 
-const RODZAJE: Record<Exclude<Rodzaj, 'wszystkie'>, RodzajFiszki[]> = {
+const RODZAJE: Record<Exclude<Rodzaj, 'wszystkie'>, readonly RodzajFiszki[]> = {
   zdjecia: ['lot', 'siedzacy'],
   sylwetki: ['sylwetka'],
-  nazwy: ['pl-en', 'pl-es', 'en-pl', 'es-pl'],
+  nazwy: KIERUNKI_NAZW,
 };
 
 /** The question each kind of card asks. */
@@ -88,7 +88,7 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
   const odpowiedzianeDzis = new Set(
     Object.entries(fiszki)
       .filter(([, z]) => z.last_review && dataLokalna(z.last_review) === dzien)
-      .map(([id]) => id.split('/')[0]),
+      .map(([id]) => gatunekFiszki(id)),
   );
   const nowe = talia
     .filter((f) => !fiszki[f.id])
@@ -113,13 +113,42 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
 }
 
 /**
- * The question side. Nothing on it names the species. `powtorka` (how many
- * times the card was answered) makes each review of a silhouette card show
- * the bird at a new heading and spread.
+ * The author and licence a Commons photo needs wherever it is shown. The link
+ * to the file page waits for the answer (`zrodlo`) on a question side, because
+ * a Commons file name usually names the species.
+ */
+function PodpisZdjecia({ z, zrodlo = true }: { z: Zdjecie; zrodlo?: boolean }) {
+  return (
+    <p className="fiszka__podpis">
+      Fot. {z.autor},{' '}
+      {z.licencjaUrl ? (
+        <a href={z.licencjaUrl} target="_blank" rel="noreferrer">
+          {z.licencja}
+        </a>
+      ) : (
+        z.licencja
+      )}
+      {zrodlo && z.strona && (
+        <>
+          ,{' '}
+          <a href={z.strona} target="_blank" rel="noreferrer">
+            Wikimedia Commons
+          </a>
+        </>
+      )}
+    </p>
+  );
+}
+
+/**
+ * The question side gives nothing away: photo and silhouette cards name
+ * nothing (alt text included); a name card shows only the name it asks to
+ * translate. `powtorka` (how many times the card was answered) makes each
+ * review of a silhouette card show the bird at a new heading and spread.
  */
 function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtorka: number }) {
   if (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') {
-    const z = karta.zdjecie!;
+    const z = karta.zdjecie;
     return (
       <div className="fiszka__scena fiszka__scena--zdjecie">
         {/* eslint-disable-next-line @next/next/no-img-element -- the backdrop is a blurred copy of the same file */}
@@ -133,7 +162,6 @@ function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtor
           width={z.width}
           height={z.height}
           alt={karta.rodzaj === 'lot' ? 'Ptak do rozpoznania, w locie' : 'Ptak do rozpoznania, siedzący'}
-          style={{ objectPosition: polozenie(z) }}
         />
       </div>
     );
@@ -165,10 +193,11 @@ function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtor
 function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
   const pytaOObcy = karta.rodzaj === 'pl-en' || karta.rodzaj === 'pl-es';
   const obcy = karta.rodzaj === 'pl-es' ? { jezyk: 'es', nazwa: g.es } : { jezyk: 'en', nazwa: g.en };
-  const cechy = g.sylwetka as Partial<SylwetkaDzienna>;
+  // Silhouette cards are diurnal species only (see taliaFiszek).
+  const cechy = karta.rodzaj === 'sylwetka' && g.aktywnosc === 'dzienny' ? g.sylwetka : null;
   return (
     <>
-      {karta.rodzaj === 'sylwetka' && <p className="fiszka__grupa">Grupa: {cechy.grupa ?? g.grupa}</p>}
+      {cechy && <p className="fiszka__grupa">Grupa: {cechy.grupa}</p>}
       {pytaOObcy ? (
         <p className="fiszka__nazwa" lang={obcy.jezyk}>
           {obcy.nazwa}
@@ -191,7 +220,7 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
         )}
       </p>
 
-      {karta.rodzaj === 'sylwetka' ? (
+      {cechy ? (
         <dl className="fiszka__cechy-sylwetki">
           {CECHY_DZIENNE.filter(([k]) => k !== 'grupa' && cechy[k]).map(([k, etykieta]) => (
             <div key={k}>
@@ -208,11 +237,16 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
         </ul>
       ) : (
         karta.zdjecie && (
-          <div className="fiszka__ilustracja">
-            {/* eslint-disable-next-line @next/next/no-img-element -- a small Commons thumbnail */}
-            <img src={karta.zdjecie.src} alt={`${g.pl}`} style={{ objectPosition: polozenie(karta.zdjecie) }} />
-            {g.aktywnosc === 'dzienny' && <Sylwetka id={g.id} klasa="fiszka__mala-sylwetka" />}
-          </div>
+          <figure className="fiszka__ilustracja">
+            <div className="fiszka__ilustracja-obrazy">
+              {/* eslint-disable-next-line @next/next/no-img-element -- a small Commons thumbnail */}
+              <img src={karta.zdjecie.src} alt={`${g.pl}`} style={{ objectPosition: polozenie(karta.zdjecie) }} />
+              {g.aktywnosc === 'dzienny' && <Sylwetka id={g.id} klasa="fiszka__mala-sylwetka" />}
+            </div>
+            <figcaption>
+              <PodpisZdjecia z={karta.zdjecie} />
+            </figcaption>
+          </figure>
         )
       )}
 
@@ -351,7 +385,14 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
       </div>
       <Progress label="Poznane fiszki" value={poznane} max={talia.length} valueText={`${poznane} z ${talia.length}`} />
 
-      {!karta || !g ? (
+      {karta && !g ? (
+        <StateBlock
+          state="error"
+          title="Nie można pokazać tej fiszki"
+          description={`Fiszka ${karta.id} należy do gatunku, którego nie ma w atlasie. Moje powtórki są zapisane bez zmian.`}
+          scope="section"
+        />
+      ) : !karta || !g ? (
         <StateBlock
           state="empty"
           title="Na dziś to wszystko"
@@ -375,27 +416,9 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
       ) : (
         <section className="fiszka" aria-label="Fiszka" data-rodzaj={karta.rodzaj} data-odkryta={odkryta ? '' : undefined}>
           <div className="fiszka__przod">
-            <Awers karta={karta} g={g} powtorka={fiszki[karta.id]?.reps ?? 0} />
-            {karta.zdjecie && (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && (
-              <p className="fiszka__podpis">
-                Fot. {karta.zdjecie.autor},{' '}
-                {karta.zdjecie.licencjaUrl ? (
-                  <a href={karta.zdjecie.licencjaUrl} target="_blank" rel="noreferrer">
-                    {karta.zdjecie.licencja}
-                  </a>
-                ) : (
-                  karta.zdjecie.licencja
-                )}
-                {karta.zdjecie.strona && (
-                  <>
-                    ,{' '}
-                    <a href={karta.zdjecie.strona} target="_blank" rel="noreferrer">
-                      Wikimedia Commons
-                    </a>
-                  </>
-                )}
-              </p>
-            )}
+            {/* Keyed by card, so the previous bird never lingers while the next photo loads. */}
+            <Awers key={karta.id} karta={karta} g={g} powtorka={fiszki[karta.id]?.reps ?? 0} />
+            {(karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && <PodpisZdjecia z={karta.zdjecie} zrodlo={odkryta} />}
           </div>
           <div className="fiszka__panel">
             <p className="fiszka__licznik">

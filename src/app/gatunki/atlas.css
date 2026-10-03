@@ -86,7 +86,7 @@
 .karta-gatunku__nazwa {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .karta-gatunku:hover .karta-gatunku__nazwa {
@@ -119,6 +119,19 @@
   background: var(--wor-akcent);
   color: var(--bh-text-on-accent);
 }
+/* The same badge in the silhouette and scale views, where the drawing's colour is the only other sign. */
+.atlas__widziany {
+  justify-self: center;
+  padding: 0 var(--bh-gap-snug);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-akcent);
+  color: var(--bh-text-on-accent);
+  font-size: var(--bh-text-size-dense);
+}
+.skala__gatunek .atlas__widziany {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
 
 /* Silhouettes, grouped as B1 teaches. */
 .atlas__plansze {
@@ -136,7 +149,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .plansza-grupy__lista {
   display: grid;
@@ -179,7 +192,7 @@
 }
 .plansza-grupy__nazwa {
   font-family: var(--wor-font-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .plansza-grupy__lacina {
   color: var(--bh-text-muted);
@@ -270,7 +283,7 @@
 }
 .skala__nazwa {
   font-family: var(--wor-font-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .skala__cm {
   color: var(--bh-text-muted);
@@ -355,7 +368,7 @@
   margin: var(--bh-gap-snug) 0 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-hero);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   padding-block: 0.06em;
@@ -477,14 +490,14 @@
   counter-increment: cecha;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.4;
+  line-height: var(--wor-leading-compact);
 }
 .gatunek__klucz li::before {
   content: counter(cecha);
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .gatunek__zdjecia {
   display: grid;
@@ -527,7 +540,7 @@
   color: inherit;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   text-decoration: none;
 }
 .gatunek__modul:hover {
@@ -582,7 +595,7 @@
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-small);
-  line-height: 1.3;
+  line-height: var(--wor-leading-snug);
   translate: 0 -50%;
 }
 .plansza__opis--l {
@@ -665,7 +678,7 @@
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-subtitle);
   font-style: italic;
-  line-height: 1.3;
+  line-height: var(--wor-leading-snug);
 }
 .plansza__sowa dl {
   display: grid;

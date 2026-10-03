@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { gatunki, zajawkaModulu } from '@/lib/content';
-import type { SylwetkaNocna } from '@/lib/types';
 import { MarkdownInline } from '../Markdown';
 import { Sylwetka } from '../Sylwetka';
 
@@ -8,11 +7,11 @@ import { Sylwetka } from '../Sylwetka';
  * The night half of the course next to the day half: the owls of B5, each
  * with its voice as the atlas writes it down, because owls are told apart by
  * ear first. Set against a night sky, the counterpart of the eight
- * silhouettes against the day sky above it.
+ * silhouettes against the day sky.
  */
-export async function Chor() {
+export function Chor() {
   const sowy = gatunki.filter((g) => g.aktywnosc === 'nocny');
-  const zajawka = await zajawkaModulu('sowy');
+  const zajawka = zajawkaModulu('sowy');
 
   return (
     <section className="chor scena" data-scena aria-labelledby="chor-tytul">
@@ -34,7 +33,7 @@ export async function Chor() {
               <Link href={`/gatunki/${s.id}`} className="chor__sowa">
                 <Sylwetka id={s.id} klasa="chor__sylwetka" dokladnosc={0.3} />
                 <span className="chor__nazwa">{s.pl}</span>
-                <span className="chor__glos">{(s.sylwetka as SylwetkaNocna).glos}</span>
+                <span className="chor__glos">{s.sylwetka.glos}</span>
               </Link>
             </li>
           ))}

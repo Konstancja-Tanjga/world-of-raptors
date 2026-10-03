@@ -16,7 +16,8 @@ import { odmiana } from '@/lib/odmiana';
 
 // Rendered per request: the species of the day must change at midnight and
 // the sky follows the sun, and a revalidated static page would show a stale
-// one. Cheap, because everything comes from local JSON.
+// one. Cheap, because the atlas and the Markdown it quotes (the eight groups,
+// the module hooks) are read once, when content.ts is first imported.
 export const dynamic = 'force-dynamic';
 
 /** Same species all day (Polish time), a different one tomorrow. */
@@ -73,7 +74,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
   const { pora: zadana } = await searchParams;
   const pora = PORY_DNIA.find((p) => p === zadana) ?? poraDnia(new Date());
   const g = gatunekDnia();
-  const { grupy, lead } = await grupySylwetek();
+  const { grupy, lead } = grupySylwetek();
   const lekcji = gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0);
   const dzienne = gatunki.filter((x) => x.aktywnosc === 'dzienny').length;
   const konspekt = gotoweModuly.map(({ slug, id, lekcje }) => ({ slug, id, lekcje }));

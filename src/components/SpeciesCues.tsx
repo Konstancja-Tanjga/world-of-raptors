@@ -25,7 +25,7 @@ export const CECHY_NOCNE: [keyof SylwetkaNocna, string][] = [
  * against (with look-alikes, SpeciesMedia shows the comparison table instead).
  */
 export function SpeciesCues({ g }: { g: Gatunek }) {
-  const cechy = g.sylwetka as Partial<Record<string, string>>;
+  const cechy: Partial<Record<string, string>> = g.sylwetka;
   const pola = (g.aktywnosc === 'nocny' ? CECHY_NOCNE : CECHY_DZIENNE).filter(([k]) => cechy[k]);
   if (pola.length === 0) return null;
   return (

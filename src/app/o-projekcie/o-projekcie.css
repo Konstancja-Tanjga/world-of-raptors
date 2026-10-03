@@ -89,7 +89,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-hero);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   padding-block: 0.06em;
@@ -121,7 +121,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .czolowka__autorka {
   font-style: italic;
@@ -207,7 +207,7 @@
   gap: var(--bh-gap-loose);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 .op-idea__tekst p {
   margin: 0;
@@ -239,8 +239,8 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .op-liczby dt {
@@ -311,8 +311,9 @@
       animation-timeline: view();
       animation-range: entry 20% cover 45%;
     }
+    /* Opacity only: the labels' own translate places them beside the drawing. */
     .anatomia__opis {
-      animation: pojaw linear both;
+      animation: przenikanie linear both;
       animation-timeline: view();
       animation-range: entry 30% cover 50%;
     }
@@ -321,6 +322,11 @@
 @keyframes kreska {
   from {
     stroke-dashoffset: 1;
+  }
+}
+@keyframes przenikanie {
+  from {
+    opacity: 0;
   }
 }
 /* A narrow plate lists the labels under the drawing, without leader lines,
@@ -417,7 +423,7 @@
 .op-pora__nazwa {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .op-pora__opis {
   font-family: var(--wor-font-text);
@@ -440,9 +446,9 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  letter-spacing: var(--wor-tracking-open);
   word-spacing: 0.25em;
 }
 .op-kroj__opisy {
@@ -494,7 +500,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .op-paleta__opis {
   margin: 0;
@@ -552,19 +558,19 @@
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-numer);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
 }
 .op-zasady p {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 .op-zasady .op-zasady__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .op-technika {
   display: grid;
@@ -604,7 +610,7 @@
   list-style: none;
   color: var(--bh-text-secondary);
   font-size: var(--bh-text-size-caption);
-  line-height: 1.7;
+  line-height: var(--wor-leading-reading);
 }
 .op-zdjecia__lista li {
   break-inside: avoid;
@@ -653,7 +659,7 @@
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--bh-text-weight-emphasis);
   line-height: var(--wor-leading-title);
 }
 .podpis__z {

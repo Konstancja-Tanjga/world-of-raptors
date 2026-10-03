@@ -1,7 +1,8 @@
 /*
  * The home page. Scroll-linked effects run only where the browser has
  * scroll-driven animations and the reader has not asked for less motion;
- * everywhere else the page is complete and still (nothing starts hidden).
+ * without them the page is complete, and only the opening entrance plays
+ * wherever motion is allowed.
  */
 
 .start {
@@ -107,7 +108,7 @@
   max-width: 9.5ch;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-hero);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   /* Room for the accents of capitals and the tails of ą, ę under a tight leading. */
@@ -119,7 +120,7 @@
   color: var(--wor-scena-tekst);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .niebo__akcje {
   display: flex;
@@ -148,7 +149,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .niebo__liczby dt {
@@ -314,7 +315,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   padding-block: 0.06em;
@@ -339,7 +340,7 @@
 }
 .lornetka {
   --lornetka: 100%;
-  /* The photo zooms in as it opens; a scaled image would otherwise widen the page. */
+  /* The photo starts slightly enlarged and settles as it opens; clipping keeps the scaled image from widening the page. */
   overflow: clip;
   border-radius: var(--wor-radius-scene);
   -webkit-mask-image:
@@ -397,7 +398,6 @@
   background: var(--wor-niebo-dzien);
   color: var(--wor-scena-tekst);
 }
-/* The sun behind the bird: why a silhouette is all one sees. */
 /* The sun is behind the bird (on .morf__scena), so the heading above keeps the dark top of the sky. */
 .grupy__wnetrze {
   box-sizing: border-box;
@@ -451,7 +451,7 @@
   color: var(--wor-scena-tekst);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .morf__panel {
   display: grid;
@@ -532,7 +532,7 @@
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.4;
+  line-height: var(--wor-leading-compact);
 }
 .morf__akcje {
   display: flex;
@@ -598,8 +598,8 @@
 .kolekcja__liczba {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .kolekcja__z {
@@ -719,7 +719,6 @@
 }
 .chor__sowa {
   display: grid;
-  /* Opaque enough that the moon behind a card never washes out its text. */
   grid-template-columns: 3.5rem minmax(0, 1fr);
   grid-template-rows: auto auto;
   align-items: center;
@@ -729,6 +728,7 @@
   padding: var(--bh-padding-section) var(--bh-padding-section) var(--bh-padding-section) var(--bh-gap-loose);
   border: 1px solid var(--wor-scena-linia);
   border-radius: var(--bh-radius-surface);
+  /* Opaque enough that the moon behind a card never washes out its text. */
   background: var(--wor-scena-panel);
   color: inherit;
   text-decoration: none;
@@ -753,11 +753,11 @@
 .chor__nazwa {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .chor__glos {
   color: var(--wor-scena-tekst-2);
   font-family: var(--wor-font-text);
   font-style: italic;
-  line-height: 1.35;
+  line-height: var(--wor-leading-snug);
 }

@@ -84,7 +84,6 @@ export function ScenaSylwetki({ id, wariant, opis }: { id: string; wariant: stri
         <button
           type="button"
           className="scena-sylwetki__pauza"
-          aria-pressed={zatrzymany}
           onClick={() => setPauza({ dla: wariant, wlaczona: !zatrzymany })}
         >
           {zatrzymany ? 'Wznów lot' : 'Zatrzymaj lot'}

@@ -7,11 +7,11 @@ import { obrys, type Poza } from '@/lib/sylwetka';
 import { SYLWETKI } from '@/lib/sylwetki';
 
 /**
- * The opening scene: the sky over Warsaw at this hour, and in it what you
- * would see there. By day a kettle of migrating raptors circles in a thermal
- * (the soaring migrants of the Strait module), climbs, and the birds at the
- * top glide away; new ones join from below. At night there are stars,
- * the moon, and now and then an owl crossing it.
+ * The opening scene: the sky at this hour (the sun's height over Warsaw picks
+ * dawn, day, dusk or night). By day a kettle of the Strait module's soaring
+ * migrants circles in a thermal, climbs, and the birds at the top glide away;
+ * new ones join from below. At night there are stars, the moon, and now and
+ * then an owl crossing it.
  *
  * The birds are the atlas silhouettes, seen from below as the B1 lessons
  * teach. A pause button stops the motion (WCAG 2.2.2); with reduced motion
@@ -66,7 +66,11 @@ function przygotujSciezki(rodzaje: Rodzaj[]) {
   return mapa;
 }
 
-/** A small deterministic generator, so the first frame is always the same composition. */
+/**
+ * A small seeded generator for where the birds and stars start, so a window
+ * of the same size opens on the same composition. What happens later (wing
+ * beats, departures, the owl) uses Math.random.
+ */
 function losowanie(ziarno: number) {
   let a = ziarno >>> 0;
   return () => {
@@ -126,7 +130,11 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
   useEffect(() => {
     const canvas = plotno.current;
     const ctx = canvas?.getContext('2d');
-    if (!canvas || !ctx) return;
+    if (!canvas || !ctx) {
+      // The section's own gradient is still the sky; only the birds and stars are missing.
+      if (canvas) console.warn('[Niebo] no 2D canvas context; the sky stays without birds');
+      return;
+    }
 
     const noc = pora === 'noc';
     const sciezki = przygotujSciezki(noc ? SOWY : KOCIOL);
@@ -147,9 +155,10 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
 
     const liczba = noc ? 0 : Math.round(Math.min(22, Math.max(9, szer / 70)) * (pora === 'dzien' ? 1 : 0.55));
     const ptaki: Ptak[] = Array.from({ length: liczba }, () => nowyPtak(los, true));
-    const gwiazdy = noc
-      ? Array.from({ length: Math.round((szer * wys) / 5200) }, () => ({ x: los(), y: los() * 0.85, r: 0.4 + los() * 1.1, faza: los() * 6.28 }))
-      : [];
+    // Stars sit at fractions of the canvas, about one per 5200 px²; a resize adds or removes some to keep that density.
+    const ileGwiazd = () => (noc ? Math.round((szer * wys) / 5200) : 0);
+    const nowaGwiazda = () => ({ x: los(), y: los() * 0.85, r: 0.4 + los() * 1.1, faza: los() * 6.28 });
+    const gwiazdy = Array.from({ length: ileGwiazd() }, nowaGwiazda);
     let sowa: null | { x: number; y: number; rodzaj: Rodzaj; faza: number } = null;
     let doSowy = 2.5;
 
@@ -290,6 +299,9 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
     widocznosc.observe(canvas);
     const rozmiar = new ResizeObserver(() => {
       dopasuj();
+      const n = ileGwiazd();
+      while (gwiazdy.length < n) gwiazdy.push(nowaGwiazda());
+      gwiazdy.length = n;
       rysuj(performance.now());
     });
     rozmiar.observe(canvas);
@@ -306,7 +318,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
     <>
       <canvas ref={plotno} className="niebo__plotno" role="img" aria-label={opis} />
       {ruch && (
-        <button type="button" className="niebo__pauza" aria-pressed={pauza} onClick={() => setPauza((p) => !p)}>
+        <button type="button" className="niebo__pauza" onClick={() => setPauza((p) => !p)}>
           {pauza ? 'Wznów ruch' : 'Zatrzymaj ruch'}
         </button>
       )}

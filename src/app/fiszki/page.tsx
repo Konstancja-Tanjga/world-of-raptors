@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import { FiszkiView } from '@/components/FiszkiView';
 import { gatunkiFiszek, taliaFiszek } from '@/lib/content';
-import { SYLWETKI } from '@/lib/sylwetki';
 
 export const metadata: Metadata = { title: 'Fiszki' };
 
 export default function FiszkiPage() {
-  const talia = taliaFiszek((id) => Boolean(SYLWETKI[id]));
+  const talia = taliaFiszek();
   const ile = (rodzaje: string[]) => talia.filter((f) => rodzaje.includes(f.rodzaj)).length;
   return (
     <div className="page page--fiszki">

@@ -7,9 +7,8 @@ import { Miarka } from '../Miarka';
 
 /**
  * The species of the day as a magazine cover: the photo opens like a view
- * through binoculars as it scrolls in, the name is the biggest word on the
- * page after the opening line, and the wingspan is drawn to scale against a
- * person's arm span.
+ * through binoculars as it scrolls in, the name is set at display size, and
+ * the wingspan is drawn to scale against a person's arm span.
  */
 export function Okladka({ g }: { g: Gatunek }) {
   const z = zdjecia[g.id];
