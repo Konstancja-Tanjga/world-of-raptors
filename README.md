@@ -22,7 +22,7 @@ Prywatny kurs online o ptakach drapieżnych, do własnej nauki: biologia i rozpo
 - B4 · [Ptaki drapieżne południa Hiszpanii](content/moduly/poludnie-hiszpanii/README.md)
 - B5 · [Sowy, drapieżniki nocne](content/moduly/sowy/README.md)
 
-Do tego atlas 42 gatunki i checklista obserwacji.
+Do tego atlas 42 gatunków (32 drapieżniki dzienne i 10 sów), fiszki i checklista obserwacji.
 
 ## Uruchamianie
 ```bash
@@ -31,3 +31,6 @@ npm run dev
 ```
 
 Next.js 16 + [Big Hat design system](https://konstancja-tanjga.github.io/bighat-design-system/), publikowane na Vercel.
+
+## Autorstwo
+Pomysł, plan kursu i cała treść: **Konstancja Tanjga**. Projekt, ruch i kod nowej wersji powstały razem z Claude, modelem AI firmy Anthropic, w Claude Code. Szczegóły i podziękowania dla fotografów są na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie).

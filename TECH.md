@@ -42,18 +42,22 @@ src/
 ## Trasy
 | Adres | Strona |
 |---|---|
-| `/` | start: ścieżki, moduły, postęp checklisty |
-| `/plan` | plan kursu |
-| `/moduly/[slug]` | opis modułu |
+| `/` | start: niebo o tej porze dnia (podgląd innej pory: `?pora=swit`, `dzien`, `zmierzch`, `noc`), gatunek na dziś, moduły, osiem sylwetek, sowy, moja lista |
+| `/plan` | kurs: moduły z moim postępem, pod nimi plan kursu |
+| `/moduly/[slug]` | moduł: otwarcie ze zdjęciem, lekcje, opis |
 | `/moduly/[slug]/[lekcja]` | lekcja |
-| `/gatunki` | atlas z filtrami (region, aktywność, wyszukiwarka) |
-| `/gatunki/[id]` | karta gatunku z odhaczaniem obserwacji |
-| `/checklista` | moja checklista: odhaczanie, data, miejsce, notatka, eksport i import |
+| `/gatunki` | atlas z filtrami: zdjęcia, sylwetki w grupach albo wszystkie w jednej skali |
+| `/gatunki/[id]` | karta gatunku: plansza sylwetki, sposób lotu, rozpiętość, podobne gatunki z suwakiem, moja obserwacja |
+| `/fiszki` | fiszki: zdjęcia, sylwetki i nazwy (polskie, angielskie, hiszpańskie), powtórki FSRS |
+| `/checklista` | moja checklista: odhaczanie, data, miejsce, notatka, zdjęcia, eksport i import |
+| `/o-projekcie` | o projekcie: autorstwo, jak powstały sylwetki, kroje, kolory, ruch, podziękowania dla fotografów |
 
 ## Dodawanie treści
 1. Nowa lekcja: plik `content/moduly/<slug>/NN-nazwa.md` i wpis w `lekcje` w `content/moduly.json`.
 2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`.
-3. Nowy gatunek: wpis w `content/gatunki.json`. Sprawdź, czy każde `mylona_z` wskazuje istniejące `id`.
+3. Nowy gatunek: wpis w `content/gatunki.json`. Sprawdź, czy każde `mylona_z` wskazuje istniejące `id`. Potem:
+   - sylwetka: wpis w `SYLWETKI` w `src/lib/sylwetki.ts` (liczby zacznij od grupy, do której należy, i porównaj rysunek ze zdjęciem z lotu), a dla ptaka dziennego także `STYL_LOTU`. Bez tego gatunek nie ma sylwetki ani fiszki z sylwetką;
+   - zdjęcia: wpis w `content/zdjecia.json` z polem `fokus` (`[x, y]` w procentach: głowa ptaka siedzącego, środek ptaka w locie), a potem `python3 scripts/commons.py rozmiary`, które dopisze rozmiar oryginału (`oryginal`).
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
 5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo karta ma jedną akcję: link „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
 6. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:

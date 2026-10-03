@@ -11,7 +11,7 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
   - Opiera się na wewnętrznych nazwach klas (`bh-button*`), które nie są wersjonowanym API. Zmiana w CSS design systemu może zepsuć wygląd bez żadnego błędu typów.
   - Nadpisuje `white-space: nowrap` i stałą wysokość przycisku.
   - Nie dziedziczy przyszłych zmian z komponentu `Button` (np. `iconStart`).
-- **Dowód na drugie wystąpienie:** jeszcze go nie ma. To pierwszy ekran z takim wzorcem.
+- **Dowód na drugie wystąpienie:** jest, w tym samym projekcie. Przy przeprojektowaniu doszły kolejne linki wyglądające jak przyciski: duże „pigułki” w scenach (`.cta` w `globals.css`: „Zacznij kurs”, „Otwórz atlas”), „Kontynuuj” w nawigacji (`.nav__dalej`) i karta następnej lekcji (`.dalej`). Wszystkie to `next/link` ze stylami produktu, bo `ButtonLink` ma tylko rozmiary i warianty `Button`. To argument za komponentem linku-przycisku w Big Hat (z rozmiarem „hero” i wariantem na ciemne tło).
 
 ## Etykiety wersalikami wbudowane w komponenty
 
@@ -66,3 +66,10 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
   - Strony reagują na szerokość okna (`@media`), a nie na szerokość powłoki (container queries, które daje `AppShell`).
   - Menu na telefonie jest lokalne: przycisk z `aria-expanded`, Escape zamyka, fokus wraca na przycisk.
 - **Dowód na drugie wystąpienie:** jeszcze go nie ma.
+
+## Przejścia między stronami
+
+- **Po co sięgnęłam:** przejście między stronami, które mówi, co się dzieje: strona odchodzi, następna przychodzi, a nazwa gatunku przelatuje z karty w atlasie do tytułu jego strony.
+- **Co zbudowałam lokalnie:** React `ViewTransition` w `AppFrame` (kluczem jest adres strony) i nazwy `nazwa-<id>` na kartach i tytułach, a animacje w `globals.css`. Big Hat nie ma ani komponentu, ani tokenów dla przejść między stronami.
+- **Co robi gorzej:** półprzezroczyste paski (materiał `chrome` z Big Hat) nie mają w zrzucie przejścia czego rozmywać, więc ich zrzut dostaje pełne tło. Ten wyjątek trzeba pamiętać przy każdym nowym pasku.
+- **Pytanie do design systemu:** czy materiały (`--bh-material-*`) powinny mieć wariant dla przejść, skoro rozmycie tła nie przenosi się na zrzut?
