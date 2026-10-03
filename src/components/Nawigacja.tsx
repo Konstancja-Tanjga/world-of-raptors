@@ -51,20 +51,22 @@ export function Nawigacja({
   const dokad = kontynuacja.stan === 'lekcja' && kontynuacja.href !== pathname ? kontynuacja : null;
 
   useEffect(() => {
-    const sceny = document.querySelectorAll('[data-scena]');
-    if (sceny.length === 0) {
-      const t = requestAnimationFrame(() => setScena({ dla: pathname, nad: false }));
-      return () => cancelAnimationFrame(t);
-    }
     const pod = new Set<Element>();
     let obserwator: IntersectionObserver | null = null;
     // A scene is under the bar when it covers the bar's middle line: a 2px
     // strip there, so a scene that only touches the bar's top or bottom edge
-    // does not count. The strip is measured in pixels of the window, so it is
-    // rebuilt when the window changes size.
+    // does not count. The strip is measured in pixels of the window and the
+    // scenes are looked up afresh, so both are rebuilt when the window
+    // changes size or scenes come and go without a new address (a retry
+    // after an error).
     const obserwuj = () => {
       obserwator?.disconnect();
       pod.clear();
+      const sceny = document.querySelectorAll('[data-scena]');
+      if (sceny.length === 0) {
+        setScena({ dla: pathname, nad: false });
+        return;
+      }
       const pasmo = document.querySelector('.nav')?.getBoundingClientRect().height ?? 52;
       const srodek = Math.round(pasmo / 2);
       obserwator = new IntersectionObserver(
@@ -79,15 +81,22 @@ export function Nawigacja({
       );
       sceny.forEach((s) => obserwator?.observe(s));
     };
-    obserwuj();
-    let klatka = 0;
-    const poZmianie = () => {
+    let klatka = requestAnimationFrame(obserwuj);
+    const odswiez = () => {
       cancelAnimationFrame(klatka);
       klatka = requestAnimationFrame(obserwuj);
     };
-    window.addEventListener('resize', poZmianie);
+    const zmianaScen = (rekordy: MutationRecord[]) => {
+      const scena = (n: Node) => n instanceof Element && (n.matches('[data-scena]') || n.querySelector('[data-scena]') !== null);
+      if (rekordy.some((r) => [...r.addedNodes, ...r.removedNodes].some(scena))) odswiez();
+    };
+    const zmiany = new MutationObserver(zmianaScen);
+    const tresc = document.getElementById('main-content');
+    if (tresc) zmiany.observe(tresc, { childList: true, subtree: true });
+    window.addEventListener('resize', odswiez);
     return () => {
-      window.removeEventListener('resize', poZmianie);
+      window.removeEventListener('resize', odswiez);
+      zmiany.disconnect();
       cancelAnimationFrame(klatka);
       obserwator?.disconnect();
     };

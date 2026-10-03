@@ -200,8 +200,9 @@ function palce(k: Ksztalt, W: P, T: P, H: P, luk: (t: number) => P): P[] {
 /**
  * The right half of the outline, from the front of the head to the centre of
  * the tail tip, in pose `p`. Wing points are generated with how much they
- * belong to the hand, so folding moves the hand and not the arm; raising the
- * wing foreshortens the whole wing (by cos of `wznios`).
+ * belong to the hand, so folding bends the hand back at the wrist (and
+ * shortens it) while the whole wing swings back less at the shoulder;
+ * raising the wing narrows the span by cos of `wznios`.
  */
 function polowa(k: Ksztalt, p: Poza): P[] {
   const S: P = [k.tulow / 2, 0];

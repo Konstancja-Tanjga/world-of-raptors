@@ -5,9 +5,11 @@ import { ButtonLink } from '@/components/ButtonLink';
 import { Button, StateBlock } from '@/components/ds';
 
 /**
- * A page that broke while rendering. The pages are built ahead, so this is a
- * component failing in the browser or a connection lost between pages; the
- * frame stays, and the reader can try again or go back to the start.
+ * A page that broke while rendering: a component failing in the browser, a
+ * connection lost between pages, or the home page (rendered per request)
+ * failing on the server, which arrives as a digest to match the server log.
+ * The frame stays. "Wróć na start" loads the start afresh, because a link
+ * within the app would not leave an error on the start page itself.
  */
 export default function Blad({ error, retry }: { error: Error & { digest?: string }; retry: () => void }) {
   useEffect(() => {
@@ -26,11 +28,11 @@ export default function Blad({ error, retry }: { error: Error & { digest?: strin
           </Button>
         }
         secondaryAction={
-          <ButtonLink href="/" size="sm" variant="secondary">
+          <ButtonLink href="/" size="sm" variant="secondary" pelneWczytanie>
             Wróć na start
           </ButtonLink>
         }
-        diagnostics={error.digest ? `Identyfikator błędu: ${error.digest}` : undefined}
+        diagnostics={error.digest ? `Identyfikator błędu: ${error.digest}` : error.message || undefined}
         scope="page"
       />
     </div>

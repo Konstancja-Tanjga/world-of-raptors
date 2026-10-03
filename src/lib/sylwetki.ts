@@ -3,8 +3,8 @@ import type { Ksztalt, Poza } from './sylwetka';
 /**
  * Silhouette shapes of the atlas species, from the eight groups of B1 lesson 1
  * (plus owls) and each species' `sylwetka` cues in content/gatunki.json. They
- * are approximations, not measurements: proportions follow field guides, and
- * each shape was checked by eye against a photograph of the species in
+ * are approximations, not measurements: proportions follow field guides.
+ * Check a new or changed shape by eye against a photograph of the species in
  * flight, closely enough to show the differences the lessons teach (tail
  * fork, number of fingers, head projection, wing width) and no more.
  */
@@ -212,8 +212,8 @@ export const SYLWETKI: Record<string, Ksztalt> = {
 
 /**
  * Resting poses that differ from POZA_SZYBOWANIE, the one every other species
- * is drawn in: the kites and the osprey hold the hand angled back at the
- * wrist (B1: kites "złamane" w nadgarstku, the osprey's "M").
+ * is drawn in: the red and black kites and the osprey hold the hand angled
+ * back at the wrist (B1: kites "złamane" w nadgarstku, the osprey's "M").
  */
 export const POZY: Partial<Record<string, Poza>> = {
   'kania-ruda': { wznios: 0, zgiecie: 0.12, ogon: 0.6 },
@@ -230,7 +230,7 @@ export const POZY: Partial<Record<string, Poza>> = {
  */
 export type StylLotu = 'szybuje' | 'kreci-ogonem' | 'zawisa' | 'macha-i-szybuje' | 'szybki' | 'kolysze';
 
-export const STYL_LOTU: Record<string, StylLotu> = {
+export const STYL_LOTU: Partial<Record<string, StylLotu>> = {
   'kania-czarna': 'kreci-ogonem',
   'kania-ruda': 'kreci-ogonem',
   kaniuk: 'zawisa',
@@ -282,7 +282,7 @@ function machniecie(f: number, amplituda: number, baza: Poza): Poza {
 export function pozaWLocie(styl: StylLotu, t: number, baza: Poza): { poza: Poza; przechyl: number } {
   switch (styl) {
     case 'zawisa':
-      // The quickest beats of all, on the spot, tail fanned wide.
+      // Fast beats on the spot (about four a second), tail fanned wide.
       return { poza: { ...machniecie((t * 4.2) % 1, 0.8, baza), ogon: 1 }, przechyl: Math.sin(t * 1.3) * 1.5 };
     case 'macha-i-szybuje': {
       // A burst of quick beats, then a glide.

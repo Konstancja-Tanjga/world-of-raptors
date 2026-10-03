@@ -22,9 +22,9 @@ function strona(id: string) {
 }
 
 const PORY: readonly { pora: PoraDnia; nazwa: string; opis: string }[] = [
-  { pora: 'swit', nazwa: 'Świt', opis: 'Sowy wracają, myszołowy czekają na termikę.' },
+  { pora: 'swit', nazwa: 'Świt', opis: 'Kilka ptaków krąży w pierwszym kominie termicznym.' },
   { pora: 'dzien', nazwa: 'Dzień', opis: 'Kocioł ptaków krąży w kominie ciepłego powietrza.' },
-  { pora: 'zmierzch', nazwa: 'Zmierzch', opis: 'Ostatnie ptaki dzienne, pierwsze sowy.' },
+  { pora: 'zmierzch', nazwa: 'Zmierzch', opis: 'Ostatnie ptaki dzienne krążą na tle zachodu.' },
   { pora: 'noc', nazwa: 'Noc', opis: 'Gwiazdy, księżyc i od czasu do czasu sowa.' },
 ];
 
@@ -247,7 +247,8 @@ export default async function OProjekcie() {
             Dwie palety
           </h2>
           <p className="sekcja__lead">
-            Interfejs jest wyciszony: ma jeden kolor akcentu w każdym trybie, a resztę koloru dają zdjęcia i niebo. Tekst ma
+            Interfejs jest wyciszony: ma jeden kolor akcentu na papierze i jeden w ciemnych scenach, a resztę koloru dają
+            zdjęcia i niebo. Tekst ma
             kontrast zgodny z WCAG AA, także na niebie i na zdjęciach.
           </p>
         </div>

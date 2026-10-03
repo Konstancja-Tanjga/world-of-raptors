@@ -4,19 +4,13 @@ import { gotoweModuly, moduly, sciezki, zajawkaModulu } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 import { MarkdownInline } from '../Markdown';
 import { PostepModulu } from '../PostepModulu';
+import { PRZEWODNICY_SCIEZEK } from '@/lib/rysunki';
 import { Sylwetka } from '../Sylwetka';
 
 const OPISY: Record<'a' | 'b', string> = {
   a: 'Jak drapieżniki widzą, polują, wychowują młode i wędrują, i co im dziś zagraża.',
   b: 'Jak rozpoznać je w locie: metoda, Polska, południe Hiszpanii, cieśnina i sowy nocą.',
 };
-
-/**
- * The bird that leads each path in as it scrolls into view (globals.css): the
- * course's red kite on biology, and on identification the common buzzard, the
- * yardstick B1 measures every other raptor against.
- */
-const PRZEWODNICY: Record<'a' | 'b', string> = { a: 'kania-ruda', b: 'myszolow' };
 
 /**
  * The course as two paths of numbered modules, each with its own hook and my
@@ -48,7 +42,7 @@ export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
         <div key={s.id} className="sciezka">
           <div className="sciezka__naglowek">
             <div className="sciezka__trasa" aria-hidden="true">
-              <Sylwetka id={PRZEWODNICY[s.id]} klasa="sciezka__ptak" dokladnosc={0.3} />
+              <Sylwetka id={PRZEWODNICY_SCIEZEK[s.id]} klasa="sciezka__ptak" dokladnosc={0.3} />
             </div>
             <h3 className="sciezka__tytul">{s.tytul}</h3>
             <p className="sciezka__opis">{OPISY[s.id]}</p>

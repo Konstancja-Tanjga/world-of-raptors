@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Rating, type Grade } from 'ts-fsrs';
 import { kartaFsrs, planista, useFiszki, type Fiszki } from '@/lib/fiszki';
 import { dzisiaj } from '@/lib/magazyn';
-import { gatunekFiszki, KIERUNKI_NAZW, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
+import { gatunekFiszki, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Button, Progress, SegmentedControl, StateBlock } from './ds';
 import { ScenaSylwetki } from './ScenaSylwetki';
@@ -28,10 +28,15 @@ const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
 type Talia = 'wszystkie' | Region;
 type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy';
 
-const RODZAJE: Record<Exclude<Rodzaj, 'wszystkie'>, readonly RodzajFiszki[]> = {
-  zdjecia: ['lot', 'siedzacy'],
-  sylwetki: ['sylwetka'],
-  nazwy: KIERUNKI_NAZW,
+/** Which filter each kind of card belongs to (a Record, so a new kind cannot be left out). */
+const KATEGORIA: Record<RodzajFiszki, Exclude<Rodzaj, 'wszystkie'>> = {
+  lot: 'zdjecia',
+  siedzacy: 'zdjecia',
+  sylwetka: 'sylwetki',
+  'pl-en': 'nazwy',
+  'pl-es': 'nazwy',
+  'en-pl': 'nazwy',
+  'es-pl': 'nazwy',
 };
 
 /** The question each kind of card asks. */
@@ -173,12 +178,25 @@ function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtor
       </div>
     );
   }
-  const [jezyk, nazwa, etykieta] =
-    karta.rodzaj === 'en-pl'
-      ? (['en', g.en, 'Nazwa angielska'] as const)
-      : karta.rodzaj === 'es-pl'
-        ? (['es', g.es, 'Nazwa hiszpańska'] as const)
-        : (['pl', g.pl, 'Nazwa polska'] as const);
+  // Exhaustive, so a new kind of card cannot fall through to showing a name.
+  let pokazana: { jezyk: 'pl' | 'en' | 'es'; nazwa: string; etykieta: string };
+  switch (karta.rodzaj) {
+    case 'pl-en':
+    case 'pl-es':
+      pokazana = { jezyk: 'pl', nazwa: g.pl, etykieta: 'Nazwa polska' };
+      break;
+    case 'en-pl':
+      pokazana = { jezyk: 'en', nazwa: g.en, etykieta: 'Nazwa angielska' };
+      break;
+    case 'es-pl':
+      pokazana = { jezyk: 'es', nazwa: g.es, etykieta: 'Nazwa hiszpańska' };
+      break;
+    default: {
+      const nieznany: never = karta.rodzaj;
+      throw new Error(`Nieznany rodzaj fiszki: ${String(nieznany)}`);
+    }
+  }
+  const { jezyk, nazwa, etykieta } = pokazana;
   return (
     <div className="fiszka__scena fiszka__scena--nazwa">
       <p className="fiszka__jezyk">{etykieta}</p>
@@ -289,10 +307,17 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
   const odpowiedzRef = useRef<HTMLDivElement>(null);
   const przesunFokus = useRef(false);
 
+  // The deck and the species come from the same atlas, so a card without its
+  // species is a bug: it is left out (and logged) rather than blocking the deck.
+  const bezGatunku = useMemo(() => cala.filter((f) => !gatunki[f.gatunek]).map((f) => f.id), [cala, gatunki]);
+  useEffect(() => {
+    if (bezGatunku.length) console.error('[fiszki] cards whose species is not in the atlas, left out:', bezGatunku);
+  }, [bezGatunku]);
   const talia = cala.filter(
     (f) =>
+      gatunki[f.gatunek] !== undefined &&
       (region === 'wszystkie' || gatunki[f.gatunek]?.regiony.includes(region)) &&
-      (rodzaj === 'wszystkie' || RODZAJE[rodzaj].includes(f.rodzaj)),
+      (rodzaj === 'wszystkie' || KATEGORIA[f.rodzaj] === rodzaj),
   );
   const stan = fiszki ? nastepna(talia, fiszki, teraz, dodatkowe) : null;
   const poznane = fiszki ? talia.filter((f) => fiszki[f.id]).length : 0;
@@ -385,14 +410,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
       </div>
       <Progress label="Poznane fiszki" value={poznane} max={talia.length} valueText={`${poznane} z ${talia.length}`} />
 
-      {karta && !g ? (
-        <StateBlock
-          state="error"
-          title="Nie można pokazać tej fiszki"
-          description={`Fiszka ${karta.id} należy do gatunku, którego nie ma w atlasie. Moje powtórki są zapisane bez zmian.`}
-          scope="section"
-        />
-      ) : !karta || !g ? (
+      {!karta || !g ? (
         <StateBlock
           state="empty"
           title="Na dziś to wszystko"

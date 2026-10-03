@@ -4,11 +4,12 @@ import { useEffect, useRef } from 'react';
 import type { PoraDnia } from '@/lib/niebo';
 import { useMedia, useMniejRuchu } from '@/lib/useMedia';
 import { obrys, type Poza } from '@/lib/sylwetka';
+import { KOCIOL, SOWY_NOCY, type PtakNieba } from '@/lib/rysunki';
 import { SYLWETKI } from '@/lib/sylwetki';
 
 /**
- * The opening scene: the sky at this hour (the sun's height over Warsaw picks
- * dawn, day, dusk or night). By day a kettle of the Strait module's soaring
+ * The opening scene's sky for the time of day it is given (by the clock, or
+ * chosen in NieboStartu). By day a kettle of the Strait module's soaring
  * migrants circles in a thermal, climbs, and the birds at the top glide away;
  * new ones join from below. At night there are stars, the moon, and now and
  * then an owl crossing it.
@@ -17,25 +18,6 @@ import { SYLWETKI } from '@/lib/sylwetki';
  * teach. `pauza` (the scene's pause button, WCAG 2.2.2) holds the frame and
  * stops the loop; with reduced motion the scene is a still frame.
  */
-
-type Rodzaj = { id: string; rozpietosc: number; macha: number };
-
-// A Strait-of-Gibraltar mix of soaring migrants, wingspans in metres.
-const KOCIOL: Rodzaj[] = [
-  { id: 'trzmielojad', rozpietosc: 1.42, macha: 0.35 },
-  { id: 'trzmielojad', rozpietosc: 1.42, macha: 0.35 },
-  { id: 'kania-czarna', rozpietosc: 1.45, macha: 0.3 },
-  { id: 'orzelek-wlochaty', rozpietosc: 1.22, macha: 0.3 },
-  { id: 'gadozer', rozpietosc: 1.8, macha: 0.2 },
-  { id: 'sep-plowy', rozpietosc: 2.6, macha: 0.04 },
-  { id: 'myszolow', rozpietosc: 1.2, macha: 0.35 },
-  { id: 'scierwnik', rozpietosc: 1.62, macha: 0.15 },
-];
-const SOWY: Rodzaj[] = [
-  { id: 'plomykowka', rozpietosc: 0.9, macha: 1 },
-  { id: 'puszczyk', rozpietosc: 0.9, macha: 1 },
-  { id: 'uszatka', rozpietosc: 0.95, macha: 1 },
-];
 
 const KLATKI = 16;
 const POZA_LOTU: Poza = { wznios: 0.08, zgiecie: 0, ogon: 0.75 };
@@ -48,7 +30,7 @@ function pozaMachniecia(faza: number): Poza {
 }
 
 /** Outlines as Path2D, scaled to a unit wingspan, per species: soaring, then each wingbeat frame. */
-function przygotujSciezki(rodzaje: Rodzaj[]) {
+function przygotujSciezki(rodzaje: PtakNieba[]) {
   const mapa = new Map<string, { szybowanie: Path2D; klatki: Path2D[] }>();
   for (const { id } of rodzaje) {
     if (mapa.has(id) || !SYLWETKI[id]) continue;
@@ -83,7 +65,7 @@ function losowanie(ziarno: number) {
 }
 
 type Ptak = {
-  rodzaj: Rodzaj;
+  rodzaj: PtakNieba;
   promien: number;
   kat: number;
   omega: number;
@@ -140,7 +122,7 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
     }
 
     const noc = pora === 'noc';
-    const sciezki = przygotujSciezki(noc ? SOWY : KOCIOL);
+    const sciezki = przygotujSciezki(noc ? SOWY_NOCY : KOCIOL);
     const los = losowanie(noc ? 17 : 4);
     const kolor = getComputedStyle(canvas).getPropertyValue('--wor-sylwetka').trim() || '#0d131b';
 
@@ -162,7 +144,7 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
     const ileGwiazd = () => (noc ? Math.round((szer * wys) / 5200) : 0);
     const nowaGwiazda = () => ({ x: los(), y: los() * 0.85, r: 0.4 + los() * 1.1, faza: los() * 6.28 });
     const gwiazdy = Array.from({ length: ileGwiazd() }, nowaGwiazda);
-    let sowa: null | { x: number; y: number; rodzaj: Rodzaj; faza: number } = null;
+    let sowa: null | { x: number; y: number; rodzaj: PtakNieba; faza: number } = null;
     let doSowy = 2.5;
 
     // Pointer parallax: the near birds move more than the far ones.
@@ -226,7 +208,7 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
       if (noc) {
         doSowy -= dt;
         if (!sowa && doSowy <= 0) {
-          sowa = { x: szer + 120, y: wys * (0.18 + Math.random() * 0.25), rodzaj: SOWY[Math.floor(Math.random() * SOWY.length)], faza: 0 };
+          sowa = { x: szer + 120, y: wys * (0.18 + Math.random() * 0.25), rodzaj: SOWY_NOCY[Math.floor(Math.random() * SOWY_NOCY.length)], faza: 0 };
         }
         if (sowa) {
           sowa.x -= dt * Math.max(90, szer * 0.09);

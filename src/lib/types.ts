@@ -5,10 +5,12 @@ export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
 /** The eight silhouette groups of B1 lesson 1, in the order it teaches them (lower case, as in `sylwetka.grupa`). */
 export const GRUPY_SYLWETEK = ['sępy', 'orły', 'myszołowy', 'kanie', 'błotniaki', 'krogulce', 'sokoły', 'rybołów'] as const;
 
-/** What to look at in a diurnal raptor, as taught in B1 (lessons 1–2). */
-export type SylwetkaDzienna = Record<'grupa' | 'skrzydla' | 'palce' | 'ogon' | 'glowa' | 'lot', string>;
-/** What to look and listen for in an owl, as taught in B5 (lesson 2). */
-export type SylwetkaNocna = Record<'glos' | 'uszy' | 'oczy' | 'glowa' | 'sylwetka', string>;
+/** What to look at in a diurnal raptor, in the order B1 teaches it (lessons 1–2). */
+export const KLUCZE_DZIENNE = ['grupa', 'skrzydla', 'palce', 'ogon', 'glowa', 'lot'] as const;
+export type SylwetkaDzienna = Record<(typeof KLUCZE_DZIENNE)[number], string>;
+/** What to listen and look for in an owl, in the order B5 teaches it (lesson 2). */
+export const KLUCZE_NOCNE = ['glos', 'uszy', 'sylwetka', 'glowa', 'oczy'] as const;
+export type SylwetkaNocna = Record<(typeof KLUCZE_NOCNE)[number], string>;
 
 /** Everything about a species except its activity and the cues that go with it. */
 export type DaneGatunku = {
@@ -77,13 +79,13 @@ export type Zdjecie = {
   strona: string;
   plik: string;
   /** The original's [width, height] on Commons, so larger thumbnails are only asked for when they exist. */
-  oryginal?: number[];
+  oryginal?: [number, number];
   /**
    * [x, y] in percent: the bird's head (perched) or the middle of the bird
    * (in flight). Used as `object-position`, which keeps that point inside any
    * crop, so a 4:3 tile or a wide hero never cuts the head off.
    */
-  fokus?: number[];
+  fokus?: [number, number];
 };
 
 export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };
@@ -106,14 +108,15 @@ export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: nu
 /** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
 export type Quiz = { prog: number; pytania: PytanieQuizu[] };
 
+/** The directions of the name cards: from the Polish name and to it. */
+export const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
+export type RodzajZdjecia = keyof ZdjeciaGatunku;
 /**
  * What a flashcard asks. Photo cards (`lot`, `siedzacy`): name the bird in a
  * reference photo. `sylwetka`: name it from its silhouette in flight (diurnal
  * species). Name cards: give the English or Spanish name for the Polish one,
  * or the Polish name for the English or Spanish one.
  */
-export const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
-export type RodzajZdjecia = keyof ZdjeciaGatunku;
 export type RodzajFiszki = RodzajZdjecia | 'sylwetka' | (typeof KIERUNKI_NAZW)[number];
 
 /** `<species id>/<rodzaj>`: the key of the card's schedule in localStorage and in backups. Never change it for an existing kind. */

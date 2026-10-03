@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { gatunki, zajawkaModulu } from '@/lib/content';
+import { gatunki, MODUL_SOW, zajawkaModulu } from '@/lib/content';
 import { MarkdownInline } from '../Markdown';
 import { Sylwetka } from '../Sylwetka';
 
@@ -11,7 +11,7 @@ import { Sylwetka } from '../Sylwetka';
  */
 export function Chor() {
   const sowy = gatunki.filter((g) => g.aktywnosc === 'nocny');
-  const zajawka = zajawkaModulu('sowy');
+  const zajawka = zajawkaModulu(MODUL_SOW);
 
   return (
     <section className="chor scena" data-scena aria-labelledby="chor-tytul">
@@ -23,7 +23,7 @@ export function Chor() {
           </h2>
           {zajawka && (
             <p className="sekcja__lead">
-              <MarkdownInline source={zajawka} baseDir="moduly/sowy" />
+              <MarkdownInline source={zajawka} baseDir={`moduly/${MODUL_SOW}`} />
             </p>
           )}
         </header>
@@ -38,7 +38,7 @@ export function Chor() {
             </li>
           ))}
         </ul>
-        <Link href="/moduly/sowy" className="cta cta--szklo">
+        <Link href={`/moduly/${MODUL_SOW}`} className="cta cta--szklo">
           <span className="cta__etykieta">Moduł B5: Sowy, drapieżniki nocne</span>
         </Link>
       </div>

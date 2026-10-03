@@ -11,7 +11,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 | Dane | `content/gatunki.json`, `content/moduly.json` | jedno źródło dla atlasu, checklisty i nawigacji |
 | Style | `src/app/motyw.css` (motyw: role `--bh-*` i warstwa `--wor-*`), `globals.css` i arkusze stron | bez Tailwinda: wartości z tokenów, nie wpisane na sztywno (wyjątki w CLAUDE.md) |
 | Checklista | `localStorage` + eksport i import do pliku JSON | bez logowania i bez bazy danych |
-| Postęp nauki | `localStorage` (`src/lib/postep.ts`) | ukończone lekcje; moduł jest „zaliczony”, gdy wszystkie lekcje są ukończone, co widać na kartach modułów (pierścień, „Zaliczony”) i w pasku modułu (wypełniony numer lekcji) |
+| Postęp nauki | `localStorage` (`src/lib/postep.ts`) | ukończone lekcje; moduł jest „zaliczony”, gdy wszystkie lekcje są ukończone, co widać na kartach modułów (pierścień, „Zaliczony”) i w pasku modułu (ukończona lekcja ma ✓ w wypełnionym kółku zamiast numeru) |
 | Zdjęcia | Wikimedia Commons (`content/zdjecia.json`, znacznik `<zdjecie>` w lekcjach) | autor i licencja przy każdym zdjęciu; `scripts/commons.py` szuka i tworzy znaczniki |
 
 ## Zasady design systemu w tym projekcie
@@ -30,7 +30,7 @@ content/
   gatunki.json             atlas: 42 gatunki (regiony, aktywność, cechy, pary do pomylenia)
   moduly/<slug>/README.md  opis modułu
   moduly/<slug>/NN-*.md    lekcje
-  zdjecia.json             zdjęcia gatunków z Commons (autor, licencja, rozmiar oryginału, punkt ostrości)
+  zdjecia.json             zdjęcia gatunków, prawie wszystkie z Commons (autor, licencja, rozmiar oryginału, punkt ostrości)
   ciekawostki.json         ciekawostki
 src/
   app/                     strony (routing), motyw.css, globals.css i arkusze stron

@@ -7,6 +7,7 @@ import { AppFrame } from '@/components/AppFrame';
 import { ToastProvider } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
 import { czytajMarkdown, gotoweModuly, progQuizu } from '@/lib/content';
+import { ZNAK } from '@/lib/rysunki';
 
 // Titles: an antiqua drawn for Polish, its diacritics designed in from the start.
 const poltawski = Poltawski_Nowy({
@@ -61,7 +62,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="pl" className={`${poltawski.variable} ${newsreader.variable}`}>
       <body className="bh-root">
         <ToastProvider>
-          <AppFrame moduly={await nawigacja} znak={<Sylwetka id="kania-ruda" klasa="znak" />}>
+          <AppFrame moduly={await nawigacja} znak={<Sylwetka id={ZNAK} klasa="znak" />}>
             {children}
           </AppFrame>
         </ToastProvider>

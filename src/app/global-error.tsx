@@ -31,11 +31,11 @@ export default function BladGlowny({ error, retry }: { error: Error & { digest?:
               </Button>
             }
             secondaryAction={
-              <ButtonLink href="/" size="sm" variant="secondary">
+              <ButtonLink href="/" size="sm" variant="secondary" pelneWczytanie>
                 Wróć na start
               </ButtonLink>
             }
-            diagnostics={error.digest ? `Identyfikator błędu: ${error.digest}` : undefined}
+            diagnostics={error.digest ? `Identyfikator błędu: ${error.digest}` : error.message || undefined}
             scope="page"
           />
         </main>

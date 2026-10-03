@@ -13,7 +13,8 @@ export function srcSetCommons(z: Zdjecie): string | undefined {
   const m = z.src.match(/^(.*\/thumb\/.+\/)(\d+)px-([^/?]+)(\?.*)?$/);
   if (!m || !z.oryginal) return undefined;
   const [, poczatek, , plik] = m;
-  const szerokosci = STOPNIE.filter((w) => w <= z.oryginal![0]);
+  const [szerokoscOryginalu] = z.oryginal;
+  const szerokosci = STOPNIE.filter((w) => w <= szerokoscOryginalu);
   if (szerokosci.length < 2) return undefined;
   return szerokosci.map((w) => `${poczatek}${w}px-${plik} ${w}w`).join(', ');
 }

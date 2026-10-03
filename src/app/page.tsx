@@ -11,7 +11,7 @@ import { NieboStartu } from '@/components/start/NieboStartu';
 import { Okladka } from '@/components/start/Okladka';
 import { StartKursu } from '@/components/start/StartKursu';
 import { MarkdownInline } from '@/components/Markdown';
-import { ciekawostkiDla, gatunki, gotoweModuly, grupySylwetek, zdjecia } from '@/lib/content';
+import { ciekawostkiDla, gatunki, gotoweModuly, grupySylwetek, LEKCJA_GRUP, zdjecia } from '@/lib/content';
 import { CIASTKO_PORY, jakoPora, poraDnia, type PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
 
@@ -30,24 +30,19 @@ function gatunekDnia() {
   return zeZdjeciem[numer % zeZdjeciem.length];
 }
 
-/** One true line about this hour of the day, over the opening title. */
-const PORY: Record<PoraDnia, { linia: string; opis: string }> = {
-  swit: {
-    linia: 'O świcie sowy wracają na dzienne kryjówki, a myszołowy czekają na pierwsze kominy ciepłego powietrza.',
-    opis: 'Świt. Kilka ptaków drapieżnych krąży wysoko w kominie termicznym.',
-  },
-  dzien: {
-    linia: 'Za dnia ptaki szybujące krążą w kominach ciepłego powietrza i wznoszą się, żeby potem szybować dalej bez machania skrzydłami.',
-    opis: 'Dzień. Ptaki drapieżne krążą w kominie termicznym, wznoszą się i odlatują.',
-  },
-  zmierzch: {
-    linia: 'O zmierzchu termika słabnie, ptaki dzienne szukają noclegu, a sowy wylatują na łowy.',
-    opis: 'Zmierzch. Ostatnie ptaki drapieżne krążą wysoko na tle zachodzącego nieba.',
-  },
-  noc: {
-    linia: 'Nocą niebo należy do sów. Częściej je słychać, niż widać.',
-    opis: 'Nocne niebo z gwiazdami i księżycem. Co jakiś czas przelatuje sowa.',
-  },
+/** One true line about the hour, over the opening title. By day it is `liniaDnia()`, which follows the season. */
+const LINIE: Record<Exclude<PoraDnia, 'dzien'>, string> = {
+  swit: 'O świcie sowy wracają na dzienne kryjówki, a myszołowy czekają na pierwsze kominy ciepłego powietrza.',
+  zmierzch: 'O zmierzchu termika słabnie, ptaki dzienne szukają noclegu, a sowy wylatują na łowy.',
+  noc: 'Nocą niebo należy do sów. Częściej je słychać, niż widać.',
+};
+
+/** What the sky shows at each time of day, for screen readers. */
+const OPISY: Record<PoraDnia, string> = {
+  swit: 'Świt. Kilka ptaków drapieżnych krąży wysoko w kominie termicznym.',
+  dzien: 'Dzień. Ptaki drapieżne krążą w kominie termicznym, wznoszą się i odlatują.',
+  zmierzch: 'Zmierzch. Ostatnie ptaki drapieżne krążą wysoko na tle zachodzącego nieba.',
+  noc: 'Nocne niebo z gwiazdami i księżycem. Co jakiś czas przelatuje sowa.',
 };
 
 /**
@@ -75,7 +70,12 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
   const [{ pora: zAdresu }, ciastka] = await Promise.all([searchParams, cookies()]);
   const wybrana = jakoPora(zAdresu) ?? jakoPora(ciastka.get(CIASTKO_PORY)?.value);
   const teraz = new Date();
-  const pory = { ...PORY, dzien: { ...PORY.dzien, linia: liniaDnia(teraz) } };
+  const pory: Record<PoraDnia, { linia: string; opis: string }> = {
+    swit: { linia: LINIE.swit, opis: OPISY.swit },
+    dzien: { linia: liniaDnia(teraz), opis: OPISY.dzien },
+    zmierzch: { linia: LINIE.zmierzch, opis: OPISY.zmierzch },
+    noc: { linia: LINIE.noc, opis: OPISY.noc },
+  };
   const g = gatunekDnia();
   const { grupy, lead } = grupySylwetek();
   const lekcji = gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0);
@@ -140,7 +140,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
             </p>
           </header>
           <MorfGrup grupy={grupy}>
-            <Link href="/moduly/metoda/01-sylwetka" className="cta cta--szklo">
+            <Link href={`/moduly/${LEKCJA_GRUP.modul}/${LEKCJA_GRUP.lekcja}`} className="cta cta--szklo">
               <span className="cta__etykieta">Lekcja: Sylwetka, 8 grup</span>
             </Link>
           </MorfGrup>
