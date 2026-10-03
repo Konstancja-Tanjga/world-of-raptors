@@ -1,138 +1,51 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import { useState, type ReactNode } from 'react';
-import { kluczLekcji, usePostep } from '@/lib/postep';
-import { AppBar, AppShell, Button, NavGroup, NavItem, NavList, SkipLink } from './ds';
+import { usePathname } from 'next/navigation';
+import { useEffect, ViewTransition, type ReactNode } from 'react';
+import { useOstatniaLekcja } from '@/lib/ostatnia';
+import { SkipLink } from './ds';
+import { Nawigacja } from './Nawigacja';
+import { PasekModulu } from './PasekModulu';
+import { Stopka } from './Stopka';
 
-type NavEntry = {
-  id: string;
-  label: string;
-  href: string;
-  subline?: string;
-  icon?: ReactNode;
-};
+export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
+export type ModulNawigacji = { slug: string; id: string; tytul: string; sciezka: 'a' | 'b'; lekcje: LekcjaNawigacji[] };
 
-type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
-type ModulNawigacji = { slug: string; id: string; tytul: string; sciezka: 'a' | 'b'; lekcje: LekcjaNawigacji[] };
-
-export function AppFrame({ moduly, children }: { moduly: ModulNawigacji[]; children: ReactNode }) {
+/**
+ * The frame around every page: the global navigation, the module bar on
+ * module and lesson pages (the module's lessons with their state, which the
+ * sidebar used to show), the content and the footer.
+ *
+ * Not Big Hat's AppShell: its contract keeps it for application screens and
+ * says documentation pages may use "no shell at all". The landmarks it would
+ * provide are here by hand: header, nav, main (the skip link's target) and
+ * footer. See DS-GAPS.md.
+ */
+export function AppFrame({ moduly, znak, children }: { moduly: ModulNawigacji[]; znak: ReactNode; children: ReactNode }) {
   const pathname = usePathname();
-  const router = useRouter();
-  const [navOpen, setNavOpen] = useState(false);
-  const { postep } = usePostep();
+  const { zapamietaj } = useOstatniaLekcja();
 
-  const glowne: NavEntry[] = [
-    { id: 'start', label: 'Start', href: '/' },
-    { id: 'plan', label: 'Plan kursu', href: '/plan' },
-  ];
-  const narzedzia: NavEntry[] = [
-    { id: 'gatunki', label: 'Atlas gatunków', href: '/gatunki' },
-    { id: 'checklista', label: 'Moja checklista', href: '/checklista' },
-  ];
-  const modulySciezki = (sciezka: 'a' | 'b'): NavEntry[] =>
-    moduly
-      .filter((m) => m.sciezka === sciezka)
-      .map((m) => {
-        // Icons appear once the browser copy of progress is read. The subline
-        // carries partial and complete states in words; ○ with no subline
-        // means not started.
-        const done = postep ? m.lekcje.filter((l) => postep[kluczLekcji(m.slug, l.slug)]).length : 0;
-        const zaliczony = m.lekcje.length > 0 && done === m.lekcje.length;
-        return {
-          id: m.slug,
-          label: `${m.id}\u00a0${m.tytul}`,
-          href: `/moduly/${m.slug}`,
-          icon: postep ? (zaliczony ? '✓' : '○') : undefined,
-          subline: zaliczony ? 'Zaliczony' : done > 0 ? `${done} z ${m.lekcje.length} lekcji` : undefined,
-        };
-      });
-  const biologia = modulySciezki('a');
-  const teren = modulySciezki('b');
-
-  // Inside a module, its syllabus: the overview and the lessons, each with
-  // its state in words. The module itself is then marked in this list rather
-  // than in its path, so only one entry is the current page.
   const biezacy = moduly.find((m) => pathname === `/moduly/${m.slug}` || pathname.startsWith(`/moduly/${m.slug}/`));
-  const sylabus: NavEntry[] = biezacy
-    ? [
-        { id: 'opis', label: 'Opis modułu', href: `/moduly/${biezacy.slug}` },
-        ...biezacy.lekcje.map((l, i) => {
-          const ukonczona = Boolean(postep?.[kluczLekcji(biezacy.slug, l.slug)]);
-          return {
-            id: l.slug,
-            label: `${i + 1}. ${l.tytul}`,
-            href: `/moduly/${biezacy.slug}/${l.slug}`,
-            icon: postep ? (ukonczona ? '✓' : '○') : undefined,
-            subline: ukonczona ? 'Ukończona' : l.progQuizu !== null ? `Quiz, próg ${l.progQuizu}%` : undefined,
-          };
-        }),
-      ]
-    : [];
+  const lekcja = biezacy && pathname.split('/')[3];
 
-  const isActive = (href: string) =>
-    (href === '/' || biezacy) ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
-
-  const go = (entries: NavEntry[]) => (id: string) => {
-    const entry = entries.find((e) => e.id === id);
-    if (!entry) return;
-    setNavOpen(false);
-    router.push(entry.href);
-  };
-
-  /** `oznaczaj: false` for the path groups inside a module, whose entry the syllabus marks instead. */
-  const renderItems = (entries: NavEntry[], oznaczaj = true) =>
-    entries.map((e) => (
-      <NavItem
-        key={e.id}
-        item={{ id: e.id, label: e.label, subline: e.subline, icon: e.icon }}
-        active={oznaczaj && isActive(e.href)}
-        onSelect={go(entries)}
-      />
-    ));
+  // "Kontynuuj" returns to the lesson opened last.
+  useEffect(() => {
+    if (biezacy && lekcja && biezacy.lekcje.some((l) => l.slug === lekcja)) zapamietaj(biezacy.slug, lekcja);
+  }, [biezacy, lekcja, zapamietaj]);
 
   return (
     <>
       <SkipLink>Przejdź do treści</SkipLink>
-      <AppShell
-        navOpen={navOpen}
-        onNavToggle={() => setNavOpen((o) => !o)}
-        header={
-          <AppBar
-            brand={<span className="brand">World of Raptors</span>}
-            titleAsHeading={false}
-            actions={
-              <span className="nav-toggle">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  aria-expanded={navOpen}
-                  onClick={() => setNavOpen((o) => !o)}
-                >
-                  Menu
-                </Button>
-              </span>
-            }
-          />
-        }
-        sidebar={
-          <nav aria-label="Nawigacja kursu" className="sidebar">
-            <NavList ariaLabel="Główne">{renderItems(glowne)}</NavList>
-            {biezacy && (
-              <NavGroup label={`Moduł ${biezacy.id}: lekcje`}>{renderItems(sylabus)}</NavGroup>
-            )}
-            {biologia.length > 0 && (
-              <NavGroup label="Ścieżka A: Biologia">{renderItems(biologia, !biezacy)}</NavGroup>
-            )}
-            {teren.length > 0 && (
-              <NavGroup label="Ścieżka B: Rozpoznawanie w terenie">{renderItems(teren, !biezacy)}</NavGroup>
-            )}
-            <NavGroup label="Narzędzia">{renderItems(narzedzia)}</NavGroup>
-          </nav>
-        }
-      >
-        {children}
-      </AppShell>
+      <Nawigacja moduly={moduly} przyklejona={!biezacy} znak={znak} />
+      {biezacy && <PasekModulu modul={biezacy} lekcja={lekcja} />}
+      <main id="main-content" tabIndex={-1} className="tresc">
+        {/* Keyed by the route, so a navigation is an exit and an entrance: the
+            page cross-fades while the bars above it hold still (globals.css). */}
+        <ViewTransition key={pathname} enter="strona-wejscie" exit="strona-wyjscie" default="none">
+          <div className="tresc__strona">{children}</div>
+        </ViewTransition>
+      </main>
+      <Stopka />
     </>
   );
 }

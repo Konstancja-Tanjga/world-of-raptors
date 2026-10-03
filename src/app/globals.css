@@ -1,65 +1,503 @@
 /*
- * App-level styles. Big Hat rule 1 and 2: semantic tokens only, spacing and
- * type from the scale. The only literals are 1px borders and the reading
- * measure, which has no token.
+ * App-level styles. Values come from tokens only: Big Hat's semantic scale
+ * for components and spacing, and this product's `--wor-*` layer (motyw.css)
+ * for display type, the scenes and motion. Literals: 1px borders and the
+ * reading measure, as before.
  */
 
+html {
+  scroll-padding-top: calc(var(--wor-nav-height) + var(--bh-gap-loose));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+html[data-menu] {
+  overflow: hidden;
+}
 html,
 body {
   margin: 0;
   padding: 0;
 }
-
-.brand {
-  font-weight: var(--bh-text-weight-heading);
+body {
+  background: var(--wor-tlo);
+  color: var(--bh-text-primary);
+  font-family: var(--wor-font-ui);
   font-size: var(--bh-text-size-body);
+  line-height: var(--bh-text-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: var(--bh-selection-bg);
+  color: var(--bh-selection-fg);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* The skip link's target. It is focused only by the skip link, never by Tab. */
+.tresc {
+  display: block;
+  min-height: 70vh;
+}
+.tresc:focus {
+  outline: none;
+}
+
+/* ---------- Global navigation ---------- */
+
+.nav {
+  position: relative;
+  z-index: var(--bh-layer-sticky);
+  color: var(--bh-text-primary);
+  background: var(--bh-material-chrome-bg);
+  -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  border-bottom: 1px solid var(--bh-border-hairline);
+  transition:
+    color var(--wor-dur-base) var(--wor-ease-out),
+    background-color var(--wor-dur-base) var(--wor-ease-out),
+    border-color var(--wor-dur-base) var(--wor-ease-out);
+  view-transition-name: nawigacja;
+}
+.nav[data-przyklejona] {
+  position: sticky;
+  top: 0;
+}
+.nav[data-nad-scena] {
+  color: var(--wor-scena-tekst);
+  background: var(--wor-scena-szklo);
+  border-bottom-color: var(--wor-scena-linia);
+}
+.nav__pasek {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-loose);
+  height: var(--wor-nav-height);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.nav__marka {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--wor-font-display);
+  font-size: var(--bh-text-size-heading);
+  font-weight: 600;
+  letter-spacing: var(--wor-tracking-display);
   white-space: nowrap;
 }
-
-/* The shell hides the sidebar below 900px; the toggle is only useful there. */
-.nav-toggle {
+.znak {
+  width: 1.9rem;
+  height: auto;
+  fill: currentColor;
+  transition: transform var(--wor-dur-expressive) var(--wor-ease-spring);
+}
+.nav__marka:hover .znak {
+  transform: translateY(calc(-2px * var(--wor-ruch))) rotate(calc(-6deg * var(--wor-ruch)));
+}
+.nav__glowna {
+  margin-inline-start: auto;
+}
+.nav__linki {
+  display: flex;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__link,
+.nav__menu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-md);
+  padding-inline: var(--bh-padding-inline);
+  border: 0;
+  border-radius: var(--bh-radius-pill);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.nav__link:hover,
+.nav__menu:hover {
+  background: var(--bh-fill-hover);
+}
+.nav[data-nad-scena] .nav__link:hover,
+.nav[data-nad-scena] .nav__menu:hover {
+  background: var(--wor-scena-linia);
+}
+/* The current section: a short accent bar under the word, not colour alone (weight too). */
+.nav__link[aria-current] {
+  font-weight: var(--bh-text-weight-heading);
+}
+.nav__link[aria-current]::after {
+  content: '';
+  position: absolute;
+  inset-inline: var(--bh-padding-inline);
+  bottom: var(--bh-gap-tight);
+  height: var(--bh-gap-hairline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-akcent);
+}
+.nav[data-nad-scena] .nav__link[aria-current]::after {
+  background: var(--wor-zloto);
+}
+.nav__akcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.nav__dalej {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-padding-inline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--wor-dur-quick) var(--wor-ease-out),
+    transform var(--wor-dur-quick) var(--wor-ease-out);
+}
+.nav__dalej:hover {
+  background: var(--bh-action-primary-bg-hover);
+}
+.nav__dalej:active {
+  transform: scale(0.97);
+}
+.nav[data-nad-scena] .nav__dalej {
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
+}
+.nav__link:focus-visible,
+.nav__menu:focus-visible,
+.nav__marka:focus-visible,
+.nav__dalej:focus-visible,
+.nav__arkusz a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.nav[data-nad-scena] :focus-visible {
+  outline-color: var(--wor-zloto);
+}
+.nav__menu {
   display: none;
 }
-@media (max-width: 900px) {
-  .nav-toggle {
+.nav__arkusz {
+  position: fixed;
+  inset: var(--wor-nav-height) 0 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: var(--wor-space-block) var(--wor-gutter);
+  background: var(--wor-tlo);
+  color: var(--bh-text-primary);
+}
+.nav__arkusz ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__arkusz-link {
+  display: block;
+  padding-block: var(--bh-gap-snug);
+  color: inherit;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    opacity var(--wor-dur-expressive) var(--wor-ease-out),
+    translate var(--wor-dur-expressive) var(--wor-ease-out);
+}
+.nav__arkusz-link[aria-current] {
+  color: var(--wor-akcent);
+}
+.nav__arkusz li:nth-child(2) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 1); }
+.nav__arkusz li:nth-child(3) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 2); }
+.nav__arkusz li:nth-child(4) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 3); }
+.nav__arkusz li:nth-child(5) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 4); }
+.nav__arkusz li:nth-child(6) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 5); }
+@starting-style {
+  .nav__arkusz-link {
+    opacity: 0;
+    translate: 0 calc(0.75rem * var(--wor-ruch));
+  }
+}
+.nav__arkusz-dalej {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin-top: var(--wor-space-block);
+  padding: var(--bh-padding-section);
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  text-decoration: none;
+}
+.nav__arkusz-etykieta {
+  font-weight: var(--bh-text-weight-heading);
+  font-size: var(--bh-text-size-heading);
+}
+@media (max-width: 760px) {
+  .nav__glowna {
+    display: none;
+  }
+  .nav__menu {
     display: inline-flex;
+  }
+  .nav__akcje {
+    margin-inline-start: auto;
+  }
+}
+@media (max-width: 400px) {
+  .nav__akcje .nav__dalej {
+    display: none;
   }
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-normal);
-  padding-block: var(--bh-padding-block);
-  /* Keep items and the active highlight off the viewport edge. */
-  padding-inline: var(--bh-padding-inline);
-  box-sizing: border-box;
-  width: 100%;
+/* ---------- Module bar ---------- */
+
+.pasek {
+  position: sticky;
+  top: 0;
+  z-index: var(--bh-layer-sticky);
+  background: var(--bh-material-chrome-bg);
+  -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  border-bottom: 1px solid var(--bh-border-hairline);
+  view-transition-name: pasek-modulu;
 }
+.pasek__wnetrze {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-loose);
+  min-height: var(--bh-control-lg);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pasek__modul {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--bh-gap-snug);
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pasek__id {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+  font-variant-numeric: tabular-nums;
+}
+.pasek__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--bh-text-size-heading);
+  font-weight: 600;
+}
+.pasek__modul[aria-current] .pasek__tytul {
+  text-decoration: underline;
+  text-decoration-color: var(--wor-akcent);
+  text-underline-offset: 0.3em;
+}
+.pasek__lekcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.pasek__lekcja {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+  color: var(--bh-text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.pasek__lekcja:hover {
+  background: var(--bh-fill-hover);
+}
+.pasek__lekcja[aria-current] {
+  padding-inline-end: var(--bh-padding-inline);
+  background: var(--bh-fill-hover);
+  color: var(--bh-text-primary);
+}
+.pasek__nr {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: var(--bh-control-sm);
+  height: var(--bh-control-sm);
+  border: 1px solid var(--bh-border-strong);
+  border-radius: var(--bh-radius-pill);
+  font-size: var(--bh-text-size-dense);
+  font-weight: var(--bh-text-weight-heading);
+  font-variant-numeric: tabular-nums;
+}
+.pasek__lekcja[data-gotowa] .pasek__nr {
+  border-color: var(--wor-akcent);
+  background: var(--wor-akcent);
+  color: var(--bh-text-on-accent);
+}
+.pasek__lekcja[aria-current] .pasek__nr {
+  border-color: var(--bh-text-primary);
+}
+/* Only the current lesson shows its title; the others keep it for screen readers. */
+.pasek__lekcja:not([aria-current]) .pasek__nazwa {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.pasek__lekcja[aria-current] .pasek__nazwa {
+  max-width: 22rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.pasek__stan {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+  white-space: nowrap;
+}
+.pasek a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+@media (max-width: 760px) {
+  .pasek__tytul,
+  .pasek__stan {
+    display: none;
+  }
+  .pasek__lekcja[aria-current] .pasek__nazwa {
+    max-width: 11rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.stopka {
+  margin-top: var(--wor-space-section);
+  border-top: 1px solid var(--bh-border-hairline);
+  background: var(--bh-surface-sunken);
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+.stopka__wnetrze {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: var(--wor-space-block);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding: var(--wor-space-block) var(--wor-gutter) calc(var(--wor-space-block) * 1.5);
+}
+.stopka p {
+  margin: 0 0 var(--bh-gap-snug);
+  max-width: var(--wor-measure);
+}
+.stopka ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stopka li + li {
+  margin-top: var(--bh-gap-tight);
+}
+.stopka a {
+  color: inherit;
+  text-decoration: none;
+}
+.stopka a:hover {
+  color: var(--bh-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--wor-akcent);
+  text-underline-offset: 0.25em;
+}
+.stopka a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.stopka__nazwa {
+  color: var(--bh-text-primary);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.stopka__autorzy {
+  color: var(--bh-text-secondary);
+}
+.stopka__autorzy strong {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-heading);
+}
+.stopka__autorzy a {
+  color: var(--bh-text-link);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.stopka__naglowek {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-heading);
+}
+@media (max-width: 760px) {
+  .stopka__wnetrze {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Page containers ---------- */
 
 .page {
   box-sizing: border-box;
-  max-width: 72rem;
-  padding: var(--bh-padding-hero) var(--bh-padding-page);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding: var(--wor-space-block) var(--wor-gutter);
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-loose);
 }
 
 .page--reading {
-  max-width: 52rem;
+  max-width: 56rem;
 }
 
 /* Article sizes itself by its own width and needs 50rem for the margin
    beside the text; the page padding would leave it just short of that. */
 .page--article {
-  padding-inline: var(--bh-padding-hero);
-}
-
-@media (max-width: 900px) {
-  .page {
-    padding: var(--bh-padding-section);
-  }
+  padding-inline: var(--wor-gutter);
 }
 
 /* A control that cannot wrap scrolls inside its own box instead of widening the page. */
@@ -172,6 +610,53 @@ body {
 }
 
 /* Checklist */
+.checklist__grupa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+  margin-top: var(--bh-padding-section);
+}
+.checklist__naglowek {
+  margin: 0;
+  padding-top: var(--bh-gap-loose);
+  border-top: 1px solid var(--wor-linia);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.checklist__licznik {
+  color: var(--bh-text-muted);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-body);
+  font-variant-numeric: tabular-nums;
+}
+/* The species' silhouette, an outline until seen, then filled. */
+.checklist__sylwetka {
+  flex: none;
+  width: 3.75rem;
+  color: var(--bh-text-muted);
+}
+.checklist__sylwetka .sylwetka {
+  width: 100%;
+  height: auto;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  transition:
+    fill var(--wor-dur-expressive) var(--wor-ease-out),
+    color var(--wor-dur-base) var(--wor-ease-out);
+}
+.checklist__sylwetka .sylwetka path {
+  vector-effect: non-scaling-stroke;
+}
+[data-widziany] > .checklist__sylwetka {
+  color: var(--wor-akcent);
+}
+[data-widziany] > .checklist__sylwetka .sylwetka {
+  fill: var(--wor-akcent);
+}
 .checklist {
   list-style: none;
   margin: 0;
@@ -183,9 +668,12 @@ body {
 .checklist__row {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--bh-gap-normal);
+  align-items: center;
+  gap: var(--bh-gap-normal) var(--bh-padding-section);
+}
+/* The checkbox and its names take the middle; the link to the species card goes right. */
+.checklist__row > :nth-child(2) {
+  flex: 1 1 14rem;
 }
 .checklist__details {
   display: grid;
@@ -215,116 +703,177 @@ body {
   border-top: 1px solid var(--bh-border-subtle);
 }
 
-/* Lesson Markdown */
+/* Lesson Markdown: an editorial page. Newsreader at reading size, titles in
+   Półtawski, each chapter (##) numbered in the accent colour. */
 .prose {
-  font-size: var(--bh-text-size-body);
-  line-height: var(--bh-text-leading-normal);
   color: var(--bh-text-primary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-reading);
+  font-variant-numeric: oldstyle-nums;
+  hanging-punctuation: first;
+  counter-reset: rozdzial;
 }
 .prose > :first-child {
   margin-top: 0;
 }
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-family: var(--wor-font-display);
+  font-weight: 600;
+  letter-spacing: var(--wor-tracking-display);
+  font-variant-numeric: lining-nums;
+}
 .prose h1 {
-  font-size: var(--bh-text-size-display);
-  font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
   margin: 0 0 var(--bh-gap-loose);
+  font-size: var(--wor-size-title);
+  line-height: var(--wor-leading-title);
 }
 .prose h2 {
-  font-size: var(--bh-text-size-heading);
+  margin: calc(var(--wor-space-block) * 1.6) 0 var(--bh-gap-loose);
+  font-size: var(--wor-size-subtitle);
+  line-height: var(--wor-leading-title);
+  counter-increment: rozdzial;
+}
+.prose h2::before {
+  content: counter(rozdzial);
+  display: block;
+  margin-bottom: var(--bh-gap-snug);
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
   font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
-  margin: var(--bh-padding-section) 0 var(--bh-gap-normal);
+  letter-spacing: var(--wor-tracking-eyebrow);
 }
 .prose h3 {
-  font-size: var(--bh-text-size-body);
-  font-weight: var(--bh-text-weight-heading);
-  margin: var(--bh-gap-loose) 0 var(--bh-gap-snug);
+  margin: var(--wor-space-block) 0 var(--bh-gap-snug);
+  font-size: var(--wor-size-karta);
+  line-height: var(--wor-leading-title);
+}
+/* The Latin name in a species heading reads as in a field guide. */
+.prose h3 em {
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-weight: 400;
 }
 .prose p,
 .prose ul,
 .prose ol {
-  margin: 0 0 var(--bh-gap-normal);
+  margin: 0 0 var(--bh-gap-loose);
+}
+.prose ul,
+.prose ol {
+  padding-left: var(--bh-padding-section);
 }
 .prose li {
-  margin-block-end: var(--bh-gap-tight);
+  margin-block-end: var(--bh-gap-snug);
+  padding-left: var(--bh-gap-tight);
+}
+.prose li::marker {
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-ui);
+  font-size: 0.85em;
+  font-weight: var(--bh-text-weight-heading);
+}
+.prose strong {
+  font-weight: 600;
 }
 .prose a {
   color: var(--bh-text-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.prose a:hover {
+  text-decoration-thickness: 2px;
 }
 .prose em {
   color: var(--bh-text-secondary);
 }
 .prose hr {
+  margin: var(--wor-space-block) 0;
   border: 0;
-  border-top: 1px solid var(--bh-border-subtle);
-  margin: var(--bh-gap-loose) 0;
+  border-top: 1px solid var(--wor-linia);
 }
+/* Callouts ("> ") are notes in the field book: a rule in the accent colour. */
 .prose blockquote {
-  margin: 0 0 var(--bh-gap-normal);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-status-info-bg);
-  border: 1px solid var(--bh-status-info-border);
-  border-radius: var(--bh-radius-surface);
+  margin: 0 0 var(--bh-gap-loose);
+  padding: var(--bh-gap-normal) var(--bh-padding-section);
+  border-left: 3px solid var(--wor-akcent);
+  border-radius: 0 var(--bh-radius-surface) var(--bh-radius-surface) 0;
+  background: var(--wor-akcent-miekki);
   color: var(--bh-text-primary);
+  font-size: 0.94em;
 }
 .prose blockquote > :last-child {
   margin-bottom: 0;
 }
 .prose code {
-  font-size: var(--bh-text-size-dense);
-  background: var(--bh-surface-sunken);
-  border-radius: var(--bh-radius-control);
   padding: 0 var(--bh-gap-tight);
+  border-radius: var(--bh-radius-control);
+  background: var(--bh-surface-sunken);
+  font-size: var(--bh-text-size-dense);
 }
 .prose pre {
-  background: var(--bh-surface-sunken);
-  border-radius: var(--bh-radius-surface);
   padding: var(--bh-padding-block) var(--bh-padding-inline);
   overflow-x: auto;
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-sunken);
 }
 .prose pre code {
   padding: 0;
 }
+/* Mini-quiz answers and other disclosures */
 .prose details {
-  margin: 0 0 var(--bh-gap-normal);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-surface-sunken);
-  border: 1px solid var(--bh-border-subtle);
+  margin: 0 0 var(--bh-gap-loose);
+  padding: var(--bh-gap-normal) var(--bh-padding-section);
+  border: 1px solid var(--wor-linia);
   border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-raised);
+}
+.prose details[open] {
+  box-shadow: var(--bh-elevation-raised);
 }
 .prose summary {
+  color: var(--bh-text-link);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
   cursor: pointer;
-  font-weight: var(--bh-text-weight-emphasis);
+}
+.prose details[open] summary {
+  margin-bottom: var(--bh-gap-snug);
 }
 .prose summary:focus-visible {
   outline: 2px solid var(--bh-border-focus);
   outline-offset: 2px;
 }
 .prose__table {
+  margin: 0 0 var(--bh-gap-loose);
   overflow-x: auto;
-  margin: 0 0 var(--bh-gap-normal);
-  border: 1px solid var(--bh-border-subtle);
-  border-radius: var(--bh-radius-surface);
+  border-block: 1px solid var(--wor-linia);
 }
 .prose__table:focus-visible {
   outline: 2px solid var(--bh-border-focus);
   outline-offset: 2px;
 }
 .prose table {
-  border-collapse: collapse;
   width: 100%;
-  font-size: var(--bh-text-size-dense);
+  border-collapse: collapse;
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-normal);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .prose th,
 .prose td {
+  padding: var(--bh-gap-snug) var(--bh-gap-normal) var(--bh-gap-snug) 0;
+  border-bottom: 1px solid var(--wor-linia);
   text-align: left;
   vertical-align: top;
-  padding: var(--bh-gap-snug) var(--bh-gap-normal);
-  border-bottom: 1px solid var(--bh-border-subtle);
 }
 .prose th {
-  background: var(--bh-surface-sunken);
+  color: var(--bh-text-muted);
   font-weight: var(--bh-text-weight-emphasis);
 }
 .prose tr:last-child td {
@@ -337,7 +886,8 @@ body {
  */
 .prose h2,
 .lesson-media .section-title {
-  scroll-margin-top: var(--bh-padding-section);
+  /* Below the module bar that stays on top while reading. */
+  scroll-margin-top: calc(var(--bh-control-lg) + var(--bh-gap-loose));
 }
 /* A section starts below the margin notes of the section before, so a photo
    never ends up beside text it does not belong to. */
@@ -345,7 +895,13 @@ body {
   clear: right;
 }
 .margines {
-  font-size: var(--bh-text-size-dense);
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-normal);
+}
+.margines blockquote {
+  font-size: inherit;
 }
 .margines > * + * {
   margin-top: var(--bh-gap-normal);
@@ -357,16 +913,127 @@ body {
 .margines > * + .photo {
   margin-top: var(--bh-gap-normal);
 }
-.next__label,
-.next__title {
-  margin: 0;
-  font-weight: var(--bh-text-weight-emphasis);
+/* The lesson's opening: the slots of Big Hat's Article hold these. */
+.lekcja__eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--bh-gap-snug) var(--bh-gap-loose);
+  font-size: var(--bh-text-size-caption);
 }
-.next__label {
+.lekcja__modul {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+  text-decoration: none;
+}
+.lekcja__modul:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.lekcja__modul:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.lekcja__tytul {
+  display: block;
+  padding-block: 0.05em;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.lekcja__meta {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.lekcja__lead {
+  display: block;
   color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
 }
-.next__title {
-  margin-top: var(--bh-gap-hairline);
+.lekcja__lead strong {
+  color: var(--bh-text-primary);
+  font-weight: 600;
+}
+
+/* The way on: a small dusk scene, the whole card one link. */
+.dalej {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin-top: var(--bh-gap-loose);
+  padding: var(--bh-padding-section) var(--bh-padding-section) var(--bh-padding-section);
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-zmierzch);
+  color: var(--wor-scena-tekst);
+  text-decoration: none;
+  transition:
+    transform var(--wor-dur-base) var(--wor-ease-out),
+    box-shadow var(--wor-dur-base) var(--wor-ease-out);
+}
+.dalej::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--wor-cien-sceny), transparent 75%);
+}
+.dalej:hover {
+  transform: translateY(calc(-3px * var(--wor-ruch)));
+  box-shadow: var(--bh-elevation-floating);
+}
+.dalej:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+.dalej__etykieta {
+  color: var(--wor-zloto);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+}
+.dalej__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.dalej__akcja {
+  justify-self: start;
+  margin-top: var(--bh-gap-snug);
+  padding: var(--bh-gap-tight) var(--bh-padding-inline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+}
+
+/* Reading progress: a hairline along the module bar, filled by scrolling. */
+.pasek__czytanie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: var(--bh-gap-hairline);
+  background: var(--wor-akcent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+@supports (animation-timeline: scroll()) {
+  .pasek__czytanie {
+    animation: czytanie linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes czytanie {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Step-by-step quiz. Prefixed with .quiz to win over .prose element rules. */
@@ -412,6 +1079,311 @@ body {
   font-weight: var(--bh-text-weight-emphasis);
 }
 
+/* Page headers (atlas, checklist, flashcards, plan) */
+.naglowek-strony {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  max-width: 52rem;
+  padding-bottom: var(--bh-padding-section);
+}
+.naglowek-strony__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-display);
+  font-weight: 600;
+  line-height: var(--wor-leading-display);
+  letter-spacing: var(--wor-tracking-display);
+  padding-block: 0.06em;
+}
+.naglowek-strony__lead {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
+}
+
+/* Flashcards */
+.fiszki {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--bh-padding-section);
+}
+.fiszki__filtry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-loose) var(--wor-space-block);
+}
+/* A control wider than a phone scrolls inside its own box, never the page. */
+.fiszki__filtry > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.fiszka {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--wor-space-block);
+}
+.fiszka__przod {
+  min-width: 0;
+  position: sticky;
+  top: calc(var(--wor-nav-height) + var(--bh-gap-loose));
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__scena {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  /* The card and its question fit one screen; the box widens rather than grow taller. */
+  max-height: 62vh;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-sunken);
+}
+/* A photo is shown whole (a crop could hide the very mark that identifies
+   the bird), over a blurred copy of itself instead of empty bars. */
+.fiszka__tlo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(var(--bh-material-regular-blur)) saturate(var(--bh-material-saturation));
+  opacity: 0.6;
+  scale: 1.15;
+}
+.fiszka__zdjecie {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.fiszka__scena--niebo {
+  background: var(--wor-niebo-dzien);
+}
+.fiszka__scena--niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, var(--wor-blask) 0, var(--wor-blask-miekki) 26%, transparent 62%);
+}
+.scena-sylwetki {
+  width: 92%;
+  height: auto;
+  overflow: visible;
+  fill: var(--wor-sylwetka);
+}
+.fiszka__scena--nazwa {
+  container-type: inline-size;
+  align-content: center;
+  gap: var(--bh-gap-normal);
+  padding: var(--wor-space-block);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+  text-align: center;
+}
+.fiszka__jezyk {
+  margin: 0;
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
+  font-weight: var(--bh-text-weight-heading);
+}
+.fiszka__slowo {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  /* Sized by the card, so "Sęp kasztanowaty" fits as well as "Kobuz". */
+  font-size: clamp(2rem, 11cqi, 5rem);
+  text-wrap: balance;
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.fiszka__podpis {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+}
+.fiszka__podpis a {
+  color: inherit;
+}
+.fiszka__panel {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-loose);
+}
+.fiszka__licznik {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fiszka__pytanie {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.fiszka__akcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__odpowiedz {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  padding-top: var(--bh-gap-loose);
+  border-top: 1px solid var(--wor-linia);
+  outline: none;
+  /* Shown hundreds of times: quick and quiet. */
+  animation: odslon var(--wor-dur-base) var(--wor-ease-out) both;
+}
+@keyframes odslon {
+  from {
+    opacity: 0;
+    translate: 0 calc(0.4rem * var(--wor-ruch));
+  }
+}
+.fiszka__odpowiedz:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 4px;
+}
+.fiszka__grupa {
+  margin: 0;
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+}
+.fiszka__nazwa {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.fiszka__nazwy {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+}
+.fiszka__cechy {
+  margin: 0;
+  padding-left: var(--bh-padding-section);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.45;
+}
+.fiszka__cechy-sylwetki {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.fiszka__cechy-sylwetki > div {
+  display: grid;
+  grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+  gap: var(--bh-gap-normal);
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.fiszka__cechy-sylwetki dt {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fiszka__cechy-sylwetki dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.4;
+}
+.fiszka__ilustracja {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-padding-section);
+}
+.fiszka__ilustracja img {
+  width: 10rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--bh-radius-surface);
+}
+.fiszka__mala-sylwetka {
+  width: 5.5rem;
+  height: auto;
+  fill: var(--bh-text-primary);
+}
+.fiszka__podobne {
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__podobne p {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fiszka__podobne ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-normal) var(--bh-padding-section);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fiszka__podobne li {
+  display: grid;
+  justify-items: start;
+  gap: var(--bh-gap-tight);
+}
+.fiszka__podobne .fiszka__mala-sylwetka {
+  width: 4rem;
+  fill: var(--bh-text-muted);
+}
+.fiszka__podobne a,
+.fiszka__karta {
+  color: var(--bh-text-link);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-underline-offset: 0.25em;
+}
+.fiszka__podobne a:focus-visible,
+.fiszka__karta:focus-visible,
+.fiszka__podpis a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.fiszka__oceny {
+  display: grid;
+  /* Two by two: four answers in a row do not fit beside the card, and three plus one looks broken. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-gap-normal);
+  padding-top: var(--bh-gap-snug);
+}
+.fiszka__ocena {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+}
+/* Keyboard hints mean nothing on a touch screen. */
+@media (hover: none) {
+  .fiszka__klawisz {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .fiszka {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fiszka__przod {
+    position: static;
+  }
+}
+
 /* Photos (Wikimedia Commons, with attribution) */
 .photo {
   margin: 0;
@@ -425,11 +1397,18 @@ body {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
+  /* Cropped around each photo's focal point (zdjecia.json "fokus", set inline). */
   object-fit: cover;
-  /* Perched birds usually have the head in the top third of a portrait photo. */
-  object-position: center 25%;
   border-radius: var(--bh-radius-surface);
   background: var(--bh-surface-sunken);
+}
+/* In a lesson a photo shows what the text talks about (the fingers, the
+   tail): it is never cropped. A species plate keeps its matching crops. */
+.prose .photo__img {
+  aspect-ratio: auto;
+}
+.prose .plate .photo__img {
+  aspect-ratio: 4 / 3;
 }
 .photo--small .photo__img {
   aspect-ratio: 4 / 3;
@@ -579,92 +1558,720 @@ body {
   gap: var(--bh-gap-tight);
 }
 
-/* Home: species of the day */
-.today {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
-}
-.today__intro {
-  margin: 0;
-  color: var(--bh-text-muted);
-}
-.today__name {
-  margin: 0;
-  font-size: var(--bh-text-size-display);
-  font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
-}
-.today__latin {
-  margin-block-end: var(--bh-gap-snug);
-}
-.home-aside {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  align-items: start;
-  gap: var(--bh-gap-loose);
-}
-@media (max-width: 900px) {
-  .home-aside {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* Module list: a numbered catalogue, not a wall of cards */
-.module-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.module-list__item {
-  display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: var(--bh-gap-normal);
-  padding-block: var(--bh-gap-snug);
-  border-bottom: 1px solid var(--bh-border-subtle);
-}
-.module-list__id {
-  font-weight: var(--bh-text-weight-emphasis);
-  color: var(--bh-text-secondary);
-  font-variant-numeric: tabular-nums;
-}
-.module-list__title {
-  font-size: var(--bh-text-size-body);
-}
-
-/* Curiosity: Big Hat Card (raised, info accent) with the button outside it */
+/* Curiosity: a passage set large between hairlines */
 .ciekawostka {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
-}
-.ciekawostka__tresc {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
+  display: grid;
+  gap: var(--bh-gap-loose);
+  padding-block: var(--bh-padding-section);
+  border-block: 1px solid var(--wor-linia);
 }
 .ciekawostka__tytul {
   margin: 0;
-  font-size: var(--bh-text-size-heading);
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
   font-weight: var(--bh-text-weight-heading);
-  color: var(--bh-status-info-fg);
+  letter-spacing: var(--wor-tracking-eyebrow);
 }
 .ciekawostka__tekst {
   margin: 0;
-  max-width: 60ch;
-  font-size: var(--bh-text-size-heading);
-  line-height: var(--bh-text-leading-normal);
-  color: var(--bh-text-primary);
+  max-width: 34em;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-subtitle);
+  line-height: 1.35;
+  transition:
+    opacity var(--wor-dur-expressive) var(--wor-ease-out),
+    translate var(--wor-dur-expressive) var(--wor-ease-out);
+}
+@starting-style {
+  .ciekawostka__tekst {
+    opacity: 0;
+    translate: 0 calc(0.5rem * var(--wor-ruch));
+  }
+}
+.ciekawostka__stopka {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal) var(--bh-padding-section);
 }
 .ciekawostka__zrodlo {
-  font-size: var(--bh-text-size-dense);
+  color: var(--bh-text-link);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
 }
-.ciekawostka__akcje {
-  display: flex;
-  justify-content: flex-end;
+.ciekawostka__zrodlo:hover {
+  text-decoration-thickness: 2px;
+}
+.ciekawostka__zrodlo:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
 }
 
 .own-photos__uwaga {
   font-size: var(--bh-text-size-dense);
+}
+
+/* ---------- Shared editorial pieces ---------- */
+
+/* A dark story band: its tokens are dusk (motyw.css), and its text follows them. */
+.scena {
+  color: var(--bh-text-primary);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: var(--wor-tracking-eyebrow);
+}
+
+.sekcja {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  max-width: 46rem;
+  margin-bottom: var(--wor-space-block);
+}
+.sekcja--wiersz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--wor-space-block);
+  max-width: none;
+}
+.sekcja--wiersz > :first-child {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  max-width: 46rem;
+}
+.sekcja__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.sekcja__lead {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
+}
+
+/* Calls to action: a link that looks like a big pill (see ButtonLink and DS-GAPS.md). */
+.cta {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: var(--bh-control-lg);
+  padding: var(--bh-gap-snug) var(--bh-padding-section);
+  border: 1px solid transparent;
+  border-radius: var(--bh-radius-pill);
+  color: inherit;
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  text-decoration: none;
+  transition:
+    transform var(--wor-dur-quick) var(--wor-ease-out),
+    background-color var(--wor-dur-quick) var(--wor-ease-out),
+    border-color var(--wor-dur-quick) var(--wor-ease-out),
+    box-shadow var(--wor-dur-base) var(--wor-ease-out);
+}
+.cta__opis {
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-body);
+  opacity: 0.85;
+}
+.cta--glowne {
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  box-shadow: 0 12px 32px -12px var(--bh-action-primary-bg);
+}
+.cta--glowne:hover {
+  background: var(--bh-action-primary-bg-hover);
+  transform: translateY(calc(-1px * var(--wor-ruch)));
+  box-shadow: 0 16px 40px -12px var(--bh-action-primary-bg);
+}
+.cta--szklo {
+  background: var(--wor-szklo-jasne);
+  border-color: var(--wor-scena-linia);
+  -webkit-backdrop-filter: blur(var(--bh-material-thin-blur));
+  backdrop-filter: blur(var(--bh-material-thin-blur));
+}
+.cta--szklo:hover {
+  border-color: var(--bh-text-primary);
+}
+.cta--obrys {
+  align-self: flex-start;
+  border-color: var(--bh-border-strong);
+}
+.cta--obrys:hover {
+  border-color: var(--bh-text-primary);
+  background: var(--bh-fill-hover);
+}
+.cta:active {
+  transform: scale(0.98);
+}
+.cta:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+
+/* Static silhouettes: the drawing's colour is the text colour around it. */
+.sylwetka {
+  display: block;
+  fill: currentColor;
+}
+
+/* Facts as a short definition list: label above, value below. */
+.fakty {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--bh-gap-loose) var(--bh-padding-section);
+  margin: 0;
+}
+.fakty > div {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  align-content: start;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.fakty dt {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fakty dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.4;
+}
+
+/* Wingspan to scale */
+.miarka {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.miarka__rysunek {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 9rem;
+  overflow: visible;
+  fill: var(--bh-text-primary);
+}
+.miarka__paski {
+  position: relative;
+  height: var(--bh-control-sm);
+  margin-bottom: var(--bh-gap-loose);
+  border-top: 1px solid var(--bh-border-strong);
+}
+.miarka__pasek {
+  position: absolute;
+  height: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+}
+.miarka__pasek--ptak {
+  top: var(--bh-gap-snug);
+  background: var(--wor-akcent);
+}
+.miarka__pasek--zero {
+  top: var(--bh-gap-snug);
+  left: 0;
+  background: var(--wor-akcent-miekki);
+}
+.miarka__pasek--czlowiek {
+  top: var(--bh-gap-loose);
+  left: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bh-text-muted) 0 var(--bh-gap-snug),
+    transparent var(--bh-gap-snug) calc(var(--bh-gap-snug) + var(--bh-gap-tight))
+  );
+}
+.miarka__podzialka {
+  position: absolute;
+  top: calc(var(--bh-control-sm) - var(--bh-gap-tight));
+  translate: -50% 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+  font-variant-numeric: tabular-nums;
+}
+.miarka__podzialka:first-of-type {
+  translate: 0 0;
+}
+.miarka__podzialka:last-of-type {
+  translate: -100% 0;
+}
+.miarka__opis {
+  display: grid;
+  gap: var(--bh-gap-hairline);
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-muted);
+}
+.miarka__ptak {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+
+/* A module's progress ring */
+.postep-modulu {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  font-variant-numeric: tabular-nums;
+}
+.postep-modulu svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.postep-modulu__tor {
+  fill: none;
+  stroke: var(--wor-linia);
+  stroke-width: 3;
+}
+.postep-modulu__luk {
+  fill: none;
+  stroke: var(--wor-akcent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray var(--wor-dur-expressive) var(--wor-ease-out);
+}
+.postep-modulu[data-gotowy] {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+}
+
+/* Morph slider between two look-alikes (about page, species pages) */
+.suwak-morfu {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.suwak-morfu__niebo {
+  position: relative;
+  isolation: isolate;
+  background: var(--wor-niebo-dzien);
+  display: grid;
+  place-items: center;
+  padding: var(--wor-space-block) var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  overflow: hidden;
+}
+.suwak-morfu__niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 55%, var(--wor-blask) 0, var(--wor-blask-miekki) 30%, transparent 70%);
+}
+.suwak-morfu__niebo svg {
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+  overflow: visible;
+  fill: var(--wor-sylwetka);
+}
+.suwak-morfu__sterowanie {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.suwak-morfu__strony {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-padding-section);
+}
+.suwak-morfu__strona {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-snug);
+  transition: opacity var(--wor-dur-quick) linear;
+}
+.suwak-morfu__nazwa {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+}
+.suwak-morfu__strona dl {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.suwak-morfu__strona dl > div {
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.suwak-morfu__strona dt {
+  font-size: var(--bh-text-size-caption);
+  opacity: 0.85;
+}
+.suwak-morfu__strona dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.35;
+}
+
+/* ---------- The course: two paths of module cards (home and plan) ---------- */
+
+.kurs {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.sciezka + .sciezka {
+  margin-top: var(--wor-space-block);
+}
+.sciezka__naglowek {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug) var(--wor-space-block);
+  margin-bottom: var(--bh-padding-section);
+  padding-top: var(--bh-gap-loose);
+  border-top: 1px solid var(--wor-linia);
+}
+.sciezka__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.sciezka__opis {
+  margin: 0;
+  max-width: 32rem;
+  color: var(--bh-text-muted);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+}
+.moduly {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.modul {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--bh-gap-snug);
+  height: 100%;
+  padding: var(--bh-padding-section);
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform var(--wor-dur-base) var(--wor-ease-out),
+    box-shadow var(--wor-dur-base) var(--wor-ease-out);
+}
+a.modul:hover {
+  transform: translateY(calc(-4px * var(--wor-ruch)));
+  box-shadow: var(--bh-elevation-floating);
+}
+a.modul:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+.modul__id {
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-numer);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+.modul__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.modul__zajawka {
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.45;
+}
+.modul__stopka {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug);
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--wor-linia);
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.modul--wkrotce {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--wor-linia);
+  color: var(--bh-text-muted);
+}
+
+/* On a phone each path is a row to swipe through, not twelve cards to scroll past. */
+@media (max-width: 700px) {
+  .moduly {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 84%;
+    margin-inline: calc(-1 * var(--wor-gutter));
+    padding: var(--bh-gap-snug) var(--wor-gutter) var(--bh-gap-loose);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--wor-gutter);
+    scrollbar-width: none;
+  }
+  .moduly > li {
+    scroll-snap-align: start;
+  }
+}
+
+/* ---------- Night chorus: the owls ---------- */
+
+.chor {
+  position: relative;
+  isolation: isolate;
+  padding-block: calc(var(--wor-space-block) * 2);
+  overflow: hidden;
+  background: var(--wor-niebo-noc);
+  color: var(--wor-scena-tekst);
+}
+/* A few stars and the moon's glow, drawn with gradients: no image, no script. */
+.chor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 84% 18%, var(--wor-ksiezyc) 0 1.6rem, transparent 1.7rem),
+    radial-gradient(circle at 84% 18%, var(--wor-blask-miekki), transparent 14rem),
+    radial-gradient(circle at 12% 22%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 31% 9%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 47% 27%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 66% 7%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 73% 38%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 93% 46%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 61%, var(--wor-scena-tekst) 0 1px, transparent 2px),
+    radial-gradient(circle at 57% 72%, var(--wor-scena-tekst) 0 1px, transparent 2px);
+  opacity: 0.85;
+}
+.chor__wnetrze {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--wor-space-block);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.chor .sekcja {
+  margin-bottom: 0;
+}
+.chor .sekcja__lead {
+  color: var(--wor-scena-tekst);
+}
+.chor .cta {
+  justify-self: start;
+}
+.chor__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chor__sowa {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+  height: 100%;
+  box-sizing: border-box;
+  padding: var(--bh-padding-section) var(--bh-padding-section) var(--bh-padding-section) var(--bh-gap-loose);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-surface);
+  background: var(--wor-scena-szklo);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--wor-dur-quick) var(--wor-ease-out),
+    transform var(--wor-dur-base) var(--wor-ease-out);
+}
+.chor__sowa:hover {
+  border-color: var(--wor-zloto);
+  transform: translateY(calc(-3px * var(--wor-ruch)));
+}
+.chor__sowa:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+.chor__sylwetka {
+  grid-row: span 2;
+  width: 100%;
+  height: auto;
+  fill: var(--wor-scena-tekst-2);
+}
+.chor__nazwa {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+}
+.chor__glos {
+  color: var(--wor-scena-tekst-2);
+  font-family: var(--wor-font-text);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+/* The course plan under the module cards */
+.plan__tekst {
+  width: 100%;
+  max-width: 52rem;
+  margin: var(--wor-space-section) auto 0;
+}
+.page > .kurs {
+  margin-top: 0;
+  padding-inline: 0;
+}
+
+/* ---------- Page transitions ----------
+   The page leaves quickly and the next one arrives gently, a little from
+   below; the navigation and the module bar are not part of it. With reduced
+   motion the swap is instant. */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.strona-wyjscie) {
+  animation: strona-zanik var(--wor-dur-quick) var(--wor-ease-in) both;
+}
+::view-transition-new(.strona-wejscie) {
+  animation: strona-pojawienie var(--wor-dur-base) var(--wor-ease-out) var(--wor-dur-quick) both;
+}
+/* The bars are glass; a snapshot of glass has nothing to blur, so the page
+   would show through it sharp. Each bar's snapshot gets a solid backing in
+   the colour it sits on: night over a scene, the page colour elsewhere. */
+.nav[data-nad-scena] {
+  view-transition-name: nawigacja-scena;
+}
+::view-transition-group(nawigacja),
+::view-transition-group(nawigacja-scena),
+::view-transition-group(pasek-modulu) {
+  z-index: var(--bh-layer-sticky);
+  animation: none;
+  background: var(--wor-tlo);
+}
+::view-transition-group(nawigacja-scena) {
+  background: var(--wor-scena-tlo);
+}
+::view-transition-old(nawigacja),
+::view-transition-old(nawigacja-scena),
+::view-transition-old(pasek-modulu) {
+  display: none;
+}
+::view-transition-new(nawigacja),
+::view-transition-new(nawigacja-scena),
+::view-transition-new(pasek-modulu) {
+  animation: none;
+}
+/* A species' name flying from its card to its page's title: blurred for a
+   moment mid-flight, which hides the scaling of a small snapshot. */
+::view-transition-group(.morf-nazwy) {
+  z-index: var(--bh-layer-raised);
+  animation-duration: var(--wor-dur-expressive);
+  animation-timing-function: var(--wor-ease-in-out);
+}
+::view-transition-image-pair(.morf-nazwy) {
+  animation: przez-rozmycie var(--wor-dur-expressive) var(--wor-ease-in-out);
+}
+@keyframes przez-rozmycie {
+  40% {
+    filter: blur(2px);
+  }
+}
+@keyframes strona-zanik {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes strona-pojawienie {
+  from {
+    opacity: 0;
+    translate: 0 calc(0.75rem * var(--wor-ruch));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ---------- Not found: an empty night sky, one bird leaving ---------- */
+.zgubiony {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 80svh;
+  overflow: hidden;
+  /* A dark bird only shows against something light: the moon. */
+  background:
+    radial-gradient(circle at 72% 28%, var(--wor-ksiezyc) 0 3rem, transparent 3.1rem),
+    radial-gradient(circle at 72% 28%, var(--wor-blask-miekki), transparent 18rem),
+    var(--wor-niebo-noc);
+}
+/* It crosses the moon on its way out; with reduced motion it stays there. */
+.zgubiony__ptak {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: clamp(4rem, 2rem + 6vw, 8rem);
+  height: auto;
+  fill: var(--wor-sylwetka);
+  translate: calc(72vw - 50%) calc(22svh - 50%);
+  rotate: -12deg;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .zgubiony__ptak {
+    animation: odlatuje 7s linear both;
+  }
+}
+@keyframes odlatuje {
+  from {
+    translate: 12vw 62svh;
+    scale: 1.7;
+  }
+  to {
+    translate: 102vw -8svh;
+    scale: 0.45;
+  }
+}
+.zgubiony__tresc {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 36rem;
+  padding: var(--wor-space-block) var(--wor-gutter);
 }

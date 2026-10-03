@@ -42,18 +42,22 @@ src/
 ## Trasy
 | Adres | Strona |
 |---|---|
-| `/` | start: ścieżki, moduły, postęp checklisty |
-| `/plan` | plan kursu |
-| `/moduly/[slug]` | opis modułu |
+| `/` | start: niebo o tej porze dnia (podgląd innej pory: `?pora=swit`, `dzien`, `zmierzch`, `noc`), gatunek na dziś, moduły, osiem sylwetek, sowy, moja lista |
+| `/plan` | kurs: moduły z moim postępem, pod nimi plan kursu |
+| `/moduly/[slug]` | moduł: otwarcie ze zdjęciem, lekcje, opis |
 | `/moduly/[slug]/[lekcja]` | lekcja |
-| `/gatunki` | atlas z filtrami (region, aktywność, wyszukiwarka) |
-| `/gatunki/[id]` | karta gatunku z odhaczaniem obserwacji |
-| `/checklista` | moja checklista: odhaczanie, data, miejsce, notatka, eksport i import |
+| `/gatunki` | atlas z filtrami: zdjęcia, sylwetki w grupach albo wszystkie w jednej skali |
+| `/gatunki/[id]` | karta gatunku: plansza sylwetki, sposób lotu, rozpiętość, podobne gatunki z suwakiem, moja obserwacja |
+| `/fiszki` | fiszki: zdjęcia, sylwetki i nazwy (polskie, angielskie, hiszpańskie), powtórki FSRS |
+| `/checklista` | moja checklista: odhaczanie, data, miejsce, notatka, zdjęcia, eksport i import |
+| `/o-projekcie` | o projekcie: autorstwo, jak powstały sylwetki, kroje, kolory, ruch, podziękowania dla fotografów |
 
 ## Dodawanie treści
 1. Nowa lekcja: plik `content/moduly/<slug>/NN-nazwa.md` i wpis w `lekcje` w `content/moduly.json`.
 2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`.
-3. Nowy gatunek: wpis w `content/gatunki.json`. Sprawdź, czy każde `mylona_z` wskazuje istniejące `id`.
+3. Nowy gatunek: wpis w `content/gatunki.json`. Sprawdź, czy każde `mylona_z` wskazuje istniejące `id`. Potem:
+   - sylwetka: wpis w `SYLWETKI` w `src/lib/sylwetki.ts` (liczby zacznij od grupy, do której należy, i porównaj rysunek ze zdjęciem z lotu), a dla ptaka dziennego także `STYL_LOTU`. Bez tego gatunek nie ma sylwetki ani fiszki z sylwetką;
+   - zdjęcia: wpis w `content/zdjecia.json` z polem `fokus` (`[x, y]` w procentach: głowa ptaka siedzącego, środek ptaka w locie), a potem `python3 scripts/commons.py rozmiary`, które dopisze rozmiar oryginału (`oryginal`). Opcjonalne trzecie zdjęcie `cecha` (cecha do rozpoznania: druga płeć, młody ptak, odmiana) ma dodatkowo pola `podpis` i `alt`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
 5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo karta ma jedną akcję: link „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
 6. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:
@@ -67,7 +71,7 @@ src/
    Akapit, do którego należy uwaga.
    ```
    Na szerokim ekranie notatka stoi obok akapitu, na wąskim nad nim. Nagłówki `##` tworzą spis treści lekcji, więc pisz je zwykłym tekstem, bez pogrubień i linków.
-7. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Pytanie bez dokładnie jednej pogrubionej odpowiedzi zatrzymuje build.
+7. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w pytaniach i odpowiedziach znikają (zob. `DS-GAPS.md`).
 
 ## Uruchamianie
 ```bash
@@ -88,6 +92,6 @@ Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten j
 ## Etapy
 1. Gotowe: **MVP:** moduły A1–A7 i B1–B5, atlas gatunków, checklista, deploy.
 2. Zdjęcia i nagrania na licencjach CC (Wikimedia Commons, xeno-canto) z autorem i licencją przy każdym pliku.
-3. Interaktywne quizy i fiszki z powtórkami rozłożonymi w czasie (`ts-fsrs`).
+3. Gotowe: quiz krok po kroku w lekcjach z ćwiczeniami na końcu każdego modułu i fiszki ze zdjęć atlasu z powtórkami rozłożonymi w czasie (`ts-fsrs`, `/fiszki`).
 4. Mapa punktów obserwacyjnych (Leaflet + OpenStreetMap), quiz „porównaj”, „wirtualny punkt obserwacyjny”.
 5. Opcjonalnie: checklista zapisywana w bazie (np. Supabase albo Neon przez Vercel Marketplace), żeby była wspólna na telefonie i komputerze.

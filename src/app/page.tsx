@@ -1,12 +1,22 @@
 import Link from 'next/link';
-import { ChecklistSummary } from '@/components/ChecklistSummary';
+import './start.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
-import { SpeciesMedia } from '@/components/SpeciesMedia';
-import { ciekawostkiDla, gatunki, moduly, sciezki, zdjecia } from '@/lib/content';
+import { Chor } from '@/components/start/Chor';
+import { Sylwetka } from '@/components/Sylwetka';
+import { Kolekcja } from '@/components/start/Kolekcja';
+import { Kurs } from '@/components/start/Kurs';
+import { MorfGrup } from '@/components/start/MorfGrup';
+import { Niebo } from '@/components/start/Niebo';
+import { Okladka } from '@/components/start/Okladka';
+import { StartKursu } from '@/components/start/StartKursu';
+import { MarkdownInline } from '@/components/Markdown';
+import { ciekawostkiDla, gatunki, gotoweModuly, grupySylwetek, zdjecia } from '@/lib/content';
+import { poraDnia, type PoraDnia } from '@/lib/niebo';
+import { odmiana } from '@/lib/odmiana';
 
-// Rendered per request: the species of the day must change at midnight, and
-// a revalidated static page would show yesterday's to the first visitor.
-// Cheap, because everything comes from local JSON.
+// Rendered per request: the species of the day must change at midnight and
+// the sky follows the sun, and a revalidated static page would show a stale
+// one. Cheap, because everything comes from local JSON.
 export const dynamic = 'force-dynamic';
 
 /** Same species all day (Polish time), a different one tomorrow. */
@@ -17,56 +27,114 @@ function gatunekDnia() {
   return zeZdjeciem[numer % zeZdjeciem.length];
 }
 
-export default function Home() {
+/** One true line about this hour of the day, over the opening title. */
+const PORY: Record<PoraDnia, { linia: string; opis: string }> = {
+  swit: {
+    linia: 'O świcie sowy wracają na dzienne kryjówki, a myszołowy czekają na pierwsze kominy ciepłego powietrza.',
+    opis: 'Świt. Kilka ptaków drapieżnych krąży wysoko w kominie termicznym.',
+  },
+  dzien: {
+    linia: 'Za dnia ptaki szybujące krążą w kominach ciepłego powietrza, wznoszą się i odlatują w stronę Afryki.',
+    opis: 'Dzień. Ptaki drapieżne krążą w kominie termicznym, wznoszą się i odlatują na południowy zachód.',
+  },
+  zmierzch: {
+    linia: 'O zmierzchu termika słabnie, ptaki dzienne szukają noclegu, a sowy wylatują na łowy.',
+    opis: 'Zmierzch. Ostatnie ptaki drapieżne krążą wysoko na tle zachodzącego nieba.',
+  },
+  noc: {
+    linia: 'Nocą niebo należy do sów. Częściej je słychać, niż widać.',
+    opis: 'Nocne niebo z gwiazdami i księżycem. Co jakiś czas przelatuje sowa.',
+  },
+};
+
+const PORY_DNIA = Object.keys(PORY) as PoraDnia[];
+
+export default async function Home({ searchParams }: PageProps<'/'>) {
+  // `?pora=dzien` (swit, zmierzch, noc) previews the sky at another time of day.
+  const { pora: zadana } = await searchParams;
+  const pora = PORY_DNIA.find((p) => p === zadana) ?? poraDnia(new Date());
   const g = gatunekDnia();
+  const { grupy, lead } = await grupySylwetek();
+  const lekcji = gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0);
+  const dzienne = gatunki.filter((x) => x.aktywnosc === 'dzienny').length;
+  const konspekt = gotoweModuly.map(({ slug, id, lekcje }) => ({ slug, id, lekcje }));
 
   return (
-    <div className="page">
-      <section className="today" aria-labelledby="gatunek-dnia">
-        <p className="today__intro">Gatunek na dziś. Codziennie inny.</p>
-        <h1 id="gatunek-dnia" className="today__name">
-          {g.pl}
-        </h1>
-        <p className="latin today__latin">
-          {g.lat} <span className="en">(ang. {g.en})</span>
-        </p>
-        <SpeciesMedia id={g.id} linki={false} ileMylonych={1} glowne />
-        <p>
-          <Link href={`/gatunki/${g.id}`} className="text-link">
-            Karta gatunku: {g.pl}
-          </Link>
-        </p>
+    <div className="start">
+      <section className="niebo scena" data-scena data-pora={pora} aria-labelledby="tytul-startu">
+        <Niebo pora={pora} opis={PORY[pora].opis} />
+        <div className="niebo__tresc">
+          <p className="niebo__pora">{PORY[pora].linia}</p>
+          <h1 id="tytul-startu" className="niebo__tytul">
+            Naucz się czytać niebo
+          </h1>
+          <p className="niebo__lead">
+            Kurs o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak
+            rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską.
+          </p>
+          <div className="niebo__akcje">
+            <StartKursu konspekt={konspekt} />
+            <Link href="/gatunki" className="cta cta--szklo">
+              <span className="cta__etykieta">Otwórz atlas</span>
+            </Link>
+          </div>
+        </div>
+        <dl className="niebo__liczby">
+          <div>
+            <dt>{odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])}</dt>
+            <dd>{dzienne}</dd>
+          </div>
+          <div>
+            <dt>{odmiana(gatunki.length - dzienne, ['sowa', 'sowy', 'sów'])}</dt>
+            <dd>{gatunki.length - dzienne}</dd>
+          </div>
+          <div>
+            <dt>{odmiana(gotoweModuly.length, ['moduł', 'moduły', 'modułów'])}</dt>
+            <dd>{gotoweModuly.length}</dd>
+          </div>
+          <div>
+            <dt>{odmiana(lekcji, ['lekcja', 'lekcje', 'lekcji'])}</dt>
+            <dd>{lekcji}</dd>
+          </div>
+        </dl>
       </section>
 
-      <div className="home-aside">
+      <Okladka g={g} />
+
+      <Kurs />
+
+      <section className="grupy scena" data-scena aria-labelledby="grupy-tytul">
+        <div className="grupy__wnetrze">
+          <header className="sekcja">
+            <p className="eyebrow">Za dnia: metoda, lekcja 1</p>
+            <h2 id="grupy-tytul" className="sekcja__tytul">
+              Osiem sylwetek na tle nieba
+            </h2>
+            <p className="sekcja__lead">
+              <MarkdownInline source={lead} baseDir="moduly/metoda" />
+            </p>
+          </header>
+          <MorfGrup grupy={grupy}>
+            <Link href="/moduly/metoda/01-sylwetka" className="cta cta--szklo">
+              <span className="cta__etykieta">Lekcja: Sylwetka, 8 grup</span>
+            </Link>
+          </MorfGrup>
+        </div>
+      </section>
+
+      <Chor />
+
+      <div className="start__ciekawostka">
         <Ciekawostka {...ciekawostkiDla()} />
-        <ChecklistSummary ids={gatunki.map((x) => x.id)} />
       </div>
 
-      {sciezki.map((s) => (
-        <section key={s.id} className="stack" aria-labelledby={`sciezka-${s.id}`}>
-          <h2 id={`sciezka-${s.id}`} className="section-title">
-            {s.tytul}
-          </h2>
-          <ol className="module-list">
-            {moduly
-              .filter((m) => m.sciezka === s.id)
-              .map((m) => (
-                <li key={m.id} className="module-list__item">
-                  <span className="module-list__id">{m.id}</span>
-                  {m.gotowy && m.slug ? (
-                    <Link href={`/moduly/${m.slug}`} className="text-link module-list__title">
-                      {m.tytul}
-                    </Link>
-                  ) : (
-                    <span className="module-list__title">{m.tytul} (w planach)</span>
-                  )}
-                  {m.lekcje && <span className="muted">{m.lekcje.length} lekcji</span>}
-                </li>
-              ))}
-          </ol>
-        </section>
-      ))}
+      <Kolekcja
+        gatunki={gatunki.map((x) => ({
+          id: x.id,
+          pl: x.pl,
+          sylwetka: <Sylwetka id={x.id} klasa="kolekcja__sylwetka" dokladnosc={0.45} />,
+        }))}
+      />
     </div>
   );
 }

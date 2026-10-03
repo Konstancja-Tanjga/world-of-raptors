@@ -1,0 +1,307 @@
+/* A module's overview: the opening scene, the syllabus, the README. */
+
+.modul-strona {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Opening scene ---------- */
+
+.otwarcie {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  box-sizing: border-box;
+  min-height: 78svh;
+  padding: var(--wor-space-block) 0 calc(var(--wor-space-block) * 1.3);
+  overflow: hidden;
+  background: var(--wor-scena-tlo);
+  color: var(--wor-scena-tekst);
+}
+/* The photo fills the right two thirds and fades into the dusk on the left,
+   so the bird sits beside the title, not behind it. */
+.otwarcie__zdjecie {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -2;
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+}
+@media (max-width: 900px) {
+  .otwarcie__zdjecie {
+    width: 100%;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+/* Readable text over any photo: dusk from the bottom and the left. */
+.otwarcie::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(0deg, var(--wor-scena-tlo) 0%, var(--wor-cien-sceny) 45%, transparent 75%),
+    linear-gradient(90deg, var(--wor-cien-sceny), transparent 60%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .otwarcie__zdjecie {
+    animation: otwarcie-zdjecie var(--wor-dur-scene) var(--wor-ease-out) both;
+  }
+  .otwarcie__tresc > * {
+    animation: otwarcie-tekst var(--wor-dur-scene) var(--wor-ease-out) both;
+  }
+  .otwarcie__tresc > :nth-child(2) {
+    animation-delay: calc(var(--wor-stagger) * 1);
+  }
+  .otwarcie__tresc > :nth-child(3) {
+    animation-delay: calc(var(--wor-stagger) * 3);
+  }
+  .otwarcie__tresc > :nth-child(4) {
+    animation-delay: calc(var(--wor-stagger) * 5);
+  }
+  .otwarcie__tresc > :nth-child(5) {
+    animation-delay: calc(var(--wor-stagger) * 7);
+  }
+}
+@keyframes otwarcie-zdjecie {
+  from {
+    scale: 1.06;
+  }
+}
+@keyframes otwarcie-tekst {
+  from {
+    opacity: 0;
+    translate: 0 calc(0.8rem * var(--wor-ruch));
+  }
+}
+.otwarcie__tresc {
+  box-sizing: border-box;
+  display: grid;
+  justify-items: start;
+  gap: var(--bh-gap-loose);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.otwarcie .eyebrow {
+  color: var(--wor-zloto);
+}
+.otwarcie__tytul {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-weight: 600;
+  letter-spacing: var(--wor-tracking-display);
+}
+.otwarcie__id {
+  color: var(--wor-zloto);
+  font-size: var(--wor-size-display);
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+.otwarcie__nazwa {
+  max-width: 14ch;
+  font-size: var(--wor-size-hero);
+  line-height: var(--wor-leading-display);
+  padding-block: 0.06em;
+  text-wrap: balance;
+}
+.otwarcie__zajawka {
+  margin: 0;
+  max-width: 36rem;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.45;
+}
+.otwarcie__zajawka strong {
+  color: var(--wor-zloto);
+  font-weight: 600;
+}
+.otwarcie__fakty {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-padding-section) var(--wor-space-block);
+  margin: var(--bh-gap-snug) 0 0;
+}
+.otwarcie__fakty > div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-scena-linia);
+  min-width: 6rem;
+}
+.otwarcie__fakty dd {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.otwarcie__fakty dt {
+  color: var(--wor-scena-tekst);
+  font-size: var(--bh-text-size-caption);
+  opacity: 0.85;
+}
+.otwarcie__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-normal) var(--bh-padding-section);
+  padding-top: var(--bh-gap-snug);
+}
+.otwarcie .cta--glowne {
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
+  box-shadow: 0 12px 32px -12px var(--wor-zloto);
+}
+.otwarcie .cta--glowne:hover {
+  background: var(--bh-action-primary-bg-hover);
+}
+.otwarcie__zaliczony {
+  margin: 0;
+  color: var(--wor-zloto);
+  font-weight: var(--bh-text-weight-heading);
+}
+.otwarcie__podpis {
+  position: absolute;
+  right: var(--wor-gutter);
+  bottom: var(--bh-gap-loose);
+  max-width: 28rem;
+  margin: 0;
+  color: var(--wor-scena-tekst);
+  font-size: var(--bh-text-size-dense);
+  text-align: right;
+  opacity: 0.8;
+}
+.otwarcie__podpis a {
+  color: inherit;
+}
+@media (max-width: 760px) {
+  .otwarcie {
+    min-height: 88svh;
+  }
+  .otwarcie__podpis {
+    position: static;
+    grid-row: 2;
+    margin: var(--bh-padding-section) var(--wor-gutter) 0;
+    text-align: left;
+  }
+}
+
+/* ---------- Syllabus ---------- */
+
+.modul-strona__tresc {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--wor-space-section);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.modul-strona__lekcje {
+  display: grid;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: var(--wor-space-block);
+}
+@media (max-width: 900px) {
+  .modul-strona__lekcje {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.sylabus {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--wor-linia);
+}
+.sylabus__lekcja {
+  display: grid;
+  grid-template-columns: var(--wor-size-numer) minmax(0, 1fr);
+  gap: var(--bh-padding-section);
+  padding: var(--bh-padding-section) var(--bh-gap-snug) var(--bh-padding-section) 0;
+  border-bottom: 1px solid var(--wor-linia);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.sylabus__lekcja:hover {
+  background: var(--bh-fill-hover);
+}
+.sylabus__lekcja:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.sylabus__nr {
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sylabus__tresc {
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.sylabus__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.sylabus__lekcja:hover .sylabus__tytul {
+  text-decoration: underline;
+  text-decoration-color: var(--wor-akcent);
+  text-underline-offset: 0.2em;
+}
+.sylabus__lead {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.45;
+}
+.sylabus__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.sylabus__gotowa {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+}
+/* A finished lesson: its number filled, so the column of numbers reads as progress. */
+.sylabus__lekcja[data-gotowa] .sylabus__nr {
+  color: var(--bh-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--wor-akcent);
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- README ---------- */
+
+.modul-strona__opis {
+  width: 100%;
+  max-width: var(--wor-measure);
+  margin-inline: auto;
+}
+.modul-strona__ciekawostka {
+  width: 100%;
+  max-width: 60rem;
+  margin-inline: auto;
+}

@@ -1,20 +1,30 @@
 import { ButtonLink } from '@/components/ButtonLink';
 import { StateBlock } from '@/components/ds';
+import { Sylwetka } from '@/components/Sylwetka';
 
+/** A page that does not exist: an empty sky, one bird leaving it, and the way back. */
 export default function NotFound() {
   return (
-    <div className="page">
-      <StateBlock
-        state="empty"
-        title="Nie ma takiej strony"
-        description="Ten moduł, lekcja albo gatunek nie istnieje."
-        action={
-          <ButtonLink href="/" size="sm">
-            Wróć na start
-          </ButtonLink>
-        }
-        scope="page"
-      />
+    <div className="zgubiony scena" data-scena>
+      <Sylwetka id="kania-ruda" klasa="zgubiony__ptak" />
+      <div className="zgubiony__tresc">
+        <StateBlock
+          state="empty"
+          title="Nie ma takiej strony"
+          description="Ten moduł, lekcja albo gatunek nie istnieje. Ptak, którego szukasz, odleciał gdzie indziej."
+          action={
+            <ButtonLink href="/" size="sm">
+              Wróć na start
+            </ButtonLink>
+          }
+          secondaryAction={
+            <ButtonLink href="/gatunki" size="sm" variant="secondary">
+              Otwórz atlas
+            </ButtonLink>
+          }
+          scope="page"
+        />
+      </div>
     </div>
   );
 }

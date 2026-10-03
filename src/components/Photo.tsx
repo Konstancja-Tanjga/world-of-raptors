@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { Zdjecie } from '@/lib/types';
+import { polozenie } from '@/lib/zdjecia';
 
 /**
  * A photo with the attribution its licence requires: author, licence and,
@@ -29,6 +30,7 @@ export function Photo({
         loading={wazne ? 'eager' : 'lazy'}
         fetchPriority={wazne ? 'high' : undefined}
         className="photo__img"
+        style={{ objectPosition: polozenie(zdjecie) }}
       />
       <figcaption className="photo__caption">
         {podpis && <span className="photo__title">{podpis}</span>}

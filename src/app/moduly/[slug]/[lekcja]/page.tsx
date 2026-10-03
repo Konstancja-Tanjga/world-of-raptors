@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { ButtonLink } from '@/components/ButtonLink';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Article, Breadcrumbs, Card } from '@/components/ds';
+import { Article } from '@/components/ds';
 import { Ciekawostka } from '@/components/Ciekawostka';
 import { LessonComplete } from '@/components/LessonComplete';
 import { LessonMedia } from '@/components/LessonMedia';
@@ -62,29 +62,36 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
       : { etykieta: 'Koniec kursu', tytul: 'Moja checklista', href: '/checklista', akcja: 'Otwórz checklistę' };
 
   return (
-    <div className="page page--article">
+    <div className="page page--article lekcja">
       <Article
         eyebrow={
-          <Breadcrumbs
-            items={[
-              { label: 'Start', href: '/' },
-              { label: `${modul.id} ${modul.tytul}`, href: `/moduly/${slug}` },
-              { label: `Lekcja ${index + 1}` },
-            ]}
-          />
+          <span className="lekcja__eyebrow">
+            <Link href={`/moduly/${slug}`} className="lekcja__modul">
+              {modul.id}&nbsp;{modul.tytul}
+            </Link>
+            <span>
+              Lekcja {index + 1} z {modul.lekcje.length}
+            </span>
+          </span>
         }
-        title={biezaca.tytul}
-        meta={`Lekcja ${index + 1} z ${modul.lekcje.length}, ${czasCzytania(strona.minuty)}`}
-        lead={strona.lead ? <MarkdownInline source={strona.lead} baseDir={baseDir} /> : undefined}
+        title={<span className="lekcja__tytul">{biezaca.tytul}</span>}
+        meta={
+          <span className="lekcja__meta">
+            Czytanie: {czasCzytania(strona.minuty)}
+            {strona.quiz && <>. Quiz na końcu, próg {strona.quiz.prog}%</>}
+          </span>
+        }
+        lead={strona.lead ? <span className="lekcja__lead"><MarkdownInline source={strona.lead} baseDir={baseDir} /></span> : undefined}
         toc={[...strona.toc, ...(media ? [{ id: 'media', label: 'Zobacz, posłuchaj, poczytaj' }] : [])]}
         tocLabel="W tej lekcji"
         footer={
           <>
             <LessonComplete modul={slug} lekcja={lekcja} quiz={strona.quiz !== null} />
-            <Card padding="snug" actions={<ButtonLink href={dalej.href} size="sm">{dalej.akcja}</ButtonLink>}>
-              <p className="next__label">{dalej.etykieta}</p>
-              <p className="next__title">{dalej.tytul}</p>
-            </Card>
+            <Link href={dalej.href} className="dalej">
+              <span className="dalej__etykieta">{dalej.etykieta}</span>
+              <span className="dalej__tytul">{dalej.tytul}</span>
+              <span className="dalej__akcja">{dalej.akcja}</span>
+            </Link>
           </>
         }
       >

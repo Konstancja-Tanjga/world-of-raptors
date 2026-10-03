@@ -63,6 +63,14 @@ export type Zdjecie = {
   /** Commons file page. */
   strona: string;
   plik: string;
+  /** The original's [width, height] on Commons, so larger thumbnails are only asked for when they exist. */
+  oryginal?: number[];
+  /**
+   * [x, y] in percent: the bird's head (perched) or the middle of the bird
+   * (in flight). Used as `object-position`, which keeps that point inside any
+   * crop, so a 4:3 tile or a wide hero never cuts the head off.
+   */
+  fokus?: number[];
 };
 
 /**
@@ -96,3 +104,31 @@ export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: nu
 
 /** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
 export type Quiz = { prog: number; pytania: PytanieQuizu[] };
+
+/**
+ * What a flashcard asks. Photo cards (`lot`, `siedzacy`): name the bird in a
+ * reference photo. `sylwetka`: name it from its silhouette in flight (diurnal
+ * species; owls are told apart by voice, B5). Name cards: give the English or
+ * Spanish name for the Polish one, or the Polish name for the English or
+ * Spanish one.
+ */
+export type RodzajFiszki = 'lot' | 'siedzacy' | 'sylwetka' | 'pl-en' | 'pl-es' | 'en-pl' | 'es-pl';
+
+/** A flashcard. `id` is `<species id>/<rodzaj>`, the key of its schedule in the browser. */
+export type Fiszka = {
+  id: string;
+  rodzaj: RodzajFiszki;
+  /** The species' id in `gatunki`. */
+  gatunek: string;
+  /** The photo a photo card asks about; on other cards a photo for the answer, if there is one. */
+  zdjecie: Zdjecie | null;
+};
+
+/** What the answer side shows about a species. */
+export type GatunekFiszki = Pick<
+  Gatunek,
+  'id' | 'pl' | 'lat' | 'en' | 'es' | 'grupa' | 'cechy' | 'regiony' | 'aktywnosc' | 'sylwetka'
+> & {
+  /** Look-alikes from `mylona_z`, with their names. */
+  podobne: { id: string; pl: string }[];
+};

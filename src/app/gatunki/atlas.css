@@ -1,0 +1,706 @@
+/* The atlas and the species pages. */
+
+/* ---------- Atlas ---------- */
+
+.atlas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--wor-space-block);
+}
+.atlas__narzedzia {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  padding-bottom: var(--bh-gap-loose);
+  border-bottom: 1px solid var(--wor-linia);
+}
+.atlas__widok {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--bh-gap-loose);
+}
+.atlas__widok > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.atlas__licznik {
+  margin: 0;
+  color: var(--bh-text-muted);
+}
+.atlas__ciekawostka {
+  max-width: 60rem;
+  margin-top: var(--wor-space-block);
+}
+
+/* Photo cards: the whole card is the link. */
+.atlas__karty {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--wor-space-block) var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.karta-gatunku {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  color: inherit;
+  text-decoration: none;
+}
+.karta-gatunku__foto {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-sunken);
+}
+.karta-gatunku__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    scale var(--wor-dur-expressive) var(--wor-ease-out),
+    filter var(--wor-dur-base) var(--wor-ease-out);
+}
+.karta-gatunku:hover .karta-gatunku__foto img {
+  scale: calc(1 + 0.05 * var(--wor-ruch));
+}
+.karta-gatunku__zastepcza {
+  width: 70%;
+  fill: var(--bh-text-muted);
+}
+.karta-gatunku:focus-visible {
+  outline: none;
+}
+.karta-gatunku:focus-visible .karta-gatunku__foto {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+.karta-gatunku__opis {
+  display: grid;
+  gap: var(--bh-gap-hairline);
+}
+.karta-gatunku__nazwa {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.karta-gatunku:hover .karta-gatunku__nazwa {
+  text-decoration: underline;
+  text-decoration-color: var(--wor-akcent);
+  text-underline-offset: 0.2em;
+}
+.karta-gatunku__lacina {
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-style: italic;
+}
+.karta-gatunku__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+  margin-top: var(--bh-gap-tight);
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.karta-gatunku__znacznik {
+  padding: 0 var(--bh-gap-snug);
+  border: 1px solid var(--bh-border-strong);
+  border-radius: var(--bh-radius-pill);
+  font-size: var(--bh-text-size-dense);
+}
+.karta-gatunku__znacznik--widziany {
+  border-color: var(--wor-akcent);
+  background: var(--wor-akcent);
+  color: var(--bh-text-on-accent);
+}
+
+/* Silhouettes, grouped as B1 teaches. */
+.atlas__plansze {
+  display: grid;
+  gap: var(--wor-space-block);
+}
+.plansza-grupy {
+  display: grid;
+  grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+  gap: var(--bh-padding-section);
+  padding-top: var(--bh-gap-loose);
+  border-top: 1px solid var(--wor-linia);
+}
+.plansza-grupy__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.plansza-grupy__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: var(--bh-padding-section) var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.plansza-grupy__gatunek {
+  display: grid;
+  justify-items: center;
+  gap: var(--bh-gap-tight);
+  padding: var(--bh-gap-loose) var(--bh-gap-snug);
+  border-radius: var(--bh-radius-surface);
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.plansza-grupy__gatunek:hover {
+  background: var(--bh-fill-hover);
+}
+.plansza-grupy__gatunek:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.plansza-grupy__sylwetka {
+  width: 100%;
+  height: 4.5rem;
+  margin-bottom: var(--bh-gap-snug);
+  fill: var(--bh-text-primary);
+  transition: transform var(--wor-dur-base) var(--wor-ease-out);
+}
+.plansza-grupy__gatunek:hover .plansza-grupy__sylwetka {
+  transform: translateY(calc(-3px * var(--wor-ruch)));
+}
+[data-widziany] .plansza-grupy__sylwetka {
+  fill: var(--wor-akcent);
+}
+.plansza-grupy__nazwa {
+  font-family: var(--wor-font-display);
+  font-weight: 600;
+}
+.plansza-grupy__lacina {
+  color: var(--bh-text-muted);
+  font-family: var(--wor-font-text);
+  font-size: var(--bh-text-size-caption);
+  font-style: italic;
+}
+@media (max-width: 700px) {
+  .plansza-grupy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* All silhouettes at one scale. */
+.skala {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.skala__opis {
+  margin: 0;
+  max-width: var(--wor-measure);
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+}
+.skala__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.skala__gatunek,
+.skala__czlowiek {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--bh-gap-tight) var(--bh-gap-snug);
+  height: 100%;
+  box-sizing: border-box;
+  padding: var(--bh-gap-loose);
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+  color: inherit;
+  text-decoration: none;
+}
+.skala__czlowiek {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--wor-linia);
+}
+.skala__gatunek:hover {
+  box-shadow: var(--bh-elevation-floating);
+}
+.skala__gatunek:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+/* Every cell is the same field: 208 by 140 drawing units for the biggest wingspan. */
+.skala__rysunek {
+  grid-column: 1 / -1;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 208 / 140;
+  border-radius: var(--bh-radius-control);
+  background: var(--wor-niebo-dzien);
+}
+.skala__sylwetka {
+  width: 100%;
+  height: 100%;
+  fill: var(--wor-sylwetka);
+}
+[data-widziany] .skala__sylwetka {
+  fill: var(--wor-zloto);
+}
+.skala__rece {
+  display: block;
+  height: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--wor-scena-tekst) 0 var(--bh-gap-snug),
+    transparent var(--bh-gap-snug) calc(var(--bh-gap-snug) + var(--bh-gap-tight))
+  );
+}
+.skala__czlowiek .skala__rysunek {
+  justify-items: center;
+}
+.skala__nazwa {
+  font-family: var(--wor-font-display);
+  font-weight: 600;
+}
+.skala__cm {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Species page ---------- */
+
+.gatunek {
+  display: flex;
+  flex-direction: column;
+}
+.gatunek-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  box-sizing: border-box;
+  min-height: 86svh;
+  margin-top: calc(-1 * var(--wor-nav-height));
+  padding: calc(var(--wor-nav-height) + var(--wor-space-block)) 0 calc(var(--wor-space-block) * 1.3);
+  overflow: hidden;
+  background: var(--wor-scena-tlo);
+  color: var(--wor-scena-tekst);
+}
+.gatunek-hero__zdjecie {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Readable text over any photo: a dusk shade from the bottom and the left. */
+.gatunek-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(0deg, var(--wor-scena-tlo) 0%, var(--wor-cien-sceny) 38%, transparent 70%),
+    linear-gradient(90deg, var(--wor-cien-sceny), transparent 55%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gatunek-hero__zdjecie {
+    animation: przyblizenie var(--wor-dur-scene) var(--wor-ease-out) both;
+  }
+}
+@keyframes przyblizenie {
+  from {
+    scale: 1.06;
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .gatunek-hero__tresc {
+      animation: odlot-gatunku linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 80%;
+    }
+  }
+}
+@keyframes odlot-gatunku {
+  to {
+    opacity: 0;
+    translate: 0 -10vh;
+  }
+}
+.gatunek-hero__tresc {
+  box-sizing: border-box;
+  display: grid;
+  justify-items: start;
+  gap: var(--bh-gap-normal);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.gatunek-hero__nazwa {
+  margin: var(--bh-gap-snug) 0 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-hero);
+  font-weight: 600;
+  line-height: var(--wor-leading-display);
+  letter-spacing: var(--wor-tracking-display);
+  padding-block: 0.06em;
+  text-wrap: balance;
+}
+.gatunek-hero__lacina {
+  margin: 0;
+  color: var(--wor-zloto);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-subtitle);
+  font-style: italic;
+}
+.gatunek-hero__jezyki {
+  margin: 0;
+  color: var(--wor-scena-tekst-2);
+}
+.gatunek-hero__znaczniki {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+  margin: var(--bh-gap-snug) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.gatunek-hero__znaczniki li {
+  padding: var(--bh-gap-tight) var(--bh-padding-inline);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-szklo);
+  font-size: var(--bh-text-size-caption);
+  -webkit-backdrop-filter: blur(var(--bh-material-thin-blur));
+  backdrop-filter: blur(var(--bh-material-thin-blur));
+}
+.gatunek-hero__znaczniki li[data-rzadki] {
+  border-color: var(--wor-zloto);
+  color: var(--wor-zloto);
+}
+.gatunek-hero__podpis {
+  position: absolute;
+  right: var(--wor-gutter);
+  bottom: var(--bh-gap-loose);
+  margin: 0;
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-dense);
+}
+.gatunek-hero__podpis a {
+  color: inherit;
+}
+
+.gatunek__tresc {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--wor-space-section);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-block) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.gatunek__rozdzial {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+  align-items: start;
+  gap: var(--wor-space-block) calc(var(--wor-space-block) * 1.4);
+}
+.gatunek__bok {
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+@media (min-width: 901px) {
+  .gatunek__bok {
+    position: sticky;
+    top: calc(var(--wor-nav-height) + var(--wor-space-block));
+  }
+}
+@media (max-width: 900px) {
+  .gatunek__rozdzial {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.gatunek__lot {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-dzien);
+}
+.gatunek__lot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, var(--wor-blask) 0, var(--wor-blask-miekki) 24%, transparent 60%);
+}
+.gatunek__lot .scena-sylwetki {
+  width: 70%;
+}
+.gatunek__fakty {
+  display: grid;
+  gap: var(--wor-space-block);
+}
+.gatunek__klucz {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: cecha;
+}
+.gatunek__klucz li {
+  display: grid;
+  grid-template-columns: var(--wor-size-numer) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--bh-padding-section);
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--wor-linia);
+  counter-increment: cecha;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.4;
+}
+.gatunek__klucz li::before {
+  content: counter(cecha);
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.gatunek__zdjecia {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--bh-gap-loose);
+}
+/* With the identification photo: flight large on the left, the other two stacked on the right. */
+.gatunek__zdjecia--trzy {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+.gatunek__zdjecia--trzy > :first-child {
+  grid-row: span 2;
+}
+@media (max-width: 600px) {
+  .gatunek__zdjecia,
+  .gatunek__zdjecia--trzy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .gatunek__zdjecia--trzy > :first-child {
+    grid-row: auto;
+  }
+}
+.gatunek__porownanie {
+  display: grid;
+  gap: var(--wor-space-block);
+}
+.porownanie {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+.gatunek__ciekawostka {
+  max-width: 60rem;
+}
+.gatunek__wiecej {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.gatunek__moduly {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gatunek__modul {
+  display: flex;
+  align-items: baseline;
+  gap: var(--bh-gap-normal);
+  padding: var(--bh-gap-normal) 0;
+  border-bottom: 1px solid var(--wor-linia);
+  color: inherit;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+  text-decoration: none;
+}
+.gatunek__modul:hover {
+  color: var(--bh-text-link);
+}
+.gatunek__modul:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.gatunek__modul-id {
+  color: var(--wor-akcent);
+  font-variant-numeric: lining-nums;
+}
+
+/* A species' plate: the silhouette with its cues on leader lines. */
+.plansza {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  margin: 0;
+}
+.plansza__rysunek {
+  container-type: inline-size;
+  padding: var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+}
+/* The cues are placed against the drawing's own box, not the card's padding. */
+.plansza__scena {
+  position: relative;
+}
+.plansza__rysunek svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.plansza__ksztalt {
+  fill: var(--bh-text-primary);
+}
+.plansza__odnosnik line {
+  stroke: var(--wor-akcent);
+  stroke-width: 0.6;
+  stroke-dasharray: 1;
+}
+.plansza__odnosnik circle {
+  fill: var(--wor-akcent);
+}
+.plansza__opis {
+  position: absolute;
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-small);
+  line-height: 1.3;
+  translate: 0 -50%;
+}
+.plansza__opis--l {
+  text-align: right;
+  translate: -100% -50%;
+}
+.plansza__tytul {
+  display: block;
+  color: var(--bh-text-primary);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+}
+.plansza__podpis {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .plansza__odnosnik line {
+      animation: kreska linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+  }
+}
+@keyframes kreska {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+/* Narrow plates: the cues go under the drawing instead of around it. */
+@container (max-width: 40rem) {
+  /* The drawing's side margins hold the cues on a wide plate; here they are empty, so crop them. */
+  .plansza__scena {
+    overflow: hidden;
+  }
+  .plansza__rysunek svg {
+    width: 170%;
+    margin-inline: -35%;
+  }
+  .plansza__odnosnik {
+    display: none;
+  }
+  .plansza__opis,
+  .plansza__opis--l {
+    position: static;
+    animation: none;
+    max-width: none !important;
+    margin-top: var(--bh-gap-normal);
+    text-align: left;
+    translate: none;
+  }
+}
+.plansza--sowa {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: var(--wor-space-block);
+  padding: var(--wor-space-block);
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-noc);
+  color: var(--wor-scena-tekst);
+}
+.plansza--sowa .plansza__ptak {
+  width: 100%;
+  height: auto;
+  fill: var(--wor-scena-tekst-2);
+}
+.plansza__sowa {
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+.plansza__glos-etykieta {
+  margin: 0;
+  color: var(--wor-zloto);
+  font-weight: var(--bh-text-weight-heading);
+}
+.plansza__glos {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-subtitle);
+  font-style: italic;
+  line-height: 1.3;
+}
+.plansza__sowa dl {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: var(--bh-gap-snug) 0 0;
+}
+.plansza__sowa dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 8rem) minmax(0, 1fr);
+  gap: var(--bh-gap-normal);
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-scena-linia);
+}
+.plansza__sowa dt {
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+}
+.plansza__sowa dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+}
+@media (max-width: 700px) {
+  .plansza--sowa {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

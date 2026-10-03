@@ -1,0 +1,645 @@
+/*
+ * The home page. Scroll-linked effects run only where the browser has
+ * scroll-driven animations and the reader has not asked for less motion;
+ * everywhere else the page is complete and still (nothing starts hidden).
+ */
+
+.start {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Opening scene: the sky ---------- */
+
+.niebo {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  box-sizing: border-box;
+  min-height: 100svh;
+  /* Under the translucent navigation, so the sky runs to the top edge. */
+  margin-top: calc(-1 * var(--wor-nav-height));
+  padding-top: var(--wor-nav-height);
+  overflow: hidden;
+  background: var(--wor-niebo-dzien);
+  color: var(--wor-scena-tekst);
+}
+.niebo[data-pora='swit'] {
+  background: var(--wor-niebo-swit);
+}
+.niebo[data-pora='zmierzch'] {
+  background: var(--wor-niebo-zmierzch);
+}
+.niebo[data-pora='noc'] {
+  background: var(--wor-niebo-noc);
+}
+
+/* Light: the sun's glow on the horizon at dawn and dusk, the moon at night,
+   a vignette for the text, and film grain over everything. */
+.niebo::before,
+.niebo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.niebo::before {
+  background:
+    linear-gradient(90deg, var(--wor-cien-sceny) 0%, transparent 62%),
+    radial-gradient(ellipse 80% 55% at 70% 115%, var(--wor-zar-horyzontu), transparent 70%);
+}
+.niebo[data-pora='dzien']::before {
+  background:
+    linear-gradient(90deg, var(--wor-cien-sceny) 0%, transparent 62%),
+    radial-gradient(ellipse 60% 50% at 66% 38%, var(--wor-blask-miekki), transparent 70%);
+}
+.niebo[data-pora='noc']::before {
+  background:
+    linear-gradient(90deg, var(--wor-cien-sceny) 0%, transparent 62%),
+    radial-gradient(circle at 76% 24%, var(--wor-ksiezyc) 0 2.4rem, transparent 2.5rem),
+    radial-gradient(circle at 76% 24%, var(--wor-blask-miekki), transparent 16rem);
+}
+.niebo::after {
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.niebo__plotno {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--wor-dur-scene) var(--wor-ease-out);
+}
+.niebo__plotno[data-gotowe] {
+  opacity: 1;
+}
+
+.niebo__tresc {
+  box-sizing: border-box;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: var(--bh-padding-section);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding: var(--wor-space-block) var(--wor-gutter);
+}
+.niebo__pora {
+  margin: 0;
+  max-width: 32rem;
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-normal);
+}
+.niebo__tytul {
+  margin: 0;
+  max-width: 9.5ch;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-hero);
+  font-weight: 600;
+  line-height: var(--wor-leading-display);
+  letter-spacing: var(--wor-tracking-display);
+  /* Room for the accents of capitals and the tails of ą, ę under a tight leading. */
+  padding-block: 0.06em;
+}
+.niebo__lead {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--wor-scena-tekst);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.45;
+}
+.niebo__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-normal);
+  padding-top: var(--bh-gap-snug);
+}
+
+.niebo__liczby {
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--wor-space-block);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: 0 auto;
+  padding: var(--bh-gap-loose) var(--wor-gutter) var(--wor-space-block);
+}
+.niebo__liczby > div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-scena-linia);
+  min-width: 6rem;
+}
+.niebo__liczby dd {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.niebo__liczby dt {
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+}
+
+.niebo__pauza {
+  position: absolute;
+  right: var(--wor-gutter);
+  bottom: var(--wor-space-block);
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-padding-inline);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-szklo);
+  color: var(--wor-scena-tekst);
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(var(--bh-material-thin-blur));
+  backdrop-filter: blur(var(--bh-material-thin-blur));
+}
+.niebo__pauza:hover {
+  border-color: var(--wor-scena-tekst);
+}
+.niebo__pauza:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+
+/* Entrance: the title rises into place (movement only, so it is visible and
+   counts as painted at once), then the rest follows in order of meaning. */
+@media (prefers-reduced-motion: no-preference) {
+  .niebo__tytul {
+    animation: wznies var(--wor-dur-scene) var(--wor-ease-out) both;
+  }
+  .niebo__pora,
+  .niebo__lead,
+  .niebo__akcje,
+  .niebo__liczby {
+    animation: pojaw var(--wor-dur-scene) var(--wor-ease-out) both;
+  }
+  .niebo__pora {
+    animation-delay: calc(var(--wor-stagger) * 2);
+  }
+  .niebo__lead {
+    animation-delay: calc(var(--wor-stagger) * 4);
+  }
+  .niebo__akcje {
+    animation-delay: calc(var(--wor-stagger) * 6);
+  }
+  .niebo__liczby {
+    animation-delay: calc(var(--wor-stagger) * 9);
+  }
+}
+@keyframes wznies {
+  from {
+    translate: 0 0.28em;
+  }
+}
+@keyframes pojaw {
+  from {
+    opacity: 0;
+    translate: 0 calc(1rem * var(--wor-ruch));
+  }
+}
+
+/* Leaving: as the sky scrolls away the words drift up and fade. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .niebo__tresc {
+      animation: odlot linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 80%;
+    }
+  }
+}
+@keyframes odlot {
+  to {
+    opacity: 0;
+    translate: 0 -14vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .niebo__tresc {
+    align-content: end;
+  }
+  .niebo::before {
+    background: linear-gradient(0deg, var(--wor-cien-sceny) 0%, transparent 70%);
+  }
+  .niebo__liczby {
+    gap: var(--bh-padding-section);
+    padding-bottom: calc(var(--wor-space-block) + var(--bh-control-lg));
+  }
+  .niebo__liczby > div {
+    min-width: 0;
+    flex: 1;
+  }
+  .niebo__pauza {
+    bottom: var(--bh-gap-loose);
+  }
+}
+
+/* ---------- Species of the day ---------- */
+
+.okladka {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--wor-space-block);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.okladka__foto {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.okladka__foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-sunken);
+}
+.okladka__podpis {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+}
+.okladka__podpis a {
+  color: inherit;
+}
+.okladka__tekst .cta {
+  justify-self: start;
+}
+.okladka__tekst {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  align-content: center;
+}
+.okladka__nazwa {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-display);
+  font-weight: 600;
+  line-height: var(--wor-leading-display);
+  letter-spacing: var(--wor-tracking-display);
+  padding-block: 0.06em;
+}
+.okladka__lacina {
+  margin: calc(-1 * var(--bh-gap-snug)) 0 0;
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-subtitle);
+  font-style: italic;
+}
+.okladka__jezyki {
+  margin: 0;
+  color: var(--bh-text-muted);
+}
+
+/* Binoculars: the photo opens from two overlapping circles as it scrolls in. */
+@property --lornetka {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+.lornetka {
+  --lornetka: 100%;
+  /* The photo zooms in as it opens; a scaled image would otherwise widen the page. */
+  overflow: clip;
+  border-radius: var(--wor-radius-scene);
+  -webkit-mask-image:
+    radial-gradient(circle at 33% 50%, #000 var(--lornetka), transparent calc(var(--lornetka) + 0.5%)),
+    radial-gradient(circle at 67% 50%, #000 var(--lornetka), transparent calc(var(--lornetka) + 0.5%));
+  mask-image:
+    radial-gradient(circle at 33% 50%, #000 var(--lornetka), transparent calc(var(--lornetka) + 0.5%)),
+    radial-gradient(circle at 67% 50%, #000 var(--lornetka), transparent calc(var(--lornetka) + 0.5%));
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .lornetka {
+      animation: lornetka linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 45%;
+    }
+    .lornetka img {
+      animation: przybliz linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+  }
+}
+@keyframes lornetka {
+  from {
+    --lornetka: 13%;
+  }
+  to {
+    --lornetka: 100%;
+  }
+}
+@keyframes przybliz {
+  from {
+    scale: 1.18;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .okladka {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Eight silhouettes, against the light ---------- */
+
+.grupy {
+  position: relative;
+  isolation: isolate;
+  margin-top: var(--wor-space-section);
+  padding-block: calc(var(--wor-space-block) * 2);
+  overflow: hidden;
+  background: var(--wor-niebo-dzien);
+  color: var(--wor-scena-tekst);
+}
+/* The sun behind the bird: why a silhouette is all one sees. */
+.grupy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 58%, var(--wor-blask) 0, var(--wor-blask-miekki) 18%, transparent 48%);
+}
+.grupy__wnetrze {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--wor-space-block);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.grupy .sekcja {
+  margin-bottom: 0;
+}
+/* On the sky, secondary text keeps full strength: the blue behind it is mid-tone. */
+.grupy .sekcja__lead {
+  color: var(--wor-scena-tekst);
+}
+.morf {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--wor-space-block);
+}
+.morf__scena {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  justify-items: center;
+}
+.morf__rysunek {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(48vh, 26rem);
+  overflow: visible;
+}
+.morf__ksztalt {
+  fill: var(--wor-sylwetka);
+}
+.morf__slad {
+  fill: none;
+  stroke: var(--wor-sylwetka);
+  stroke-width: 0.5;
+  opacity: 0;
+}
+.morf__nazwa {
+  margin: 0;
+  color: var(--wor-sylwetka);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.morf__panel {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.morf__wybor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.morf__opcja {
+  position: relative;
+}
+.morf__opcja input {
+  position: absolute;
+  inset: 0;
+  /* Above the chip, whose backdrop blur would otherwise paint over it. */
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.morf__opcja span {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-md);
+  padding-inline: var(--bh-padding-section);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-szklo);
+  font-weight: var(--bh-text-weight-emphasis);
+  -webkit-backdrop-filter: blur(var(--bh-material-thin-blur));
+  backdrop-filter: blur(var(--bh-material-thin-blur));
+  transition:
+    background-color var(--wor-dur-quick) var(--wor-ease-out),
+    color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.morf__opcja input:hover + span {
+  border-color: var(--wor-scena-tekst);
+}
+.morf__opcja input:checked + span {
+  border-color: transparent;
+  background: var(--wor-scena-tekst);
+  color: var(--wor-scena-tlo);
+}
+.morf__opcja input:focus-visible + span {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+.morf__cechy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-gap-loose) var(--bh-padding-section);
+  margin: 0;
+}
+.morf__cechy > div {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  align-content: start;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-scena-linia);
+}
+.morf__cechy dt {
+  color: var(--wor-scena-tekst);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-emphasis);
+  opacity: 0.88;
+}
+.morf__cechy dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.4;
+}
+.morf__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-loose) var(--bh-padding-section);
+}
+.morf__pokaz {
+  min-height: var(--bh-control-sm);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--wor-scena-tekst);
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+}
+.morf__pokaz:hover {
+  text-decoration-thickness: 2px;
+}
+.morf__pokaz:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+@media (max-width: 900px) {
+  .morf {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .grupy::before {
+    background: radial-gradient(circle at 50% 42%, var(--wor-blask) 0, var(--wor-blask-miekki) 22%, transparent 55%);
+  }
+}
+
+/* ---------- Curiosity ---------- */
+
+.start__ciekawostka {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 60rem;
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+
+/* ---------- My list ---------- */
+
+.kolekcja {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.kolekcja__licznik {
+  display: grid;
+  justify-items: end;
+  gap: var(--bh-gap-normal);
+}
+.kolekcja__licznik p {
+  display: flex;
+  align-items: baseline;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.kolekcja__liczba {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-display);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.kolekcja__z {
+  color: var(--bh-text-muted);
+}
+.kolekcja__siatka {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.75rem, 1fr));
+  gap: var(--bh-gap-loose) var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kolekcja__gatunek {
+  display: grid;
+  justify-items: center;
+  gap: var(--bh-gap-snug);
+  padding: var(--bh-gap-snug) var(--bh-gap-tight);
+  border-radius: var(--bh-radius-control);
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+  line-height: var(--bh-text-leading-tight);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.kolekcja__gatunek:hover {
+  background: var(--bh-fill-hover);
+  color: var(--bh-text-primary);
+}
+.kolekcja__gatunek:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.kolekcja__sylwetka {
+  width: 100%;
+  height: 2.75rem;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  opacity: 0.6;
+  transition:
+    fill var(--wor-dur-expressive) var(--wor-ease-out),
+    opacity var(--wor-dur-base) var(--wor-ease-out),
+    transform var(--wor-dur-base) var(--wor-ease-out);
+}
+.kolekcja__sylwetka path {
+  vector-effect: non-scaling-stroke;
+}
+.kolekcja__gatunek:hover .kolekcja__sylwetka {
+  opacity: 1;
+  transform: translateY(calc(-2px * var(--wor-ruch)));
+}
+[data-widziany] .kolekcja__gatunek {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+[data-widziany] .kolekcja__sylwetka {
+  fill: var(--wor-akcent);
+  stroke: var(--wor-akcent);
+  opacity: 1;
+}
