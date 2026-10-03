@@ -43,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# owner's original photos (only resized copies in public/zdjecia/ are published)
+/Images
