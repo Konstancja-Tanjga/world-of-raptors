@@ -379,7 +379,8 @@ export async function statystykiKursu() {
  */
 export async function autorzyZdjec() {
   const surowe: string[] = [];
-  for (const z of Object.values(zdjecia)) for (const p of [z?.lot, z?.siedzacy]) if (p) surowe.push(p.autor);
+  // The author's own photos (served from public/, no Commons page) are credited separately.
+  for (const z of Object.values(zdjecia)) for (const p of [z?.lot, z?.siedzacy]) if (p?.strona) surowe.push(p.autor);
   for (const m of gotoweModuly) {
     for (const l of m.lekcje) {
       const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);

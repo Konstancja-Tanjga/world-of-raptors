@@ -258,10 +258,14 @@ export const STYL_LOTU: Record<string, StylLotu> = {
   jastrzab: 'macha-i-szybuje',
 };
 
-/** One wingbeat at phase f (0–1): wings up, the downstroke, the hand folding on the way back. */
+/**
+ * One wingbeat at phase f (0–1): wings up, the downstroke, then the hand folds
+ * on the way back up (the second half, while the wings rise). From below a
+ * beat shows as the span shortening, by the cosine of the amplitude.
+ */
 function machniecie(f: number, amplituda: number, baza: Poza): Poza {
   const k = f * Math.PI * 2;
-  return { wznios: amplituda * Math.cos(k), zgiecie: baza.zgiecie + Math.max(0, Math.sin(k)) * 0.32 * amplituda, ogon: baza.ogon };
+  return { wznios: amplituda * Math.cos(k), zgiecie: baza.zgiecie + Math.max(0, -Math.sin(k)) * 0.4 * amplituda, ogon: baza.ogon };
 }
 
 /**
@@ -272,18 +276,18 @@ export function pozaWLocie(styl: StylLotu, t: number, baza: Poza): { poza: Poza;
   switch (styl) {
     case 'zawisa':
       // Fast, shallow beats on the spot, tail fanned wide.
-      return { poza: { ...machniecie((t * 4.2) % 1, 0.5, baza), ogon: 1 }, przechyl: Math.sin(t * 1.3) * 1.5 };
+      return { poza: { ...machniecie((t * 4.2) % 1, 0.8, baza), ogon: 1 }, przechyl: Math.sin(t * 1.3) * 1.5 };
     case 'macha-i-szybuje': {
       // A burst of quick beats, then a glide.
       const w = t % 2.9;
-      return w < 1 ? { poza: machniecie((w * 5) % 1, 0.8, baza), przechyl: 0 } : { poza: baza, przechyl: Math.sin(t * 0.9) * 2 };
+      return w < 1 ? { poza: machniecie((w * 5) % 1, 0.85, baza), przechyl: 0 } : { poza: baza, przechyl: Math.sin(t * 0.9) * 2 };
     }
     case 'szybki':
-      return { poza: machniecie((t * 3.5) % 1, 0.55, { ...baza, zgiecie: Math.max(baza.zgiecie, 0.18) }), przechyl: Math.sin(t * 0.8) * 2 };
+      return { poza: machniecie((t * 3.5) % 1, 0.7, { ...baza, zgiecie: Math.max(baza.zgiecie, 0.18) }), przechyl: Math.sin(t * 0.8) * 2 };
     case 'kolysze':
       // A harrier's low glide, rocking from side to side; now and then a few slow beats.
       return {
-        poza: t % 6 < 1.2 ? machniecie((t * 2.2) % 1, 0.6, baza) : { ...baza, wznios: 0.3 },
+        poza: t % 6 < 1.2 ? machniecie((t * 2.2) % 1, 0.75, baza) : { ...baza, wznios: 0.3 },
         przechyl: Math.sin(t * 2.6) * 7,
       };
     case 'kreci-ogonem':

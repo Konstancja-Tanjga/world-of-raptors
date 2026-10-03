@@ -45,7 +45,7 @@ const PALETY = [
       { nazwa: 'Papier', hex: '#f8f3e9' },
       { nazwa: 'Atrament', hex: '#261d17' },
       { nazwa: 'Rdza kani rudej', hex: '#a54a24' },
-      { nazwa: 'Łupek błotniaka', hex: '#4c677b' },
+      { nazwa: 'Błękit fokusu', hex: '#2b5d86' },
     ],
   },
   {
@@ -55,7 +55,7 @@ const PALETY = [
       { nazwa: 'Noc', hex: '#0a1018' },
       { nazwa: 'Kość', hex: '#f2eee6' },
       { nazwa: 'Złoto oka', hex: '#f5b75b' },
-      { nazwa: 'Żar', hex: '#e98664' },
+      { nazwa: 'Róż zmierzchu', hex: '#a85556' },
     ],
   },
 ];

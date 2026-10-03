@@ -653,116 +653,177 @@ li {
   border-top: 1px solid var(--bh-border-subtle);
 }
 
-/* Lesson Markdown */
+/* Lesson Markdown: an editorial page. Newsreader at reading size, titles in
+   Półtawski, each chapter (##) numbered in the accent colour. */
 .prose {
-  font-size: var(--bh-text-size-body);
-  line-height: var(--bh-text-leading-normal);
   color: var(--bh-text-primary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-reading);
+  font-variant-numeric: oldstyle-nums;
+  hanging-punctuation: first;
+  counter-reset: rozdzial;
 }
 .prose > :first-child {
   margin-top: 0;
 }
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-family: var(--wor-font-display);
+  font-weight: 600;
+  letter-spacing: var(--wor-tracking-display);
+  font-variant-numeric: lining-nums;
+}
 .prose h1 {
-  font-size: var(--bh-text-size-display);
-  font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
   margin: 0 0 var(--bh-gap-loose);
+  font-size: var(--wor-size-title);
+  line-height: var(--wor-leading-title);
 }
 .prose h2 {
-  font-size: var(--bh-text-size-heading);
+  margin: calc(var(--wor-space-block) * 1.6) 0 var(--bh-gap-loose);
+  font-size: var(--wor-size-subtitle);
+  line-height: var(--wor-leading-title);
+  counter-increment: rozdzial;
+}
+.prose h2::before {
+  content: counter(rozdzial);
+  display: block;
+  margin-bottom: var(--bh-gap-snug);
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
   font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
-  margin: var(--bh-padding-section) 0 var(--bh-gap-normal);
+  letter-spacing: var(--wor-tracking-eyebrow);
 }
 .prose h3 {
-  font-size: var(--bh-text-size-body);
-  font-weight: var(--bh-text-weight-heading);
-  margin: var(--bh-gap-loose) 0 var(--bh-gap-snug);
+  margin: var(--wor-space-block) 0 var(--bh-gap-snug);
+  font-size: var(--wor-size-karta);
+  line-height: var(--wor-leading-title);
+}
+/* The Latin name in a species heading reads as in a field guide. */
+.prose h3 em {
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-weight: 400;
 }
 .prose p,
 .prose ul,
 .prose ol {
-  margin: 0 0 var(--bh-gap-normal);
+  margin: 0 0 var(--bh-gap-loose);
+}
+.prose ul,
+.prose ol {
+  padding-left: var(--bh-padding-section);
 }
 .prose li {
-  margin-block-end: var(--bh-gap-tight);
+  margin-block-end: var(--bh-gap-snug);
+  padding-left: var(--bh-gap-tight);
+}
+.prose li::marker {
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-ui);
+  font-size: 0.85em;
+  font-weight: var(--bh-text-weight-heading);
+}
+.prose strong {
+  font-weight: 600;
 }
 .prose a {
   color: var(--bh-text-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.prose a:hover {
+  text-decoration-thickness: 2px;
 }
 .prose em {
   color: var(--bh-text-secondary);
 }
 .prose hr {
+  margin: var(--wor-space-block) 0;
   border: 0;
-  border-top: 1px solid var(--bh-border-subtle);
-  margin: var(--bh-gap-loose) 0;
+  border-top: 1px solid var(--wor-linia);
 }
+/* Callouts ("> ") are notes in the field book: a rule in the accent colour. */
 .prose blockquote {
-  margin: 0 0 var(--bh-gap-normal);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-status-info-bg);
-  border: 1px solid var(--bh-status-info-border);
-  border-radius: var(--bh-radius-surface);
+  margin: 0 0 var(--bh-gap-loose);
+  padding: var(--bh-gap-normal) var(--bh-padding-section);
+  border-left: 3px solid var(--wor-akcent);
+  border-radius: 0 var(--bh-radius-surface) var(--bh-radius-surface) 0;
+  background: var(--wor-akcent-miekki);
   color: var(--bh-text-primary);
+  font-size: 0.94em;
 }
 .prose blockquote > :last-child {
   margin-bottom: 0;
 }
 .prose code {
-  font-size: var(--bh-text-size-dense);
-  background: var(--bh-surface-sunken);
-  border-radius: var(--bh-radius-control);
   padding: 0 var(--bh-gap-tight);
+  border-radius: var(--bh-radius-control);
+  background: var(--bh-surface-sunken);
+  font-size: var(--bh-text-size-dense);
 }
 .prose pre {
-  background: var(--bh-surface-sunken);
-  border-radius: var(--bh-radius-surface);
   padding: var(--bh-padding-block) var(--bh-padding-inline);
   overflow-x: auto;
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-sunken);
 }
 .prose pre code {
   padding: 0;
 }
+/* Mini-quiz answers and other disclosures */
 .prose details {
-  margin: 0 0 var(--bh-gap-normal);
-  padding: var(--bh-padding-block) var(--bh-padding-inline);
-  background: var(--bh-surface-sunken);
-  border: 1px solid var(--bh-border-subtle);
+  margin: 0 0 var(--bh-gap-loose);
+  padding: var(--bh-gap-normal) var(--bh-padding-section);
+  border: 1px solid var(--wor-linia);
   border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-raised);
+}
+.prose details[open] {
+  box-shadow: var(--bh-elevation-raised);
 }
 .prose summary {
+  color: var(--bh-text-link);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
   cursor: pointer;
-  font-weight: var(--bh-text-weight-emphasis);
+}
+.prose details[open] summary {
+  margin-bottom: var(--bh-gap-snug);
 }
 .prose summary:focus-visible {
   outline: 2px solid var(--bh-border-focus);
   outline-offset: 2px;
 }
 .prose__table {
+  margin: 0 0 var(--bh-gap-loose);
   overflow-x: auto;
-  margin: 0 0 var(--bh-gap-normal);
-  border: 1px solid var(--bh-border-subtle);
-  border-radius: var(--bh-radius-surface);
+  border-block: 1px solid var(--wor-linia);
 }
 .prose__table:focus-visible {
   outline: 2px solid var(--bh-border-focus);
   outline-offset: 2px;
 }
 .prose table {
-  border-collapse: collapse;
   width: 100%;
-  font-size: var(--bh-text-size-dense);
+  border-collapse: collapse;
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-normal);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .prose th,
 .prose td {
+  padding: var(--bh-gap-snug) var(--bh-gap-normal) var(--bh-gap-snug) 0;
+  border-bottom: 1px solid var(--wor-linia);
   text-align: left;
   vertical-align: top;
-  padding: var(--bh-gap-snug) var(--bh-gap-normal);
-  border-bottom: 1px solid var(--bh-border-subtle);
 }
 .prose th {
-  background: var(--bh-surface-sunken);
+  color: var(--bh-text-muted);
   font-weight: var(--bh-text-weight-emphasis);
 }
 .prose tr:last-child td {
@@ -775,7 +836,8 @@ li {
  */
 .prose h2,
 .lesson-media .section-title {
-  scroll-margin-top: var(--bh-padding-section);
+  /* Below the module bar that stays on top while reading. */
+  scroll-margin-top: calc(var(--bh-control-lg) + var(--bh-gap-loose));
 }
 /* A section starts below the margin notes of the section before, so a photo
    never ends up beside text it does not belong to. */
@@ -783,7 +845,13 @@ li {
   clear: right;
 }
 .margines {
-  font-size: var(--bh-text-size-dense);
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-normal);
+}
+.margines blockquote {
+  font-size: inherit;
 }
 .margines > * + * {
   margin-top: var(--bh-gap-normal);
@@ -795,16 +863,127 @@ li {
 .margines > * + .photo {
   margin-top: var(--bh-gap-normal);
 }
-.next__label,
-.next__title {
-  margin: 0;
-  font-weight: var(--bh-text-weight-emphasis);
+/* The lesson's opening: the slots of Big Hat's Article hold these. */
+.lekcja__eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--bh-gap-snug) var(--bh-gap-loose);
+  font-size: var(--bh-text-size-caption);
 }
-.next__label {
+.lekcja__modul {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+  text-decoration: none;
+}
+.lekcja__modul:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.lekcja__modul:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.lekcja__tytul {
+  display: block;
+  padding-block: 0.05em;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.lekcja__meta {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.lekcja__lead {
+  display: block;
   color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
 }
-.next__title {
-  margin-top: var(--bh-gap-hairline);
+.lekcja__lead strong {
+  color: var(--bh-text-primary);
+  font-weight: 600;
+}
+
+/* The way on: a small dusk scene, the whole card one link. */
+.dalej {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin-top: var(--bh-gap-loose);
+  padding: var(--bh-padding-section) var(--bh-padding-section) var(--bh-padding-section);
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-zmierzch);
+  color: var(--wor-scena-tekst);
+  text-decoration: none;
+  transition:
+    transform var(--wor-dur-base) var(--wor-ease-out),
+    box-shadow var(--wor-dur-base) var(--wor-ease-out);
+}
+.dalej::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--wor-cien-sceny), transparent 75%);
+}
+.dalej:hover {
+  transform: translateY(calc(-3px * var(--wor-ruch)));
+  box-shadow: var(--bh-elevation-floating);
+}
+.dalej:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+.dalej__etykieta {
+  color: var(--wor-zloto);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+}
+.dalej__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+}
+.dalej__akcja {
+  justify-self: start;
+  margin-top: var(--bh-gap-snug);
+  padding: var(--bh-gap-tight) var(--bh-padding-inline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+}
+
+/* Reading progress: a hairline along the module bar, filled by scrolling. */
+.pasek__czytanie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: var(--bh-gap-hairline);
+  background: var(--wor-akcent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+@supports (animation-timeline: scroll()) {
+  .pasek__czytanie {
+    animation: czytanie linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes czytanie {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Step-by-step quiz. Prefixed with .quiz to win over .prose element rules. */
@@ -1130,7 +1309,8 @@ li {
 }
 .fiszka__oceny {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  /* Two by two: four answers in a row do not fit beside the card, and three plus one looks broken. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--bh-gap-normal);
   padding-top: var(--bh-gap-snug);
 }
@@ -1173,9 +1353,12 @@ li {
   background: var(--bh-surface-sunken);
 }
 /* In a lesson a photo shows what the text talks about (the fingers, the
-   tail): it is never cropped. */
+   tail): it is never cropped. A species plate keeps its matching crops. */
 .prose .photo__img {
   aspect-ratio: auto;
+}
+.prose .plate .photo__img {
+  aspect-ratio: 4 / 3;
 }
 .photo--small .photo__img {
   aspect-ratio: 4 / 3;

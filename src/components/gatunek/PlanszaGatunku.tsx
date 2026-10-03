@@ -57,28 +57,36 @@ export function PlanszaGatunku({ g }: { g: Gatunek }) {
     { id: 'palce', punkt: [97, k.koniecY + k.koniecSzer * 0.4], etykieta: [104, k.koniecY - 14], tytul: '„Palce”', tekst: c.palce, strona: 'p' },
     { id: 'ogon', punkt: [0, ogonY - 6], etykieta: [42, ogonY + 8], tytul: 'Ogon', tekst: c.ogon, strona: 'p' },
   ] as const;
-  const proc = (px: number, py: number) => ({
+  // A cue sits beside its anchor and may only be as wide as the space on its side.
+  const polozenie = (px: number, py: number, strona: 'l' | 'p') => ({
     left: `${((px - box.x) / box.w) * 100}%`,
     top: `${((py - box.y) / box.h) * 100}%`,
+    maxWidth: `${((strona === 'l' ? px - box.x : box.x + box.w - px) / box.w) * 100 - 1}%`,
   });
 
   return (
     <figure className="plansza">
       <div className="plansza__rysunek">
-        <svg viewBox={`${box.x} ${box.y} ${box.w} ${box.h}`} aria-hidden="true">
-          <path className="plansza__ksztalt" d={sciezka(punkty, 0.08)} />
+        <div className="plansza__scena">
+          <svg viewBox={`${box.x} ${box.y} ${box.w} ${box.h}`} aria-hidden="true">
+            <path className="plansza__ksztalt" d={sciezka(punkty, 0.08)} />
+            {opisy.map((o) => (
+              <g key={o.id} className="plansza__odnosnik">
+                <line x1={o.punkt[0]} y1={o.punkt[1]} x2={o.etykieta[0]} y2={o.etykieta[1]} pathLength={1} />
+                <circle cx={o.punkt[0]} cy={o.punkt[1]} r={1.6} />
+              </g>
+            ))}
+          </svg>
           {opisy.map((o) => (
-            <g key={o.id} className="plansza__odnosnik">
-              <line x1={o.punkt[0]} y1={o.punkt[1]} x2={o.etykieta[0]} y2={o.etykieta[1]} pathLength={1} />
-              <circle cx={o.punkt[0]} cy={o.punkt[1]} r={1.6} />
-            </g>
+            <p
+              key={o.id}
+              className={`plansza__opis plansza__opis--${o.strona}`}
+              style={polozenie(o.etykieta[0], o.etykieta[1], o.strona)}
+            >
+              <span className="plansza__tytul">{o.tytul}</span> {o.tekst}
+            </p>
           ))}
-        </svg>
-        {opisy.map((o) => (
-          <p key={o.id} className={`plansza__opis plansza__opis--${o.strona}`} style={proc(o.etykieta[0], o.etykieta[1])}>
-            <span className="plansza__tytul">{o.tytul}</span> {o.tekst}
-          </p>
-        ))}
+        </div>
       </div>
       <figcaption className="plansza__podpis">
         Grupa: {c.grupa}. Sylwetka od spodu, jak widać ją na tle nieba.

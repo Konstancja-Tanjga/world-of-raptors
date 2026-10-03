@@ -54,6 +54,7 @@ export function PasekModulu({ modul, lekcja }: { modul: ModulNawigacji; lekcja?:
           </p>
         )}
       </div>
+      {biezaca >= 0 && <span className="pasek__czytanie" aria-hidden="true" />}
     </nav>
   );
 }

@@ -48,7 +48,8 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .czolowka__ptak {
-    animation: przelot 46s linear infinite;
+    /* Already mid-flight when the page opens, not a wingtip at the edge. */
+    animation: przelot 46s linear -17s infinite;
   }
 }
 @keyframes przelot {
@@ -251,12 +252,15 @@
   margin: 0;
 }
 .anatomia__plansza {
-  position: relative;
   container-type: inline-size;
   padding: var(--bh-padding-section);
   border-radius: var(--wor-radius-scene);
   background: var(--bh-surface-raised);
   box-shadow: var(--bh-elevation-raised);
+}
+/* The labels are placed against the drawing's own box, not the card's padding. */
+.anatomia__scena {
+  position: relative;
 }
 .anatomia__plansza svg {
   display: block;
@@ -278,7 +282,6 @@
 }
 .anatomia__opis {
   position: absolute;
-  max-width: 11rem;
   color: var(--bh-text-secondary);
   font-size: var(--bh-text-size-caption);
   line-height: var(--bh-text-leading-tight);
@@ -312,10 +315,28 @@
     stroke-dashoffset: 1;
   }
 }
+/* A narrow plate lists the labels under the drawing, without leader lines,
+   and crops the empty side margins the labels would otherwise occupy. */
 @container (max-width: 34rem) {
-  .anatomia__opis {
-    max-width: 7.5rem;
-    font-size: var(--bh-text-size-dense);
+  .anatomia__scena {
+    overflow: hidden;
+  }
+  .anatomia__plansza svg {
+    width: 150%;
+    margin-inline: -25%;
+  }
+  .anatomia__odnosnik {
+    display: none;
+  }
+  .anatomia__opis,
+  .anatomia__opis--l {
+    position: static;
+    display: block;
+    animation: none;
+    max-width: none !important;
+    margin-top: var(--bh-gap-snug);
+    text-align: left;
+    translate: none;
   }
 }
 
@@ -604,7 +625,7 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .podpis__ptak {
-    animation: przelot 38s linear infinite;
+    animation: przelot 38s linear -11s infinite;
   }
 }
 .podpis__imie {

@@ -43,7 +43,8 @@ const POZA_LOTU: Poza = { wznios: 0.08, zgiecie: 0, ogon: 0.75 };
 /** One wingbeat in KLATKI frames: wings up, the downstroke, then the hand folds on the way up. */
 function pozaMachniecia(faza: number): Poza {
   const t = faza * Math.PI * 2;
-  return { wznios: 0.85 * Math.cos(t), zgiecie: Math.max(0, Math.sin(t)) * 0.38, ogon: 0.55 };
+  // cos(t) falls from wings-up through the downstroke; -sin(t) > 0 is the way back up.
+  return { wznios: 0.85 * Math.cos(t), zgiecie: Math.max(0, -Math.sin(t)) * 0.38, ogon: 0.55 };
 }
 
 /** Outlines as Path2D, scaled to a unit wingspan, per species: soaring, then each wingbeat frame. */

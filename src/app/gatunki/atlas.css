@@ -549,12 +549,15 @@
   margin: 0;
 }
 .plansza__rysunek {
-  position: relative;
   container-type: inline-size;
   padding: var(--bh-padding-section);
   border-radius: var(--wor-radius-scene);
   background: var(--bh-surface-raised);
   box-shadow: var(--bh-elevation-raised);
+}
+/* The cues are placed against the drawing's own box, not the card's padding. */
+.plansza__scena {
+  position: relative;
 }
 .plansza__rysunek svg {
   display: block;
@@ -575,7 +578,6 @@
 }
 .plansza__opis {
   position: absolute;
-  max-width: 13rem;
   margin: 0;
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
@@ -614,9 +616,13 @@
 }
 /* Narrow plates: the cues go under the drawing instead of around it. */
 @container (max-width: 40rem) {
+  /* The drawing's side margins hold the cues on a wide plate; here they are empty, so crop them. */
+  .plansza__scena {
+    overflow: hidden;
+  }
   .plansza__rysunek svg {
-    width: 70%;
-    margin-inline: auto;
+    width: 170%;
+    margin-inline: -35%;
   }
   .plansza__odnosnik {
     display: none;
@@ -624,7 +630,8 @@
   .plansza__opis,
   .plansza__opis--l {
     position: static;
-    max-width: none;
+    animation: none;
+    max-width: none !important;
     margin-top: var(--bh-gap-normal);
     text-align: left;
     translate: none;
