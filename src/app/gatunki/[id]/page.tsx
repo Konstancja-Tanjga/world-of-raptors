@@ -182,9 +182,14 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
                 W locie i na siedząco
               </h2>
             </div>
-            <div className="gatunek__zdjecia">
+            <div
+              className={
+                z?.cecha && z.lot && z.siedzacy ? 'gatunek__zdjecia gatunek__zdjecia--trzy' : 'gatunek__zdjecia'
+              }
+            >
               {z?.lot && <Photo zdjecie={z.lot} alt={`${g.pl} w locie`} podpis="W locie" />}
               {z?.siedzacy && <Photo zdjecie={z.siedzacy} alt={`${g.pl}, ptak siedzący`} podpis="Siedzący" />}
+              {z?.cecha && <Photo zdjecie={z.cecha} alt={z.cecha.alt} podpis={z.cecha.podpis} />}
             </div>
           </section>
         )}

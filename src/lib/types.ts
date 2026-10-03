@@ -88,7 +88,19 @@ export type Zdjecie = {
   fokus?: [number, number];
 };
 
-export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };
+/**
+ * The plate's third photo: the view that most helps to tell the species apart
+ * and that the other two do not show (the other sex, a juvenile, a colour
+ * morph, a field mark). `podpis` names that view ("Samica", "Młody ptak");
+ * `alt` describes the photo, since the label alone does not.
+ */
+export type ZdjecieCechy = Zdjecie & { podpis: string; alt: string };
+
+export type ZdjeciaGatunku = {
+  siedzacy: Zdjecie | null;
+  lot: Zdjecie | null;
+  cecha?: ZdjecieCechy | null;
+};
 
 /** A curiosity shown in rotating "Ciekawostka" cards; `tekst` is inline Markdown. */
 export type Ciekawostka = {
@@ -110,7 +122,12 @@ export type Quiz = { prog: number; pytania: PytanieQuizu[] };
 
 /** The directions of the name cards: from the Polish name and to it. */
 export const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
-export type RodzajZdjecia = keyof ZdjeciaGatunku;
+/**
+ * The two reference views a species has. Not `cecha`: that photo shows one
+ * age, sex or morph and its label and alt text say which, so it would give
+ * the answer away on a photo card.
+ */
+export type RodzajZdjecia = Exclude<keyof ZdjeciaGatunku, 'cecha'>;
 /**
  * What a flashcard asks. Photo cards (`lot`, `siedzacy`): name the bird in a
  * reference photo. `sylwetka`: name it from its silhouette in flight (diurnal

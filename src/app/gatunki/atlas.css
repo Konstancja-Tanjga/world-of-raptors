@@ -504,11 +504,23 @@
 .gatunek__zdjecia {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: var(--bh-gap-loose);
 }
+/* With the identification photo: flight large on the left, the other two stacked on the right. */
+.gatunek__zdjecia--trzy {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+.gatunek__zdjecia--trzy > :first-child {
+  grid-row: span 2;
+}
 @media (max-width: 600px) {
-  .gatunek__zdjecia {
+  .gatunek__zdjecia,
+  .gatunek__zdjecia--trzy {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .gatunek__zdjecia--trzy > :first-child {
+    grid-row: auto;
   }
 }
 .gatunek__porownanie {

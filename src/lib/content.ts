@@ -406,7 +406,10 @@ export async function statystykiKursu() {
   );
   const pytania = teksty.reduce((n, [p, md]) => n + (p.endsWith('README.md') ? 0 : (wyodrebnijQuiz(md, p).quiz?.pytania.length ?? 0)), 0);
   const zdjecWLekcjach = teksty.reduce((n, [, md]) => n + (md.match(/<zdjecie\b/g)?.length ?? 0), 0);
-  const zdjecWAtlasie = Object.values(zdjecia).reduce((n, z) => n + (z?.lot ? 1 : 0) + (z?.siedzacy ? 1 : 0), 0);
+  const zdjecWAtlasie = Object.values(zdjecia).reduce(
+    (n, z) => n + (z?.lot ? 1 : 0) + (z?.siedzacy ? 1 : 0) + (z?.cecha ? 1 : 0),
+    0,
+  );
   return {
     gatunki: gatunki.length,
     moduly: gotoweModuly.length,
@@ -435,7 +438,7 @@ function odkoduj(tekst: string) {
 export async function autorzyZdjec() {
   const surowe: string[] = [];
   // The author's own photos (served from public/, no Commons page) are credited separately.
-  for (const z of Object.values(zdjecia)) for (const p of [z?.lot, z?.siedzacy]) if (p?.strona) surowe.push(p.autor);
+  for (const z of Object.values(zdjecia)) for (const p of [z?.lot, z?.siedzacy, z?.cecha]) if (p?.strona) surowe.push(p.autor);
   for (const m of gotoweModuly) {
     for (const l of m.lekcje) {
       const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);
@@ -575,7 +578,7 @@ function sprawdzSpojnosc() {
     for (const id of Object.keys(mapa)) if (!idGatunkow.has(id)) bledy.push(`${skad}: „${id}” nie jest gatunkiem z atlasu`);
   }
   for (const [id, z] of Object.entries(zdjecia)) {
-    for (const rodzaj of ['lot', 'siedzacy'] as const) {
+    for (const rodzaj of ['lot', 'siedzacy', 'cecha'] as const) {
       const p = z?.[rodzaj];
       if (!p) continue;
       if (!para(p.fokus, (n) => n >= 0 && n <= 100)) bledy.push(`zdjecia.json: ${id}/${rodzaj}: fokus musi być [x, y] w procentach`);
@@ -583,6 +586,9 @@ function sprawdzSpojnosc() {
         bledy.push(`zdjecia.json: ${id}/${rodzaj}: oryginal musi być [szerokość, wysokość]`);
       }
     }
+    // The third photo names its own view and describes itself; the label alone would not.
+    const cecha = z?.cecha;
+    if (cecha && (!cecha.podpis?.trim() || !cecha.alt?.trim())) bledy.push(`zdjecia.json: ${id}/cecha: brak podpisu albo alt`);
   }
   for (const m of moduly) {
     if (m.gotowy && (!m.slug || !m.lekcje?.length)) bledy.push(`moduly.json: ${m.id} jest gotowy, ale nie ma slugu albo lekcji`);

@@ -126,7 +126,7 @@ def sizes(path):
     with open(path, encoding='utf-8') as fh:
         data = json.load(fh)
     # Own photos (served from public/zdjecia/) have no Commons file to ask about.
-    photos = [p for sp in data.values() for p in (sp.get('lot'), sp.get('siedzacy')) if p and p.get('plik', '').startswith('File:')]
+    photos = [p for sp in data.values() for p in (sp.get('lot'), sp.get('siedzacy'), sp.get('cecha')) if p and p.get('plik', '').startswith('File:')]
     titles = sorted({p['plik'] for p in photos})
     found = {}
     for i in range(0, len(titles), 50):
