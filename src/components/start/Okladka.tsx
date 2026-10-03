@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ViewTransition } from 'react';
 import { zdjecia } from '@/lib/content';
 import { REGIONY, type Gatunek } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
@@ -58,9 +59,11 @@ export function Okladka({ g }: { g: Gatunek }) {
       )}
       <div className="okladka__tekst">
         <p className="eyebrow">Gatunek na dziś</p>
-        <h2 id="gatunek-dnia" className="okladka__nazwa">
-          {g.pl}
-        </h2>
+        <ViewTransition name={`nazwa-${g.id}`} share="morf-nazwy" default="none">
+          <h2 id="gatunek-dnia" className="okladka__nazwa">
+            {g.pl}
+          </h2>
+        </ViewTransition>
         <p className="okladka__lacina">{g.lat}</p>
         <p className="okladka__jezyki">
           ang. <span lang="en">{g.en}</span>, hiszp. <span lang="es">{g.es}</span>

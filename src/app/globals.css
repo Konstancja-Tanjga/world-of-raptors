@@ -2146,3 +2146,77 @@ a.modul:focus-visible {
   margin-top: 0;
   padding-inline: 0;
 }
+
+/* ---------- Page transitions ----------
+   The page leaves quickly and the next one arrives gently, a little from
+   below; the navigation and the module bar are not part of it. With reduced
+   motion the swap is instant. */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.strona-wyjscie) {
+  animation: strona-zanik var(--wor-dur-quick) var(--wor-ease-in) both;
+}
+::view-transition-new(.strona-wejscie) {
+  animation: strona-pojawienie var(--wor-dur-base) var(--wor-ease-out) var(--wor-dur-quick) both;
+}
+/* The bars are glass; a snapshot of glass has nothing to blur, so the page
+   would show through it sharp. Each bar's snapshot gets a solid backing in
+   the colour it sits on: night over a scene, the page colour elsewhere. */
+.nav[data-nad-scena] {
+  view-transition-name: nawigacja-scena;
+}
+::view-transition-group(nawigacja),
+::view-transition-group(nawigacja-scena),
+::view-transition-group(pasek-modulu) {
+  z-index: var(--bh-layer-sticky);
+  animation: none;
+  background: var(--wor-tlo);
+}
+::view-transition-group(nawigacja-scena) {
+  background: var(--wor-scena-tlo);
+}
+::view-transition-old(nawigacja),
+::view-transition-old(nawigacja-scena),
+::view-transition-old(pasek-modulu) {
+  display: none;
+}
+::view-transition-new(nawigacja),
+::view-transition-new(nawigacja-scena),
+::view-transition-new(pasek-modulu) {
+  animation: none;
+}
+/* A species' name flying from its card to its page's title: blurred for a
+   moment mid-flight, which hides the scaling of a small snapshot. */
+::view-transition-group(.morf-nazwy) {
+  z-index: var(--bh-layer-raised);
+  animation-duration: var(--wor-dur-expressive);
+  animation-timing-function: var(--wor-ease-in-out);
+}
+::view-transition-image-pair(.morf-nazwy) {
+  animation: przez-rozmycie var(--wor-dur-expressive) var(--wor-ease-in-out);
+}
+@keyframes przez-rozmycie {
+  40% {
+    filter: blur(2px);
+  }
+}
+@keyframes strona-zanik {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes strona-pojawienie {
+  from {
+    opacity: 0;
+    translate: 0 calc(0.75rem * var(--wor-ruch));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

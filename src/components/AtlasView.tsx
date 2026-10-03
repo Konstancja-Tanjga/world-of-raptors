@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, ViewTransition } from 'react';
 import { useChecklista } from '@/lib/checklist';
 import type { Gatunek, Zdjecie } from '@/lib/types';
 import { polozenie } from '@/lib/zdjecia';
@@ -25,6 +25,19 @@ const NAZWA_GRUPY: Record<string, string> = {
   sowy: 'Sowy',
 };
 const CZLOWIEK_CM = 170;
+
+/**
+ * A species' name that flies into the title of its page when it is opened
+ * (globals.css, "morf-nazwy"). Only one view of the atlas is shown at a time,
+ * so each name appears once, as a shared transition needs.
+ */
+function NazwaGatunku({ id, klasa, children }: { id: string; klasa: string; children: string }) {
+  return (
+    <ViewTransition name={`nazwa-${id}`} share="morf-nazwy" default="none">
+      <span className={klasa}>{children}</span>
+    </ViewTransition>
+  );
+}
 
 /** A species' silhouette group: its own cue for diurnal species ("orły (mały orzeł)" counts as orły), owls for owls. */
 function grupaSylwetki(g: Gatunek) {
@@ -111,7 +124,9 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                     )}
                   </span>
                   <span className="karta-gatunku__opis">
-                    <span className="karta-gatunku__nazwa">{g.pl}</span>
+                    <NazwaGatunku id={g.id} klasa="karta-gatunku__nazwa">
+                      {g.pl}
+                    </NazwaGatunku>
                     <span className="karta-gatunku__lacina">{g.lat}</span>
                     <span className="karta-gatunku__meta">
                       {g.grupa}
@@ -139,7 +154,9 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                     <li key={g.id}>
                       <Link href={`/gatunki/${g.id}`} className="plansza-grupy__gatunek" data-widziany={widziany(g.id) ? '' : undefined}>
                         <Sylwetka id={g.id} klasa="plansza-grupy__sylwetka" dokladnosc={0.2} />
-                        <span className="plansza-grupy__nazwa">{g.pl}</span>
+                        <NazwaGatunku id={g.id} klasa="plansza-grupy__nazwa">
+                          {g.pl}
+                        </NazwaGatunku>
                         <span className="plansza-grupy__lacina">{g.lat}</span>
                       </Link>
                     </li>
@@ -171,7 +188,9 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                     <span className="skala__rysunek">
                       <Sylwetka id={g.id} klasa="skala__sylwetka" skala={{ cm: g.rozpietosc_cm[1], maks }} dokladnosc={0.25} />
                     </span>
-                    <span className="skala__nazwa">{g.pl}</span>
+                    <NazwaGatunku id={g.id} klasa="skala__nazwa">
+                      {g.pl}
+                    </NazwaGatunku>
                     <span className="skala__cm">
                       {g.rozpietosc_cm[0]}–{g.rozpietosc_cm[1]} cm
                     </span>

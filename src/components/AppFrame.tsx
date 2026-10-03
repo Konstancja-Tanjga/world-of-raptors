@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, ViewTransition, type ReactNode } from 'react';
 import { useOstatniaLekcja } from '@/lib/ostatnia';
 import { SkipLink } from './ds';
 import { Nawigacja } from './Nawigacja';
@@ -39,7 +39,11 @@ export function AppFrame({ moduly, znak, children }: { moduly: ModulNawigacji[];
       <Nawigacja moduly={moduly} przyklejona={!biezacy} znak={znak} />
       {biezacy && <PasekModulu modul={biezacy} lekcja={lekcja} />}
       <main id="main-content" tabIndex={-1} className="tresc">
-        {children}
+        {/* Keyed by the route, so a navigation is an exit and an entrance: the
+            page cross-fades while the bars above it hold still (globals.css). */}
+        <ViewTransition key={pathname} enter="strona-wejscie" exit="strona-wyjscie" default="none">
+          <div className="tresc__strona">{children}</div>
+        </ViewTransition>
       </main>
       <Stopka />
     </>

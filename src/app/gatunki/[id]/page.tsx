@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ViewTransition } from 'react';
 import '../atlas.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
 import { CuesTable } from '@/components/CuesTable';
@@ -76,9 +77,12 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
         )}
         <div className="gatunek-hero__tresc">
           <Breadcrumbs items={[{ label: 'Atlas gatunków', href: '/gatunki' }, { label: g.pl }]} />
-          <h1 id="gatunek-nazwa" className="gatunek-hero__nazwa">
-            {g.pl}
-          </h1>
+          {/* The name arrives from the card it was opened from (atlas, species of the day). */}
+          <ViewTransition name={`nazwa-${g.id}`} share="morf-nazwy" default="none">
+            <h1 id="gatunek-nazwa" className="gatunek-hero__nazwa">
+              {g.pl}
+            </h1>
+          </ViewTransition>
           <p className="gatunek-hero__lacina">{g.lat}</p>
           <p className="gatunek-hero__jezyki">
             ang. <span lang="en">{g.en}</span>, hiszp. <span lang="es">{g.es}</span>
