@@ -22,9 +22,9 @@ python3 scripts/commons.py tag "File:<title>" --podpis "…" --alt "…" # print
 There is no test suite. Verify changes with `tsc`, `lint` and `npm run build` (the build fails on malformed content: `src/lib/content.ts` validates `content/gatunki.json` at import time), then check the page in a browser.
 
 Environment caveats:
-- The repo lives in `~/Documents`, which iCloud syncs. iCloud creates `* 2.*` conflict copies (even inside `.git/` and `.next/`) and has reverted a file to an older version. Before committing, look for `* 2*` files, compare them with the original and delete them; if `next build` fails with `ENOTEMPTY` on `.next`, `rm -rf .next`.
+- The repo lives in `~/Documents`, which iCloud syncs. iCloud creates `* 2.*` conflict copies (even inside `.git/`, and `.next 2` folders in the repo root) and has reverted a file to an older version. Before committing, look for `* 2*` files, compare them with the original and delete them; if `next build` fails with `ENOTEMPTY` on `.next`, `rm -rf .next.nosync/.next` (not `.next` itself, which is the symlink).
 - Don't run two `next build`s against the same `.next` at once (parallel agents corrupt it).
-- `node_modules` and `.next` are symlinks into `node_modules.nosync/` and `.next.nosync/`, because iCloud skips names ending in `.nosync`. Inside iCloud, reads of `node_modules` hung for minutes and iCloud deleted files from it. Both `npm install` and `npm ci` replace the symlink with a real folder, so after every install run `rm -rf node_modules.nosync/node_modules && mv node_modules node_modules.nosync/ && ln -s node_modules.nosync/node_modules node_modules`.
+- `node_modules` and `.next` are symlinks into `node_modules.nosync/` and `.next.nosync/`, because iCloud skips names ending in `.nosync`. Inside iCloud, reads of `node_modules` hung for minutes and iCloud deleted files from it. Both `npm install` and `npm ci` replace the symlink with a real folder, so after every install run `[ -L node_modules ] || { rm -rf node_modules.nosync/node_modules && mv node_modules node_modules.nosync/ && ln -s node_modules.nosync/node_modules node_modules; }`.
 
 ## Architecture
 
@@ -51,7 +51,7 @@ Environment caveats:
 - Backups (`kopia.ts`, format v2: checklist + progress + flashcards + photos; `fiszki` is optional because older v2 files lack it; v1 files still import). Import validates and decodes the whole file first, then writes photos in one aborting transaction, then progress and flashcards, then the checklist. Keep that order.
 - The curiosity card remembers what was already shown under `wor:ciekawostki:widziane`.
 
-**Flashcards** (`/fiszki`, `FiszkiView.tsx`): one card per atlas reference photo (`taliaFiszek()` in `content.ts`, id `<species>/<lot|siedzacy>`), scheduled by FSRS (`ts-fsrs`, default parameters with fuzz). A card with no stored entry is new. Order: overdue reviews, then new cards (up to 10 a day, counted by `wprowadzona`), then reviews due within the next 20 minutes. The photo's alt text must not name the species before the answer is shown.
+**Flashcards** (`/fiszki`, `FiszkiView.tsx`): one card per atlas reference photo (`taliaFiszek()` in `content.ts`, id `<species>/<lot|siedzacy>`), scheduled by FSRS (`ts-fsrs`, default parameters with fuzz). A card with no stored entry is new. Order: overdue reviews, then new cards (up to 10 a day, counted by `wprowadzona`; the empty state's button adds 10 more for the visit), then reviews due within the next 20 minutes. The photo's alt text must not name the species before the answer is shown.
 
 **Rendering modes.** Every page is static except the home page (`export const dynamic = 'force-dynamic'`), which picks a species of the day by the Europe/Warsaw date. Client-only choices (a random curiosity) are made after mount, because a server-side pick would freeze at build time. Images use `images.unoptimized`: Commons thumbnails are served directly; `public/zdjecia/` holds resized copies of the owner's own photos. The originals sit in the git-ignored `/Images`; never publish or reference them directly.
 

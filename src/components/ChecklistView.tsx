@@ -62,7 +62,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
 
   const eksportuj = async () => {
     try {
-      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki ?? {});
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki);
       const url = URL.createObjectURL(plik);
       const a = document.createElement('a');
       a.href = url;

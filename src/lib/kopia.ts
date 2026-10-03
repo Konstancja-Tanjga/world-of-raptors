@@ -16,14 +16,16 @@ import {
  * Backup file format.
  *
  * v2: `{ wersja: 2, checklista, postep, fiszki, zdjecia }`. `fiszki` was added
- * later, so older v2 files lack it. `zdjecia` is left out
+ * later, so older v2 files lack it; it is also left out when there are no
+ * flashcard schedules (or they have not loaded yet), so importing such a file
+ * keeps the target device's flashcards. `zdjecia` is left out
  * (not `[]`) when the photos could not be read, so importing such a file
  * keeps the photos already on the target device instead of erasing them.
  * v1: a bare checklist object; still importable.
  */
 type KopiaV2 = { wersja: 2; checklista: Checklista; postep: Postep; fiszki?: Fiszki; zdjecia?: ZdjecieKopii[] };
 
-export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki: Fiszki) {
+export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki: Fiszki | null) {
   let zdjecia: ZdjecieKopii[] | undefined;
   try {
     zdjecia = await Promise.all(
@@ -33,7 +35,7 @@ export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki
     console.error('[kopia] could not read photos for export', err);
     zdjecia = undefined;
   }
-  const kopia: KopiaV2 = { wersja: 2, checklista, postep, fiszki, ...(zdjecia ? { zdjecia } : {}) };
+  const kopia: KopiaV2 = { wersja: 2, checklista, postep, ...(fiszki && Object.keys(fiszki).length ? { fiszki } : {}), ...(zdjecia ? { zdjecia } : {}) };
   return { plik: new Blob([JSON.stringify(kopia)], { type: 'application/json' }), bezZdjec: !zdjecia };
 }
 

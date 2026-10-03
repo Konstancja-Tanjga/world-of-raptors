@@ -10,9 +10,9 @@ import { Button, Progress, SegmentedControl, StateBlock } from './ds';
 import { Photo } from './Photo';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
-/** New cards a day, before "Dodaj nowe" raises it for the visit. */
+/** New cards a day; the empty state's "Dodaj … nowych" button raises it by this much for the visit. */
 const NOWYCH_DZIENNIE = 10;
-/** A card due within this window is shown now rather than making the session wait for it. */
+/** After overdue reviews and today's new cards, a card due within this window is shown rather than ending the session; it already counts as due in the header. */
 const WYPRZEDZENIE_MS = 20 * 60 * 1000;
 
 const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
@@ -38,7 +38,7 @@ function zaIle(ms: number) {
   return lata === 1 ? 'za rok' : `za ${lata} ${lata < 5 ? 'lata' : 'lat'}`;
 }
 
-/** A stable daily order for new cards, so a reload does not reshuffle them and two photos of one species rarely meet. */
+/** A shuffled but stable daily order for new cards, so a reload does not reshuffle them and a species' two photos are not served back to back as in atlas order. */
 function kolejnosc(id: string, dzien: string) {
   let h = 2166136261;
   for (const c of `${dzien}:${id}`) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
@@ -87,17 +87,19 @@ export function FiszkiView({ talia: cala }: { talia: Fiszka[] }) {
   const stan = fiszki ? nastepna(talia, fiszki, teraz, dodatkowe) : null;
   const karta = stan?.karta;
 
+  // The intervals under the rating buttons and the saved schedule use this same
+  // moment: FSRS seeds its fuzz from the review time.
   const odkryj = () => {
+    setTeraz(Date.now());
     setOdkryta(true);
     requestAnimationFrame(() => odpowiedzRef.current?.focus());
   };
 
   const ocenKarte = (ocena: Grade) => {
     if (!karta) return;
-    const chwila = new Date();
-    sprawdzZapis(ocen(karta.id, ocena, chwila));
+    sprawdzZapis(ocen(karta.id, ocena, new Date(teraz)));
     setOdkryta(false);
-    setTeraz(chwila.getTime());
+    setTeraz(Date.now());
     przesunFokus.current = true;
   };
 
