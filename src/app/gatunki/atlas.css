@@ -325,8 +325,10 @@
   position: absolute;
   inset: 0;
   z-index: -1;
+  /* The lower half, where all the text is, gets at least the reading shade
+     (bone text passes AA on it even over white); the bird above stays clear. */
   background:
-    linear-gradient(0deg, var(--wor-scena-tlo) 0%, var(--wor-cien-sceny) 38%, transparent 70%),
+    linear-gradient(0deg, var(--wor-scena-tlo) 0%, var(--wor-cien-tekstu) 30%, var(--wor-cien-tekstu) 54%, transparent 80%),
     linear-gradient(90deg, var(--wor-cien-sceny), transparent 55%);
 }
 @media (prefers-reduced-motion: no-preference) {

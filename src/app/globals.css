@@ -2339,6 +2339,9 @@ a.modul:focus-visible {
   }
 }
 .zgubiony__tresc {
+  /* On a phone the text sits in the moon's glow: the state's muted text takes
+     the scene's secondary colour, which keeps AA there. */
+  --bh-text-muted: var(--bh-text-secondary);
   box-sizing: border-box;
   width: 100%;
   max-width: 36rem;
