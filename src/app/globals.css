@@ -901,11 +901,15 @@ li {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
+  /* Cropped around each photo's focal point (zdjecia.json "fokus", set inline). */
   object-fit: cover;
-  /* Perched birds usually have the head in the top third of a portrait photo. */
-  object-position: center 25%;
   border-radius: var(--bh-radius-surface);
   background: var(--bh-surface-sunken);
+}
+/* In a lesson a photo shows what the text talks about (the fingers, the
+   tail): it is never cropped. */
+.prose .photo__img {
+  aspect-ratio: auto;
 }
 .photo--small .photo__img {
   aspect-ratio: 4 / 3;

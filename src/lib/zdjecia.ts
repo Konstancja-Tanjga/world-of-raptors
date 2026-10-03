@@ -17,3 +17,8 @@ export function srcSetCommons(z: Zdjecie): string | undefined {
   if (szerokosci.length < 2) return undefined;
   return szerokosci.map((w) => `${poczatek}${w}px-${plik} ${w}w`).join(', ');
 }
+
+/** `object-position` for a crop of this photo: its focal point, or a default that suits perched birds. */
+export function polozenie(z: Pick<Zdjecie, 'fokus'>): string {
+  return z.fokus ? `${z.fokus[0]}% ${z.fokus[1]}%` : '50% 25%';
+}

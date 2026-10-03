@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { zdjecia } from '@/lib/content';
 import { REGIONY, type Gatunek } from '@/lib/types';
-import { srcSetCommons } from '@/lib/zdjecia';
+import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Miarka } from '../Miarka';
 
 /**
@@ -33,6 +33,7 @@ export function Okladka({ g }: { g: Gatunek }) {
               alt={`${g.pl}, ${wLocie ? 'w locie' : 'ptak siedzący'}`}
               loading="lazy"
               decoding="async"
+              style={{ objectPosition: polozenie(foto) }}
             />
           </div>
           <figcaption className="okladka__podpis">

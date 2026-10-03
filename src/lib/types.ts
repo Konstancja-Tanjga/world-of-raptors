@@ -65,6 +65,12 @@ export type Zdjecie = {
   plik: string;
   /** The original's [width, height] on Commons, so larger thumbnails are only asked for when they exist. */
   oryginal?: number[];
+  /**
+   * [x, y] in percent: the bird's head (perched) or the middle of the bird
+   * (in flight). Used as `object-position`, which keeps that point inside any
+   * crop, so a 4:3 tile or a wide hero never cuts the head off.
+   */
+  fokus?: number[];
 };
 
 export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };
