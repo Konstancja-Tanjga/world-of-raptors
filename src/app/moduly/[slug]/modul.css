@@ -8,6 +8,9 @@
 /* ---------- Opening scene ---------- */
 
 .otwarcie {
+  /* The text column: from the content's left edge to the middle of the screen,
+     the half that the reading shade covers. */
+  --otwarcie-kolumna: calc(50vw - max(0px, (100vw - var(--wor-width)) / 2) - var(--wor-gutter));
   position: relative;
   isolation: isolate;
   display: grid;
@@ -31,14 +34,9 @@
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
   mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
 }
-@media (max-width: 900px) {
-  .otwarcie__zdjecie {
-    width: 100%;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-}
-/* Readable text over any photo: dusk from the bottom and the left. */
+/* Readable text over any photo: the text column's half gets the reading
+   shade (bone text passes AA on it even over white), which fades out towards
+   the bird, and dusk rises from the bottom. */
 .otwarcie::before {
   content: '';
   position: absolute;
@@ -46,7 +44,34 @@
   z-index: -1;
   background:
     linear-gradient(0deg, var(--wor-scena-tlo) 0%, var(--wor-cien-sceny) 45%, transparent 75%),
-    linear-gradient(90deg, var(--wor-cien-sceny), transparent 60%);
+    linear-gradient(90deg, var(--wor-cien-tekstu) 0%, var(--wor-cien-tekstu) 50%, transparent 72%);
+}
+/* On a narrow screen the photo is a band on top that fades into the night,
+   and the text sits below it on the night itself: no photo behind the words,
+   and none of the bird hidden behind them. */
+@media (max-width: 900px) {
+  .otwarcie {
+    --otwarcie-kolumna: 100%;
+    align-items: start;
+    min-height: 0;
+    padding-top: 0;
+  }
+  .otwarcie__zdjecie {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    width: 100%;
+    height: 52svh;
+    margin-bottom: calc(-0.5 * var(--wor-space-block));
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  }
+  .otwarcie::before {
+    display: none;
+  }
+  .otwarcie__tresc {
+    position: relative;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .otwarcie__zdjecie {
@@ -97,32 +122,39 @@
   gap: var(--bh-gap-tight);
   margin: 0;
   font-family: var(--wor-font-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   letter-spacing: var(--wor-tracking-display);
 }
 .otwarcie__id {
   color: var(--wor-zloto);
   font-size: var(--wor-size-display);
-  line-height: 1;
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums;
 }
 .otwarcie__nazwa {
-  max-width: 14ch;
-  font-size: var(--wor-size-hero);
+  /* Small enough that the longest word of any module title stays in the column. */
+  max-width: var(--otwarcie-kolumna);
+  font-size: min(var(--wor-size-hero), 6.2vw, 5.5rem);
   line-height: var(--wor-leading-display);
   padding-block: 0.06em;
   text-wrap: balance;
 }
+@media (max-width: 900px) {
+  /* The whole width is the column here; "rozpoznawania" still fits on a phone. */
+  .otwarcie__nazwa {
+    font-size: min(var(--wor-size-hero), 12.5vw);
+  }
+}
 .otwarcie__zajawka {
   margin: 0;
-  max-width: 36rem;
+  max-width: min(36rem, var(--otwarcie-kolumna));
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .otwarcie__zajawka strong {
   color: var(--wor-zloto);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .otwarcie__fakty {
   display: flex;
@@ -141,7 +173,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .otwarcie__fakty dt {
@@ -184,12 +216,9 @@
   color: inherit;
 }
 @media (max-width: 760px) {
-  .otwarcie {
-    min-height: 88svh;
-  }
   .otwarcie__podpis {
     position: static;
-    grid-row: 2;
+    grid-row: 3;
     margin: var(--bh-padding-section) var(--wor-gutter) 0;
     text-align: left;
   }
@@ -244,8 +273,8 @@
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
-  line-height: 1.1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-title);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .sylabus__tresc {
@@ -255,7 +284,7 @@
 .sylabus__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .sylabus__lekcja:hover .sylabus__tytul {
@@ -272,7 +301,7 @@
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .sylabus__meta {
   display: flex;
@@ -285,7 +314,7 @@
   color: var(--wor-akcent);
   font-weight: var(--bh-text-weight-heading);
 }
-/* A finished lesson: its number filled, so the column of numbers reads as progress. */
+/* A finished lesson: its number struck through in the accent colour, so the column of numbers reads as progress. */
 .sylabus__lekcja[data-gotowa] .sylabus__nr {
   color: var(--bh-text-muted);
   text-decoration: line-through;

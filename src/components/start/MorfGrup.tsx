@@ -3,16 +3,9 @@
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { obrys, posredni, posredniaPoza, POZA_SZYBOWANIE, sciezka, type Ksztalt, type Poza } from '@/lib/sylwetka';
 import { POZY, SYLWETKI } from '@/lib/sylwetki';
+import type { GrupaSylwetki } from '@/lib/types';
 import { useMniejRuchu } from '@/lib/useMedia';
 
-export type GrupaDoPokazania = {
-  nazwa: string;
-  gatunek: string;
-  skrzydla: string;
-  ogon: string;
-  glowa: string;
-  przyklady: string;
-};
 
 const CZAS_MORFU = 820;
 const CZAS_POKAZU = 3200;
@@ -32,7 +25,7 @@ function tekst(md: string): ReactNode[] {
  * groups by itself while in view, until the reader picks one or presses
  * pause; with reduced motion it neither plays nor morphs.
  */
-export function MorfGrup({ grupy, children }: { grupy: GrupaDoPokazania[]; children?: ReactNode }) {
+export function MorfGrup({ grupy, children }: { grupy: GrupaSylwetki[]; children?: ReactNode }) {
   const [wybrana, setWybrana] = useState(0);
   const [pokaz, setPokaz] = useState(true);
   const [widoczna, setWidoczna] = useState(false);
@@ -146,7 +139,7 @@ export function MorfGrup({ grupy, children }: { grupy: GrupaDoPokazania[]; child
         <div className="morf__akcje">
           {children}
           {!mniejRuchu && (
-            <button type="button" className="morf__pokaz" aria-pressed={!pokaz} onClick={() => setPokaz((p) => !p)}>
+            <button type="button" className="morf__pokaz" onClick={() => setPokaz((p) => !p)}>
               {pokaz ? 'Zatrzymaj pokaz' : 'Pokazuj po kolei'}
             </button>
           )}

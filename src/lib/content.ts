@@ -1,19 +1,27 @@
 import 'server-only';
+import { readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import gatunkiJson from '../../content/gatunki.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
+import { GATUNKI_RYSUNKOW } from './rysunki';
+import { POZY, STYL_LOTU, SYLWETKI } from './sylwetki';
+import { GRUPY_SYLWETEK, idFiszki, KIERUNKI_NAZW, KLUCZE_DZIENNE, KLUCZE_NOCNE, REGIONY, STATUS_LABEL } from './types';
 import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
   Fiszka,
+  GatunekDzienny,
   GatunekFiszki,
+  GrupaSylwetki,
+  SylwetkaGatunku,
   Gatunek,
   Modul,
   PytanieQuizu,
   Quiz,
+  Region,
   Sciezka,
   ZdjeciaGatunku,
 } from './types';
@@ -24,15 +32,18 @@ const CONTENT_DIR = path.join(process.cwd(), 'content');
 export const gatunki = gatunkiJson.gatunki as Gatunek[];
 export const sciezki = modulyJson.sciezki as Sciezka[];
 export const moduly = modulyJson.moduly as Modul[];
-export const zdjecia = zdjeciaJson as Partial<Record<string, ZdjeciaGatunku>>;
+// JSON arrays are not tuples to TypeScript; sprawdzSpojnosc() checks that `fokus` and `oryginal` are pairs.
+export const zdjecia = zdjeciaJson as unknown as Partial<Record<string, ZdjeciaGatunku>>;
 
 // JSON can't be checked against the key sets at compile time, so check once
 // at build: a typo in a cue key would otherwise just hide that row.
-const KLUCZE_CECH = {
-  dzienny: ['grupa', 'skrzydla', 'palce', 'ogon', 'glowa', 'lot'],
-  nocny: ['glos', 'uszy', 'oczy', 'glowa', 'sylwetka'],
-} as const;
+const KLUCZE_CECH = { dzienny: KLUCZE_DZIENNE, nocny: KLUCZE_NOCNE } as const;
 for (const g of gatunki) {
+  // The type promises one of the two; the JSON may not keep that promise.
+  const { aktywnosc }: { aktywnosc: unknown } = g;
+  if (aktywnosc !== 'dzienny' && aktywnosc !== 'nocny') {
+    throw new Error(`gatunki.json: ${g.id}: aktywnosc „${String(aktywnosc)}” ma być „dzienny” albo „nocny”`);
+  }
   const dozwolone: readonly string[] = KLUCZE_CECH[g.aktywnosc];
   const klucze = Object.keys(g.sylwetka ?? {});
   const zle = klucze.filter((k) => !dozwolone.includes(k));
@@ -202,55 +213,70 @@ export function znajdzGatunek(id: string) {
 }
 
 /** Modules whose content covers a species, derived from its regions and activity. */
+/** The owls' module: every owl's page links to it, and so does the home page's night chorus. */
+export const MODUL_SOW = 'sowy';
+/** The regional module a diurnal species' page links to for each of its regions. */
+const MODUL_REGIONU: Record<Region, string> = { gibraltar: 'gibraltar', 'poludnie-hiszpanii': 'poludnie-hiszpanii', polska: 'polska' };
+/** B1 lesson 1: the home page shows its "Osiem grup" table and links to it. */
+export const LEKCJA_GRUP = { modul: 'metoda', lekcja: '01-sylwetka' } as const;
+
 export function modulyGatunku(g: Gatunek) {
-  const slugi = new Set<string>();
-  if (g.aktywnosc === 'nocny') slugi.add('sowy');
-  else {
-    if (g.regiony.includes('gibraltar')) slugi.add('gibraltar');
-    if (g.regiony.includes('poludnie-hiszpanii')) slugi.add('poludnie-hiszpanii');
-    if (g.regiony.includes('polska')) slugi.add('polska');
-  }
+  const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 
-const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
-
 /**
  * The flashcard deck: for every atlas species its reference photos (in flight
- * and perched), its silhouette (diurnal species with a drawn shape) and its
- * names both ways between Polish and English or Spanish. Photo card ids are
- * the ones stored before the other kinds existed, so schedules carry over.
+ * and perched), its silhouette (every diurnal species; the build checks each
+ * has a shape) and its names both ways between Polish and English or Spanish.
+ * Photo card ids are the ones stored before the other kinds existed, so
+ * schedules carry over.
  */
-export function taliaFiszek(maSylwetke: (id: string) => boolean): Fiszka[] {
-  return gatunki.flatMap((g) => {
+export function taliaFiszek(): Fiszka[] {
+  return gatunki.flatMap((g): Fiszka[] => {
     const z = zdjecia[g.id];
-    const zdjeciaKart = (['lot', 'siedzacy'] as const).flatMap((rodzaj) => {
+    const zdjeciaKart = (['lot', 'siedzacy'] as const).flatMap((rodzaj): Fiszka[] => {
       const zdjecie = z?.[rodzaj];
-      return zdjecie ? [{ id: `${g.id}/${rodzaj}`, rodzaj, gatunek: g.id, zdjecie }] : [];
+      return zdjecie ? [{ id: idFiszki(g.id, rodzaj), rodzaj, gatunek: g.id, zdjecie }] : [];
     });
-    // The answer side of a non-photo card shows the bird as it is usually seen.
+    // A name card shows the bird with its answer, as it is usually seen: a raptor flying, an owl perched.
     const ilustracja = (g.aktywnosc === 'nocny' ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy)) ?? null;
     const sylwetka: Fiszka[] =
-      g.aktywnosc === 'dzienny' && maSylwetke(g.id)
-        ? [{ id: `${g.id}/sylwetka`, rodzaj: 'sylwetka', gatunek: g.id, zdjecie: ilustracja }]
-        : [];
-    const nazwy: Fiszka[] = KIERUNKI_NAZW.map((rodzaj) => ({ id: `${g.id}/${rodzaj}`, rodzaj, gatunek: g.id, zdjecie: ilustracja }));
+      g.aktywnosc === 'dzienny' ? [{ id: idFiszki(g.id, 'sylwetka'), rodzaj: 'sylwetka', gatunek: g.id, zdjecie: null }] : [];
+    const nazwy = KIERUNKI_NAZW.map((rodzaj): Fiszka => ({ id: idFiszki(g.id, rodzaj), rodzaj, gatunek: g.id, zdjecie: ilustracja }));
     return [...zdjeciaKart, ...sylwetka, ...nazwy];
   });
 }
+
+/** Activity and cues rebuilt as one union member, so spreading it keeps `aktywnosc` and `sylwetka` matched. */
+const sylwetkaGatunku = (g: SylwetkaGatunku): SylwetkaGatunku =>
+  g.aktywnosc === 'dzienny' ? { aktywnosc: 'dzienny', sylwetka: g.sylwetka } : { aktywnosc: 'nocny', sylwetka: g.sylwetka };
 
 /** The species data a flashcard's answer needs, keyed by species id. */
 export function gatunkiFiszek(): Record<string, GatunekFiszki> {
   return Object.fromEntries(
     gatunki.map((g) => {
-      const { id, pl, lat, en, es, grupa, cechy, regiony, aktywnosc, sylwetka } = g;
+      const { id, pl, lat, en, es, grupa, cechy, regiony } = g;
       const podobne = g.mylona_z.flatMap((m) => {
         const x = znajdzGatunek(m);
         return x ? [{ id: x.id, pl: x.pl }] : [];
       });
-      return [id, { id, pl, lat, en, es, grupa, cechy, regiony, aktywnosc, sylwetka, podobne }];
+      return [id, { id, pl, lat, en, es, grupa, cechy, regiony, ...sylwetkaGatunku(g), podobne }];
     }),
   );
+}
+
+/** A diurnal species for the look-alike slider: its cues in the order of B1. */
+export function stronaMorfu(g: GatunekDzienny) {
+  return {
+    id: g.id,
+    pl: g.pl,
+    cechy: [
+      { etykieta: 'Skrzydła', tekst: g.sylwetka.skrzydla },
+      { etykieta: 'Ogon', tekst: g.sylwetka.ogon },
+      { etykieta: 'Głowa', tekst: g.sylwetka.glowa },
+    ],
+  };
 }
 
 export async function czytajMarkdown(relPath: string) {
@@ -291,8 +317,8 @@ export function ciekawostkiDla({ modul, lekcja, gatunek }: { modul?: string; lek
   };
 }
 
-/** A species that draws each of the eight silhouette groups. */
-const RYSUNEK_GRUPY: Record<string, string> = {
+/** A species that draws each of the eight silhouette groups (typed by GRUPY_SYLWETEK, so none can be missing). */
+const RYSUNEK_GRUPY: Record<Capitalize<(typeof GRUPY_SYLWETEK)[number]>, string> = {
   Sępy: 'sep-plowy',
   Orły: 'orzel-przedni',
   Myszołowy: 'myszolow',
@@ -303,51 +329,71 @@ const RYSUNEK_GRUPY: Record<string, string> = {
   Rybołów: 'rybolow',
 };
 
-export type GrupaSylwetki = {
-  nazwa: string;
-  skrzydla: string;
-  ogon: string;
-  glowa: string;
-  przyklady: string;
-  /** The atlas species whose silhouette stands for the group. */
-  gatunek: string;
-};
+const czytajSync = (relPath: string) => readFileSync(path.join(CONTENT_DIR, relPath), 'utf8');
 
 /**
- * The eight silhouette groups, read from the table in B1 lesson 1 ("Osiem
- * grup"), so the home page and the lesson cannot disagree. The build fails if
- * the table stops having eight known groups in five columns.
+ * The eight silhouette groups, read once from the table in B1 lesson 1
+ * ("Osiem grup"), so the home page and the lesson cannot disagree. Parsed at
+ * import, so a table that stops having eight distinct known groups in five
+ * columns (or a lesson without a lead) fails the build, not the home page.
  */
-export async function grupySylwetek(): Promise<{ grupy: GrupaSylwetki[]; lead: string; href: string }> {
-  const plik = 'moduly/metoda/01-sylwetka.md';
-  const md = await czytajMarkdown(plik);
+const GRUPY_SYLWETEK_LEKCJI = (() => {
+  const plik = `moduly/${LEKCJA_GRUP.modul}/${LEKCJA_GRUP.lekcja}.md`;
+  const md = czytajSync(plik);
   const sekcja = md.split(/^## /m).find((s) => s.startsWith('Osiem grup')) ?? '';
   const wiersze = sekcja
     .split('\n')
     .filter((l) => l.startsWith('|'))
     .slice(2)
     .map((l) => l.split('|').slice(1, -1).map((k) => k.trim()));
-  const grupy = wiersze.map((k) => {
+  const rysunki: Partial<Record<string, string>> = RYSUNEK_GRUPY;
+  const grupy: GrupaSylwetki[] = wiersze.map((k) => {
     const nazwa = k[0]?.replace(/\*/g, '');
-    if (k.length !== 5 || !RYSUNEK_GRUPY[nazwa]) {
-      throw new Error(`${plik}: tabela „Osiem grup” ma nieznany wiersz: ${k.join(' | ')}`);
+    const gatunek = rysunki[nazwa];
+    if (k.length !== 5 || !gatunek || k.some((komorka) => !komorka)) {
+      throw new Error(`${plik}: tabela „Osiem grup” ma nieznany albo niepełny wiersz: ${k.join(' | ')}`);
     }
-    return { nazwa, skrzydla: k[1], ogon: k[2], glowa: k[3], przyklady: k[4], gatunek: RYSUNEK_GRUPY[nazwa] };
+    return { nazwa, skrzydla: k[1], ogon: k[2], glowa: k[3], przyklady: k[4], gatunek };
   });
-  if (grupy.length !== 8) throw new Error(`${plik}: tabela „Osiem grup” powinna mieć 8 wierszy, ma ${grupy.length}`);
+  const ile = GRUPY_SYLWETEK.length;
+  if (new Set(grupy.map((g) => g.nazwa)).size !== ile || grupy.length !== ile) {
+    throw new Error(`${plik}: tabela „Osiem grup” powinna mieć ${ile} różnych grup, ma ${grupy.length} wierszy`);
+  }
   const { lead } = przygotujStroneLekcji(md, plik);
-  return { grupy, lead: lead ?? '', href: '/moduly/metoda/01-sylwetka' };
+  if (!lead) throw new Error(`${plik}: lekcja nie ma akapitu wstępu, z którego korzysta strona startowa`);
+  return { grupy, lead };
+})();
+
+/** The eight silhouette groups and the lead of the lesson they come from. */
+export function grupySylwetek() {
+  return GRUPY_SYLWETEK_LEKCJI;
 }
 
-
 /**
- * A module's teaser: the quote under its README title (`> …`), written as the
- * module's hook. Inline Markdown; null if the README has none.
+ * A module README's hook: the first block after the title that is a quote
+ * (`> …`), written as the module's teaser. Returned as inline Markdown with
+ * its index among the blocks, so the overview page can drop exactly that one.
  */
-export async function zajawkaModulu(slug: string) {
-  const md = await czytajMarkdown(`moduly/${slug}/README.md`);
-  const linia = md.split('\n').find((l) => l.startsWith('> '));
-  return linia ? linia.slice(2).trim() : null;
+function hakModulu(md: string, plik: string) {
+  const bloki = md.replace(/^#\s.*\n+/, '').split(/\n\s*\n/);
+  const indeks = bloki.findIndex((b) => b.startsWith('> '));
+  if (indeks < 0) throw new Error(`${plik}: brak zajawki („> …” pod tytułem), z której korzystają start i plan kursu`);
+  const linie = bloki[indeks].split('\n');
+  if (!linie.every((l) => l.startsWith('> '))) throw new Error(`${plik}: zajawka musi być jednym cytatem bez przerw`);
+  return { bloki, indeks, zajawka: linie.map((l) => l.slice(2).trim()).join(' ') };
+}
+
+/** Every ready module's hook, read once, when this module is first imported. */
+const ZAJAWKI = new Map(
+  gotoweModuly.map((m) => {
+    const plik = `moduly/${m.slug}/README.md`;
+    return [m.slug, hakModulu(czytajSync(plik), plik).zajawka];
+  }),
+);
+
+/** A module's teaser, as inline Markdown (every ready module has one; the build checks). */
+export function zajawkaModulu(slug: string) {
+  return ZAJAWKI.get(slug) ?? null;
 }
 
 /** The course in numbers, for the about page: everything counted from the content itself. */
@@ -372,6 +418,15 @@ export async function statystykiKursu() {
   };
 }
 
+/** HTML entities in a tag attribute (`&amp;`, `&#x27;`, `&quot;`…) as the characters they stand for. */
+function odkoduj(tekst: string) {
+  const nazwane: Record<string, string> = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: '\u00a0' };
+  return tekst.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (calosc, kod: string) => {
+    if (kod[0] === '#') return String.fromCodePoint(kod[1].toLowerCase() === 'x' ? parseInt(kod.slice(2), 16) : Number(kod.slice(1)));
+    return nazwane[kod.toLowerCase()] ?? calosc;
+  });
+}
+
 /**
  * Everyone whose photos the course shows, from the atlas and from lesson
  * tags: once each, in Polish alphabetical order, without the Flickr-style
@@ -384,7 +439,7 @@ export async function autorzyZdjec() {
   for (const m of gotoweModuly) {
     for (const l of m.lekcje) {
       const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);
-      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(autor.replace(/&amp;/g, '&'));
+      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(odkoduj(autor));
     }
   }
   const nieznani = /^(autor nieznany|nieznany autor|own work)$/i;
@@ -407,27 +462,28 @@ export async function ideaKursu() {
 }
 
 /**
- * Each module's opening scene: a bird that stands for the module, in the
- * photo that suits it (A4 is about pairs: two white-tailed eagles; B5 is
- * owls: the eagle owl; A1 opens with the falcon, which is closer to parrots
- * than to hawks).
+ * Each module's opening scene: a bird that stands for the module, in a photo
+ * large enough to fill most of the screen sharply. A1 opens with the falcon
+ * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
+ * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
+ * imperial eagle over the dehesa, B5 with an eagle owl.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
   'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', zdjecie: 'siedzacy' },
-  anatomia: { gatunek: 'kobuz', zdjecie: 'siedzacy' },
+  anatomia: { gatunek: 'orzel-przedni', zdjecie: 'siedzacy' },
   'polowanie-i-ekologia': { gatunek: 'pustulka', zdjecie: 'lot' },
   rozrod: { gatunek: 'bielik', zdjecie: 'siedzacy' },
   wedrowki: { gatunek: 'sep-plowy', zdjecie: 'lot' },
-  ochrona: { gatunek: 'orlosep', zdjecie: 'siedzacy' },
-  'ludzie-i-drapiezniki': { gatunek: 'jastrzab', zdjecie: 'siedzacy' },
+  ochrona: { gatunek: 'orlosep', zdjecie: 'lot' },
+  'ludzie-i-drapiezniki': { gatunek: 'plomykowka', zdjecie: 'lot' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },
-  'poludnie-hiszpanii': { gatunek: 'orzel-iberyjski', zdjecie: 'siedzacy' },
-  sowy: { gatunek: 'puchacz', zdjecie: 'siedzacy' },
+  'poludnie-hiszpanii': { gatunek: 'orzel-iberyjski', zdjecie: 'lot' },
+  sowy: { gatunek: 'puchacz', zdjecie: 'lot' },
 };
 
-/** The photo and species that open a module, or null when it has none. */
+/** The photo and species that open a module (every ready module has one; the build checks). */
 export function otwarcieModulu(slug: string) {
   const o = OTWARCIA_MODULOW[slug];
   const g = o && znajdzGatunek(o.gatunek);
@@ -437,13 +493,12 @@ export function otwarcieModulu(slug: string) {
 
 /**
  * A module's README for its overview page: the title, the path line and the
- * hook (`> …`) are shown by the opening scene, so they are taken out of the
- * text; the rest (scope, goals, plan) is returned as Markdown.
+ * hook are shown by the opening scene, so they are taken out of the text; the
+ * rest (scope, goals, plan, any other quotes) is returned as Markdown.
  */
-export function przygotujOpisModulu(md: string) {
-  const bloki = md.replace(/^#\s.*\n+/, '').split(/\n\s*\n/);
-  const zajawka = bloki.find((b) => b.startsWith('> '))?.slice(2).trim() ?? null;
-  const reszta = bloki.filter((b) => !b.startsWith('> ') && !/^Ścieżka [AB]:/.test(b.trim()));
+export function przygotujOpisModulu(md: string, plik: string) {
+  const { bloki, indeks, zajawka } = hakModulu(md, plik);
+  const reszta = bloki.filter((b, i) => i !== indeks && !/^Ścieżka [AB]:/.test(b.trim()));
   return { zajawka, md: reszta.join('\n\n') };
 }
 
@@ -466,3 +521,97 @@ export async function sylabusModulu(slug: string) {
     }),
   );
 }
+
+/**
+ * The cross-references between the content, the catalogues and the code,
+ * checked once at import, so a typo fails the build instead of quietly
+ * removing a drawing, a card, a crop, a link or a module's opening: species
+ * fields and look-alikes, silhouettes and flight styles, photo focus and
+ * sizes, module openings, the modules and lesson the code links to by name,
+ * the curiosities' lessons and species, and the species drawn by name
+ * (rysunki.ts). All problems are reported together. (The cue keys, the
+ * eight-groups table and the module hooks are checked where they are read,
+ * above, and stop at the first problem. Lesson binomials are not checked: an
+ * unknown one just gets no plate.)
+ */
+function sprawdzSpojnosc() {
+  const bledy: string[] = [];
+  const ID = /^[a-z]+(-[a-z]+)*$/;
+  const idGatunkow = new Set(gatunki.map((g) => g.id));
+  const regiony = new Set<string>(REGIONY.map((r) => r.value));
+  const para = (v: unknown, ok: (n: number) => boolean) =>
+    Array.isArray(v) && v.length === 2 && v.every((n) => typeof n === 'number' && ok(n));
+  for (const g of gatunki) {
+    if (!ID.test(g.id)) bledy.push(`gatunki.json: id „${g.id}” musi być małymi literami z łącznikami`);
+    for (const pole of ['pl', 'lat', 'en', 'es', 'grupa'] as const) {
+      if (!g[pole]?.trim()) bledy.push(`gatunki.json: ${g.id}: puste pole ${pole}`);
+    }
+    if (/\s/.test(g.grupa)) bledy.push(`gatunki.json: ${g.id}: grupa „${g.grupa}” ma być jednym słowem (z niej powstaje id nagłówka)`);
+    if (!g.regiony?.length || !g.regiony.every((r) => regiony.has(r))) {
+      bledy.push(`gatunki.json: ${g.id}: regiony ${JSON.stringify(g.regiony)} mają być niepustą listą z ${[...regiony].join(', ')}`);
+    }
+    if (!g.status?.every((s) => s in STATUS_LABEL)) bledy.push(`gatunki.json: ${g.id}: nieznany status w ${JSON.stringify(g.status)}`);
+    if (!para(g.rozpietosc_cm, (n) => n > 0) || g.rozpietosc_cm[0] > g.rozpietosc_cm[1]) {
+      bledy.push(`gatunki.json: ${g.id}: rozpietosc_cm ma być [od, do] w centymetrach`);
+    }
+    for (const m of g.mylona_z) {
+      if (!idGatunkow.has(m) || m === g.id) bledy.push(`gatunki.json: ${g.id}: mylona_z wskazuje „${m}”, którego nie ma w atlasie`);
+    }
+    if (!SYLWETKI[g.id]) bledy.push(`sylwetki.ts: brak sylwetki gatunku ${g.id}`);
+    if ((g.aktywnosc === 'dzienny') !== Boolean(STYL_LOTU[g.id])) {
+      bledy.push(`sylwetki.ts: STYL_LOTU ma mieć wpis dla ${g.id} wtedy i tylko wtedy, gdy to ptak dzienny`);
+    }
+    if (g.aktywnosc === 'dzienny' && !(GRUPY_SYLWETEK as readonly string[]).includes(g.sylwetka.grupa.split(' ')[0])) {
+      bledy.push(`gatunki.json: ${g.id}: sylwetka.grupa „${g.sylwetka.grupa}” nie zaczyna się od żadnej z ośmiu grup`);
+    }
+  }
+  const katalogi: [string, object][] = [
+    ['SYLWETKI', SYLWETKI],
+    ['STYL_LOTU', STYL_LOTU],
+    ['POZY', POZY],
+    ['zdjecia.json', zdjecia],
+  ];
+  for (const [skad, mapa] of katalogi) {
+    for (const id of Object.keys(mapa)) if (!idGatunkow.has(id)) bledy.push(`${skad}: „${id}” nie jest gatunkiem z atlasu`);
+  }
+  for (const [id, z] of Object.entries(zdjecia)) {
+    for (const rodzaj of ['lot', 'siedzacy'] as const) {
+      const p = z?.[rodzaj];
+      if (!p) continue;
+      if (!para(p.fokus, (n) => n >= 0 && n <= 100)) bledy.push(`zdjecia.json: ${id}/${rodzaj}: fokus musi być [x, y] w procentach`);
+      if (p.oryginal !== undefined && !para(p.oryginal, (n) => n > 0)) {
+        bledy.push(`zdjecia.json: ${id}/${rodzaj}: oryginal musi być [szerokość, wysokość]`);
+      }
+    }
+  }
+  for (const m of moduly) {
+    if (m.gotowy && (!m.slug || !m.lekcje?.length)) bledy.push(`moduly.json: ${m.id} jest gotowy, ale nie ma slugu albo lekcji`);
+  }
+  for (const m of gotoweModuly) {
+    if (!otwarcieModulu(m.slug)) bledy.push(`content.ts: moduł ${m.slug} nie ma otwarcia (OTWARCIA_MODULOW) albo jego zdjęcia`);
+  }
+  for (const [grupa, id] of Object.entries(RYSUNEK_GRUPY)) {
+    if (!SYLWETKI[id]) bledy.push(`content.ts: grupę „${grupa}” rysuje ${id}, który nie ma sylwetki`);
+  }
+  for (const id of GATUNKI_RYSUNKOW) {
+    if (!idGatunkow.has(id) || !SYLWETKI[id]) bledy.push(`rysunki.ts: ${id} nie jest gatunkiem z atlasu z sylwetką`);
+  }
+  const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
+  for (const slug of [MODUL_SOW, ...Object.values(MODUL_REGIONU), LEKCJA_GRUP.modul]) {
+    if (!gotowe.has(slug)) bledy.push(`content.ts: kod linkuje do modułu „${slug}”, którego nie ma wśród gotowych`);
+  }
+  if (!gotowe.get(LEKCJA_GRUP.modul)?.lekcje.some((l) => l.slug === LEKCJA_GRUP.lekcja)) {
+    bledy.push(`content.ts: lekcji ${LEKCJA_GRUP.modul}/${LEKCJA_GRUP.lekcja} nie ma w moduly.json`);
+  }
+  for (const c of ciekawostki) {
+    const m = gotowe.get(c.modul);
+    if (!m) bledy.push(`ciekawostki.json: ${c.id}: moduł „${c.modul}” nie jest gotowym modułem`);
+    else if (c.lekcja !== null && !m.lekcje.some((l) => l.slug === c.lekcja)) {
+      bledy.push(`ciekawostki.json: ${c.id}: lekcji „${c.lekcja}” nie ma w module ${c.modul}`);
+    }
+    for (const id of c.gatunki) if (!idGatunkow.has(id)) bledy.push(`ciekawostki.json: ${c.id}: gatunku „${id}” nie ma w atlasie`);
+  }
+  if (bledy.length) throw new Error(`Niespójna treść kursu:\n- ${bledy.join('\n- ')}`);
+}
+
+sprawdzSpojnosc();

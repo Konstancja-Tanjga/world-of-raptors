@@ -13,8 +13,13 @@ const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }
   { href: '/checklista', etykieta: 'Checklista', aktywny: (p) => p === '/checklista' },
 ];
 
-/** Pages that open on a dark scene: the bar starts light-on-dark there, before the observer has run. */
-const zaczynaSieScena = (p: string) => p === '/' || /^\/gatunki\/[^/]+$/.test(p);
+/**
+ * Pages whose first section is a dark scene pulled up under the bar (a
+ * negative top margin of `--wor-nav-height`: start.css, atlas.css,
+ * o-projekcie.css). The bar starts light-on-dark there, before the observer
+ * has run; keep this list in step with those stylesheets.
+ */
+const zaczynaSieScena = (p: string) => p === '/' || p === '/o-projekcie' || /^\/gatunki\/[^/]+$/.test(p);
 
 /**
  * The global navigation: a translucent bar like a product site's. It turns
@@ -41,31 +46,60 @@ export function Nawigacja({
   const przycisk = useRef<HTMLButtonElement>(null);
   const arkusz = useRef<HTMLDivElement>(null);
   const idArkusza = useId();
-  const dokad = useKontynuuj(moduly);
-  const naMiejscu = dokad?.href === pathname;
+  const kontynuacja = useKontynuuj(moduly);
+  // No button while progress loads, when everything is done, or on the lesson it would lead to.
+  const dokad = kontynuacja.stan === 'lekcja' && kontynuacja.href !== pathname ? kontynuacja : null;
 
   useEffect(() => {
-    const sceny = document.querySelectorAll('[data-scena]');
-    if (sceny.length === 0) {
-      const t = requestAnimationFrame(() => setScena({ dla: pathname, nad: false }));
-      return () => cancelAnimationFrame(t);
-    }
-    const pasmo = document.querySelector('.nav')?.getBoundingClientRect().height ?? 52;
     const pod = new Set<Element>();
-    const obserwator = new IntersectionObserver(
-      (wpisy) => {
-        for (const w of wpisy) {
-          // A scene that only touches the bar's lower edge is not under it.
-          if (w.isIntersecting && w.intersectionRect.height > 1) pod.add(w.target);
-          else pod.delete(w.target);
-        }
-        setScena({ dla: pathname, nad: pod.size > 0 });
-      },
-      // Only the strip under the bar counts.
-      { rootMargin: `0px 0px ${-(window.innerHeight - pasmo)}px 0px` },
-    );
-    sceny.forEach((s) => obserwator.observe(s));
-    return () => obserwator.disconnect();
+    let obserwator: IntersectionObserver | null = null;
+    // A scene is under the bar when it covers the bar's middle line: a 2px
+    // strip there, so a scene that only touches the bar's top or bottom edge
+    // does not count. The strip is measured in pixels of the window and the
+    // scenes are looked up afresh, so both are rebuilt when the window
+    // changes size or scenes come and go without a new address (a retry
+    // after an error).
+    const obserwuj = () => {
+      obserwator?.disconnect();
+      pod.clear();
+      const sceny = document.querySelectorAll('[data-scena]');
+      if (sceny.length === 0) {
+        setScena({ dla: pathname, nad: false });
+        return;
+      }
+      const pasmo = document.querySelector('.nav')?.getBoundingClientRect().height ?? 52;
+      const srodek = Math.round(pasmo / 2);
+      obserwator = new IntersectionObserver(
+        (wpisy) => {
+          for (const w of wpisy) {
+            if (w.isIntersecting) pod.add(w.target);
+            else pod.delete(w.target);
+          }
+          setScena({ dla: pathname, nad: pod.size > 0 });
+        },
+        { rootMargin: `${-(srodek - 1)}px 0px ${-(window.innerHeight - srodek - 1)}px 0px` },
+      );
+      sceny.forEach((s) => obserwator?.observe(s));
+    };
+    let klatka = requestAnimationFrame(obserwuj);
+    const odswiez = () => {
+      cancelAnimationFrame(klatka);
+      klatka = requestAnimationFrame(obserwuj);
+    };
+    const zmianaScen = (rekordy: MutationRecord[]) => {
+      const scena = (n: Node) => n instanceof Element && (n.matches('[data-scena]') || n.querySelector('[data-scena]') !== null);
+      if (rekordy.some((r) => [...r.addedNodes, ...r.removedNodes].some(scena))) odswiez();
+    };
+    const zmiany = new MutationObserver(zmianaScen);
+    const tresc = document.getElementById('main-content');
+    if (tresc) zmiany.observe(tresc, { childList: true, subtree: true });
+    window.addEventListener('resize', odswiez);
+    return () => {
+      window.removeEventListener('resize', odswiez);
+      zmiany.disconnect();
+      cancelAnimationFrame(klatka);
+      obserwator?.disconnect();
+    };
   }, [pathname]);
 
   useEffect(() => {
@@ -78,10 +112,18 @@ export function Nawigacja({
         przycisk.current?.focus();
       }
     };
+    // The menu exists only on narrow screens; a phone turned to landscape
+    // hides its button, so it closes rather than keep the page locked.
+    const waski = window.matchMedia('(max-width: 760px)');
+    const onZmiana = () => {
+      if (!waski.matches) setMenuNa(null);
+    };
     window.addEventListener('keydown', onKey);
+    waski.addEventListener('change', onZmiana);
     return () => {
       delete document.documentElement.dataset.menu;
       window.removeEventListener('keydown', onKey);
+      waski.removeEventListener('change', onZmiana);
     };
   }, [menu]);
 
@@ -113,7 +155,7 @@ export function Nawigacja({
           </ul>
         </nav>
         <div className="nav__akcje">
-          {dokad && !naMiejscu && (
+          {dokad && (
             <Link href={dokad.href} className="nav__dalej">
               {dokad.etykieta}
               <span className="visually-hidden">: {dokad.opis}</span>
@@ -157,7 +199,7 @@ export function Nawigacja({
             </li>
           </ul>
         </nav>
-        {dokad && !naMiejscu && (
+        {dokad && (
           <Link href={dokad.href} className="nav__arkusz-dalej">
             <span className="nav__arkusz-etykieta">{dokad.etykieta}</span>
             <span>{dokad.opis}</span>

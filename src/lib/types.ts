@@ -2,12 +2,18 @@ export type Region = 'gibraltar' | 'poludnie-hiszpanii' | 'polska';
 export type Aktywnosc = 'dzienny' | 'nocny';
 export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
 
-/** What to look at in a diurnal raptor, as taught in B1 (lessons 1–2). */
-export type SylwetkaDzienna = Record<'grupa' | 'skrzydla' | 'palce' | 'ogon' | 'glowa' | 'lot', string>;
-/** What to look and listen for in an owl, as taught in B5 (lesson 2). */
-export type SylwetkaNocna = Record<'glos' | 'uszy' | 'oczy' | 'glowa' | 'sylwetka', string>;
+/** The eight silhouette groups of B1 lesson 1, in the order it teaches them (lower case, as in `sylwetka.grupa`). */
+export const GRUPY_SYLWETEK = ['sępy', 'orły', 'myszołowy', 'kanie', 'błotniaki', 'krogulce', 'sokoły', 'rybołów'] as const;
 
-export type Gatunek = {
+/** What to look at in a diurnal raptor, in the order B1 teaches it (lessons 1–2). */
+export const KLUCZE_DZIENNE = ['grupa', 'skrzydla', 'palce', 'ogon', 'glowa', 'lot'] as const;
+export type SylwetkaDzienna = Record<(typeof KLUCZE_DZIENNE)[number], string>;
+/** What to listen and look for in an owl, in the order B5 teaches it (lesson 2). */
+export const KLUCZE_NOCNE = ['glos', 'uszy', 'sylwetka', 'glowa', 'oczy'] as const;
+export type SylwetkaNocna = Record<(typeof KLUCZE_NOCNE)[number], string>;
+
+/** Everything about a species except its activity and the cues that go with it. */
+export type DaneGatunku = {
   id: string;
   pl: string;
   lat: string;
@@ -20,11 +26,20 @@ export type Gatunek = {
   cechy: string[];
   mylona_z: string[];
   gdzie: string;
-  aktywnosc: Aktywnosc;
   regiony: Region[];
-  /** Identification cues: diurnal keys for `dzienny`, owl keys for `nocny`. */
-  sylwetka: SylwetkaDzienna | SylwetkaNocna;
 };
+
+/**
+ * Activity and the identification cues that go with it: diurnal keys for
+ * `dzienny`, owl keys for `nocny`. content.ts checks the keys at build, so
+ * checking `aktywnosc` narrows `sylwetka` without a cast.
+ */
+export type SylwetkaGatunku =
+  | { aktywnosc: 'dzienny'; sylwetka: SylwetkaDzienna }
+  | { aktywnosc: 'nocny'; sylwetka: SylwetkaNocna };
+
+export type Gatunek = DaneGatunku & SylwetkaGatunku;
+export type GatunekDzienny = Extract<Gatunek, { aktywnosc: 'dzienny' }>;
 
 export type Lekcja = { slug: string; tytul: string };
 
@@ -64,13 +79,13 @@ export type Zdjecie = {
   strona: string;
   plik: string;
   /** The original's [width, height] on Commons, so larger thumbnails are only asked for when they exist. */
-  oryginal?: number[];
+  oryginal?: [number, number];
   /**
    * [x, y] in percent: the bird's head (perched) or the middle of the bird
    * (in flight). Used as `object-position`, which keeps that point inside any
    * crop, so a 4:3 tile or a wide hero never cuts the head off.
    */
-  fokus?: number[];
+  fokus?: [number, number];
 };
 
 export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };
@@ -93,30 +108,51 @@ export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: nu
 /** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
 export type Quiz = { prog: number; pytania: PytanieQuizu[] };
 
+/** The directions of the name cards: from the Polish name and to it. */
+export const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
+export type RodzajZdjecia = keyof ZdjeciaGatunku;
 /**
  * What a flashcard asks. Photo cards (`lot`, `siedzacy`): name the bird in a
  * reference photo. `sylwetka`: name it from its silhouette in flight (diurnal
- * species; owls are told apart by voice, B5). Name cards: give the English or
- * Spanish name for the Polish one, or the Polish name for the English or
- * Spanish one.
+ * species). Name cards: give the English or Spanish name for the Polish one,
+ * or the Polish name for the English or Spanish one.
  */
-export type RodzajFiszki = 'lot' | 'siedzacy' | 'sylwetka' | 'pl-en' | 'pl-es' | 'en-pl' | 'es-pl';
+export type RodzajFiszki = RodzajZdjecia | 'sylwetka' | (typeof KIERUNKI_NAZW)[number];
 
-/** A flashcard. `id` is `<species id>/<rodzaj>`, the key of its schedule in the browser. */
-export type Fiszka = {
-  id: string;
-  rodzaj: RodzajFiszki;
-  /** The species' id in `gatunki`. */
-  gatunek: string;
-  /** The photo a photo card asks about; on other cards a photo for the answer, if there is one. */
-  zdjecie: Zdjecie | null;
-};
+/** `<species id>/<rodzaj>`: the key of the card's schedule in localStorage and in backups. Never change it for an existing kind. */
+export type IdFiszki = `${string}/${RodzajFiszki}`;
+export const idFiszki = (gatunek: string, rodzaj: RodzajFiszki): IdFiszki => `${gatunek}/${rodzaj}`;
+/** The species a card belongs to (species ids contain no `/`; content.ts checks). */
+export const gatunekFiszki = (id: string) => id.split('/')[0];
+
+/** A flashcard: a photo card always has its photo; name cards may carry one to show with the answer. */
+export type Fiszka =
+  | { id: IdFiszki; rodzaj: RodzajZdjecia; gatunek: string; /** The photo the card asks about. */ zdjecie: Zdjecie }
+  | {
+      id: IdFiszki;
+      rodzaj: Exclude<RodzajFiszki, RodzajZdjecia>;
+      gatunek: string;
+      /** A photo shown with the answer, if any. */
+      zdjecie: Zdjecie | null;
+    };
 
 /** What the answer side shows about a species. */
-export type GatunekFiszki = Pick<
-  Gatunek,
-  'id' | 'pl' | 'lat' | 'en' | 'es' | 'grupa' | 'cechy' | 'regiony' | 'aktywnosc' | 'sylwetka'
-> & {
-  /** Look-alikes from `mylona_z`, with their names. */
-  podobne: { id: string; pl: string }[];
+export type GatunekFiszki = Pick<DaneGatunku, 'id' | 'pl' | 'lat' | 'en' | 'es' | 'grupa' | 'cechy' | 'regiony'> &
+  SylwetkaGatunku & {
+    /** Look-alikes from `mylona_z`, with their names. */
+    podobne: { id: string; pl: string }[];
+  };
+
+/**
+ * One of the eight silhouette groups, as the table in B1 lesson 1 gives it.
+ * The cells are inline Markdown (bold only).
+ */
+export type GrupaSylwetki = {
+  nazwa: string;
+  skrzydla: string;
+  ogon: string;
+  glowa: string;
+  przyklady: string;
+  /** The atlas species whose silhouette stands for the group. */
+  gatunek: string;
 };

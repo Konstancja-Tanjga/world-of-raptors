@@ -1,8 +1,11 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 import { gotoweModuly, moduly, sciezki, zajawkaModulu } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 import { MarkdownInline } from '../Markdown';
 import { PostepModulu } from '../PostepModulu';
+import { PRZEWODNICY_SCIEZEK } from '@/lib/rysunki';
+import { Sylwetka } from '../Sylwetka';
 
 const OPISY: Record<'a' | 'b', string> = {
   a: 'Jak drapieżniki widzą, polują, wychowują młode i wędrują, i co im dziś zagraża.',
@@ -14,8 +17,7 @@ const OPISY: Record<'a' | 'b', string> = {
  * progress. `naglowek={false}` leaves out the section heading, for a page
  * whose own title already says what this is.
  */
-export async function Kurs({ naglowek = true }: { naglowek?: boolean }) {
-  const zajawki = new Map(await Promise.all(gotoweModuly.map(async (m) => [m.slug, await zajawkaModulu(m.slug)] as const)));
+export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
   const ileModulow = gotoweModuly.length;
 
   return (
@@ -39,17 +41,21 @@ export async function Kurs({ naglowek = true }: { naglowek?: boolean }) {
       {sciezki.map((s) => (
         <div key={s.id} className="sciezka">
           <div className="sciezka__naglowek">
+            <div className="sciezka__trasa" aria-hidden="true">
+              <Sylwetka id={PRZEWODNICY_SCIEZEK[s.id]} klasa="sciezka__ptak" dokladnosc={0.3} />
+            </div>
             <h3 className="sciezka__tytul">{s.tytul}</h3>
             <p className="sciezka__opis">{OPISY[s.id]}</p>
           </div>
           <ol className="moduly" aria-label={s.tytul}>
             {moduly
               .filter((m) => m.sciezka === s.id)
-              .map((m) => {
+              .map((m, i) => {
                 const gotowy = gotoweModuly.find((g) => g.id === m.id);
-                const zajawka = gotowy && zajawki.get(gotowy.slug);
+                const zajawka = gotowy && zajawkaModulu(gotowy.slug);
                 return (
-                  <li key={m.id}>
+                  // `--i` staggers the cards' landing, in course order.
+                  <li key={m.id} style={{ '--i': i } as CSSProperties}>
                     {gotowy ? (
                       <Link href={`/moduly/${gotowy.slug}`} className="modul">
                         <span className="modul__id">{m.id}</span>

@@ -122,7 +122,7 @@ def tag(title, podpis, alt):
 
 def sizes(path):
     """Records each atlas photo's original size, so the app can ask Commons for
-    sharper thumbnails (1280, 1920 px) without requesting more than exists."""
+    sharper thumbnails (1280, 1920, 3840 px) without requesting more than exists."""
     with open(path, encoding='utf-8') as fh:
         data = json.load(fh)
     # Own photos (served from public/zdjecia/) have no Commons file to ask about.
@@ -139,7 +139,7 @@ def sizes(path):
     for p in photos:
         p['oryginal'] = list(found[p['plik']])
     text = json.dumps(data, ensure_ascii=False, indent=2)
-    # Keep "oryginal": [w, h] on one line, like the rest of the file's scalars.
+    # Keep two-number arrays ("oryginal": [w, h], "fokus": [x, y]) on one line, like the file's scalars.
     text = re.sub(r'\[\s+(\d+),\s+(\d+)\s+\]', r'[\1, \2]', text)
     with open(path, 'w', encoding='utf-8') as fh:
         fh.write(text + '\n')

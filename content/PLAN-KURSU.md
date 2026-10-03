@@ -33,7 +33,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | B2 | **Ptaki drapieżne Polski** | Bielik, orlik krzykliwy, myszołów, trzmielojad, pustułka, sokół wędrowny, błotniaki, krogulec vs jastrząb; gdzie i kiedy obserwować; kamery na gniazdach | [gotowy](moduly/polska/README.md) |
 | B3 | **Cieśnina Gibraltarska** | Przelot, wiatry Levante/Poniente, ok. 25 gatunków, trudne pary, punkty obserwacyjne, projekt „Mój wyjazd do Tarify” | [gotowy](moduly/gibraltar/README.md) |
 | B4 | **Ptaki drapieżne południa Hiszpanii** | Siedliska Andaluzji, trzy duże orły, orłosęp, sęp kasztanowaty, jastrząb vs krogulec, najlepsze miejsca, kalendarz roku, projekt trasy | [gotowy](moduly/poludnie-hiszpanii/README.md) |
-| B5 | **Sowy, drapieżniki nocne** | Ten sam układ co moduły o ptakach dziennych: biologia sów, rozpoznawanie po głosie, 11 gatunków Polski i Hiszpanii, trudne pary, kalendarz głosów, etyka | [gotowy](moduly/sowy/README.md) |
+| B5 | **Sowy, drapieżniki nocne** | Ten sam układ co moduły o ptakach dziennych: biologia sów, rozpoznawanie po głosie, 10 gatunków Polski i Hiszpanii, trudne pary, kalendarz głosów, etyka | [gotowy](moduly/sowy/README.md) |
 
 Moduły B2–B5 mają wspólne gatunki. Wszystkie gatunki są w jednym [atlasie](gatunki.json), a każdy gatunek ma przypisane regiony (Polska, cieśnina, południe Hiszpanii) i aktywność (dzienna, nocna).
 

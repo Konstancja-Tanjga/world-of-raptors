@@ -1,8 +1,11 @@
 /*
- * App-level styles. Values come from tokens only: Big Hat's semantic scale
- * for components and spacing, and this product's `--wor-*` layer (motyw.css)
- * for display type, the scenes and motion. Literals: 1px borders and the
- * reading measure, as before.
+ * App-level styles. Colour, type, spacing, radii and motion timing come from
+ * tokens: Big Hat's semantic scale, and this product's `--wor-*` layer
+ * (motyw.css) for display type, leading, the scenes and motion. Literals are
+ * allowed for 1px borders, focus outlines, reading measures, breakpoints,
+ * backdrops stacked at z-index −1/−2 inside an isolated scene, and the
+ * choreography of a single scene (keyframe offsets, one-off durations,
+ * illustration sizes).
  */
 
 html {
@@ -76,6 +79,14 @@ li {
   background: var(--wor-scena-szklo);
   border-bottom-color: var(--wor-scena-linia);
 }
+/* With the menu open the bar is solid paper, like the sheet under it. It also
+   drops the blur: a backdrop filter makes the bar the containing block of the
+   fixed sheet, which would shrink the sheet to the bar's height. */
+.nav[data-menu] {
+  background: var(--wor-tlo);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 .nav__pasek {
   box-sizing: border-box;
   display: flex;
@@ -94,7 +105,7 @@ li {
   text-decoration: none;
   font-family: var(--wor-font-display);
   font-size: var(--bh-text-size-heading);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   letter-spacing: var(--wor-tracking-display);
   white-space: nowrap;
 }
@@ -224,7 +235,7 @@ li {
   color: inherit;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   text-decoration: none;
   transition:
     opacity var(--wor-dur-expressive) var(--wor-ease-out),
@@ -232,6 +243,9 @@ li {
 }
 .nav__arkusz-link[aria-current] {
   color: var(--wor-akcent);
+  text-decoration: underline;
+  text-decoration-thickness: var(--bh-gap-hairline);
+  text-underline-offset: 0.25em;
 }
 .nav__arkusz li:nth-child(2) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 1); }
 .nav__arkusz li:nth-child(3) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 2); }
@@ -289,6 +303,8 @@ li {
   view-transition-name: pasek-modulu;
 }
 .pasek__wnetrze {
+  /* Positioned, so the visually hidden lesson titles inside are clipped by this scroller instead of widening the page. */
+  position: relative;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -316,7 +332,7 @@ li {
 .pasek__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--bh-text-size-heading);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .pasek__modul[aria-current] .pasek__tytul {
   text-decoration: underline;
@@ -454,7 +470,7 @@ li {
   color: var(--bh-text-primary);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .stopka__autorzy {
   color: var(--bh-text-secondary);
@@ -492,12 +508,6 @@ li {
 
 .page--reading {
   max-width: 56rem;
-}
-
-/* Article sizes itself by its own width and needs 50rem for the margin
-   beside the text; the page padding would leave it just short of that. */
-.page--article {
-  padding-inline: var(--wor-gutter);
 }
 
 /* A control that cannot wrap scrolls inside its own box instead of widening the page. */
@@ -622,7 +632,7 @@ li {
   border-top: 1px solid var(--wor-linia);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .checklist__licznik {
@@ -721,7 +731,7 @@ li {
 .prose h2,
 .prose h3 {
   font-family: var(--wor-font-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   letter-spacing: var(--wor-tracking-display);
   font-variant-numeric: lining-nums;
 }
@@ -755,7 +765,7 @@ li {
 .prose h3 em {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
-  font-weight: 400;
+  font-weight: var(--bh-text-weight-body);
 }
 .prose p,
 .prose ul,
@@ -777,7 +787,7 @@ li {
   font-weight: var(--bh-text-weight-heading);
 }
 .prose strong {
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .prose a {
   color: var(--bh-text-link);
@@ -939,7 +949,7 @@ li {
   padding-block: 0.05em;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -952,11 +962,11 @@ li {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 .lekcja__lead strong {
   color: var(--bh-text-primary);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 
 /* The way on: a small dusk scene, the whole card one link. */
@@ -999,7 +1009,7 @@ li {
 .dalej__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .dalej__akcja {
@@ -1090,7 +1100,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   padding-block: 0.06em;
@@ -1100,7 +1110,7 @@ li {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 
 /* Flashcards */
@@ -1181,6 +1191,27 @@ li {
   overflow: visible;
   fill: var(--wor-sylwetka);
 }
+.scena-sylwetki__pauza {
+  position: absolute;
+  right: var(--bh-gap-loose);
+  bottom: var(--bh-gap-loose);
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-padding-inline);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-panel);
+  color: var(--wor-scena-tekst);
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  cursor: pointer;
+}
+.scena-sylwetki__pauza:hover {
+  border-color: var(--wor-scena-tekst);
+}
+.scena-sylwetki__pauza:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
 .fiszka__scena--nazwa {
   container-type: inline-size;
   align-content: center;
@@ -1202,7 +1233,7 @@ li {
   /* Sized by the card, so "Sęp kasztanowaty" fits as well as "Kobuz". */
   font-size: clamp(2rem, 11cqi, 5rem);
   text-wrap: balance;
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -1228,7 +1259,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .fiszka__akcje {
@@ -1264,7 +1295,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -1279,7 +1310,7 @@ li {
   padding-left: var(--bh-padding-section);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .fiszka__cechy-sylwetki {
   display: grid;
@@ -1301,9 +1332,14 @@ li {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.4;
+  line-height: var(--wor-leading-compact);
 }
 .fiszka__ilustracja {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.fiszka__ilustracja-obrazy {
   display: flex;
   align-items: center;
   gap: var(--bh-padding-section);
@@ -1458,7 +1494,7 @@ li {
 }
 
 /* ButtonLink (local): the system's button look on an anchor. Anchors are
-   underlined by default and long lesson titles must wrap on phones. */
+   underlined by default, and a longer label must wrap on phones. */
 .button-link {
   text-decoration: none;
   white-space: normal;
@@ -1570,7 +1606,7 @@ li {
   max-width: 34em;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-subtitle);
-  line-height: 1.35;
+  line-height: var(--wor-leading-snug);
   transition:
     opacity var(--wor-dur-expressive) var(--wor-ease-out),
     translate var(--wor-dur-expressive) var(--wor-ease-out);
@@ -1645,7 +1681,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
   letter-spacing: var(--wor-tracking-display);
 }
@@ -1654,7 +1690,7 @@ li {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 
 /* Calls to action: a link that looks like a big pill (see ButtonLink and DS-GAPS.md). */
@@ -1746,7 +1782,7 @@ li {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.4;
+  line-height: var(--wor-leading-compact);
 }
 
 /* Wingspan to scale */
@@ -1883,17 +1919,32 @@ li {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--bh-padding-section);
 }
+/* The closer bird's column comes forward: full strength and a bar in the
+   accent colour. The farther one dims only as far as AA contrast allows. */
 .suwak-morfu__strona {
+  position: relative;
   display: grid;
   align-content: start;
   gap: var(--bh-gap-snug);
-  transition: opacity var(--wor-dur-quick) linear;
+  padding-top: var(--bh-gap-normal);
+  opacity: calc(0.8 + 0.2 * var(--blizej, 1));
+}
+.suwak-morfu__strona::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-akcent);
+  opacity: var(--blizej, 1);
 }
 .suwak-morfu__nazwa {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .suwak-morfu__strona dl {
   display: grid;
@@ -1906,13 +1957,12 @@ li {
 }
 .suwak-morfu__strona dt {
   font-size: var(--bh-text-size-caption);
-  opacity: 0.85;
 }
 .suwak-morfu__strona dd {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.35;
+  line-height: var(--wor-leading-snug);
 }
 
 /* ---------- The course: two paths of module cards (home and plan) ---------- */
@@ -1928,6 +1978,7 @@ li {
   margin-top: var(--wor-space-block);
 }
 .sciezka__naglowek {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -1937,11 +1988,15 @@ li {
   padding-top: var(--bh-gap-loose);
   border-top: 1px solid var(--wor-linia);
 }
+/* The trail and the bird exist only for the scroll animation below. */
+.sciezka__trasa {
+  display: none;
+}
 .sciezka__tytul {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .sciezka__opis {
   margin: 0;
@@ -1987,21 +2042,21 @@ a.modul:focus-visible {
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-numer);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums;
 }
 .modul__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-title);
 }
 .modul__zajawka {
   color: var(--bh-text-secondary);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.45;
+  line-height: var(--wor-leading-compact);
 }
 .modul__stopka {
   display: flex;
@@ -2017,6 +2072,123 @@ a.modul:focus-visible {
   background: transparent;
   box-shadow: inset 0 0 0 1px var(--wor-linia);
   color: var(--bh-text-muted);
+}
+
+/* A path draws itself as it scrolls in: a trail runs along the hairline
+   above it, led by a bird that glides across and climbs away, the title
+   follows it in, and the module cards land one after another, in course
+   order. Tied to the scroll, so it runs backwards too. Only where
+   scroll-driven animations exist and motion is welcome; the base styles
+   above show the finished path. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sciezka__naglowek {
+      view-timeline: --trasa block;
+    }
+    .sciezka__trasa {
+      display: block;
+      position: absolute;
+      inset: -1px 0 auto;
+      height: 0;
+      container-type: inline-size;
+      pointer-events: none;
+    }
+    .sciezka__trasa::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: var(--bh-gap-hairline);
+      translate: 0 -50%;
+      background: linear-gradient(90deg, transparent, var(--wor-akcent));
+      transform-origin: left center;
+      animation: trasa-slad linear both;
+      animation-timeline: --trasa;
+      animation-range: cover 4% cover 58%;
+    }
+    .sciezka__ptak {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2.9rem;
+      height: auto;
+      fill: var(--bh-text-primary);
+      animation: trasa-ptak linear both;
+      animation-timeline: --trasa;
+      animation-range: cover 4% cover 58%;
+    }
+    .sciezka__tytul,
+    .sciezka__opis {
+      animation: trasa-napis linear both;
+      animation-timeline: --trasa;
+      animation-range: cover 8% cover 36%;
+    }
+    .sciezka__opis {
+      animation-range: cover 14% cover 42%;
+    }
+    .moduly > li {
+      animation: przylot linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 6%) entry calc(70% + var(--i, 0) * 6%);
+    }
+  }
+}
+@keyframes trasa-slad {
+  0% {
+    scale: 0 1;
+  }
+  78% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 1 1;
+    opacity: 0;
+  }
+}
+/* The bird faces right (the drawing is head-up) and banks a little as it goes. */
+@keyframes trasa-ptak {
+  0% {
+    translate: 0 -50%;
+    rotate: 90deg;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    translate: calc(35cqi - 35%) calc(-50% - 0.45rem);
+    rotate: 84deg;
+    animation-timing-function: ease-in-out;
+  }
+  54% {
+    translate: calc(67.5cqi - 67.5%) calc(-50% + 0.2rem);
+    rotate: 96deg;
+    animation-timing-function: ease-in-out;
+  }
+  78% {
+    translate: calc(100cqi - 100%) -50%;
+    rotate: 90deg;
+    opacity: 1;
+  }
+  100% {
+    translate: calc(100cqi - 100%) calc(-50% - 1.6rem);
+    rotate: 62deg;
+    opacity: 0;
+  }
+}
+@keyframes trasa-napis {
+  from {
+    opacity: 0;
+    translate: -0.75rem 0;
+  }
+}
+@keyframes przylot {
+  from {
+    opacity: 0;
+    translate: 0 2rem;
+    scale: 0.96;
+  }
 }
 
 /* On a phone each path is a row to swipe through, not twelve cards to scroll past. */
@@ -2036,104 +2208,6 @@ a.modul:focus-visible {
   .moduly > li {
     scroll-snap-align: start;
   }
-}
-
-/* ---------- Night chorus: the owls ---------- */
-
-.chor {
-  position: relative;
-  isolation: isolate;
-  padding-block: calc(var(--wor-space-block) * 2);
-  overflow: hidden;
-  background: var(--wor-niebo-noc);
-  color: var(--wor-scena-tekst);
-}
-/* A few stars and the moon's glow, drawn with gradients: no image, no script. */
-.chor::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 84% 18%, var(--wor-ksiezyc) 0 1.6rem, transparent 1.7rem),
-    radial-gradient(circle at 84% 18%, var(--wor-blask-miekki), transparent 14rem),
-    radial-gradient(circle at 12% 22%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 31% 9%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 47% 27%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 66% 7%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 73% 38%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 93% 46%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 22% 61%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 57% 72%, var(--wor-scena-tekst) 0 1px, transparent 2px);
-  opacity: 0.85;
-}
-.chor__wnetrze {
-  box-sizing: border-box;
-  display: grid;
-  gap: var(--wor-space-block);
-  max-width: var(--wor-width);
-  margin-inline: auto;
-  padding-inline: var(--wor-gutter);
-}
-.chor .sekcja {
-  margin-bottom: 0;
-}
-.chor .sekcja__lead {
-  color: var(--wor-scena-tekst);
-}
-.chor .cta {
-  justify-self: start;
-}
-.chor__lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: var(--bh-gap-loose);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.chor__sowa {
-  display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
-  grid-template-rows: auto auto;
-  align-items: center;
-  gap: var(--bh-gap-tight) var(--bh-gap-loose);
-  height: 100%;
-  box-sizing: border-box;
-  padding: var(--bh-padding-section) var(--bh-padding-section) var(--bh-padding-section) var(--bh-gap-loose);
-  border: 1px solid var(--wor-scena-linia);
-  border-radius: var(--bh-radius-surface);
-  background: var(--wor-scena-szklo);
-  color: inherit;
-  text-decoration: none;
-  transition:
-    border-color var(--wor-dur-quick) var(--wor-ease-out),
-    transform var(--wor-dur-base) var(--wor-ease-out);
-}
-.chor__sowa:hover {
-  border-color: var(--wor-zloto);
-  transform: translateY(calc(-3px * var(--wor-ruch)));
-}
-.chor__sowa:focus-visible {
-  outline: 2px solid var(--wor-zloto);
-  outline-offset: 2px;
-}
-.chor__sylwetka {
-  grid-row: span 2;
-  width: 100%;
-  height: auto;
-  fill: var(--wor-scena-tekst-2);
-}
-.chor__nazwa {
-  font-family: var(--wor-font-display);
-  font-size: var(--wor-size-karta);
-  font-weight: 600;
-}
-.chor__glos {
-  color: var(--wor-scena-tekst-2);
-  font-family: var(--wor-font-text);
-  font-style: italic;
-  line-height: 1.35;
 }
 
 /* The course plan under the module cards */
@@ -2161,8 +2235,10 @@ a.modul:focus-visible {
   animation: strona-pojawienie var(--wor-dur-base) var(--wor-ease-out) var(--wor-dur-quick) both;
 }
 /* The bars are glass; a snapshot of glass has nothing to blur, so the page
-   would show through it sharp. Each bar's snapshot gets a solid backing in
-   the colour it sits on: night over a scene, the page colour elsewhere. */
+   would show through it sharp. The incoming bar's snapshot gets a solid
+   backing in the colour it sits on: night over a scene, the page colour
+   elsewhere. The outgoing snapshot is not drawn, so a bar the next page does
+   not have (the module bar, leaving a lesson) leaves no band behind. */
 .nav[data-nad-scena] {
   view-transition-name: nawigacja-scena;
 }
@@ -2171,10 +2247,6 @@ a.modul:focus-visible {
 ::view-transition-group(pasek-modulu) {
   z-index: var(--bh-layer-sticky);
   animation: none;
-  background: var(--wor-tlo);
-}
-::view-transition-group(nawigacja-scena) {
-  background: var(--wor-scena-tlo);
 }
 ::view-transition-old(nawigacja),
 ::view-transition-old(nawigacja-scena),
@@ -2185,6 +2257,10 @@ a.modul:focus-visible {
 ::view-transition-new(nawigacja-scena),
 ::view-transition-new(pasek-modulu) {
   animation: none;
+  background: var(--wor-tlo);
+}
+::view-transition-new(nawigacja-scena) {
+  background: var(--wor-scena-tlo);
 }
 /* A species' name flying from its card to its page's title: blurred for a
    moment mid-flight, which hides the scaling of a small snapshot. */
@@ -2249,7 +2325,7 @@ a.modul:focus-visible {
 }
 @media (prefers-reduced-motion: no-preference) {
   .zgubiony__ptak {
-    animation: odlatuje 7s linear both;
+    animation: odlatuje 4.8s linear both;
   }
 }
 @keyframes odlatuje {
@@ -2263,6 +2339,9 @@ a.modul:focus-visible {
   }
 }
 .zgubiony__tresc {
+  /* On a phone the text sits in the moon's glow: the state's muted text takes
+     the scene's secondary colour, which keeps AA there. */
+  --bh-text-muted: var(--bh-text-secondary);
   box-sizing: border-box;
   width: 100%;
   max-width: 36rem;

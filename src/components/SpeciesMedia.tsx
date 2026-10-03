@@ -42,7 +42,7 @@ export function SpeciesMedia({
   const kolumna = (x: NonNullable<typeof g>) => ({
     id: x.id,
     pl: x.pl,
-    cechy: x.sylwetka as Record<string, string>,
+    cechy: x.sylwetka,
   });
 
   return (

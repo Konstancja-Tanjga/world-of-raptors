@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Rating, type Grade } from 'ts-fsrs';
 import { kartaFsrs, planista, useFiszki, type Fiszki } from '@/lib/fiszki';
 import { dzisiaj } from '@/lib/magazyn';
-import { REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type SylwetkaDzienna } from '@/lib/types';
+import { gatunekFiszki, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Button, Progress, SegmentedControl, StateBlock } from './ds';
 import { ScenaSylwetki } from './ScenaSylwetki';
@@ -28,10 +28,15 @@ const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
 type Talia = 'wszystkie' | Region;
 type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy';
 
-const RODZAJE: Record<Exclude<Rodzaj, 'wszystkie'>, RodzajFiszki[]> = {
-  zdjecia: ['lot', 'siedzacy'],
-  sylwetki: ['sylwetka'],
-  nazwy: ['pl-en', 'pl-es', 'en-pl', 'es-pl'],
+/** Which filter each kind of card belongs to (a Record, so a new kind cannot be left out). */
+const KATEGORIA: Record<RodzajFiszki, Exclude<Rodzaj, 'wszystkie'>> = {
+  lot: 'zdjecia',
+  siedzacy: 'zdjecia',
+  sylwetka: 'sylwetki',
+  'pl-en': 'nazwy',
+  'pl-es': 'nazwy',
+  'en-pl': 'nazwy',
+  'es-pl': 'nazwy',
 };
 
 /** The question each kind of card asks. */
@@ -88,7 +93,7 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
   const odpowiedzianeDzis = new Set(
     Object.entries(fiszki)
       .filter(([, z]) => z.last_review && dataLokalna(z.last_review) === dzien)
-      .map(([id]) => id.split('/')[0]),
+      .map(([id]) => gatunekFiszki(id)),
   );
   const nowe = talia
     .filter((f) => !fiszki[f.id])
@@ -112,10 +117,43 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
   };
 }
 
-/** The question side. Nothing on it names the species. */
-function Awers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
+/**
+ * The author and licence a Commons photo needs wherever it is shown. The link
+ * to the file page waits for the answer (`zrodlo`) on a question side, because
+ * a Commons file name usually names the species.
+ */
+function PodpisZdjecia({ z, zrodlo = true }: { z: Zdjecie; zrodlo?: boolean }) {
+  return (
+    <p className="fiszka__podpis">
+      Fot. {z.autor},{' '}
+      {z.licencjaUrl ? (
+        <a href={z.licencjaUrl} target="_blank" rel="noreferrer">
+          {z.licencja}
+        </a>
+      ) : (
+        z.licencja
+      )}
+      {zrodlo && z.strona && (
+        <>
+          ,{' '}
+          <a href={z.strona} target="_blank" rel="noreferrer">
+            Wikimedia Commons
+          </a>
+        </>
+      )}
+    </p>
+  );
+}
+
+/**
+ * The question side gives nothing away: photo and silhouette cards name
+ * nothing (alt text included); a name card shows only the name it asks to
+ * translate. `powtorka` (how many times the card was answered) makes each
+ * review of a silhouette card show the bird at a new heading and spread.
+ */
+function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtorka: number }) {
   if (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') {
-    const z = karta.zdjecie!;
+    const z = karta.zdjecie;
     return (
       <div className="fiszka__scena fiszka__scena--zdjecie">
         {/* eslint-disable-next-line @next/next/no-img-element -- the backdrop is a blurred copy of the same file */}
@@ -129,7 +167,6 @@ function Awers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
           width={z.width}
           height={z.height}
           alt={karta.rodzaj === 'lot' ? 'Ptak do rozpoznania, w locie' : 'Ptak do rozpoznania, siedzący'}
-          style={{ objectPosition: polozenie(z) }}
         />
       </div>
     );
@@ -137,16 +174,29 @@ function Awers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
   if (karta.rodzaj === 'sylwetka') {
     return (
       <div className="fiszka__scena fiszka__scena--niebo">
-        <ScenaSylwetki id={g.id} wariant={karta.id} opis="Sylwetka ptaka do rozpoznania, w locie, od spodu" />
+        <ScenaSylwetki id={g.id} wariant={`${karta.id}:${powtorka}`} opis="Sylwetka ptaka do rozpoznania, w locie, od spodu" />
       </div>
     );
   }
-  const [jezyk, nazwa, etykieta] =
-    karta.rodzaj === 'en-pl'
-      ? (['en', g.en, 'Nazwa angielska'] as const)
-      : karta.rodzaj === 'es-pl'
-        ? (['es', g.es, 'Nazwa hiszpańska'] as const)
-        : (['pl', g.pl, 'Nazwa polska'] as const);
+  // Exhaustive, so a new kind of card cannot fall through to showing a name.
+  let pokazana: { jezyk: 'pl' | 'en' | 'es'; nazwa: string; etykieta: string };
+  switch (karta.rodzaj) {
+    case 'pl-en':
+    case 'pl-es':
+      pokazana = { jezyk: 'pl', nazwa: g.pl, etykieta: 'Nazwa polska' };
+      break;
+    case 'en-pl':
+      pokazana = { jezyk: 'en', nazwa: g.en, etykieta: 'Nazwa angielska' };
+      break;
+    case 'es-pl':
+      pokazana = { jezyk: 'es', nazwa: g.es, etykieta: 'Nazwa hiszpańska' };
+      break;
+    default: {
+      const nieznany: never = karta.rodzaj;
+      throw new Error(`Nieznany rodzaj fiszki: ${String(nieznany)}`);
+    }
+  }
+  const { jezyk, nazwa, etykieta } = pokazana;
   return (
     <div className="fiszka__scena fiszka__scena--nazwa">
       <p className="fiszka__jezyk">{etykieta}</p>
@@ -161,10 +211,11 @@ function Awers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
 function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
   const pytaOObcy = karta.rodzaj === 'pl-en' || karta.rodzaj === 'pl-es';
   const obcy = karta.rodzaj === 'pl-es' ? { jezyk: 'es', nazwa: g.es } : { jezyk: 'en', nazwa: g.en };
-  const cechy = g.sylwetka as Partial<SylwetkaDzienna>;
+  // Silhouette cards are diurnal species only (see taliaFiszek).
+  const cechy = karta.rodzaj === 'sylwetka' && g.aktywnosc === 'dzienny' ? g.sylwetka : null;
   return (
     <>
-      {karta.rodzaj === 'sylwetka' && <p className="fiszka__grupa">Grupa: {cechy.grupa ?? g.grupa}</p>}
+      {cechy && <p className="fiszka__grupa">Grupa: {cechy.grupa}</p>}
       {pytaOObcy ? (
         <p className="fiszka__nazwa" lang={obcy.jezyk}>
           {obcy.nazwa}
@@ -187,7 +238,7 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
         )}
       </p>
 
-      {karta.rodzaj === 'sylwetka' ? (
+      {cechy ? (
         <dl className="fiszka__cechy-sylwetki">
           {CECHY_DZIENNE.filter(([k]) => k !== 'grupa' && cechy[k]).map(([k, etykieta]) => (
             <div key={k}>
@@ -204,11 +255,16 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
         </ul>
       ) : (
         karta.zdjecie && (
-          <div className="fiszka__ilustracja">
-            {/* eslint-disable-next-line @next/next/no-img-element -- a small Commons thumbnail */}
-            <img src={karta.zdjecie.src} alt={`${g.pl}`} style={{ objectPosition: polozenie(karta.zdjecie) }} />
-            {g.aktywnosc === 'dzienny' && <Sylwetka id={g.id} klasa="fiszka__mala-sylwetka" />}
-          </div>
+          <figure className="fiszka__ilustracja">
+            <div className="fiszka__ilustracja-obrazy">
+              {/* eslint-disable-next-line @next/next/no-img-element -- a small Commons thumbnail */}
+              <img src={karta.zdjecie.src} alt={`${g.pl}`} style={{ objectPosition: polozenie(karta.zdjecie) }} />
+              {g.aktywnosc === 'dzienny' && <Sylwetka id={g.id} klasa="fiszka__mala-sylwetka" />}
+            </div>
+            <figcaption>
+              <PodpisZdjecia z={karta.zdjecie} />
+            </figcaption>
+          </figure>
         )
       )}
 
@@ -251,10 +307,17 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
   const odpowiedzRef = useRef<HTMLDivElement>(null);
   const przesunFokus = useRef(false);
 
+  // The deck and the species come from the same atlas, so a card without its
+  // species is a bug: it is left out (and logged) rather than blocking the deck.
+  const bezGatunku = useMemo(() => cala.filter((f) => !gatunki[f.gatunek]).map((f) => f.id), [cala, gatunki]);
+  useEffect(() => {
+    if (bezGatunku.length) console.error('[fiszki] cards whose species is not in the atlas, left out:', bezGatunku);
+  }, [bezGatunku]);
   const talia = cala.filter(
     (f) =>
+      gatunki[f.gatunek] !== undefined &&
       (region === 'wszystkie' || gatunki[f.gatunek]?.regiony.includes(region)) &&
-      (rodzaj === 'wszystkie' || RODZAJE[rodzaj].includes(f.rodzaj)),
+      (rodzaj === 'wszystkie' || KATEGORIA[f.rodzaj] === rodzaj),
   );
   const stan = fiszki ? nastepna(talia, fiszki, teraz, dodatkowe) : null;
   const poznane = fiszki ? talia.filter((f) => fiszki[f.id]).length : 0;
@@ -371,27 +434,9 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
       ) : (
         <section className="fiszka" aria-label="Fiszka" data-rodzaj={karta.rodzaj} data-odkryta={odkryta ? '' : undefined}>
           <div className="fiszka__przod">
-            <Awers karta={karta} g={g} />
-            {karta.zdjecie && (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && (
-              <p className="fiszka__podpis">
-                Fot. {karta.zdjecie.autor},{' '}
-                {karta.zdjecie.licencjaUrl ? (
-                  <a href={karta.zdjecie.licencjaUrl} target="_blank" rel="noreferrer">
-                    {karta.zdjecie.licencja}
-                  </a>
-                ) : (
-                  karta.zdjecie.licencja
-                )}
-                {karta.zdjecie.strona && (
-                  <>
-                    ,{' '}
-                    <a href={karta.zdjecie.strona} target="_blank" rel="noreferrer">
-                      Wikimedia Commons
-                    </a>
-                  </>
-                )}
-              </p>
-            )}
+            {/* Keyed by card, so the previous bird never lingers while the next photo loads. */}
+            <Awers key={karta.id} karta={karta} g={g} powtorka={fiszki[karta.id]?.reps ?? 0} />
+            {(karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && <PodpisZdjecia z={karta.zdjecie} zrodlo={odkryta} />}
           </div>
           <div className="fiszka__panel">
             <p className="fiszka__licznik">

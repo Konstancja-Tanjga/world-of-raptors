@@ -30,10 +30,12 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(0deg, var(--wor-cien-sceny), transparent 60%),
+    linear-gradient(0deg, var(--wor-cien-tekstu) 0%, var(--wor-cien-lekki) 45%, transparent 75%),
+    linear-gradient(90deg, var(--wor-cien-lekki), transparent 60%),
     radial-gradient(ellipse 70% 50% at 50% 110%, var(--wor-zar-horyzontu), transparent 70%);
 }
-/* A kite crosses the sky, slowly, the whole time the titles are on screen. */
+/* A kite glides in and hangs in the wind over the titles, as kites do. It
+   moves for under five seconds and then holds, so nothing loops (WCAG 2.2.2). */
 .czolowka__ptak {
   position: absolute;
   top: 22%;
@@ -48,10 +50,16 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .czolowka__ptak {
-    /* Already mid-flight when the page opens, not a wingtip at the edge. */
-    animation: przelot 46s linear -17s infinite;
+    animation: wlot 4.6s var(--wor-ease-out) both;
   }
 }
+@keyframes wlot {
+  from {
+    translate: -18vw 10vh;
+    rotate: 6deg;
+  }
+}
+/* A kite crossing the sky as the reader scrolls: moved by the scroll, never by itself. */
 @keyframes przelot {
   from {
     translate: -20vw 6vh;
@@ -75,13 +83,13 @@
   padding-inline: var(--wor-gutter);
 }
 .czolowka .eyebrow {
-  color: var(--wor-zloto);
+  color: var(--wor-scena-tekst);
 }
 .czolowka__tytul {
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-hero);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
   line-height: var(--wor-leading-display);
   letter-spacing: var(--wor-tracking-display);
   padding-block: 0.06em;
@@ -105,7 +113,7 @@
   border-top: 1px solid var(--wor-scena-linia);
 }
 .czolowka__autorzy dt {
-  color: var(--wor-scena-tekst-2);
+  color: var(--wor-scena-tekst);
   font-size: var(--bh-text-size-caption);
 }
 .czolowka__autorzy dd {
@@ -113,13 +121,13 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .czolowka__autorka {
   font-style: italic;
 }
 .czolowka__dopisek {
-  color: var(--wor-scena-tekst-2);
+  color: var(--wor-scena-tekst);
   font-family: var(--wor-font-ui);
   font-size: var(--bh-text-size-caption);
   font-weight: var(--bh-text-weight-body);
@@ -199,7 +207,7 @@
   gap: var(--bh-gap-loose);
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 .op-idea__tekst p {
   margin: 0;
@@ -231,8 +239,8 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-title);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
   font-variant-numeric: lining-nums tabular-nums;
 }
 .op-liczby dt {
@@ -303,8 +311,9 @@
       animation-timeline: view();
       animation-range: entry 20% cover 45%;
     }
+    /* Opacity only: the labels' own translate places them beside the drawing. */
     .anatomia__opis {
-      animation: pojaw linear both;
+      animation: przenikanie linear both;
       animation-timeline: view();
       animation-range: entry 30% cover 50%;
     }
@@ -313,6 +322,11 @@
 @keyframes kreska {
   from {
     stroke-dashoffset: 1;
+  }
+}
+@keyframes przenikanie {
+  from {
+    opacity: 0;
   }
 }
 /* A narrow plate lists the labels under the drawing, without leader lines,
@@ -345,6 +359,14 @@
 .op-morf {
   background: var(--wor-niebo-dzien);
   color: var(--wor-scena-tekst);
+}
+.op-morf .suwak-morfu__sterowanie {
+  padding: var(--bh-padding-section);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-scena-panel);
+  -webkit-backdrop-filter: blur(var(--bh-material-regular-blur));
+  backdrop-filter: blur(var(--bh-material-regular-blur));
 }
 /* ---------- Four skies ---------- */
 
@@ -401,7 +423,7 @@
 .op-pora__nazwa {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .op-pora__opis {
   font-family: var(--wor-font-text);
@@ -424,9 +446,9 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  letter-spacing: var(--wor-tracking-open);
   word-spacing: 0.25em;
 }
 .op-kroj__opisy {
@@ -478,7 +500,7 @@
   margin: 0;
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .op-paleta__opis {
   margin: 0;
@@ -536,19 +558,19 @@
   color: var(--wor-akcent);
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-numer);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-solid);
 }
 .op-zasady p {
   margin: 0;
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-reading);
-  line-height: 1.5;
+  line-height: var(--bh-text-leading-normal);
 }
 .op-zasady .op-zasady__tytul {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-karta);
-  font-weight: 600;
+  font-weight: var(--bh-text-weight-heading);
 }
 .op-technika {
   display: grid;
@@ -588,7 +610,7 @@
   list-style: none;
   color: var(--bh-text-secondary);
   font-size: var(--bh-text-size-caption);
-  line-height: 1.7;
+  line-height: var(--wor-leading-reading);
 }
 .op-zdjecia__lista li {
   break-inside: avoid;
@@ -623,9 +645,13 @@
   opacity: 0.16;
   translate: 70vw 0;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .podpis__ptak {
-    animation: przelot 38s linear -11s infinite;
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .podpis__ptak {
+      animation: przelot linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
   }
 }
 .podpis__imie {
@@ -633,7 +659,7 @@
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-display);
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--bh-text-weight-emphasis);
   line-height: var(--wor-leading-title);
 }
 .podpis__z {

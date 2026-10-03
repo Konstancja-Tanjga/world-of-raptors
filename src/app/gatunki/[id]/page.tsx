@@ -13,9 +13,9 @@ import { Photo } from '@/components/Photo';
 import { ScenaSylwetki } from '@/components/ScenaSylwetki';
 import { CECHY_DZIENNE, CECHY_NOCNE } from '@/components/SpeciesCues';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
-import { ciekawostkiDla, gatunki, modulyGatunku, zdjecia, znajdzGatunek } from '@/lib/content';
+import { ciekawostkiDla, gatunki, modulyGatunku, stronaMorfu, zdjecia, znajdzGatunek } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
-import { REGIONY, STATUS_LABEL, type Gatunek, type SylwetkaDzienna } from '@/lib/types';
+import { REGIONY, STATUS_LABEL, type Gatunek } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 
 export const dynamicParams = false;
@@ -30,20 +30,6 @@ export async function generateMetadata({ params }: PageProps<'/gatunki/[id]'>): 
   return { title: g?.pl, description: g ? `${g.pl} (${g.lat}): sylwetka, cechy, podobne gatunki i zdjęcia.` : undefined };
 }
 
-/** A diurnal species' cues for the morph slider, in the order of B1. */
-const doMorfu = (g: Gatunek) => {
-  const c = g.sylwetka as SylwetkaDzienna;
-  return {
-    id: g.id,
-    pl: g.pl,
-    cechy: [
-      { etykieta: 'Skrzydła', tekst: c.skrzydla },
-      { etykieta: 'Ogon', tekst: c.ogon },
-      { etykieta: 'Głowa', tekst: c.glowa },
-    ],
-  };
-};
-
 export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>) {
   const { id } = await params;
   const g = znajdzGatunek(id);
@@ -55,8 +41,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
   const glowne = nocny ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy);
   const podobne = g.mylona_z.map(znajdzGatunek).filter((m): m is Gatunek => m !== undefined);
   const moduly = modulyGatunku(g);
-  const cechy = g.sylwetka as Record<string, string>;
-  const kolumna = (x: Gatunek) => ({ id: x.id, pl: x.pl, cechy: x.sylwetka as Record<string, string> });
+  const kolumna = (x: Gatunek) => ({ id: x.id, pl: x.pl, cechy: x.sylwetka });
 
   return (
     <div className="gatunek">
@@ -130,17 +115,17 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
           <PlanszaGatunku g={g} />
         </section>
 
-        {!nocny && (
+        {g.aktywnosc === 'dzienny' && (
           <section className="gatunek__rozdzial" aria-labelledby="jak-lata">
             <div className="gatunek__bok">
               <p className="eyebrow">Sposób lotu</p>
               <h2 id="jak-lata" className="sekcja__tytul">
                 Jak lata
               </h2>
-              <p className="sekcja__lead">{cechy.lot}</p>
+              <p className="sekcja__lead">{g.sylwetka.lot}</p>
             </div>
             <div className="gatunek__lot">
-              <ScenaSylwetki id={g.id} wariant={`${g.id}/strona`} opis={`${g.pl} w locie, od spodu: ${cechy.lot}`} />
+              <ScenaSylwetki id={g.id} wariant={`${g.id}/strona`} opis={`${g.pl} w locie, od spodu: ${g.sylwetka.lot}`} />
             </div>
           </section>
         )}
@@ -224,7 +209,9 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
               </p>
             </div>
             <div className="gatunek__porownanie">
-              {!nocny && <Porownanie gatunek={doMorfu(g)} podobne={podobne.filter((p) => p.aktywnosc === 'dzienny').map(doMorfu)} />}
+              {g.aktywnosc === 'dzienny' && (
+                <Porownanie gatunek={stronaMorfu(g)} podobne={podobne.filter((p) => p.aktywnosc === 'dzienny').map(stronaMorfu)} />
+              )}
               <CuesTable
                 podpis={`Na co patrzeć: ${g.pl} i podobne gatunki`}
                 cechy={nocny ? CECHY_NOCNE : CECHY_DZIENNE}
