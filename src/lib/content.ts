@@ -578,7 +578,7 @@ function sprawdzSpojnosc() {
     for (const id of Object.keys(mapa)) if (!idGatunkow.has(id)) bledy.push(`${skad}: „${id}” nie jest gatunkiem z atlasu`);
   }
   for (const [id, z] of Object.entries(zdjecia)) {
-    for (const rodzaj of ['lot', 'siedzacy'] as const) {
+    for (const rodzaj of ['lot', 'siedzacy', 'cecha'] as const) {
       const p = z?.[rodzaj];
       if (!p) continue;
       if (!para(p.fokus, (n) => n >= 0 && n <= 100)) bledy.push(`zdjecia.json: ${id}/${rodzaj}: fokus musi być [x, y] w procentach`);
@@ -586,6 +586,9 @@ function sprawdzSpojnosc() {
         bledy.push(`zdjecia.json: ${id}/${rodzaj}: oryginal musi być [szerokość, wysokość]`);
       }
     }
+    // The third photo names its own view and describes itself; the label alone would not.
+    const cecha = z?.cecha;
+    if (cecha && (!cecha.podpis?.trim() || !cecha.alt?.trim())) bledy.push(`zdjecia.json: ${id}/cecha: brak podpisu albo alt`);
   }
   for (const m of moduly) {
     if (m.gotowy && (!m.slug || !m.lekcje?.length)) bledy.push(`moduly.json: ${m.id} jest gotowy, ale nie ma slugu albo lekcji`);
