@@ -27,6 +27,7 @@ export {
   RadioGroup,
   SegmentedControl,
   SkipLink,
+  Slider,
   StateBlock,
   Table,
   Textarea,

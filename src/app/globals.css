@@ -237,6 +237,7 @@ li {
 .nav__arkusz li:nth-child(3) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 2); }
 .nav__arkusz li:nth-child(4) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 3); }
 .nav__arkusz li:nth-child(5) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 4); }
+.nav__arkusz li:nth-child(6) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 5); }
 @starting-style {
   .nav__arkusz-link {
     opacity: 0;
@@ -454,6 +455,18 @@ li {
   font-family: var(--wor-font-display);
   font-size: var(--wor-size-subtitle);
   font-weight: 600;
+}
+.stopka__autorzy {
+  color: var(--bh-text-secondary);
+}
+.stopka__autorzy strong {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-heading);
+}
+.stopka__autorzy a {
+  color: var(--bh-text-link);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 .stopka__naglowek {
   color: var(--bh-text-primary);

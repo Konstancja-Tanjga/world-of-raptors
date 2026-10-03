@@ -8,8 +8,12 @@ export function Stopka() {
         <div className="stopka__marka">
           <p className="stopka__nazwa">World of Raptors</p>
           <p className="stopka__opis">
-            Prywatny kurs o ptakach drapieżnych: biologia i rozpoznawanie w terenie. Polska, południe Hiszpanii i
-            Cieśnina Gibraltarska.
+            Prywatny kurs o drapieżnikach dziennych i nocnych: biologia i rozpoznawanie w terenie. Polska, południe
+            Hiszpanii i Cieśnina Gibraltarska.
+          </p>
+          <p className="stopka__autorzy">
+            Pomysł, plan i treść: <strong>Konstancja Tanjga</strong>. Projekt, ruch i kod: razem z Claude (Anthropic).{' '}
+            <Link href="/o-projekcie">O projekcie</Link>
           </p>
         </div>
         <nav aria-label="Stopka" className="stopka__kolumna">
@@ -30,13 +34,16 @@ export function Stopka() {
             <li>
               <Link href="/checklista#kopia">Kopia zapasowa</Link>
             </li>
+            <li>
+              <Link href="/o-projekcie">O projekcie</Link>
+            </li>
           </ul>
         </nav>
         <div className="stopka__kolumna">
           <p className="stopka__naglowek">Kolofon</p>
           <p>
-            Zdjęcia: Wikimedia Commons, z autorem i licencją przy każdym zdjęciu. Sylwetki rysuje kod kursu na
-            podstawie cech z lekcji B1.
+            Zdjęcia: Wikimedia Commons, z autorem i licencją przy każdym zdjęciu, i jedno zdjęcie autorki. Sylwetki
+            rysuje kod kursu na podstawie cech z lekcji B1.
           </p>
           <p>
             Tytuły: Półtawski Nowy, współczesna wersja Antykwy Półtawskiego, kroju zaprojektowanego dla polszczyzny.

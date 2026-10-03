@@ -396,3 +396,11 @@ export async function autorzyZdjec() {
   }
   return [...wedlugKlucza.values()].sort((a, b) => a.localeCompare(b, 'pl'));
 }
+
+/** The "Idea" section of the course plan (Markdown, without its heading), for the about page. */
+export async function ideaKursu() {
+  const md = await czytajMarkdown('PLAN-KURSU.md');
+  const sekcja = md.split(/^## /m).find((s) => s.startsWith('Idea'));
+  if (!sekcja) throw new Error('PLAN-KURSU.md: brak sekcji „## Idea”, z której korzysta strona „O projekcie”');
+  return sekcja.replace(/^Idea\s*\n/, '').split(/^---\s*$/m)[0].trim();
+}

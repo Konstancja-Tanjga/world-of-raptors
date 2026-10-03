@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import './start.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
+import { Chor } from '@/components/start/Chor';
 import { Sylwetka } from '@/components/Sylwetka';
 import { Kolekcja } from '@/components/start/Kolekcja';
 import { Kurs } from '@/components/start/Kurs';
@@ -55,6 +56,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
   const g = gatunekDnia();
   const { grupy, lead } = await grupySylwetek();
   const lekcji = gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0);
+  const dzienne = gatunki.filter((x) => x.aktywnosc === 'dzienny').length;
   const konspekt = gotoweModuly.map(({ slug, id, lekcje }) => ({ slug, id, lekcje }));
 
   return (
@@ -67,8 +69,8 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
             Naucz się czytać niebo
           </h1>
           <p className="niebo__lead">
-            Kurs o ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak rozpoznać je w locie, od polskich pól po
-            Cieśninę Gibraltarską.
+            Kurs o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak
+            rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską.
           </p>
           <div className="niebo__akcje">
             <StartKursu konspekt={konspekt} />
@@ -79,8 +81,12 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
         </div>
         <dl className="niebo__liczby">
           <div>
-            <dt>{odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])}</dt>
-            <dd>{gatunki.length}</dd>
+            <dt>{odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])}</dt>
+            <dd>{dzienne}</dd>
+          </div>
+          <div>
+            <dt>{odmiana(gatunki.length - dzienne, ['sowa', 'sowy', 'sów'])}</dt>
+            <dd>{gatunki.length - dzienne}</dd>
           </div>
           <div>
             <dt>{odmiana(gotoweModuly.length, ['moduł', 'moduły', 'modułów'])}</dt>
@@ -100,7 +106,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
       <section className="grupy scena" data-scena aria-labelledby="grupy-tytul">
         <div className="grupy__wnetrze">
           <header className="sekcja">
-            <p className="eyebrow">Metoda, lekcja 1</p>
+            <p className="eyebrow">Za dnia: metoda, lekcja 1</p>
             <h2 id="grupy-tytul" className="sekcja__tytul">
               Osiem sylwetek na tle nieba
             </h2>
@@ -115,6 +121,8 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
           </MorfGrup>
         </div>
       </section>
+
+      <Chor />
 
       <div className="start__ciekawostka">
         <Ciekawostka {...ciekawostkiDla()} />

@@ -1,0 +1,698 @@
+/*
+ * "O projekcie": the course as a case study. Like the home page, every
+ * scroll-linked effect is an enhancement: without it (or with reduced
+ * motion) the page is complete and still.
+ */
+
+.oprojekcie {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Opening titles ---------- */
+
+.czolowka {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  box-sizing: border-box;
+  min-height: 92svh;
+  margin-top: calc(-1 * var(--wor-nav-height));
+  padding: calc(var(--wor-nav-height) + var(--wor-space-block)) 0 var(--wor-space-block);
+  overflow: hidden;
+  background: var(--wor-niebo-zmierzch);
+  color: var(--wor-scena-tekst);
+}
+.czolowka::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(0deg, var(--wor-cien-sceny), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 110%, var(--wor-zar-horyzontu), transparent 70%);
+}
+/* A kite crosses the sky, slowly, the whole time the titles are on screen. */
+.czolowka__ptak {
+  position: absolute;
+  top: 22%;
+  left: 0;
+  z-index: -1;
+  width: clamp(7rem, 4rem + 12vw, 15rem);
+  height: auto;
+  fill: var(--wor-sylwetka);
+  opacity: 0.92;
+  translate: 58vw 0;
+  rotate: -8deg;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .czolowka__ptak {
+    animation: przelot 46s linear infinite;
+  }
+}
+@keyframes przelot {
+  from {
+    translate: -20vw 6vh;
+    rotate: 4deg;
+  }
+  50% {
+    rotate: -10deg;
+  }
+  to {
+    translate: 115vw -10vh;
+    rotate: 2deg;
+  }
+}
+.czolowka__wnetrze {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--bh-padding-section);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.czolowka .eyebrow {
+  color: var(--wor-zloto);
+}
+.czolowka__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-hero);
+  font-weight: 600;
+  line-height: var(--wor-leading-display);
+  letter-spacing: var(--wor-tracking-display);
+  padding-block: 0.06em;
+}
+.czolowka__lead {
+  margin: 0;
+  max-width: 32rem;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+}
+.czolowka__autorzy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: var(--bh-padding-section) var(--wor-space-block);
+  margin: var(--bh-padding-section) 0 0;
+}
+.czolowka__autorzy > div {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--wor-scena-linia);
+}
+.czolowka__autorzy dt {
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+}
+.czolowka__autorzy dd {
+  display: grid;
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.czolowka__autorka {
+  font-style: italic;
+}
+.czolowka__dopisek {
+  color: var(--wor-scena-tekst-2);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-body);
+}
+/* The titles come up one after another, like credits. */
+@media (prefers-reduced-motion: no-preference) {
+  .czolowka__wnetrze > * {
+    animation: pojaw var(--wor-dur-scene) var(--wor-ease-out) both;
+  }
+  .czolowka__wnetrze > :nth-child(2) {
+    animation-name: wznies;
+    animation-delay: calc(var(--wor-stagger) * 2);
+  }
+  .czolowka__wnetrze > :nth-child(3) {
+    animation-delay: calc(var(--wor-stagger) * 5);
+  }
+  .czolowka__wnetrze > :nth-child(4) {
+    animation-delay: calc(var(--wor-stagger) * 9);
+  }
+}
+@keyframes wznies {
+  from {
+    translate: 0 0.28em;
+  }
+}
+@keyframes pojaw {
+  from {
+    opacity: 0;
+    translate: 0 calc(1rem * var(--wor-ruch));
+  }
+}
+@media (max-width: 700px) {
+  .czolowka__autorzy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Chapters ---------- */
+
+.op-sekcja {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: var(--wor-space-block) calc(var(--wor-space-block) * 1.5);
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.op-sekcja__bok {
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+@media (min-width: 901px) {
+  .op-sekcja__bok {
+    position: sticky;
+    top: calc(var(--wor-nav-height) + var(--wor-space-block));
+  }
+}
+.op-sekcja.scena {
+  max-width: none;
+  padding-block: calc(var(--wor-space-block) * 2);
+  padding-inline: max(var(--wor-gutter), calc((100% - var(--wor-width)) / 2 + var(--wor-gutter)));
+}
+.op-sekcja.scena .sekcja__lead {
+  color: var(--wor-scena-tekst);
+}
+@media (max-width: 900px) {
+  .op-sekcja {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.op-idea__tekst {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
+}
+.op-idea__tekst p {
+  margin: 0;
+}
+
+/* ---------- Numbers ---------- */
+
+.op-liczby {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--wor-width);
+  margin: var(--wor-space-section) auto 0;
+  padding-inline: var(--wor-gutter);
+}
+.op-liczby dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--wor-space-block) var(--bh-padding-section);
+  margin: 0;
+}
+.op-liczby dl > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--bh-gap-tight);
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--wor-linia);
+}
+.op-liczby dd {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.op-liczby dt {
+  color: var(--bh-text-muted);
+}
+@media (max-width: 700px) {
+  .op-liczby dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- The labelled plate ---------- */
+
+.anatomia {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  margin: 0;
+}
+.anatomia__plansza {
+  position: relative;
+  container-type: inline-size;
+  padding: var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+}
+.anatomia__plansza svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.anatomia__ptak {
+  fill: var(--bh-text-primary);
+}
+.anatomia__odnosnik line {
+  stroke: var(--wor-akcent);
+  stroke-width: 0.6;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.anatomia__odnosnik circle {
+  fill: var(--wor-akcent);
+}
+.anatomia__opis {
+  position: absolute;
+  max-width: 11rem;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-tight);
+  translate: 0 -50%;
+}
+.anatomia__opis--l {
+  text-align: right;
+  translate: -100% -50%;
+}
+.anatomia__podpis {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+/* The leader lines draw themselves as the plate comes into view. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .anatomia__odnosnik line {
+      animation: kreska linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+    .anatomia__opis {
+      animation: pojaw linear both;
+      animation-timeline: view();
+      animation-range: entry 30% cover 50%;
+    }
+  }
+}
+@keyframes kreska {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@container (max-width: 34rem) {
+  .anatomia__opis {
+    max-width: 7.5rem;
+    font-size: var(--bh-text-size-dense);
+  }
+}
+
+/* ---------- The morph ---------- */
+
+.op-morf {
+  background: var(--wor-niebo-dzien);
+  color: var(--wor-scena-tekst);
+}
+.suwak-morfu {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.suwak-morfu__niebo {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  padding: var(--wor-space-block) var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  overflow: hidden;
+}
+.suwak-morfu__niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 55%, var(--wor-blask) 0, var(--wor-blask-miekki) 30%, transparent 70%);
+}
+.suwak-morfu__niebo svg {
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+  overflow: visible;
+  fill: var(--wor-sylwetka);
+}
+.suwak-morfu__sterowanie {
+  display: grid;
+  gap: var(--bh-padding-section);
+}
+.suwak-morfu__strony {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-padding-section);
+}
+.suwak-morfu__strona {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-snug);
+  transition: opacity var(--wor-dur-quick) linear;
+}
+.suwak-morfu__nazwa {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+}
+.suwak-morfu__strona dl {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.suwak-morfu__strona dl > div {
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-scena-linia);
+}
+.suwak-morfu__strona dt {
+  font-size: var(--bh-text-size-caption);
+  opacity: 0.85;
+}
+.suwak-morfu__strona dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.35;
+}
+
+/* ---------- Four skies ---------- */
+
+.op-pory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.op-pora {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: end;
+  gap: var(--bh-gap-tight);
+  box-sizing: border-box;
+  min-height: 15rem;
+  height: 100%;
+  padding: var(--bh-padding-section);
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  color: var(--wor-scena-tekst);
+  text-decoration: none;
+  transition: transform var(--wor-dur-base) var(--wor-ease-out);
+}
+.op-pora::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, var(--wor-cien-sceny), transparent 65%);
+}
+.op-pora[data-pora='swit'] {
+  background: var(--wor-niebo-swit);
+}
+.op-pora[data-pora='dzien'] {
+  background: var(--wor-niebo-dzien);
+}
+.op-pora[data-pora='zmierzch'] {
+  background: var(--wor-niebo-zmierzch);
+}
+.op-pora[data-pora='noc'] {
+  background: var(--wor-niebo-noc);
+}
+.op-pora:hover {
+  transform: translateY(calc(-4px * var(--wor-ruch)));
+}
+.op-pora:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+.op-pora__nazwa {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.op-pora__opis {
+  font-family: var(--wor-font-text);
+}
+.op-pora__link {
+  margin-top: var(--bh-gap-snug);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* ---------- Type ---------- */
+
+.op-kroj__probki {
+  display: grid;
+  gap: var(--wor-space-block);
+}
+.op-kroj__znaki {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  word-spacing: 0.25em;
+}
+.op-kroj__opisy {
+  display: grid;
+  gap: var(--bh-padding-section);
+  margin: 0;
+}
+.op-kroj__opisy > div {
+  display: grid;
+  grid-template-columns: minmax(0, 7rem) minmax(0, 1fr);
+  gap: var(--bh-gap-loose);
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--wor-linia);
+}
+.op-kroj__opisy dt {
+  color: var(--bh-text-muted);
+}
+.op-kroj__opisy dd {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  color: var(--bh-text-secondary);
+}
+.op-kroj__nazwa {
+  color: var(--bh-text-primary);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+}
+.op-kroj__nazwa--display {
+  font-family: var(--wor-font-display);
+}
+.op-kroj__nazwa--tekst {
+  font-family: var(--wor-font-text);
+}
+
+/* ---------- Palettes ---------- */
+
+.op-palety {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-padding-section);
+}
+.op-paleta {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-snug);
+}
+.op-paleta__nazwa {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+}
+.op-paleta__opis {
+  margin: 0;
+  color: var(--bh-text-muted);
+}
+.op-paleta ul {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: var(--bh-gap-snug) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.op-paleta li {
+  display: grid;
+  grid-template-columns: var(--bh-control-lg) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--bh-gap-normal);
+}
+.op-paleta__probka {
+  width: var(--bh-control-lg);
+  height: var(--bh-control-lg);
+  border-radius: var(--bh-radius-control);
+  box-shadow: inset 0 0 0 1px var(--wor-linia);
+}
+.op-paleta code {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+@media (max-width: 700px) {
+  .op-palety,
+  .op-pory {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Principles and technique ---------- */
+
+.op-zasady {
+  display: grid;
+  gap: var(--bh-padding-section);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: zasada;
+}
+.op-zasady li {
+  display: grid;
+  grid-template-columns: var(--wor-size-numer) minmax(0, 1fr);
+  gap: var(--bh-gap-tight) var(--bh-padding-section);
+  counter-increment: zasada;
+}
+.op-zasady li::before {
+  content: counter(zasada);
+  grid-row: span 2;
+  color: var(--wor-akcent);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-numer);
+  font-weight: 600;
+  line-height: 1;
+}
+.op-zasady p {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.5;
+}
+.op-zasady .op-zasady__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: 600;
+}
+.op-technika {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-padding-section);
+  margin: 0;
+}
+.op-technika > div {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  align-content: start;
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--wor-linia);
+}
+.op-technika dt {
+  font-weight: var(--bh-text-weight-heading);
+}
+.op-technika dd {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+}
+@media (max-width: 700px) {
+  .op-technika {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Photo credits ---------- */
+
+.op-zdjecia__lista {
+  columns: 13rem;
+  column-gap: var(--bh-padding-section);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+  line-height: 1.7;
+}
+.op-zdjecia__lista li {
+  break-inside: avoid;
+}
+
+/* ---------- Signature ---------- */
+
+.podpis {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--bh-gap-snug);
+  min-height: 70svh;
+  margin-top: var(--wor-space-section);
+  margin-bottom: calc(-1 * var(--wor-space-section));
+  padding: var(--wor-space-section) var(--wor-gutter);
+  overflow: hidden;
+  background: var(--wor-niebo-noc);
+  color: var(--wor-scena-tekst);
+  text-align: center;
+}
+.podpis__ptak {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  z-index: -1;
+  width: clamp(5rem, 3rem + 7vw, 9rem);
+  height: auto;
+  fill: var(--wor-scena-tekst);
+  opacity: 0.16;
+  translate: 70vw 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .podpis__ptak {
+    animation: przelot 38s linear infinite;
+  }
+}
+.podpis__imie {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-display);
+  font-style: italic;
+  font-weight: 500;
+  line-height: var(--wor-leading-title);
+}
+.podpis__z {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-style: italic;
+  color: var(--wor-scena-tekst-2);
+}
+.podpis__rok {
+  margin: var(--bh-gap-loose) 0 0;
+  color: var(--wor-zloto);
+  font-variant-numeric: lining-nums;
+  letter-spacing: var(--wor-tracking-eyebrow);
+}

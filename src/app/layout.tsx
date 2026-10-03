@@ -27,7 +27,9 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
-  description: 'Prywatny kurs o ptakach drapieżnych: biologia i rozpoznawanie w terenie.',
+  description: 'Prywatny kurs o ptakach drapieżnych: biologia i rozpoznawanie w terenie. Pomysł i treść: Konstancja Tanjga.',
+  authors: [{ name: 'Konstancja Tanjga' }],
+  creator: 'Konstancja Tanjga',
   robots: { index: false, follow: false },
 };
 

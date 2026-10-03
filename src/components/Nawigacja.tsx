@@ -149,6 +149,11 @@ export function Nawigacja({
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/o-projekcie" className="nav__arkusz-link" aria-current={pathname === '/o-projekcie' ? 'page' : undefined}>
+                O projekcie
+              </Link>
+            </li>
           </ul>
         </nav>
         {dokad && !naMiejscu && (
