@@ -24,7 +24,7 @@ There is no test suite. Verify changes with `tsc`, `lint` and `npm run build` (t
 Environment caveats:
 - The repo lives in `~/Documents`, which iCloud syncs. iCloud creates `* 2.*` conflict copies (even inside `.git/` and `.next/`) and has reverted a file to an older version. Before committing, look for `* 2*` files, compare them with the original and delete them; if `next build` fails with `ENOTEMPTY` on `.next`, `rm -rf .next`.
 - Don't run two `next build`s against the same `.next` at once (parallel agents corrupt it).
-- `node_modules` and `.next` are symlinks into `node_modules.nosync/` and `.next.nosync/`, because iCloud skips names ending in `.nosync`. Inside iCloud, reads of `node_modules` hung for minutes and iCloud deleted files from it. `npm ci` (and `rm -rf node_modules`) replaces the symlink with a real folder. Afterwards, move the folder back into `node_modules.nosync/` and re-create the link: `mv node_modules node_modules.nosync/ && ln -s node_modules.nosync/node_modules node_modules`. Prefer `npm install`, which installs through the link.
+- `node_modules` and `.next` are symlinks into `node_modules.nosync/` and `.next.nosync/`, because iCloud skips names ending in `.nosync`. Inside iCloud, reads of `node_modules` hung for minutes and iCloud deleted files from it. Both `npm install` and `npm ci` replace the symlink with a real folder, so after every install run `rm -rf node_modules.nosync/node_modules && mv node_modules node_modules.nosync/ && ln -s node_modules.nosync/node_modules node_modules`.
 
 ## Architecture
 
