@@ -405,3 +405,64 @@ export async function ideaKursu() {
   if (!sekcja) throw new Error('PLAN-KURSU.md: brak sekcji „## Idea”, z której korzysta strona „O projekcie”');
   return sekcja.replace(/^Idea\s*\n/, '').split(/^---\s*$/m)[0].trim();
 }
+
+/**
+ * Each module's opening scene: a bird that stands for the module, in the
+ * photo that suits it (A4 is about pairs: two white-tailed eagles; B5 is
+ * owls: the eagle owl; A1 opens with the falcon, which is closer to parrots
+ * than to hawks).
+ */
+const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
+  'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', zdjecie: 'siedzacy' },
+  anatomia: { gatunek: 'kobuz', zdjecie: 'siedzacy' },
+  'polowanie-i-ekologia': { gatunek: 'pustulka', zdjecie: 'lot' },
+  rozrod: { gatunek: 'bielik', zdjecie: 'siedzacy' },
+  wedrowki: { gatunek: 'sep-plowy', zdjecie: 'lot' },
+  ochrona: { gatunek: 'orlosep', zdjecie: 'siedzacy' },
+  'ludzie-i-drapiezniki': { gatunek: 'jastrzab', zdjecie: 'siedzacy' },
+  metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
+  polska: { gatunek: 'bielik', zdjecie: 'lot' },
+  gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },
+  'poludnie-hiszpanii': { gatunek: 'orzel-iberyjski', zdjecie: 'siedzacy' },
+  sowy: { gatunek: 'puchacz', zdjecie: 'siedzacy' },
+};
+
+/** The photo and species that open a module, or null when it has none. */
+export function otwarcieModulu(slug: string) {
+  const o = OTWARCIA_MODULOW[slug];
+  const g = o && znajdzGatunek(o.gatunek);
+  const zdjecie = o && zdjecia[o.gatunek]?.[o.zdjecie];
+  return g && zdjecie ? { gatunek: g, zdjecie, wLocie: o.zdjecie === 'lot' } : null;
+}
+
+/**
+ * A module's README for its overview page: the title, the path line and the
+ * hook (`> …`) are shown by the opening scene, so they are taken out of the
+ * text; the rest (scope, goals, plan) is returned as Markdown.
+ */
+export function przygotujOpisModulu(md: string) {
+  const bloki = md.replace(/^#\s.*\n+/, '').split(/\n\s*\n/);
+  const zajawka = bloki.find((b) => b.startsWith('> '))?.slice(2).trim() ?? null;
+  const reszta = bloki.filter((b) => !b.startsWith('> ') && !/^Ścieżka [AB]:/.test(b.trim()));
+  return { zajawka, md: reszta.join('\n\n') };
+}
+
+/** Lessons of a module with what the syllabus shows (reading time, quiz pass mark) and the atlas species each names. */
+export async function sylabusModulu(slug: string) {
+  const modul = znajdzModul(slug);
+  if (!modul) return [];
+  return Promise.all(
+    modul.lekcje.map(async (l) => {
+      const plik = `moduly/${slug}/${l.slug}.md`;
+      const strona = przygotujStroneLekcji(await czytajMarkdown(plik), plik);
+      return {
+        slug: l.slug,
+        tytul: l.tytul,
+        minuty: strona.minuty,
+        progQuizu: strona.quiz?.prog ?? null,
+        lead: strona.lead,
+        gatunki: strona.wszystkie,
+      };
+    }),
+  );
+}

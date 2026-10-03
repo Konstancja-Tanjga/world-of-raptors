@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { dzisiaj, useChecklista } from '@/lib/checklist';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
@@ -25,7 +25,8 @@ import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
 
-export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
+/** `sylwetki`: each species' silhouette, drawn on the server so the generator stays out of this bundle. */
+export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwetki: Record<string, ReactNode> }) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
   const { filtry, setFiltry, wynik } = useFiltry(gatunki);
   const [widok, setWidok] = useState<Widok>('wszystkie');
@@ -220,10 +221,10 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
         )
       ) : (
         grupy.map(([grupa, lista_]) => (
-          <section key={grupa} className="stack" aria-labelledby={`grupa-${grupa}`}>
-            <h2 id={`grupa-${grupa}`} className="section-title">
-              {grupa}{' '}
-              <span className="muted">
+          <section key={grupa} className="checklist__grupa" aria-labelledby={`grupa-${grupa}`}>
+            <h2 id={`grupa-${grupa}`} className="checklist__naglowek">
+              {grupa[0].toLocaleUpperCase('pl') + grupa.slice(1)}{' '}
+              <span className="checklist__licznik">
                 ({lista_.filter((g) => lista[g.id]).length} z {lista_.length})
               </span>
             </h2>
@@ -233,7 +234,10 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
                 return (
                   <li key={g.id}>
                     <Card padding="snug" accent={obs ? 'success' : 'none'}>
-                      <div className="checklist__row">
+                      <div className="checklist__row" data-widziany={obs ? '' : undefined}>
+                        <span className="checklist__sylwetka" aria-hidden="true">
+                          {sylwetki[g.id]}
+                        </span>
                         <Checkbox
                           label={g.pl}
                           description={`${g.lat} (ang. ${g.en})`}
@@ -276,7 +280,7 @@ export function ChecklistView({ gatunki }: { gatunki: Gatunek[] }) {
       )}
 
       <section className="stack" aria-labelledby="kopia">
-        <h2 id="kopia" className="section-title">
+        <h2 id="kopia" className="checklist__naglowek">
           Kopia zapasowa
         </h2>
         <p className="muted">

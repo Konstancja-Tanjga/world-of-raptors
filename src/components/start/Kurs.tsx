@@ -9,23 +9,33 @@ const OPISY: Record<'a' | 'b', string> = {
   b: 'Jak rozpoznać je w locie: metoda, Polska, południe Hiszpanii, cieśnina i sowy nocą.',
 };
 
-/** The course as two paths of numbered modules, each with its own hook and my progress. */
-export async function Kurs() {
+/**
+ * The course as two paths of numbered modules, each with its own hook and my
+ * progress. `naglowek={false}` leaves out the section heading, for a page
+ * whose own title already says what this is.
+ */
+export async function Kurs({ naglowek = true }: { naglowek?: boolean }) {
   const zajawki = new Map(await Promise.all(gotoweModuly.map(async (m) => [m.slug, await zajawkaModulu(m.slug)] as const)));
   const ileModulow = gotoweModuly.length;
 
   return (
-    <section className="kurs" aria-labelledby="kurs-tytul">
-      <header className="sekcja">
-        <p className="eyebrow">Kurs</p>
-        <h2 id="kurs-tytul" className="sekcja__tytul">
-          Dwie ścieżki, {ileModulow} {odmiana(ileModulow, ['moduł', 'moduły', 'modułów'])}
-        </h2>
-        <p className="sekcja__lead">
-          Biologia tłumaczy, dlaczego drapieżnik wygląda i lata tak, a nie inaczej. Rozpoznawanie uczy, jak wykorzystać to w
-          terenie. Można iść po kolei albo zacząć od jednej ze ścieżek.
-        </p>
-      </header>
+    <section
+      className="kurs"
+      aria-labelledby={naglowek ? 'kurs-tytul' : undefined}
+      aria-label={naglowek ? undefined : 'Moduły kursu'}
+    >
+      {naglowek && (
+        <header className="sekcja">
+          <p className="eyebrow">Kurs</p>
+          <h2 id="kurs-tytul" className="sekcja__tytul">
+            Dwie ścieżki, {ileModulow} {odmiana(ileModulow, ['moduł', 'moduły', 'modułów'])}
+          </h2>
+          <p className="sekcja__lead">
+            Biologia tłumaczy, dlaczego drapieżnik wygląda i lata tak, a nie inaczej. Rozpoznawanie uczy, jak wykorzystać to
+            w terenie. Można iść po kolei albo zacząć od jednej ze ścieżek.
+          </p>
+        </header>
+      )}
       {sciezki.map((s) => (
         <div key={s.id} className="sciezka">
           <div className="sciezka__naglowek">
