@@ -29,12 +29,12 @@ Environment caveats:
 ## Architecture
 
 **Content is data, the app is a renderer.** Nearly all course material lives in `content/`:
-- `moduly.json` defines the two paths, the modules (A1–A7, B1–B5) and each module's lesson order and titles. A lesson exists for the app only if it is listed here.
+- `moduly.json` defines the two paths, the modules (A1–A7, B1–B5) and each module's lesson order and titles. A lesson exists for the app only if it is listed here, and a module only if it has `gotowy: true`, a `slug` and a `lekcje` list (`gotoweModuly` in `content.ts`).
 - `moduly/<slug>/README.md` (module overview) and `moduly/<slug>/NN-*.md` (lessons). Routes `/moduly/[slug]` and `/moduly/[slug]/[lekcja]` are generated from `moduly.json` via `generateStaticParams` with `dynamicParams = false`.
 - `gatunki.json` is the species atlas: Polish/Latin/English/Spanish names, `regiony`, `aktywnosc` (`dzienny` | `nocny`), `mylona_z` (look-alike ids) and `sylwetka` (ID cues). Diurnal and nocturnal species use different `sylwetka` keys; the build throws if a species has unknown or missing keys. The cue order in `SpeciesCues.tsx` mirrors the method lessons (B1 for raptors, B5 for owls).
 - `zdjecia.json` holds two reference photos per species (Commons thumbnails with author and licence); `ciekawostki.json` holds the rotating curiosities.
 
-`src/lib/content.ts` (server-only) loads all of this and is the single entry point for pages.
+`src/lib/content.ts` (server-only) loads all of this and is the single entry point for pages. Besides the module routes, the app has `/gatunki` (atlas) and `/gatunki/[id]`, `/checklista`, `/fiszki` and `/plan`. A species page links to the modules that cover it via `modulyGatunku()`, which maps `regiony`/`aktywnosc` to hard-coded module slugs; a new region or module needs a line there.
 
 **Lesson rendering** (`src/components/Markdown.tsx`): `react-markdown` + `remark-gfm` + `rehype-raw` (raw HTML is allowed because content is authored in-repo). Relative `.md` links are mapped to app routes by `src/lib/links.ts`. Custom block tags: `<species-photos data-id="…">`, `<zdjecie src=… autor=… licencja=…>` and `<quiz-krokowy>` (inserted by code, see below) must be written with the opening tag on its own line and the closing tag on the next, with blank lines around them; otherwise Markdown wraps them in a `<p>`.
 
@@ -53,7 +53,7 @@ Environment caveats:
 
 **Flashcards** (`/fiszki`, `FiszkiView.tsx`): one card per atlas reference photo (`taliaFiszek()` in `content.ts`, id `<species>/<lot|siedzacy>`), scheduled by FSRS (`ts-fsrs`, default parameters with fuzz). A card with no stored entry is new. Order: overdue reviews, then new cards (up to 10 a day, counted by `wprowadzona`), then reviews due within the next 20 minutes. The photo's alt text must not name the species before the answer is shown.
 
-**Rendering modes.** Every page is static except the home page (`export const dynamic = 'force-dynamic'`), which picks a species of the day by the Europe/Warsaw date. Client-only choices (a random curiosity) are made after mount, because a server-side pick would freeze at build time. Images use `images.unoptimized`: Commons thumbnails are served directly; `public/zdjecia/` holds the owner's own photo.
+**Rendering modes.** Every page is static except the home page (`export const dynamic = 'force-dynamic'`), which picks a species of the day by the Europe/Warsaw date. Client-only choices (a random curiosity) are made after mount, because a server-side pick would freeze at build time. Images use `images.unoptimized`: Commons thumbnails are served directly; `public/zdjecia/` holds resized copies of the owner's own photos. The originals sit in the git-ignored `/Images`; never publish or reference them directly.
 
 ## Big Hat design system
 
