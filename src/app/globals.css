@@ -1978,6 +1978,7 @@ li {
   margin-top: var(--wor-space-block);
 }
 .sciezka__naglowek {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -1986,6 +1987,10 @@ li {
   margin-bottom: var(--bh-padding-section);
   padding-top: var(--bh-gap-loose);
   border-top: 1px solid var(--wor-linia);
+}
+/* The trail and the bird exist only for the scroll animation below. */
+.sciezka__trasa {
+  display: none;
 }
 .sciezka__tytul {
   margin: 0;
@@ -2067,6 +2072,123 @@ a.modul:focus-visible {
   background: transparent;
   box-shadow: inset 0 0 0 1px var(--wor-linia);
   color: var(--bh-text-muted);
+}
+
+/* A path draws itself as it scrolls in: a trail runs along the hairline
+   above it, led by a bird that glides across and climbs away, the title
+   follows it in, and the module cards land one after another, in course
+   order. Tied to the scroll, so it runs backwards too. Only where
+   scroll-driven animations exist and motion is welcome; the base styles
+   above show the finished path. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sciezka__naglowek {
+      view-timeline: --trasa block;
+    }
+    .sciezka__trasa {
+      display: block;
+      position: absolute;
+      inset: -1px 0 auto;
+      height: 0;
+      container-type: inline-size;
+      pointer-events: none;
+    }
+    .sciezka__trasa::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: var(--bh-gap-hairline);
+      translate: 0 -50%;
+      background: linear-gradient(90deg, transparent, var(--wor-akcent));
+      transform-origin: left center;
+      animation: trasa-slad linear both;
+      animation-timeline: --trasa;
+      animation-range: cover 4% cover 58%;
+    }
+    .sciezka__ptak {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2.9rem;
+      height: auto;
+      fill: var(--bh-text-primary);
+      animation: trasa-ptak linear both;
+      animation-timeline: --trasa;
+      animation-range: cover 4% cover 58%;
+    }
+    .sciezka__tytul,
+    .sciezka__opis {
+      animation: trasa-napis linear both;
+      animation-timeline: --trasa;
+      animation-range: cover 8% cover 36%;
+    }
+    .sciezka__opis {
+      animation-range: cover 14% cover 42%;
+    }
+    .moduly > li {
+      animation: przylot linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 6%) entry calc(70% + var(--i, 0) * 6%);
+    }
+  }
+}
+@keyframes trasa-slad {
+  0% {
+    scale: 0 1;
+  }
+  78% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 1 1;
+    opacity: 0;
+  }
+}
+/* The bird faces right (the drawing is head-up) and banks a little as it goes. */
+@keyframes trasa-ptak {
+  0% {
+    translate: 0 -50%;
+    rotate: 90deg;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    translate: calc(35cqi - 35%) calc(-50% - 0.45rem);
+    rotate: 84deg;
+    animation-timing-function: ease-in-out;
+  }
+  54% {
+    translate: calc(67.5cqi - 67.5%) calc(-50% + 0.2rem);
+    rotate: 96deg;
+    animation-timing-function: ease-in-out;
+  }
+  78% {
+    translate: calc(100cqi - 100%) -50%;
+    rotate: 90deg;
+    opacity: 1;
+  }
+  100% {
+    translate: calc(100cqi - 100%) calc(-50% - 1.6rem);
+    rotate: 62deg;
+    opacity: 0;
+  }
+}
+@keyframes trasa-napis {
+  from {
+    opacity: 0;
+    translate: -0.75rem 0;
+  }
+}
+@keyframes przylot {
+  from {
+    opacity: 0;
+    translate: 0 2rem;
+    scale: 0.96;
+  }
 }
 
 /* On a phone each path is a row to swipe through, not twelve cards to scroll past. */

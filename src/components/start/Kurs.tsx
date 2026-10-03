@@ -1,13 +1,22 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 import { gotoweModuly, moduly, sciezki, zajawkaModulu } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 import { MarkdownInline } from '../Markdown';
 import { PostepModulu } from '../PostepModulu';
+import { Sylwetka } from '../Sylwetka';
 
 const OPISY: Record<'a' | 'b', string> = {
   a: 'Jak drapieżniki widzą, polują, wychowują młode i wędrują, i co im dziś zagraża.',
   b: 'Jak rozpoznać je w locie: metoda, Polska, południe Hiszpanii, cieśnina i sowy nocą.',
 };
+
+/**
+ * The bird that leads each path in as it scrolls into view (globals.css): the
+ * course's red kite on biology, and on identification the common buzzard, the
+ * yardstick B1 measures every other raptor against.
+ */
+const PRZEWODNICY: Record<'a' | 'b', string> = { a: 'kania-ruda', b: 'myszolow' };
 
 /**
  * The course as two paths of numbered modules, each with its own hook and my
@@ -38,17 +47,21 @@ export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
       {sciezki.map((s) => (
         <div key={s.id} className="sciezka">
           <div className="sciezka__naglowek">
+            <div className="sciezka__trasa" aria-hidden="true">
+              <Sylwetka id={PRZEWODNICY[s.id]} klasa="sciezka__ptak" dokladnosc={0.3} />
+            </div>
             <h3 className="sciezka__tytul">{s.tytul}</h3>
             <p className="sciezka__opis">{OPISY[s.id]}</p>
           </div>
           <ol className="moduly" aria-label={s.tytul}>
             {moduly
               .filter((m) => m.sciezka === s.id)
-              .map((m) => {
+              .map((m, i) => {
                 const gotowy = gotoweModuly.find((g) => g.id === m.id);
                 const zajawka = gotowy && zajawkaModulu(gotowy.slug);
                 return (
-                  <li key={m.id}>
+                  // `--i` staggers the cards' landing, in course order.
+                  <li key={m.id} style={{ '--i': i } as CSSProperties}>
                     {gotowy ? (
                       <Link href={`/moduly/${gotowy.slug}`} className="modul">
                         <span className="modul__id">{m.id}</span>
