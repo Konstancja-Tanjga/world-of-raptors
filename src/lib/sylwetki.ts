@@ -215,3 +215,81 @@ export const POZY: Partial<Record<string, Poza>> = {
   'kania-czarna': { wznios: 0, zgiecie: 0.1, ogon: 0.5 },
   rybolow: { wznios: 0, zgiecie: 0.15, ogon: 0.5 },
 };
+
+/**
+ * How each diurnal species flies, after its `lot` cue in gatunki.json (B1
+ * lesson 2, "Sposób lotu"): the flashcards animate the silhouette this way,
+ * because the way a bird flies is the second thing to look at after its shape.
+ */
+export type StylLotu = 'szybuje' | 'kreci-ogonem' | 'zawisa' | 'macha-i-szybuje' | 'szybki' | 'kolysze';
+
+export const STYL_LOTU: Record<string, StylLotu> = {
+  'kania-czarna': 'kreci-ogonem',
+  'kania-ruda': 'kreci-ogonem',
+  kaniuk: 'zawisa',
+  trzmielojad: 'szybuje',
+  myszolow: 'szybuje',
+  kurhannik: 'zawisa',
+  'myszolow-wlochaty': 'zawisa',
+  'orzelek-wlochaty': 'szybuje',
+  scierwnik: 'szybuje',
+  gadozer: 'zawisa',
+  rybolow: 'szybuje',
+  'sep-plowy': 'szybuje',
+  'sep-plamisty': 'szybuje',
+  'sep-kasztanowaty': 'szybuje',
+  'blotniak-lakowy': 'kolysze',
+  'blotniak-zbozowy': 'kolysze',
+  'blotniak-stawowy': 'kolysze',
+  'orzel-iberyjski': 'szybuje',
+  'orzel-poludniowy': 'szybuje',
+  'orzel-przedni': 'szybuje',
+  orlosep: 'szybuje',
+  bielik: 'szybuje',
+  'orlik-krzykliwy': 'szybuje',
+  'orlik-grubodzioby': 'szybuje',
+  pustulka: 'zawisa',
+  pustuleczka: 'zawisa',
+  kobuz: 'szybki',
+  'sokol-wedrowny': 'szybki',
+  'sokol-skalny': 'szybki',
+  drzemlik: 'szybki',
+  krogulec: 'macha-i-szybuje',
+  jastrzab: 'macha-i-szybuje',
+};
+
+/** One wingbeat at phase f (0–1): wings up, the downstroke, the hand folding on the way back. */
+function machniecie(f: number, amplituda: number, baza: Poza): Poza {
+  const k = f * Math.PI * 2;
+  return { wznios: amplituda * Math.cos(k), zgiecie: baza.zgiecie + Math.max(0, Math.sin(k)) * 0.32 * amplituda, ogon: baza.ogon };
+}
+
+/**
+ * The pose `t` seconds into a flight in the given style, and how far the bird
+ * tilts (degrees). `baza` is the species' resting pose.
+ */
+export function pozaWLocie(styl: StylLotu, t: number, baza: Poza): { poza: Poza; przechyl: number } {
+  switch (styl) {
+    case 'zawisa':
+      // Fast, shallow beats on the spot, tail fanned wide.
+      return { poza: { ...machniecie((t * 4.2) % 1, 0.5, baza), ogon: 1 }, przechyl: Math.sin(t * 1.3) * 1.5 };
+    case 'macha-i-szybuje': {
+      // A burst of quick beats, then a glide.
+      const w = t % 2.9;
+      return w < 1 ? { poza: machniecie((w * 5) % 1, 0.8, baza), przechyl: 0 } : { poza: baza, przechyl: Math.sin(t * 0.9) * 2 };
+    }
+    case 'szybki':
+      return { poza: machniecie((t * 3.5) % 1, 0.55, { ...baza, zgiecie: Math.max(baza.zgiecie, 0.18) }), przechyl: Math.sin(t * 0.8) * 2 };
+    case 'kolysze':
+      // A harrier's low glide, rocking from side to side; now and then a few slow beats.
+      return {
+        poza: t % 6 < 1.2 ? machniecie((t * 2.2) % 1, 0.6, baza) : { ...baza, wznios: 0.3 },
+        przechyl: Math.sin(t * 2.6) * 7,
+      };
+    case 'kreci-ogonem':
+      // A kite steers with its tail: it fans and closes all the time.
+      return { poza: { ...baza, ogon: 0.55 + 0.42 * Math.sin(t * 2.4) }, przechyl: Math.sin(t * 0.7) * 5 };
+    default:
+      return { poza: { ...baza, ogon: baza.ogon + 0.12 * Math.sin(t * 0.5) }, przechyl: Math.sin(t * 0.35) * 4 };
+  }
+}

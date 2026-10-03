@@ -93,11 +93,30 @@ export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: nu
 /** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
 export type Quiz = { prog: number; pytania: PytanieQuizu[] };
 
-/** A flashcard: one reference photo of an atlas species, to be named. */
+/**
+ * What a flashcard asks. Photo cards (`lot`, `siedzacy`): name the bird in a
+ * reference photo. `sylwetka`: name it from its silhouette in flight (diurnal
+ * species; owls are told apart by voice, B5). Name cards: give the English or
+ * Spanish name for the Polish one, or the Polish name for the English or
+ * Spanish one.
+ */
+export type RodzajFiszki = 'lot' | 'siedzacy' | 'sylwetka' | 'pl-en' | 'pl-es' | 'en-pl' | 'es-pl';
+
+/** A flashcard. `id` is `<species id>/<rodzaj>`, the key of its schedule in the browser. */
 export type Fiszka = {
-  /** `<species id>/<lot|siedzacy>`; the key of its schedule in the browser. */
   id: string;
-  rodzaj: 'lot' | 'siedzacy';
-  zdjecie: Zdjecie;
-  gatunek: Pick<Gatunek, 'id' | 'pl' | 'lat' | 'en' | 'grupa' | 'cechy' | 'regiony'>;
+  rodzaj: RodzajFiszki;
+  /** The species' id in `gatunki`. */
+  gatunek: string;
+  /** The photo a photo card asks about; on other cards a photo for the answer, if there is one. */
+  zdjecie: Zdjecie | null;
+};
+
+/** What the answer side shows about a species. */
+export type GatunekFiszki = Pick<
+  Gatunek,
+  'id' | 'pl' | 'lat' | 'en' | 'es' | 'grupa' | 'cechy' | 'regiony' | 'aktywnosc' | 'sylwetka'
+> & {
+  /** Look-alikes from `mylona_z`, with their names. */
+  podobne: { id: string; pl: string }[];
 };

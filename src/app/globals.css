@@ -837,15 +837,157 @@ li {
   font-weight: var(--bh-text-weight-emphasis);
 }
 
-/* Flashcards */
-.fiszka {
-  display: flex;
-  flex-direction: column;
+/* Page headers (atlas, checklist, flashcards, plan) */
+.naglowek-strony {
+  display: grid;
   gap: var(--bh-gap-normal);
-  max-width: 40rem;
+  max-width: 52rem;
+  padding-bottom: var(--bh-padding-section);
 }
-.fiszka .muted {
+.naglowek-strony__tytul {
   margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-display);
+  font-weight: 600;
+  line-height: var(--wor-leading-display);
+  letter-spacing: var(--wor-tracking-display);
+  padding-block: 0.06em;
+}
+.naglowek-strony__lead {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
+}
+
+/* Flashcards */
+.fiszki {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--bh-padding-section);
+}
+.fiszki__filtry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-loose) var(--wor-space-block);
+}
+/* A control wider than a phone scrolls inside its own box, never the page. */
+.fiszki__filtry > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.fiszka {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--wor-space-block);
+}
+.fiszka__przod {
+  min-width: 0;
+  position: sticky;
+  top: calc(var(--wor-nav-height) + var(--bh-gap-loose));
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__scena {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  /* The card and its question fit one screen; the box widens rather than grow taller. */
+  max-height: 62vh;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-sunken);
+}
+/* A photo is shown whole (a crop could hide the very mark that identifies
+   the bird), over a blurred copy of itself instead of empty bars. */
+.fiszka__tlo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(var(--bh-material-regular-blur)) saturate(var(--bh-material-saturation));
+  opacity: 0.6;
+  scale: 1.15;
+}
+.fiszka__zdjecie {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.fiszka__scena--niebo {
+  background: var(--wor-niebo-dzien);
+}
+.fiszka__scena--niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, var(--wor-blask) 0, var(--wor-blask-miekki) 26%, transparent 62%);
+}
+.scena-sylwetki {
+  width: 92%;
+  height: auto;
+  overflow: visible;
+  fill: var(--wor-sylwetka);
+}
+.fiszka__scena--nazwa {
+  container-type: inline-size;
+  align-content: center;
+  gap: var(--bh-gap-normal);
+  padding: var(--wor-space-block);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+  text-align: center;
+}
+.fiszka__jezyk {
+  margin: 0;
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
+  font-weight: var(--bh-text-weight-heading);
+}
+.fiszka__slowo {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  /* Sized by the card, so "Sęp kasztanowaty" fits as well as "Kobuz". */
+  font-size: clamp(2rem, 11cqi, 5rem);
+  text-wrap: balance;
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.fiszka__podpis {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+}
+.fiszka__podpis a {
+  color: inherit;
+}
+.fiszka__panel {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-loose);
+}
+.fiszka__licznik {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fiszka__pytanie {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
 }
 .fiszka__akcje {
   display: flex;
@@ -853,26 +995,129 @@ li {
   gap: var(--bh-gap-snug);
 }
 .fiszka__odpowiedz {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
+  display: grid;
+  gap: var(--bh-gap-loose);
+  padding-top: var(--bh-gap-loose);
+  border-top: 1px solid var(--wor-linia);
+  outline: none;
+  /* Shown hundreds of times: quick and quiet. */
+  animation: odslon var(--wor-dur-base) var(--wor-ease-out) both;
+}
+@keyframes odslon {
+  from {
+    opacity: 0;
+    translate: 0 calc(0.4rem * var(--wor-ruch));
+  }
+}
+.fiszka__odpowiedz:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 4px;
+}
+.fiszka__grupa {
+  margin: 0;
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
 }
 .fiszka__nazwa {
   margin: 0;
-  font-size: var(--bh-text-size-display);
-  font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
 }
-.fiszka__lat,
+.fiszka__nazwy {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+}
 .fiszka__cechy {
   margin: 0;
-}
-.fiszka__cechy {
   padding-left: var(--bh-padding-section);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.45;
+}
+.fiszka__cechy-sylwetki {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.fiszka__cechy-sylwetki > div {
+  display: grid;
+  grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+  gap: var(--bh-gap-normal);
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.fiszka__cechy-sylwetki dt {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fiszka__cechy-sylwetki dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.4;
+}
+.fiszka__ilustracja {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-padding-section);
+}
+.fiszka__ilustracja img {
+  width: 10rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--bh-radius-surface);
+}
+.fiszka__mala-sylwetka {
+  width: 5.5rem;
+  height: auto;
+  fill: var(--bh-text-primary);
+}
+.fiszka__podobne {
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.fiszka__podobne p {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fiszka__podobne ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-normal) var(--bh-padding-section);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fiszka__podobne li {
+  display: grid;
+  justify-items: start;
+  gap: var(--bh-gap-tight);
+}
+.fiszka__podobne .fiszka__mala-sylwetka {
+  width: 4rem;
+  fill: var(--bh-text-muted);
+}
+.fiszka__podobne a,
+.fiszka__karta {
+  color: var(--bh-text-link);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-underline-offset: 0.25em;
+}
+.fiszka__podobne a:focus-visible,
+.fiszka__karta:focus-visible,
+.fiszka__podpis a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
 }
 .fiszka__oceny {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   gap: var(--bh-gap-normal);
   padding-top: var(--bh-gap-snug);
 }
@@ -885,6 +1130,14 @@ li {
 @media (hover: none) {
   .fiszka__klawisz {
     display: none;
+  }
+}
+@media (max-width: 900px) {
+  .fiszka {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fiszka__przod {
+    position: static;
   }
 }
 

@@ -321,6 +321,9 @@
 }
 .lornetka {
   --lornetka: 100%;
+  /* The photo zooms in as it opens; a scaled image would otherwise widen the page. */
+  overflow: clip;
+  border-radius: var(--wor-radius-scene);
   -webkit-mask-image:
     radial-gradient(circle at 33% 50%, #000 var(--lornetka), transparent calc(var(--lornetka) + 0.5%)),
     radial-gradient(circle at 67% 50%, #000 var(--lornetka), transparent calc(var(--lornetka) + 0.5%));

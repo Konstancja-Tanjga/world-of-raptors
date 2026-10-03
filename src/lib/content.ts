@@ -9,6 +9,7 @@ import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
   Fiszka,
+  GatunekFiszki,
   Gatunek,
   Modul,
   PytanieQuizu,
@@ -212,16 +213,44 @@ export function modulyGatunku(g: Gatunek) {
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 
-/** Flashcards: every atlas species' reference photos, in flight and perched. */
-export function taliaFiszek(): Fiszka[] {
+const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
+
+/**
+ * The flashcard deck: for every atlas species its reference photos (in flight
+ * and perched), its silhouette (diurnal species with a drawn shape) and its
+ * names both ways between Polish and English or Spanish. Photo card ids are
+ * the ones stored before the other kinds existed, so schedules carry over.
+ */
+export function taliaFiszek(maSylwetke: (id: string) => boolean): Fiszka[] {
   return gatunki.flatMap((g) => {
     const z = zdjecia[g.id];
-    const { id, pl, lat, en, grupa, cechy, regiony } = g;
-    return (['lot', 'siedzacy'] as const).flatMap((rodzaj) => {
+    const zdjeciaKart = (['lot', 'siedzacy'] as const).flatMap((rodzaj) => {
       const zdjecie = z?.[rodzaj];
-      return zdjecie ? [{ id: `${g.id}/${rodzaj}`, rodzaj, zdjecie, gatunek: { id, pl, lat, en, grupa, cechy, regiony } }] : [];
+      return zdjecie ? [{ id: `${g.id}/${rodzaj}`, rodzaj, gatunek: g.id, zdjecie }] : [];
     });
+    // The answer side of a non-photo card shows the bird as it is usually seen.
+    const ilustracja = (g.aktywnosc === 'nocny' ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy)) ?? null;
+    const sylwetka: Fiszka[] =
+      g.aktywnosc === 'dzienny' && maSylwetke(g.id)
+        ? [{ id: `${g.id}/sylwetka`, rodzaj: 'sylwetka', gatunek: g.id, zdjecie: ilustracja }]
+        : [];
+    const nazwy: Fiszka[] = KIERUNKI_NAZW.map((rodzaj) => ({ id: `${g.id}/${rodzaj}`, rodzaj, gatunek: g.id, zdjecie: ilustracja }));
+    return [...zdjeciaKart, ...sylwetka, ...nazwy];
   });
+}
+
+/** The species data a flashcard's answer needs, keyed by species id. */
+export function gatunkiFiszek(): Record<string, GatunekFiszki> {
+  return Object.fromEntries(
+    gatunki.map((g) => {
+      const { id, pl, lat, en, es, grupa, cechy, regiony, aktywnosc, sylwetka } = g;
+      const podobne = g.mylona_z.flatMap((m) => {
+        const x = znajdzGatunek(m);
+        return x ? [{ id: x.id, pl: x.pl }] : [];
+      });
+      return [id, { id, pl, lat, en, es, grupa, cechy, regiony, aktywnosc, sylwetka, podobne }];
+    }),
+  );
 }
 
 export async function czytajMarkdown(relPath: string) {
@@ -319,4 +348,51 @@ export async function zajawkaModulu(slug: string) {
   const md = await czytajMarkdown(`moduly/${slug}/README.md`);
   const linia = md.split('\n').find((l) => l.startsWith('> '));
   return linia ? linia.slice(2).trim() : null;
+}
+
+/** The course in numbers, for the about page: everything counted from the content itself. */
+export async function statystykiKursu() {
+  const pliki = gotoweModuly.flatMap((m) => [`moduly/${m.slug}/README.md`, ...m.lekcje.map((l) => `moduly/${m.slug}/${l.slug}.md`)]);
+  const teksty = await Promise.all(pliki.map(async (p) => [p, await czytajMarkdown(p)] as const));
+  const slowa = teksty.reduce(
+    (n, [, md]) => n + md.replace(/<[^>]*>/g, ' ').split(/\s+/).filter((w) => /\p{L}/u.test(w)).length,
+    0,
+  );
+  const pytania = teksty.reduce((n, [p, md]) => n + (p.endsWith('README.md') ? 0 : (wyodrebnijQuiz(md, p).quiz?.pytania.length ?? 0)), 0);
+  const zdjecWLekcjach = teksty.reduce((n, [, md]) => n + (md.match(/<zdjecie\b/g)?.length ?? 0), 0);
+  const zdjecWAtlasie = Object.values(zdjecia).reduce((n, z) => n + (z?.lot ? 1 : 0) + (z?.siedzacy ? 1 : 0), 0);
+  return {
+    gatunki: gatunki.length,
+    moduly: gotoweModuly.length,
+    lekcje: gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0),
+    slowa,
+    pytania,
+    zdjecia: zdjecWLekcjach + zdjecWAtlasie,
+    ciekawostki: ciekawostki.length,
+  };
+}
+
+/**
+ * Everyone whose photos the course shows, from the atlas and from lesson
+ * tags: once each, in Polish alphabetical order, without the Flickr-style
+ * "from <place>" tails. (Each photo keeps its full credit where it appears.)
+ */
+export async function autorzyZdjec() {
+  const surowe: string[] = [];
+  for (const z of Object.values(zdjecia)) for (const p of [z?.lot, z?.siedzacy]) if (p) surowe.push(p.autor);
+  for (const m of gotoweModuly) {
+    for (const l of m.lekcje) {
+      const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);
+      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(autor.replace(/&amp;/g, '&'));
+    }
+  }
+  const nieznani = /^(autor nieznany|nieznany autor|own work)$/i;
+  const wedlugKlucza = new Map<string, string>();
+  for (const a of surowe) {
+    const imie = a.replace(/\s+from\s+.+$/i, '').trim();
+    if (!imie || nieznani.test(imie)) continue;
+    const klucz = imie.toLocaleLowerCase('pl');
+    if (!wedlugKlucza.has(klucz)) wedlugKlucza.set(klucz, imie);
+  }
+  return [...wedlugKlucza.values()].sort((a, b) => a.localeCompare(b, 'pl'));
 }
