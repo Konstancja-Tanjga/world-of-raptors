@@ -2220,3 +2220,51 @@ a.modul:focus-visible {
     animation-delay: 0s !important;
   }
 }
+
+/* ---------- Not found: an empty night sky, one bird leaving ---------- */
+.zgubiony {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 80svh;
+  overflow: hidden;
+  /* A dark bird only shows against something light: the moon. */
+  background:
+    radial-gradient(circle at 72% 28%, var(--wor-ksiezyc) 0 3rem, transparent 3.1rem),
+    radial-gradient(circle at 72% 28%, var(--wor-blask-miekki), transparent 18rem),
+    var(--wor-niebo-noc);
+}
+/* It crosses the moon on its way out; with reduced motion it stays there. */
+.zgubiony__ptak {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: clamp(4rem, 2rem + 6vw, 8rem);
+  height: auto;
+  fill: var(--wor-sylwetka);
+  translate: calc(72vw - 50%) calc(22svh - 50%);
+  rotate: -12deg;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .zgubiony__ptak {
+    animation: odlatuje 7s linear both;
+  }
+}
+@keyframes odlatuje {
+  from {
+    translate: 12vw 62svh;
+    scale: 1.7;
+  }
+  to {
+    translate: 102vw -8svh;
+    scale: 0.45;
+  }
+}
+.zgubiony__tresc {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 36rem;
+  padding: var(--wor-space-block) var(--wor-gutter);
+}

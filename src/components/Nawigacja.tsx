@@ -55,7 +55,8 @@ export function Nawigacja({
     const obserwator = new IntersectionObserver(
       (wpisy) => {
         for (const w of wpisy) {
-          if (w.isIntersecting) pod.add(w.target);
+          // A scene that only touches the bar's lower edge is not under it.
+          if (w.isIntersecting && w.intersectionRect.height > 1) pod.add(w.target);
           else pod.delete(w.target);
         }
         setScena({ dla: pathname, nad: pod.size > 0 });
