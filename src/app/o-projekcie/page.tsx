@@ -50,7 +50,7 @@ const PALETY = [
   },
   {
     nazwa: 'Zmierzch',
-    opis: 'Tryb ciemny i wszystkie sceny: niebo po zachodzie słońca.',
+    opis: 'Tryb ciemny: niebo po zachodzie słońca. Te same kolory mają sceny w obu trybach, niezależnie od nieba w tle.',
     kolory: [
       { nazwa: 'Noc', hex: '#0a1018' },
       { nazwa: 'Kość', hex: '#f2eee6' },
