@@ -27,11 +27,15 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
+  // Production origin for absolute metadata URLs such as the share card's; Vercel previews and next dev use their own.
+  metadataBase: new URL('https://world-of-raptors.vercel.app'),
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
   description:
-    'Prywatny kurs o drapieżnikach dziennych i nocnych: biologia i rozpoznawanie w terenie. Pomysł, plan i treść: Konstancja Tanjga. Projekt, ruch i kod: razem z Claude (Anthropic).',
+    'Kurs o drapieżnikach dziennych i nocnych: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Pomysł, plan i treść: Konstancja Tanjga. Projekt, ruch i kod: razem z Claude (Anthropic).',
   authors: [{ name: 'Konstancja Tanjga' }],
   creator: 'Konstancja Tanjga',
+  openGraph: { type: 'website', locale: 'pl_PL', siteName: 'World of Raptors' },
+  twitter: { card: 'summary_large_image' },
   robots: { index: false, follow: false },
 };
 

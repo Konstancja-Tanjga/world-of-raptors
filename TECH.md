@@ -61,6 +61,7 @@ src/
 | `/fiszki` | fiszki: zdjęcia, sylwetki i nazwy (polskie, angielskie, hiszpańskie), powtórki FSRS |
 | `/checklista` | moja checklista: odhaczanie, data, miejsce, notatka, zdjęcia, eksport i import |
 | `/o-projekcie` | o projekcie: autorstwo, jak powstały sylwetki, kroje, kolory, ruch, podziękowania dla fotografów |
+| `/opengraph-image` | karta, którą pokazuje udostępniony link (LinkedIn, komunikatory): niebo o zmierzchu, sylwetki, tytuł i autorka; rysowana raz, przy buildzie |
 
 ## Dodawanie treści
 1. Nowa lekcja: plik `content/moduly/<slug>/NN-nazwa.md` i wpis w `lekcje` w `content/moduly.json`.
