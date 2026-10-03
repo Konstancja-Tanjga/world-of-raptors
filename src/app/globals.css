@@ -1,65 +1,490 @@
 /*
- * App-level styles. Big Hat rule 1 and 2: semantic tokens only, spacing and
- * type from the scale. The only literals are 1px borders and the reading
- * measure, which has no token.
+ * App-level styles. Values come from tokens only: Big Hat's semantic scale
+ * for components and spacing, and this product's `--wor-*` layer (motyw.css)
+ * for display type, the scenes and motion. Literals: 1px borders and the
+ * reading measure, as before.
  */
 
+html {
+  scroll-padding-top: calc(var(--wor-nav-height) + var(--bh-gap-loose));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+html[data-menu] {
+  overflow: hidden;
+}
 html,
 body {
   margin: 0;
   padding: 0;
 }
-
-.brand {
-  font-weight: var(--bh-text-weight-heading);
+body {
+  background: var(--wor-tlo);
+  color: var(--bh-text-primary);
+  font-family: var(--wor-font-ui);
   font-size: var(--bh-text-size-body);
+  line-height: var(--bh-text-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: var(--bh-selection-bg);
+  color: var(--bh-selection-fg);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* The skip link's target. It is focused only by the skip link, never by Tab. */
+.tresc {
+  display: block;
+  min-height: 70vh;
+}
+.tresc:focus {
+  outline: none;
+}
+
+/* ---------- Global navigation ---------- */
+
+.nav {
+  position: relative;
+  z-index: var(--bh-layer-sticky);
+  color: var(--bh-text-primary);
+  background: var(--bh-material-chrome-bg);
+  -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  border-bottom: 1px solid var(--bh-border-hairline);
+  transition:
+    color var(--wor-dur-base) var(--wor-ease-out),
+    background-color var(--wor-dur-base) var(--wor-ease-out),
+    border-color var(--wor-dur-base) var(--wor-ease-out);
+  view-transition-name: nawigacja;
+}
+.nav[data-przyklejona] {
+  position: sticky;
+  top: 0;
+}
+.nav[data-nad-scena] {
+  color: var(--wor-scena-tekst);
+  background: var(--wor-scena-szklo);
+  border-bottom-color: var(--wor-scena-linia);
+}
+.nav__pasek {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-loose);
+  height: var(--wor-nav-height);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+}
+.nav__marka {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--wor-font-display);
+  font-size: var(--bh-text-size-heading);
+  font-weight: 600;
+  letter-spacing: var(--wor-tracking-display);
   white-space: nowrap;
 }
-
-/* The shell hides the sidebar below 900px; the toggle is only useful there. */
-.nav-toggle {
+.znak {
+  width: 1.9rem;
+  height: auto;
+  fill: currentColor;
+  transition: transform var(--wor-dur-expressive) var(--wor-ease-spring);
+}
+.nav__marka:hover .znak {
+  transform: translateY(calc(-2px * var(--wor-ruch))) rotate(calc(-6deg * var(--wor-ruch)));
+}
+.nav__glowna {
+  margin-inline-start: auto;
+}
+.nav__linki {
+  display: flex;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__link,
+.nav__menu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-md);
+  padding-inline: var(--bh-padding-inline);
+  border: 0;
+  border-radius: var(--bh-radius-pill);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.nav__link:hover,
+.nav__menu:hover {
+  background: var(--bh-fill-hover);
+}
+.nav[data-nad-scena] .nav__link:hover,
+.nav[data-nad-scena] .nav__menu:hover {
+  background: var(--wor-scena-linia);
+}
+/* The current section: a short accent bar under the word, not colour alone (weight too). */
+.nav__link[aria-current] {
+  font-weight: var(--bh-text-weight-heading);
+}
+.nav__link[aria-current]::after {
+  content: '';
+  position: absolute;
+  inset-inline: var(--bh-padding-inline);
+  bottom: var(--bh-gap-tight);
+  height: var(--bh-gap-hairline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-akcent);
+}
+.nav[data-nad-scena] .nav__link[aria-current]::after {
+  background: var(--wor-zloto);
+}
+.nav__akcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.nav__dalej {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-padding-inline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--wor-dur-quick) var(--wor-ease-out),
+    transform var(--wor-dur-quick) var(--wor-ease-out);
+}
+.nav__dalej:hover {
+  background: var(--bh-action-primary-bg-hover);
+}
+.nav__dalej:active {
+  transform: scale(0.97);
+}
+.nav[data-nad-scena] .nav__dalej {
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
+}
+.nav__link:focus-visible,
+.nav__menu:focus-visible,
+.nav__marka:focus-visible,
+.nav__dalej:focus-visible,
+.nav__arkusz a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.nav[data-nad-scena] :focus-visible {
+  outline-color: var(--wor-zloto);
+}
+.nav__menu {
   display: none;
 }
-@media (max-width: 900px) {
-  .nav-toggle {
+.nav__arkusz {
+  position: fixed;
+  inset: var(--wor-nav-height) 0 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: var(--wor-space-block) var(--wor-gutter);
+  background: var(--wor-tlo);
+  color: var(--bh-text-primary);
+}
+.nav__arkusz ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__arkusz-link {
+  display: block;
+  padding-block: var(--bh-gap-snug);
+  color: inherit;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    opacity var(--wor-dur-expressive) var(--wor-ease-out),
+    translate var(--wor-dur-expressive) var(--wor-ease-out);
+}
+.nav__arkusz-link[aria-current] {
+  color: var(--wor-akcent);
+}
+.nav__arkusz li:nth-child(2) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 1); }
+.nav__arkusz li:nth-child(3) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 2); }
+.nav__arkusz li:nth-child(4) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 3); }
+.nav__arkusz li:nth-child(5) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 4); }
+@starting-style {
+  .nav__arkusz-link {
+    opacity: 0;
+    translate: 0 calc(0.75rem * var(--wor-ruch));
+  }
+}
+.nav__arkusz-dalej {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin-top: var(--wor-space-block);
+  padding: var(--bh-padding-section);
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  text-decoration: none;
+}
+.nav__arkusz-etykieta {
+  font-weight: var(--bh-text-weight-heading);
+  font-size: var(--bh-text-size-heading);
+}
+@media (max-width: 760px) {
+  .nav__glowna {
+    display: none;
+  }
+  .nav__menu {
     display: inline-flex;
+  }
+  .nav__akcje {
+    margin-inline-start: auto;
+  }
+}
+@media (max-width: 400px) {
+  .nav__akcje .nav__dalej {
+    display: none;
   }
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-normal);
-  padding-block: var(--bh-padding-block);
-  /* Keep items and the active highlight off the viewport edge. */
-  padding-inline: var(--bh-padding-inline);
-  box-sizing: border-box;
-  width: 100%;
+/* ---------- Module bar ---------- */
+
+.pasek {
+  position: sticky;
+  top: 0;
+  z-index: var(--bh-layer-sticky);
+  background: var(--bh-material-chrome-bg);
+  -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  border-bottom: 1px solid var(--bh-border-hairline);
+  view-transition-name: pasek-modulu;
 }
+.pasek__wnetrze {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-loose);
+  min-height: var(--bh-control-lg);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding-inline: var(--wor-gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pasek__modul {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--bh-gap-snug);
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pasek__id {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
+  font-variant-numeric: tabular-nums;
+}
+.pasek__tytul {
+  font-family: var(--wor-font-display);
+  font-size: var(--bh-text-size-heading);
+  font-weight: 600;
+}
+.pasek__modul[aria-current] .pasek__tytul {
+  text-decoration: underline;
+  text-decoration-color: var(--wor-akcent);
+  text-underline-offset: 0.3em;
+}
+.pasek__lekcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.pasek__lekcja {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+  color: var(--bh-text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.pasek__lekcja:hover {
+  background: var(--bh-fill-hover);
+}
+.pasek__lekcja[aria-current] {
+  padding-inline-end: var(--bh-padding-inline);
+  background: var(--bh-fill-hover);
+  color: var(--bh-text-primary);
+}
+.pasek__nr {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: var(--bh-control-sm);
+  height: var(--bh-control-sm);
+  border: 1px solid var(--bh-border-strong);
+  border-radius: var(--bh-radius-pill);
+  font-size: var(--bh-text-size-dense);
+  font-weight: var(--bh-text-weight-heading);
+  font-variant-numeric: tabular-nums;
+}
+.pasek__lekcja[data-gotowa] .pasek__nr {
+  border-color: var(--wor-akcent);
+  background: var(--wor-akcent);
+  color: var(--bh-text-on-accent);
+}
+.pasek__lekcja[aria-current] .pasek__nr {
+  border-color: var(--bh-text-primary);
+}
+/* Only the current lesson shows its title; the others keep it for screen readers. */
+.pasek__lekcja:not([aria-current]) .pasek__nazwa {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.pasek__lekcja[aria-current] .pasek__nazwa {
+  max-width: 22rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.pasek__stan {
+  margin: 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+  white-space: nowrap;
+}
+.pasek a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+@media (max-width: 760px) {
+  .pasek__tytul,
+  .pasek__stan {
+    display: none;
+  }
+  .pasek__lekcja[aria-current] .pasek__nazwa {
+    max-width: 11rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.stopka {
+  margin-top: var(--wor-space-section);
+  border-top: 1px solid var(--bh-border-hairline);
+  background: var(--bh-surface-sunken);
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+.stopka__wnetrze {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: var(--wor-space-block);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding: var(--wor-space-block) var(--wor-gutter) calc(var(--wor-space-block) * 1.5);
+}
+.stopka p {
+  margin: 0 0 var(--bh-gap-snug);
+  max-width: var(--wor-measure);
+}
+.stopka ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stopka li + li {
+  margin-top: var(--bh-gap-tight);
+}
+.stopka a {
+  color: inherit;
+  text-decoration: none;
+}
+.stopka a:hover {
+  color: var(--bh-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--wor-akcent);
+  text-underline-offset: 0.25em;
+}
+.stopka a:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.stopka__nazwa {
+  color: var(--bh-text-primary);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: 600;
+}
+.stopka__naglowek {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-heading);
+}
+@media (max-width: 760px) {
+  .stopka__wnetrze {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Page containers ---------- */
 
 .page {
   box-sizing: border-box;
-  max-width: 72rem;
-  padding: var(--bh-padding-hero) var(--bh-padding-page);
+  max-width: var(--wor-width);
+  margin-inline: auto;
+  padding: var(--wor-space-block) var(--wor-gutter);
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-loose);
 }
 
 .page--reading {
-  max-width: 52rem;
+  max-width: 56rem;
 }
 
 /* Article sizes itself by its own width and needs 50rem for the margin
    beside the text; the page padding would leave it just short of that. */
 .page--article {
-  padding-inline: var(--bh-padding-hero);
-}
-
-@media (max-width: 900px) {
-  .page {
-    padding: var(--bh-padding-section);
-  }
+  padding-inline: var(--wor-gutter);
 }
 
 /* A control that cannot wrap scrolls inside its own box instead of widening the page. */
