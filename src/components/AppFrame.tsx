@@ -28,6 +28,7 @@ export function AppFrame({ moduly, children }: { moduly: ModulNawigacji[]; child
   ];
   const narzedzia: NavEntry[] = [
     { id: 'gatunki', label: 'Atlas gatunków', href: '/gatunki' },
+    { id: 'fiszki', label: 'Fiszki', href: '/fiszki' },
     { id: 'checklista', label: 'Moja checklista', href: '/checklista' },
   ];
   const modulySciezki = (sciezka: 'a' | 'b'): NavEntry[] =>

@@ -84,3 +84,12 @@ export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: nu
 
 /** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
 export type Quiz = { prog: number; pytania: PytanieQuizu[] };
+
+/** A flashcard: one reference photo of an atlas species, to be named. */
+export type Fiszka = {
+  /** `<species id>/<lot|siedzacy>`; the key of its schedule in the browser. */
+  id: string;
+  rodzaj: 'lot' | 'siedzacy';
+  zdjecie: Zdjecie;
+  gatunek: Pick<Gatunek, 'id' | 'pl' | 'lat' | 'en' | 'grupa' | 'cechy' | 'regiony'>;
+};

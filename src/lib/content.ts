@@ -8,6 +8,7 @@ import zdjeciaJson from '../../content/zdjecia.json';
 import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
+  Fiszka,
   Gatunek,
   Modul,
   PytanieQuizu,
@@ -209,6 +210,18 @@ export function modulyGatunku(g: Gatunek) {
     if (g.regiony.includes('polska')) slugi.add('polska');
   }
   return gotoweModuly.filter((m) => slugi.has(m.slug));
+}
+
+/** Flashcards: every atlas species' reference photos, in flight and perched. */
+export function taliaFiszek(): Fiszka[] {
+  return gatunki.flatMap((g) => {
+    const z = zdjecia[g.id];
+    const { id, pl, lat, en, grupa, cechy, regiony } = g;
+    return (['lot', 'siedzacy'] as const).flatMap((rodzaj) => {
+      const zdjecie = z?.[rodzaj];
+      return zdjecie ? [{ id: `${g.id}/${rodzaj}`, rodzaj, zdjecie, gatunek: { id, pl, lat, en, grupa, cechy, regiony } }] : [];
+    });
+  });
 }
 
 export async function czytajMarkdown(relPath: string) {
