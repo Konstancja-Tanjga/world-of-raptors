@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './o-projekcie.css';
 import { MarkdownInline } from '@/components/Markdown';
 import { Anatomia } from '@/components/oprojekcie/Anatomia';
-import { SuwakMorfu, type StronaMorfu } from '@/components/oprojekcie/SuwakMorfu';
+import { SuwakMorfu, type StronaMorfu } from '@/components/SuwakMorfu';
 import { Sylwetka } from '@/components/Sylwetka';
 import { autorzyZdjec, ideaKursu, statystykiKursu, taliaFiszek, znajdzGatunek } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';

@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { obrys, posredni, posredniaPoza, POZA_SZYBOWANIE, sciezka } from '@/lib/sylwetka';
 import { POZY, SYLWETKI } from '@/lib/sylwetki';
-import { Slider } from '../ds';
+import { Slider } from './ds';
 
 export type StronaMorfu = { id: string; pl: string; cechy: { etykieta: string; tekst: string }[] };
 
@@ -25,7 +25,7 @@ export function SuwakMorfu({ od, do: doGatunku }: { od: StronaMorfu; do: StronaM
   }, [od.id, doGatunku.id, t]);
 
   const slownie = (v: number) =>
-    v === 0 ? od.pl : v === 100 ? doGatunku.pl : `${v}% drogi od gatunku ${od.pl.toLowerCase()} do gatunku ${doGatunku.pl.toLowerCase()}`;
+    v === 0 ? od.pl : v === 100 ? doGatunku.pl : `${100 - v}% ${od.pl.toLowerCase()}, ${v}% ${doGatunku.pl.toLowerCase()}`;
 
   return (
     <div className="suwak-morfu">
@@ -36,7 +36,7 @@ export function SuwakMorfu({ od, do: doGatunku }: { od: StronaMorfu; do: StronaM
       </div>
       <div className="suwak-morfu__sterowanie">
         <Slider
-          label={`Od gatunku ${od.pl.toLowerCase()} do gatunku ${doGatunku.pl.toLowerCase()}`}
+          label={`${od.pl} czy ${doGatunku.pl.toLowerCase()}?`}
           value={wartosc}
           onChange={setWartosc}
           min={0}
