@@ -15,6 +15,7 @@ export function Sylwetka({
   opis,
   klasa,
   skala,
+  dokladnosc = 0.12,
 }: {
   id: string;
   poza?: Poza;
@@ -22,6 +23,8 @@ export function Sylwetka({
   klasa?: string;
   /** Wingspan in cm and the widest wingspan in the set, for drawings at scale. */
   skala?: { cm: number; maks: number };
+  /** How far the outline may be simplified, in drawing units: more for small icons, less for large plates. */
+  dokladnosc?: number;
 }) {
   const ksztalt = SYLWETKI[id];
   if (!ksztalt) return null;
@@ -45,7 +48,7 @@ export function Sylwetka({
       aria-hidden={opis ? undefined : true}
       focusable="false"
     >
-      <path d={sciezka(punkty, 0.12)} />
+      <path d={sciezka(punkty, dokladnosc)} />
     </svg>
   );
 }

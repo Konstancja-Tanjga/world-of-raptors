@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
-import { useOstatniaLekcja, type OstatniaLekcja } from '@/lib/ostatnia';
-import { kluczLekcji, usePostep, type Postep } from '@/lib/postep';
+import { useKontynuuj } from '@/lib/kontynuuj';
 import type { ModulNawigacji } from './AppFrame';
 
 const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }[] = [
@@ -16,29 +15,6 @@ const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }
 
 /** Pages that open on a dark scene: the bar starts light-on-dark there, before the observer has run. */
 const zaczynaSieScena = (p: string) => p === '/' || /^\/gatunki\/[^/]+$/.test(p);
-
-/**
- * Where "Kontynuuj" leads: the lesson opened last, or the first unfinished
- * one after it; without history, the first unfinished lesson of the course.
- * `null` while progress loads and when every lesson is done.
- */
-function cel(moduly: ModulNawigacji[], postep: Readonly<Postep> | null, ostatnia: Readonly<OstatniaLekcja> | null) {
-  if (!postep || !ostatnia) return null;
-  const kolejnosc = moduly.flatMap((m) => m.lekcje.map((l) => ({ m, l })));
-  const gotowa = (i: number) => Boolean(postep[kluczLekcji(kolejnosc[i].m.slug, kolejnosc[i].l.slug)]);
-  const od = kolejnosc.findIndex((x) => x.m.slug === ostatnia.modul && x.l.slug === ostatnia.lekcja);
-  let i = -1;
-  for (let j = Math.max(0, od); j < kolejnosc.length && i < 0; j++) if (!gotowa(j)) i = j;
-  if (i < 0) for (let j = 0; j < kolejnosc.length && i < 0; j++) if (!gotowa(j)) i = j;
-  if (i < 0) return null;
-  const { m, l } = kolejnosc[i];
-  const nowa = od < 0 && Object.keys(postep).length === 0;
-  return {
-    href: `/moduly/${m.slug}/${l.slug}`,
-    etykieta: nowa ? 'Zacznij kurs' : 'Kontynuuj',
-    opis: `${m.id}, lekcja ${m.lekcje.indexOf(l) + 1}: ${l.tytul}`,
-  };
-}
 
 /**
  * The global navigation: a translucent bar like a product site's. It turns
@@ -57,8 +33,6 @@ export function Nawigacja({
   znak: ReactNode;
 }) {
   const pathname = usePathname();
-  const { postep } = usePostep();
-  const { ostatnia } = useOstatniaLekcja();
   const [scena, setScena] = useState({ dla: pathname, nad: zaczynaSieScena(pathname) });
   const nadScena = scena.dla === pathname ? scena.nad : zaczynaSieScena(pathname);
   // The menu belongs to the page it was opened on, so navigating closes it.
@@ -67,7 +41,7 @@ export function Nawigacja({
   const przycisk = useRef<HTMLButtonElement>(null);
   const arkusz = useRef<HTMLDivElement>(null);
   const idArkusza = useId();
-  const dokad = cel(moduly, postep, ostatnia);
+  const dokad = useKontynuuj(moduly);
   const naMiejscu = dokad?.href === pathname;
 
   useEffect(() => {

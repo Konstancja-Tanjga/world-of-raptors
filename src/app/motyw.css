@@ -76,6 +76,8 @@
   --wor-size-subtitle: clamp(1.45rem, 1.25rem + 0.9vw, 2rem);
   --wor-size-lead: clamp(1.2rem, 1.08rem + 0.5vw, 1.45rem);
   --wor-size-reading: clamp(1.075rem, 1.03rem + 0.2vw, 1.2rem);
+  --wor-size-numer: clamp(2.25rem, 1.75rem + 1.8vw, 3.4rem);
+  --wor-size-karta: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
   --wor-size-small: 0.875rem;
   --wor-size-eyebrow: 0.8125rem;
   --wor-leading-display: 0.98;
@@ -116,6 +118,12 @@
   --wor-scena-powierzchnia: #141b26;
   --wor-scena-linia: rgba(242, 238, 230, 0.14);
   --wor-scena-szklo: rgba(10, 16, 24, 0.42);
+  --wor-szklo-jasne: rgba(242, 238, 230, 0.13);
+  --wor-cien-sceny: rgba(4, 7, 14, 0.55);
+  --wor-blask: rgba(255, 248, 232, 0.92);
+  --wor-blask-miekki: rgba(214, 232, 247, 0.55);
+  --wor-zar-horyzontu: rgba(255, 186, 112, 0.55);
+  --wor-ksiezyc: rgba(246, 241, 226, 0.95);
   --wor-scena-tekst: #f2eee6;
   --wor-scena-tekst-2: #b7b0a3;
   --wor-zloto: #f5b75b;
@@ -125,12 +133,16 @@
   /* The sky by time of day (top to horizon), interpolated in OKLCH */
   --wor-niebo-noc: linear-gradient(in oklch 180deg, #04070e 0%, #0a1222 55%, #1a2742 100%);
   --wor-niebo-swit: linear-gradient(in oklch 180deg, #18264a 0%, #6d5b86 52%, #f0a679 100%);
-  --wor-niebo-dzien: linear-gradient(in oklch 180deg, #2c5d92 0%, #6f9fce 55%, #d3e5f2 100%);
+  --wor-niebo-dzien: linear-gradient(in oklch 180deg, #10365f 0%, #2a62a0 52%, #79abda 100%);
   --wor-niebo-zmierzch: linear-gradient(in oklch 180deg, #1c2c51 0%, #a85556 62%, #f5bc69 100%);
 }
 
-/* Zmierzch: dark mode, set the same two ways Big Hat sets its own dark theme */
-:root[data-theme='dark'] {
+/* Zmierzch: dark mode, set the same two ways Big Hat sets its own dark theme.
+   A `.scena` (a dark story band) gets the same values in both themes, so Big
+   Hat components inside it render dark without any change to them. */
+:root[data-theme='dark'],
+.scena {
+  color-scheme: dark;
   --bh-surface-base: #0f1620;
   --bh-surface-sunken: #0a1018;
   --bh-surface-raised: #141b26;

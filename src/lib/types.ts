@@ -63,6 +63,8 @@ export type Zdjecie = {
   /** Commons file page. */
   strona: string;
   plik: string;
+  /** The original's [width, height] on Commons, so larger thumbnails are only asked for when they exist. */
+  oryginal?: number[];
 };
 
 export type ZdjeciaGatunku = { siedzacy: Zdjecie | null; lot: Zdjecie | null };

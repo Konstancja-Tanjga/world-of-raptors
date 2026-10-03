@@ -123,10 +123,19 @@ export function Markdown({ source, baseDir, quiz }: { source: string; baseDir: s
   );
 }
 
-/** One paragraph of Markdown rendered without its <p>, for a slot that is already one. */
-export function MarkdownInline({ source, baseDir }: { source: string; baseDir: string }) {
+/**
+ * One paragraph of Markdown rendered without its <p>, for a slot that is
+ * already one. `bezLinkow` keeps a link's text but drops the link, for text
+ * inside something that is itself a link (a link cannot contain another).
+ */
+export function MarkdownInline({ source, baseDir, bezLinkow = false }: { source: string; baseDir: string; bezLinkow?: boolean }) {
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} disallowedElements={['p']} unwrapDisallowed components={{ a: link(baseDir) }}>
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      disallowedElements={bezLinkow ? ['p', 'a'] : ['p']}
+      unwrapDisallowed
+      components={{ a: link(baseDir) }}
+    >
       {source}
     </ReactMarkdown>
   );

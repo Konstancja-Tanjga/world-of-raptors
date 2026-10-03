@@ -1048,92 +1048,296 @@ li {
   gap: var(--bh-gap-tight);
 }
 
-/* Home: species of the day */
-.today {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
-}
-.today__intro {
-  margin: 0;
-  color: var(--bh-text-muted);
-}
-.today__name {
-  margin: 0;
-  font-size: var(--bh-text-size-display);
-  font-weight: var(--bh-text-weight-heading);
-  line-height: var(--bh-text-leading-tight);
-}
-.today__latin {
-  margin-block-end: var(--bh-gap-snug);
-}
-.home-aside {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  align-items: start;
-  gap: var(--bh-gap-loose);
-}
-@media (max-width: 900px) {
-  .home-aside {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* Module list: a numbered catalogue, not a wall of cards */
-.module-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.module-list__item {
-  display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: var(--bh-gap-normal);
-  padding-block: var(--bh-gap-snug);
-  border-bottom: 1px solid var(--bh-border-subtle);
-}
-.module-list__id {
-  font-weight: var(--bh-text-weight-emphasis);
-  color: var(--bh-text-secondary);
-  font-variant-numeric: tabular-nums;
-}
-.module-list__title {
-  font-size: var(--bh-text-size-body);
-}
-
-/* Curiosity: Big Hat Card (raised, info accent) with the button outside it */
+/* Curiosity: a passage set large between hairlines */
 .ciekawostka {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
-}
-.ciekawostka__tresc {
-  display: flex;
-  flex-direction: column;
-  gap: var(--bh-gap-snug);
+  display: grid;
+  gap: var(--bh-gap-loose);
+  padding-block: var(--bh-padding-section);
+  border-block: 1px solid var(--wor-linia);
 }
 .ciekawostka__tytul {
   margin: 0;
-  font-size: var(--bh-text-size-heading);
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
   font-weight: var(--bh-text-weight-heading);
-  color: var(--bh-status-info-fg);
+  letter-spacing: var(--wor-tracking-eyebrow);
 }
 .ciekawostka__tekst {
   margin: 0;
-  max-width: 60ch;
-  font-size: var(--bh-text-size-heading);
-  line-height: var(--bh-text-leading-normal);
-  color: var(--bh-text-primary);
+  max-width: 34em;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-subtitle);
+  line-height: 1.35;
+  transition:
+    opacity var(--wor-dur-expressive) var(--wor-ease-out),
+    translate var(--wor-dur-expressive) var(--wor-ease-out);
+}
+@starting-style {
+  .ciekawostka__tekst {
+    opacity: 0;
+    translate: 0 calc(0.5rem * var(--wor-ruch));
+  }
+}
+.ciekawostka__stopka {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal) var(--bh-padding-section);
 }
 .ciekawostka__zrodlo {
-  font-size: var(--bh-text-size-dense);
+  color: var(--bh-text-link);
+  font-weight: var(--bh-text-weight-emphasis);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
 }
-.ciekawostka__akcje {
-  display: flex;
-  justify-content: flex-end;
+.ciekawostka__zrodlo:hover {
+  text-decoration-thickness: 2px;
+}
+.ciekawostka__zrodlo:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
 }
 
 .own-photos__uwaga {
   font-size: var(--bh-text-size-dense);
+}
+
+/* ---------- Shared editorial pieces ---------- */
+
+/* A dark story band: its tokens are dusk (motyw.css), and its text follows them. */
+.scena {
+  color: var(--bh-text-primary);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: var(--wor-tracking-eyebrow);
+}
+
+.sekcja {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  max-width: 46rem;
+  margin-bottom: var(--wor-space-block);
+}
+.sekcja--wiersz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--wor-space-block);
+  max-width: none;
+}
+.sekcja--wiersz > :first-child {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  max-width: 46rem;
+}
+.sekcja__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: 600;
+  line-height: var(--wor-leading-title);
+  letter-spacing: var(--wor-tracking-display);
+}
+.sekcja__lead {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-lead);
+  line-height: 1.5;
+}
+
+/* Calls to action: a link that looks like a big pill (see ButtonLink and DS-GAPS.md). */
+.cta {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: var(--bh-control-lg);
+  padding: var(--bh-gap-snug) var(--bh-padding-section);
+  border: 1px solid transparent;
+  border-radius: var(--bh-radius-pill);
+  color: inherit;
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--bh-text-leading-tight);
+  text-decoration: none;
+  transition:
+    transform var(--wor-dur-quick) var(--wor-ease-out),
+    background-color var(--wor-dur-quick) var(--wor-ease-out),
+    border-color var(--wor-dur-quick) var(--wor-ease-out),
+    box-shadow var(--wor-dur-base) var(--wor-ease-out);
+}
+.cta__opis {
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-body);
+  opacity: 0.85;
+}
+.cta--glowne {
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  box-shadow: 0 12px 32px -12px var(--bh-action-primary-bg);
+}
+.cta--glowne:hover {
+  background: var(--bh-action-primary-bg-hover);
+  transform: translateY(calc(-1px * var(--wor-ruch)));
+  box-shadow: 0 16px 40px -12px var(--bh-action-primary-bg);
+}
+.cta--szklo {
+  background: var(--wor-szklo-jasne);
+  border-color: var(--wor-scena-linia);
+  -webkit-backdrop-filter: blur(var(--bh-material-thin-blur));
+  backdrop-filter: blur(var(--bh-material-thin-blur));
+}
+.cta--szklo:hover {
+  border-color: var(--bh-text-primary);
+}
+.cta--obrys {
+  align-self: flex-start;
+  border-color: var(--bh-border-strong);
+}
+.cta--obrys:hover {
+  border-color: var(--bh-text-primary);
+  background: var(--bh-fill-hover);
+}
+.cta:active {
+  transform: scale(0.98);
+}
+.cta:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 3px;
+}
+
+/* Static silhouettes: the drawing's colour is the text colour around it. */
+.sylwetka {
+  display: block;
+  fill: currentColor;
+}
+
+/* Facts as a short definition list: label above, value below. */
+.fakty {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--bh-gap-loose) var(--bh-padding-section);
+  margin: 0;
+}
+.fakty > div {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  align-content: start;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.fakty dt {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.fakty dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: 1.4;
+}
+
+/* Wingspan to scale */
+.miarka {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.miarka__rysunek {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 9rem;
+  overflow: visible;
+  fill: var(--bh-text-primary);
+}
+.miarka__paski {
+  position: relative;
+  height: var(--bh-control-sm);
+  margin-bottom: var(--bh-gap-loose);
+  border-top: 1px solid var(--bh-border-strong);
+}
+.miarka__pasek {
+  position: absolute;
+  height: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+}
+.miarka__pasek--ptak {
+  top: var(--bh-gap-snug);
+  background: var(--wor-akcent);
+}
+.miarka__pasek--zero {
+  top: var(--bh-gap-snug);
+  left: 0;
+  background: var(--wor-akcent-miekki);
+}
+.miarka__pasek--czlowiek {
+  top: var(--bh-gap-loose);
+  left: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bh-text-muted) 0 var(--bh-gap-snug),
+    transparent var(--bh-gap-snug) calc(var(--bh-gap-snug) + var(--bh-gap-tight))
+  );
+}
+.miarka__podzialka {
+  position: absolute;
+  top: calc(var(--bh-control-sm) - var(--bh-gap-tight));
+  translate: -50% 0;
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+  font-variant-numeric: tabular-nums;
+}
+.miarka__podzialka:first-of-type {
+  translate: 0 0;
+}
+.miarka__podzialka:last-of-type {
+  translate: -100% 0;
+}
+.miarka__opis {
+  display: grid;
+  gap: var(--bh-gap-hairline);
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-muted);
+}
+.miarka__ptak {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+
+/* A module's progress ring */
+.postep-modulu {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  font-variant-numeric: tabular-nums;
+}
+.postep-modulu svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.postep-modulu__tor {
+  fill: none;
+  stroke: var(--wor-linia);
+  stroke-width: 3;
+}
+.postep-modulu__luk {
+  fill: none;
+  stroke: var(--wor-akcent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray var(--wor-dur-expressive) var(--wor-ease-out);
+}
+.postep-modulu[data-gotowy] {
+  color: var(--wor-akcent);
+  font-weight: var(--bh-text-weight-heading);
 }

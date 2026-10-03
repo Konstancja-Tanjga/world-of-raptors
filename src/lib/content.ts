@@ -261,3 +261,62 @@ export function ciekawostkiDla({ modul, lekcja, gatunek }: { modul?: string; lek
     pozostale: pula.filter((c) => !pasuje(c)).map(doPokazania),
   };
 }
+
+/** A species that draws each of the eight silhouette groups. */
+const RYSUNEK_GRUPY: Record<string, string> = {
+  Sępy: 'sep-plowy',
+  Orły: 'orzel-przedni',
+  Myszołowy: 'myszolow',
+  Kanie: 'kania-ruda',
+  Błotniaki: 'blotniak-stawowy',
+  Krogulce: 'krogulec',
+  Sokoły: 'sokol-wedrowny',
+  Rybołów: 'rybolow',
+};
+
+export type GrupaSylwetki = {
+  nazwa: string;
+  skrzydla: string;
+  ogon: string;
+  glowa: string;
+  przyklady: string;
+  /** The atlas species whose silhouette stands for the group. */
+  gatunek: string;
+};
+
+/**
+ * The eight silhouette groups, read from the table in B1 lesson 1 ("Osiem
+ * grup"), so the home page and the lesson cannot disagree. The build fails if
+ * the table stops having eight known groups in five columns.
+ */
+export async function grupySylwetek(): Promise<{ grupy: GrupaSylwetki[]; lead: string; href: string }> {
+  const plik = 'moduly/metoda/01-sylwetka.md';
+  const md = await czytajMarkdown(plik);
+  const sekcja = md.split(/^## /m).find((s) => s.startsWith('Osiem grup')) ?? '';
+  const wiersze = sekcja
+    .split('\n')
+    .filter((l) => l.startsWith('|'))
+    .slice(2)
+    .map((l) => l.split('|').slice(1, -1).map((k) => k.trim()));
+  const grupy = wiersze.map((k) => {
+    const nazwa = k[0]?.replace(/\*/g, '');
+    if (k.length !== 5 || !RYSUNEK_GRUPY[nazwa]) {
+      throw new Error(`${plik}: tabela „Osiem grup” ma nieznany wiersz: ${k.join(' | ')}`);
+    }
+    return { nazwa, skrzydla: k[1], ogon: k[2], glowa: k[3], przyklady: k[4], gatunek: RYSUNEK_GRUPY[nazwa] };
+  });
+  if (grupy.length !== 8) throw new Error(`${plik}: tabela „Osiem grup” powinna mieć 8 wierszy, ma ${grupy.length}`);
+  const { lead } = przygotujStroneLekcji(md, plik);
+  return { grupy, lead: lead ?? '', href: '/moduly/metoda/01-sylwetka' };
+}
+
+
+/**
+ * A module's teaser: the quote under its README title (`> …`), written as the
+ * module's hook. Inline Markdown; null if the README has none.
+ */
+export async function zajawkaModulu(slug: string) {
+  const md = await czytajMarkdown(`moduly/${slug}/README.md`);
+  const linia = md.split('\n').find((l) => l.startsWith('> '));
+  return linia ? linia.slice(2).trim() : null;
+}
