@@ -186,7 +186,8 @@ export default async function OProjekcie() {
           </h2>
           <p className="sekcja__lead">
             Strona startowa liczy wysokość słońca nad Warszawą i maluje niebo takie, jakie jest teraz: za dnia z kotłem ptaków
-            w kominie termicznym, nocą z księżycem i sową.
+            w kominie termicznym, nocą z księżycem i sową. Porę można też wybrać, tutaj albo na starcie, i zostaje, dopóki
+            jej nie zmienię.
           </p>
         </div>
         <ul className="op-pory">
@@ -195,7 +196,7 @@ export default async function OProjekcie() {
               <Link href={`/?pora=${p.pora}`} className="op-pora" data-pora={p.pora}>
                 <span className="op-pora__nazwa">{p.nazwa}</span>
                 <span className="op-pora__opis">{p.opis}</span>
-                <span className="op-pora__link">Zobacz start o tej porze</span>
+                <span className="op-pora__link">Ustaw tę porę na starcie</span>
               </Link>
             </li>
           ))}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import type { PoraDnia } from '@/lib/niebo';
 import { useMedia, useMniejRuchu } from '@/lib/useMedia';
 import { obrys, type Poza } from '@/lib/sylwetka';
@@ -14,8 +14,8 @@ import { SYLWETKI } from '@/lib/sylwetki';
  * then an owl crossing it.
  *
  * The birds are the atlas silhouettes, seen from below as the B1 lessons
- * teach. A pause button stops the motion (WCAG 2.2.2); with reduced motion
- * the scene is a still frame.
+ * teach. `pauza` (the scene's pause button, WCAG 2.2.2) holds the frame and
+ * stops the loop; with reduced motion the scene is a still frame.
  */
 
 type Rodzaj = { id: string; rozpietosc: number; macha: number };
@@ -116,15 +116,18 @@ function nowyPtak(los: () => number, pierwszy: boolean): Ptak {
   };
 }
 
-export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
+export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pauza: boolean }) {
   const plotno = useRef<HTMLCanvasElement>(null);
-  const [pauza, setPauza] = useState(false);
   const ruch = !useMniejRuchu();
   const precyzyjny = useMedia('(hover: hover) and (pointer: fine)');
-  // The loop reads the latest pause without restarting the scene.
+  // The loop reads the latest pause without restarting the scene; pausing
+  // draws one still frame and stops the loop, resuming starts it again.
   const pauzaRef = useRef(pauza);
+  const sterowanie = useRef<{ zatrzymaj: () => void; wznow: () => void } | null>(null);
   useEffect(() => {
     pauzaRef.current = pauza;
+    if (pauza) sterowanie.current?.zatrzymaj();
+    else sterowanie.current?.wznow();
   }, [pauza]);
 
   useEffect(() => {
@@ -275,26 +278,38 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
       ctx.globalAlpha = 1;
     };
 
+    // The loop runs while the scene is on screen, motion is allowed and it is not paused.
+    const uruchom = () => {
+      if (klatkaAnimacji || !widoczny || !ruch || pauzaRef.current) return;
+      ostatni = performance.now();
+      klatkaAnimacji = requestAnimationFrame(petla);
+    };
     const petla = (teraz: number) => {
+      klatkaAnimacji = 0;
       const dt = Math.min(0.05, (teraz - ostatni) / 1000);
       ostatni = teraz;
-      if (!pauzaRef.current) krok(dt, teraz);
+      krok(dt, teraz);
       rysuj(teraz);
-      klatkaAnimacji = widoczny && ruch ? requestAnimationFrame(petla) : 0;
+      uruchom();
+    };
+    sterowanie.current = {
+      zatrzymaj: () => {
+        cancelAnimationFrame(klatkaAnimacji);
+        klatkaAnimacji = 0;
+        rysuj(performance.now());
+      },
+      wznow: uruchom,
     };
 
     // A still frame first (also the whole scene with reduced motion), then the loop.
     if (!noc) for (let i = 0; i < 40; i++) krok(0.05, i * 50);
     rysuj(0);
     canvas.dataset.gotowe = '';
-    if (ruch) klatkaAnimacji = requestAnimationFrame(petla);
+    uruchom();
 
     const widocznosc = new IntersectionObserver(([w]) => {
       widoczny = w.isIntersecting;
-      if (widoczny && ruch && !klatkaAnimacji) {
-        ostatni = performance.now();
-        klatkaAnimacji = requestAnimationFrame(petla);
-      }
+      uruchom();
     });
     widocznosc.observe(canvas);
     const rozmiar = new ResizeObserver(() => {
@@ -307,6 +322,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
     rozmiar.observe(canvas);
 
     return () => {
+      sterowanie.current = null;
       cancelAnimationFrame(klatkaAnimacji);
       widocznosc.disconnect();
       rozmiar.disconnect();
@@ -314,14 +330,5 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
     };
   }, [pora, ruch, precyzyjny]);
 
-  return (
-    <>
-      <canvas ref={plotno} className="niebo__plotno" role="img" aria-label={opis} />
-      {ruch && (
-        <button type="button" className="niebo__pauza" onClick={() => setPauza((p) => !p)}>
-          {pauza ? 'Wznów ruch' : 'Zatrzymaj ruch'}
-        </button>
-      )}
-    </>
-  );
+  return <canvas ref={plotno} className="niebo__plotno" role="img" aria-label={opis} />;
 }

@@ -52,7 +52,7 @@ src/
 ## Trasy
 | Adres | Strona |
 |---|---|
-| `/` | start: niebo o tej porze dnia (podgląd innej pory: `?pora=swit`, `dzien`, `zmierzch`, `noc`), gatunek na dziś, moduły, osiem sylwetek, sowy, moja lista |
+| `/` | start: niebo o tej porze dnia albo o porze, którą wybrałam („Pora nieba” na starcie lub link `?pora=swit`, `dzien`, `zmierzch`, `noc`; wybór zostaje w ciasteczku `wor-pora`, dopóki „Teraz” nie przywróci zegara), gatunek na dziś, moduły, osiem sylwetek, sowy, moja lista |
 | `/plan` | kurs: moduły z moim postępem, pod nimi plan kursu |
 | `/moduly/[slug]` | moduł: otwarcie ze zdjęciem, lekcje, opis |
 | `/moduly/[slug]/[lekcja]` | lekcja |

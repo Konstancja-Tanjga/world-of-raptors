@@ -129,14 +129,29 @@
   padding-top: var(--bh-gap-snug);
 }
 
-.niebo__liczby {
+/* The bottom of the scene: the course in figures, and the scene's own controls (time of day, pause). */
+.niebo__dol {
   box-sizing: border-box;
   display: flex;
-  gap: var(--wor-space-block);
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--bh-padding-section) var(--wor-space-block);
   width: 100%;
   max-width: var(--wor-width);
   margin: 0 auto;
   padding: var(--bh-gap-loose) var(--wor-gutter) var(--wor-space-block);
+}
+.niebo__liczby {
+  display: flex;
+  gap: var(--wor-space-block);
+  margin: 0;
+}
+.niebo__sterowanie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--bh-gap-snug) var(--bh-gap-normal);
 }
 .niebo__liczby > div {
   display: flex;
@@ -158,9 +173,6 @@
 }
 
 .niebo__pauza {
-  position: absolute;
-  right: var(--wor-gutter);
-  bottom: var(--wor-space-block);
   min-height: var(--bh-control-sm);
   padding-inline: var(--bh-padding-inline);
   border: 1px solid var(--wor-scena-linia);
@@ -190,7 +202,7 @@
   .niebo__pora,
   .niebo__lead,
   .niebo__akcje,
-  .niebo__liczby {
+  .niebo__dol {
     animation: pojaw var(--wor-dur-expressive) var(--wor-ease-out) both;
   }
   .niebo__pora {
@@ -202,7 +214,7 @@
   .niebo__akcje {
     animation-delay: calc(var(--wor-stagger) * 6);
   }
-  .niebo__liczby {
+  .niebo__dol {
     animation-delay: calc(var(--wor-stagger) * 9);
   }
 }
@@ -257,15 +269,12 @@
       var(--niebo-swiatlo);
   }
   .niebo__liczby {
+    flex: 1 1 100%;
     gap: var(--bh-padding-section);
-    padding-bottom: calc(var(--wor-space-block) + var(--bh-control-lg));
   }
   .niebo__liczby > div {
     min-width: 0;
     flex: 1;
-  }
-  .niebo__pauza {
-    bottom: var(--bh-gap-loose);
   }
 }
 

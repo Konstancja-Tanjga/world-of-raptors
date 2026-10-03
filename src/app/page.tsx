@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers';
 import Link from 'next/link';
 import './start.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
@@ -6,18 +7,19 @@ import { Sylwetka } from '@/components/Sylwetka';
 import { Kolekcja } from '@/components/start/Kolekcja';
 import { Kurs } from '@/components/start/Kurs';
 import { MorfGrup } from '@/components/start/MorfGrup';
-import { Niebo } from '@/components/start/Niebo';
+import { NieboStartu } from '@/components/start/NieboStartu';
 import { Okladka } from '@/components/start/Okladka';
 import { StartKursu } from '@/components/start/StartKursu';
 import { MarkdownInline } from '@/components/Markdown';
 import { ciekawostkiDla, gatunki, gotoweModuly, grupySylwetek, zdjecia } from '@/lib/content';
-import { poraDnia, type PoraDnia } from '@/lib/niebo';
+import { CIASTKO_PORY, jakoPora, poraDnia, type PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
 
-// Rendered per request: the species of the day must change at midnight and
-// the sky follows the sun, and a revalidated static page would show a stale
-// one. Cheap, because the atlas and the Markdown it quotes (the eight groups,
-// the module hooks) are read once, when content.ts is first imported.
+// Rendered per request: the species of the day must change at midnight, the
+// sky follows the sun (or the time of day I chose, kept in a cookie), and a
+// revalidated static page would show a stale one. Cheap, because the atlas
+// and the Markdown it quotes (the eight groups, the module hooks) are read
+// once, when content.ts is first imported.
 export const dynamic = 'force-dynamic';
 
 /** Same species all day (Polish time), a different one tomorrow. */
@@ -48,8 +50,6 @@ const PORY: Record<PoraDnia, { linia: string; opis: string }> = {
   },
 };
 
-const PORY_DNIA = Object.keys(PORY) as PoraDnia[];
-
 /**
  * By day the line follows the season, because what the soaring birds are
  * doing does: leaving for Africa in autumn, coming back in spring, hunting
@@ -70,9 +70,12 @@ function liniaDnia(kiedy: Date) {
 }
 
 export default async function Home({ searchParams }: PageProps<'/'>) {
-  // `?pora=dzien` (swit, zmierzch, noc) previews the sky at another time of day.
-  const { pora: zadana } = await searchParams;
-  const pora = PORY_DNIA.find((p) => p === zadana) ?? poraDnia(new Date());
+  // A chosen sky: `?pora=swit|dzien|zmierzch|noc` from a link, or the one
+  // kept in the cookie. Without either the sky follows the clock.
+  const [{ pora: zAdresu }, ciastka] = await Promise.all([searchParams, cookies()]);
+  const wybrana = jakoPora(zAdresu) ?? jakoPora(ciastka.get(CIASTKO_PORY)?.value);
+  const teraz = new Date();
+  const pory = { ...PORY, dzien: { ...PORY.dzien, linia: liniaDnia(teraz) } };
   const g = gatunekDnia();
   const { grupy, lead } = grupySylwetek();
   const lekcji = gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0);
@@ -81,43 +84,45 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
 
   return (
     <div className="start">
-      <section className="niebo scena" data-scena data-pora={pora} aria-labelledby="tytul-startu">
-        <Niebo pora={pora} opis={PORY[pora].opis} />
-        <div className="niebo__tresc">
-          <p className="niebo__pora">{pora === 'dzien' ? liniaDnia(new Date()) : PORY[pora].linia}</p>
-          <h1 id="tytul-startu" className="niebo__tytul">
-            Naucz się czytać niebo
-          </h1>
-          <p className="niebo__lead">
-            Kurs o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak
-            rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską.
-          </p>
-          <div className="niebo__akcje">
-            <StartKursu konspekt={konspekt} />
-            <Link href="/gatunki" className="cta cta--szklo">
-              <span className="cta__etykieta">Otwórz atlas</span>
-            </Link>
-          </div>
+      <NieboStartu
+        wybranaNaSerwerze={wybrana}
+        zegar={poraDnia(teraz)}
+        pory={pory}
+        liczby={
+          <dl className="niebo__liczby">
+            <div>
+              <dt>{odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])}</dt>
+              <dd>{dzienne}</dd>
+            </div>
+            <div>
+              <dt>{odmiana(gatunki.length - dzienne, ['sowa', 'sowy', 'sów'])}</dt>
+              <dd>{gatunki.length - dzienne}</dd>
+            </div>
+            <div>
+              <dt>{odmiana(gotoweModuly.length, ['moduł', 'moduły', 'modułów'])}</dt>
+              <dd>{gotoweModuly.length}</dd>
+            </div>
+            <div>
+              <dt>{odmiana(lekcji, ['lekcja', 'lekcje', 'lekcji'])}</dt>
+              <dd>{lekcji}</dd>
+            </div>
+          </dl>
+        }
+      >
+        <h1 id="tytul-startu" className="niebo__tytul">
+          Naucz się czytać niebo
+        </h1>
+        <p className="niebo__lead">
+          Kurs o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak
+          rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską.
+        </p>
+        <div className="niebo__akcje">
+          <StartKursu konspekt={konspekt} />
+          <Link href="/gatunki" className="cta cta--szklo">
+            <span className="cta__etykieta">Otwórz atlas</span>
+          </Link>
         </div>
-        <dl className="niebo__liczby">
-          <div>
-            <dt>{odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])}</dt>
-            <dd>{dzienne}</dd>
-          </div>
-          <div>
-            <dt>{odmiana(gatunki.length - dzienne, ['sowa', 'sowy', 'sów'])}</dt>
-            <dd>{gatunki.length - dzienne}</dd>
-          </div>
-          <div>
-            <dt>{odmiana(gotoweModuly.length, ['moduł', 'moduły', 'modułów'])}</dt>
-            <dd>{gotoweModuly.length}</dd>
-          </div>
-          <div>
-            <dt>{odmiana(lekcji, ['lekcja', 'lekcje', 'lekcji'])}</dt>
-            <dd>{lekcji}</dd>
-          </div>
-        </dl>
-      </section>
+      </NieboStartu>
 
       <Okladka g={g} />
 
