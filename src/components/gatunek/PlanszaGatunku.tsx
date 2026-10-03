@@ -1,6 +1,6 @@
 import { obrys, POZA_SZYBOWANIE, ramka, sciezka } from '@/lib/sylwetka';
 import { POZY, SYLWETKI } from '@/lib/sylwetki';
-import type { Gatunek, SylwetkaDzienna, SylwetkaNocna } from '@/lib/types';
+import type { Gatunek } from '@/lib/types';
 
 /**
  * A species' field-guide plate: its silhouette from below with leader lines
@@ -15,7 +15,7 @@ export function PlanszaGatunku({ g }: { g: Gatunek }) {
   const [x, y, w, h] = ramka(punkty);
 
   if (g.aktywnosc === 'nocny') {
-    const c = g.sylwetka as SylwetkaNocna;
+    const c = g.sylwetka;
     return (
       <figure className="plansza plansza--sowa">
         <svg className="plansza__ptak" viewBox={`${x - 6} ${y - 6} ${w + 12} ${h + 12}`} aria-hidden="true">
@@ -47,7 +47,7 @@ export function PlanszaGatunku({ g }: { g: Gatunek }) {
     );
   }
 
-  const c = g.sylwetka as SylwetkaDzienna;
+  const c = g.sylwetka;
   // Room on both sides for the cue texts, which sit outside the bird.
   const box = { x: x - 128, y: y - 26, w: w + 256, h: h + 52 };
   const ogonY = Math.max(k.tulowDl, k.ramie + 2) + k.ogonDl;

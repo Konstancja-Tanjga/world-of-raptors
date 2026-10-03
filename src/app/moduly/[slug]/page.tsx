@@ -35,7 +35,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
   if (!modul) notFound();
 
   const baseDir = `moduly/${slug}`;
-  const { zajawka, md } = przygotujOpisModulu(await czytajMarkdown(`${baseDir}/README.md`));
+  const { zajawka, md } = przygotujOpisModulu(await czytajMarkdown(`${baseDir}/README.md`), `${baseDir}/README.md`);
   const lekcje = await sylabusModulu(slug);
   const otwarcie = otwarcieModulu(slug);
   const sciezka = sciezki.find((s) => s.id === modul.sciezka);

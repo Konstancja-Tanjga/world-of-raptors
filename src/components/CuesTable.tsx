@@ -20,7 +20,8 @@ export function CuesTable({
   gatunki,
 }: {
   podpis: string;
-  cechy: [string, string][];
+  /** The cues as [key, label], in the order the lessons teach them. */
+  cechy: readonly (readonly [string, string])[];
   /** The species itself first, then its look-alikes. */
   gatunki: KolumnaCech[];
 }) {
@@ -46,7 +47,7 @@ export function CuesTable({
               {g.pl}
             </Link>
           ),
-          cell: ([k]: [string, string]) => g.cechy[k] ?? '',
+          cell: ([k]: readonly [string, string]) => g.cechy[k] ?? '',
         })),
       ]}
     />

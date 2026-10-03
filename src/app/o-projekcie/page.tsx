@@ -3,39 +3,30 @@ import Link from 'next/link';
 import './o-projekcie.css';
 import { MarkdownInline } from '@/components/Markdown';
 import { Anatomia } from '@/components/oprojekcie/Anatomia';
-import { SuwakMorfu, type StronaMorfu } from '@/components/SuwakMorfu';
+import { SuwakMorfu } from '@/components/SuwakMorfu';
 import { Sylwetka } from '@/components/Sylwetka';
-import { autorzyZdjec, ideaKursu, statystykiKursu, taliaFiszek, znajdzGatunek } from '@/lib/content';
+import { autorzyZdjec, ideaKursu, statystykiKursu, stronaMorfu, taliaFiszek, znajdzGatunek } from '@/lib/content';
+import type { PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
-import { SYLWETKI } from '@/lib/sylwetki';
-import type { SylwetkaDzienna } from '@/lib/types';
 
 export const metadata: Metadata = {
   title: 'O projekcie',
   description: 'Jak powstał World of Raptors: pomysł i treść Konstancji Tanjgi, projekt, ruch i kod razem z Claude.',
 };
 
-/** A species' cues for the morph, in the order of B1: wings, fingers, tail, head. */
-function strona(id: string): StronaMorfu {
-  const g = znajdzGatunek(id)!;
-  const c = g.sylwetka as SylwetkaDzienna;
-  return {
-    id,
-    pl: g.pl,
-    cechy: [
-      { etykieta: 'Skrzydła', tekst: c.skrzydla },
-      { etykieta: 'Ogon', tekst: c.ogon },
-      { etykieta: 'Głowa', tekst: c.glowa },
-    ],
-  };
+/** A diurnal atlas species for the morph slider; the build would fail if the id stopped being one. */
+function strona(id: string) {
+  const g = znajdzGatunek(id);
+  if (!g || g.aktywnosc !== 'dzienny') throw new Error(`o-projekcie: „${id}” nie jest gatunkiem dziennym z atlasu`);
+  return stronaMorfu(g);
 }
 
-const PORY = [
-  { pora: 'swit', nazwa: 'Świt', opis: 'Sowy wracają, myszołowy czekają na termikę.' },
+const PORY: readonly { pora: PoraDnia; nazwa: string; opis: string }[] = [
+  { pora: 'swit', nazwa: 'Świt', opis: 'Kilka ptaków krąży w pierwszym kominie termicznym.' },
   { pora: 'dzien', nazwa: 'Dzień', opis: 'Kocioł ptaków krąży w kominie ciepłego powietrza.' },
-  { pora: 'zmierzch', nazwa: 'Zmierzch', opis: 'Ostatnie ptaki dzienne, pierwsze sowy.' },
+  { pora: 'zmierzch', nazwa: 'Zmierzch', opis: 'Ostatnie ptaki dzienne krążą na tle zachodu.' },
   { pora: 'noc', nazwa: 'Noc', opis: 'Gwiazdy, księżyc i od czasu do czasu sowa.' },
-] as const;
+];
 
 const PALETY = [
   {
@@ -71,19 +62,20 @@ const ZASADY = [
     tekst: 'Krótki ruch, do ćwierć sekundy, odpowiada na kliknięcie. Długi, do sekundy i dłużej, opowiada: niebo, lornetka, morf.',
   },
   {
-    tytul: 'Nic nie czeka na animację',
-    tekst: 'Treść jest na miejscu od pierwszej klatki. Ruch tylko ją porządkuje, a przeglądarka bez animacji pokazuje pełną stronę.',
+    tytul: 'Treść nie czeka na ruch',
+    tekst:
+      'Nic nie czeka na przewinięcie ani kliknięcie. Wejście strony trwa około sekundy, a efekty związane z przewijaniem działają tylko tam, gdzie przeglądarka je obsługuje; gdzie indziej strona po prostu stoi.',
   },
   {
     tytul: 'Mniej ruchu to nie brak ruchu',
     tekst:
-      'Przy ograniczonym ruchu w systemie przesunięcia znikają, a przenikania zostają. Sceny stoją, a każda pętla ma przycisk pauzy.',
+      'Przy ograniczonym ruchu w systemie drobne ruchy tylko się przenikają, a wejścia, przejścia między stronami i sceny stoją. Każdy ruch, który się powtarza (niebo, pokaz sylwetek, lot ptaka), ma przycisk pauzy.',
   },
 ];
 
 export default async function OProjekcie() {
   const [liczby, fotografowie, idea] = await Promise.all([statystykiKursu(), autorzyZdjec(), ideaKursu()]);
-  const fiszek = taliaFiszek((id) => Boolean(SYLWETKI[id])).length;
+  const fiszek = taliaFiszek().length;
   const tysiace = Math.round(liczby.slowa / 1000);
 
   const statystyki = [
@@ -160,10 +152,10 @@ export default async function OProjekcie() {
         <div className="op-sekcja__bok">
           <p className="eyebrow">Sylwetki</p>
           <h2 id="silnik" className="sekcja__tytul">
-            Ptak z dwudziestu liczb
+            Ptak z dwudziestu kilku liczb
           </h2>
           <p className="sekcja__lead">
-            Żadna sylwetka w kursie nie jest rysunkiem ani zdjęciem. Każda to dwadzieścia kilka liczb: szerokość skrzydła przy
+            Żadna sylwetka w kursie nie jest narysowana ręcznie ani wycięta ze zdjęcia. Każda to dwadzieścia kilka liczb: szerokość skrzydła przy
             tułowiu i w nadgarstku, liczba i głębokość „palców”, długość, wachlarz i wcięcie ogona, to, jak daleko wystaje
             głowa. Kod rysuje z nich ptaka widzianego od spodu, tak jak uczy lekcja B1. Dlatego sylwetka może machać skrzydłami,
             rozkładać ogon i zmienić się w inną.
@@ -194,7 +186,8 @@ export default async function OProjekcie() {
           </h2>
           <p className="sekcja__lead">
             Strona startowa liczy wysokość słońca nad Warszawą i maluje niebo takie, jakie jest teraz: za dnia z kotłem ptaków
-            w kominie termicznym, nocą z księżycem i sową.
+            w kominie termicznym, nocą z księżycem i sową. Porę można też wybrać, tutaj albo na starcie, i zostaje, dopóki
+            jej nie zmienię.
           </p>
         </div>
         <ul className="op-pory">
@@ -203,7 +196,7 @@ export default async function OProjekcie() {
               <Link href={`/?pora=${p.pora}`} className="op-pora" data-pora={p.pora}>
                 <span className="op-pora__nazwa">{p.nazwa}</span>
                 <span className="op-pora__opis">{p.opis}</span>
-                <span className="op-pora__link">Zobacz start o tej porze</span>
+                <span className="op-pora__link">Ustaw tę porę na starcie</span>
               </Link>
             </li>
           ))}
@@ -254,8 +247,9 @@ export default async function OProjekcie() {
             Dwie palety
           </h2>
           <p className="sekcja__lead">
-            Interfejs zostaje wyciszony, żeby jedynymi nasyconymi kolorami na ekranie były pióra. Każda para tekstu i tła ma
-            kontrast zgodny z WCAG AA.
+            Interfejs jest wyciszony: ma jeden kolor akcentu na papierze i jeden w ciemnych scenach, a resztę koloru dają
+            zdjęcia i niebo. Tekst ma
+            kontrast zgodny z WCAG AA, także na niebie i na zdjęciach.
           </p>
         </div>
         <div className="op-palety">
@@ -312,7 +306,7 @@ export default async function OProjekcie() {
           </div>
           <div>
             <dt>FSRS</dt>
-            <dd>Algorytm powtórek, następca metody z Anki, przez bibliotekę ts-fsrs.</dd>
+            <dd>Algorytm powtórek, który można też włączyć w Anki; tu działa przez bibliotekę ts-fsrs.</dd>
           </div>
           <div>
             <dt>Canvas i SVG</dt>

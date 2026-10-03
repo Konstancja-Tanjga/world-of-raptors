@@ -1,12 +1,13 @@
 import { ButtonLink } from '@/components/ButtonLink';
 import { StateBlock } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
+import { ZNAK } from '@/lib/rysunki';
 
 /** A page that does not exist: an empty sky, one bird leaving it, and the way back. */
 export default function NotFound() {
   return (
     <div className="zgubiony scena" data-scena>
-      <Sylwetka id="kania-ruda" klasa="zgubiony__ptak" />
+      <Sylwetka id={ZNAK} klasa="zgubiony__ptak" />
       <div className="zgubiony__tresc">
         <StateBlock
           state="empty"

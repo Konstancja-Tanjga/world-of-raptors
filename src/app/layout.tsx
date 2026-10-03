@@ -7,6 +7,7 @@ import { AppFrame } from '@/components/AppFrame';
 import { ToastProvider } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
 import { czytajMarkdown, gotoweModuly, progQuizu } from '@/lib/content';
+import { ZNAK } from '@/lib/rysunki';
 
 // Titles: an antiqua drawn for Polish, its diacritics designed in from the start.
 const poltawski = Poltawski_Nowy({
@@ -27,7 +28,8 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
-  description: 'Prywatny kurs o ptakach drapieżnych: biologia i rozpoznawanie w terenie. Pomysł i treść: Konstancja Tanjga.',
+  description:
+    'Prywatny kurs o drapieżnikach dziennych i nocnych: biologia i rozpoznawanie w terenie. Pomysł, plan i treść: Konstancja Tanjga. Projekt, ruch i kod: razem z Claude (Anthropic).',
   authors: [{ name: 'Konstancja Tanjga' }],
   creator: 'Konstancja Tanjga',
   robots: { index: false, follow: false },
@@ -41,11 +43,10 @@ export const viewport: Viewport = {
 };
 
 const nawigacja = Promise.all(
-  gotoweModuly.map(async ({ id, slug, tytul, sciezka, lekcje }) => ({
+  gotoweModuly.map(async ({ id, slug, tytul, lekcje }) => ({
     id,
     slug,
     tytul,
-    sciezka,
     lekcje: await Promise.all(
       lekcje.map(async (l) => ({
         slug: l.slug,
@@ -61,7 +62,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="pl" className={`${poltawski.variable} ${newsreader.variable}`}>
       <body className="bh-root">
         <ToastProvider>
-          <AppFrame moduly={await nawigacja} znak={<Sylwetka id="kania-ruda" klasa="znak" />}>
+          <AppFrame moduly={await nawigacja} znak={<Sylwetka id={ZNAK} klasa="znak" />}>
             {children}
           </AppFrame>
         </ToastProvider>

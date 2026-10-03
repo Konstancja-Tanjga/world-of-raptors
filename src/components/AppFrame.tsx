@@ -9,17 +9,19 @@ import { PasekModulu } from './PasekModulu';
 import { Stopka } from './Stopka';
 
 export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
-export type ModulNawigacji = { slug: string; id: string; tytul: string; sciezka: 'a' | 'b'; lekcje: LekcjaNawigacji[] };
+export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: LekcjaNawigacji[] };
 
 /**
  * The frame around every page: the global navigation, the module bar on
- * module and lesson pages (the module's lessons with their state, which the
- * sidebar used to show), the content and the footer.
+ * module and lesson pages (the module's lessons with their state), the
+ * content and the footer.
  *
  * Not Big Hat's AppShell: its contract keeps it for application screens and
- * says documentation pages may use "no shell at all". The landmarks it would
- * provide are here by hand: header, nav, main (the skip link's target) and
- * footer. See DS-GAPS.md.
+ * says documentation pages may use `height="flow"` or "no shell at all". Even
+ * with `flow`, its header is the system's own and takes no class, and this
+ * one has to turn dark over a scene, let the scene slide under it and scroll
+ * away on module pages. The landmarks AppShell would provide are here by
+ * hand: header, nav, main (the skip link's target) and footer. See DS-GAPS.md.
  */
 export function AppFrame({ moduly, znak, children }: { moduly: ModulNawigacji[]; znak: ReactNode; children: ReactNode }) {
   const pathname = usePathname();
@@ -40,7 +42,8 @@ export function AppFrame({ moduly, znak, children }: { moduly: ModulNawigacji[];
       {biezacy && <PasekModulu modul={biezacy} lekcja={lekcja} />}
       <main id="main-content" tabIndex={-1} className="tresc">
         {/* Keyed by the route, so a navigation is an exit and an entrance: the
-            page cross-fades while the bars above it hold still (globals.css). */}
+            page fades out, then the next one fades in from slightly below,
+            while the bars above it hold still (globals.css). */}
         <ViewTransition key={pathname} enter="strona-wejscie" exit="strona-wyjscie" default="none">
           <div className="tresc__strona">{children}</div>
         </ViewTransition>

@@ -5,7 +5,18 @@
  * of the day it means.
  */
 
-export type PoraDnia = 'swit' | 'dzien' | 'zmierzch' | 'noc';
+export const PORY_DNIA = ['swit', 'dzien', 'zmierzch', 'noc'] as const;
+export type PoraDnia = (typeof PORY_DNIA)[number];
+
+/** A time of day from untrusted input (an address, a cookie), or null. */
+export const jakoPora = (v: unknown): PoraDnia | null => PORY_DNIA.find((p) => p === v) ?? null;
+
+/**
+ * The cookie that keeps a chosen sky until it is changed: read by the home
+ * page on the server, so the first frame is already the chosen one. Absent
+ * means the sky follows the clock.
+ */
+export const CIASTKO_PORY = 'wor-pora';
 
 const WARSZAWA = { lat: 52.23, lon: 21.01 };
 const RAD = Math.PI / 180;

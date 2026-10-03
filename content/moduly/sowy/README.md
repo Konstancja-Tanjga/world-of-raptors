@@ -5,14 +5,14 @@
 > Sowy częściej się słyszy niż widzi. W tym module uczysz się rozpoznawać je przede wszystkim **uchem**, a dopiero potem wzrokiem.
 
 ## Zakres
-Sowy **Polski** i **południa Hiszpanii**: 11 gatunków, od sóweczki wielkości szpaka po puchacza o rozpiętości skrzydeł blisko 2 m.
+Sowy **Polski** i **południa Hiszpanii**: 10 gatunków, od sóweczki wielkości szpaka po puchacza o rozpiętości skrzydeł blisko 2 m.
 
 Moduł ma taki sam układ jak moduły o ptakach dziennych: biologia, metoda rozpoznawania, karty gatunków z trudnymi parami, miejsca i kalendarz, ćwiczenia.
 
 ## Cele modułu
 Po ukończeniu modułu potrafisz:
 1. Wyjaśnić, jak sowy polują w ciemności (słuch, wzrok, cichy lot).
-2. Rozpoznać 11 gatunków po głosie, sylwetce i kolorze oczu.
+2. Rozpoznać 10 gatunków po głosie, sylwetce i kolorze oczu.
 3. Rozróżnić trudne pary: uszatka / uszatka błotna, puszczyk / puszczyk uralski, pójdźka / włochatka / sóweczka.
 4. Zaplanować nocną wyprawę: kiedy, gdzie i jak słuchać, żeby nie przeszkadzać sowom.
 

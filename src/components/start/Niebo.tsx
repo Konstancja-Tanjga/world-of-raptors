@@ -1,41 +1,23 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import type { PoraDnia } from '@/lib/niebo';
 import { useMedia, useMniejRuchu } from '@/lib/useMedia';
 import { obrys, type Poza } from '@/lib/sylwetka';
+import { KOCIOL, SOWY_NOCY, type PtakNieba } from '@/lib/rysunki';
 import { SYLWETKI } from '@/lib/sylwetki';
 
 /**
- * The opening scene: the sky over Warsaw at this hour, and in it what you
- * would see there. By day a kettle of migrating raptors circles in a thermal
- * (as over the Strait in autumn), climbs, and the birds at the top peel off
- * south-west in a glide; new ones join from below. At night there are stars,
- * the moon, and now and then an owl crossing it.
+ * The opening scene's sky for the time of day it is given (by the clock, or
+ * chosen in NieboStartu). By day a kettle of the Strait module's soaring
+ * migrants circles in a thermal, climbs, and the birds at the top glide away;
+ * new ones join from below. At night there are stars, the moon, and now and
+ * then an owl crossing it.
  *
  * The birds are the atlas silhouettes, seen from below as the B1 lessons
- * teach. A pause button stops the motion (WCAG 2.2.2); with reduced motion
- * the scene is a still frame.
+ * teach. `pauza` (the scene's pause button, WCAG 2.2.2) holds the frame and
+ * stops the loop; with reduced motion the scene is a still frame.
  */
-
-type Rodzaj = { id: string; rozpietosc: number; macha: number };
-
-// A Strait-of-Gibraltar mix of soaring migrants, wingspans in metres.
-const KOCIOL: Rodzaj[] = [
-  { id: 'trzmielojad', rozpietosc: 1.42, macha: 0.35 },
-  { id: 'trzmielojad', rozpietosc: 1.42, macha: 0.35 },
-  { id: 'kania-czarna', rozpietosc: 1.45, macha: 0.3 },
-  { id: 'orzelek-wlochaty', rozpietosc: 1.22, macha: 0.3 },
-  { id: 'gadozer', rozpietosc: 1.8, macha: 0.2 },
-  { id: 'sep-plowy', rozpietosc: 2.6, macha: 0.04 },
-  { id: 'myszolow', rozpietosc: 1.2, macha: 0.35 },
-  { id: 'scierwnik', rozpietosc: 1.62, macha: 0.15 },
-];
-const SOWY: Rodzaj[] = [
-  { id: 'plomykowka', rozpietosc: 0.9, macha: 1 },
-  { id: 'puszczyk', rozpietosc: 0.9, macha: 1 },
-  { id: 'uszatka', rozpietosc: 0.95, macha: 1 },
-];
 
 const KLATKI = 16;
 const POZA_LOTU: Poza = { wznios: 0.08, zgiecie: 0, ogon: 0.75 };
@@ -48,7 +30,7 @@ function pozaMachniecia(faza: number): Poza {
 }
 
 /** Outlines as Path2D, scaled to a unit wingspan, per species: soaring, then each wingbeat frame. */
-function przygotujSciezki(rodzaje: Rodzaj[]) {
+function przygotujSciezki(rodzaje: PtakNieba[]) {
   const mapa = new Map<string, { szybowanie: Path2D; klatki: Path2D[] }>();
   for (const { id } of rodzaje) {
     if (mapa.has(id) || !SYLWETKI[id]) continue;
@@ -66,7 +48,11 @@ function przygotujSciezki(rodzaje: Rodzaj[]) {
   return mapa;
 }
 
-/** A small deterministic generator, so the first frame is always the same composition. */
+/**
+ * A small seeded generator for where the birds and stars start, so a window
+ * of the same size opens on the same composition. What happens later (wing
+ * beats, departures, the owl) uses Math.random.
+ */
 function losowanie(ziarno: number) {
   let a = ziarno >>> 0;
   return () => {
@@ -79,7 +65,7 @@ function losowanie(ziarno: number) {
 }
 
 type Ptak = {
-  rodzaj: Rodzaj;
+  rodzaj: PtakNieba;
   promien: number;
   kat: number;
   omega: number;
@@ -112,24 +98,31 @@ function nowyPtak(los: () => number, pierwszy: boolean): Ptak {
   };
 }
 
-export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
+export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pauza: boolean }) {
   const plotno = useRef<HTMLCanvasElement>(null);
-  const [pauza, setPauza] = useState(false);
   const ruch = !useMniejRuchu();
   const precyzyjny = useMedia('(hover: hover) and (pointer: fine)');
-  // The loop reads the latest pause without restarting the scene.
+  // The loop reads the latest pause without restarting the scene; pausing
+  // draws one still frame and stops the loop, resuming starts it again.
   const pauzaRef = useRef(pauza);
+  const sterowanie = useRef<{ zatrzymaj: () => void; wznow: () => void } | null>(null);
   useEffect(() => {
     pauzaRef.current = pauza;
+    if (pauza) sterowanie.current?.zatrzymaj();
+    else sterowanie.current?.wznow();
   }, [pauza]);
 
   useEffect(() => {
     const canvas = plotno.current;
     const ctx = canvas?.getContext('2d');
-    if (!canvas || !ctx) return;
+    if (!canvas || !ctx) {
+      // The section's own gradient is still the sky; only the birds and stars are missing.
+      if (canvas) console.warn('[Niebo] no 2D canvas context; the sky stays without birds');
+      return;
+    }
 
     const noc = pora === 'noc';
-    const sciezki = przygotujSciezki(noc ? SOWY : KOCIOL);
+    const sciezki = przygotujSciezki(noc ? SOWY_NOCY : KOCIOL);
     const los = losowanie(noc ? 17 : 4);
     const kolor = getComputedStyle(canvas).getPropertyValue('--wor-sylwetka').trim() || '#0d131b';
 
@@ -147,10 +140,11 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
 
     const liczba = noc ? 0 : Math.round(Math.min(22, Math.max(9, szer / 70)) * (pora === 'dzien' ? 1 : 0.55));
     const ptaki: Ptak[] = Array.from({ length: liczba }, () => nowyPtak(los, true));
-    const gwiazdy = noc
-      ? Array.from({ length: Math.round((szer * wys) / 5200) }, () => ({ x: los(), y: los() * 0.85, r: 0.4 + los() * 1.1, faza: los() * 6.28 }))
-      : [];
-    let sowa: null | { x: number; y: number; rodzaj: Rodzaj; faza: number } = null;
+    // Stars sit at fractions of the canvas, about one per 5200 px²; a resize adds or removes some to keep that density.
+    const ileGwiazd = () => (noc ? Math.round((szer * wys) / 5200) : 0);
+    const nowaGwiazda = () => ({ x: los(), y: los() * 0.85, r: 0.4 + los() * 1.1, faza: los() * 6.28 });
+    const gwiazdy = Array.from({ length: ileGwiazd() }, nowaGwiazda);
+    let sowa: null | { x: number; y: number; rodzaj: PtakNieba; faza: number } = null;
     let doSowy = 2.5;
 
     // Pointer parallax: the near birds move more than the far ones.
@@ -205,7 +199,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
         else if (Math.random() < p.rodzaj.macha * dt * 0.08) p.machanie = 0.8 + Math.random() * 1.2;
         if (p.machanie > 0) p.faza = (p.faza + dt * (3.2 / Math.sqrt(p.rodzaj.rozpietosc))) % 1;
         if (p.wysokosc > H_MAX) {
-          // Top of the thermal: glide out south-west, the way autumn migrants leave the Strait.
+          // Top of the thermal: glide away, as migrants do once a thermal has lifted them high enough.
           const x = Math.cos(p.kat) * p.promien;
           const y = Math.sin(p.kat) * p.promien;
           p.odlot = { x, y, vx: -9 - Math.random() * 3, vy: 6 + Math.random() * 3 };
@@ -214,7 +208,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
       if (noc) {
         doSowy -= dt;
         if (!sowa && doSowy <= 0) {
-          sowa = { x: szer + 120, y: wys * (0.18 + Math.random() * 0.25), rodzaj: SOWY[Math.floor(Math.random() * SOWY.length)], faza: 0 };
+          sowa = { x: szer + 120, y: wys * (0.18 + Math.random() * 0.25), rodzaj: SOWY_NOCY[Math.floor(Math.random() * SOWY_NOCY.length)], faza: 0 };
         }
         if (sowa) {
           sowa.x -= dt * Math.max(90, szer * 0.09);
@@ -234,7 +228,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
       if (noc) {
         ctx.fillStyle = '#f2eee6';
         for (const g of gwiazdy) {
-          ctx.globalAlpha = ruch ? 0.35 + 0.35 * (0.5 + 0.5 * Math.sin(czas * 0.0011 + g.faza)) : 0.6;
+          ctx.globalAlpha = ruch && !pauzaRef.current ? 0.35 + 0.35 * (0.5 + 0.5 * Math.sin(czas * 0.0011 + g.faza)) : 0.6;
           ctx.beginPath();
           ctx.arc(g.x * szer * dpr, g.y * wys * dpr, g.r * dpr, 0, Math.PI * 2);
           ctx.fill();
@@ -266,35 +260,51 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
       ctx.globalAlpha = 1;
     };
 
+    // The loop runs while the scene is on screen, motion is allowed and it is not paused.
+    const uruchom = () => {
+      if (klatkaAnimacji || !widoczny || !ruch || pauzaRef.current) return;
+      ostatni = performance.now();
+      klatkaAnimacji = requestAnimationFrame(petla);
+    };
     const petla = (teraz: number) => {
+      klatkaAnimacji = 0;
       const dt = Math.min(0.05, (teraz - ostatni) / 1000);
       ostatni = teraz;
-      if (!pauzaRef.current) krok(dt, teraz);
+      krok(dt, teraz);
       rysuj(teraz);
-      klatkaAnimacji = widoczny && ruch ? requestAnimationFrame(petla) : 0;
+      uruchom();
+    };
+    sterowanie.current = {
+      zatrzymaj: () => {
+        cancelAnimationFrame(klatkaAnimacji);
+        klatkaAnimacji = 0;
+        rysuj(performance.now());
+      },
+      wznow: uruchom,
     };
 
     // A still frame first (also the whole scene with reduced motion), then the loop.
     if (!noc) for (let i = 0; i < 40; i++) krok(0.05, i * 50);
     rysuj(0);
     canvas.dataset.gotowe = '';
-    if (ruch) klatkaAnimacji = requestAnimationFrame(petla);
+    uruchom();
 
     const widocznosc = new IntersectionObserver(([w]) => {
       widoczny = w.isIntersecting;
-      if (widoczny && ruch && !klatkaAnimacji) {
-        ostatni = performance.now();
-        klatkaAnimacji = requestAnimationFrame(petla);
-      }
+      uruchom();
     });
     widocznosc.observe(canvas);
     const rozmiar = new ResizeObserver(() => {
       dopasuj();
+      const n = ileGwiazd();
+      while (gwiazdy.length < n) gwiazdy.push(nowaGwiazda());
+      gwiazdy.length = n;
       rysuj(performance.now());
     });
     rozmiar.observe(canvas);
 
     return () => {
+      sterowanie.current = null;
       cancelAnimationFrame(klatkaAnimacji);
       widocznosc.disconnect();
       rozmiar.disconnect();
@@ -302,14 +312,5 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
     };
   }, [pora, ruch, precyzyjny]);
 
-  return (
-    <>
-      <canvas ref={plotno} className="niebo__plotno" role="img" aria-label={opis} />
-      {ruch && (
-        <button type="button" className="niebo__pauza" aria-pressed={pauza} onClick={() => setPauza((p) => !p)}>
-          {pauza ? 'Wznów ruch' : 'Zatrzymaj ruch'}
-        </button>
-      )}
-    </>
-  );
+  return <canvas ref={plotno} className="niebo__plotno" role="img" aria-label={opis} />;
 }

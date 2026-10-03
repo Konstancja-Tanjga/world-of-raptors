@@ -7,10 +7,11 @@
  *    component follows. Every text pair was checked against WCAG AA
  *    (see DS-GAPS.md, "Motyw produktu").
  *
- * 2. `--wor-*` tokens for what Big Hat does not have: display type above
- *    20px, editorial fonts, expressive motion, the sky and the dark "scenes"
- *    that tell the story. They are defined here once and used by name, the
- *    same discipline as Big Hat's scale.
+ * 2. `--wor-*` tokens for what Big Hat does not have: type above Big Hat's
+ *    display size (22 px here), editorial fonts and leading, expressive
+ *    motion, the sky and the dark "scenes" that tell the story. They are
+ *    defined here once and used by name, the same discipline as Big Hat's
+ *    scale.
  */
 
 :root {
@@ -82,9 +83,17 @@
   --wor-size-eyebrow: 0.8125rem;
   --wor-leading-display: 0.98;
   --wor-leading-title: 1.08;
+  /* Numerals and one-line labels */
+  --wor-leading-solid: 1;
+  /* Short passages set large, and notes under a drawing */
+  --wor-leading-snug: 1.35;
+  /* Leads and lists of cues: a step tighter than body text (--bh-text-leading-normal) */
+  --wor-leading-compact: 1.45;
   --wor-leading-reading: 1.65;
   --wor-tracking-display: -0.022em;
   --wor-tracking-eyebrow: 0.015em;
+  /* A sample of letters, set apart so each one can be seen */
+  --wor-tracking-open: 0.02em;
   --wor-measure: 40rem;
 
   /* Layout rhythm, larger than Big Hat's component spacing */
@@ -118,6 +127,12 @@
   --wor-scena-szklo: rgba(10, 16, 24, 0.42);
   --wor-szklo-jasne: rgba(242, 238, 230, 0.13);
   --wor-cien-sceny: rgba(4, 7, 14, 0.55);
+  /* Behind text on a sky or a photo: strong enough for WCAG AA wherever it sits. */
+  --wor-cien-tekstu: rgba(4, 7, 14, 0.68);
+  /* A step between the reading shade and clear sky; not enough for text on its own. */
+  --wor-cien-lekki: rgba(4, 7, 14, 0.38);
+  /* A dark glass panel for text that has to sit on a bright sky. */
+  --wor-scena-panel: rgba(10, 16, 24, 0.6);
   --wor-blask: rgba(255, 248, 232, 0.92);
   --wor-blask-miekki: rgba(214, 232, 247, 0.55);
   --wor-zar-horyzontu: rgba(255, 186, 112, 0.55);
@@ -234,9 +249,12 @@
   }
 }
 
-/* Reduced motion means less movement, not none: every travel distance is
-   multiplied by --wor-ruch, so with it at 0 things fade in place instead of
-   sliding, and staggers collapse. Loops check the media query themselves. */
+/* Reduced motion means less movement, not none. Small motions (hover lifts,
+   the menu, the curiosity and answer reveals) multiply their travel by
+   --wor-ruch, so at 0 they fade in place, and staggers collapse. Entrances,
+   scroll effects and flight scenes sit in `prefers-reduced-motion:
+   no-preference` and are skipped; page transitions become instant
+   (globals.css). Loops check the media query themselves. */
 :root {
   --wor-ruch: 1;
 }

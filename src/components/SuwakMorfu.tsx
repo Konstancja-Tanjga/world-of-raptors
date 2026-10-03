@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type CSSProperties } from 'react';
 import { obrys, posredni, posredniaPoza, POZA_SZYBOWANIE, sciezka } from '@/lib/sylwetka';
 import { POZY, SYLWETKI } from '@/lib/sylwetki';
 import { Slider } from './ds';
@@ -10,7 +10,7 @@ export type StronaMorfu = { id: string; pl: string; cechy: { etykieta: string; t
 /**
  * Two look-alikes and a slider between them: the drawing morphs by
  * interpolating the numbers behind both silhouettes, and each species' cues
- * fade in as the drawing comes closer to it. What moves while sliding is
+ * come forward as the drawing comes closer to it. What moves while sliding is
  * exactly what tells the two apart.
  */
 export function SuwakMorfu({ od, do: doGatunku }: { od: StronaMorfu; do: StronaMorfu }) {
@@ -47,7 +47,12 @@ export function SuwakMorfu({ od, do: doGatunku }: { od: StronaMorfu; do: StronaM
         />
         <div className="suwak-morfu__strony">
           {[od, doGatunku].map((strona, i) => (
-            <div key={strona.id} className="suwak-morfu__strona" style={{ opacity: 0.35 + 0.65 * (i === 0 ? 1 - t : t) }}>
+            // The text stays readable (AA) at every position; the bar above it shows which bird is closer.
+            <div
+              key={strona.id}
+              className="suwak-morfu__strona"
+              style={{ '--blizej': i === 0 ? 1 - t : t } as CSSProperties}
+            >
               <p className="suwak-morfu__nazwa">{strona.pl}</p>
               <dl>
                 {strona.cechy.map((c) => (

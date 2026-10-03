@@ -62,7 +62,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
       : { etykieta: 'Koniec kursu', tytul: 'Moja checklista', href: '/checklista', akcja: 'Otwórz checklistę' };
 
   return (
-    <div className="page page--article lekcja">
+    <div className="page lekcja">
       <Article
         eyebrow={
           <span className="lekcja__eyebrow">

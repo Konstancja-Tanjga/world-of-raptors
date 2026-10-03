@@ -42,7 +42,7 @@ function NazwaGatunku({ id, klasa, children }: { id: string; klasa: string; chil
 /** A species' silhouette group: its own cue for diurnal species ("orły (mały orzeł)" counts as orły), owls for owls. */
 function grupaSylwetki(g: Gatunek) {
   if (g.aktywnosc === 'nocny') return 'sowy';
-  const grupa = ((g.sylwetka as Record<string, string>).grupa ?? '').split(' ')[0];
+  const grupa = g.sylwetka.grupa.split(' ')[0];
   return KOLEJNOSC_GRUP.includes(grupa) ? grupa : 'myszołowy';
 }
 
@@ -158,6 +158,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                           {g.pl}
                         </NazwaGatunku>
                         <span className="plansza-grupy__lacina">{g.lat}</span>
+                        {widziany(g.id) && <span className="atlas__widziany">zaobserwowany</span>}
                       </Link>
                     </li>
                   ))}
@@ -170,7 +171,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
         <div className="skala">
           <p className="skala__opis">
             Każda sylwetka w tej samej skali: szerokość pola to {maks} cm, rozpiętość skrzydeł największego ptaka w atlasie.
-            Najmniejsze sowy mają niespełna jedną ósmą tego.
+            Najmniejsze sowy mają około jednej ósmej tego.
           </p>
           <ul className="skala__lista">
             <li className="skala__czlowiek">
@@ -194,6 +195,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                     <span className="skala__cm">
                       {g.rozpietosc_cm[0]}–{g.rozpietosc_cm[1]} cm
                     </span>
+                    {widziany(g.id) && <span className="atlas__widziany">zaobserwowany</span>}
                   </Link>
                 </li>
               ))}

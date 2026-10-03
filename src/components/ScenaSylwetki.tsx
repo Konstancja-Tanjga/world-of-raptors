@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { obrys, POZA_SZYBOWANIE, ramka, sciezka, type Poza } from '@/lib/sylwetka';
 import { POZY, pozaWLocie, STYL_LOTU, SYLWETKI } from '@/lib/sylwetki';
 import { useMniejRuchu } from '@/lib/useMedia';
@@ -16,13 +16,16 @@ function ziarno(tekst: string) {
  * A species' silhouette against the sky, flying the way it does: a kestrel
  * hovers, a sparrowhawk flaps and glides, a kite twists its tail. Each review
  * (`wariant`) shows it at a different heading and with a different spread of
- * wings and tail, so what is learnt is the shape, not one picture. With
- * reduced motion it holds still.
+ * wings and tail, so what is learnt is the shape, not one picture. A button
+ * stops the flight; with reduced motion it holds still.
  */
 export function ScenaSylwetki({ id, wariant, opis }: { id: string; wariant: string; opis: string }) {
   const sciezkaRef = useRef<SVGPathElement>(null);
   const grupaRef = useRef<SVGGElement>(null);
   const mniejRuchu = useMniejRuchu();
+  // The flight loops, so it can be stopped (WCAG 2.2.2); a new card starts in flight again.
+  const [pauza, setPauza] = useState({ dla: wariant, wlaczona: false });
+  const zatrzymany = pauza.dla === wariant && pauza.wlaczona;
   const ksztalt = SYLWETKI[id];
   const styl = STYL_LOTU[id] ?? 'szybuje';
 
@@ -51,7 +54,7 @@ export function ScenaSylwetki({ id, wariant, opis }: { id: string; wariant: stri
     const el = sciezkaRef.current;
     const g = grupaRef.current;
     if (!ksztalt || !el || !g) return;
-    if (mniejRuchu) {
+    if (mniejRuchu || zatrzymany) {
       el.setAttribute('d', poczatek);
       g.setAttribute('transform', `rotate(${kat}) scale(${skala})`);
       return;
@@ -67,14 +70,25 @@ export function ScenaSylwetki({ id, wariant, opis }: { id: string; wariant: stri
     };
     klatka = requestAnimationFrame(krok);
     return () => cancelAnimationFrame(klatka);
-  }, [ksztalt, styl, baza, kat, skala, poczatek, mniejRuchu]);
+  }, [ksztalt, styl, baza, kat, skala, poczatek, mniejRuchu, zatrzymany]);
 
   if (!ksztalt) return null;
   return (
-    <svg className="scena-sylwetki" viewBox="-120 -110 240 220" role="img" aria-label={opis}>
-      <g ref={grupaRef} transform={`rotate(${kat}) scale(${skala})`}>
-        <path ref={sciezkaRef} d={poczatek} transform={`translate(0 ${-srodek})`} />
-      </g>
-    </svg>
+    <>
+      <svg className="scena-sylwetki" viewBox="-120 -110 240 220" role="img" aria-label={opis}>
+        <g ref={grupaRef} transform={`rotate(${kat}) scale(${skala})`}>
+          <path ref={sciezkaRef} d={poczatek} transform={`translate(0 ${-srodek})`} />
+        </g>
+      </svg>
+      {!mniejRuchu && (
+        <button
+          type="button"
+          className="scena-sylwetki__pauza"
+          onClick={() => setPauza({ dla: wariant, wlaczona: !zatrzymany })}
+        >
+          {zatrzymany ? 'Wznów lot' : 'Zatrzymaj lot'}
+        </button>
+      )}
+    </>
   );
 }
