@@ -3,18 +3,15 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { SegmentedControl } from '../ds';
 import { useOstrzezenieZapisu } from '../useOstrzezenieZapisu';
-import { jakoPora, type PoraDnia } from '@/lib/niebo';
+import { jakoPora, PORY_DNIA, type PoraDnia } from '@/lib/niebo';
 import { usePoraNieba, zapiszPore } from '@/lib/poraNieba';
 import { useMniejRuchu } from '@/lib/useMedia';
 import { Niebo } from './Niebo';
 
-const WYBOR = [
-  { value: 'teraz', label: 'Teraz' },
-  { value: 'swit', label: 'Świt' },
-  { value: 'dzien', label: 'Dzień' },
-  { value: 'zmierzch', label: 'Zmierzch' },
-  { value: 'noc', label: 'Noc' },
-];
+const NAZWY_PORY: Record<PoraDnia, string> = { swit: 'Świt', dzien: 'Dzień', zmierzch: 'Zmierzch', noc: 'Noc' };
+const TERAZ = 'teraz';
+/** "Teraz" (the clock), then the four times of day. */
+const WYBOR = [{ value: TERAZ, label: 'Teraz' }, ...PORY_DNIA.map((p) => ({ value: p, label: NAZWY_PORY[p] }))];
 
 /**
  * The opening scene: the sky at this hour, or at the hour I chose, which
@@ -48,9 +45,10 @@ export function NieboStartu({
   const ostrzez = useOstrzezenieZapisu();
 
   // A `?pora=` link (the About page has four) is a choice too: remember it.
+  // The address stays as it is (the server reads it first anyway).
   useEffect(() => {
     const zAdresu = jakoPora(new URLSearchParams(window.location.search).get('pora'));
-    if (zAdresu) ostrzez(zapiszPore(zAdresu));
+    if (zAdresu) zapiszPore(zAdresu, { zAdresu: true }).then(ostrzez);
   }, [ostrzez]);
 
   return (
@@ -63,14 +61,16 @@ export function NieboStartu({
       <div className="niebo__dol">
         {liczby}
         <div className="niebo__sterowanie">
-          <SegmentedControl
-            legend="Pora nieba"
-            showLegend
-            size="sm"
-            options={WYBOR}
-            value={wybrana ?? 'teraz'}
-            onChange={(v) => ostrzez(zapiszPore(jakoPora(v)))}
-          />
+          <div className="scroll-x">
+            <SegmentedControl
+              legend="Pora nieba"
+              showLegend
+              size="sm"
+              options={WYBOR}
+              value={wybrana ?? TERAZ}
+              onChange={(v) => zapiszPore(v === TERAZ ? null : jakoPora(v)).then(ostrzez)}
+            />
+          </div>
           {ruch && (
             <button type="button" className="niebo__pauza" onClick={() => setPauza((p) => !p)}>
               {pauza ? 'Wznów ruch' : 'Zatrzymaj ruch'}

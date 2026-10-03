@@ -3,11 +3,10 @@
 import { useSyncExternalStore } from 'react';
 import { CIASTKO_PORY, jakoPora, type PoraDnia } from './niebo';
 
-const ROK = 60 * 60 * 24 * 365;
 const sluchacze = new Set<() => void>();
-// The choice made during this visit. It wins over the cookie, so the sky
-// holds even where cookies are blocked (until a reload) and when Back brings
-// the home page from the router's cache with the choice it was rendered with.
+// The choice made during this visit. It wins over the cookie, so a new choice
+// shows at once (the cookie arrives with the server's answer) and still holds
+// where cookies are blocked, until the page is reloaded.
 let wybranaTeraz: PoraDnia | null | undefined;
 
 function zCiastka() {
@@ -22,22 +21,37 @@ function odczytaj(): PoraDnia | null {
 }
 
 /**
- * Keeps a choice of sky for a year, or forgets it (null) so the sky follows
- * the clock again. A `?pora=` in the address is dropped, since the choice is
- * now remembered. Returns false when the browser refused the cookie: the
- * choice then holds only until the page is reloaded.
+ * Keeps a choice of sky for a year (the server sets the cookie, see
+ * app/pora-nieba/route.ts), or forgets it (null) so the sky follows the
+ * clock again. Resolves to false when the choice could not be kept: it then
+ * holds only until the page is reloaded.
+ *
+ * `zAdresu`: the choice came from a `?pora=` link and the address is left as
+ * it is. A choice made on the page drops `?pora=` from the address once the
+ * cookie holds it, so a reload does not bring the old one back.
  */
-export function zapiszPore(pora: PoraDnia | null): boolean {
+export async function zapiszPore(pora: PoraDnia | null, { zAdresu = false } = {}): Promise<boolean> {
   wybranaTeraz = pora;
-  document.cookie = `${CIASTKO_PORY}=${pora ?? ''}; path=/; max-age=${pora ? ROK : 0}; samesite=lax`;
+  sluchacze.forEach((l) => l());
+  try {
+    const odpowiedz = await fetch('/pora-nieba', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ pora }),
+    });
+    if (!odpowiedz.ok) return false;
+  } catch {
+    return false;
+  }
+  const zapisana = zCiastka() === pora;
   const adres = new URL(window.location.href);
-  if (adres.searchParams.has('pora')) {
+  if (zapisana && !zAdresu && adres.searchParams.has('pora')) {
     adres.searchParams.delete('pora');
-    // Next.js picks up native history calls; it wants `null` as the state.
+    // A fresh state (null): Next.js syncs its router with native history calls,
+    // but skips that for a state that already carries its own markers.
     window.history.replaceState(null, '', adres.pathname + adres.search + adres.hash);
   }
-  sluchacze.forEach((l) => l());
-  return zCiastka() === pora;
+  return zapisana;
 }
 
 /** The chosen sky; `zSerwera` is what the server rendered with, used until the page is hydrated. */
