@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useId, useState, type ReactNode } from 'react';
 import type { CiekawostkaDoPokazania } from '@/lib/types';
-import { Button, Card, StateBlock } from './ds';
+import { Button, StateBlock } from './ds';
 
 const KLUCZ = 'wor:ciekawostki:widziane';
 
@@ -45,9 +45,9 @@ function wybierz(preferowane: CiekawostkaDoPokazania[], pozostale: CiekawostkaDo
 }
 
 /**
- * **bold**, *italic*, `code`. No links: the card keeps one action (the
- * "Czytaj dalej" link), as Big Hat's Card contract asks, so a stray [link](…) in
- * content/ciekawostki.json shows up literally instead of being hidden.
+ * **bold**, *italic*, `code`. No links: a curiosity stands alone and its one
+ * way on is "Czytaj dalej", so a stray [link](…) in content/ciekawostki.json
+ * shows up literally instead of being hidden.
  */
 function inline(tekst: string): ReactNode[] {
   const czesci: ReactNode[] = [];
@@ -70,10 +70,10 @@ function inline(tekst: string): ReactNode[] {
  * A rotating "did you know" card. Chosen in the browser after mount: the
  * pages are static, so a server-side pick would be frozen at build time.
  *
- * Built on Big Hat's Card, which is for "content the user might act on as a
- * unit" and not for "cards with two actions inside": the card holds the
- * curiosity and its one action (read more in the lesson); "Pokaż inną ciekawostkę"
- * sits outside it.
+ * An editorial block rather than a Big Hat Card: a passage set large between
+ * two hairlines, with the way to the lesson it comes from and a button for
+ * another one. (It used to be a Card holding one action, with the second
+ * outside it; as a passage there is no card to keep to one action.)
  */
 export function Ciekawostka({
   preferowane,
@@ -104,32 +104,27 @@ export function Ciekawostka({
 
   return (
     <aside className="ciekawostka" aria-labelledby={tytulId}>
-      <Card elevation="raised" accent="info">
-        <div className="ciekawostka__tresc">
-          <p className="ciekawostka__tytul" id={tytulId}>
-            Ciekawostka
+      <p className="ciekawostka__tytul" id={tytulId}>
+        Ciekawostka
+      </p>
+      {biezaca ? (
+        <>
+          {/* Keyed by the curiosity, so a new one enters with its own fade instead of swapping in place. */}
+          <p key={biezaca.id} className="ciekawostka__tekst" aria-live="polite">
+            {inline(biezaca.tekst)}
           </p>
-          {biezaca ? (
-            <>
-              <p className="ciekawostka__tekst" aria-live="polite">
-                {inline(biezaca.tekst)}
-              </p>
-              <Link href={biezaca.href} className="text-link ciekawostka__zrodlo">
-                Czytaj dalej: {biezaca.zrodlo}
-              </Link>
-            </>
-          ) : (
-            // Chosen after mount (see above); the card keeps its place meanwhile.
-            <StateBlock state="loading" title="Wczytywanie ciekawostki" scope="inline" />
-          )}
-        </div>
-      </Card>
-      {biezaca && (
-        <div className="ciekawostka__akcje">
-          <Button variant="secondary" size="sm" onClick={nastepna}>
-            Pokaż inną ciekawostkę
-          </Button>
-        </div>
+          <div className="ciekawostka__stopka">
+            <Link href={biezaca.href} className="ciekawostka__zrodlo">
+              Czytaj dalej: {biezaca.zrodlo}
+            </Link>
+            <Button variant="secondary" size="sm" onClick={nastepna}>
+              Pokaż inną ciekawostkę
+            </Button>
+          </div>
+        </>
+      ) : (
+        // Chosen after mount (see above); the block keeps its place meanwhile.
+        <StateBlock state="loading" title="Wczytywanie ciekawostki" scope="inline" />
       )}
     </aside>
   );

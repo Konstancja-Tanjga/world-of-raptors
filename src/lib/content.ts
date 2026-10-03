@@ -9,6 +9,7 @@ import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
   Fiszka,
+  GatunekFiszki,
   Gatunek,
   Modul,
   PytanieQuizu,
@@ -212,16 +213,44 @@ export function modulyGatunku(g: Gatunek) {
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 
-/** Flashcards: every atlas species' reference photos, in flight and perched. */
-export function taliaFiszek(): Fiszka[] {
+const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;
+
+/**
+ * The flashcard deck: for every atlas species its reference photos (in flight
+ * and perched), its silhouette (diurnal species with a drawn shape) and its
+ * names both ways between Polish and English or Spanish. Photo card ids are
+ * the ones stored before the other kinds existed, so schedules carry over.
+ */
+export function taliaFiszek(maSylwetke: (id: string) => boolean): Fiszka[] {
   return gatunki.flatMap((g) => {
     const z = zdjecia[g.id];
-    const { id, pl, lat, en, grupa, cechy, regiony } = g;
-    return (['lot', 'siedzacy'] as const).flatMap((rodzaj) => {
+    const zdjeciaKart = (['lot', 'siedzacy'] as const).flatMap((rodzaj) => {
       const zdjecie = z?.[rodzaj];
-      return zdjecie ? [{ id: `${g.id}/${rodzaj}`, rodzaj, zdjecie, gatunek: { id, pl, lat, en, grupa, cechy, regiony } }] : [];
+      return zdjecie ? [{ id: `${g.id}/${rodzaj}`, rodzaj, gatunek: g.id, zdjecie }] : [];
     });
+    // The answer side of a non-photo card shows the bird as it is usually seen.
+    const ilustracja = (g.aktywnosc === 'nocny' ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy)) ?? null;
+    const sylwetka: Fiszka[] =
+      g.aktywnosc === 'dzienny' && maSylwetke(g.id)
+        ? [{ id: `${g.id}/sylwetka`, rodzaj: 'sylwetka', gatunek: g.id, zdjecie: ilustracja }]
+        : [];
+    const nazwy: Fiszka[] = KIERUNKI_NAZW.map((rodzaj) => ({ id: `${g.id}/${rodzaj}`, rodzaj, gatunek: g.id, zdjecie: ilustracja }));
+    return [...zdjeciaKart, ...sylwetka, ...nazwy];
   });
+}
+
+/** The species data a flashcard's answer needs, keyed by species id. */
+export function gatunkiFiszek(): Record<string, GatunekFiszki> {
+  return Object.fromEntries(
+    gatunki.map((g) => {
+      const { id, pl, lat, en, es, grupa, cechy, regiony, aktywnosc, sylwetka } = g;
+      const podobne = g.mylona_z.flatMap((m) => {
+        const x = znajdzGatunek(m);
+        return x ? [{ id: x.id, pl: x.pl }] : [];
+      });
+      return [id, { id, pl, lat, en, es, grupa, cechy, regiony, aktywnosc, sylwetka, podobne }];
+    }),
+  );
 }
 
 export async function czytajMarkdown(relPath: string) {
@@ -260,4 +289,180 @@ export function ciekawostkiDla({ modul, lekcja, gatunek }: { modul?: string; lek
     preferowane: pula.filter(pasuje).map(doPokazania),
     pozostale: pula.filter((c) => !pasuje(c)).map(doPokazania),
   };
+}
+
+/** A species that draws each of the eight silhouette groups. */
+const RYSUNEK_GRUPY: Record<string, string> = {
+  Sępy: 'sep-plowy',
+  Orły: 'orzel-przedni',
+  Myszołowy: 'myszolow',
+  Kanie: 'kania-ruda',
+  Błotniaki: 'blotniak-stawowy',
+  Krogulce: 'krogulec',
+  Sokoły: 'sokol-wedrowny',
+  Rybołów: 'rybolow',
+};
+
+export type GrupaSylwetki = {
+  nazwa: string;
+  skrzydla: string;
+  ogon: string;
+  glowa: string;
+  przyklady: string;
+  /** The atlas species whose silhouette stands for the group. */
+  gatunek: string;
+};
+
+/**
+ * The eight silhouette groups, read from the table in B1 lesson 1 ("Osiem
+ * grup"), so the home page and the lesson cannot disagree. The build fails if
+ * the table stops having eight known groups in five columns.
+ */
+export async function grupySylwetek(): Promise<{ grupy: GrupaSylwetki[]; lead: string; href: string }> {
+  const plik = 'moduly/metoda/01-sylwetka.md';
+  const md = await czytajMarkdown(plik);
+  const sekcja = md.split(/^## /m).find((s) => s.startsWith('Osiem grup')) ?? '';
+  const wiersze = sekcja
+    .split('\n')
+    .filter((l) => l.startsWith('|'))
+    .slice(2)
+    .map((l) => l.split('|').slice(1, -1).map((k) => k.trim()));
+  const grupy = wiersze.map((k) => {
+    const nazwa = k[0]?.replace(/\*/g, '');
+    if (k.length !== 5 || !RYSUNEK_GRUPY[nazwa]) {
+      throw new Error(`${plik}: tabela „Osiem grup” ma nieznany wiersz: ${k.join(' | ')}`);
+    }
+    return { nazwa, skrzydla: k[1], ogon: k[2], glowa: k[3], przyklady: k[4], gatunek: RYSUNEK_GRUPY[nazwa] };
+  });
+  if (grupy.length !== 8) throw new Error(`${plik}: tabela „Osiem grup” powinna mieć 8 wierszy, ma ${grupy.length}`);
+  const { lead } = przygotujStroneLekcji(md, plik);
+  return { grupy, lead: lead ?? '', href: '/moduly/metoda/01-sylwetka' };
+}
+
+
+/**
+ * A module's teaser: the quote under its README title (`> …`), written as the
+ * module's hook. Inline Markdown; null if the README has none.
+ */
+export async function zajawkaModulu(slug: string) {
+  const md = await czytajMarkdown(`moduly/${slug}/README.md`);
+  const linia = md.split('\n').find((l) => l.startsWith('> '));
+  return linia ? linia.slice(2).trim() : null;
+}
+
+/** The course in numbers, for the about page: everything counted from the content itself. */
+export async function statystykiKursu() {
+  const pliki = gotoweModuly.flatMap((m) => [`moduly/${m.slug}/README.md`, ...m.lekcje.map((l) => `moduly/${m.slug}/${l.slug}.md`)]);
+  const teksty = await Promise.all(pliki.map(async (p) => [p, await czytajMarkdown(p)] as const));
+  const slowa = teksty.reduce(
+    (n, [, md]) => n + md.replace(/<[^>]*>/g, ' ').split(/\s+/).filter((w) => /\p{L}/u.test(w)).length,
+    0,
+  );
+  const pytania = teksty.reduce((n, [p, md]) => n + (p.endsWith('README.md') ? 0 : (wyodrebnijQuiz(md, p).quiz?.pytania.length ?? 0)), 0);
+  const zdjecWLekcjach = teksty.reduce((n, [, md]) => n + (md.match(/<zdjecie\b/g)?.length ?? 0), 0);
+  const zdjecWAtlasie = Object.values(zdjecia).reduce((n, z) => n + (z?.lot ? 1 : 0) + (z?.siedzacy ? 1 : 0), 0);
+  return {
+    gatunki: gatunki.length,
+    moduly: gotoweModuly.length,
+    lekcje: gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0),
+    slowa,
+    pytania,
+    zdjecia: zdjecWLekcjach + zdjecWAtlasie,
+    ciekawostki: ciekawostki.length,
+  };
+}
+
+/**
+ * Everyone whose photos the course shows, from the atlas and from lesson
+ * tags: once each, in Polish alphabetical order, without the Flickr-style
+ * "from <place>" tails. (Each photo keeps its full credit where it appears.)
+ */
+export async function autorzyZdjec() {
+  const surowe: string[] = [];
+  // The author's own photos (served from public/, no Commons page) are credited separately.
+  for (const z of Object.values(zdjecia)) for (const p of [z?.lot, z?.siedzacy]) if (p?.strona) surowe.push(p.autor);
+  for (const m of gotoweModuly) {
+    for (const l of m.lekcje) {
+      const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);
+      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(autor.replace(/&amp;/g, '&'));
+    }
+  }
+  const nieznani = /^(autor nieznany|nieznany autor|own work)$/i;
+  const wedlugKlucza = new Map<string, string>();
+  for (const a of surowe) {
+    const imie = a.replace(/\s+from\s+.+$/i, '').trim();
+    if (!imie || nieznani.test(imie)) continue;
+    const klucz = imie.toLocaleLowerCase('pl');
+    if (!wedlugKlucza.has(klucz)) wedlugKlucza.set(klucz, imie);
+  }
+  return [...wedlugKlucza.values()].sort((a, b) => a.localeCompare(b, 'pl'));
+}
+
+/** The "Idea" section of the course plan (Markdown, without its heading), for the about page. */
+export async function ideaKursu() {
+  const md = await czytajMarkdown('PLAN-KURSU.md');
+  const sekcja = md.split(/^## /m).find((s) => s.startsWith('Idea'));
+  if (!sekcja) throw new Error('PLAN-KURSU.md: brak sekcji „## Idea”, z której korzysta strona „O projekcie”');
+  return sekcja.replace(/^Idea\s*\n/, '').split(/^---\s*$/m)[0].trim();
+}
+
+/**
+ * Each module's opening scene: a bird that stands for the module, in the
+ * photo that suits it (A4 is about pairs: two white-tailed eagles; B5 is
+ * owls: the eagle owl; A1 opens with the falcon, which is closer to parrots
+ * than to hawks).
+ */
+const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
+  'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', zdjecie: 'siedzacy' },
+  anatomia: { gatunek: 'kobuz', zdjecie: 'siedzacy' },
+  'polowanie-i-ekologia': { gatunek: 'pustulka', zdjecie: 'lot' },
+  rozrod: { gatunek: 'bielik', zdjecie: 'siedzacy' },
+  wedrowki: { gatunek: 'sep-plowy', zdjecie: 'lot' },
+  ochrona: { gatunek: 'orlosep', zdjecie: 'siedzacy' },
+  'ludzie-i-drapiezniki': { gatunek: 'jastrzab', zdjecie: 'siedzacy' },
+  metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
+  polska: { gatunek: 'bielik', zdjecie: 'lot' },
+  gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },
+  'poludnie-hiszpanii': { gatunek: 'orzel-iberyjski', zdjecie: 'siedzacy' },
+  sowy: { gatunek: 'puchacz', zdjecie: 'siedzacy' },
+};
+
+/** The photo and species that open a module, or null when it has none. */
+export function otwarcieModulu(slug: string) {
+  const o = OTWARCIA_MODULOW[slug];
+  const g = o && znajdzGatunek(o.gatunek);
+  const zdjecie = o && zdjecia[o.gatunek]?.[o.zdjecie];
+  return g && zdjecie ? { gatunek: g, zdjecie, wLocie: o.zdjecie === 'lot' } : null;
+}
+
+/**
+ * A module's README for its overview page: the title, the path line and the
+ * hook (`> …`) are shown by the opening scene, so they are taken out of the
+ * text; the rest (scope, goals, plan) is returned as Markdown.
+ */
+export function przygotujOpisModulu(md: string) {
+  const bloki = md.replace(/^#\s.*\n+/, '').split(/\n\s*\n/);
+  const zajawka = bloki.find((b) => b.startsWith('> '))?.slice(2).trim() ?? null;
+  const reszta = bloki.filter((b) => !b.startsWith('> ') && !/^Ścieżka [AB]:/.test(b.trim()));
+  return { zajawka, md: reszta.join('\n\n') };
+}
+
+/** Lessons of a module with what the syllabus shows (reading time, quiz pass mark) and the atlas species each names. */
+export async function sylabusModulu(slug: string) {
+  const modul = znajdzModul(slug);
+  if (!modul) return [];
+  return Promise.all(
+    modul.lekcje.map(async (l) => {
+      const plik = `moduly/${slug}/${l.slug}.md`;
+      const strona = przygotujStroneLekcji(await czytajMarkdown(plik), plik);
+      return {
+        slug: l.slug,
+        tytul: l.tytul,
+        minuty: strona.minuty,
+        progQuizu: strona.quiz?.prog ?? null,
+        lead: strona.lead,
+        gatunki: strona.wszystkie,
+      };
+    }),
+  );
 }

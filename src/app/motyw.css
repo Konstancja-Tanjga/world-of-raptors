@@ -1,0 +1,248 @@
+/*
+ * The course's look, in two layers.
+ *
+ * 1. Big Hat's semantic tokens get this product's values: "Papier terenowy"
+ *    (warm paper, ink, rufous) in light mode and "Zmierzch" (dusk sky, gold)
+ *    in dark mode. Only roles change, never class rules, so every Big Hat
+ *    component follows. Every text pair was checked against WCAG AA
+ *    (see DS-GAPS.md, "Motyw produktu").
+ *
+ * 2. `--wor-*` tokens for what Big Hat does not have: display type above
+ *    20px, editorial fonts, expressive motion, the sky and the dark "scenes"
+ *    that tell the story. They are defined here once and used by name, the
+ *    same discipline as Big Hat's scale.
+ */
+
+:root {
+  /* Big Hat roles: Papier terenowy */
+  --bh-surface-base: #fdfaf4;
+  --bh-surface-sunken: #f1ebdf;
+  --bh-surface-raised: #fffdf9;
+  --bh-surface-overlay: #fffdf9;
+  --bh-surface-inverse: #1b1510;
+  --bh-text-primary: #261d17;
+  --bh-text-secondary: #4a3e35;
+  --bh-text-muted: #61564d;
+  --bh-text-inverse: #f8f3e9;
+  --bh-text-on-accent: #fffaf2;
+  --bh-text-link: #9a4320;
+  --bh-border-subtle: #e2d8c8;
+  --bh-border-strong: #8a7d70;
+  --bh-border-hover: #4a3e35;
+  --bh-border-focus: #2b5d86;
+  --bh-border-hairline: rgba(38, 29, 23, 0.08);
+  --bh-action-primary-bg: #a54a24;
+  --bh-action-primary-bg-hover: #8e3e1d;
+  --bh-action-primary-bg-active: #7a3417;
+  --bh-action-primary-fg: #fffaf2;
+  --bh-action-secondary-bg: #fdfaf4;
+  --bh-action-secondary-bg-hover: #f1ebdf;
+  --bh-action-secondary-fg: #261d17;
+  --bh-action-secondary-border: #8a7d70;
+  --bh-status-info-bg: #edf2f6;
+  --bh-status-info-fg: #2b4f6b;
+  --bh-status-info-border: #c4d4e1;
+  --bh-selection-bg: #f3dcc9;
+  --bh-selection-fg: #261d17;
+  --bh-selection-mark: #a54a24;
+  --bh-fill-hover: rgba(38, 29, 23, 0.06);
+  --bh-material-thin-bg: rgba(253, 250, 244, 0.42);
+  --bh-material-regular-bg: rgba(253, 250, 244, 0.58);
+  --bh-material-thick-bg: rgba(253, 250, 244, 0.74);
+  --bh-material-chrome-bg: rgba(248, 243, 233, 0.66);
+  --bh-material-rim: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  --bh-scrim-bg: rgba(10, 16, 24, 0.32);
+  --bh-elevation-raised: 0 0 0 1px rgba(38, 29, 23, 0.04), 0 1px 2px rgba(38, 29, 23, 0.05), 0 8px 24px rgba(38, 29, 23, 0.07);
+  --bh-elevation-floating: 0 0 0 1px rgba(38, 29, 23, 0.04), 0 2px 6px rgba(38, 29, 23, 0.06), 0 16px 40px rgba(38, 29, 23, 0.12);
+
+  /* Big Hat's type scale is sized for dense applications (13px body).
+     This is a course for reading, so the interface reads a size up. */
+  --bh-text-size-dense: 12px;
+  --bh-text-size-label: 12px;
+  --bh-text-size-body: 15px;
+  --bh-text-size-caption: 14px;
+  --bh-text-size-heading: 18px;
+  --bh-text-size-display: 22px;
+
+  /* Fonts (next/font sets the families on <html>) */
+  --wor-font-display: var(--font-poltawski), 'Iowan Old Style', Georgia, serif;
+  --wor-font-text: var(--font-newsreader), 'Iowan Old Style', Georgia, serif;
+  --wor-font-ui: var(--bh-font-family-sans);
+
+  /* Display type above Big Hat's 20px, fluid between phone and desktop */
+  --wor-size-hero: clamp(3.25rem, 1.6rem + 7.4vw, 9.5rem);
+  --wor-size-display: clamp(2.6rem, 1.7rem + 4vw, 5.5rem);
+  --wor-size-title: clamp(2.1rem, 1.6rem + 2.2vw, 3.6rem);
+  --wor-size-subtitle: clamp(1.45rem, 1.25rem + 0.9vw, 2rem);
+  --wor-size-lead: clamp(1.2rem, 1.08rem + 0.5vw, 1.45rem);
+  --wor-size-reading: clamp(1.075rem, 1.03rem + 0.2vw, 1.2rem);
+  --wor-size-numer: clamp(2.25rem, 1.75rem + 1.8vw, 3.4rem);
+  --wor-size-karta: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --wor-size-small: 0.875rem;
+  --wor-size-eyebrow: 0.8125rem;
+  --wor-leading-display: 0.98;
+  --wor-leading-title: 1.08;
+  --wor-leading-reading: 1.65;
+  --wor-tracking-display: -0.022em;
+  --wor-tracking-eyebrow: 0.015em;
+  --wor-measure: 40rem;
+
+  /* Layout rhythm, larger than Big Hat's component spacing */
+  --wor-gutter: clamp(1rem, 0.4rem + 3vw, 3rem);
+  --wor-space-block: clamp(1.75rem, 1.2rem + 2.2vw, 3.25rem);
+  --wor-space-section: clamp(4.5rem, 2.5rem + 8vw, 11rem);
+  --wor-width: 82rem;
+  --wor-nav-height: 3.25rem;
+  --wor-radius-scene: clamp(1.25rem, 0.8rem + 1.6vw, 2.25rem);
+
+  /* Motion. Productive: interface feedback, short. Expressive: story moments. */
+  --wor-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --wor-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --wor-ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --wor-ease-spring: linear(0, 0.007, 0.029 2.2%, 0.118 4.7%, 0.625 15.1%, 0.796 19.3%, 0.911 23.6%, 0.98 28.1%, 1.017 32.8%, 1.032 38.1%, 1.023 47.6%, 1.002 65.7%, 0.998 82.3%, 1);
+  --wor-dur-quick: 160ms;
+  --wor-dur-base: 260ms;
+  --wor-dur-expressive: 640ms;
+  --wor-dur-scene: 1100ms;
+  --wor-stagger: 70ms;
+
+  /* Accent: rufous on paper (kite), gold at dusk (a raptor's eye) */
+  --wor-akcent: #a54a24;
+  --wor-akcent-miekki: #f3dcc9;
+  --wor-tlo: #f8f3e9;
+  --wor-linia: rgba(38, 29, 23, 0.14);
+
+  /* Scenes: always dusk, in both themes, like Apple's dark product bands */
+  --wor-scena-tlo: #0a1018;
+  --wor-scena-linia: rgba(242, 238, 230, 0.14);
+  --wor-scena-szklo: rgba(10, 16, 24, 0.42);
+  --wor-szklo-jasne: rgba(242, 238, 230, 0.13);
+  --wor-cien-sceny: rgba(4, 7, 14, 0.55);
+  --wor-blask: rgba(255, 248, 232, 0.92);
+  --wor-blask-miekki: rgba(214, 232, 247, 0.55);
+  --wor-zar-horyzontu: rgba(255, 186, 112, 0.55);
+  --wor-ksiezyc: rgba(246, 241, 226, 0.95);
+  --wor-scena-tekst: #f2eee6;
+  --wor-scena-tekst-2: #b7b0a3;
+  --wor-zloto: #f5b75b;
+  --wor-sylwetka: #0d131b;
+
+  /* The sky by time of day (top to horizon), interpolated in OKLCH */
+  --wor-niebo-noc: linear-gradient(in oklch 180deg, #04070e 0%, #0a1222 55%, #1a2742 100%);
+  --wor-niebo-swit: linear-gradient(in oklch 180deg, #18264a 0%, #6d5b86 52%, #f0a679 100%);
+  --wor-niebo-dzien: linear-gradient(in oklch 180deg, #10365f 0%, #2a62a0 52%, #79abda 100%);
+  --wor-niebo-zmierzch: linear-gradient(in oklch 180deg, #1c2c51 0%, #a85556 62%, #f5bc69 100%);
+}
+
+/* Zmierzch: dark mode, set the same two ways Big Hat sets its own dark theme.
+   A `.scena` (a dark story band) gets the same values in both themes, so Big
+   Hat components inside it render dark without any change to them. */
+:root[data-theme='dark'],
+.scena {
+  color-scheme: dark;
+  --bh-surface-base: #0f1620;
+  --bh-surface-sunken: #0a1018;
+  --bh-surface-raised: #141b26;
+  --bh-surface-overlay: #1a2230;
+  --bh-surface-inverse: #f2eee6;
+  --bh-text-primary: #f2eee6;
+  --bh-text-secondary: #d4cdc0;
+  --bh-text-muted: #b7b0a3;
+  --bh-text-inverse: #0a1018;
+  --bh-text-on-accent: #0a1018;
+  --bh-text-link: #f5b75b;
+  --bh-border-subtle: #263142;
+  --bh-border-strong: #7a8594;
+  --bh-border-hover: #b7b0a3;
+  --bh-border-focus: #f5b75b;
+  --bh-border-hairline: rgba(242, 238, 230, 0.08);
+  --bh-action-primary-bg: #f5b75b;
+  --bh-action-primary-bg-hover: #f8c87f;
+  --bh-action-primary-bg-active: #fad79f;
+  --bh-action-primary-fg: #0a1018;
+  --bh-action-secondary-bg: #141b26;
+  --bh-action-secondary-bg-hover: #1f2836;
+  --bh-action-secondary-fg: #f2eee6;
+  --bh-action-secondary-border: #7a8594;
+  --bh-status-info-bg: #141b26;
+  --bh-status-info-fg: #9cc2e6;
+  --bh-status-info-border: #2b4f6b;
+  --bh-status-success-bg: #141b26;
+  --bh-status-warning-bg: #141b26;
+  --bh-status-critical-bg: #141b26;
+  --bh-selection-bg: #2a2418;
+  --bh-selection-fg: #f2eee6;
+  --bh-selection-mark: #f5b75b;
+  --bh-fill-hover: rgba(242, 238, 230, 0.07);
+  --bh-material-thin-bg: rgba(15, 22, 32, 0.42);
+  --bh-material-regular-bg: rgba(15, 22, 32, 0.56);
+  --bh-material-thick-bg: rgba(15, 22, 32, 0.72);
+  --bh-material-chrome-bg: rgba(10, 16, 24, 0.66);
+  --bh-material-rim: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --bh-scrim-bg: rgba(0, 0, 0, 0.45);
+  --wor-akcent: #f5b75b;
+  --wor-akcent-miekki: #2a2418;
+  --wor-tlo: #0a1018;
+  --wor-linia: rgba(242, 238, 230, 0.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bh-surface-base: #0f1620;
+    --bh-surface-sunken: #0a1018;
+    --bh-surface-raised: #141b26;
+    --bh-surface-overlay: #1a2230;
+    --bh-surface-inverse: #f2eee6;
+    --bh-text-primary: #f2eee6;
+    --bh-text-secondary: #d4cdc0;
+    --bh-text-muted: #b7b0a3;
+    --bh-text-inverse: #0a1018;
+    --bh-text-on-accent: #0a1018;
+    --bh-text-link: #f5b75b;
+    --bh-border-subtle: #263142;
+    --bh-border-strong: #7a8594;
+    --bh-border-hover: #b7b0a3;
+    --bh-border-focus: #f5b75b;
+    --bh-border-hairline: rgba(242, 238, 230, 0.08);
+    --bh-action-primary-bg: #f5b75b;
+    --bh-action-primary-bg-hover: #f8c87f;
+    --bh-action-primary-bg-active: #fad79f;
+    --bh-action-primary-fg: #0a1018;
+    --bh-action-secondary-bg: #141b26;
+    --bh-action-secondary-bg-hover: #1f2836;
+    --bh-action-secondary-fg: #f2eee6;
+    --bh-action-secondary-border: #7a8594;
+    --bh-status-info-bg: #141b26;
+    --bh-status-info-fg: #9cc2e6;
+    --bh-status-info-border: #2b4f6b;
+    --bh-status-success-bg: #141b26;
+    --bh-status-warning-bg: #141b26;
+    --bh-status-critical-bg: #141b26;
+    --bh-selection-bg: #2a2418;
+    --bh-selection-fg: #f2eee6;
+    --bh-selection-mark: #f5b75b;
+    --bh-fill-hover: rgba(242, 238, 230, 0.07);
+    --bh-material-thin-bg: rgba(15, 22, 32, 0.42);
+    --bh-material-regular-bg: rgba(15, 22, 32, 0.56);
+    --bh-material-thick-bg: rgba(15, 22, 32, 0.72);
+    --bh-material-chrome-bg: rgba(10, 16, 24, 0.66);
+    --bh-material-rim: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --bh-scrim-bg: rgba(0, 0, 0, 0.45);
+    --wor-akcent: #f5b75b;
+    --wor-akcent-miekki: #2a2418;
+    --wor-tlo: #0a1018;
+    --wor-linia: rgba(242, 238, 230, 0.12);
+  }
+}
+
+/* Reduced motion means less movement, not none: every travel distance is
+   multiplied by --wor-ruch, so with it at 0 things fade in place instead of
+   sliding, and staggers collapse. Loops check the media query themselves. */
+:root {
+  --wor-ruch: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --wor-ruch: 0;
+    --wor-stagger: 0ms;
+  }
+}

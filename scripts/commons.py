@@ -120,12 +120,41 @@ def tag(title, podpis, alt):
     )
 
 
+def sizes(path):
+    """Records each atlas photo's original size, so the app can ask Commons for
+    sharper thumbnails (1280, 1920 px) without requesting more than exists."""
+    with open(path, encoding='utf-8') as fh:
+        data = json.load(fh)
+    # Own photos (served from public/zdjecia/) have no Commons file to ask about.
+    photos = [p for sp in data.values() for p in (sp.get('lot'), sp.get('siedzacy')) if p and p.get('plik', '').startswith('File:')]
+    titles = sorted({p['plik'] for p in photos})
+    found = {}
+    for i in range(0, len(titles), 50):
+        for f in imageinfo(titles[i:i + 50], 960):
+            found[f['title']] = (f['w'], f['h'])
+        time.sleep(0.5)
+    missing = [t for t in titles if t not in found]
+    if missing:
+        sys.exit('not found on Commons: ' + ', '.join(missing))
+    for p in photos:
+        p['oryginal'] = list(found[p['plik']])
+    text = json.dumps(data, ensure_ascii=False, indent=2)
+    # Keep "oryginal": [w, h] on one line, like the rest of the file's scalars.
+    text = re.sub(r'\[\s+(\d+),\s+(\d+)\s+\]', r'[\1, \2]', text)
+    with open(path, 'w', encoding='utf-8') as fh:
+        fh.write(text + '\n')
+    print(f'{len(photos)} photos, {len(titles)} files: original sizes saved in {path}')
+
+
 ap = argparse.ArgumentParser()
 sub = ap.add_subparsers(dest='cmd', required=True)
 s = sub.add_parser('search'); s.add_argument('query'); s.add_argument('--out', default='/tmp/commons-previews'); s.add_argument('--limit', type=int, default=12)
 t = sub.add_parser('tag'); t.add_argument('title'); t.add_argument('--podpis', required=True); t.add_argument('--alt', required=True)
+r = sub.add_parser('rozmiary'); r.add_argument('--plik', default='content/zdjecia.json')
 a = ap.parse_args()
 if a.cmd == 'search':
     search(a.query, a.out, a.limit)
+elif a.cmd == 'rozmiary':
+    sizes(a.plik)
 else:
     tag(a.title, a.podpis, a.alt)
