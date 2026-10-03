@@ -112,8 +112,12 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
   };
 }
 
-/** The question side. Nothing on it names the species. */
-function Awers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
+/**
+ * The question side. Nothing on it names the species. `powtorka` (how many
+ * times the card was answered) makes each review of a silhouette card show
+ * the bird at a new heading and spread.
+ */
+function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtorka: number }) {
   if (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') {
     const z = karta.zdjecie!;
     return (
@@ -137,7 +141,7 @@ function Awers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
   if (karta.rodzaj === 'sylwetka') {
     return (
       <div className="fiszka__scena fiszka__scena--niebo">
-        <ScenaSylwetki id={g.id} wariant={karta.id} opis="Sylwetka ptaka do rozpoznania, w locie, od spodu" />
+        <ScenaSylwetki id={g.id} wariant={`${karta.id}:${powtorka}`} opis="Sylwetka ptaka do rozpoznania, w locie, od spodu" />
       </div>
     );
   }
@@ -371,7 +375,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
       ) : (
         <section className="fiszka" aria-label="Fiszka" data-rodzaj={karta.rodzaj} data-odkryta={odkryta ? '' : undefined}>
           <div className="fiszka__przod">
-            <Awers karta={karta} g={g} />
+            <Awers karta={karta} g={g} powtorka={fiszki[karta.id]?.reps ?? 0} />
             {karta.zdjecie && (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && (
               <p className="fiszka__podpis">
                 Fot. {karta.zdjecie.autor},{' '}

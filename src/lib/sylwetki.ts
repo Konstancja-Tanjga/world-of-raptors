@@ -3,9 +3,10 @@ import type { Ksztalt, Poza } from './sylwetka';
 /**
  * Silhouette shapes of the atlas species, from the eight groups of B1 lesson 1
  * (plus owls) and each species' `sylwetka` cues in content/gatunki.json. They
- * are drawings, not measurements: proportions follow field guides closely
- * enough to show the differences the lessons teach (tail fork, number of
- * fingers, head projection, wing width) and no more.
+ * are approximations, not measurements: proportions follow field guides, and
+ * each shape was checked by eye against a photograph of the species in
+ * flight, closely enough to show the differences the lessons teach (tail
+ * fork, number of fingers, head projection, wing width) and no more.
  */
 
 const MYSZOLOWY: Ksztalt = {

@@ -372,6 +372,15 @@ export async function statystykiKursu() {
   };
 }
 
+/** HTML entities in a tag attribute (`&amp;`, `&#x27;`, `&quot;`…) as the characters they stand for. */
+function odkoduj(tekst: string) {
+  const nazwane: Record<string, string> = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: '\u00a0' };
+  return tekst.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (calosc, kod: string) => {
+    if (kod[0] === '#') return String.fromCodePoint(kod[1].toLowerCase() === 'x' ? parseInt(kod.slice(2), 16) : Number(kod.slice(1)));
+    return nazwane[kod.toLowerCase()] ?? calosc;
+  });
+}
+
 /**
  * Everyone whose photos the course shows, from the atlas and from lesson
  * tags: once each, in Polish alphabetical order, without the Flickr-style
@@ -384,7 +393,7 @@ export async function autorzyZdjec() {
   for (const m of gotoweModuly) {
     for (const l of m.lekcje) {
       const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);
-      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(autor.replace(/&amp;/g, '&'));
+      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(odkoduj(autor));
     }
   }
   const nieznani = /^(autor nieznany|nieznany autor|own work)$/i;

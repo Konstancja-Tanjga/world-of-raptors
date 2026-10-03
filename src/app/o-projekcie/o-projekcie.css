@@ -30,10 +30,12 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(0deg, var(--wor-cien-sceny), transparent 60%),
+    linear-gradient(0deg, var(--wor-cien-tekstu) 0%, var(--wor-cien-lekki) 45%, transparent 75%),
+    linear-gradient(90deg, var(--wor-cien-lekki), transparent 60%),
     radial-gradient(ellipse 70% 50% at 50% 110%, var(--wor-zar-horyzontu), transparent 70%);
 }
-/* A kite crosses the sky, slowly, the whole time the titles are on screen. */
+/* A kite glides in and hangs in the wind over the titles, as kites do. It
+   moves for under five seconds and then holds, so nothing loops (WCAG 2.2.2). */
 .czolowka__ptak {
   position: absolute;
   top: 22%;
@@ -48,10 +50,16 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .czolowka__ptak {
-    /* Already mid-flight when the page opens, not a wingtip at the edge. */
-    animation: przelot 46s linear -17s infinite;
+    animation: wlot 4.6s var(--wor-ease-out) both;
   }
 }
+@keyframes wlot {
+  from {
+    translate: -18vw 10vh;
+    rotate: 6deg;
+  }
+}
+/* A kite crossing the sky as the reader scrolls: moved by the scroll, never by itself. */
 @keyframes przelot {
   from {
     translate: -20vw 6vh;
@@ -75,7 +83,7 @@
   padding-inline: var(--wor-gutter);
 }
 .czolowka .eyebrow {
-  color: var(--wor-zloto);
+  color: var(--wor-scena-tekst);
 }
 .czolowka__tytul {
   margin: 0;
@@ -105,7 +113,7 @@
   border-top: 1px solid var(--wor-scena-linia);
 }
 .czolowka__autorzy dt {
-  color: var(--wor-scena-tekst-2);
+  color: var(--wor-scena-tekst);
   font-size: var(--bh-text-size-caption);
 }
 .czolowka__autorzy dd {
@@ -119,7 +127,7 @@
   font-style: italic;
 }
 .czolowka__dopisek {
-  color: var(--wor-scena-tekst-2);
+  color: var(--wor-scena-tekst);
   font-family: var(--wor-font-ui);
   font-size: var(--bh-text-size-caption);
   font-weight: var(--bh-text-weight-body);
@@ -345,6 +353,14 @@
 .op-morf {
   background: var(--wor-niebo-dzien);
   color: var(--wor-scena-tekst);
+}
+.op-morf .suwak-morfu__sterowanie {
+  padding: var(--bh-padding-section);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-scena-panel);
+  -webkit-backdrop-filter: blur(var(--bh-material-regular-blur));
+  backdrop-filter: blur(var(--bh-material-regular-blur));
 }
 /* ---------- Four skies ---------- */
 
@@ -623,9 +639,13 @@
   opacity: 0.16;
   translate: 70vw 0;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .podpis__ptak {
-    animation: przelot 38s linear -11s infinite;
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .podpis__ptak {
+      animation: przelot linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
   }
 }
 .podpis__imie {

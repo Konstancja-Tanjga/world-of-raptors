@@ -1181,6 +1181,27 @@ li {
   overflow: visible;
   fill: var(--wor-sylwetka);
 }
+.scena-sylwetki__pauza {
+  position: absolute;
+  right: var(--bh-gap-loose);
+  bottom: var(--bh-gap-loose);
+  min-height: var(--bh-control-sm);
+  padding-inline: var(--bh-padding-inline);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-panel);
+  color: var(--wor-scena-tekst);
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  cursor: pointer;
+}
+.scena-sylwetki__pauza:hover {
+  border-color: var(--wor-scena-tekst);
+}
+.scena-sylwetki__pauza:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
 .fiszka__scena--nazwa {
   container-type: inline-size;
   align-content: center;
@@ -1883,11 +1904,26 @@ li {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--bh-padding-section);
 }
+/* The closer bird's column comes forward: full strength and a bar in the
+   accent colour. The farther one dims only as far as AA contrast allows. */
 .suwak-morfu__strona {
+  position: relative;
   display: grid;
   align-content: start;
   gap: var(--bh-gap-snug);
-  transition: opacity var(--wor-dur-quick) linear;
+  padding-top: var(--bh-gap-normal);
+  opacity: calc(0.8 + 0.2 * var(--blizej, 1));
+}
+.suwak-morfu__strona::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-akcent);
+  opacity: var(--blizej, 1);
 }
 .suwak-morfu__nazwa {
   margin: 0;
@@ -1906,7 +1942,6 @@ li {
 }
 .suwak-morfu__strona dt {
   font-size: var(--bh-text-size-caption);
-  opacity: 0.85;
 }
 .suwak-morfu__strona dd {
   margin: 0;
@@ -2038,104 +2073,6 @@ a.modul:focus-visible {
   }
 }
 
-/* ---------- Night chorus: the owls ---------- */
-
-.chor {
-  position: relative;
-  isolation: isolate;
-  padding-block: calc(var(--wor-space-block) * 2);
-  overflow: hidden;
-  background: var(--wor-niebo-noc);
-  color: var(--wor-scena-tekst);
-}
-/* A few stars and the moon's glow, drawn with gradients: no image, no script. */
-.chor::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 84% 18%, var(--wor-ksiezyc) 0 1.6rem, transparent 1.7rem),
-    radial-gradient(circle at 84% 18%, var(--wor-blask-miekki), transparent 14rem),
-    radial-gradient(circle at 12% 22%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 31% 9%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 47% 27%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 66% 7%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 73% 38%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 93% 46%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 22% 61%, var(--wor-scena-tekst) 0 1px, transparent 2px),
-    radial-gradient(circle at 57% 72%, var(--wor-scena-tekst) 0 1px, transparent 2px);
-  opacity: 0.85;
-}
-.chor__wnetrze {
-  box-sizing: border-box;
-  display: grid;
-  gap: var(--wor-space-block);
-  max-width: var(--wor-width);
-  margin-inline: auto;
-  padding-inline: var(--wor-gutter);
-}
-.chor .sekcja {
-  margin-bottom: 0;
-}
-.chor .sekcja__lead {
-  color: var(--wor-scena-tekst);
-}
-.chor .cta {
-  justify-self: start;
-}
-.chor__lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: var(--bh-gap-loose);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.chor__sowa {
-  display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
-  grid-template-rows: auto auto;
-  align-items: center;
-  gap: var(--bh-gap-tight) var(--bh-gap-loose);
-  height: 100%;
-  box-sizing: border-box;
-  padding: var(--bh-padding-section) var(--bh-padding-section) var(--bh-padding-section) var(--bh-gap-loose);
-  border: 1px solid var(--wor-scena-linia);
-  border-radius: var(--bh-radius-surface);
-  background: var(--wor-scena-szklo);
-  color: inherit;
-  text-decoration: none;
-  transition:
-    border-color var(--wor-dur-quick) var(--wor-ease-out),
-    transform var(--wor-dur-base) var(--wor-ease-out);
-}
-.chor__sowa:hover {
-  border-color: var(--wor-zloto);
-  transform: translateY(calc(-3px * var(--wor-ruch)));
-}
-.chor__sowa:focus-visible {
-  outline: 2px solid var(--wor-zloto);
-  outline-offset: 2px;
-}
-.chor__sylwetka {
-  grid-row: span 2;
-  width: 100%;
-  height: auto;
-  fill: var(--wor-scena-tekst-2);
-}
-.chor__nazwa {
-  font-family: var(--wor-font-display);
-  font-size: var(--wor-size-karta);
-  font-weight: 600;
-}
-.chor__glos {
-  color: var(--wor-scena-tekst-2);
-  font-family: var(--wor-font-text);
-  font-style: italic;
-  line-height: 1.35;
-}
-
 /* The course plan under the module cards */
 .plan__tekst {
   width: 100%;
@@ -2249,7 +2186,7 @@ a.modul:focus-visible {
 }
 @media (prefers-reduced-motion: no-preference) {
   .zgubiony__ptak {
-    animation: odlatuje 7s linear both;
+    animation: odlatuje 4.8s linear both;
   }
 }
 @keyframes odlatuje {

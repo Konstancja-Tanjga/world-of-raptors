@@ -9,8 +9,8 @@ import { SYLWETKI } from '@/lib/sylwetki';
 /**
  * The opening scene: the sky over Warsaw at this hour, and in it what you
  * would see there. By day a kettle of migrating raptors circles in a thermal
- * (as over the Strait in autumn), climbs, and the birds at the top peel off
- * south-west in a glide; new ones join from below. At night there are stars,
+ * (the soaring migrants of the Strait module), climbs, and the birds at the
+ * top glide away; new ones join from below. At night there are stars,
  * the moon, and now and then an owl crossing it.
  *
  * The birds are the atlas silhouettes, seen from below as the B1 lessons
@@ -205,7 +205,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
         else if (Math.random() < p.rodzaj.macha * dt * 0.08) p.machanie = 0.8 + Math.random() * 1.2;
         if (p.machanie > 0) p.faza = (p.faza + dt * (3.2 / Math.sqrt(p.rodzaj.rozpietosc))) % 1;
         if (p.wysokosc > H_MAX) {
-          // Top of the thermal: glide out south-west, the way autumn migrants leave the Strait.
+          // Top of the thermal: glide away, as migrants do once a thermal has lifted them high enough.
           const x = Math.cos(p.kat) * p.promien;
           const y = Math.sin(p.kat) * p.promien;
           p.odlot = { x, y, vx: -9 - Math.random() * 3, vy: 6 + Math.random() * 3 };
@@ -234,7 +234,7 @@ export function Niebo({ pora, opis }: { pora: PoraDnia; opis: string }) {
       if (noc) {
         ctx.fillStyle = '#f2eee6';
         for (const g of gwiazdy) {
-          ctx.globalAlpha = ruch ? 0.35 + 0.35 * (0.5 + 0.5 * Math.sin(czas * 0.0011 + g.faza)) : 0.6;
+          ctx.globalAlpha = ruch && !pauzaRef.current ? 0.35 + 0.35 * (0.5 + 0.5 * Math.sin(czas * 0.0011 + g.faza)) : 0.6;
           ctx.beginPath();
           ctx.arc(g.x * szer * dpr, g.y * wys * dpr, g.r * dpr, 0, Math.PI * 2);
           ctx.fill();

@@ -34,8 +34,8 @@ const PORY: Record<PoraDnia, { linia: string; opis: string }> = {
     opis: 'Świt. Kilka ptaków drapieżnych krąży wysoko w kominie termicznym.',
   },
   dzien: {
-    linia: 'Za dnia ptaki szybujące krążą w kominach ciepłego powietrza, wznoszą się i odlatują w stronę Afryki.',
-    opis: 'Dzień. Ptaki drapieżne krążą w kominie termicznym, wznoszą się i odlatują na południowy zachód.',
+    linia: 'Za dnia ptaki szybujące krążą w kominach ciepłego powietrza i wznoszą się, żeby potem szybować dalej bez machania skrzydłami.',
+    opis: 'Dzień. Ptaki drapieżne krążą w kominie termicznym, wznoszą się i odlatują.',
   },
   zmierzch: {
     linia: 'O zmierzchu termika słabnie, ptaki dzienne szukają noclegu, a sowy wylatują na łowy.',
@@ -48,6 +48,25 @@ const PORY: Record<PoraDnia, { linia: string; opis: string }> = {
 };
 
 const PORY_DNIA = Object.keys(PORY) as PoraDnia[];
+
+/**
+ * By day the line follows the season, because what the soaring birds are
+ * doing does: leaving for Africa in autumn, coming back in spring, hunting
+ * over their territories in summer, waiting out weak winter thermals.
+ */
+function liniaDnia(kiedy: Date) {
+  const miesiac = Number(new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw', month: 'numeric' }).format(kiedy));
+  if (miesiac >= 8 && miesiac <= 10) {
+    return 'Za dnia ptaki szybujące krążą w kominach ciepłego powietrza, wznoszą się i odlatują w stronę Afryki.';
+  }
+  if (miesiac >= 3 && miesiac <= 5) {
+    return 'Za dnia ptaki szybujące krążą w kominach ciepłego powietrza, wznoszą się i lecą dalej na północ, na lęgowiska.';
+  }
+  if (miesiac === 6 || miesiac === 7) {
+    return 'Latem ptaki szybujące krążą w kominach ciepłego powietrza nad swoimi rewirami i wypatrują zdobyczy.';
+  }
+  return 'Zimą kominy ciepłego powietrza są słabe, a wiele ptaków szybujących przeczekuje ten czas w Afryce.';
+}
 
 export default async function Home({ searchParams }: PageProps<'/'>) {
   // `?pora=dzien` (swit, zmierzch, noc) previews the sky at another time of day.
@@ -64,7 +83,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
       <section className="niebo scena" data-scena data-pora={pora} aria-labelledby="tytul-startu">
         <Niebo pora={pora} opis={PORY[pora].opis} />
         <div className="niebo__tresc">
-          <p className="niebo__pora">{PORY[pora].linia}</p>
+          <p className="niebo__pora">{pora === 'dzien' ? liniaDnia(new Date()) : PORY[pora].linia}</p>
           <h1 id="tytul-startu" className="niebo__tytul">
             Naucz się czytać niebo
           </h1>

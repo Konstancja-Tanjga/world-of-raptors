@@ -71,13 +71,14 @@ const ZASADY = [
     tekst: 'Krótki ruch, do ćwierć sekundy, odpowiada na kliknięcie. Długi, do sekundy i dłużej, opowiada: niebo, lornetka, morf.',
   },
   {
-    tytul: 'Nic nie czeka na animację',
-    tekst: 'Treść jest na miejscu od pierwszej klatki. Ruch tylko ją porządkuje, a przeglądarka bez animacji pokazuje pełną stronę.',
+    tytul: 'Treść nie czeka na ruch',
+    tekst:
+      'Nic nie czeka na przewinięcie ani kliknięcie. Wejście strony trwa około sekundy, a efekty związane z przewijaniem działają tylko tam, gdzie przeglądarka je obsługuje; gdzie indziej strona po prostu stoi.',
   },
   {
     tytul: 'Mniej ruchu to nie brak ruchu',
     tekst:
-      'Przy ograniczonym ruchu w systemie przesunięcia znikają, a przenikania zostają. Sceny stoją, a każda pętla ma przycisk pauzy.',
+      'Przy ograniczonym ruchu w systemie przesunięcia znikają, a przenikania zostają, a sceny stoją. Każdy ruch, który się powtarza (niebo, pokaz sylwetek, lot ptaka), ma przycisk pauzy.',
   },
 ];
 
@@ -163,7 +164,7 @@ export default async function OProjekcie() {
             Ptak z dwudziestu liczb
           </h2>
           <p className="sekcja__lead">
-            Żadna sylwetka w kursie nie jest rysunkiem ani zdjęciem. Każda to dwadzieścia kilka liczb: szerokość skrzydła przy
+            Żadna sylwetka w kursie nie jest narysowana ręcznie ani wycięta ze zdjęcia. Każda to dwadzieścia kilka liczb: szerokość skrzydła przy
             tułowiu i w nadgarstku, liczba i głębokość „palców”, długość, wachlarz i wcięcie ogona, to, jak daleko wystaje
             głowa. Kod rysuje z nich ptaka widzianego od spodu, tak jak uczy lekcja B1. Dlatego sylwetka może machać skrzydłami,
             rozkładać ogon i zmienić się w inną.
@@ -254,8 +255,8 @@ export default async function OProjekcie() {
             Dwie palety
           </h2>
           <p className="sekcja__lead">
-            Interfejs zostaje wyciszony, żeby jedynymi nasyconymi kolorami na ekranie były pióra. Każda para tekstu i tła ma
-            kontrast zgodny z WCAG AA.
+            Interfejs jest wyciszony: ma jeden kolor akcentu w każdym trybie, a resztę koloru dają zdjęcia i niebo. Tekst ma
+            kontrast zgodny z WCAG AA, także na niebie i na zdjęciach.
           </p>
         </div>
         <div className="op-palety">
@@ -312,7 +313,7 @@ export default async function OProjekcie() {
           </div>
           <div>
             <dt>FSRS</dt>
-            <dd>Algorytm powtórek, następca metody z Anki, przez bibliotekę ts-fsrs.</dd>
+            <dd>Algorytm powtórek, który można też włączyć w Anki; tu działa przez bibliotekę ts-fsrs.</dd>
           </div>
           <div>
             <dt>Canvas i SVG</dt>
