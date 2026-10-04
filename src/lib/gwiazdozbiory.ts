@@ -82,11 +82,12 @@ const NAJWIEKSZY_OBROT = (Math.max(...DRGANIE.map(([, , o]) => Math.abs(o))) * M
  * Where the constellations go in the home page's night sky, in course order:
  * a loose grid over one of the free fields (`pola`: beside the text, above
  * it), each slot nudged and tilted (DRGANIE) and kept clear of the moon's
- * disc. Of every field and grid, the winner lets the constellations be
- * largest (up to `maks` pixels wide), then has the most room around them
- * (the larger field), then leaves the fewest slots empty, then has the most
- * columns, so a tall field gets a scatter rather than a list. Null when none
- * holds them at least `min` pixels wide (a phone whose text fills the sky). Positions are fractions of the `szer` × `wys` sky,
+ * disc. Each number of columns gets as few rows as hold every module. Of
+ * those grids, in every field, the winner lets the constellations be largest
+ * (up to `maks` pixels wide), then has the most room around them (the larger
+ * field), then has cells closest to a tilted constellation's own shape, so
+ * the sky between them is even both ways. Null when none holds them at least
+ * `min` pixels wide (a phone whose text fills the sky). Positions are fractions of the `szer` × `wys` sky,
  * like polozenieNaMapie's.
  */
 export function ukladNaNiebie(
@@ -103,6 +104,7 @@ export function ukladNaNiebie(
   const cos = Math.cos(NAJWIEKSZY_OBROT);
   const naSzerokosc = cos + proporcja * sin;
   const naWysokosc = sin + proporcja * cos;
+  const ksztalt = naSzerokosc / naWysokosc;
   let najlepszy: { ocena: number[]; miejsca: Polozenie[] } | null = null;
   for (const [x0, y0, x1, y1] of pola) {
     const pw = x1 - x0;
@@ -132,10 +134,12 @@ export function ukladNaNiebie(
           }
         }
         if (miejsca.length < ile) continue;
-        // The first difference decides (the field's area in units of 100 × 100 px).
-        const ocena = [Math.round(w), Math.round((pw * ph) / 1e4), ile - miejsca.length, kolumny];
+        // The first difference decides (the area in units of 100 × 100 px, the
+        // shape as how far the cell's proportions are from the constellation's).
+        const ocena = [Math.round(w), Math.round((pw * ph) / 1e4), -Math.round(Math.abs(Math.log(kw / kh / ksztalt)) * 100)];
         const roznica = najlepszy ? ocena.findIndex((v, k) => v !== najlepszy!.ocena[k]) : 0;
         if (!najlepszy || (roznica >= 0 && ocena[roznica] > najlepszy.ocena[roznica])) najlepszy = { ocena, miejsca: miejsca.slice(0, ile) };
+        break;
       }
     }
   }
