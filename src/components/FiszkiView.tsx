@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Rating, type Grade } from 'ts-fsrs';
-import { kartaFsrs, planista, useFiszki, type Fiszki } from '@/lib/fiszki';
+import { useFiszki, type Fiszki } from '@/lib/fiszki';
+import { kartaFsrs, ocenFiszke, planista } from '@/lib/planFiszek';
 import { dzisiaj } from '@/lib/magazyn';
 import { gatunekFiszki, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
@@ -296,7 +297,7 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
  * the answer, 1–4 rate it.
  */
 export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki: Record<string, GatunekFiszki> }) {
-  const { fiszki, ocen } = useFiszki();
+  const { fiszki } = useFiszki();
   const sprawdzZapis = useOstrzezenieZapisu();
   const [region, setRegion] = useState<Talia>('wszystkie');
   const [rodzaj, setRodzaj] = useState<Rodzaj>('wszystkie');
@@ -334,7 +335,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
 
   const ocenKarte = (ocena: Grade) => {
     if (!karta) return;
-    sprawdzZapis(ocen(karta.id, ocena, new Date(teraz)));
+    sprawdzZapis(ocenFiszke(karta.id, ocena, new Date(teraz)));
     setOdkryta(false);
     setTeraz(Date.now());
     przesunFokus.current = true;
