@@ -29,7 +29,7 @@
 
 </margines>
 
-| | Sowy | Dzienne ptaki drapieżne |
+| Cecha | Sowy | Dzienne ptaki drapieżne |
 |---|---|---|
 | Kwasowość żołądka | niższa | wyższa |
 | Kości w wypluwce | dużo, często całe czaszki | mało, zwykle nadtrawione lub brak |

@@ -59,7 +59,7 @@ export default async function ObrazDoUdostepniania() {
     (
       <div style={{ position: 'relative', display: 'flex', width: '100%', height: '100%', background: '#0a1018' }}>
         {/* The home page's dusk sky, its glow on the horizon behind the birds. The colours copy motyw.css
-            (--wor-niebo-zmierzch with the same stops, --wor-zar-horyzontu,
+            (--wor-niebo-zmierzch with the same stops, blended in sRGB, --wor-zar-horyzontu,
             --wor-cien-tekstu, --wor-scena-tekst, --wor-zloto, --wor-sylwetka): ImageResponse cannot
             read CSS variables, so a change to the palette is made in both places. */}
         <div

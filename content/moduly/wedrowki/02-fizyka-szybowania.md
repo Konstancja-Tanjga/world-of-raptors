@@ -63,7 +63,7 @@ Wiatr, który napotyka zbocze albo grzbiet górski, musi się wznieść. Po nawi
 
 </margines>
 
-| | Termika | Noszenie zboczowe |
+| Cecha | Termika | Noszenie zboczowe |
 |---|---|---|
 | Źródło | nagrzana ziemia (słońce) | wiatr uderzający w zbocze |
 | Kiedy działa | słoneczne dni, od przedpołudnia | przy wietrze wiejącym w poprzek grzbietu, o każdej porze dnia |

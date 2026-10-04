@@ -81,7 +81,7 @@ function rehypeIdNaglowkow() {
   };
 }
 
-/** Numbers the tables, so each scrollable table region gets a name of its own (see `table` below). */
+/** Numbers the Markdown's own tables in reading order, so each scrollable table region gets a name of its own (see `table` below). */
 function rehypeNumeryTabel() {
   return (drzewo: HastNode) => {
     let numer = 0;
@@ -93,7 +93,7 @@ function rehypeNumeryTabel() {
   };
 }
 
-/** A table's column headers, for its region's name: "Tabela 2: Grupa, Skrzydła, Ogon, Głowa". */
+/** The region's name: its number and first four column headers, e.g. "Tabela 1: Grupa, Skrzydła, Ogon, Głowa" (B1 lesson 1, without its fifth column, Przykłady). */
 function nazwaTabeli(tabela: HastNode | undefined) {
   const naglowki: string[] = [];
   const zbierz = (n: HastNode) => {
@@ -133,7 +133,7 @@ export function Markdown({ source, baseDir, quiz }: { source: string; baseDir: s
         rehypePlugins={[rehypeRaw, rehypeIdNaglowkow, rehypeNumeryTabel]}
         components={{
           a: link(baseDir),
-          // A scrollable region, so a keyboard can reach a wide table; each is named by its number and columns.
+          // Focusable, so a keyboard can scroll a wide table sideways; named by its number and first four column headers.
           table: ({ node, children }) => (
             <div className="prose__table" role="region" aria-label={nazwaTabeli(node as HastNode | undefined)} tabIndex={0}>
               <table>{children}</table>

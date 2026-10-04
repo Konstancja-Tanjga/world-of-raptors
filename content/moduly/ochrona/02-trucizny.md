@@ -117,7 +117,7 @@ W 2013 r. weterynaryjny diklofenak został dopuszczony do użytku m.in. w **Hisz
 
 ## Porównanie
 
-| | DDT | Diklofenak | Ołów |
+| Cecha | DDT | Diklofenak | Ołów |
 |---|---|---|---|
 | **Źródło** | pestycyd | lek weterynaryjny | amunicja myśliwska |
 | **Droga** | łańcuch pokarmowy (bioakumulacja) | padlina leczonego bydła | padlina, wnętrzności |
