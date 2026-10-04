@@ -44,7 +44,8 @@ export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
             <div className="sciezka__trasa" aria-hidden="true">
               <Sylwetka id={PRZEWODNICY_SCIEZEK[s.id]} klasa="sciezka__ptak" dokladnosc={0.3} />
             </div>
-            <h3 className="sciezka__tytul">{s.tytul}</h3>
+            {/* Under the section's own h2 a path is an h3; on a page without that heading (/plan) it is an h2. */}
+            {naglowek ? <h3 className="sciezka__tytul">{s.tytul}</h3> : <h2 className="sciezka__tytul">{s.tytul}</h2>}
             <p className="sciezka__opis">{OPISY[s.id]}</p>
           </div>
           <ol className="moduly" aria-label={s.tytul}>

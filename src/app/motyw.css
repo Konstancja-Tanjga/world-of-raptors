@@ -142,11 +142,17 @@
   --wor-zloto: #f5b75b;
   --wor-sylwetka: #0d131b;
 
-  /* The sky by time of day (top to horizon), interpolated in OKLCH */
+  /* The sky by time of day (top to horizon), interpolated in OKLCH (dawn and dusk: sampled, see below) */
   --wor-niebo-noc: linear-gradient(in oklch 180deg, #04070e 0%, #0a1222 55%, #1a2742 100%);
-  --wor-niebo-swit: linear-gradient(in oklch 180deg, #18264a 0%, #6d5b86 52%, #f0a679 100%);
+  /* Dawn and dusk run from navy through purple to rose and orange: their hue
+     crosses 0°, where Safari draws a stray teal row in an oklch gradient. So
+     the oklch path between their three colours (#18264a, #6d5b86, #f0a679;
+     #1c2c51, #a85556, #f5bc69) is sampled into stops and blended in oklab,
+     which has no hue to wrap: six equal steps on either side of the middle
+     colour. opengraph-image.tsx copies the dusk stops. */
+  --wor-niebo-swit: linear-gradient(in oklab 180deg, #18264a 0%, #262e55 8.7%, #33375f 17.3%, #414069 26%, #504973 34.7%, #5e527d 43.3%, #6d5b86 52%, #87638d 60%, #a16d90 68%, #ba778e 76%, #d08489 84%, #e39381 92%, #f0a679 100%);
   --wor-niebo-dzien: linear-gradient(in oklch 180deg, #10365f 0%, #2a62a0 52%, #79abda 100%);
-  --wor-niebo-zmierzch: linear-gradient(in oklch 180deg, #1c2c51 0%, #a85556 62%, #f5bc69 100%);
+  --wor-niebo-zmierzch: linear-gradient(in oklab 180deg, #1c2c51 0%, #34325e 10.3%, #4d3767 20.7%, #653c6b 31%, #7e4269 41.3%, #944a62 51.7%, #a85556 62%, #b86457 68.3%, #c77458 74.7%, #d5845a 81%, #e1965d 87.3%, #eca962 93.7%, #f5bc69 100%);
 }
 
 /* Zmierzch: dark mode, set the same two ways Big Hat sets its own dark theme.

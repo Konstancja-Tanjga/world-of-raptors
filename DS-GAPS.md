@@ -20,6 +20,12 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co widać w kursie:** nagłówki kolumn w porównaniu cech („CECHA”, nazwy gatunków) i etykiety `DescriptionList` na planszach gatunków w lekcjach.
 - **Pytanie do design systemu:** czy wersaliki mają być domyślne, czy powinna o nich decydować aplikacja (np. przez prop albo token `text-transform`)?
 
+## DescriptionList z nazwą przestaje być listą
+
+- **Co zauważyłam:** `DescriptionList` z `ariaLabel` renderuje `<dl role="group" aria-label="…">`. Rola `group` na `<dl>` odcina od niego terminy i wartości: axe zgłasza to jako poważny błąd `dlitem` („<dt> i <dd> muszą być w <dl>”), a czytnik ekranu nie przeczyta par etykieta–wartość jako listy.
+- **Co zrobiłam:** na planszach gatunków (`SpeciesCues.tsx`) lista nie ma `ariaLabel`; nazywa ją widoczna etykieta „Na co patrzeć” nad nią.
+- **Pytanie do design systemu:** czy nazwa listy nie powinna trafiać na otaczający element (np. `div role="group"` z `aria-labelledby`), zamiast zmieniać rolę samego `<dl>`?
+
 ## Table: szerokość kolumn i nagłówki wierszy
 
 - **`width` w `Column`:** typ opisuje go jako „Any CSS grid track value — `1fr`, `160px`, `minmax(120px, 1fr)`”, ale `Table` renderuje prawdziwy `<table>` i przekazuje tę wartość jako `style.width` na `<th>`. Wartości `fr` i `minmax()` są tam niepoprawne i przeglądarka je pomija. W porównaniu cech (`src/components/CuesTable.tsx`) zrezygnowałam z `width`. Kontrakt i implementacja się nie zgadzają: to błąd do zgłoszenia, a nie do obchodzenia.

@@ -21,6 +21,7 @@ export default function BladGlowny({ error, retry }: { error: Error & { digest?:
       <body className="bh-root">
         <title>Błąd, World of Raptors</title>
         <main className="page">
+          <h1 className="visually-hidden">Błąd</h1>
           <StateBlock
             state="error"
             title="Nie udało się otworzyć kursu"

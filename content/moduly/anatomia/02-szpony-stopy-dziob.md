@@ -25,7 +25,7 @@ Dwie duże grupy dziennych drapieżników zabijają na dwa różne sposoby:
 
 </margines>
 
-| | Jastrzębiowate (*Accipitridae*) | Sokołowate (*Falconidae*) |
+| Cecha | Jastrzębiowate (*Accipitridae*) | Sokołowate (*Falconidae*) |
 |---|---|---|
 | Przykłady | krogulec, jastrząb, myszołów, orły | pustułka, kobuz, sokół wędrowny |
 | Czym zabija | **stopami**: ściska i przebija szponami, często wielokrotnie zaciskając chwyt | **dziobem**: szybkie ugryzienie w kark przerywa rdzeń kręgowy |

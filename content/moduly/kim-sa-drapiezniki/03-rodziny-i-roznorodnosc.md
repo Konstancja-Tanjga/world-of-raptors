@@ -14,7 +14,7 @@ Na świecie żyje około **11 tysięcy** gatunków ptaków. Drapieżników (dzie
 
 ## Od sokolika do kondora
 
-| | Gatunek | Rozmiar (przybliżony) |
+| Rekord | Gatunek | Rozmiar (przybliżony) |
 |---|---|---|
 | **Najmniejsze dzienne** | sokoliki z rodzaju *Microhierax* (Azja Południowo-Wschodnia) | ok. 15 cm długości, kilkadziesiąt gramów, czyli mniej więcej wróbel |
 | **Najmniejsze sowy** | np. *Micrathene whitneyi* (ang. Elf Owl; pustynie Ameryki Północnej) | ok. 40 g |

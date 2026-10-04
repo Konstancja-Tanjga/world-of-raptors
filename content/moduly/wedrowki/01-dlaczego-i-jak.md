@@ -54,7 +54,7 @@ Granice między tymi grupami są płynne. Młode bieliki i jastrzębie potrafią
 ## Migranci szybujący i migranci lotu aktywnego
 To najważniejszy podział w tym module.
 
-| | Migranci **szybujący** | Migranci **lotu aktywnego** |
+| Cecha | Migranci **szybujący** | Migranci **lotu aktywnego** |
 |---|---|---|
 | Jak lecą | Wznoszą się w kominach ciepłego powietrza i szybują | Głównie machają skrzydłami (często z krótkimi fazami szybowania) |
 | Skrzydła | Szerokie, długie, z rozczapierzonymi lotkami („palcami”) | Spiczaste (sokoły) albo krótkie i zaokrąglone (krogulec) |

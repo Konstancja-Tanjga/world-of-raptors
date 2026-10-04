@@ -33,9 +33,10 @@ export function SpeciesCues({ g }: { g: Gatunek }) {
   return (
     <div className="plate__cues">
       <p className="plate__label">Na co patrzeć</p>
+      {/* No ariaLabel: Big Hat then puts role="group" on the <dl>, which cuts its terms off
+          from the list (DS-GAPS.md); the visible label above names it. */}
       <DescriptionList
         layout="columns"
-        ariaLabel={`Na co patrzeć: ${g.pl}`}
         items={pola.map(([k, term]) => ({ term, value: cechy[k] }))}
       />
     </div>

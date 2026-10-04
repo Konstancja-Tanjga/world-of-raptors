@@ -9,6 +9,8 @@ export default function NotFound() {
     <div className="zgubiony scena" data-scena>
       <Sylwetka id={ZNAK} klasa="zgubiony__ptak" />
       <div className="zgubiony__tresc">
+        {/* The state's title is a paragraph by Big Hat's contract; the page still needs its heading. */}
+        <h1 className="visually-hidden">Błąd 404</h1>
         <StateBlock
           state="empty"
           title="Nie ma takiej strony"
