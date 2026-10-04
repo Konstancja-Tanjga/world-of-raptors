@@ -1,0 +1,316 @@
+/* "Moje niebo": constellations, the life list and the wall of patches. */
+
+.moje-niebo {
+  gap: var(--wor-space-section);
+}
+.moje-niebo__czekanie {
+  min-height: 100svh;
+}
+.moje-niebo__sekcja {
+  display: grid;
+  gap: var(--wor-space-block);
+}
+.moje-niebo__liczby {
+  display: flex;
+  gap: var(--wor-space-block);
+  margin: 0;
+}
+.moje-niebo__liczby > div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+  min-width: 7rem;
+}
+.moje-niebo__liczby dd,
+.moje-niebo__liczba {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: var(--bh-text-weight-heading);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: var(--wor-leading-solid);
+}
+.moje-niebo__liczby dt,
+.moje-niebo__licznik {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+
+/* ---------- Constellations ---------- */
+
+.mapa-nieba {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-noc);
+  color: var(--wor-scena-tekst);
+  box-shadow: var(--bh-elevation-raised);
+}
+.mapa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mapa--waska {
+  display: none;
+}
+@media (max-width: 700px) {
+  .mapa--szeroka {
+    display: none;
+  }
+  .mapa--waska {
+    display: block;
+  }
+}
+.mapa__linia {
+  fill: none;
+  stroke: var(--wor-scena-tekst);
+  stroke-opacity: 0.55;
+  stroke-linejoin: round;
+}
+.mapa__rdzen {
+  fill: var(--wor-blask);
+}
+.mapa__nazwa {
+  fill: var(--wor-scena-tekst);
+  font-family: var(--wor-font-display);
+  font-size: 22px;
+  font-weight: var(--bh-text-weight-heading);
+}
+.mapa__modul {
+  fill: var(--wor-zloto);
+  font-family: var(--wor-font-ui);
+  font-size: 12px;
+  font-weight: var(--bh-text-weight-heading);
+}
+/* The narrow map is drawn smaller than its viewBox, so its module ids get a size more. */
+.mapa--waska .mapa__modul {
+  font-size: 14px;
+}
+/* Not yet: a pale sketch of the same constellation, so the empty places show. */
+.mapa__gwiazdozbior--blady .mapa__linia {
+  stroke-opacity: 0.3;
+  stroke-dasharray: 2 6;
+}
+.mapa__gwiazdozbior--blady .mapa__rdzen {
+  opacity: 0.5;
+}
+.mapa__gwiazdozbior--blady .mapa__nazwa,
+.mapa__gwiazdozbior--blady .mapa__modul {
+  /* Dimmer than a lit one's, still AA for the small module id. */
+  opacity: 0.72;
+}
+.mapa-nieba__pasek {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug) var(--wor-space-block);
+  padding: var(--bh-padding-section);
+  border-top: 1px solid var(--wor-scena-linia);
+}
+.mapa-nieba__licznik {
+  margin: 0;
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+}
+.mapa-nieba__liczba {
+  color: var(--wor-scena-tekst);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: var(--bh-text-weight-heading);
+}
+.mapa-nieba__legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-tight) var(--bh-padding-section);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+}
+.mapa-nieba__legenda li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.mapa-nieba__kropka {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-tekst);
+  box-shadow: 0 0 8px var(--wor-scena-tekst);
+}
+.mapa-nieba__kropka--zlota {
+  background: var(--wor-zloto);
+  box-shadow: 0 0 10px var(--wor-zloto);
+}
+.mapa-nieba__kropka--blada {
+  background: transparent;
+  border: 1px dashed var(--wor-scena-tekst-2);
+  box-shadow: none;
+}
+
+/* ---------- The life list ---------- */
+
+.lista-zyciowa {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 1100px) {
+  .lista-zyciowa {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .lista-zyciowa {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.lista-zyciowa__gatunek {
+  display: grid;
+  justify-items: center;
+  gap: var(--bh-gap-tight);
+  height: 100%;
+  box-sizing: border-box;
+  padding: var(--bh-gap-loose) var(--bh-gap-snug) var(--bh-gap-normal);
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-sunken);
+  color: var(--bh-text-primary);
+  text-align: center;
+  text-decoration: none;
+  transition: transform var(--wor-dur-quick) var(--wor-ease-out);
+}
+.lista-zyciowa__gatunek:hover {
+  transform: translateY(calc(-2px * var(--wor-ruch)));
+}
+.lista-zyciowa__gatunek:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+.lista-zyciowa__sylwetka {
+  width: 100%;
+  max-width: 6rem;
+  height: 3rem;
+}
+.lista-zyciowa__sylwetka path {
+  fill: none;
+  stroke: var(--bh-text-primary);
+  stroke-width: 1.2px;
+  vector-effect: non-scaling-stroke;
+}
+/* Outline, then a sketch with one ring, ink with two, gold once seen. */
+[data-wyglad='szkic'] .lista-zyciowa__sylwetka path {
+  fill: color-mix(in oklab, var(--bh-text-primary) 18%, transparent);
+}
+[data-wyglad='atrament'] .lista-zyciowa__sylwetka path {
+  fill: var(--bh-text-primary);
+  stroke: none;
+}
+[data-wyglad='zloto'] .lista-zyciowa__sylwetka path {
+  fill: var(--wor-lifer);
+  stroke: none;
+}
+.lista-zyciowa__nazwa {
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-emphasis);
+  line-height: var(--bh-text-leading-tight);
+}
+.lista-zyciowa__obraczki {
+  display: flex;
+  gap: 3px;
+}
+.lista-zyciowa__obraczka {
+  width: 14px;
+  height: 5px;
+  border-radius: var(--bh-radius-pill);
+  border: 1px dashed var(--bh-border-strong);
+}
+.lista-zyciowa__obraczka[data-zdobyta] {
+  border-style: solid;
+  border-color: transparent;
+  background: var(--bh-text-secondary);
+}
+.lista-zyciowa__obraczka[data-rodzaj='widzialam'][data-zdobyta] {
+  background: var(--wor-lifer);
+}
+
+/* ---------- Patches ---------- */
+
+.sciana-naszywek {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--wor-space-block) var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 900px) {
+  .sciana-naszywek {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .sciana-naszywek {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.sciana-naszywek__miejsce {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--bh-gap-snug);
+  text-align: center;
+}
+.naszywka__rysunek {
+  width: min(100%, 168px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 6px 10px var(--wor-cien-naszywki));
+}
+.naszywka__rysunek--pusta {
+  color: var(--bh-text-primary);
+  filter: none;
+}
+.naszywka__napis {
+  font-family: var(--wor-font-display);
+  font-size: 15px;
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: 1px;
+}
+.naszywka__marka {
+  font-family: var(--wor-font-ui);
+  font-size: 9.5px;
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: 2.2px;
+  opacity: 0.85;
+}
+.sciana-naszywek__nazwa {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-title);
+}
+.sciana-naszywek__data {
+  color: var(--wor-akcent);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-heading);
+}
+.sciana-naszywek__postep {
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+  font-variant-numeric: tabular-nums;
+}
+.sciana-naszywek__jak {
+  max-width: 22em;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--wor-leading-compact);
+}

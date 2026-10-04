@@ -6,7 +6,7 @@ import './globals.css';
 import { AppFrame } from '@/components/AppFrame';
 import { ToastProvider } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
-import { czytajMarkdown, gotoweModuly, progQuizu } from '@/lib/content';
+import { czytajMarkdown, gotoweModuly, progQuizu, strukturaNieba } from '@/lib/content';
 import { ZNAK } from '@/lib/rysunki';
 
 // Titles: an antiqua drawn for Polish, its diacritics designed in from the start.
@@ -66,7 +66,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="pl" className={`${poltawski.variable} ${newsreader.variable}`}>
       <body className="bh-root">
         <ToastProvider>
-          <AppFrame moduly={await nawigacja} znak={<Sylwetka id={ZNAK} klasa="znak" />}>
+          <AppFrame moduly={await nawigacja} znak={<Sylwetka id={ZNAK} klasa="znak" />} struktura={strukturaNieba()}>
             {children}
           </AppFrame>
         </ToastProvider>

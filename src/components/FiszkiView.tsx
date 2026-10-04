@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Rating, type Grade } from 'ts-fsrs';
-import { kartaFsrs, planista, useFiszki, type Fiszki } from '@/lib/fiszki';
+import { dataLokalna } from '@/lib/daty';
+import { useFiszki, type Fiszki } from '@/lib/fiszki';
+import { kartaFsrs, ocenFiszke, planista } from '@/lib/planFiszek';
 import { dzisiaj } from '@/lib/magazyn';
 import { gatunekFiszki, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
@@ -72,11 +74,6 @@ function kolejnosc(id: string, dzien: string) {
 }
 
 /** The local date (YYYY-MM-DD) of a moment, to compare with `dzisiaj()`. */
-function dataLokalna(iso: string) {
-  const d = new Date(iso);
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-}
-
 /**
  * What to show next: overdue reviews first, then new cards, then reviews due
  * within the next minutes. As in Anki, a new card waits until tomorrow when
@@ -92,7 +89,7 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
   const wolne = Math.max(0, NOWYCH_DZIENNIE + dodatkowe - wprowadzoneDzis);
   const odpowiedzianeDzis = new Set(
     Object.entries(fiszki)
-      .filter(([, z]) => z.last_review && dataLokalna(z.last_review) === dzien)
+      .filter(([, z]) => z.last_review && dataLokalna(new Date(z.last_review)) === dzien)
       .map(([id]) => gatunekFiszki(id)),
   );
   const nowe = talia
@@ -296,7 +293,7 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
  * the answer, 1–4 rate it.
  */
 export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki: Record<string, GatunekFiszki> }) {
-  const { fiszki, ocen } = useFiszki();
+  const { fiszki } = useFiszki();
   const sprawdzZapis = useOstrzezenieZapisu();
   const [region, setRegion] = useState<Talia>('wszystkie');
   const [rodzaj, setRodzaj] = useState<Rodzaj>('wszystkie');
@@ -334,7 +331,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
 
   const ocenKarte = (ocena: Grade) => {
     if (!karta) return;
-    sprawdzZapis(ocen(karta.id, ocena, new Date(teraz)));
+    sprawdzZapis(ocenFiszke(karta.id, ocena, new Date(teraz)));
     setOdkryta(false);
     setTeraz(Date.now());
     przesunFokus.current = true;

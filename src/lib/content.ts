@@ -6,9 +6,22 @@ import gatunkiJson from '../../content/gatunki.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
+import type { Fiszki, ZapisFiszki } from './fiszki';
+import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbiory';
+import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
 import { GATUNKI_RYSUNKOW } from './rysunki';
+import { gwiazdy, obrys, POZA_SZYBOWANIE } from './sylwetka';
 import { POZY, STYL_LOTU, SYLWETKI } from './sylwetki';
-import { GRUPY_SYLWETEK, idFiszki, KIERUNKI_NAZW, KLUCZE_DZIENNE, KLUCZE_NOCNE, REGIONY, STATUS_LABEL } from './types';
+import {
+  GRUPY_SYLWETEK,
+  idFiszki,
+  KIERUNKI_NAZW,
+  KLUCZE_DZIENNE,
+  KLUCZE_NOCNE,
+  REGIONY,
+  STAN_KARTY,
+  STATUS_LABEL,
+} from './types';
 import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
@@ -396,6 +409,72 @@ export function zajawkaModulu(slug: string) {
   return ZAJAWKI.get(slug) ?? null;
 }
 
+const GWIAZDOZBIORY_KURSU: Record<string, Gwiazdozbior> = Object.fromEntries(
+  gotoweModuly.map((m) => {
+    const g = GWIAZDOZBIORY[m.slug];
+    const ksztalt = g && SYLWETKI[g.gatunek];
+    if (!ksztalt) throw new Error(`gwiazdozbiory.ts: moduł ${m.slug} nie ma gwiazdozbioru albo jego ptak nie ma sylwetki`);
+    const z = gwiazdy(obrys(ksztalt, POZY[g.gatunek] ?? POZA_SZYBOWANIE));
+    // Rounded: a thousandth of the bird's box is less than a pixel on any sky they are drawn on.
+    return [m.slug, { ...g, gwiazdy: z.gwiazdy.map(([x, y]): [number, number] => [+x.toFixed(3), +y.toFixed(3)]), proporcja: +z.proporcja.toFixed(3) }];
+  }),
+);
+
+/** Each module's constellation with its stars, for the skies that draw them (the home page at night, "Moje niebo"). */
+export function gwiazdozbioryKursu() {
+  return GWIAZDOZBIORY_KURSU;
+}
+
+/**
+ * What "Moje niebo" needs to know about the course, read once at import:
+ * which lessons teach each species (those with its plate; for a species
+ * with none, those naming it) and which species each module asks to be
+ * recognised for its gold star (its plates, else the species its lessons
+ * name in italics; B1 teaches the eight silhouette groups, so it asks for
+ * their birds whatever it names).
+ */
+const STRUKTURA_NIEBA = ((): StrukturaNieba => {
+  const lekcjeZPlansza = new Map<string, string[]>();
+  const lekcjeZNazwa = new Map<string, string[]>();
+  const dopisz = (mapa: Map<string, string[]>, id: string, klucz: string) => mapa.set(id, [...(mapa.get(id) ?? []), klucz]);
+  const osiemGrup = Object.values(RYSUNEK_GRUPY);
+  const modulyNieba = gotoweModuly.map((m) => {
+    const plansze = new Set<string>();
+    const nazwane = new Set<string>();
+    const lekcje = m.lekcje.map((l) => {
+      const klucz = `${m.slug}/${l.slug}`;
+      const { wNaglowkach, wszystkie } = przygotujLekcje(czytajSync(`moduly/${klucz}.md`));
+      for (const id of wNaglowkach) {
+        plansze.add(id);
+        dopisz(lekcjeZPlansza, id, klucz);
+      }
+      for (const id of wszystkie) {
+        nazwane.add(id);
+        dopisz(lekcjeZNazwa, id, klucz);
+      }
+      return klucz;
+    });
+    const gatunkiModulu = m.slug === LEKCJA_GRUP.modul ? osiemGrup : plansze.size ? [...plansze] : [...nazwane];
+    return { slug: m.slug, id: m.id, tytul: m.tytul, lekcje, gatunki: gatunkiModulu, nazwaGwiazdozbioru: GWIAZDOZBIORY_KURSU[m.slug].nazwa };
+  });
+  return {
+    moduly: modulyNieba,
+    gatunki: gatunki.map((g) => ({
+      id: g.id,
+      pl: g.pl,
+      dzienny: g.aktywnosc === 'dzienny',
+      zdjecia: (['lot', 'siedzacy'] as const).filter((r) => zdjecia[g.id]?.[r]),
+      lekcje: lekcjeZPlansza.get(g.id) ?? lekcjeZNazwa.get(g.id) ?? [],
+    })),
+    osiemGrup,
+  };
+})();
+
+/** The course as "Moje niebo" counts it (see STRUKTURA_NIEBA). */
+export function strukturaNieba() {
+  return STRUKTURA_NIEBA;
+}
+
 /** The course in numbers, for the about page: everything counted from the content itself. */
 export async function statystykiKursu() {
   const pliki = gotoweModuly.flatMap((m) => [`moduly/${m.slug}/README.md`, ...m.lekcje.map((l) => `moduly/${m.slug}/${l.slug}.md`)]);
@@ -531,11 +610,14 @@ export async function sylabusModulu(slug: string) {
  * removing a drawing, a card, a crop, a link or a module's opening: species
  * fields and look-alikes, silhouettes and flight styles, photo focus and
  * sizes, module openings, the modules and lesson the code links to by name,
- * the curiosities' lessons and species, and the species drawn by name
- * (rysunki.ts). All problems are reported together. (The cue keys, the
- * eight-groups table and the module hooks are checked where they are read,
- * above, and stop at the first problem. Lesson binomials are not checked: an
- * unknown one just gets no plate.)
+ * the curiosities' lessons and species, the species drawn by name
+ * (rysunki.ts, the constellations, the patches), and "Moje niebo": every
+ * species taught or named by a lesson, room on its map for every module,
+ * every patch and gold star earnable once everything is done, and nothing
+ * earned from an empty start. All problems are reported together. (The cue
+ * keys, the eight-groups table, the module hooks and the constellations are
+ * checked where they are read, above, and stop at the first problem. Lesson
+ * binomials are not checked: an unknown one just gets no plate.)
  */
 function sprawdzSpojnosc() {
   const bledy: string[] = [];
@@ -602,6 +684,53 @@ function sprawdzSpojnosc() {
   for (const id of GATUNKI_RYSUNKOW) {
     if (!idGatunkow.has(id) || !SYLWETKI[id]) bledy.push(`rysunki.ts: ${id} nie jest gatunkiem z atlasu z sylwetką`);
   }
+  // GWIAZDOZBIORY_KURSU has already failed for a module without a constellation or a bird without a silhouette.
+  for (const { gatunek } of Object.values(GWIAZDOZBIORY_KURSU)) {
+    if (!idGatunkow.has(gatunek)) bledy.push(`gwiazdozbiory.ts: ${gatunek} nie jest gatunkiem z atlasu`);
+  }
+  for (const n of NASZYWKI) {
+    for (const id of n.ptaki) if (!idGatunkow.has(id) || !SYLWETKI[id]) bledy.push(`odznaki.ts: naszywka ${n.id} rysuje ${id}, którego nie ma w atlasie z sylwetką`);
+  }
+  for (const g of STRUKTURA_NIEBA.gatunki) {
+    if (!g.lekcje.length) bledy.push(`gatunki.json: ${g.id}: żadna lekcja go nie uczy ani nie wymienia, więc obrączki „Znam” nie da się zdobyć`);
+  }
+  if (gotoweModuly.length > MIEJSCA_NA_MAPIE) {
+    bledy.push(`gwiazdozbiory.ts: mapa „Mojego nieba” ma ${MIEJSCA_NA_MAPIE} miejsc, a gotowych modułów jest ${gotoweModuly.length}`);
+  }
+  if (new Set(NASZYWKI.map((n) => n.id)).size !== NASZYWKI.length) bledy.push('odznaki.ts: dwie naszywki mają to samo id');
+  // With every lesson finished, every flashcard learned and every species
+  // seen, everything is earned; with nothing, nothing is. This catches a patch
+  // or a gold star made impossible (a renamed species, a card that does not
+  // exist) or given away (an empty list).
+  const dzien = '2026-01-01';
+  const nauczona: ZapisFiszki = {
+    due: '2026-03-01T12:00:00.000Z',
+    stability: 30,
+    difficulty: 5,
+    elapsed_days: 19,
+    scheduled_days: 30,
+    learning_steps: 0,
+    reps: 4,
+    lapses: 0,
+    state: STAN_KARTY.powtorki,
+    last_review: '2026-01-20T12:00:00.000Z',
+    wprowadzona: dzien,
+  };
+  const wszystko = stanNieba(
+    STRUKTURA_NIEBA,
+    Object.fromEntries(STRUKTURA_NIEBA.moduly.flatMap((m) => m.lekcje.map((k) => [k, dzien]))),
+    Object.fromEntries(taliaFiszek().map((f) => [f.id, nauczona])) as Fiszki,
+    Object.fromEntries(gatunki.map((g) => [g.id, { data: dzien }])),
+  );
+  for (const m of STRUKTURA_NIEBA.moduly) {
+    if (!m.gatunki.length) bledy.push(`moduly.json: ${m.id} nie ma plansz ani gatunków nazwanych kursywą, więc jego złota gwiazda nie ma o co prosić`);
+    else if (!wszystko.moduly[m.slug].opanowany) bledy.push(`odznaki.ts: złotej gwiazdy modułu ${m.id} nie da się zdobyć, nawet kiedy wszystko jest zrobione`);
+  }
+  for (const n of NASZYWKI) {
+    if (!wszystko.naszywki[n.id].zdobyta) bledy.push(`odznaki.ts: naszywki „${n.nazwa}” nie da się zdobyć, nawet kiedy wszystko jest zrobione`);
+  }
+  const zNiczego = zdobyteWStanie(stanNieba(STRUKTURA_NIEBA, {}, {}, {}));
+  if (zNiczego.length) bledy.push(`odznaki.ts: bez żadnego postępu byłoby już zdobyte: ${zNiczego.join(', ')}`);
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
   for (const slug of [MODUL_SOW, ...Object.values(MODUL_REGIONU), LEKCJA_GRUP.modul]) {
     if (!gotowe.has(slug)) bledy.push(`content.ts: kod linkuje do modułu „${slug}”, którego nie ma wśród gotowych`);

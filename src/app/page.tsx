@@ -11,7 +11,16 @@ import { NieboStartu } from '@/components/start/NieboStartu';
 import { Okladka } from '@/components/start/Okladka';
 import { StartKursu } from '@/components/start/StartKursu';
 import { MarkdownInline } from '@/components/Markdown';
-import { ciekawostkiDla, gatunki, gotoweModuly, grupySylwetek, LEKCJA_GRUP, zdjecia } from '@/lib/content';
+import {
+  ciekawostkiDla,
+  gatunki,
+  gotoweModuly,
+  grupySylwetek,
+  gwiazdozbioryKursu,
+  LEKCJA_GRUP,
+  strukturaNieba,
+  zdjecia,
+} from '@/lib/content';
 import { CIASTKO_PORY, jakoPora, poraDnia, type PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
 
@@ -88,6 +97,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
         wybranaNaSerwerze={wybrana}
         zegar={poraDnia(teraz)}
         pory={pory}
+        gwiazdozbiory={strukturaNieba().moduly.map(({ slug, lekcje }) => ({ slug, lekcje, gwiazdozbior: gwiazdozbioryKursu()[slug] }))}
         liczby={
           <dl className="niebo__liczby">
             <div>

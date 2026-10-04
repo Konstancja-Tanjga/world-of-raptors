@@ -57,10 +57,14 @@
 .niebo[data-pora='dzien'] {
   --niebo-swiatlo: radial-gradient(ellipse 50% 45% at 74% 36%, var(--wor-blask-miekki), transparent 70%);
 }
+/* The moon's place is also read by the sky's canvas (Niebo.tsx), which keeps the constellations clear of it. */
 .niebo[data-pora='noc'] {
+  --ksiezyc-x: 78%;
+  --ksiezyc-y: 24%;
+  --ksiezyc-r: 2.4rem;
   --niebo-swiatlo:
-    radial-gradient(circle at 78% 24%, var(--wor-ksiezyc) 0 2.4rem, transparent 2.5rem),
-    radial-gradient(circle at 78% 24%, var(--wor-blask-miekki), transparent 16rem);
+    radial-gradient(circle at var(--ksiezyc-x) var(--ksiezyc-y), var(--wor-ksiezyc) 0 var(--ksiezyc-r), transparent calc(var(--ksiezyc-r) + 0.1rem)),
+    radial-gradient(circle at var(--ksiezyc-x) var(--ksiezyc-y), var(--wor-blask-miekki), transparent 16rem);
 }
 .niebo::before {
   background:
@@ -241,6 +245,16 @@
   }
 }
 
+/* While the sky's canvas measures where the text is (Niebo.tsx), the text
+   stands where it rests: the canvas places constellations by it, and the
+   entrance and the scroll-away only move it for a while. Important, to beat
+   the animations; set and removed within one frame, so it never paints. */
+.niebo[data-mierzenie] .niebo__tresc,
+.niebo[data-mierzenie] .niebo__tresc > *,
+.niebo[data-mierzenie] .niebo__dol {
+  translate: none !important;
+}
+
 /* Leaving: as the sky scrolls away the words drift up and fade. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -270,9 +284,12 @@
     --niebo-swiatlo: radial-gradient(ellipse 70% 30% at 72% 14%, var(--wor-blask-miekki), transparent 70%);
   }
   .niebo[data-pora='noc'] {
+    --ksiezyc-x: 80%;
+    --ksiezyc-y: 12%;
+    --ksiezyc-r: 1.8rem;
     --niebo-swiatlo:
-      radial-gradient(circle at 80% 12%, var(--wor-ksiezyc) 0 1.8rem, transparent 1.9rem),
-      radial-gradient(circle at 80% 12%, var(--wor-blask-miekki), transparent 11rem);
+      radial-gradient(circle at var(--ksiezyc-x) var(--ksiezyc-y), var(--wor-ksiezyc) 0 var(--ksiezyc-r), transparent calc(var(--ksiezyc-r) + 0.1rem)),
+      radial-gradient(circle at var(--ksiezyc-x) var(--ksiezyc-y), var(--wor-blask-miekki), transparent 11rem);
   }
   .niebo::before {
     background:
@@ -684,8 +701,8 @@
   font-weight: var(--bh-text-weight-emphasis);
 }
 [data-widziany] .kolekcja__sylwetka {
-  fill: var(--wor-akcent);
-  stroke: var(--wor-akcent);
+  fill: var(--wor-lifer);
+  stroke: var(--wor-lifer);
   opacity: 1;
 }
 

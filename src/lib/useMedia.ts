@@ -20,3 +20,6 @@ export function useMedia(zapytanie: string, naSerwerze = false) {
 
 /** Whether the reader asked the system for less motion. */
 export const useMniejRuchu = () => useMedia('(prefers-reduced-motion: reduce)');
+
+/** The same, read once: for an effect about to play a moment (which then shows its end state at once). */
+export const mniejRuchu = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;

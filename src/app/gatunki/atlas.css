@@ -115,17 +115,17 @@
   font-size: var(--bh-text-size-dense);
 }
 .karta-gatunku__znacznik--widziany {
-  border-color: var(--wor-akcent);
-  background: var(--wor-akcent);
-  color: var(--bh-text-on-accent);
+  border-color: var(--wor-zloto);
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
 }
 /* The same badge in the silhouette and scale views, where the drawing's colour is the only other sign. */
 .atlas__widziany {
   justify-self: center;
   padding: 0 var(--bh-gap-snug);
   border-radius: var(--bh-radius-pill);
-  background: var(--wor-akcent);
-  color: var(--bh-text-on-accent);
+  background: var(--wor-zloto);
+  color: var(--wor-scena-tlo);
   font-size: var(--bh-text-size-dense);
 }
 .skala__gatunek .atlas__widziany {
@@ -188,7 +188,7 @@
   transform: translateY(calc(-3px * var(--wor-ruch)));
 }
 [data-widziany] .plansza-grupy__sylwetka {
-  fill: var(--wor-akcent);
+  fill: var(--wor-lifer);
 }
 .plansza-grupy__nazwa {
   font-family: var(--wor-font-display);
@@ -265,6 +265,7 @@
   height: 100%;
   fill: var(--wor-sylwetka);
 }
+/* On the scale view's blue sky the bright gold reads as gold; on paper it is the deeper --wor-lifer. */
 [data-widziany] .skala__sylwetka {
   fill: var(--wor-zloto);
 }
@@ -718,4 +719,48 @@
   .plansza--sowa {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* My rings for this species (Znam, Rozpoznaję, the gold Widziałam), under the tags. */
+.obraczki-gatunku {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-snug) var(--bh-gap-normal);
+  margin-top: var(--bh-gap-snug);
+}
+.obraczki-gatunku[data-wczytywanie] {
+  visibility: hidden;
+}
+.obraczki-gatunku__lista {
+  display: flex;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.obraczki-gatunku__obraczka {
+  display: block;
+  width: 88px;
+  height: 34px;
+  color: var(--wor-scena-tekst);
+}
+/* A ring's stamped word (its colour is drawn with the metal, in Obraczka.tsx). */
+.obraczka__napis {
+  font-family: var(--wor-font-ui);
+  font-size: 9px;
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: 0.6px;
+}
+.obraczki-gatunku__link {
+  color: var(--wor-scena-tekst-2);
+  font-size: var(--bh-text-size-caption);
+  text-underline-offset: 0.2em;
+}
+.obraczki-gatunku__link:hover {
+  color: var(--wor-scena-tekst);
+}
+.obraczki-gatunku__link:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
 }

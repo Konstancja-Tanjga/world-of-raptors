@@ -392,6 +392,33 @@ export function uprosc(punkty: P[], tolerancja: number): P[] {
   return punkty.filter((_, i) => zostaw[i]);
 }
 
+/**
+ * An outline as a constellation: simplified until about `ile` corners are
+ * left (wing tips, wrists, tail, head), in outline order, so joining them in
+ * turn draws the bird. The stars are in fractions of the outline's box (0 at
+ * the top left), the first at the front of the head; `proporcja` is the box's
+ * height over its width.
+ */
+export function gwiazdy(punkty: P[], ile = 12): { gwiazdy: P[]; proporcja: number } {
+  const [x, y, w, h] = ramka(punkty);
+  // The simplification keeps both ends of the outline, and its last point is
+  // the head's mirrored neighbour: without dropping it, every head would have two stars.
+  const sprobuj = (tolerancja: number) => uprosc(punkty, tolerancja).slice(0, -1);
+  // The count of corners jumps as the tolerance changes, so keep the closest to `ile` seen.
+  let dol = 0.001;
+  let gora = Math.max(w, h);
+  let najlepsze = sprobuj(gora / 20);
+  for (let i = 0; i < 40; i++) {
+    const srodek = (dol + gora) / 2;
+    const proba = sprobuj(srodek);
+    if (Math.abs(proba.length - ile) < Math.abs(najlepsze.length - ile)) najlepsze = proba;
+    if (proba.length > ile + 1) dol = srodek;
+    else if (proba.length < ile - 1) gora = srodek;
+    else break;
+  }
+  return { gwiazdy: najlepsze.map(([px, py]): P => [(px - x) / w, (py - y) / h]), proporcja: h / w };
+}
+
 /** An SVG path for an outline; `tolerancja` > 0 simplifies it first (static drawings). */
 export function sciezka(punkty: P[], tolerancja = 0): string {
   const pkt = tolerancja > 0 ? uprosc(punkty, tolerancja) : punkty;

@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { SegmentedControl } from '../ds';
 import { useOstrzezenieZapisu } from '../useOstrzezenieZapisu';
 import { jakoPora, PORY_DNIA, type PoraDnia } from '@/lib/niebo';
 import { usePoraNieba, zapiszPore } from '@/lib/poraNieba';
 import { useMniejRuchu } from '@/lib/useMedia';
-import { Niebo } from './Niebo';
+import { Niebo, type GwiazdozbiorStartu } from './Niebo';
 
 const NAZWY_PORY: Record<PoraDnia, string> = { swit: 'Świt', dzien: 'Dzień', zmierzch: 'Zmierzch', noc: 'Noc' };
 const TERAZ = 'teraz';
@@ -24,6 +24,7 @@ export function NieboStartu({
   wybranaNaSerwerze,
   zegar,
   pory,
+  gwiazdozbiory,
   liczby,
   children,
 }: {
@@ -33,6 +34,8 @@ export function NieboStartu({
   zegar: PoraDnia;
   /** For each time of day: the line over the title and the sky's description for screen readers. */
   pory: Record<PoraDnia, { linia: string; opis: string }>;
+  /** Every module's constellation; the night sky draws the ones I have lit. */
+  gwiazdozbiory: GwiazdozbiorStartu[];
   /** The course in figures, along the bottom of the scene. */
   liczby: ReactNode;
   /** The title, the lead and the actions. */
@@ -43,6 +46,8 @@ export function NieboStartu({
   const [pauza, setPauza] = useState(false);
   const ruch = !useMniejRuchu();
   const ostrzez = useOstrzezenieZapisu();
+  const tekst = useRef<HTMLDivElement>(null);
+  const dol = useRef<HTMLDivElement>(null);
 
   // A `?pora=` link (the About page has four) is a choice too: remember it.
   // The address stays as it is (the server reads it first anyway).
@@ -53,12 +58,12 @@ export function NieboStartu({
 
   return (
     <section className="niebo scena" data-scena data-pora={pora} aria-labelledby="tytul-startu">
-      <Niebo pora={pora} opis={pory[pora].opis} pauza={pauza} />
-      <div className="niebo__tresc">
+      <Niebo pora={pora} opis={pory[pora].opis} pauza={pauza} gwiazdozbiory={gwiazdozbiory} tekst={tekst} dol={dol} />
+      <div className="niebo__tresc" ref={tekst}>
         <p className="niebo__pora">{pory[pora].linia}</p>
         {children}
       </div>
-      <div className="niebo__dol">
+      <div className="niebo__dol" ref={dol}>
         {liczby}
         <div className="niebo__sterowanie">
           <div className="scroll-x">

@@ -11,6 +11,7 @@ const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }
   { href: '/gatunki', etykieta: 'Atlas', aktywny: (p) => p.startsWith('/gatunki') },
   { href: '/fiszki', etykieta: 'Fiszki', aktywny: (p) => p === '/fiszki' },
   { href: '/checklista', etykieta: 'Checklista', aktywny: (p) => p === '/checklista' },
+  { href: '/moje-niebo', etykieta: 'Moje niebo', aktywny: (p) => p === '/moje-niebo' },
 ];
 
 /**

@@ -1,12 +1,29 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { useEffect, ViewTransition, type ReactNode } from 'react';
+import type { StrukturaNieba } from '@/lib/odznaki';
 import { useOstatniaLekcja } from '@/lib/ostatnia';
+import { CichaGranica } from './CichaGranica';
 import { SkipLink } from './ds';
 import { Nawigacja } from './Nawigacja';
 import { PasekModulu } from './PasekModulu';
 import { Stopka } from './Stopka';
+
+// It renders nothing and starts once the stores are read anyway, so it loads
+// after the page is interactive. If its chunk cannot load (offline, a new
+// deploy), the page goes on without it.
+const StraznikOdznak = dynamic(
+  () =>
+    import('./niebo/StraznikOdznak')
+      .then((m) => m.StraznikOdznak)
+      .catch((err: unknown) => {
+        console.error('[StraznikOdznak] could not load; nothing newly earned is recorded or announced on this visit', err);
+        return () => null;
+      }),
+  { ssr: false },
+);
 
 export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
 export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: LekcjaNawigacji[] };
@@ -14,7 +31,8 @@ export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: 
 /**
  * The frame around every page: the global navigation, the module bar on
  * module and lesson pages (the module's lessons with their state), the
- * content and the footer.
+ * content, the footer, and the "Moje niebo" watcher, which records and
+ * announces what I earn.
  *
  * Not Big Hat's AppShell: its contract keeps it for application screens and
  * says documentation pages may use `height="flow"` or "no shell at all". Even
@@ -23,7 +41,18 @@ export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: 
  * away on module pages. The landmarks AppShell would provide are here by
  * hand: header, nav, main (the skip link's target) and footer. See DS-GAPS.md.
  */
-export function AppFrame({ moduly, znak, children }: { moduly: ModulNawigacji[]; znak: ReactNode; children: ReactNode }) {
+export function AppFrame({
+  moduly,
+  znak,
+  struktura,
+  children,
+}: {
+  moduly: ModulNawigacji[];
+  znak: ReactNode;
+  /** What "Moje niebo" counts, for the watcher that records and announces what is newly earned. */
+  struktura: StrukturaNieba;
+  children: ReactNode;
+}) {
   const pathname = usePathname();
   const { zapamietaj } = useOstatniaLekcja();
 
@@ -49,6 +78,9 @@ export function AppFrame({ moduly, znak, children }: { moduly: ModulNawigacji[];
         </ViewTransition>
       </main>
       <Stopka />
+      <CichaGranica nazwa="StraznikOdznak">
+        <StraznikOdznak struktura={struktura} />
+      </CichaGranica>
     </>
   );
 }

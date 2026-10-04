@@ -1,6 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef, type RefObject } from 'react';
+import { gwiazdyNaNiebie, ukladNaNiebie, type Gwiazdozbior, type Pole, type Polozenie } from '@/lib/gwiazdozbiory';
+import { kluczGwiazdozbioru, kluczMistrza, zaliczony, type ModulNieba } from '@/lib/odznaki';
+import { usePostep } from '@/lib/postep';
+import { useZdobyte } from '@/lib/zdobyte';
 import type { PoraDnia } from '@/lib/niebo';
 import { useMedia, useMniejRuchu } from '@/lib/useMedia';
 import { obrys, type Poza } from '@/lib/sylwetka';
@@ -11,8 +15,9 @@ import { SYLWETKI } from '@/lib/sylwetki';
  * The opening scene's sky for the time of day it is given (by the clock, or
  * chosen in NieboStartu). By day a kettle of the Strait module's soaring
  * migrants circles in a thermal, climbs, and the birds at the top glide away;
- * new ones join from below. At night there are stars, the moon, and now and
- * then an owl crossing it.
+ * new ones join from below. At night there are stars, the moon, now and then
+ * an owl crossing it, and the constellations I have lit on "Moje niebo", in
+ * the part of the sky the text leaves free.
  *
  * The birds are the atlas silhouettes, seen from below as the B1 lessons
  * teach. `pauza` (the scene's pause button, WCAG 2.2.2) holds the frame and
@@ -98,19 +103,68 @@ function nowyPtak(los: () => number, pierwszy: boolean): Ptak {
   };
 }
 
-export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pauza: boolean }) {
+/** A module's constellation for the night sky: which module, the lessons that light it, and its stars. */
+export type GwiazdozbiorStartu = Pick<ModulNieba, 'slug' | 'lekcje'> & { gwiazdozbior: Gwiazdozbior };
+
+/** A length from the stylesheet (`78%` of `baza`, `2.4rem` or `12px`) in pixels; NaN for anything else. */
+function dlugosc(wartosc: string, baza: number) {
+  const m = /^\s*(-?[\d.]+)(%|rem|px)\s*$/.exec(wartosc);
+  if (!m) return NaN;
+  const n = parseFloat(m[1]);
+  if (m[2] === '%') return (n / 100) * baza;
+  if (m[2] === 'rem') return n * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  return n;
+}
+
+export function Niebo({
+  pora,
+  opis,
+  pauza,
+  gwiazdozbiory,
+  tekst,
+  dol,
+}: {
+  pora: PoraDnia;
+  opis: string;
+  pauza: boolean;
+  /** Every module's constellation; the night sky draws those I have lit ("Moje niebo"). */
+  gwiazdozbiory: GwiazdozbiorStartu[];
+  /** The text over the sky, which the constellations keep clear of. */
+  tekst: RefObject<HTMLElement | null>;
+  /** The row along the sky's bottom (figures, controls), which they keep above. */
+  dol: RefObject<HTMLElement | null>;
+}) {
   const plotno = useRef<HTMLCanvasElement>(null);
   const ruch = !useMniejRuchu();
   const precyzyjny = useMedia('(hover: hover) and (pointer: fine)');
   // The loop reads the latest pause without restarting the scene; pausing
   // draws one still frame and stops the loop, resuming starts it again.
   const pauzaRef = useRef(pauza);
-  const sterowanie = useRef<{ zatrzymaj: () => void; wznow: () => void } | null>(null);
+  const sterowanie = useRef<{ zatrzymaj: () => void; wznow: () => void; przerysuj: () => void } | null>(null);
   useEffect(() => {
     pauzaRef.current = pauza;
     if (pauza) sterowanie.current?.zatrzymaj();
     else sterowanie.current?.wznow();
   }, [pauza]);
+
+  // My lit constellations (a finished module, or one recorded as lit) and their
+  // gold stars. A gold star comes from the record only: working it out here would
+  // need the flashcards too, and the watcher records one as soon as it is earned.
+  const { postep } = usePostep();
+  const zdobyte = useZdobyte();
+  const zapalone = useMemo(
+    () =>
+      gwiazdozbiory.flatMap((g, indeks) => {
+        const zapalony = (postep && zaliczony(g.lekcje, postep)) || Boolean(zdobyte?.[kluczGwiazdozbioru(g.slug)]);
+        return zapalony ? [{ indeks, gwiazdozbior: g.gwiazdozbior, mistrz: Boolean(zdobyte?.[kluczMistrza(g.slug)]) }] : [];
+      }),
+    [gwiazdozbiory, postep, zdobyte],
+  );
+  const zapaloneRef = useRef(zapalone);
+  useEffect(() => {
+    zapaloneRef.current = zapalone;
+    sterowanie.current?.przerysuj();
+  }, [zapalone]);
 
   useEffect(() => {
     const canvas = plotno.current;
@@ -222,6 +276,124 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
       }
     };
 
+    // Where my constellations go: a slot for every module in the sky the text
+    // leaves free (beside it on a wide screen, above it on a narrow one),
+    // clear of the moon. Worked out again when the sky or the text changes size.
+    let uklad: Polozenie[] | null = null;
+    let ulozone = false;
+    const uloz = () => {
+      ulozone = true;
+      uklad = null;
+      // Measured where the text will rest: the entrance and the scroll-away
+      // move it with `translate`, which start.css holds at none while this attribute is set.
+      const scenaEl = canvas.parentElement;
+      scenaEl?.setAttribute('data-mierzenie', '');
+      // The text itself rather than its boxes: the title's box is wider than its lines.
+      const bloki = [...(tekst.current?.children ?? [])]
+        .map((e) => {
+          const zakres = document.createRange();
+          zakres.selectNodeContents(e);
+          return zakres.getBoundingClientRect();
+        })
+        .filter((r) => r.width && r.height);
+      const dolGora = dol.current?.getBoundingClientRect().top;
+      scenaEl?.removeAttribute('data-mierzenie');
+      if (!bloki.length) return;
+      const scena = canvas.getBoundingClientRect();
+      const styl = getComputedStyle(canvas);
+      const lewo = Math.min(...bloki.map((r) => r.left)) - scena.left;
+      const prawo = Math.max(...bloki.map((r) => r.right)) - scena.left;
+      const gora = Math.min(...bloki.map((r) => r.top)) - scena.top;
+      const spod = (dolGora ?? scena.bottom) - scena.top;
+      // The scene starts under the navigation, which its top padding makes room for.
+      const nawigacja = parseFloat(getComputedStyle(canvas.parentElement ?? canvas).paddingTop) || 0;
+      const odstep = 16;
+      // The sky runs past the text column, so on a very wide screen the constellations may too.
+      const brzeg = szer - Math.min(lewo, 3 * odstep);
+      const pola: Pole[] = [
+        [prawo + 2 * odstep, nawigacja + odstep, brzeg, spod - odstep],
+        [lewo, nawigacja + odstep, brzeg, gora - odstep],
+      ];
+      // The moon is a gradient in start.css; its custom properties say where.
+      const ksiezyc = {
+        x: dlugosc(styl.getPropertyValue('--ksiezyc-x'), szer),
+        y: dlugosc(styl.getPropertyValue('--ksiezyc-y'), wys),
+        r: dlugosc(styl.getPropertyValue('--ksiezyc-r'), 0) + odstep,
+      };
+      const proporcja = Math.max(...gwiazdozbiory.map((g) => g.gwiazdozbior.proporcja));
+      const ksiezycZnany = Number.isFinite(ksiezyc.x + ksiezyc.y + ksiezyc.r);
+      if (!ksiezycZnany) console.warn('[Niebo] the moon\'s place (--ksiezyc-*) is unreadable; constellations may cross it');
+      uklad = ukladNaNiebie(
+        gwiazdozbiory.length,
+        proporcja,
+        pola,
+        ksiezycZnany ? ksiezyc : { x: 0, y: 0, r: 0 },
+        szer,
+        wys,
+        // About 7% of the sky's width, within 90–140 px: a star chart, not the whole sky.
+        { maks: Math.min(140, Math.max(90, szer * 0.07)) },
+      );
+    };
+
+    // My constellations: thin lines between stars brighter than the rest, a gold star on a mastered one's head.
+    const rysujGwiazdozbiory = (czas: number) => {
+      if (!zapaloneRef.current.length) return;
+      if (!ulozone) uloz();
+      if (!uklad) return;
+      const migocze = ruch && !pauzaRef.current;
+      for (const g of zapaloneRef.current) {
+        const p = uklad[g.indeks];
+        if (!p) continue;
+        const punkty = gwiazdyNaNiebie(g.gwiazdozbior, p, szer, wys);
+        // Star sizes follow the constellation's, so a small one on a narrow screen stays a figure, not a smudge.
+        const w = p.szer * szer;
+        const rdzen = Math.min(1.6, Math.max(1.1, w / 70)) * dpr;
+        ctx.globalAlpha = 0.32;
+        ctx.strokeStyle = '#f2eee6';
+        ctx.lineWidth = dpr;
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        punkty.forEach(([x, y], i) => (i ? ctx.lineTo(x * dpr, y * dpr) : ctx.moveTo(x * dpr, y * dpr)));
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fillStyle = '#fff8ea';
+        punkty.forEach(([x, y], i) => {
+          const blask = migocze ? 0.85 + 0.15 * Math.sin(czas * 0.0013 + i * 1.7 + g.indeks) : 1;
+          ctx.globalAlpha = 0.2 * blask;
+          ctx.beginPath();
+          ctx.arc(x * dpr, y * dpr, rdzen * 2.8, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalAlpha = 0.95 * blask;
+          ctx.beginPath();
+          ctx.arc(x * dpr, y * dpr, rdzen, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        if (g.mistrz) {
+          const [x, y] = punkty[0];
+          const r = Math.min(8, Math.max(5, w / 14)) * dpr;
+          const q = r * 0.22;
+          ctx.fillStyle = '#f5b75b';
+          ctx.globalAlpha = 0.3;
+          ctx.beginPath();
+          ctx.arc(x * dpr, y * dpr, r * 1.3, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          ctx.beginPath();
+          ctx.moveTo(x * dpr, y * dpr - r);
+          ctx.lineTo(x * dpr + q, y * dpr - q);
+          ctx.lineTo(x * dpr + r, y * dpr);
+          ctx.lineTo(x * dpr + q, y * dpr + q);
+          ctx.lineTo(x * dpr, y * dpr + r);
+          ctx.lineTo(x * dpr - q, y * dpr + q);
+          ctx.lineTo(x * dpr - r, y * dpr);
+          ctx.lineTo(x * dpr - q, y * dpr - q);
+          ctx.closePath();
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+    };
+
     const rysuj = (czas: number) => {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -234,6 +406,7 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
           ctx.fill();
         }
         ctx.globalAlpha = 1;
+        rysujGwiazdozbiory(czas);
         if (sowa) {
           ctx.fillStyle = kolor;
           const rozp = Math.min(150, Math.max(70, szer * 0.085));
@@ -281,6 +454,10 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
         rysuj(performance.now());
       },
       wznow: uruchom,
+      // A still frame (paused, off-screen or reduced motion) is redrawn when my constellations or the text change.
+      przerysuj: () => {
+        if (!klatkaAnimacji) rysuj(performance.now());
+      },
     };
 
     // A still frame first (also the whole scene with reduced motion), then the loop.
@@ -299,18 +476,26 @@ export function Niebo({ pora, opis, pauza }: { pora: PoraDnia; opis: string; pau
       const n = ileGwiazd();
       while (gwiazdy.length < n) gwiazdy.push(nowaGwiazda());
       gwiazdy.length = n;
+      ulozone = false;
       rysuj(performance.now());
     });
     rozmiar.observe(canvas);
+    // The text can change size on its own (a web font arriving, a longer line for another hour).
+    const zmianaTekstu = new ResizeObserver(() => {
+      ulozone = false;
+      sterowanie.current?.przerysuj();
+    });
+    if (noc) for (const e of [...(tekst.current?.children ?? []), dol.current]) if (e) zmianaTekstu.observe(e);
 
     return () => {
       sterowanie.current = null;
       cancelAnimationFrame(klatkaAnimacji);
       widocznosc.disconnect();
       rozmiar.disconnect();
+      zmianaTekstu.disconnect();
       window.removeEventListener('pointermove', naRuch);
     };
-  }, [pora, ruch, precyzyjny]);
+  }, [pora, ruch, precyzyjny, gwiazdozbiory, tekst, dol]);
 
   return <canvas ref={plotno} className="niebo__plotno" role="img" aria-label={opis} />;
 }

@@ -1,13 +1,23 @@
 'use client';
 
 import { useCallback } from 'react';
-import { createEmptyCard, fsrs, generatorParameters, State, type Card, type Grade } from 'ts-fsrs';
-import { dzisiaj, utworzMagazyn } from './magazyn';
+import type { State } from 'ts-fsrs';
+import { utworzMagazyn } from './magazyn';
+import { STAN_KARTY } from './types';
+
+/*
+ * The flashcard schedules as stored. The scheduler that writes them is in
+ * planFiszek.ts: this module imports nothing from ts-fsrs but its types, so
+ * pages that only read the schedules (the "Moje niebo" watcher,
+ * StraznikOdznak, reads them on every page) do not bring the scheduler with
+ * them.
+ */
 
 /**
  * One flashcard's schedule as stored: the FSRS card with its dates as ISO
- * strings (turned back into `Date`s by `kartaFsrs`), plus the local date of
- * the card's first answer, which caps how many new cards a day brings.
+ * strings (turned back into `Date`s by `kartaFsrs` in planFiszek.ts), plus
+ * the local date of the card's first answer, which caps how many new cards a
+ * day brings.
  */
 export type ZapisFiszki = {
   due: string;
@@ -47,7 +57,7 @@ export function isFiszki(value: unknown): value is Fiszki {
       typeof r.wprowadzona === 'string' &&
       DATA_LOKALNA.test(r.wprowadzona) &&
       LICZBY.every((k) => typeof r[k] === 'number' && Number.isFinite(r[k])) &&
-      (r.state === State.Learning || r.state === State.Review || r.state === State.Relearning) &&
+      Object.values(STAN_KARTY).some((s) => r.state === s) &&
       (r.stability as number) > 0 &&
       (r.difficulty as number) >= 1 &&
       (r.difficulty as number) <= 10
@@ -57,57 +67,20 @@ export function isFiszki(value: unknown): value is Fiszki {
 
 const magazyn = utworzMagazyn<Fiszki>('wor:fiszki:v1', isFiszki);
 
-/** FSRS with its default parameters; fuzz spreads reviews that would otherwise fall on the same day. */
-export const planista = fsrs(generatorParameters({ enable_fuzz: true }));
-
-export function kartaFsrs(zapis: ZapisFiszki | undefined, teraz: Date): Card {
-  if (!zapis) return createEmptyCard(teraz);
-  return {
-    ...zapis,
-    due: new Date(zapis.due),
-    last_review: zapis.last_review ? new Date(zapis.last_review) : undefined,
-  };
-}
-
-function doZapisu(karta: Card, wprowadzona: string): ZapisFiszki {
-  return {
-    due: karta.due.toISOString(),
-    stability: karta.stability,
-    difficulty: karta.difficulty,
-    elapsed_days: karta.elapsed_days,
-    scheduled_days: karta.scheduled_days,
-    learning_steps: karta.learning_steps,
-    reps: karta.reps,
-    lapses: karta.lapses,
-    state: karta.state,
-    last_review: karta.last_review?.toISOString(),
-    wprowadzona,
-  };
-}
-
 /**
- * Flashcard schedules in localStorage. `fiszki` is `null` until the browser
- * copy has been read. `ocen` records an answer and returns whether it was
- * actually saved (false also when the scheduler rejects the stored card).
+ * Saves one card's new schedule, made from the latest stored copy, and
+ * returns whether it was actually saved. `nowy` returns null when the card
+ * cannot be scheduled; nothing is saved then.
  */
+export function zapiszFiszke(id: string, nowy: (zapis: ZapisFiszki | undefined) => ZapisFiszki | null) {
+  const obecne = magazyn.odczytaj();
+  const zapis = nowy(obecne[id]);
+  return zapis ? magazyn.zapisz({ ...obecne, [id]: zapis }) : false;
+}
+
+/** Flashcard schedules in localStorage. `fiszki` is `null` until the browser copy has been read. */
 export function useFiszki() {
   const fiszki = magazyn.useMagazyn();
-
-  const ocen = useCallback((id: string, ocena: Grade, teraz: Date) => {
-    const obecne = magazyn.odczytaj();
-    const zapis = obecne[id];
-    let nowy: ZapisFiszki;
-    try {
-      const { card } = planista.next(kartaFsrs(zapis, teraz), teraz, ocena);
-      nowy = doZapisu(card, zapis?.wprowadzona ?? dzisiaj());
-    } catch (err) {
-      console.error(`[fiszki] could not schedule ${id}`, err);
-      return false;
-    }
-    return magazyn.zapisz({ ...obecne, [id]: nowy });
-  }, []);
-
   const zastapFiszki = useCallback((next: Fiszki) => magazyn.zapisz(next), []);
-
-  return { fiszki, ocen, zastapFiszki };
+  return { fiszki, zastapFiszki };
 }
