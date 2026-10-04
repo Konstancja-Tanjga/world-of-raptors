@@ -81,6 +81,31 @@ function rehypeIdNaglowkow() {
   };
 }
 
+/** Numbers the tables, so each scrollable table region gets a name of its own (see `table` below). */
+function rehypeNumeryTabel() {
+  return (drzewo: HastNode) => {
+    let numer = 0;
+    const odwiedz = (n: HastNode) => {
+      if (n.type === 'element' && n.tagName === 'table') n.properties = { ...n.properties, dataNumer: String(++numer) };
+      n.children?.forEach(odwiedz);
+    };
+    odwiedz(drzewo);
+  };
+}
+
+/** A table's column headers, for its region's name: "Tabela 2: Grupa, Skrzydła, Ogon, Głowa". */
+function nazwaTabeli(tabela: HastNode | undefined) {
+  const naglowki: string[] = [];
+  const zbierz = (n: HastNode) => {
+    if (n.type === 'element' && n.tagName === 'th') naglowki.push(tekstWezla(n).trim());
+    else n.children?.forEach(zbierz);
+  };
+  if (tabela) zbierz(tabela);
+  const numer = tabela?.properties?.dataNumer;
+  const kolumny = naglowki.filter(Boolean).slice(0, 4).join(', ');
+  return `Tabela${numer ? ` ${numer}` : ''}${kolumny ? `: ${kolumny}` : ''}`;
+}
+
 const link = (baseDir: string): Components['a'] =>
   function MarkdownLink({ href = '', children }) {
     const target = resolveContentHref(href, baseDir);
@@ -105,11 +130,12 @@ export function Markdown({ source, baseDir, quiz }: { source: string; baseDir: s
     <div className="prose">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeIdNaglowkow]}
+        rehypePlugins={[rehypeRaw, rehypeIdNaglowkow, rehypeNumeryTabel]}
         components={{
           a: link(baseDir),
-          table: ({ children }) => (
-            <div className="prose__table" role="region" aria-label="Tabela" tabIndex={0}>
+          // A scrollable region, so a keyboard can reach a wide table; each is named by its number and columns.
+          table: ({ node, children }) => (
+            <div className="prose__table" role="region" aria-label={nazwaTabeli(node as HastNode | undefined)} tabIndex={0}>
               <table>{children}</table>
             </div>
           ),

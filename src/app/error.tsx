@@ -18,6 +18,7 @@ export default function Blad({ error, retry }: { error: Error & { digest?: strin
 
   return (
     <div className="page">
+      <h1 className="visually-hidden">Błąd</h1>
       <StateBlock
         state="error"
         title="Nie udało się pokazać tej strony"
