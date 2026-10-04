@@ -59,7 +59,7 @@ export default async function ObrazDoUdostepniania() {
     (
       <div style={{ position: 'relative', display: 'flex', width: '100%', height: '100%', background: '#0a1018' }}>
         {/* The home page's dusk sky, its glow on the horizon behind the birds. The colours copy motyw.css
-            (--wor-niebo-zmierzch, an sRGB stand-in for its oklch gradient, --wor-zar-horyzontu,
+            (--wor-niebo-zmierzch with the same stops, --wor-zar-horyzontu,
             --wor-cien-tekstu, --wor-scena-tekst, --wor-zloto, --wor-sylwetka): ImageResponse cannot
             read CSS variables, so a change to the palette is made in both places. */}
         <div
@@ -67,7 +67,7 @@ export default async function ObrazDoUdostepniania() {
             position: 'absolute',
             top: 0, right: 0, bottom: 0, left: 0,
             display: 'flex',
-            backgroundImage: 'linear-gradient(180deg, #1c2c51 0%, #6b3f5c 38%, #a85556 66%, #f5bc69 100%)',
+            backgroundImage: 'linear-gradient(180deg, #1c2c51 0%, #34325e 10.3%, #4d3767 20.7%, #653c6b 31%, #7e4269 41.3%, #944a62 51.7%, #a85556 62%, #b86457 68.3%, #c77458 74.7%, #d5845a 81%, #e1965d 87.3%, #eca962 93.7%, #f5bc69 100%)',
           }}
         />
         <div
