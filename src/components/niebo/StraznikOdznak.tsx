@@ -24,9 +24,10 @@ function tytul(klucz: string, struktura: StrukturaNieba) {
  * silently (zdobyte.ts). Renders nothing; the moment itself plays on "Moje
  * niebo".
  *
- * The record is bookkeeping, not a change I made: one the browser refuses is
- * not announced (it would come back on every page) nor warned about (the
- * stores I do change warn on their own), and is tried again on the next page.
+ * The record is bookkeeping, not a change I made: when the browser refuses
+ * it, nothing is announced (never saved, it would be announced again after
+ * every reload) or warned about (the stores I do change warn on their own).
+ * The page keeps it in memory until a reload, which tries again.
  */
 export function StraznikOdznak({ struktura }: { struktura: StrukturaNieba }) {
   const stan = useStanNieba(struktura);

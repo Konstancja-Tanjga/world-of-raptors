@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Rating, type Grade } from 'ts-fsrs';
+import { dataLokalna } from '@/lib/daty';
 import { useFiszki, type Fiszki } from '@/lib/fiszki';
 import { kartaFsrs, ocenFiszke, planista } from '@/lib/planFiszek';
 import { dzisiaj } from '@/lib/magazyn';
@@ -73,11 +74,6 @@ function kolejnosc(id: string, dzien: string) {
 }
 
 /** The local date (YYYY-MM-DD) of a moment, to compare with `dzisiaj()`. */
-function dataLokalna(iso: string) {
-  const d = new Date(iso);
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-}
-
 /**
  * What to show next: overdue reviews first, then new cards, then reviews due
  * within the next minutes. As in Anki, a new card waits until tomorrow when
@@ -93,7 +89,7 @@ function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: num
   const wolne = Math.max(0, NOWYCH_DZIENNIE + dodatkowe - wprowadzoneDzis);
   const odpowiedzianeDzis = new Set(
     Object.entries(fiszki)
-      .filter(([, z]) => z.last_review && dataLokalna(z.last_review) === dzien)
+      .filter(([, z]) => z.last_review && dataLokalna(new Date(z.last_review)) === dzien)
       .map(([id]) => gatunekFiszki(id)),
   );
   const nowe = talia
