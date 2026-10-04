@@ -2,7 +2,7 @@
 
 # World of Raptors
 
-Prywatny kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Napisałam go do własnej nauki. Działa w przeglądarce, bez kont i bez serwera z danymi: postęp, fiszki i obserwacje zostają w mojej przeglądarce.
+Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Napisałam go do własnej nauki. Działa w przeglądarce, bez kont i bez serwera z danymi: postęp, fiszki i obserwacje zostają w przeglądarce.
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
