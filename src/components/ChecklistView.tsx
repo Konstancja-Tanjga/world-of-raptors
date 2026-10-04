@@ -6,6 +6,7 @@ import { dzisiaj, useChecklista } from '@/lib/checklist';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
 import { usePostep } from '@/lib/postep';
+import { useZdobyte, wczytajZKopii } from '@/lib/zdobyte';
 import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
 import { OwnPhotos } from './OwnPhotos';
 import type { Gatunek } from '@/lib/types';
@@ -41,6 +42,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
   const sprawdzZapis = useOstrzezenieZapisu();
   const { postep, zastapPostep } = usePostep();
   const { fiszki, zastapFiszki } = useFiszki();
+  const { zdobyte } = useZdobyte();
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
@@ -63,7 +65,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
 
   const eksportuj = async () => {
     try {
-      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki);
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte);
       const url = URL.createObjectURL(plik);
       const a = document.createElement('a');
       a.href = url;
@@ -94,7 +96,8 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
   };
 
   // Order matters: validate everything, then write photos (most likely to
-  // fail, and aborted atomically), then progress and flashcards, then the checklist.
+  // fail, and aborted atomically), then progress and flashcards, then what
+  // "Moje niebo" recorded, then the checklist.
   const importuj = async (file: File) => {
     let kopia: OdczytanaKopia;
     try {
@@ -130,13 +133,20 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
 
     const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
     const fiszkiOk = kopia.fiszki ? zastapFiszki(kopia.fiszki) : true;
+    const odznakiOk = wczytajZKopii(kopia.odznaki);
     const checklistaOk = zastap(kopia.checklista);
-    const nieZapisane = [!checklistaOk && 'checklisty', !postepOk && 'postępu nauki', !fiszkiOk && 'fiszek'].filter(Boolean);
+    const nieZapisane = [
+      !checklistaOk && 'checklisty',
+      !postepOk && 'postępu nauki',
+      !fiszkiOk && 'fiszek',
+      !odznakiOk && 'gwiazdozbiorów i naszywek',
+    ].filter(Boolean);
     const wczytano = [
       `${Object.keys(kopia.checklista).length} obserwacji`,
       kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
       kopia.postep ? 'postęp nauki' : null,
       kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
+      kopia.odznaki ? 'daty gwiazdozbiorów i naszywek' : null,
     ].filter(Boolean);
     const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)', !kopia.fiszki && 'fiszek (dotychczasowe zostały)'].filter(
       Boolean,
@@ -284,7 +294,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia, postęp nauki i fiszki są zapisane tylko w tej przeglądarce. Co jakiś
+          Checklista, moje zdjęcia, postęp nauki, fiszki i moje niebo są zapisane tylko w tej przeglądarce. Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>
