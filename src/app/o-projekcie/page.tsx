@@ -310,7 +310,7 @@ export default async function OProjekcie() {
           </div>
           <div>
             <dt>Canvas i SVG</dt>
-            <dd>Niebo, kocioł ptaków i sylwetki rysowane w przeglądarce, bez gotowych grafik.</dd>
+            <dd>Niebo, kocioł ptaków, sylwetki, gwiazdozbiory i naszywki rysowane w przeglądarce, bez gotowych grafik.</dd>
           </div>
           <div>
             <dt>Markdown</dt>
@@ -318,7 +318,7 @@ export default async function OProjekcie() {
           </div>
           <div>
             <dt>Prywatność</dt>
-            <dd>Postęp, checklista, fiszki i własne zdjęcia zostają w przeglądarce. Nie ma kont ani serwera z danymi.</dd>
+            <dd>Postęp, checklista, fiszki, „Moje niebo” i własne zdjęcia zostają w przeglądarce. Nie ma kont ani serwera z danymi.</dd>
           </div>
         </dl>
       </section>

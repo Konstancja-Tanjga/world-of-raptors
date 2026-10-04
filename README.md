@@ -22,7 +22,7 @@ Prywatny kurs online o ptakach drapieżnych, do własnej nauki: biologia i rozpo
 - B4 · [Ptaki drapieżne południa Hiszpanii](content/moduly/poludnie-hiszpanii/README.md)
 - B5 · [Sowy, drapieżniki nocne](content/moduly/sowy/README.md)
 
-Do tego atlas 42 gatunków (32 drapieżniki dzienne i 10 sów), fiszki i checklista obserwacji.
+Do tego atlas 42 gatunków (32 drapieżniki dzienne i 10 sów), fiszki, checklista obserwacji i „Moje niebo”: gwiazdozbiory ukończonych modułów, obrączki gatunków i naszywki za to, czego się nauczyłam.
 
 ## Uruchamianie
 ```bash
