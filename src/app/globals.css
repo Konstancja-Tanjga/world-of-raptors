@@ -252,6 +252,7 @@ li {
 .nav__arkusz li:nth-child(4) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 3); }
 .nav__arkusz li:nth-child(5) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 4); }
 .nav__arkusz li:nth-child(6) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 5); }
+.nav__arkusz li:nth-child(7) .nav__arkusz-link { transition-delay: calc(var(--wor-stagger) * 6); }
 @starting-style {
   .nav__arkusz-link {
     opacity: 0;
@@ -662,10 +663,10 @@ li {
   vector-effect: non-scaling-stroke;
 }
 [data-widziany] > .checklist__sylwetka {
-  color: var(--wor-akcent);
+  color: var(--wor-lifer);
 }
 [data-widziany] > .checklist__sylwetka .sylwetka {
-  fill: var(--wor-akcent);
+  fill: var(--wor-lifer);
 }
 .checklist {
   list-style: none;
@@ -2353,4 +2354,14 @@ a.modul:focus-visible {
   width: 100%;
   max-width: 36rem;
   padding: var(--wor-space-block) var(--wor-gutter);
+}
+
+/* A ring's stamped word (components/niebo/Obraczka.tsx), on "Moje niebo" and species pages. */
+.obraczka__napis {
+  font-family: var(--wor-font-ui);
+  font-size: 9px;
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: 0.6px;
+  /* Stamped into the metal; dark enough for AA on the darkest band of the silver and the gold. */
+  fill: rgba(40, 30, 20, 0.88);
 }

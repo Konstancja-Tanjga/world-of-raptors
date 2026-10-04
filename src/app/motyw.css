@@ -117,6 +117,8 @@
 
   /* Accent: rufous on paper (kite), gold at dusk (a raptor's eye) */
   --wor-akcent: #a54a24;
+  /* A bird I have seen: gold. Deep enough on paper for a drawing (3.4:1); text on it uses --wor-zloto instead. */
+  --wor-lifer: #b5761c;
   --wor-akcent-miekki: #f3dcc9;
   --wor-tlo: #f8f3e9;
   --wor-linia: rgba(38, 29, 23, 0.14);
@@ -202,6 +204,7 @@
   --bh-material-rim: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
   --bh-scrim-bg: rgba(0, 0, 0, 0.45);
   --wor-akcent: #f5b75b;
+  --wor-lifer: #f5b75b;
   --wor-akcent-miekki: #2a2418;
   --wor-tlo: #0a1018;
   --wor-linia: rgba(242, 238, 230, 0.12);
@@ -249,6 +252,7 @@
     --bh-material-rim: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
     --bh-scrim-bg: rgba(0, 0, 0, 0.45);
     --wor-akcent: #f5b75b;
+    --wor-lifer: #f5b75b;
     --wor-akcent-miekki: #2a2418;
     --wor-tlo: #0a1018;
     --wor-linia: rgba(242, 238, 230, 0.12);

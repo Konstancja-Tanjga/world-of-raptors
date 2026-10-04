@@ -684,8 +684,8 @@
   font-weight: var(--bh-text-weight-emphasis);
 }
 [data-widziany] .kolekcja__sylwetka {
-  fill: var(--wor-akcent);
-  stroke: var(--wor-akcent);
+  fill: var(--wor-lifer);
+  stroke: var(--wor-lifer);
   opacity: 1;
 }
 

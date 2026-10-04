@@ -6,7 +6,10 @@ import gatunkiJson from '../../content/gatunki.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
+import { GWIAZDOZBIORY, type Gwiazdozbior } from './gwiazdozbiory';
+import { NASZYWKI, type StrukturaNieba } from './odznaki';
 import { GATUNKI_RYSUNKOW } from './rysunki';
+import { gwiazdy, obrys, POZA_SZYBOWANIE } from './sylwetka';
 import { POZY, STYL_LOTU, SYLWETKI } from './sylwetki';
 import { GRUPY_SYLWETEK, idFiszki, KIERUNKI_NAZW, KLUCZE_DZIENNE, KLUCZE_NOCNE, REGIONY, STATUS_LABEL } from './types';
 import type {
@@ -396,6 +399,71 @@ export function zajawkaModulu(slug: string) {
   return ZAJAWKI.get(slug) ?? null;
 }
 
+const GWIAZDOZBIORY_KURSU: Record<string, Gwiazdozbior> = Object.fromEntries(
+  gotoweModuly.map((m) => {
+    const g = GWIAZDOZBIORY[m.slug];
+    const ksztalt = g && SYLWETKI[g.gatunek];
+    if (!ksztalt) throw new Error(`gwiazdozbiory.ts: moduł ${m.slug} nie ma gwiazdozbioru albo jego ptak nie ma sylwetki`);
+    const z = gwiazdy(obrys(ksztalt, POZY[g.gatunek] ?? POZA_SZYBOWANIE));
+    // Rounded: a thousandth of the bird's box is less than a pixel on any sky they are drawn on.
+    return [m.slug, { ...g, gwiazdy: z.gwiazdy.map(([x, y]): [number, number] => [+x.toFixed(3), +y.toFixed(3)]), proporcja: +z.proporcja.toFixed(3) }];
+  }),
+);
+
+/** Each module's constellation with its stars, for the skies that draw them (the home page at night, "Moje niebo"). */
+export function gwiazdozbioryKursu() {
+  return GWIAZDOZBIORY_KURSU;
+}
+
+/**
+ * What "Moje niebo" needs to know about the course, read once at import:
+ * which lessons teach each species (those with its plate; for a species
+ * with none, those naming it) and which species each module asks to be
+ * recognised for its gold star (its plates, else the species it names; B1
+ * names none, it teaches the eight silhouette groups).
+ */
+const STRUKTURA_NIEBA = ((): StrukturaNieba => {
+  const lekcjeZPlansza = new Map<string, string[]>();
+  const lekcjeZNazwa = new Map<string, string[]>();
+  const dopisz = (mapa: Map<string, string[]>, id: string, klucz: string) => mapa.set(id, [...(mapa.get(id) ?? []), klucz]);
+  const osiemGrup = Object.values(RYSUNEK_GRUPY);
+  const modulyNieba = gotoweModuly.map((m) => {
+    const plansze = new Set<string>();
+    const nazwane = new Set<string>();
+    const lekcje = m.lekcje.map((l) => {
+      const klucz = `${m.slug}/${l.slug}`;
+      const { wNaglowkach, wszystkie } = przygotujLekcje(czytajSync(`moduly/${klucz}.md`));
+      for (const id of wNaglowkach) {
+        plansze.add(id);
+        dopisz(lekcjeZPlansza, id, klucz);
+      }
+      for (const id of wszystkie) {
+        nazwane.add(id);
+        dopisz(lekcjeZNazwa, id, klucz);
+      }
+      return klucz;
+    });
+    const gatunkiModulu = plansze.size ? [...plansze] : nazwane.size ? [...nazwane] : osiemGrup;
+    return { slug: m.slug, id: m.id, tytul: m.tytul, lekcje, gatunki: gatunkiModulu, gwiazdozbior: GWIAZDOZBIORY_KURSU[m.slug].nazwa };
+  });
+  return {
+    moduly: modulyNieba,
+    gatunki: gatunki.map((g) => ({
+      id: g.id,
+      pl: g.pl,
+      dzienny: g.aktywnosc === 'dzienny',
+      zdjecia: (['lot', 'siedzacy'] as const).filter((r) => zdjecia[g.id]?.[r]),
+      lekcje: lekcjeZPlansza.get(g.id) ?? lekcjeZNazwa.get(g.id) ?? [],
+    })),
+    osiemGrup,
+  };
+})();
+
+/** The course as "Moje niebo" counts it (see STRUKTURA_NIEBA). */
+export function strukturaNieba() {
+  return STRUKTURA_NIEBA;
+}
+
 /** The course in numbers, for the about page: everything counted from the content itself. */
 export async function statystykiKursu() {
   const pliki = gotoweModuly.flatMap((m) => [`moduly/${m.slug}/README.md`, ...m.lekcje.map((l) => `moduly/${m.slug}/${l.slug}.md`)]);
@@ -601,6 +669,16 @@ function sprawdzSpojnosc() {
   }
   for (const id of GATUNKI_RYSUNKOW) {
     if (!idGatunkow.has(id) || !SYLWETKI[id]) bledy.push(`rysunki.ts: ${id} nie jest gatunkiem z atlasu z sylwetką`);
+  }
+  // GWIAZDOZBIORY_KURSU has already failed for a module without a constellation or a bird without a silhouette.
+  for (const { gatunek } of Object.values(GWIAZDOZBIORY_KURSU)) {
+    if (!idGatunkow.has(gatunek)) bledy.push(`gwiazdozbiory.ts: ${gatunek} nie jest gatunkiem z atlasu`);
+  }
+  for (const n of NASZYWKI) {
+    for (const id of n.ptaki) if (!idGatunkow.has(id) || !SYLWETKI[id]) bledy.push(`odznaki.ts: naszywka ${n.id} rysuje ${id}, którego nie ma w atlasie z sylwetką`);
+  }
+  for (const g of STRUKTURA_NIEBA.gatunki) {
+    if (!g.lekcje.length) bledy.push(`gatunki.json: ${g.id}: żadna lekcja go nie uczy ani nie wymienia, więc obrączki „Znam” nie da się zdobyć`);
   }
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
   for (const slug of [MODUL_SOW, ...Object.values(MODUL_REGIONU), LEKCJA_GRUP.modul]) {

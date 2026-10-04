@@ -12,8 +12,9 @@ import { Miarka } from '@/components/Miarka';
 import { Photo } from '@/components/Photo';
 import { ScenaSylwetki } from '@/components/ScenaSylwetki';
 import { CECHY_DZIENNE, CECHY_NOCNE } from '@/components/SpeciesCues';
+import { ObraczkiGatunku } from '@/components/niebo/ObraczkiGatunku';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
-import { ciekawostkiDla, gatunki, modulyGatunku, stronaMorfu, zdjecia, znajdzGatunek } from '@/lib/content';
+import { ciekawostkiDla, gatunki, modulyGatunku, stronaMorfu, strukturaNieba, zdjecia, znajdzGatunek } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { REGIONY, STATUS_LABEL, type Gatunek } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
@@ -36,6 +37,8 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
   if (!g) notFound();
 
   const nocny = g.aktywnosc === 'nocny';
+  // This species as "Moje niebo" counts it, for its rings.
+  const pierscienie = strukturaNieba().gatunki.find((x) => x.id === g.id);
   const z = zdjecia[g.id];
   // The opening photo: how the species is usually seen, a raptor overhead, an owl perched.
   const glowne = nocny ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy);
@@ -81,6 +84,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
               </li>
             ))}
           </ul>
+          {pierscienie && <ObraczkiGatunku gatunek={pierscienie} />}
         </div>
         {glowne && (
           <p className="gatunek-hero__podpis">
