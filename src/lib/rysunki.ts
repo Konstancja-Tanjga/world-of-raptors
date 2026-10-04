@@ -1,7 +1,9 @@
 /**
  * Atlas species that the code itself names for its drawings. content.ts
  * checks at build that each is in the atlas with a silhouette, so renaming a
- * species fails the build instead of quietly emptying a scene.
+ * species fails the build instead of quietly emptying a scene. The birds of
+ * "Moje niebo" are named in its own files (the constellations in
+ * gwiazdozbiory.ts, the patches in odznaki.ts) and checked the same way.
  */
 
 /** The course's mark, a red kite: the logo and the page that does not exist. */

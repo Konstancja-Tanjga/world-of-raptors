@@ -1,3 +1,5 @@
+import type { State } from 'ts-fsrs';
+
 export type Region = 'gibraltar' | 'poludnie-hiszpanii' | 'polska';
 export type Aktywnosc = 'dzienny' | 'nocny';
 export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
@@ -119,6 +121,19 @@ export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: nu
 
 /** A lesson's step-by-step quiz; `prog` is the pass mark in percent. */
 export type Quiz = { prog: number; pytania: PytanieQuizu[] };
+
+/**
+ * ts-fsrs's card states as each stored card carries them (New is never
+ * stored). Spelled out because the enum is a value of the scheduler's module,
+ * which declares no `sideEffects`, so importing it would bring the whole
+ * scheduler; the annotation fails the type check if ts-fsrs renumbers them.
+ * Here, without a directive, because the "Moje niebo" rules also run at build.
+ */
+export const STAN_KARTY: { nauka: State.Learning; powtorki: State.Review; ponowna: State.Relearning } = {
+  nauka: 1,
+  powtorki: 2,
+  ponowna: 3,
+};
 
 /** The directions of the name cards: from the Polish name and to it. */
 export const KIERUNKI_NAZW = ['pl-en', 'pl-es', 'en-pl', 'es-pl'] as const;

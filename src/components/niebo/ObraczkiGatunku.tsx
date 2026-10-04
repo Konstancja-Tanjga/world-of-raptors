@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 import { useMemo } from 'react';
-import type { GatunekNieba } from '@/lib/odznaki';
-import { useStanNieba } from '@/lib/zdobyte';
+import { useChecklista } from '@/lib/checklist';
+import { useFiszki } from '@/lib/fiszki';
+import { obraczki, zapamietaneKarty, type GatunekNieba } from '@/lib/odznaki';
+import { usePostep } from '@/lib/postep';
 import { Obraczka, OBRACZKI } from './Obraczka';
 
 const OPIS = {
@@ -14,13 +16,18 @@ const OPIS = {
 
 /**
  * A species' three rings in its page's opening: Znam, Rozpoznaję and the gold
- * Widziałam. Until the browser copy of my progress has been read they keep
- * their place but stay hidden, so nothing shows a guessed state.
+ * Widziałam. Until the three stores (progress, flashcards, checklist) have
+ * been read they keep their place but stay hidden, so nothing shows a guessed
+ * state.
  */
 export function ObraczkiGatunku({ gatunek }: { gatunek: GatunekNieba }) {
-  const struktura = useMemo(() => ({ moduly: [], gatunki: [gatunek], osiemGrup: [] }), [gatunek]);
-  const stan = useStanNieba(struktura);
-  const o = stan?.gatunki[gatunek.id];
+  const { postep } = usePostep();
+  const { fiszki } = useFiszki();
+  const { lista } = useChecklista();
+  const o = useMemo(
+    () => (postep && fiszki && lista ? obraczki(gatunek, postep, zapamietaneKarty(fiszki), lista) : null),
+    [gatunek, postep, fiszki, lista],
+  );
   return (
     <div className="obraczki-gatunku" data-wczytywanie={o ? undefined : ''}>
       <ul className="obraczki-gatunku__lista" aria-label="Moje obrączki">

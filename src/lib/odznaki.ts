@@ -1,14 +1,17 @@
 import type { Checklista } from './checklist';
-import { STAN_KARTY, type Fiszki, type ZapisFiszki } from './fiszki';
+import { dataLokalna } from './daty';
+import type { Fiszki, ZapisFiszki } from './fiszki';
 import type { Postep } from './postep';
 import { KOCIOL } from './rysunki';
-import { idFiszki, KIERUNKI_NAZW } from './types';
+import { idFiszki, KIERUNKI_NAZW, STAN_KARTY, type IdFiszki, type RodzajZdjecia } from './types';
 
 /**
  * "Moje niebo": what the course has to collect, and the rules that decide
  * it, all computed from what the browser already keeps (finished lessons,
  * flashcard schedules, the checklist). Nothing here is stored; zdobyte.ts
- * keeps only the date each constellation and patch was first earned.
+ * keeps only when each constellation, gold star and patch was first earned,
+ * and whether its moment has played. No directive and no browser APIs: the
+ * build runs these rules too (sprawdzSpojnosc in content.ts).
  */
 
 /** What the rules need to know about a species. */
@@ -17,22 +20,27 @@ export type GatunekNieba = {
   pl: string;
   dzienny: boolean;
   /** The reference photos it has; each is a flashcard. */
-  zdjecia: ('lot' | 'siedzacy')[];
+  zdjecia: RodzajZdjecia[];
   /** Lessons that teach it ("modul/lekcja"): those with its plate, or, with none, those naming it. */
   lekcje: string[];
 };
 
 /** What the rules need to know about a module. */
 export type ModulNieba = {
+  /** Also the key of its constellation and gold star in zdobyte.ts: a module's slug is never renamed. */
   slug: string;
   id: string;
   tytul: string;
   /** Its lessons, as progress keys ("modul/lekcja"). */
   lekcje: string[];
-  /** The species to recognise for its gold star: those it teaches with plates, else those it names; B1's eight groups. */
+  /**
+   * The species to recognise for its gold star: those it teaches with plates,
+   * else those its lessons name in italics; B1 teaches the eight silhouette
+   * groups, so it asks for their birds.
+   */
   gatunki: string[];
-  /** The name of the constellation that lights up when it is finished (its stars: gwiazdozbioryKursu() in content.ts). */
-  gwiazdozbior: string;
+  /** The name of the constellation it lights when finished (its stars: gwiazdozbioryKursu() in content.ts). */
+  nazwaGwiazdozbioru: string;
 };
 
 export type StrukturaNieba = {
@@ -43,15 +51,24 @@ export type StrukturaNieba = {
 };
 
 /**
- * A flashcard counts as learned once FSRS has a correct answer scheduled a
- * week or more ahead: a few good reviews over a week or two, not one lucky
- * guess.
+ * A flashcard counts as learned once FSRS has it in review with the next one
+ * a week or more away, and I have answered it on a later day than the first
+ * time: good answers over days, not one lucky "Od razu", which on a new card
+ * can schedule it that far at once.
  */
 export const zapamietana = (z: ZapisFiszki | undefined) =>
-  z !== undefined && z.state === STAN_KARTY.powtorki && z.scheduled_days >= 7;
+  z !== undefined &&
+  z.state === STAN_KARTY.powtorki &&
+  z.scheduled_days >= 7 &&
+  z.last_review !== undefined &&
+  dataLokalna(new Date(z.last_review)) > z.wprowadzona;
 
-/** Every flashcard of a species, by the same rules as taliaFiszek. */
-export const kartyGatunku = (g: GatunekNieba) => [
+/** The ids of the flashcards I have learned. */
+export const zapamietaneKarty = (fiszki: Fiszki): ReadonlySet<string> =>
+  new Set(Object.keys(fiszki).filter((id) => zapamietana(fiszki[id])));
+
+/** Every flashcard of a species, by the same rules as taliaFiszek (the build checks they agree). */
+export const kartyGatunku = (g: GatunekNieba): IdFiszki[] => [
   ...g.zdjecia.map((r) => idFiszki(g.id, r)),
   ...(g.dzienny ? [idFiszki(g.id, 'sylwetka')] : []),
   ...KIERUNKI_NAZW.map((k) => idFiszki(g.id, k)),
@@ -60,15 +77,33 @@ export const kartyGatunku = (g: GatunekNieba) => [
 /** The three rings a species can earn. */
 export type Obraczki = { znam: boolean; rozpoznaje: boolean; widzialam: boolean };
 
+/** All three rings. */
+export const komplet = (o: Obraczki) => o.znam && o.rozpoznaje && o.widzialam;
+
+/** A species' rings: a finished lesson that teaches it, every flashcard of it learned, on my checklist. */
+export function obraczki(g: GatunekNieba, postep: Postep, zapamietane: ReadonlySet<string>, lista: Checklista): Obraczki {
+  return {
+    znam: g.lekcje.some((k) => Boolean(postep[k])),
+    rozpoznaje: kartyGatunku(g).every((id) => zapamietane.has(id)),
+    widzialam: Boolean(lista[g.id]),
+  };
+}
+
+/** A module is finished when all its lessons are. */
+export const zaliczony = (lekcje: string[], postep: Postep) => lekcje.every((k) => Boolean(postep[k]));
+
 /** A patch: what it is for, the bird it shows and its embroidery colours. */
 export type Naszywka = {
+  /** Also its key in zdobyte.ts: a patch's id is never renamed. */
   id: string;
   nazwa: string;
   /** How to earn it, shown under the patch. */
   jak: string;
-  ptaki: string[];
+  /** Its bird, or the two of a pair (atlas species with silhouettes; the build checks). */
+  ptaki: [string] | [string, string];
   kolory: { tlo: string; brzeg: string; nic: string; ptak: string };
-  postep: (s: Omit<StanNieba, 'naszywki'>, struktura: StrukturaNieba) => [number, number];
+  /** How far along I am: what I have of what it takes. */
+  postep: (s: Omit<StanNieba, 'naszywki'>, struktura: StrukturaNieba) => [ile: number, z: number];
 };
 
 const PARY = ['myszolow', 'trzmielojad', 'krogulec', 'jastrzab', 'kania-ruda', 'kania-czarna', 'blotniak-lakowy', 'blotniak-zbozowy'];
@@ -95,10 +130,10 @@ export const NASZYWKI: Naszywka[] = [
   {
     id: 'pol-atlasu',
     nazwa: 'Pół atlasu',
-    jak: '21 gatunków na liście życiowej, połowa atlasu.',
+    jak: 'Połowa gatunków z atlasu na liście życiowej.',
     ptaki: ['bielik'],
     kolory: { tlo: '#14243c', brzeg: '#0a1018', nic: '#f5b75b', ptak: '#f2eee6' },
-    postep: (s) => ile(s.lifery, 21),
+    postep: (s, st) => ile(s.lifery, Math.ceil(st.gatunki.length / 2)),
   },
   {
     id: 'pelny-atlas',
@@ -130,7 +165,7 @@ export const NASZYWKI: Naszywka[] = [
     jak: 'Gatunek ze wszystkimi trzema obrączkami: znam go, rozpoznaję i widziałam.',
     ptaki: ['kania-czarna'],
     kolory: { tlo: '#a85556', brzeg: '#6e3236', nic: '#f5b75b', ptak: '#f2eee6' },
-    postep: (s) => ile(Object.values(s.gatunki).filter((o) => o.znam && o.rozpoznaje && o.widzialam).length, 1),
+    postep: (s) => ile(Object.values(s.gatunki).filter(komplet).length, 1),
   },
   {
     id: 'osiem-grup',
@@ -185,46 +220,51 @@ export const NASZYWKI: Naszywka[] = [
 export type StanNieba = {
   gatunki: Record<string, Obraczki>;
   moduly: Record<string, { zaliczony: boolean; opanowany: boolean }>;
-  naszywki: Record<string, { zdobyta: boolean; postep: [number, number] }>;
+  naszywki: Record<string, { zdobyta: boolean; postep: [ile: number, z: number] }>;
   /** Species on the checklist that are in the atlas. */
   lifery: number;
   /** Ids of the learned flashcards. */
-  zapamietane: Set<string>;
+  zapamietane: ReadonlySet<string>;
 };
 
-/** Everything earned so far, from the three browser stores. */
+/** What the three browser stores earn now; zdobyte.ts keeps what was earned before. */
 export function stanNieba(struktura: StrukturaNieba, postep: Postep, fiszki: Fiszki, lista: Checklista): StanNieba {
-  const zapamietane = new Set(Object.keys(fiszki).filter((id) => zapamietana(fiszki[id])));
+  const zapamietane = zapamietaneKarty(fiszki);
   const gatunki: Record<string, Obraczki> = {};
-  for (const g of struktura.gatunki) {
-    gatunki[g.id] = {
-      znam: g.lekcje.some((k) => Boolean(postep[k])),
-      rozpoznaje: kartyGatunku(g).every((id) => zapamietane.has(id)),
-      widzialam: Boolean(lista[g.id]),
-    };
-  }
+  for (const g of struktura.gatunki) gatunki[g.id] = obraczki(g, postep, zapamietane, lista);
   const moduly: StanNieba['moduly'] = {};
   for (const m of struktura.moduly) {
-    const zaliczony = m.lekcje.every((k) => Boolean(postep[k]));
-    moduly[m.slug] = { zaliczony, opanowany: zaliczony && m.gatunki.every((id) => gatunki[id]?.rozpoznaje) };
+    const z = zaliczony(m.lekcje, postep);
+    moduly[m.slug] = { zaliczony: z, opanowany: z && m.gatunki.length > 0 && m.gatunki.every((id) => gatunki[id]?.rozpoznaje) };
   }
   const lifery = struktura.gatunki.filter((g) => gatunki[g.id].widzialam).length;
   const bezNaszywek = { gatunki, moduly, lifery, zapamietane };
   const naszywki: StanNieba['naszywki'] = {};
   for (const n of NASZYWKI) {
-    const postepNaszywki = n.postep(bezNaszywek, struktura);
-    naszywki[n.id] = { zdobyta: postepNaszywki[0] >= postepNaszywki[1], postep: postepNaszywki };
+    const [ma, z] = n.postep(bezNaszywek, struktura);
+    // Nothing to collect (an empty list) earns nothing.
+    naszywki[n.id] = { zdobyta: z > 0 && ma >= z, postep: [ma, z] };
   }
   return { ...bezNaszywek, naszywki };
 }
 
-/** Keys of what stays earned once earned, as zdobyte.ts stores them. */
-export const kluczGwiazdozbioru = (slug: string) => `gwiazdozbior:${slug}`;
-export const kluczMistrza = (slug: string) => `mistrz:${slug}`;
-export const kluczNaszywki = (id: string) => `naszywka:${id}`;
+/** A key of what stays earned once earned, as zdobyte.ts stores it. */
+export type KluczOdznaki = `gwiazdozbior:${string}` | `mistrz:${string}` | `naszywka:${string}`;
+export const kluczGwiazdozbioru = (slug: string): KluczOdznaki => `gwiazdozbior:${slug}`;
+export const kluczMistrza = (slug: string): KluczOdznaki => `mistrz:${slug}`;
+export const kluczNaszywki = (id: string): KluczOdznaki => `naszywka:${id}`;
+
+const RODZAJE_KLUCZY = ['gwiazdozbior', 'mistrz', 'naszywka'] as const;
+
+/** What a key stands for: a module's constellation or gold star (by its slug), or a patch (by its id). */
+export function rozbierzKlucz(klucz: string): { rodzaj: (typeof RODZAJE_KLUCZY)[number]; id: string } | null {
+  const i = klucz.indexOf(':');
+  const rodzaj = RODZAJE_KLUCZY.find((r) => r === klucz.slice(0, i));
+  return rodzaj && i > 0 ? { rodzaj, id: klucz.slice(i + 1) } : null;
+}
 
 /** The keys earned in this state. */
-export function zdobyteWStanie(s: StanNieba): string[] {
+export function zdobyteWStanie(s: StanNieba): KluczOdznaki[] {
   return [
     ...Object.entries(s.moduly).flatMap(([slug, m]) => [
       ...(m.zaliczony ? [kluczGwiazdozbioru(slug)] : []),

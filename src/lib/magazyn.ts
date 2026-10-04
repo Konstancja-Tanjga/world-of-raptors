@@ -1,6 +1,7 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
+import { dataLokalna } from './daty';
 
 /**
  * A small localStorage-backed store shared by the checklist and lesson
@@ -16,6 +17,8 @@ import { useSyncExternalStore } from 'react';
 export function utworzMagazyn<T extends object>(key: string, poprawny: (v: unknown) => v is T) {
   const listeners = new Set<() => void>();
   let cache: T | null = null;
+  // The stored text the cache was read from or last saved as, to tell when another tab has saved since.
+  let surowy: string | null = null;
 
   function zachowajUszkodzone(raw: string) {
     console.error(`[${key}] stored data unreadable; preserved under ${key}:bad`);
@@ -36,6 +39,7 @@ export function utworzMagazyn<T extends object>(key: string, poprawny: (v: unkno
     } catch {
       raw = null; // storage blocked: behave as a fresh, empty store
     }
+    surowy = raw;
     if (raw === null) {
       cache = {} as T;
       return cache;
@@ -54,12 +58,28 @@ export function utworzMagazyn<T extends object>(key: string, poprawny: (v: unkno
     return cache;
   }
 
+  /**
+   * The stored copy as it is now, to change and save back: the cache hears of
+   * other tabs' saves only while a hook subscribes. With storage blocked, the
+   * cache is all there is.
+   */
+  function odczytajAktualne(): T {
+    try {
+      if (window.localStorage.getItem(key) !== surowy) cache = null;
+    } catch {
+      // blocked: keep the cache
+    }
+    return odczytaj();
+  }
+
   /** Saves and notifies subscribers. Returns false if the browser refused to store it. */
   function zapisz(next: T): boolean {
     cache = next;
     let ok = true;
     try {
-      window.localStorage.setItem(key, JSON.stringify(next));
+      const tekst = JSON.stringify(next);
+      window.localStorage.setItem(key, tekst);
+      surowy = tekst;
     } catch (err) {
       console.warn(`[${key}] could not save`, err);
       ok = false;
@@ -92,12 +112,9 @@ export function utworzMagazyn<T extends object>(key: string, poprawny: (v: unkno
     return useSyncExternalStore(subscribe, odczytaj, () => null);
   }
 
-  return { odczytaj, zapisz, useMagazyn };
+  return { odczytaj, odczytajAktualne, zapisz, useMagazyn };
 }
 
 export function dzisiaj() {
-  const d = new Date();
-  const mm = String(d.getMonth() + 1).padStart(2, '0');
-  const dd = String(d.getDate()).padStart(2, '0');
-  return `${d.getFullYear()}-${mm}-${dd}`;
+  return dataLokalna();
 }

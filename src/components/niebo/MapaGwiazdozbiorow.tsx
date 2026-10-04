@@ -22,7 +22,7 @@ type WlasciwosciMapy = {
   /** Each module's constellation, by its slug. */
   gwiazdozbiory: Record<string, Gwiazdozbior>;
   stany: Record<string, StanGwiazdozbioru>;
-  /** Called with the keys of the moments once they have played (at once with reduced motion). */
+  /** Called with the keys of the moments when they start to play (at once with reduced motion). */
   pokazane: (klucze: string[]) => void;
 };
 
@@ -31,7 +31,7 @@ function Mapa({ moduly, gwiazdozbiory, stany, pokazane, waska }: WlasciwosciMapy
   const [szer, wys] = WYMIARY[waska ? 'waska' : 'szeroka'];
   const korzen = useRef<SVGSVGElement>(null);
 
-  // A constellation earned since the last visit lights up: its stars ignite
+  // A constellation whose moment has not played yet lights up: its stars ignite
   // one by one along the outline, then the lines draw between them; a new
   // gold star turns in on the head. Several light up one after another, once
   // the map is in view.
@@ -174,6 +174,17 @@ export function MapaGwiazdozbiorow(wlasciwosci: WlasciwosciMapy) {
     <figure className="mapa-nieba scena" data-scena>
       <Mapa {...wlasciwosci} waska={false} />
       <Mapa {...wlasciwosci} waska />
+      <ul className="visually-hidden">
+        {moduly.map((m) => {
+          const s = stany[m.slug];
+          return (
+            <li key={m.slug}>
+              {m.id} {m.tytul}, gwiazdozbiór {m.nazwaGwiazdozbioru}:{' '}
+              {s?.opanowany ? 'zapalony, ze złotą gwiazdą' : s?.zapalony ? 'zapalony' : 'jeszcze nie'}
+            </li>
+          );
+        })}
+      </ul>
       <figcaption className="mapa-nieba__pasek">
         <p className="mapa-nieba__licznik">
           <span className="mapa-nieba__liczba">{zapalone}</span> z {moduly.length} gwiazdozbiorów
@@ -193,17 +204,6 @@ export function MapaGwiazdozbiorow(wlasciwosci: WlasciwosciMapy) {
           </li>
         </ul>
       </figcaption>
-      <ul className="visually-hidden">
-        {moduly.map((m) => {
-          const s = stany[m.slug];
-          return (
-            <li key={m.slug}>
-              {m.id} {m.tytul}, gwiazdozbiór {m.gwiazdozbior}:{' '}
-              {s?.opanowany ? 'zapalony, ze złotą gwiazdą' : s?.zapalony ? 'zapalony' : 'jeszcze nie'}
-            </li>
-          );
-        })}
-      </ul>
     </figure>
   );
 }

@@ -42,7 +42,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
   const sprawdzZapis = useOstrzezenieZapisu();
   const { postep, zastapPostep } = usePostep();
   const { fiszki, zastapFiszki } = useFiszki();
-  const { zdobyte } = useZdobyte();
+  const zdobyte = useZdobyte();
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
@@ -80,7 +80,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
           tone: 'warning',
           title: 'Kopia bez zdjęć',
           description:
-            'Nie udało się odczytać moich zdjęć, więc plik zawiera tylko checklistę, postęp i fiszki. Wczytanie tej kopii nie usunie zdjęć na innym urządzeniu.',
+            'Nie udało się odczytać moich zdjęć, więc plik zawiera wszystko oprócz nich. Wczytanie tej kopii nie usunie zdjęć na innym urządzeniu.',
           duration: null,
         });
       }
@@ -139,7 +139,8 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
       !checklistaOk && 'checklisty',
       !postepOk && 'postępu nauki',
       !fiszkiOk && 'fiszek',
-      !odznakiOk && 'gwiazdozbiorów i naszywek',
+      // A file without dates changes only a mark of mine, nothing I would miss.
+      !odznakiOk && kopia.odznaki && 'gwiazdozbiorów i naszywek',
     ].filter(Boolean);
     const wczytano = [
       `${Object.keys(kopia.checklista).length} obserwacji`,
@@ -294,7 +295,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia, postęp nauki, fiszki i moje niebo są zapisane tylko w tej przeglądarce. Co jakiś
+          Checklista, moje zdjęcia, postęp nauki, fiszki i „Moje niebo” są zapisane tylko w tej przeglądarce. Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>

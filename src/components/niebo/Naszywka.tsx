@@ -56,8 +56,11 @@ export function Naszywka({
           easing: 'ease-out',
         }),
       )
-      // Cancelled (the page closed first): nothing left to play.
-      .catch(() => {});
+      .catch((err: unknown) => {
+        // Cancelled (the page closed first): nothing left to play.
+        if (err instanceof DOMException && err.name === 'AbortError') return;
+        console.error('[Naszywka] the sewing moment failed', err);
+      });
     return zagrajGdyWidoczny(svg.current, [animacja], () => przyszyta?.(), 0.6);
     // Plays once, with what the page decided was new when it opened.
     // eslint-disable-next-line react-hooks/exhaustive-deps

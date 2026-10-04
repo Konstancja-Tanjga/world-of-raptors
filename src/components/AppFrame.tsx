@@ -5,13 +5,25 @@ import { usePathname } from 'next/navigation';
 import { useEffect, ViewTransition, type ReactNode } from 'react';
 import type { StrukturaNieba } from '@/lib/odznaki';
 import { useOstatniaLekcja } from '@/lib/ostatnia';
+import { CichaGranica } from './CichaGranica';
 import { SkipLink } from './ds';
 import { Nawigacja } from './Nawigacja';
 import { PasekModulu } from './PasekModulu';
 import { Stopka } from './Stopka';
 
-// It renders nothing and starts once the stores are read anyway, so it loads after the page is interactive.
-const StraznikOdznak = dynamic(() => import('./niebo/StraznikOdznak').then((m) => m.StraznikOdznak), { ssr: false });
+// It renders nothing and starts once the stores are read anyway, so it loads
+// after the page is interactive. If its chunk cannot load (offline, a new
+// deploy), the page goes on without it.
+const StraznikOdznak = dynamic(
+  () =>
+    import('./niebo/StraznikOdznak')
+      .then((m) => m.StraznikOdznak)
+      .catch((err: unknown) => {
+        console.error('[StraznikOdznak] could not load; nothing newly earned is recorded or announced on this visit', err);
+        return () => null;
+      }),
+  { ssr: false },
+);
 
 export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
 export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: LekcjaNawigacji[] };
@@ -19,7 +31,8 @@ export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: 
 /**
  * The frame around every page: the global navigation, the module bar on
  * module and lesson pages (the module's lessons with their state), the
- * content and the footer.
+ * content, the footer, and the "Moje niebo" watcher, which records and
+ * announces what I earn.
  *
  * Not Big Hat's AppShell: its contract keeps it for application screens and
  * says documentation pages may use `height="flow"` or "no shell at all". Even
@@ -65,7 +78,9 @@ export function AppFrame({
         </ViewTransition>
       </main>
       <Stopka />
-      <StraznikOdznak struktura={struktura} />
+      <CichaGranica nazwa="StraznikOdznak">
+        <StraznikOdznak struktura={struktura} />
+      </CichaGranica>
     </>
   );
 }

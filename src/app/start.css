@@ -245,6 +245,16 @@
   }
 }
 
+/* While the sky's canvas measures where the text is (Niebo.tsx), the text
+   stands where it rests: the canvas places constellations by it, and the
+   entrance and the scroll-away only move it for a while. Important, to beat
+   the animations; set and removed within one frame, so it never paints. */
+.niebo[data-mierzenie] .niebo__tresc,
+.niebo[data-mierzenie] .niebo__tresc > *,
+.niebo[data-mierzenie] .niebo__dol {
+  translate: none !important;
+}
+
 /* Leaving: as the sky scrolls away the words drift up and fade. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {

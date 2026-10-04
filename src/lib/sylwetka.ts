@@ -401,13 +401,16 @@ export function uprosc(punkty: P[], tolerancja: number): P[] {
  */
 export function gwiazdy(punkty: P[], ile = 12): { gwiazdy: P[]; proporcja: number } {
   const [x, y, w, h] = ramka(punkty);
+  // The simplification keeps both ends of the outline, and its last point is
+  // the head's mirrored neighbour: without dropping it, every head would have two stars.
+  const sprobuj = (tolerancja: number) => uprosc(punkty, tolerancja).slice(0, -1);
   // The count of corners jumps as the tolerance changes, so keep the closest to `ile` seen.
   let dol = 0.001;
   let gora = Math.max(w, h);
-  let najlepsze = uprosc(punkty, gora / 20);
+  let najlepsze = sprobuj(gora / 20);
   for (let i = 0; i < 40; i++) {
     const srodek = (dol + gora) / 2;
-    const proba = uprosc(punkty, srodek);
+    const proba = sprobuj(srodek);
     if (Math.abs(proba.length - ile) < Math.abs(najlepsze.length - ile)) najlepsze = proba;
     if (proba.length > ile + 1) dol = srodek;
     else if (proba.length < ile - 1) gora = srodek;

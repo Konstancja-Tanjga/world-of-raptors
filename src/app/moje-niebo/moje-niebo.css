@@ -3,6 +3,9 @@
 .moje-niebo {
   gap: var(--wor-space-section);
 }
+.moje-niebo__czekanie {
+  min-height: 100svh;
+}
 .moje-niebo__sekcja {
   display: grid;
   gap: var(--wor-space-block);
@@ -270,7 +273,7 @@
   width: min(100%, 168px);
   height: auto;
   overflow: visible;
-  filter: drop-shadow(0 6px 10px rgba(38, 29, 23, 0.18));
+  filter: drop-shadow(0 6px 10px var(--wor-cien-naszywki));
 }
 .naszywka__rysunek--pusta {
   color: var(--bh-text-primary);

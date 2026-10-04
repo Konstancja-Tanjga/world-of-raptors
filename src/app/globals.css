@@ -2355,13 +2355,3 @@ a.modul:focus-visible {
   max-width: 36rem;
   padding: var(--wor-space-block) var(--wor-gutter);
 }
-
-/* A ring's stamped word (components/niebo/Obraczka.tsx), on "Moje niebo" and species pages. */
-.obraczka__napis {
-  font-family: var(--wor-font-ui);
-  font-size: 9px;
-  font-weight: var(--bh-text-weight-heading);
-  letter-spacing: 0.6px;
-  /* Stamped into the metal; dark enough for AA on the darkest band of the silver and the gold. */
-  fill: rgba(40, 30, 20, 0.88);
-}

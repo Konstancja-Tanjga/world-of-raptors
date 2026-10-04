@@ -1,10 +1,11 @@
 /**
  * Each module's constellation: a bird that stands for the module, drawn as
- * stars at the corners of its silhouette. Twelve different birds, so the
- * night sky can hold all of them at once. content.ts draws the stars at build
- * (`gwiazdy()` in sylwetka.ts) and checks that every ready module has one and
- * every bird has a silhouette; this module needs no silhouette generator, so
- * the pages that place the stars do not bring it to the browser.
+ * stars at the corners of its silhouette. Twelve different birds, so no two
+ * look alike when the night sky shows them all. The keys are module slugs,
+ * also stored in zdobyte.ts. content.ts draws the stars at build (`gwiazdy()`
+ * in sylwetka.ts) and checks that every ready module has one and every bird
+ * has a silhouette; this module needs no silhouette generator, so placing
+ * the stars does not bring it to the browser ("Moje niebo" ships without it).
  */
 export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> = {
   'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', nazwa: 'Sokół' },
@@ -24,7 +25,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */
 export type Gwiazda = [number, number];
 
-/** A module's constellation as the pages get it: its name, its bird, and its stars (the first is the head). */
+/** A module's constellation as the pages get it: its name, its bird, and its stars (the first is the front of the head). */
 export type Gwiazdozbior = { nazwa: string; gatunek: string; gwiazdy: Gwiazda[]; proporcja: number };
 
 /**
@@ -35,16 +36,25 @@ export type Polozenie = { x: number; y: number; szer: number; obrot: number };
 
 const KOLUMNY = [0.135, 0.375, 0.625, 0.865];
 const WIERSZE = [0.19, 0.5, 0.8];
-/** Small offsets and tilts, one per module, so a grid of constellations reads as a sky rather than a table. */
+/**
+ * Small offsets (dx within ±0.01, dy within ±0.02: ukladNaNiebie relies on
+ * those bounds) and tilts, one per place, so a grid of constellations reads
+ * as a sky rather than a table.
+ */
 const DRGANIE: [number, number, number][] = [
   [0, -0.02, -10], [0.01, 0.02, 6], [-0.01, -0.01, -14], [0, 0.02, 9],
   [0.01, 0.01, 4], [0, -0.02, -8], [-0.01, 0.02, 12], [0.01, -0.01, -6],
   [0, 0.01, 8], [-0.01, -0.02, -10], [0.01, 0.02, 6], [0, -0.01, -5],
 ];
 
+/** How many constellations the "Moje niebo" map has places for (the build checks). */
+export const MIEJSCA_NA_MAPIE = KOLUMNY.length * WIERSZE.length;
+
 /**
  * The map on "Moje niebo": a loose four-by-three field in course order (A1
- * at the top left, B5 at the bottom right); the narrow version is two columns.
+ * at the top left, B5 at the bottom right); the narrow version is two
+ * columns. A thirteenth module needs another row in WIERSZE, a seventh on the
+ * narrow map and a taller WYMIARY in MapaGwiazdozbiorow.tsx.
  */
 export function polozenieNaMapie(indeks: number, waska: boolean): Polozenie {
   const [dx, dy, obrot] = DRGANIE[indeks % DRGANIE.length];
@@ -56,13 +66,13 @@ export function polozenieNaMapie(indeks: number, waska: boolean): Polozenie {
   return { x: KOLUMNY[indeks % 4] + dx, y: WIERSZE[Math.floor(indeks / 4)] + dy, szer: 0.19, obrot };
 }
 
-/** A constellation's stars placed in a field `szer` × `wys` pixels wide and high. */
+/** A constellation's stars placed in a field `szer` × `wys` pixels wide and high: [x, y] in its pixels. */
 export function gwiazdyNaNiebie(
   { gwiazdy, proporcja }: Pick<Gwiazdozbior, 'gwiazdy' | 'proporcja'>,
   p: Polozenie,
   szer: number,
   wys: number,
-): Gwiazda[] {
+): [number, number][] {
   const w = p.szer * szer;
   const h = w * proporcja;
   const kat = (p.obrot * Math.PI) / 180;
@@ -73,8 +83,8 @@ export function gwiazdyNaNiebie(
   });
 }
 
-/** A rectangle of the sky in pixels: left, top, right, bottom. */
-export type Pole = [number, number, number, number];
+/** A rectangle of the sky in pixels. */
+export type Pole = [lewo: number, gora: number, prawo: number, dol: number];
 
 const NAJWIEKSZY_OBROT = (Math.max(...DRGANIE.map(([, , o]) => Math.abs(o))) * Math.PI) / 180;
 
@@ -99,7 +109,7 @@ export function ukladNaNiebie(
   wys: number,
   { min = 44, maks = 120 } = {},
 ): Polozenie[] | null {
-  // How much wider and taller than the bird a constellation is at its steepest tilt.
+  // The box a constellation fills at its steepest tilt, in widths of its bird.
   const sin = Math.sin(NAJWIEKSZY_OBROT);
   const cos = Math.cos(NAJWIEKSZY_OBROT);
   const naSzerokosc = cos + proporcja * sin;
@@ -138,7 +148,9 @@ export function ukladNaNiebie(
         // shape as how far the cell's proportions are from the constellation's).
         const ocena = [Math.round(w), Math.round((pw * ph) / 1e4), -Math.round(Math.abs(Math.log(kw / kh / ksztalt)) * 100)];
         const roznica = najlepszy ? ocena.findIndex((v, k) => v !== najlepszy!.ocena[k]) : 0;
-        if (!najlepszy || (roznica >= 0 && ocena[roznica] > najlepszy.ocena[roznica])) najlepszy = { ocena, miejsca: miejsca.slice(0, ile) };
+        if (!najlepszy || (roznica >= 0 && ocena[roznica] > najlepszy.ocena[roznica])) {
+          najlepszy = { ocena, miejsca: miejsca.slice(0, ile) };
+        }
         break;
       }
     }

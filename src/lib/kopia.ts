@@ -20,9 +20,9 @@ import {
  * was added later, so older v2 files lack it; it is also left out when there
  * are no flashcard schedules (or they have not loaded yet), so importing such
  * a file keeps the target device's flashcards. `odznaki` ("Moje niebo": when
- * each constellation and patch was earned) came later still and is left out
- * the same way; a file without it loses only the dates, since the progress
- * earns them again. `zdjecia` is left out (not `[]`) when the photos could
+ * each constellation, gold star and patch was earned) came later still and is
+ * left out the same way; a file without it loses only the dates, since the
+ * progress earns them again. `zdjecia` is left out (not `[]`) when the photos could
  * not be read, so importing such a file keeps the photos already on the
  * target device instead of erasing them.
  * v1: a bare checklist object; still importable.

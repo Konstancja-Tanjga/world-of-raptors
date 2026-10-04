@@ -745,6 +745,13 @@
   height: 34px;
   color: var(--wor-scena-tekst);
 }
+/* A ring's stamped word (its colour is drawn with the metal, in Obraczka.tsx). */
+.obraczka__napis {
+  font-family: var(--wor-font-ui);
+  font-size: 9px;
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: 0.6px;
+}
 .obraczki-gatunku__link {
   color: var(--wor-scena-tekst-2);
   font-size: var(--bh-text-size-caption);

@@ -49,7 +49,7 @@ src/
   lib/checklist.ts         zapis checklisty w localStorage
   lib/odznaki.ts           zasady „Mojego nieba”: obrączki, gwiazdozbiory, złote gwiazdy, naszywki
   lib/gwiazdozbiory.ts     ptak każdego modułu i rozkład gwiazdozbiorów na niebie
-  lib/zdobyte.ts           daty zdobycia gwiazdozbiorów i naszywek w localStorage
+  lib/zdobyte.ts           daty zdobycia gwiazdozbiorów, złotych gwiazd i naszywek (i czy ich moment już się odegrał) w localStorage
   lib/links.ts             zamiana względnych linków Markdown na trasy aplikacji
 ```
 
@@ -70,10 +70,10 @@ src/
 
 ## Dodawanie treści
 1. Nowa lekcja: plik `content/moduly/<slug>/NN-nazwa.md` i wpis w `lekcje` w `content/moduly.json`.
-2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`. README musi mieć pod tytułem zajawkę w jednym cytacie (`> …`): pokazują ją start, plan i otwarcie modułu. Do tego wpis w `OTWARCIA_MODULOW` w `src/lib/content.ts`: gatunek i zdjęcie, którym moduł się otwiera, i wpis w `GWIAZDOZBIORY` w `src/lib/gwiazdozbiory.ts`: ptak z sylwetką i nazwa gwiazdozbioru, który moduł zapala (najlepiej ptak, którego nie ma jeszcze żaden inny gwiazdozbiór). Bez tych trzech rzeczy build się zatrzyma.
+2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`. README musi mieć pod tytułem zajawkę w jednym cytacie (`> …`): pokazują ją start, plan i otwarcie modułu. Do tego wpis w `OTWARCIA_MODULOW` w `src/lib/content.ts`: gatunek i zdjęcie, którym moduł się otwiera, i wpis w `GWIAZDOZBIORY` w `src/lib/gwiazdozbiory.ts`: ptak z sylwetką i nazwa gwiazdozbioru, który moduł zapala (najlepiej ptak, którego nie ma jeszcze żaden inny gwiazdozbiór). Bez tych trzech rzeczy build się zatrzyma. Mapa „Mojego nieba” ma dwanaście miejsc (4 × 3), więc trzynasty moduł potrzebuje też nowego rzędu w `gwiazdozbiory.ts` (build to sprawdza).
 3. Nowy gatunek: wpis w `content/gatunki.json` (`id` małymi literami z łącznikami, `grupa` jednym słowem). Build sprawdza, czy każde `mylona_z` wskazuje istniejące `id`. Potem:
    - sylwetka: wpis w `SYLWETKI` w `src/lib/sylwetki.ts` (liczby zacznij od grupy, do której należy, i porównaj rysunek ze zdjęciem z lotu), a dla ptaka dziennego także `STYL_LOTU`, czyli sposób lotu na fiszce i na karcie gatunku. Bez nich build się zatrzyma;
-   - lekcja, która go uczy: nagłówek `### Nazwa — *Rodzaj gatunek*` (plansza) albo przynajmniej wzmianka z łacińską nazwą kursywą. Od niej zależy obrączka „Znam” w „Moim niebie”, więc build zatrzyma się na gatunku, którego żadna lekcja nie uczy ani nie wymienia;
+   - lekcja, która go uczy: nagłówek `### Nazwa — *Rodzaj gatunek*` (plansza) albo przynajmniej wzmianka z łacińską nazwą kursywą. Od niej zależy obrączka „Znam” w „Moim niebie”, więc build zatrzyma się na gatunku, którego żadna lekcja nie uczy ani nie wymienia. Łacińska nazwa kursywą decyduje też o złotej gwieździe: w module bez plansz każdy gatunek tak nazwany trafia na listę, którą trzeba rozpoznać;
    - zdjęcia: wpis w `content/zdjecia.json` z polem `fokus` (`[x, y]` w procentach: głowa ptaka siedzącego, środek ptaka w locie), a potem `python3 scripts/commons.py rozmiary`, które dopisze rozmiar oryginału (`oryginal`). Opcjonalne trzecie zdjęcie `cecha` (cecha do rozpoznania: druga płeć, młody ptak, odmiana) ma dodatkowo pola `podpis` i `alt`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
 5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo ciekawostka ma być zrozumiała sama, a jedyną drogą dalej jest „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
@@ -92,10 +92,10 @@ src/
 
 ## Moje niebo
 Kolekcja liczona z tego, co przeglądarka już ma (ukończone lekcje, fiszki, checklista). Nic się w niej nie blokuje: każdy moduł jest zawsze otwarty.
-- **Obrączki gatunku:** „Znam” (ukończona lekcja, która go uczy: z jego planszą, a gdy żadna jej nie ma, która go wymienia), „Rozpoznaję” (wszystkie jego fiszki zapamiętane, czyli w powtórkach FSRS z odstępem co najmniej tygodnia) i złota „Widziałam” (gatunek jest na checkliście). Gatunki, które widziałam, są złote także w atlasie, na checkliście i w kolekcji na starcie, a na karcie gatunku mają złotą obrączkę.
-- **Gwiazdozbiory:** zaliczony moduł (wszystkie lekcje ukończone) zapala swój gwiazdozbiór, czyli ptaka z `GWIAZDOZBIORY` narysowanego gwiazdami w narożnikach jego sylwetki. Złota gwiazda przychodzi, kiedy rozpoznaję gatunki modułu (te z planszami w jego lekcjach, a w B1 ptaki ośmiu grup). Nocą zapalone gwiazdozbiory świecą też na niebie startu, w części nieba wolnej od tekstu.
+- **Obrączki gatunku:** „Znam” (ukończona lekcja, która go uczy: z jego planszą, a gdy żadna jej nie ma, która go wymienia), „Rozpoznaję” (wszystkie jego fiszki zapamiętane, czyli w powtórkach FSRS z odstępem co najmniej tygodnia i powtórzone innego dnia niż pierwsza odpowiedź, więc jedno szczęśliwe „Od razu” nie wystarcza) i złota „Widziałam” (gatunek jest na checkliście). Gatunki, które widziałam, są złote także w atlasie, na checkliście i w kolekcji na starcie, a na karcie gatunku mają złotą obrączkę.
+- **Gwiazdozbiory:** zaliczony moduł (wszystkie lekcje ukończone) zapala swój gwiazdozbiór, czyli ptaka z `GWIAZDOZBIORY` narysowanego gwiazdami w narożnikach jego sylwetki. Złota gwiazda przychodzi, kiedy moduł jest zaliczony i rozpoznaję jego gatunki: te z planszami w jego lekcjach, a gdy moduł nie ma plansz (A1–A7), te, które jego lekcje wymieniają łacińską nazwą kursywą; B1 uczy ośmiu grup sylwetek, więc prosi o ich ptaki. Nocą zapalone gwiazdozbiory świecą też na niebie startu, w części nieba wolnej od tekstu.
 - **Naszywki:** dwanaście, za umiejętności; zasady i postęp każdej są w `NASZYWKI` w `src/lib/odznaki.ts`.
-- **Co zdobyte, zostaje:** data zdobycia gwiazdozbioru, złotej gwiazdy i naszywki jest zapisana (`wor:odznaki:v1`), więc nie znika, gdy później coś zapomnę. Nowe ogłasza komunikat na stronie, na której je zdobyłam, a „Moje niebo” raz odgrywa ich moment, kiedy się na nim pojawią. Pierwsza wizyta pokazuje tak wszystko, co było zdobyte wcześniej. Kopia zapasowa zawiera te daty.
+- **Co zdobyte, zostaje:** data zdobycia gwiazdozbioru, złotej gwiazdy i naszywki jest zapisana (`wor:odznaki:v1`), więc nie znika, gdy później coś zapomnę. Nowe ogłasza komunikat na stronie, na której je zdobyłam (poza pierwszym uruchomieniem i wczytaniem kopii: wtedy zapisuje je bez komunikatów), a „Moje niebo” raz odgrywa ich moment, kiedy się na nim pojawią. Pierwsza wizyta pokazuje tak wszystko, co było zdobyte wcześniej. Kopia zapasowa zawiera te daty.
 
 ## Uruchamianie
 ```bash

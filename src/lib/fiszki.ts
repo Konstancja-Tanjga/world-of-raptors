@@ -3,18 +3,21 @@
 import { useCallback } from 'react';
 import type { State } from 'ts-fsrs';
 import { utworzMagazyn } from './magazyn';
+import { STAN_KARTY } from './types';
 
 /*
  * The flashcard schedules as stored. The scheduler that writes them is in
  * planFiszek.ts: this module imports nothing from ts-fsrs but its types, so
- * pages that only read the schedules ("Moje niebo" reads them on every page)
- * do not bring the scheduler with them.
+ * pages that only read the schedules (the "Moje niebo" watcher,
+ * StraznikOdznak, reads them on every page) do not bring the scheduler with
+ * them.
  */
 
 /**
  * One flashcard's schedule as stored: the FSRS card with its dates as ISO
- * strings (turned back into `Date`s by `kartaFsrs`), plus the local date of
- * the card's first answer, which caps how many new cards a day brings.
+ * strings (turned back into `Date`s by `kartaFsrs` in planFiszek.ts), plus
+ * the local date of the card's first answer, which caps how many new cards a
+ * day brings.
  */
 export type ZapisFiszki = {
   due: string;
@@ -33,13 +36,6 @@ export type ZapisFiszki = {
 
 /** Flashcards that have been answered at least once, keyed by card id. A card with no entry is new. */
 export type Fiszki = Record<string, ZapisFiszki>;
-
-/**
- * ts-fsrs's card states as stored with each card (State.Learning, State.Review
- * and State.Relearning; New is never stored). Spelled out because the enum
- * itself is a value of the scheduler's module.
- */
-export const STAN_KARTY = { nauka: 1 as State.Learning, powtorki: 2 as State.Review, ponowna: 3 as State.Relearning };
 
 const LICZBY = ['stability', 'difficulty', 'elapsed_days', 'scheduled_days', 'learning_steps', 'reps', 'lapses'];
 const DATA_LOKALNA = /^\d{4}-\d{2}-\d{2}$/;
