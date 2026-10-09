@@ -6,6 +6,7 @@ import '../atlas.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
 import { CuesTable } from '@/components/CuesTable';
 import { Breadcrumbs } from '@/components/ds';
+import { PtakMokradelStrona } from '@/components/gatunek/PtakMokradelStrona';
 import { PlanszaGatunku } from '@/components/gatunek/PlanszaGatunku';
 import { Porownanie } from '@/components/gatunek/Porownanie';
 import { Miarka } from '@/components/Miarka';
@@ -14,7 +15,17 @@ import { ScenaSylwetki } from '@/components/ScenaSylwetki';
 import { CECHY_DZIENNE, CECHY_NOCNE } from '@/components/SpeciesCues';
 import { ObraczkiGatunku } from '@/components/niebo/ObraczkiGatunku';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
-import { ciekawostkiDla, gatunki, modulyGatunku, stronaMorfu, strukturaNieba, zdjecia, znajdzGatunek } from '@/lib/content';
+import {
+  ciekawostkiDla,
+  modulyGatunku,
+  modulyMiejsc,
+  ptakiNaLiscie,
+  stronaMorfu,
+  strukturaNieba,
+  zdjecia,
+  znajdzGatunek,
+  znajdzInnegoPtaka,
+} from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { REGIONY, STATUS_LABEL, type Gatunek } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
@@ -22,19 +33,25 @@ import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return gatunki.map((g) => ({ id: g.id }));
+  return ptakiNaLiscie.map((p) => ({ id: p.id }));
 }
 
 export async function generateMetadata({ params }: PageProps<'/gatunki/[id]'>): Promise<Metadata> {
   const { id } = await params;
   const g = znajdzGatunek(id);
-  return { title: g?.pl, description: g ? `${g.pl} (${g.lat}): sylwetka, cechy, podobne gatunki i zdjęcia.` : undefined };
+  if (g) return { title: g.pl, description: `${g.pl} (${g.lat}): sylwetka, cechy, podobne gatunki i zdjęcia.` };
+  const p = znajdzInnegoPtaka(id);
+  return p ? { title: p.pl, description: `${p.pl} (${p.lat}): na co patrzeć w terenie.` } : {};
 }
 
 export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>) {
   const { id } = await params;
   const g = znajdzGatunek(id);
-  if (!g) notFound();
+  if (!g) {
+    const p = znajdzInnegoPtaka(id);
+    if (!p) notFound();
+    return <PtakMokradelStrona p={p} z={zdjecia[p.id]} moduly={modulyMiejsc(p.miejsca)} />;
+  }
 
   const nocny = g.aktywnosc === 'nocny';
   // This species as "Moje niebo" counts it, for its rings.

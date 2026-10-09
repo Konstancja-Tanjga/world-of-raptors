@@ -2355,3 +2355,25 @@ a.modul:focus-visible {
   max-width: 36rem;
   padding: var(--wor-space-block) var(--wor-gutter);
 }
+
+/* A site's field list, group by group: "Siewkowe 3 z 14". */
+.checklist__podsumowanie {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: var(--bh-gap-snug) var(--bh-gap-loose);
+  font-size: var(--bh-text-size-body);
+}
+.checklist__podsumowanie li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug);
+  padding-block: var(--bh-gap-snug);
+  border-bottom: 1px solid var(--wor-linia);
+}
+.checklist__podsumowanie [data-komplet] .checklist__licznik {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-emphasis);
+}

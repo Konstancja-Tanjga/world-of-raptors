@@ -1,7 +1,7 @@
 /**
  * Each module's constellation: a bird that stands for the module, drawn as
- * stars at the corners of its silhouette. Twelve different birds, so no two
- * look alike when the night sky shows them all. The keys are module slugs,
+ * stars at the corners of its silhouette. A different bird for each, so no two
+ * look alike when the night sky shows them all (the build checks). The keys are module slugs,
  * also stored in zdobyte.ts. content.ts draws the stars at build (`gwiazdy()`
  * in sylwetka.ts) and checks that every ready module has one and every bird
  * has a silhouette; this module needs no silhouette generator, so placing
@@ -20,6 +20,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },
   'poludnie-hiszpanii': { gatunek: 'orzel-iberyjski', nazwa: 'Orzeł iberyjski' },
   sowy: { gatunek: 'puchacz', nazwa: 'Puchacz' },
+  barbate: { gatunek: 'rybolow', nazwa: 'Rybołów' },
 };
 
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */
@@ -35,7 +36,8 @@ export type Gwiazdozbior = { nazwa: string; gatunek: string; gwiazdy: Gwiazda[];
 export type Polozenie = { x: number; y: number; szer: number; obrot: number };
 
 const KOLUMNY = [0.135, 0.375, 0.625, 0.865];
-const WIERSZE = [0.19, 0.5, 0.8];
+/** The most rows the wide map takes; the narrow map has twice as many. */
+const NAJWIECEJ_WIERSZY = 4;
 /**
  * Small offsets (dx within ±0.01, dy within ±0.02: ukladNaNiebie relies on
  * those bounds) and tilts, one per place, so a grid of constellations reads
@@ -45,25 +47,33 @@ const DRGANIE: [number, number, number][] = [
   [0, -0.02, -10], [0.01, 0.02, 6], [-0.01, -0.01, -14], [0, 0.02, 9],
   [0.01, 0.01, 4], [0, -0.02, -8], [-0.01, 0.02, 12], [0.01, -0.01, -6],
   [0, 0.01, 8], [-0.01, -0.02, -10], [0.01, 0.02, 6], [0, -0.01, -5],
+  [-0.01, 0.01, 10], [0.01, -0.02, -7], [0, 0.02, 5], [-0.01, -0.01, -12],
 ];
 
 /** How many constellations the "Moje niebo" map has places for (the build checks). */
-export const MIEJSCA_NA_MAPIE = KOLUMNY.length * WIERSZE.length;
+export const MIEJSCA_NA_MAPIE = KOLUMNY.length * NAJWIECEJ_WIERSZY;
+
+/** How many rows the map has for `ile` modules: four to a row on the wide map, two on the narrow one. */
+export const wierszeMapy = (ile: number, waska: boolean) => Math.ceil(ile / (waska ? 2 : KOLUMNY.length));
 
 /**
- * The map on "Moje niebo": a loose four-by-three field in course order (A1
- * at the top left, B5 at the bottom right); the narrow version is two
- * columns. A thirteenth module needs another row in WIERSZE, a seventh on the
- * narrow map and a taller WYMIARY in MapaGwiazdozbiorow.tsx.
+ * The map on "Moje niebo": a loose field four wide in course order (A1 at
+ * the top left), as many rows as the modules need; the narrow version is two
+ * columns. MapaGwiazdozbiorow.tsx makes the map taller by a row's height for
+ * each row.
  */
-export function polozenieNaMapie(indeks: number, waska: boolean): Polozenie {
+export function polozenieNaMapie(indeks: number, waska: boolean, ile: number): Polozenie {
   const [dx, dy, obrot] = DRGANIE[indeks % DRGANIE.length];
+  const wiersze = wierszeMapy(ile, waska);
   if (waska) {
     const kolumna = indeks % 2;
     const wiersz = Math.floor(indeks / 2);
-    return { x: (kolumna ? 0.72 : 0.28) + dx, y: (wiersz + 0.45) / 6 + dy / 3, szer: 0.36, obrot };
+    return { x: (kolumna ? 0.72 : 0.28) + dx, y: (wiersz + 0.45) / wiersze + (dy * 2) / wiersze, szer: 0.36, obrot };
   }
-  return { x: KOLUMNY[indeks % 4] + dx, y: WIERSZE[Math.floor(indeks / 4)] + dy, szer: 0.19, obrot };
+  // Rows 0.31 of the map apart when there are three (0.19, 0.5, 0.81), closer as there are more.
+  const odstep = 0.93 / wiersze;
+  const wiersz = Math.floor(indeks / KOLUMNY.length);
+  return { x: KOLUMNY[indeks % KOLUMNY.length] + dx, y: 0.5 + (wiersz - (wiersze - 1) / 2) * odstep + (dy * 3) / wiersze, szer: 0.19, obrot };
 }
 
 /** A constellation's stars placed in a field `szer` × `wys` pixels wide and high: [x, y] in its pixels. */

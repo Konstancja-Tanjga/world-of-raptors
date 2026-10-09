@@ -6,8 +6,8 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 42 gatunki | 12 modułów | 60 lekcji | 122 pytania w quizach | 282 fiszki | 329 zdjęć |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| 42 drapieżniki | 34 ptaki mokradeł | 13 modułów | 65 lekcji | 132 pytania w quizach | 282 fiszki | 363 zdjęcia |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
 
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki, dwanaście modułów, w każdym pięć lekcji:
+Dwie ścieżki, trzynaście modułów, w każdym pięć lekcji:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -28,7 +28,7 @@ Dwie ścieżki, dwanaście modułów, w każdym pięć lekcji:
 | A3&nbsp;[Polowanie i ekologia](content/moduly/polowanie-i-ekologia/README.md) | B3&nbsp;[Cieśnina Gibraltarska](content/moduly/gibraltar/README.md) |
 | A4&nbsp;[Rozród i życie rodzinne](content/moduly/rozrod/README.md) | B4&nbsp;[Ptaki drapieżne południa Hiszpanii](content/moduly/poludnie-hiszpanii/README.md) |
 | A5&nbsp;[Wędrówki](content/moduly/wedrowki/README.md) | B5&nbsp;[Sowy, drapieżniki nocne](content/moduly/sowy/README.md) |
-| A6&nbsp;[Ochrona](content/moduly/ochrona/README.md) | |
+| A6&nbsp;[Ochrona](content/moduly/ochrona/README.md) | B6&nbsp;[Marismas del Barbate, początek października](content/moduly/barbate/README.md) |
 | A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | |
 
 <table>
@@ -52,6 +52,8 @@ Lekcja to artykuł ze spisem treści, czasem czytania i marginesem na zdjęcia i
 </picture>
 
 42 gatunki: 32 drapieżniki dzienne i 10 sów. Atlas pokazuje je na zdjęciach, jako sylwetki w grupach (tych z modułu B1, do tego sowy) albo wszystkie w jednej skali. Gatunki, które widziałam, są oznaczone złotem.
+
+Do tego 34 ptaki mokradeł z karty terenowej Marismas del Barbate (moduł B6): czaple, siewkowe, mewy, rybitwy, ptaki zarośli i ibis grzywiasty. Atlas pokazuje je po wybraniu „Ptaki mokradeł” albo miejsca „Marismas del Barbate”, tylko na zdjęciach, bo sylwetki i skala są dla drapieżników. Na checkliście karta terenowa liczy postęp, np. „17 z 42”, także w każdej grupie, a za obserwacje są naszywki w „Moim niebie”.
 
 <img src="docs/readme/gatunek.webp" width="100%" alt="Karta kani rudej: zdjęcie w locie, nazwa polska, łacińska, angielska i hiszpańska, status i obrączki">
 

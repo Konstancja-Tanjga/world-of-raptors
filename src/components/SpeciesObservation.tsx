@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useChecklista } from '@/lib/checklist';
+import { jestWidziany, useChecklista } from '@/lib/checklist';
 import { Card, Checkbox, StateBlock } from './ds';
 import { OwnPhotos } from './OwnPhotos';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
@@ -13,7 +13,7 @@ export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string })
 
   if (!lista) return <StateBlock state="loading" title="Wczytywanie checklisty" scope="inline" />;
 
-  const obs = lista[id];
+  const obs = jestWidziany(lista, id) ? lista[id] : undefined;
   return (
     <Card padding="snug" accent={obs ? 'success' : 'none'}>
       <div className="checklist__row">

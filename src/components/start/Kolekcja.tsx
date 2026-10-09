@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { useChecklista } from '@/lib/checklist';
+import { jestWidziany, useChecklista } from '@/lib/checklist';
 import { odmiana } from '@/lib/odmiana';
 
 export type PozycjaKolekcji = { id: string; pl: string; sylwetka: ReactNode };
@@ -14,7 +14,7 @@ export type PozycjaKolekcji = { id: string; pl: string; sylwetka: ReactNode };
  */
 export function Kolekcja({ gatunki }: { gatunki: PozycjaKolekcji[] }) {
   const { lista } = useChecklista();
-  const widziane = lista ? gatunki.filter((g) => lista[g.id]).length : null;
+  const widziane = lista ? gatunki.filter((g) => jestWidziany(lista, g.id)).length : null;
 
   return (
     <section className="kolekcja" aria-labelledby="kolekcja-tytul">
@@ -44,7 +44,7 @@ export function Kolekcja({ gatunki }: { gatunki: PozycjaKolekcji[] }) {
       </header>
       <ul className="kolekcja__siatka">
         {gatunki.map((g) => {
-          const widziany = Boolean(lista?.[g.id]);
+          const widziany = lista ? jestWidziany(lista, g.id) : false;
           return (
             <li key={g.id} data-widziany={widziany ? '' : undefined}>
               <Link href={`/gatunki/${g.id}`} className="kolekcja__gatunek">

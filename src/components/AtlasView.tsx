@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { useState, ViewTransition } from 'react';
-import { useChecklista } from '@/lib/checklist';
-import type { Gatunek, Zdjecie } from '@/lib/types';
+import { jestWidziany, useChecklista } from '@/lib/checklist';
+import type { Gatunek, PtakNaLiscie, Zdjecie } from '@/lib/types';
 import { polozenie } from '@/lib/zdjecia';
 import { Button, SegmentedControl, StateBlock } from './ds';
-import { PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { PUSTE_FILTRY, SpeciesFilters, useFiltry, type Filtry } from './SpeciesFilters';
 import { Sylwetka } from './Sylwetka';
 
 type Widok = 'zdjecia' | 'sylwetki' | 'skala';
@@ -47,22 +47,35 @@ function grupaSylwetki(g: Gatunek) {
 }
 
 /**
- * The atlas: every species, filtered by region, activity and name, seen three
+ * The atlas: every raptor, filtered by region, activity and name, seen three
  * ways. Photos (as in a field guide's index), silhouettes grouped the way B1
  * teaches, and all silhouettes at true relative size, from the pygmy owl to
- * the cinereous vulture, next to a person's outstretched arms.
+ * the cinereous vulture, next to a person's outstretched arms. Birds of marshes
+ * (a site's field list) are shown on request, in the photos only: the
+ * silhouettes and the scale are drawn for raptors.
  */
-export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatury: Record<string, Zdjecie | null> }) {
-  const { filtry, setFiltry, wynik } = useFiltry(gatunki);
+export function AtlasView({
+  ptaki,
+  gatunki,
+  miniatury,
+}: {
+  ptaki: PtakNaLiscie[];
+  gatunki: Gatunek[];
+  miniatury: Record<string, Zdjecie | null>;
+}) {
+  const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
   const { lista } = useChecklista();
   const [widok, setWidok] = useState<Widok>('zdjecia');
   const maks = Math.max(...gatunki.map((g) => g.rozpietosc_cm[1]));
+  const poId = new Map(gatunki.map((g) => [g.id, g]));
+  const drapiezne = wynik.flatMap((p) => poId.get(p.id) ?? []);
+  const zMokradlami = drapiezne.length < wynik.length;
 
   const pusto = (
     <StateBlock
       state="empty"
       title="Brak gatunków w tym filtrze"
-      description="Zmień region, aktywność albo wpisaną nazwę."
+      description={opisPustego(filtry)}
       action={
         <Button
           size="sm"
@@ -80,7 +93,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
     />
   );
 
-  const widziany = (id: string) => Boolean(lista?.[id]);
+  const widziany = (id: string) => (lista ? jestWidziany(lista, id) : false);
 
   return (
     <div className="atlas">
@@ -101,7 +114,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
             />
           </div>
           <p className="atlas__licznik" aria-live="polite">
-            Gatunki: {wynik.length} z {gatunki.length}
+            Gatunki: {wynik.length} z {zakres.length}
           </p>
         </div>
       </div>
@@ -112,6 +125,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
         <ul className="atlas__karty">
           {wynik.map((g) => {
             const z = miniatury[g.id];
+            const drapiezny = g.kategoria === 'drapiezne';
             return (
               <li key={g.id}>
                 <Link href={`/gatunki/${g.id}`} className="karta-gatunku" data-widziany={widziany(g.id) ? '' : undefined}>
@@ -119,8 +133,10 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                     {z ? (
                       // eslint-disable-next-line @next/next/no-img-element -- a Commons thumbnail, already sized
                       <img src={z.src} alt="" loading="lazy" decoding="async" style={{ objectPosition: polozenie(z) }} />
-                    ) : (
+                    ) : drapiezny ? (
                       <Sylwetka id={g.id} klasa="karta-gatunku__zastepcza" />
+                    ) : (
+                      <span className="karta-gatunku__brak">Bez zdjęcia</span>
                     )}
                   </span>
                   <span className="karta-gatunku__opis">
@@ -130,7 +146,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
                     <span className="karta-gatunku__lacina">{g.lat}</span>
                     <span className="karta-gatunku__meta">
                       {g.grupa}
-                      {g.status.includes('rzadki') && <span className="karta-gatunku__znacznik">rzadki</span>}
+                      {g.rzadki && <span className="karta-gatunku__znacznik">rzadki</span>}
                       {widziany(g.id) && <span className="karta-gatunku__znacznik karta-gatunku__znacznik--widziany">zaobserwowany</span>}
                     </span>
                   </span>
@@ -139,10 +155,23 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
             );
           })}
         </ul>
+      ) : drapiezne.length === 0 ? (
+        <StateBlock
+          state="empty"
+          title="Ten widok jest tylko dla drapieżników"
+          description="Sylwetki i skala są narysowane dla ptaków drapieżnych. Ptaki mokradeł zobaczysz w widoku „Zdjęcia”."
+          action={
+            <Button size="sm" variant="secondary" onClick={() => setWidok('zdjecia')}>
+              Pokaż zdjęcia
+            </Button>
+          }
+          scope="section"
+        />
       ) : widok === 'sylwetki' ? (
         <div className="atlas__plansze">
+          {zMokradlami && <p className="atlas__uwaga">Sylwetki są tylko dla drapieżników. Ptaki mokradeł są w widoku „Zdjęcia”.</p>}
           {KOLEJNOSC_GRUP.map((grupa) => {
-            const wGrupie = wynik.filter((g) => grupaSylwetki(g) === grupa);
+            const wGrupie = drapiezne.filter((g) => grupaSylwetki(g) === grupa);
             if (wGrupie.length === 0) return null;
             return (
               <section key={grupa} className="plansza-grupy" aria-labelledby={`grupa-${grupa}`}>
@@ -172,6 +201,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
           <p className="skala__opis">
             Każda sylwetka w tej samej skali: szerokość pola to {maks} cm, rozpiętość skrzydeł największego ptaka w atlasie.
             Najmniejsze sowy mają około jednej ósmej tego.
+            {zMokradlami && ' Skala jest tylko dla drapieżników; ptaki mokradeł są w widoku „Zdjęcia”.'}
           </p>
           <ul className="skala__lista">
             <li className="skala__czlowiek">
@@ -181,7 +211,7 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
               <span className="skala__nazwa">Rozłożone ręce człowieka</span>
               <span className="skala__cm">ok. {CZLOWIEK_CM} cm</span>
             </li>
-            {[...wynik]
+            {[...drapiezne]
               .sort((a, b) => b.rozpietosc_cm[1] - a.rozpietosc_cm[1])
               .map((g) => (
                 <li key={g.id}>
@@ -204,4 +234,13 @@ export function AtlasView({ gatunki, miniatury }: { gatunki: Gatunek[]; miniatur
       )}
     </div>
   );
+}
+
+/** What to change when nothing is left: only what the list actually filters by. */
+function opisPustego(f: Filtry) {
+  if (f.ptaki === 'ptaki-mokradel') return 'Zmień miejsce albo wpisaną nazwę.';
+  if (f.ptaki === 'wszystkie' && (f.regiony.length || f.aktywnosc.length)) {
+    return 'Region i aktywność dotyczą tylko drapieżników. Zmień je, miejsce albo wpisaną nazwę.';
+  }
+  return 'Zmień region, aktywność, miejsce albo wpisaną nazwę.';
 }

@@ -27,7 +27,8 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 content/
   PLAN-KURSU.md            plan kursu
   moduly.json              ścieżki, moduły, lekcje (kolejność i tytuły)
-  gatunki.json             atlas: 42 gatunki (regiony, aktywność, cechy, pary do pomylenia)
+  gatunki.json             atlas: 42 drapieżniki (regiony, aktywność, cechy, pary do pomylenia, miejsca)
+  ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami (grupa „Ptaki mokradeł”): nazwy, grupa, cechy, miejsca
   moduly/<slug>/README.md  opis modułu
   moduly/<slug>/NN-*.md    lekcje
   zdjecia.json             zdjęcia gatunków, prawie wszystkie z Commons (autor, licencja, rozmiar oryginału, punkt ostrości)
@@ -46,7 +47,9 @@ src/
   lib/sylwetki.ts          liczby, pozy i sposób lotu każdego gatunku
   lib/zdjecia.ts           rozmiary miniatur z Commons i kadrowanie po punkcie ostrości
   lib/niebo.ts             wysokość słońca nad Warszawą i pora dnia
-  lib/checklist.ts         zapis checklisty w localStorage
+  lib/magazyn.ts           warstwa zapisu: adapter (dziś localStorage), wersjonowane klucze, migracja ze starszej wersji
+  lib/obserwacje.ts        schemat checklisty v2 (widziany, data, miejsce, notatka, zmieniono) i migracja z v1
+  lib/checklist.ts         zapis checklisty (klucz wor:checklista:v2)
   lib/odznaki.ts           zasady „Mojego nieba”: obrączki, gwiazdozbiory, złote gwiazdy, naszywki
   lib/gwiazdozbiory.ts     ptak każdego modułu i rozkład gwiazdozbiorów na niebie
   lib/zdobyte.ts           daty zdobycia gwiazdozbiorów, złotych gwiazd i naszywek (i czy ich moment już się odegrał) w localStorage
@@ -70,11 +73,13 @@ src/
 
 ## Dodawanie treści
 1. Nowa lekcja: plik `content/moduly/<slug>/NN-nazwa.md` i wpis w `lekcje` w `content/moduly.json`.
-2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`. README musi mieć pod tytułem zajawkę w jednym cytacie (`> …`): pokazują ją start, plan i otwarcie modułu. Do tego wpis w `OTWARCIA_MODULOW` w `src/lib/content.ts`: gatunek i zdjęcie, którym moduł się otwiera, i wpis w `GWIAZDOZBIORY` w `src/lib/gwiazdozbiory.ts`: ptak z sylwetką i nazwa gwiazdozbioru, który moduł zapala (najlepiej ptak, którego nie ma jeszcze żaden inny gwiazdozbiór). Bez tych trzech rzeczy build się zatrzyma. Mapa „Mojego nieba” ma dwanaście miejsc (4 × 3), więc trzynasty moduł potrzebuje też nowego rzędu w `gwiazdozbiory.ts` (build to sprawdza).
+2. Nowy moduł: folder z `README.md` i lekcjami oraz ustawienie `slug`, `gotowy: true` i `lekcje` w `moduly.json`. README musi mieć pod tytułem zajawkę w jednym cytacie (`> …`): pokazują ją start, plan i otwarcie modułu. Do tego wpis w `OTWARCIA_MODULOW` w `src/lib/content.ts`: gatunek i zdjęcie, którym moduł się otwiera, i wpis w `GWIAZDOZBIORY` w `src/lib/gwiazdozbiory.ts`: ptak z sylwetką i nazwa gwiazdozbioru, który moduł zapala (najlepiej ptak, którego nie ma jeszcze żaden inny gwiazdozbiór). Bez tych trzech rzeczy build się zatrzyma. Mapa „Mojego nieba” ma cztery kolumny i tyle rzędów, ile trzeba (najwyżej cztery, czyli 16 modułów; build to sprawdza).
 3. Nowy gatunek: wpis w `content/gatunki.json` (`id` małymi literami z łącznikami, `grupa` jednym słowem). Build sprawdza, czy każde `mylona_z` wskazuje istniejące `id`. Potem:
    - sylwetka: wpis w `SYLWETKI` w `src/lib/sylwetki.ts` (liczby zacznij od grupy, do której należy, i porównaj rysunek ze zdjęciem z lotu), a dla ptaka dziennego także `STYL_LOTU`, czyli sposób lotu na fiszce i na karcie gatunku. Bez nich build się zatrzyma;
    - lekcja, która go uczy: nagłówek `### Nazwa — *Rodzaj gatunek*` (plansza) albo przynajmniej wzmianka z łacińską nazwą kursywą. Od niej zależy obrączka „Znam” w „Moim niebie”, więc build zatrzyma się na gatunku, którego żadna lekcja nie uczy ani nie wymienia. Łacińska nazwa kursywą decyduje też o złotej gwieździe: w module bez plansz każdy gatunek tak nazwany trafia na listę, którą trzeba rozpoznać;
    - zdjęcia: wpis w `content/zdjecia.json` z polem `fokus` (`[x, y]` w procentach: głowa ptaka siedzącego, środek ptaka w locie), a potem `python3 scripts/commons.py rozmiary`, które dopisze rozmiar oryginału (`oryginal`). Opcjonalne trzecie zdjęcie `cecha` (cecha do rozpoznania: druga płeć, młody ptak, odmiana) ma dodatkowo pola `podpis` i `alt`.
+
+   Ptak mokradeł (gatunek z listy terenowej, który nie jest drapieżnikiem): wpis w `content/ptaki-mokradel.json` (`grupa` z `GRUPY_MOKRADEL` w `types.ts`, `cechy` to jedno lub dwa krótkie zdania, `miejsca`). Nie potrzebuje sylwetki ani lekcji z planszą; zdjęcie dodaj do `zdjecia.json` tak jak drapieżnikowi. Gdy czegoś nie jesteś pewna, wpisz to w pole `todo` (`next dev` wypisze listę). Drapieżnik, który już jest w atlasie, nie dostaje drugiego wpisu, tylko miejsce w `miejsca`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
 5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo ciekawostka ma być zrozumiała sama, a jedyną drogą dalej jest „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
 6. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:
@@ -103,6 +108,7 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build    # build produkcyjny, tak jak na Vercel
 npm run lint
+npm test         # testy migracji zapisu, kopii zapasowej i odznak (node --test, bez dodatkowych pakietów)
 ```
 
 ## Deploy
@@ -114,7 +120,7 @@ npm run lint
 Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten ją otworzy. Jeśli ma być zamknięta: prosta blokada hasłem (HTTP Basic Auth) w `src/proxy.ts` (w Next.js 16 plik `middleware` nazywa się `proxy`), z hasłem w zmiennej środowiskowej na Vercel.
 
 ## Etapy
-1. Gotowe: **MVP:** moduły A1–A7 i B1–B5, atlas gatunków, checklista, deploy.
+1. Gotowe: **MVP:** moduły A1–A7 i B1–B6, atlas gatunków, checklista, deploy.
 2. Zdjęcia i nagrania na licencjach CC (Wikimedia Commons, xeno-canto) z autorem i licencją przy każdym pliku.
 3. Gotowe: quiz krok po kroku w lekcjach z ćwiczeniami na końcu każdego modułu i fiszki (zdjęcia, sylwetki w locie i nazwy w trzech językach) z powtórkami rozłożonymi w czasie (`ts-fsrs`, `/fiszki`).
 4. Mapa punktów obserwacyjnych (Leaflet + OpenStreetMap), quiz „porównaj”, „wirtualny punkt obserwacyjny”.

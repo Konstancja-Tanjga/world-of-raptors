@@ -2,53 +2,42 @@
 
 import { useCallback } from 'react';
 import { dzisiaj, utworzMagazyn } from './magazyn';
+import {
+  checklistaZDowolnej,
+  isChecklista,
+  przelaczObserwacje,
+  zmienObserwacje,
+  type Checklista,
+  type ZmianaObserwacji,
+} from './obserwacje';
 
 export { dzisiaj };
+export { jestWidziany, widziane, type Checklista, type Obserwacja } from './obserwacje';
 
-/** One observed species. Presence of the key is what marks it as seen. */
-export type Obserwacja = {
-  /** Local date (YYYY-MM-DD) of the first observation. */
-  data?: string;
-  miejsce?: string;
-  notatka?: string;
-};
+const teraz = () => new Date().toISOString();
 
-export type Checklista = Record<string, Obserwacja>;
-
-export function isChecklista(value: unknown): value is Checklista {
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false;
-  return Object.values(value).every(
-    (o) =>
-      typeof o === 'object' &&
-      o !== null &&
-      ['data', 'miejsce', 'notatka'].every(
-        (k) => (o as Record<string, unknown>)[k] === undefined || typeof (o as Record<string, unknown>)[k] === 'string',
-      ),
-  );
-}
-
-const magazyn = utworzMagazyn<Checklista>('wor:checklista:v1', isChecklista);
+const magazyn = utworzMagazyn<Checklista>('wor:checklista:v2', isChecklista, {
+  poprzednia: { klucz: 'wor:checklista:v1', migruj: (stare) => checklistaZDowolnej(stare, teraz()) },
+});
 
 /**
- * The checklist lives in localStorage. `lista` is `null` until the browser
- * copy has been read, so the server render and first paint show a loading
- * state rather than an empty list that then fills in. Every change returns
- * whether it was actually saved.
+ * The checklist store (schema and rules: obserwacje.ts). `lista` is `null`
+ * until the browser copy has been read, so the server render and first paint
+ * show a loading state rather than an empty list that then fills in. Every
+ * change returns whether it was actually saved.
  */
 export function useChecklista() {
   const lista = magazyn.useMagazyn();
 
-  const przelacz = useCallback((id: string) => {
-    const current = { ...magazyn.odczytaj() };
-    if (current[id]) delete current[id];
-    else current[id] = { data: dzisiaj() };
-    return magazyn.zapisz(current);
-  }, []);
+  const przelacz = useCallback(
+    (id: string) => magazyn.zapisz(przelaczObserwacje(magazyn.odczytaj(), id, dzisiaj(), teraz())),
+    [],
+  );
 
-  const aktualizuj = useCallback((id: string, patch: Obserwacja) => {
-    const current = magazyn.odczytaj();
-    return magazyn.zapisz({ ...current, [id]: { ...current[id], ...patch } });
-  }, []);
+  const aktualizuj = useCallback(
+    (id: string, zmiana: ZmianaObserwacji) => magazyn.zapisz(zmienObserwacje(magazyn.odczytaj(), id, zmiana, teraz())),
+    [],
+  );
 
   const zastap = useCallback((next: Checklista) => magazyn.zapisz(next), []);
 
