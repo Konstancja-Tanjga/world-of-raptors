@@ -269,12 +269,14 @@ li {
   background: var(--bh-action-primary-bg);
   color: var(--bh-action-primary-fg);
   text-decoration: none;
+  white-space: nowrap;
 }
 .nav__arkusz-etykieta {
   font-weight: var(--bh-text-weight-heading);
   font-size: var(--bh-text-size-heading);
 }
-@media (max-width: 760px) {
+/* The full bar needs about 1000 px for its links, the account included: below that, the menu sheet. Nawigacja.tsx matches it. */
+@media (max-width: 1000px) {
   .nav__glowna {
     display: none;
   }

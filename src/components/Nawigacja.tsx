@@ -13,6 +13,10 @@ const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }
   { href: '/checklista', etykieta: 'Checklista', aktywny: (p) => p === '/checklista' },
   { href: '/kiedy-jechac', etykieta: 'Kiedy jechać', aktywny: (p) => p === '/kiedy-jechac' },
   { href: '/moje-niebo', etykieta: 'Moje niebo', aktywny: (p) => p === '/moje-niebo' },
+  // Accounts ship behind a flag (KONTA.md). Read inline, not from konto.ts, which would bring Supabase into every page.
+  ...(process.env.NEXT_PUBLIC_ACCOUNTS_ENABLED === 'true'
+    ? [{ href: '/konto', etykieta: 'Konto', aktywny: (p: string) => p === '/konto' }]
+    : []),
 ];
 
 /**
@@ -116,7 +120,7 @@ export function Nawigacja({
     };
     // The menu exists only on narrow screens; a phone turned to landscape
     // hides its button, so it closes rather than keep the page locked.
-    const waski = window.matchMedia('(max-width: 760px)');
+    const waski = window.matchMedia('(max-width: 1000px)');
     const onZmiana = () => {
       if (!waski.matches) setMenuNa(null);
     };
