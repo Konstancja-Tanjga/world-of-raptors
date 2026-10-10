@@ -187,7 +187,7 @@ export function MojeNiebo({
               <li key={n.id} className="sciana-naszywek__miejsce">
                 <Naszywka
                   n={n}
-                  ptaki={n.ptaki.map((id) => rysunki[id])}
+                  ptaki={(n.ptaki ?? []).map((id) => rysunki[id])}
                   zdobyta={zdobyta}
                   przyszyj={doPrzyszycia.includes(n.id)}
                   opoznienie={Math.max(0, doPrzyszycia.indexOf(n.id)) * 220}

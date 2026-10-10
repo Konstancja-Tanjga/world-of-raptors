@@ -2,18 +2,19 @@
 
 import Link from 'next/link';
 import { useMemo, useRef, useState, type ReactNode } from 'react';
-import { dzisiaj, useChecklista } from '@/lib/checklist';
+import { dzisiaj, jestWidziany, useChecklista, widziane } from '@/lib/checklist';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
 import { usePostep } from '@/lib/postep';
 import { useZdobyte, wczytajZKopii } from '@/lib/zdobyte';
 import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
 import { OwnPhotos } from './OwnPhotos';
-import type { Gatunek } from '@/lib/types';
+import { MIEJSCA, type Miejsce, type PtakNaLiscie } from '@/lib/types';
 import {
   Button,
   Card,
   Checkbox,
+  DatePicker,
   Input,
   Progress,
   SegmentedControl,
@@ -21,17 +22,35 @@ import {
   Textarea,
   useToast,
 } from './ds';
-import { PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { filtryAktywne as czyFiltryAktywne, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
 
-/** `sylwetki`: each species' silhouette, drawn on the server so the generator stays out of this bundle. */
-export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwetki: Record<string, ReactNode> }) {
+/** One group of a site's field list (content.ts, listaMiejsca). */
+export type GrupaListy = { id: string; nazwa: string; gatunki: string[] };
+
+/**
+ * `sylwetki`: each raptor's silhouette, drawn on the server so the generator
+ * stays out of this bundle (birds of marshes have none). `listyMiejsc`: each
+ * site's field list by group; with one site chosen, the list is grouped and
+ * counted that way ("Siewkowe: 3 z 14").
+ */
+export function ChecklistView({
+  ptaki,
+  sylwetki,
+  listyMiejsc,
+}: {
+  ptaki: PtakNaLiscie[];
+  sylwetki: Record<string, ReactNode>;
+  listyMiejsc: Record<Miejsce, GrupaListy[]>;
+}) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
-  const { filtry, setFiltry, wynik } = useFiltry(gatunki);
+  const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
   const [widok, setWidok] = useState<Widok>('wszystkie');
-  const filtryAktywne = filtry.szukaj.trim() !== '' || filtry.regiony.length > 0 || filtry.aktywnosc.length > 0;
+  const filtryAktywne = czyFiltryAktywne(filtry);
+  const miejsce = filtry.miejsca.length === 1 ? MIEJSCA.find((m) => m.value === filtry.miejsca[0]) : undefined;
+  const listaMiejsca = miejsce ? listyMiejsc[miejsce.value] : null;
   const wyczyscFiltry = () => {
     setFiltry(PUSTE_FILTRY);
     // The button disappears with the empty state; keep keyboard focus on the page.
@@ -46,22 +65,34 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
-    return wynik.filter((g) => (widok === 'zaobserwowane') === Boolean(lista[g.id]));
+    return wynik.filter((g) => (widok === 'zaobserwowane') === jestWidziany(lista, g.id));
   }, [wynik, lista, widok]);
 
-  const grupy = useMemo(() => {
-    const map = new Map<string, Gatunek[]>();
+  const grupy = useMemo((): [string, PtakNaLiscie[]][] => {
+    if (listaMiejsca) {
+      const poId = new Map(widoczne.map((p) => [p.id, p]));
+      return listaMiejsca
+        .map((g): [string, PtakNaLiscie[]] => [g.nazwa, g.gatunki.flatMap((id) => poId.get(id) ?? [])])
+        .filter(([, w]) => w.length > 0);
+    }
+    const map = new Map<string, PtakNaLiscie[]>();
     for (const g of widoczne) map.set(g.grupa, [...(map.get(g.grupa) ?? []), g]);
     return [...map.entries()];
-  }, [widoczne]);
+  }, [widoczne, listaMiejsca]);
 
   if (!lista) {
     return <StateBlock state="loading" title="Wczytywanie checklisty" scope="section" />;
   }
 
-  const znane = new Set(gatunki.map((g) => g.id));
-  const liczba = Object.keys(lista).filter((id) => znane.has(id)).length;
-  const wFiltrze = wynik.filter((g) => lista[g.id]).length;
+  const liczba = zakres.filter((p) => jestWidziany(lista, p.id)).length;
+  const wFiltrze = wynik.filter((g) => jestWidziany(lista, g.id)).length;
+  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'ptaki mokradeł', wszystkie: null }[filtry.ptaki];
+  const etykietaPostepu = miejsce
+    ? `Zaobserwowane w ${miejsce.label}${rodzaj ? `: ${rodzaj}` : ''}`
+    : `Zaobserwowane ${rodzaj ?? 'gatunki'}`;
+  // A site's groups as far as the chosen kind of bird reaches (its raptors, its birds of marshes, or all).
+  const wZakresie = new Set(zakres.map((p) => p.id));
+  const grupyMiejsca = listaMiejsca?.filter((g) => g.gatunki.some((id) => wZakresie.has(id)));
 
   const eksportuj = async () => {
     try {
@@ -143,7 +174,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
       !odznakiOk && kopia.odznaki && 'gwiazdozbiorów i naszywek',
     ].filter(Boolean);
     const wczytano = [
-      `${Object.keys(kopia.checklista).length} obserwacji`,
+      `${widziane(kopia.checklista).length} obserwacji`,
       kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
       kopia.postep ? 'postęp nauki' : null,
       kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
@@ -171,12 +202,27 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
   return (
     <div className="stack">
       <Progress
-        label="Zaobserwowane gatunki"
+        label={etykietaPostepu}
         value={liczba}
-        max={gatunki.length}
-        valueText={`${liczba} z ${gatunki.length}`}
-        tone={liczba === gatunki.length ? 'success' : 'neutral'}
+        max={zakres.length}
+        valueText={`${liczba} z ${zakres.length}`}
+        tone={zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
       />
+      {miejsce && grupyMiejsca && grupyMiejsca.length > 0 && (
+        <ul className="checklist__podsumowanie" aria-label={`${miejsce.label}: grupy`}>
+          {grupyMiejsca.map((g) => {
+            const ile = g.gatunki.filter((id) => jestWidziany(lista, id)).length;
+            return (
+              <li key={g.id} data-komplet={ile === g.gatunki.length ? '' : undefined}>
+                <span>{g.nazwa}</span>{' '}
+                <span className="checklist__licznik">
+                  {ile} z {g.gatunki.length}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
 
       <SpeciesFilters filtry={filtry} onChange={setFiltry} />
 
@@ -204,7 +250,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
           <StateBlock
             state="empty"
             title="Brak gatunków w tym filtrze"
-            description="Zmień region, aktywność albo wpisaną nazwę."
+            description="Zmień rodzaj ptaków, miejsce, region, aktywność albo wpisaną nazwę."
             action={
               <Button size="sm" variant="secondary" onClick={wyczyscFiltry}>
                 Wyczyść filtry
@@ -220,7 +266,7 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
             description={
               widok === 'zaobserwowane'
                 ? 'Zaznacz gatunek na liście, kiedy go zobaczysz.'
-                : 'Każdy gatunek z atlasu jest już na Twojej liście obserwacji.'
+                : 'Każdy gatunek z tej listy jest już wśród Twoich obserwacji.'
             }
             action={
               <Button size="sm" variant="secondary" onClick={() => setWidok('wszystkie')}>
@@ -232,22 +278,22 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
         )
       ) : (
         grupy.map(([grupa, lista_]) => (
-          <section key={grupa} className="checklist__grupa" aria-labelledby={`grupa-${grupa}`}>
-            <h2 id={`grupa-${grupa}`} className="checklist__naglowek">
+          <section key={grupa} className="checklist__grupa" aria-labelledby={`grupa-${idGrupy(grupa)}`}>
+            <h2 id={`grupa-${idGrupy(grupa)}`} className="checklist__naglowek">
               {grupa[0].toLocaleUpperCase('pl') + grupa.slice(1)}{' '}
               <span className="checklist__licznik">
-                ({lista_.filter((g) => lista[g.id]).length} z {lista_.length})
+                ({lista_.filter((g) => jestWidziany(lista, g.id)).length} z {lista_.length})
               </span>
             </h2>
             <ul className="checklist">
               {lista_.map((g) => {
-                const obs = lista[g.id];
+                const obs = jestWidziany(lista, g.id) ? lista[g.id] : undefined;
                 return (
                   <li key={g.id}>
                     <Card padding="snug" accent={obs ? 'success' : 'none'}>
                       <div className="checklist__row" data-widziany={obs ? '' : undefined}>
                         <span className="checklist__sylwetka" aria-hidden="true">
-                          {sylwetki[g.id]}
+                          {sylwetki[g.id] ?? null}
                         </span>
                         <Checkbox
                           label={g.pl}
@@ -261,9 +307,10 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
                       </div>
                       {obs && (
                         <div className="checklist__details">
-                          <Input
+                          <DatePicker
                             label="Data obserwacji"
-                            type="date"
+                            description="Domyślnie dzień zaznaczenia."
+                            max={dzisiaj()}
                             value={obs.data ?? ''}
                             onChange={(e) => sprawdzZapis(aktualizuj(g.id, { data: e.target.value }))}
                           />
@@ -322,3 +369,12 @@ export function ChecklistView({ gatunki, sylwetki }: { gatunki: Gatunek[]; sylwe
     </div>
   );
 }
+
+/** A heading id from a group's name ("Czaple, flaming, warzęcha" has spaces and commas). */
+const idGrupy = (nazwa: string) =>
+  nazwa
+    .toLocaleLowerCase('pl')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ł/g, 'l')
+    .replace(/[^a-z0-9]+/g, '-');

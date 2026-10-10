@@ -1,6 +1,8 @@
 import type { State } from 'ts-fsrs';
 
 export type Region = 'gibraltar' | 'poludnie-hiszpanii' | 'polska';
+/** A site with its own field list (a field module and its checklist). Not in browser storage, but lesson links name it (`?miejsce=`), so a rename must update them. */
+export type Miejsce = 'marismas-barbate';
 export type Aktywnosc = 'dzienny' | 'nocny';
 export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
 
@@ -29,6 +31,8 @@ export type DaneGatunku = {
   mylona_z: string[];
   gdzie: string;
   regiony: Region[];
+  /** Sites whose field list includes it. */
+  miejsca?: Miejsce[];
 };
 
 /**
@@ -61,6 +65,61 @@ export const REGIONY: { value: Region; label: string }[] = [
   { value: 'poludnie-hiszpanii', label: 'Południe Hiszpanii' },
   { value: 'polska', label: 'Polska' },
 ];
+
+export const MIEJSCA: { value: Miejsce; label: string }[] = [{ value: 'marismas-barbate', label: 'Marismas del Barbate' }];
+
+/**
+ * Birds of marshes, the species other than raptors ("Ptaki mokradeł", content/ptaki-mokradel.json): the other
+ * species of a site's field list. They live outside gatunki.json because
+ * everything built on raptors (silhouettes, flashcards, the scale view, Moje
+ * niebo's rings) has nothing to say about them.
+ */
+export const GRUPY_MOKRADEL = ['ibisy', 'czaple', 'siewkowe', 'mewy-i-rybitwy', 'inne-niewroblowe', 'wroblowe'] as const;
+export type GrupaMokradel = (typeof GRUPY_MOKRADEL)[number];
+/** A group of a site's field list: its raptors, or one group of its birds of marshes. */
+export type GrupaListyMiejsca = 'drapiezniki' | GrupaMokradel;
+export const NAZWY_GRUP_MOKRADEL: Record<GrupaMokradel, string> = {
+  ibisy: 'Gatunek specjalny',
+  czaple: 'Czaple, flaming, warzęcha',
+  siewkowe: 'Siewkowe',
+  'mewy-i-rybitwy': 'Mewy i rybitwy',
+  'inne-niewroblowe': 'Inne niewróblowe',
+  wroblowe: 'Wróblowe',
+};
+
+export type PtakMokradel = {
+  id: string;
+  pl: string;
+  lat: string;
+  en: string;
+  es: string;
+  grupa: GrupaMokradel;
+  /** What to look for in the field: one or two short sentences. */
+  cechy: string[];
+  miejsca: Miejsce[];
+  /** What is still to check by hand (listed by `next dev`, never on a page). */
+  todo?: string;
+};
+
+/** The two kinds of bird in the atlas; raptors are the default, birds of marshes are shown on request. */
+export type Kategoria = 'drapiezne' | 'ptaki-mokradel';
+
+/** What the atlas and the checklist list, filter and link: a raptor or a bird of marshes. */
+export type PtakNaLiscie = {
+  id: string;
+  pl: string;
+  lat: string;
+  en: string;
+  es: string;
+  kategoria: Kategoria;
+  /** The group it is listed under (a raptor's family, or a group of birds of marshes). */
+  grupa: string;
+  miejsca: Miejsce[];
+  /** Raptors only; birds of marshes match no region or activity filter. */
+  regiony: Region[];
+  aktywnosc: Aktywnosc | null;
+  rzadki: boolean;
+};
 
 export const STATUS_LABEL: Record<Status, string> = {
   wedrowny: 'wędrowny',

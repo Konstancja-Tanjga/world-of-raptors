@@ -1,0 +1,428 @@
+{
+  "uwaga": "Ptaki mokradeł: gatunki z list terenowych, które nie są drapieżnikami. To gatunki MOŻLIWE w danym miejscu i porze, nie pewne. Cechy: to, na co patrzeć w terenie, bez liczb. Pole „todo” to rzecz do sprawdzenia ręcznie.",
+  "ptaki": [
+    {
+      "id": "ibis-grzywiasty",
+      "pl": "ibis grzywiasty",
+      "lat": "Geronticus eremita",
+      "en": "Northern Bald Ibis",
+      "es": "ibis eremita",
+      "grupa": "ibisy",
+      "cechy": [
+        "Czarny z zielonkawym połyskiem, z nagą czerwoną głową i długim, zakrzywionym w dół czerwonym dziobem.",
+        "Ptaki z reintrodukcji w okolicy często noszą kolorowe obrączki: warto je odczytać i zapisać w notatce."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "flaming-rozowy",
+      "pl": "flaming różowy",
+      "lat": "Phoenicopterus roseus",
+      "en": "Greater Flamingo",
+      "es": "flamenco común",
+      "grupa": "czaple",
+      "cechy": [
+        "Bardzo długie nogi i szyja, różowobiałe upierzenie i gruby dziób zgięty w dół, z czarnym końcem.",
+        "W locie widać czerwone pokrywy i czarne lotki."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "warzecha",
+      "pl": "warzęcha",
+      "lat": "Platalea leucorodia",
+      "en": "Eurasian Spoonbill",
+      "es": "espátula común",
+      "grupa": "czaple",
+      "cechy": [
+        "Biała, z długim dziobem rozszerzonym na końcu jak łyżka.",
+        "Żeruje, wodząc dziobem na boki w płytkiej wodzie; leci z wyciągniętą szyją, inaczej niż czaple."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "czapla-nadobna",
+      "pl": "czapla nadobna",
+      "lat": "Egretta garzetta",
+      "en": "Little Egret",
+      "es": "garceta común",
+      "grupa": "czaple",
+      "cechy": ["Mała, śnieżnobiała czapla z czarnym dziobem i czarnymi nogami zakończonymi żółtymi stopami."],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "czapla-zlotawa",
+      "pl": "czapla złotawa",
+      "lat": "Bubulcus ibis",
+      "en": "Western Cattle Egret",
+      "es": "garcilla bueyera",
+      "grupa": "czaple",
+      "cechy": [
+        "Mała, krępa biała czapla z krótkim żółtym dziobem i krótką szyją.",
+        "Często chodzi przy krowach i koniach na pastwiskach."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "czapla-siwa",
+      "pl": "czapla siwa",
+      "lat": "Ardea cinerea",
+      "en": "Grey Heron",
+      "es": "garza real",
+      "grupa": "czaple",
+      "cechy": [
+        "Duża, szara czapla z białą głową i czarnym paskiem nad okiem.",
+        "Leci powoli, z szyją złożoną w literę S."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "szablodziob",
+      "pl": "szablodziób",
+      "lat": "Recurvirostra avosetta",
+      "en": "Pied Avocet",
+      "es": "avoceta común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Czarno-biały, z cienkim dziobem wygiętym w górę.",
+        "Żeruje, kosząc dziobem płytką wodę na boki."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "szczudlak",
+      "pl": "szczudłak",
+      "lat": "Himantopus himantopus",
+      "en": "Black-winged Stilt",
+      "es": "cigüeñuela común",
+      "grupa": "siewkowe",
+      "cechy": ["Bardzo długie różowe nogi, czarne skrzydła, biały spód i cienki, prosty dziób."],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "sieweczka-morska",
+      "pl": "sieweczka morska",
+      "lat": "Charadrius alexandrinus",
+      "en": "Kentish Plover",
+      "es": "chorlitejo patinegro",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Mała, jasna sieweczka z ciemnymi nogami.",
+        "Obroża jest niepełna: tylko ciemne plamy po bokach piersi."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "sieweczka-obrozna",
+      "pl": "sieweczka obrożna",
+      "lat": "Charadrius hiaticula",
+      "en": "Common Ringed Plover",
+      "es": "chorlitejo grande",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Pełna ciemna obroża na piersi i pomarańczowe nogi.",
+        "W locie widać białą wstęgę na skrzydle."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "siewnica",
+      "pl": "siewnica",
+      "lat": "Pluvialis squatarola",
+      "en": "Grey Plover",
+      "es": "chorlito gris",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Krępa siewka z krótkim, mocnym dziobem; jesienią szaro nakrapiana.",
+        "W locie czarne „pachy” pod skrzydłem: najpewniejsza cecha."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "biegus-zmienny",
+      "pl": "biegus zmienny",
+      "lat": "Calidris alpina",
+      "en": "Dunlin",
+      "es": "correlimos común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Mały, szarobrązowy biegus z dość długim dziobem lekko zagiętym w dół.",
+        "Często żeruje w dużych, zwartych stadach."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "piaskowiec",
+      "pl": "piaskowiec",
+      "lat": "Calidris alba",
+      "en": "Sanderling",
+      "es": "correlimos tridáctilo",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Bardzo jasny biegus z czarnym dziobem i czarnymi nogami.",
+        "Biega szybko za cofającą się falą na plaży."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "kamusznik",
+      "pl": "kamusznik",
+      "lat": "Arenaria interpres",
+      "en": "Ruddy Turnstone",
+      "es": "vuelvepiedras común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Krępy, z krótkim dziobem, pomarańczowymi nogami i ciemnym, pstrym wzorem na piersi.",
+        "Odwraca kamienie i wodorosty w poszukiwaniu jedzenia."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "krwawodziob",
+      "pl": "krwawodziób",
+      "lat": "Tringa totanus",
+      "en": "Common Redshank",
+      "es": "archibebe común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Czerwone nogi i czerwona nasada dzioba.",
+        "W locie szeroki biały pas na tylnym brzegu skrzydła; głośny, nerwowy głos."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "kwokacz",
+      "pl": "kwokacz",
+      "lat": "Tringa nebularia",
+      "en": "Common Greenshank",
+      "es": "archibebe claro",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Jasny, smukły brodziec z zielonkawymi nogami i lekko zadartym dziobem.",
+        "Głos: głośne, zwykle potrójne „tiu-tiu-tiu”."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "kulik-wielki",
+      "pl": "kulik wielki",
+      "lat": "Numenius arquata",
+      "en": "Eurasian Curlew",
+      "es": "zarapito real",
+      "grupa": "siewkowe",
+      "cechy": ["Duży, brązowo nakrapiany, z bardzo długim dziobem zakrzywionym w dół."],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "kulik-mniejszy",
+      "pl": "kulik mniejszy",
+      "lat": "Numenius phaeopus",
+      "en": "Eurasian Whimbrel",
+      "es": "zarapito trinador",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Jak mały kulik wielki, ale z krótszym dziobem i ciemnymi paskami na głowie.",
+        "Głos: szybki, równy trel."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "szlamnik",
+      "pl": "szlamnik",
+      "lat": "Limosa lapponica",
+      "en": "Bar-tailed Godwit",
+      "es": "aguja colipinta",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Długi, lekko zadarty dziób; jesienią szarobrązowy.",
+        "W locie bez białego paska na skrzydle, a ogon jest prążkowany."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "ostrygojad",
+      "pl": "ostrygojad",
+      "lat": "Haematopus ostralegus",
+      "en": "Eurasian Oystercatcher",
+      "es": "ostrero euroasiático",
+      "grupa": "siewkowe",
+      "cechy": ["Czarno-biały, z mocnym pomarańczowoczerwonym dziobem i różowymi nogami."],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "mewa-cienkodzioba",
+      "pl": "mewa cienkodzioba",
+      "lat": "Chroicocephalus genei",
+      "en": "Slender-billed Gull",
+      "es": "gaviota picofina",
+      "grupa": "mewy-i-rybitwy",
+      "cechy": [
+        "Podobna do śmieszki, ale bez ciemnej plamki za okiem, z dłuższą szyją i dłuższym dziobem.",
+        "Pierś bywa lekko różowawa."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "mewa-srodziemnomorska",
+      "pl": "mewa śródziemnomorska",
+      "lat": "Ichthyaetus audouinii",
+      "en": "Audouin's Gull",
+      "es": "gaviota de Audouin",
+      "grupa": "mewy-i-rybitwy",
+      "cechy": [
+        "Ciemnoczerwony dziób z czarną przepaską i ciemne, szarozielone nogi.",
+        "Smuklejsza od mewy romańskiej, która ma żółte nogi i żółty dziób z czerwoną plamką."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "rybitwa-czubata",
+      "pl": "rybitwa czubata",
+      "lat": "Thalasseus sandvicensis",
+      "en": "Sandwich Tern",
+      "es": "charrán patinegro",
+      "grupa": "mewy-i-rybitwy",
+      "cechy": [
+        "Duża, bardzo jasna rybitwa z czarnym dziobem zakończonym żółtym czubkiem.",
+        "Jesienią czoło białe, a z tyłu głowy czarny, postrzępiony czub."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "rybitwa-wielkodzioba",
+      "pl": "rybitwa wielkodzioba",
+      "lat": "Hydroprogne caspia",
+      "en": "Caspian Tern",
+      "es": "pagaza piquirroja",
+      "grupa": "mewy-i-rybitwy",
+      "cechy": [
+        "Największa rybitwa, wielkości dużej mewy.",
+        "Masywny, czerwony dziób widać z daleka."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "zimorodek",
+      "pl": "zimorodek",
+      "lat": "Alcedo atthis",
+      "en": "Common Kingfisher",
+      "es": "martín pescador común",
+      "grupa": "inne-niewroblowe",
+      "cechy": [
+        "Mały, turkusowo-pomarańczowy ptak z długim dziobem.",
+        "Najczęściej widać niebieską smugę nisko nad kanałem i słychać ostry, wysoki gwizd."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "klaskawka",
+      "pl": "kląskawka",
+      "lat": "Saxicola rubicola",
+      "en": "European Stonechat",
+      "es": "tarabilla europea",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Siada na czubkach krzewów i trzcin. Samiec ma czarną głowę i rdzawą pierś.",
+        "Głos brzmi jak stukanie dwóch kamyków."
+      ],
+      "miejsca": ["marismas-barbate"],
+      "todo": "sprawdzić nazwę hiszpańską (tarabilla europea czy tarabilla común)"
+    },
+    {
+      "id": "chwastowka",
+      "pl": "chwastówka",
+      "lat": "Cisticola juncidis",
+      "en": "Zitting Cisticola",
+      "es": "buitrón",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Maleńka, płowa, mocno kreskowana.",
+        "Łatwiej ją usłyszeć niż zobaczyć: w falistym locie powtarza ostre „cyk… cyk…”."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "pokrzewka-aksamitna",
+      "pl": "pokrzewka aksamitna",
+      "lat": "Curruca melanocephala",
+      "en": "Sardinian Warbler",
+      "es": "curruca cabecinegra",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Samiec ma czarną czapkę, białe gardło i czerwoną obrączkę wokół oka.",
+        "Chowa się w krzakach; częściej słychać jej suchy terkot, niż ją widać."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "dzierlatka",
+      "pl": "dzierlatka",
+      "lat": "Galerida cristata",
+      "en": "Crested Lark",
+      "es": "cogujada común",
+      "grupa": "wroblowe",
+      "cechy": ["Skowronek z długim, spiczastym czubem; często przy drogach, na wydmach i nieużytkach."],
+      "miejsca": ["marismas-barbate"],
+      "todo": "sprawdzić, czy w okolicy możliwy jest też bardzo podobny Galerida theklae i czy o nim wspomnieć"
+    },
+    {
+      "id": "pliszka-siwa",
+      "pl": "pliszka siwa",
+      "lat": "Motacilla alba",
+      "en": "White Wagtail",
+      "es": "lavandera blanca",
+      "grupa": "wroblowe",
+      "cechy": ["Czarno-biało-szara, z długim ogonem, którym ciągle porusza; chodzi po brzegach, plażach i drogach."],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "swiergotek-lakowy",
+      "pl": "świergotek łąkowy",
+      "lat": "Anthus pratensis",
+      "en": "Meadow Pipit",
+      "es": "bisbita pratense",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Brązowy i kreskowany jak skowronek, ale smuklejszy i bez czuba.",
+        "Zrywa się z cienkim, powtarzanym „ist-ist”."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "podrozniczek",
+      "pl": "podróżniczek",
+      "lat": "Luscinia svecica",
+      "en": "Bluethroat",
+      "es": "ruiseñor pechiazul",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Skryty, trzyma się trzcin i rowów. Samiec ma niebieskie gardło.",
+        "Gdy ucieka, widać rdzawe nasady ogona."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "bialorzytka",
+      "pl": "białorzytka",
+      "lat": "Oenanthe oenanthe",
+      "en": "Northern Wheatear",
+      "es": "collalba gris",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Jesienią płowa i niepozorna.",
+        "Gdy odlatuje, widać biały kuper i czarne „T” na końcu ogona."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "pierwiosnek",
+      "pl": "pierwiosnek",
+      "lat": "Phylloscopus collybita",
+      "en": "Common Chiffchaff",
+      "es": "mosquitero común",
+      "grupa": "wroblowe",
+      "cechy": ["Mały, oliwkowobrązowy i ruchliwy, z ciemnymi nogami; co chwilę porusza ogonkiem w dół."],
+      "miejsca": ["marismas-barbate"]
+    }
+  ]
+}

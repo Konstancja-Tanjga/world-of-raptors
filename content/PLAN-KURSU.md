@@ -34,8 +34,9 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | B3 | **Cieśnina Gibraltarska** | Przelot, wiatry Levante/Poniente, ok. 25 gatunków, trudne pary, punkty obserwacyjne, projekt „Mój wyjazd do Tarify” | [gotowy](moduly/gibraltar/README.md) |
 | B4 | **Ptaki drapieżne południa Hiszpanii** | Siedliska Andaluzji, trzy duże orły, orłosęp, sęp kasztanowaty, jastrząb vs krogulec, najlepsze miejsca, kalendarz roku, projekt trasy | [gotowy](moduly/poludnie-hiszpanii/README.md) |
 | B5 | **Sowy, drapieżniki nocne** | Ten sam układ co moduły o ptakach dziennych: biologia sów, rozpoznawanie po głosie, 10 gatunków Polski i Hiszpanii, trudne pary, kalendarz głosów, etyka | [gotowy](moduly/sowy/README.md) |
+| B6 | **Marismas del Barbate, początek października** | Moduł terenowy: rozlewiska u ujścia, pływy i wiatr, 8 drapieżników i ibis grzywiasty, czaple, siewkowe, mewy, rybitwy i wróblowe, karta terenowa z naszywkami | [gotowy](moduly/barbate/README.md) |
 
-Moduły B2–B5 mają wspólne gatunki. Wszystkie gatunki są w jednym [atlasie](gatunki.json), a każdy gatunek ma przypisane regiony (Polska, cieśnina, południe Hiszpanii) i aktywność (dzienna, nocna).
+Moduły B2–B6 mają wspólne gatunki. Wszystkie drapieżniki są w jednym [atlasie](gatunki.json), a każdy gatunek ma przypisane regiony (Polska, cieśnina, południe Hiszpanii) i aktywność (dzienna, nocna). Ptaki mokradeł z listy terenowej B6 (wszystkie gatunki tej listy poza drapieżnikami) są w osobnym pliku ([ptaki-mokradel.json](ptaki-mokradel.json)) i w atlasie pokazuje je filtr „Ptaki mokradeł”.
 
 ---
 

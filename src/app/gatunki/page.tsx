@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './atlas.css';
 import { AtlasView } from '@/components/AtlasView';
 import { Ciekawostka } from '@/components/Ciekawostka';
-import { ciekawostkiDla, gatunki, zdjecia } from '@/lib/content';
+import { ciekawostkiDla, gatunki, ptakiMokradel, ptakiNaLiscie, zdjecia } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 
 export const metadata: Metadata = { title: 'Atlas gatunków' };
@@ -19,13 +19,16 @@ export default function GatunkiPage() {
           {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} z modułów kursu: {dzienne}{' '}
           {odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])} i {sowy}{' '}
           {odmiana(sowy, ['sowa', 'sowy', 'sów'])} z Polski, południa Hiszpanii i Cieśniny Gibraltarskiej. Zobacz je na
-          zdjęciach, jako sylwetki na tle nieba albo wszystkie w jednej skali.
+          zdjęciach, jako sylwetki na tle nieba albo wszystkie w jednej skali. Filtr „Ptaki mokradeł” pokazuje jeszcze{' '}
+          {ptakiMokradel.length} {odmiana(ptakiMokradel.length, ['gatunek', 'gatunki', 'gatunków'])} z list terenowych, np. z
+          Marismas del Barbate.
         </p>
       </header>
       <AtlasView
+        ptaki={ptakiNaLiscie}
         gatunki={gatunki}
         miniatury={Object.fromEntries(
-          gatunki.map((g) => [g.id, zdjecia[g.id]?.siedzacy ?? zdjecia[g.id]?.lot ?? null]),
+          ptakiNaLiscie.map((p) => [p.id, zdjecia[p.id]?.siedzacy ?? zdjecia[p.id]?.lot ?? null]),
         )}
       />
       <div className="atlas__ciekawostka">

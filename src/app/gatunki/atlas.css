@@ -764,3 +764,13 @@
   outline: 2px solid var(--wor-zloto);
   outline-offset: 2px;
 }
+
+/* A bird with no photo yet and no silhouette (birds of marshes). */
+.karta-gatunku__brak {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+.atlas__uwaga {
+  margin: 0;
+  color: var(--bh-text-muted);
+}

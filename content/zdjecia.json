@@ -1655,5 +1655,515 @@
       "oryginal": [681, 1024],
       "fokus": [42, 28]
     }
+  },
+  "ibis-grzywiasty": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Geronticus_eremita_108697094.jpg/960px-Geronticus_eremita_108697094.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Jean-Paul Boerekamps",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Geronticus_eremita_108697094.jpg",
+      "plik": "File:Geronticus eremita 108697094.jpg",
+      "oryginal": [1281, 961],
+      "fokus": [70, 35]
+    },
+    "lot": null
+  },
+  "flaming-rozowy": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/010_Greater_flamingos_male_and_female_in_the_Camargue_during_mating_season_Photo_by_Giles_Laurent.jpg/960px-010_Greater_flamingos_male_and_female_in_the_Camargue_during_mating_season_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Giles Laurent",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:010_Greater_flamingos_male_and_female_in_the_Camargue_during_mating_season_Photo_by_Giles_Laurent.jpg",
+      "plik": "File:010 Greater flamingos male and female in the Camargue during mating season Photo by Giles Laurent.jpg",
+      "oryginal": [6429, 4286],
+      "fokus": [47, 15]
+    },
+    "lot": null
+  },
+  "warzecha": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Eurasian_Spoonbill.jpg/960px-Eurasian_Spoonbill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Spoonbill.jpg",
+      "plik": "File:Eurasian Spoonbill.jpg",
+      "oryginal": [4896, 3264],
+      "fokus": [43, 40]
+    },
+    "lot": null
+  },
+  "czapla-nadobna": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Egretta_garzetta_04_in_Puerto_de_la_Cruz%2C_Tenerife.jpg/960px-Egretta_garzetta_04_in_Puerto_de_la_Cruz%2C_Tenerife.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 763,
+      "autor": "Cayambe",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Egretta_garzetta_04_in_Puerto_de_la_Cruz,_Tenerife.jpg",
+      "plik": "File:Egretta garzetta 04 in Puerto de la Cruz, Tenerife.jpg",
+      "oryginal": [2452, 1948],
+      "fokus": [52, 22]
+    },
+    "lot": null
+  },
+  "czapla-zlotawa": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/029_Western_cattle_egret_in_the_Camargue_Photo_by_Giles_Laurent.jpg/960px-029_Western_cattle_egret_in_the_Camargue_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Giles Laurent",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:029_Western_cattle_egret_in_the_Camargue_Photo_by_Giles_Laurent.jpg",
+      "plik": "File:029 Western cattle egret in the Camargue Photo by Giles Laurent.jpg",
+      "oryginal": [8640, 5760],
+      "fokus": [64, 21]
+    },
+    "lot": null
+  },
+  "czapla-siwa": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Ardea_cinerea_-_Graureiher_-_Heron.jpg/960px-Ardea_cinerea_-_Graureiher_-_Heron.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "NorbertNagel",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Ardea_cinerea_-_Graureiher_-_Heron.jpg",
+      "plik": "File:Ardea cinerea - Graureiher - Heron.jpg",
+      "oryginal": [5311, 3541],
+      "fokus": [33, 28]
+    },
+    "lot": null
+  },
+  "szablodziob": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Avocet_%28Recurvirostra_avosetta%29.jpg/960px-Avocet_%28Recurvirostra_avosetta%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 3.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Avocet_(Recurvirostra_avosetta).jpg",
+      "plik": "File:Avocet (Recurvirostra avosetta).jpg",
+      "oryginal": [2939, 1960],
+      "fokus": [45, 30]
+    },
+    "lot": null
+  },
+  "szczudlak": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Black-winged_stilt.jpg/960px-Black-winged_stilt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1440,
+      "autor": "מינוזיג - MinoZig",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Black-winged_stilt.jpg",
+      "plik": "File:Black-winged stilt.jpg",
+      "oryginal": [2483, 3725],
+      "fokus": [58, 20]
+    },
+    "lot": null
+  },
+  "sieweczka-morska": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Charadrius_alexandrinus_%28Kentish_Plover%29%2C_Port_d%27Alc%C3%BAdia%2C_Mallorca.jpg/960px-Charadrius_alexandrinus_%28Kentish_Plover%29%2C_Port_d%27Alc%C3%BAdia%2C_Mallorca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Original Hobbyfotowiki, this edit MPF",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_alexandrinus_(Kentish_Plover),_Port_d%27Alc%C3%BAdia,_Mallorca.jpg",
+      "plik": "File:Charadrius alexandrinus (Kentish Plover), Port d'Alcúdia, Mallorca.jpg",
+      "oryginal": [1500, 1000],
+      "fokus": [33, 23]
+    },
+    "lot": null
+  },
+  "sieweczka-obrozna": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Charadrius_hiaticula_-_Common_Ringed_Plover%2C_Adana_2016-11-05_02-1.jpg/960px-Charadrius_hiaticula_-_Common_Ringed_Plover%2C_Adana_2016-11-05_02-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 613,
+      "autor": "Zeynel Cebeci",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_hiaticula_-_Common_Ringed_Plover,_Adana_2016-11-05_02-1.jpg",
+      "plik": "File:Charadrius hiaticula - Common Ringed Plover, Adana 2016-11-05 02-1.jpg",
+      "oryginal": [2250, 1437],
+      "fokus": [58, 41]
+    },
+    "lot": null
+  },
+  "siewnica": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/BBPlover_Scarborough_Marsh.png/960px-BBPlover_Scarborough_Marsh.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Chuck Homler, Focus On Wildlife",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:BBPlover_Scarborough_Marsh.png",
+      "plik": "File:BBPlover Scarborough Marsh.png",
+      "oryginal": [5011, 3340],
+      "fokus": [42, 35]
+    },
+    "lot": null
+  },
+  "biegus-zmienny": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/B%C3%A9casseau_variable037_Thyna.jpg/960px-B%C3%A9casseau_variable037_Thyna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 636,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:B%C3%A9casseau_variable037_Thyna.jpg",
+      "plik": "File:Bécasseau variable037 Thyna.jpg",
+      "oryginal": [2790, 1848],
+      "fokus": [50, 26]
+    },
+    "lot": null
+  },
+  "piaskowiec": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Calidris_alba_-_Island_of_Wangerooge.jpg/960px-Calidris_alba_-_Island_of_Wangerooge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Calidris_alba_-_Island_of_Wangerooge.jpg",
+      "plik": "File:Calidris alba - Island of Wangerooge.jpg",
+      "oryginal": [5459, 3639],
+      "fokus": [47, 38]
+    },
+    "lot": null
+  },
+  "kamusznik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Ruddy_Turnstone_2025_12_25_01.jpg/960px-Ruddy_Turnstone_2025_12_25_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Alexis Lours",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Ruddy_Turnstone_2025_12_25_01.jpg",
+      "plik": "File:Ruddy Turnstone 2025 12 25 01.jpg",
+      "oryginal": [6107, 4071],
+      "fokus": [67, 26]
+    },
+    "lot": null
+  },
+  "krwawodziob": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Chevalier_gambette_Thyna029.jpg/960px-Chevalier_gambette_Thyna029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chevalier_gambette_Thyna029.jpg",
+      "plik": "File:Chevalier gambette Thyna029.jpg",
+      "oryginal": [4501, 3001],
+      "fokus": [55, 30]
+    },
+    "lot": null
+  },
+  "kwokacz": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Chevalier_aboyeur003_lac_de_Tunis.jpg/960px-Chevalier_aboyeur003_lac_de_Tunis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chevalier_aboyeur003_lac_de_Tunis.jpg",
+      "plik": "File:Chevalier aboyeur003 lac de Tunis.jpg",
+      "oryginal": [2718, 2038],
+      "fokus": [42, 23]
+    },
+    "lot": null
+  },
+  "kulik-wielki": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Eurasian_Curlew.jpg/960px-Eurasian_Curlew.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 960,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Curlew.jpg",
+      "plik": "File:Eurasian Curlew.jpg",
+      "oryginal": [2568, 2568],
+      "fokus": [43, 20]
+    },
+    "lot": null
+  },
+  "kulik-mniejszy": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Eurasian_whimbrel_%28Numenius_phaeopus%29.jpg/960px-Eurasian_whimbrel_%28Numenius_phaeopus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 638,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_whimbrel_(Numenius_phaeopus).jpg",
+      "plik": "File:Eurasian whimbrel (Numenius phaeopus).jpg",
+      "oryginal": [2820, 1875],
+      "fokus": [34, 21]
+    },
+    "lot": null
+  },
+  "szlamnik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Pfuhlschnepfe.jpg/960px-Pfuhlschnepfe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Pfuhlschnepfe.jpg",
+      "plik": "File:Pfuhlschnepfe.jpg",
+      "oryginal": [2364, 1576],
+      "fokus": [30, 23]
+    },
+    "lot": null
+  },
+  "ostrygojad": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Austernfischer_%28Haematopus_ostralegus%29_bei_der_Nahrungssuche_%28Baltrum%2C_Nationalpark_nieders%C3%A4chsisches_Wattenmeer%29_04.jpg/960px-Austernfischer_%28Haematopus_ostralegus%29_bei_der_Nahrungssuche_%28Baltrum%2C_Nationalpark_nieders%C3%A4chsisches_Wattenmeer%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1200,
+      "autor": "Stephan Sprinz",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Austernfischer_(Haematopus_ostralegus)_bei_der_Nahrungssuche_(Baltrum,_Nationalpark_nieders%C3%A4chsisches_Wattenmeer)_04.jpg",
+      "plik": "File:Austernfischer (Haematopus ostralegus) bei der Nahrungssuche (Baltrum, Nationalpark niedersächsisches Wattenmeer) 04.jpg",
+      "oryginal": [2632, 3290],
+      "fokus": [54, 23]
+    },
+    "lot": null
+  },
+  "mewa-cienkodzioba": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Chroicocephalus_genei%2C_Barcelona%2C_Spain_1.jpg/960px-Chroicocephalus_genei%2C_Barcelona%2C_Spain_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Birdwatching Barcelona",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chroicocephalus_genei,_Barcelona,_Spain_1.jpg",
+      "plik": "File:Chroicocephalus genei, Barcelona, Spain 1.jpg",
+      "oryginal": [2022, 1348],
+      "fokus": [37, 19]
+    },
+    "lot": null
+  },
+  "mewa-srodziemnomorska": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ichthyaetus_audouinii.jpg/960px-Ichthyaetus_audouinii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 638,
+      "autor": "@pintafontes",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Ichthyaetus_audouinii.jpg",
+      "plik": "File:Ichthyaetus audouinii.jpg",
+      "oryginal": [2048, 1361],
+      "fokus": [59, 26]
+    },
+    "lot": null
+  },
+  "rybitwa-czubata": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/2020-07-18_Thalasseus_sandvicensis%2C_St_Marys_Island%2C_Northumberland_08.jpg/960px-2020-07-18_Thalasseus_sandvicensis%2C_St_Marys_Island%2C_Northumberland_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "MPF",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:2020-07-18_Thalasseus_sandvicensis,_St_Marys_Island,_Northumberland_08.jpg",
+      "plik": "File:2020-07-18 Thalasseus sandvicensis, St Marys Island, Northumberland 08.jpg",
+      "oryginal": [3600, 2700],
+      "fokus": [56, 25]
+    },
+    "lot": null
+  },
+  "rybitwa-wielkodzioba": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Caspian_tern_%28Hydroprogne_caspia%29_non-breeding.jpg/960px-Caspian_tern_%28Hydroprogne_caspia%29_non-breeding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Caspian_tern_(Hydroprogne_caspia)_non-breeding.jpg",
+      "plik": "File:Caspian tern (Hydroprogne caspia) non-breeding.jpg",
+      "oryginal": [2677, 1784],
+      "fokus": [41, 23]
+    },
+    "lot": null
+  },
+  "zimorodek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/04--Martin-Pecheur-20-01-24-Halois-Belgium-Luc_viatour.jpg/960px-04--Martin-Pecheur-20-01-24-Halois-Belgium-Luc_viatour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 960,
+      "autor": "Luc Viatour",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:04--Martin-Pecheur-20-01-24-Halois-Belgium-Luc_viatour.jpg",
+      "plik": "File:04--Martin-Pecheur-20-01-24-Halois-Belgium-Luc viatour.jpg",
+      "oryginal": [5125, 5125],
+      "fokus": [70, 28]
+    },
+    "lot": null
+  },
+  "klaskawka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Common_stonechat_%28Saxicola_rubicola_rubicola%29_male_non-breeding_Loja.jpg/960px-Common_stonechat_%28Saxicola_rubicola_rubicola%29_male_non-breeding_Loja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Common_stonechat_(Saxicola_rubicola_rubicola)_male_non-breeding_Loja.jpg",
+      "plik": "File:Common stonechat (Saxicola rubicola rubicola) male non-breeding Loja.jpg",
+      "oryginal": [2366, 1577],
+      "fokus": [58, 35]
+    },
+    "lot": null
+  },
+  "chwastowka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Cisticole_des_joncs042_lacdeTunis.jpg/960px-Cisticole_des_joncs042_lacdeTunis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Cisticole_des_joncs042_lacdeTunis.jpg",
+      "plik": "File:Cisticole des joncs042 lacdeTunis.jpg",
+      "oryginal": [3048, 2286],
+      "fokus": [45, 21]
+    },
+    "lot": null
+  },
+  "pokrzewka-aksamitna": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Fauvette_m%C3%A9lanoc%C3%A9phale001.jpg/960px-Fauvette_m%C3%A9lanoc%C3%A9phale001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1280,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Fauvette_m%C3%A9lanoc%C3%A9phale001.jpg",
+      "plik": "File:Fauvette mélanocéphale001.jpg",
+      "oryginal": [1980, 2640],
+      "fokus": [64, 28]
+    },
+    "lot": null
+  },
+  "dzierlatka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Crested_lark_%28Galerida_cristata_cristata%29_Hungary.jpg/960px-Crested_lark_%28Galerida_cristata_cristata%29_Hungary.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 960,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Crested_lark_(Galerida_cristata_cristata)_Hungary.jpg",
+      "plik": "File:Crested lark (Galerida cristata cristata) Hungary.jpg",
+      "oryginal": [3172, 3172],
+      "fokus": [57, 27]
+    },
+    "lot": null
+  },
+  "pliszka-siwa": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Bergeronnette_grise_Korba002.jpg/960px-Bergeronnette_grise_Korba002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Bergeronnette_grise_Korba002.jpg",
+      "plik": "File:Bergeronnette grise Korba002.jpg",
+      "oryginal": [4339, 2893],
+      "fokus": [53, 23]
+    },
+    "lot": null
+  },
+  "swiergotek-lakowy": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Meadow_pipit_%28Anthus_pratensis%29_Oppdal.jpg/960px-Meadow_pipit_%28Anthus_pratensis%29_Oppdal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Meadow_pipit_(Anthus_pratensis)_Oppdal.jpg",
+      "plik": "File:Meadow pipit (Anthus pratensis) Oppdal.jpg",
+      "oryginal": [5402, 4052],
+      "fokus": [42, 40]
+    },
+    "lot": null
+  },
+  "podrozniczek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Bluethroat_%28Luscinia_svecica%29_at_Ichkeul_NP.jpg/960px-Bluethroat_%28Luscinia_svecica%29_at_Ichkeul_NP.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Bluethroat_(Luscinia_svecica)_at_Ichkeul_NP.jpg",
+      "plik": "File:Bluethroat (Luscinia svecica) at Ichkeul NP.jpg",
+      "oryginal": [4584, 3056],
+      "fokus": [39, 21]
+    },
+    "lot": null
+  },
+  "bialorzytka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Northern_wheatear_2024_04_14_01.jpg/960px-Northern_wheatear_2024_04_14_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Alexis Lours",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Northern_wheatear_2024_04_14_01.jpg",
+      "plik": "File:Northern wheatear 2024 04 14 01.jpg",
+      "oryginal": [5654, 3769],
+      "fokus": [47, 26]
+    },
+    "lot": null
+  },
+  "pierwiosnek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Chiffchaff_-_Phylloscopus_collybita.jpg/960px-Chiffchaff_-_Phylloscopus_collybita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chiffchaff_-_Phylloscopus_collybita.jpg",
+      "plik": "File:Chiffchaff - Phylloscopus collybita.jpg",
+      "oryginal": [2531, 1687],
+      "fokus": [41, 31]
+    },
+    "lot": null
   }
 }

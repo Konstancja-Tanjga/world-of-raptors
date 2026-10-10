@@ -27,7 +27,7 @@ export default function MojeNieboPage() {
         sylwetki={Object.fromEntries(
           struktura.gatunki.map((g) => [g.id, <Sylwetka key={g.id} id={g.id} klasa="lista-zyciowa__sylwetka" dokladnosc={0.3} />]),
         )}
-        rysunki={Object.fromEntries([...new Set(NASZYWKI.flatMap((n) => n.ptaki))].map((id) => [id, rysunek(id)]))}
+        rysunki={Object.fromEntries([...new Set(NASZYWKI.flatMap((n) => n.ptaki ?? []))].map((id) => [id, rysunek(id)]))}
       />
     </div>
   );

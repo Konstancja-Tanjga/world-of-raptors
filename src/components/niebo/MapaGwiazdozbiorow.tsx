@@ -1,14 +1,15 @@
 'use client';
 
 import { useEffect, useId, useRef } from 'react';
-import { gwiazdyNaNiebie, polozenieNaMapie, type Gwiazdozbior } from '@/lib/gwiazdozbiory';
+import { gwiazdyNaNiebie, polozenieNaMapie, wierszeMapy, type Gwiazdozbior } from '@/lib/gwiazdozbiory';
 import { kluczGwiazdozbioru, kluczMistrza, type ModulNieba } from '@/lib/odznaki';
 import { mniejRuchu } from '@/lib/useMedia';
 import { zagrajGdyWidoczny } from './moment';
 
 export type StanGwiazdozbioru = { zapalony: boolean; opanowany: boolean; nowyZapalony: boolean; nowyMistrz: boolean };
 
-const WYMIARY = { szeroka: [1000, 640], waska: [400, 1080] } as const;
+/** The map's width and the height of one row of constellations, in its own units. */
+const WYMIARY = { szeroka: [1000, 640 / 3], waska: [400, 1080 / 6] } as const;
 
 /** A quiet field of background stars, seeded so it is the same on every visit. */
 function tloGwiazd(szer: number, wys: number, ile: number) {
@@ -28,7 +29,8 @@ type WlasciwosciMapy = {
 
 function Mapa({ moduly, gwiazdozbiory, stany, pokazane, waska }: WlasciwosciMapy & { waska: boolean }) {
   const u = useId().replace(/[^a-zA-Z0-9_-]/g, '');
-  const [szer, wys] = WYMIARY[waska ? 'waska' : 'szeroka'];
+  const [szer, wiersz] = WYMIARY[waska ? 'waska' : 'szeroka'];
+  const wys = Math.round(wiersz * wierszeMapy(moduly.length, waska));
   const korzen = useRef<SVGSVGElement>(null);
 
   // A constellation whose moment has not played yet lights up: its stars ignite
@@ -124,7 +126,7 @@ function Mapa({ moduly, gwiazdozbiory, stany, pokazane, waska }: WlasciwosciMapy
       {moduly.map((m, i) => {
         const gw = gwiazdozbiory[m.slug];
         const s = stany[m.slug];
-        const p = polozenieNaMapie(i, waska);
+        const p = polozenieNaMapie(i, waska, moduly.length);
         const punkty = gwiazdyNaNiebie(gw, p, szer, wys);
         const dol = Math.max(...punkty.map((q) => q[1]));
         const zapalony = Boolean(s?.zapalony);
@@ -163,8 +165,8 @@ function Mapa({ moduly, gwiazdozbiory, stany, pokazane, waska }: WlasciwosciMapy
 /**
  * The night sky of "Moje niebo": a constellation for each module, lit once
  * the module is finished and given a gold star once its birds are
- * recognised; the rest wait as pale sketches. A four-by-three field on wide
- * screens, two columns on narrow ones (CSS shows one). For screen readers, a
+ * recognised; the rest wait as pale sketches. Four columns on wide screens and
+ * two on narrow ones (CSS shows one), as many rows as the modules need. For screen readers, a
  * list of the modules and their state.
  */
 export function MapaGwiazdozbiorow(wlasciwosci: WlasciwosciMapy) {

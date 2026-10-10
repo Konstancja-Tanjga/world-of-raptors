@@ -25,8 +25,11 @@ export type ZdjecieKopii = Omit<ZdjecieWlasne, 'blob'> & { dataUrl: string };
 
 /** The browser cannot decode this file (typically HEIC outside Safari). */
 export class NieobslugiwanyFormat extends Error {
-  constructor(public plik: string) {
+  // A plain field, not `constructor(public plik)`: Node's type stripping (npm test) has no parameter properties.
+  plik: string;
+  constructor(plik: string) {
     super(`cannot decode ${plik}`);
+    this.plik = plik;
     this.name = 'NieobslugiwanyFormat';
   }
 }

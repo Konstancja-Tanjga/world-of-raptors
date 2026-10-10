@@ -16,6 +16,7 @@ export {
   Button,
   Card,
   Checkbox,
+  DatePicker,
   DescriptionList,
   FileDropzone,
   FilterChip,

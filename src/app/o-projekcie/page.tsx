@@ -79,7 +79,11 @@ export default async function OProjekcie() {
   const tysiace = Math.round(liczby.slowa / 1000);
 
   const statystyki = [
-    { n: liczby.gatunki, slowo: odmiana(liczby.gatunki, ['gatunek', 'gatunki', 'gatunków']) },
+    { n: liczby.gatunki, slowo: odmiana(liczby.gatunki, ['gatunek drapieżnika', 'gatunki drapieżników', 'gatunków drapieżników']) },
+    {
+      n: liczby.ptakiMokradel,
+      slowo: odmiana(liczby.ptakiMokradel, ['ptak mokradeł', 'ptaki mokradeł', 'ptaków mokradeł']),
+    },
     { n: liczby.moduly, slowo: odmiana(liczby.moduly, ['moduł', 'moduły', 'modułów']) },
     { n: liczby.lekcje, slowo: odmiana(liczby.lekcje, ['lekcja', 'lekcje', 'lekcji']) },
     { n: `ok. ${tysiace} tys.`, slowo: 'słów w lekcjach' },

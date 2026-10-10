@@ -357,6 +357,35 @@
           "tytul": "Ćwiczenia i projekt"
         }
       ]
+    },
+    {
+      "id": "B6",
+      "slug": "barbate",
+      "sciezka": "b",
+      "tytul": "Marismas del Barbate, początek października",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-miejsce",
+          "tytul": "Rozlewiska u ujścia"
+        },
+        {
+          "slug": "02-przed-wyjsciem",
+          "tytul": "Przed wyjściem: pływy, wiatr, luneta"
+        },
+        {
+          "slug": "03-drapiezniki-i-ibis",
+          "tytul": "Drapieżniki i ibis grzywiasty"
+        },
+        {
+          "slug": "04-ptaki-rozlewisk",
+          "tytul": "Ptaki rozlewisk, łach i zarośli"
+        },
+        {
+          "slug": "05-karta-terenowa",
+          "tytul": "Karta terenowa i quiz"
+        }
+      ]
     }
   ]
 }

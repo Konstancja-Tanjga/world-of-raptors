@@ -1,8 +1,8 @@
 'use client';
 
-import { isChecklista, type Checklista } from './checklist';
 import { isFiszki, type Fiszki } from './fiszki';
 import { isPostep, type Postep } from './postep';
+import { checklistaZDowolnej, isChecklista, type Checklista } from './obserwacje';
 import { isZdobyte, type Zdobyte } from './zdobyte';
 import {
   blobNaDataUrl,
@@ -16,6 +16,9 @@ import {
 /**
  * Backup file format.
  *
+ * v3: as v2, with the checklist in its v2 shape (obserwacje.ts: `widziany`,
+ * `zmieniono`, unticked species kept). v1 and v2 files still import: their
+ * checklist goes through checklistaZDowolnej, as the store's own does.
  * v2: `{ wersja: 2, checklista, postep, fiszki, odznaki, zdjecia }`. `fiszki`
  * was added later, so older v2 files lack it; it is also left out when there
  * are no flashcard schedules (or they have not loaded yet), so importing such
@@ -25,10 +28,10 @@ import {
  * progress earns them again. `zdjecia` is left out (not `[]`) when the photos could
  * not be read, so importing such a file keeps the photos already on the
  * target device instead of erasing them.
- * v1: a bare checklist object; still importable.
+ * v1: a bare checklist object.
  */
-type KopiaV2 = {
-  wersja: 2;
+type KopiaV3 = {
+  wersja: 3;
   checklista: Checklista;
   postep: Postep;
   fiszki?: Fiszki;
@@ -46,8 +49,8 @@ export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki
     console.error('[kopia] could not read photos for export', err);
     zdjecia = undefined;
   }
-  const kopia: KopiaV2 = {
-    wersja: 2,
+  const kopia: KopiaV3 = {
+    wersja: 3,
     checklista,
     postep,
     ...(fiszki && Object.keys(fiszki).length ? { fiszki } : {}),
@@ -87,12 +90,18 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   }
   const obiekt = typeof parsed === 'object' && parsed !== null ? (parsed as Record<string, unknown>) : null;
 
-  if (obiekt?.wersja !== 2) {
-    if (!isChecklista(parsed)) throw new NiepoprawnaKopia('plik nie wygląda na kopię checklisty');
-    return { checklista: parsed };
+  if (typeof obiekt?.wersja === 'number' && obiekt.wersja > 3) {
+    throw new NiepoprawnaKopia(`kopia pochodzi z nowszej wersji kursu (format ${obiekt.wersja})`);
+  }
+  if (obiekt?.wersja !== 2 && obiekt?.wersja !== 3) {
+    const lista = checklistaZDowolnej(parsed);
+    if (!lista) throw new NiepoprawnaKopia('plik nie wygląda na kopię checklisty');
+    return { checklista: lista };
   }
 
-  if (!isChecklista(obiekt.checklista)) throw new NiepoprawnaKopia('uszkodzona checklista w pliku');
+  const checklista =
+    obiekt.wersja === 3 ? (isChecklista(obiekt.checklista) ? obiekt.checklista : null) : checklistaZDowolnej(obiekt.checklista);
+  if (!checklista) throw new NiepoprawnaKopia('uszkodzona checklista w pliku');
   if (obiekt.fiszki !== undefined && !isFiszki(obiekt.fiszki)) {
     throw new NiepoprawnaKopia('uszkodzone fiszki w pliku');
   }
@@ -116,7 +125,7 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
     }
   }
   return {
-    checklista: obiekt.checklista,
+    checklista,
     postep: obiekt.postep as Postep | undefined,
     fiszki: obiekt.fiszki as Fiszki | undefined,
     odznaki: obiekt.odznaki as Zdobyte | undefined,

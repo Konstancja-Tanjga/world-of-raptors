@@ -241,6 +241,7 @@
         "poludnie-hiszpanii",
         "polska"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "orły (mały orzeł)",
         "skrzydla": "średnio długie, dość wąskie, krawędzie prawie równoległe",
@@ -321,6 +322,7 @@
         "poludnie-hiszpanii",
         "polska"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "orły",
         "skrzydla": "długie i szerokie, z szeroką „ręką”",
@@ -361,6 +363,7 @@
         "poludnie-hiszpanii",
         "polska"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "rybołów",
         "skrzydla": "bardzo długie i wąskie, mocno zgięte w nadgarstku",
@@ -401,6 +404,7 @@
         "gibraltar",
         "poludnie-hiszpanii"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "sępy",
         "skrzydla": "ogromne, bardzo szerokie, prostokątne jak deska",
@@ -597,6 +601,7 @@
         "poludnie-hiszpanii",
         "polska"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "błotniaki",
         "skrzydla": "długie, najszersze z błotniaków",
@@ -710,6 +715,7 @@
         "gibraltar",
         "poludnie-hiszpanii"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "kanie (mała kania)",
         "skrzydla": "spiczaste jak u sokoła, szerokie u nasady",
@@ -751,6 +757,7 @@
         "poludnie-hiszpanii",
         "polska"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "sokoły",
         "skrzydla": "długie, wąskie, spiczaste (końce tępsze niż u innych sokołów)",
@@ -871,6 +878,7 @@
         "poludnie-hiszpanii",
         "polska"
       ],
+      "miejsca": ["marismas-barbate"],
       "sylwetka": {
         "grupa": "sokoły",
         "skrzydla": "szerokie u nasady, trójkątne, spiczaste",
