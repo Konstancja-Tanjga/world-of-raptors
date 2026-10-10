@@ -18,6 +18,7 @@ export {
   Checkbox,
   DatePicker,
   DescriptionList,
+  Dialog,
   FileDropzone,
   FilterChip,
   Input,

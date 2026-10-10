@@ -289,5 +289,15 @@ export function rozstrzygnij(wybor: 'dolacz' | 'zastap') {
   przepustka();
 }
 
+/**
+ * After the account is deleted: stop syncing and forget it here, so the data
+ * left in this browser is offered to the next account as new, not compared
+ * with an account that no longer exists. Returns whether the browser kept it.
+ */
+export function zapomnijKonto() {
+  zatrzymajSynchronizacje();
+  return stanMagazyn.zapisz(PUSTY_STAN);
+}
+
 /** A pass now (the "Synchronizuj teraz" button). */
 export const synchronizujTeraz = przepustka;

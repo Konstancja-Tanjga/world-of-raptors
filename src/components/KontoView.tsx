@@ -7,6 +7,7 @@ import { odmiana } from '@/lib/odmiana';
 import type { BladTabeli } from '@/lib/synchronizacja';
 import { rozstrzygnij, synchronizujTeraz, useStatusSynchronizacji } from '@/lib/synchronizacjaPrzegladarki';
 import { Button, StateBlock } from './ds';
+import { DaneKonta } from './DaneKonta';
 import { PrzyciskGoogle } from './PrzyciskGoogle';
 
 const godzina = (iso: string) => new Date(iso).toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' });
@@ -164,6 +165,7 @@ export function KontoView() {
         </Button>
       </div>
       <p className="muted">Po wylogowaniu postęp zostaje w tej przeglądarce, ale przestaje się synchronizować.</p>
+      <DaneKonta />
     </div>
   );
 }
