@@ -315,6 +315,19 @@
       "miejsca": ["marismas-barbate"]
     },
     {
+      "id": "kormoran",
+      "pl": "kormoran",
+      "lat": "Phalacrocorax carbo",
+      "en": "Great Cormorant",
+      "es": "cormorán grande",
+      "grupa": "inne-niewroblowe",
+      "cechy": [
+        "Duży, czarny ptak z długą szyją i haczykowatym dziobem. Pływa nisko zanurzony, z dziobem uniesionym lekko w górę, i często nurkuje.",
+        "Po nurkowaniu suszy pióra: siedzi na palu, konarze albo brzegu z rozłożonymi skrzydłami."
+      ],
+      "miejsca": ["marismas-barbate"]
+    },
+    {
       "id": "klaskawka",
       "pl": "kląskawka",
       "lat": "Saxicola rubicola",

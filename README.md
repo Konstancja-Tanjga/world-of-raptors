@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 42 drapieżniki | 34 ptaki mokradeł | 13 modułów | 65 lekcji | 132 pytania w quizach | 282 fiszki | 363 zdjęcia |
+| 42 drapieżniki | 35 ptaków mokradeł | 13 modułów | 65 lekcji | 132 pytania w quizach | 282 fiszki | 363 zdjęcia |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -53,7 +53,7 @@ Lekcja to artykuł ze spisem treści, czasem czytania i marginesem na zdjęcia i
 
 42 gatunki: 32 drapieżniki dzienne i 10 sów. Atlas pokazuje je na zdjęciach, jako sylwetki w grupach (tych z modułu B1, do tego sowy) albo wszystkie w jednej skali. Gatunki, które widziałam, są oznaczone złotem.
 
-Do tego 34 ptaki mokradeł z karty terenowej Marismas del Barbate (moduł B6): czaple, siewkowe, mewy, rybitwy, ptaki zarośli i ibis grzywiasty. Atlas pokazuje je po wybraniu „Ptaki mokradeł” albo miejsca „Marismas del Barbate”, tylko na zdjęciach, bo sylwetki i skala są dla drapieżników. Na checkliście karta terenowa liczy postęp, np. „17 z 42”, także w każdej grupie, a za obserwacje są naszywki w „Moim niebie”.
+Do tego 35 ptaków mokradeł z karty terenowej Marismas del Barbate (moduł B6): czaple, siewkowe, mewy, rybitwy, kormoran, ptaki zarośli i ibis grzywiasty. Atlas pokazuje je po wybraniu „Ptaki mokradeł” albo miejsca „Marismas del Barbate”, tylko na zdjęciach, bo sylwetki i skala są dla drapieżników. Na checkliście karta terenowa liczy postęp, np. „17 z 43”, także w każdej grupie, a za obserwacje są naszywki w „Moim niebie”.
 
 <img src="docs/readme/gatunek.webp" width="100%" alt="Karta kani rudej: zdjęcie w locie, nazwa polska, łacińska, angielska i hiszpańska, status i obrączki">
 

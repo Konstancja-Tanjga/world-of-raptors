@@ -824,7 +824,7 @@ function sprawdzSpojnosc() {
     czaple: 5,
     siewkowe: 14,
     'mewy-i-rybitwy': 4,
-    'inne-niewroblowe': 1,
+    'inne-niewroblowe': 2,
     wroblowe: 9,
   } satisfies Record<GrupaListyMiejsca, number>;
   const grupyMarismas: Partial<Record<GrupaListyMiejsca, number>> = Object.fromEntries(

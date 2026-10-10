@@ -111,7 +111,8 @@ export function SpeciesMedia({
 
 /**
  * A bird of marshes in a lesson: perched or standing first (that is how it is
- * usually seen), then in flight where a cue shows only on the wing, and the way to its
+ * usually seen), then in flight where a cue shows only on the wing, then the
+ * view that most helps identification (`cecha`), and the way to its
  * card, where I tick it. Its field marks are the lesson's own text.
  */
 function PlanszaMokradel({ id }: { id: string }) {
@@ -121,11 +122,14 @@ function PlanszaMokradel({ id }: { id: string }) {
   const zdjeciaPlanszy = [
     z?.siedzacy && { foto: z.siedzacy, alt: `${p.pl}, ptak siedzący`, podpis: 'Siedzący' },
     z?.lot && { foto: z.lot, alt: `${p.pl} w locie`, podpis: 'W locie' },
+    z?.cecha && { foto: z.cecha, alt: z.cecha.alt, podpis: z.cecha.podpis },
   ].filter((x) => !!x);
   return (
     <div className="plate">
       {zdjeciaPlanszy.length > 0 && (
-        <div className={zdjeciaPlanszy.length === 1 ? 'plate__photos plate__photos--single plate__photos--mokradla' : 'plate__photos plate__photos--mokradla'}>
+        <div
+          className={`plate__photos plate__photos--mokradla${zdjeciaPlanszy.length === 1 ? ' plate__photos--single' : ''}${zdjeciaPlanszy.length === 3 ? ' plate__photos--three' : ''}`}
+        >
           {zdjeciaPlanszy.map((x) => (
             <Photo key={x.foto.plik} zdjecie={x.foto} alt={x.alt} podpis={x.podpis} />
           ))}

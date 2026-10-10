@@ -170,6 +170,17 @@ Największa rybitwa, wielkości dużej mewy. Masywny, czerwony dziób widać z d
 
 Mały, turkusowo-pomarańczowy ptak z długim dziobem. Najczęściej widać niebieską smugę nisko nad kanałem i słychać ostry, wysoki gwizd.
 
+### Kormoran — *Phalacrocorax carbo* (ang. Great Cormorant)
+
+<margines>
+
+<zdjecie src="/zdjecia/barbate-kormoran.jpg" width="960" height="762" alt="Ciemna sylwetka kormorana płynącego w kanale, nisko zanurzonego, z długą szyją i dziobem uniesionym lekko w górę" podpis="Kormoran w kanale Marismas del Barbate, 10 października 2026: pod światło widać tylko sylwetkę, ale ona wystarczy" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+</zdjecie>
+
+</margines>
+
+Duży, czarny ptak z długą szyją i haczykowatym dziobem. Pływa nisko zanurzony, z dziobem uniesionym lekko w górę, i często nurkuje. Po nurkowaniu suszy pióra: siedzi na palu, konarze albo brzegu z rozłożonymi skrzydłami.
+
 
 ---
 

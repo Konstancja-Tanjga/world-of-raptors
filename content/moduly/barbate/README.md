@@ -7,7 +7,7 @@
 ## Moduł terenowy
 To moduł na jeden konkretny wyjazd: Marismas del Barbate (prowincja Kadyks) na początku października. Uczy mniej teorii, a więcej tego, **kiedy wyjść, gdzie patrzeć i co zapisać**.
 
-Wszystkie 42 gatunki z tego modułu to gatunki **możliwe, nie pewne**. W jeden dzień zobaczysz część z nich. Ile, zależy od pływów, wiatru i szczęścia.
+Wszystkie 43 gatunki z tego modułu to gatunki **możliwe, nie pewne**. W jeden dzień zobaczysz część z nich. Ile, zależy od pływów, wiatru i szczęścia.
 
 Moduł łączy się z modułami [B3 Cieśnina Gibraltarska](../gibraltar/README.md) (jak wiatr przesuwa przelot) i [B4 Ptaki drapieżne południa Hiszpanii](../poludnie-hiszpanii/README.md) (ptaki osiadłe regionu).
 
