@@ -6,7 +6,7 @@ W marismas o tym, co zobaczysz, decydują trzy rzeczy: pora pływu, kierunek wia
 
 <margines>
 
-> **Gdzie sprawdzić:** wpisz w wyszukiwarkę „tabla de mareas Barbate”. Tablica podaje godziny przypływu (*pleamar*) i odpływu (*bajamar*) na każdy dzień.
+> **Gdzie sprawdzić:** wpisz w wyszukiwarkę „tabla de mareas Barbate”. Tablica podaje godziny przypływu (*pleamar*) i odpływu (*bajamar*) na każdy dzień. Planer [Kiedy jechać](/kiedy-jechac) liczy z prognozy pływów i pogody najlepsze godziny na najbliższe dziesięć dni.
 
 </margines>
 

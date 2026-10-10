@@ -67,6 +67,7 @@ src/
 | `/gatunki/[id]` | karta gatunku: plansza sylwetki, sposób lotu, rozpiętość, podobne gatunki z suwakiem, moja obserwacja |
 | `/fiszki` | fiszki: zdjęcia, sylwetki i nazwy (polskie, angielskie, hiszpańskie), powtórki FSRS |
 | `/checklista` | moja checklista: odhaczanie, data, miejsce, notatka, zdjęcia, eksport i import |
+| `/kiedy-jechac` | planer: najlepsze godziny na Marismas del Barbate i La Jandę w najbliższych 10 dniach, z prognozy pływów i pogody Open-Meteo (pobieranej w przeglądarce) |
 | `/moje-niebo` | moje niebo: gwiazdozbiory modułów, lista życiowa z obrączkami gatunków, ściana naszywek |
 | `/o-projekcie` | o projekcie: autorstwo, jak powstały sylwetki, kroje, kolory, ruch, podziękowania dla fotografów |
 | `/opengraph-image` | karta, którą pokazuje udostępniony link (LinkedIn, komunikatory): niebo o zmierzchu, sylwetki, tytuł i autorka; rysowana raz, przy buildzie |
