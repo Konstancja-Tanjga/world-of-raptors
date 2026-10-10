@@ -10,7 +10,7 @@ Większość gatunków z listy Marismas to nie drapieżniki, tylko ptaki wody i 
 
 </margines>
 
-Te ptaki nie mają planszy sylwetek jak drapieżniki. Rozpoznajesz je głównie po tym, **gdzie stoją, jak żerują i jaki mają dziób i nogi**. Przy każdym gatunku jest jego zdjęcie na ziemi, a gdy cechę widać najlepiej w locie, także w locie. Link „Karta gatunku” prowadzi do atlasu, gdzie zaznaczysz obserwację.
+Te ptaki nie mają planszy sylwetek jak drapieżniki. Rozpoznajesz je głównie po tym, **gdzie stoją, jak żerują i jaki mają dziób i nogi**. Przy każdym gatunku jest jego zdjęcie, jak stoi albo siedzi, a gdy cechę widać najlepiej w locie, także w locie. Link „Karta gatunku” prowadzi do atlasu, gdzie zaznaczysz obserwację.
 
 Wszystkie są **możliwe, nie pewne**. Część to ptaki zimujące, które na początku października dopiero przylatują.
 

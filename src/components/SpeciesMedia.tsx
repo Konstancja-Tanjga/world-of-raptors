@@ -110,8 +110,8 @@ export function SpeciesMedia({
 }
 
 /**
- * A bird of marshes in a lesson: standing first (that is how it is seen on the
- * mud), then in flight where a cue shows only on the wing, and the way to its
+ * A bird of marshes in a lesson: perched or standing first (that is how it is
+ * usually seen), then in flight where a cue shows only on the wing, and the way to its
  * card, where I tick it. Its field marks are the lesson's own text.
  */
 function PlanszaMokradel({ id }: { id: string }) {
@@ -119,7 +119,7 @@ function PlanszaMokradel({ id }: { id: string }) {
   if (!p) return null;
   const z = zdjecia[id];
   const zdjeciaPlanszy = [
-    z?.siedzacy && { foto: z.siedzacy, alt: p.pl, podpis: 'Na ziemi' },
+    z?.siedzacy && { foto: z.siedzacy, alt: `${p.pl}, ptak siedzący`, podpis: 'Siedzący' },
     z?.lot && { foto: z.lot, alt: `${p.pl} w locie`, podpis: 'W locie' },
   ].filter((x) => !!x);
   return (
