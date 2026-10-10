@@ -80,8 +80,19 @@ Nic osobnego: „Moje niebo”, checklista i fiszki czytają te same magazyny, a
 
 ### Faza 5: prywatność i konto
 
-- **Kod:** strona konta z e-mailem, datą założenia, „Pobierz moje dane” (JSON) i „Usuń konto”. Usunięcie robi trasa serwerowa z kluczem secret: najpierw sprawdza token zalogowanej osoby, potem kasuje konto, a baza kasuje dane razem z nim.
-- **Właścicielka:** polityka prywatności, wymagana przez Google przy logowaniu innych osób. Opisuje, jakie dane zbieramy, Supabase jako podmiot przetwarzający, logowanie przez Google i jak usunąć konto. Kod może przygotować projekt strony `/prywatnosc` do przeczytania i poprawienia.
+**Kod gotowy** (gałąź `feature/konto-dane`, jeszcze nie na `main`):
+- strona konta: „Pobierz moje dane” (plik JSON ze wszystkim, co konto ma na serwerze) i „Usuń konto” (okno potwierdzenia),
+- trasa serwerowa `POST /konto/usun`: sprawdza sesję osoby, która pyta, i kasuje tylko jej konto; baza kasuje z nim wszystkie dane. Klucz secret czyta tylko serwer (`SUPABASE_SECRET_KEY`),
+- po usunięciu przeglądarka zachowuje postęp i zapomina o koncie.
+
+**Do zrobienia (odłożone 2026-10-10):**
+1. **Właścicielka:**
+   - skopiować klucz secret z Supabase (API Keys → Secret keys) i dodać go w Vercelu jako `SUPABASE_SECRET_KEY` (Secret, Production),
+   - dopisać go do `.env.local` (`code ~/Developer/wor-konta/.env.local`, linia `SUPABASE_SECRET_KEY=…`); nie wklejać go w czacie,
+   - dodać drugie konto Google jako testera (Google Auth Platform → Audience → Test users).
+2. Test na `localhost` drugim kontem: logowanie, „Pobierz moje dane”, „Usuń konto”. Nie na prawdziwym koncie.
+3. Przegląd kodu, potem `main`.
+4. Polityka prywatności (strona `/prywatnosc`, projekt do poprawienia przez właścicielkę), link w ekranie zgody Google, przełączenie ekranu zgody na „In production”.
 
 ### Faza 6: testy i wdrożenie
 
