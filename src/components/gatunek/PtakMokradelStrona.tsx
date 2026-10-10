@@ -107,7 +107,7 @@ export function PtakMokradelStrona({
                 Zdjęcia
               </h2>
             </div>
-            <div className="gatunek__zdjecia">
+            <div className={z.lot && z.cecha ? 'gatunek__zdjecia gatunek__zdjecia--trzy' : 'gatunek__zdjecia'}>
               {z.lot && <Photo zdjecie={z.lot} alt={`${p.pl} w locie`} podpis="W locie" />}
               <Photo zdjecie={z.siedzacy} alt={`${p.pl}, ptak siedzący`} podpis="Siedzący" />
               {z.cecha && <Photo zdjecie={z.cecha} alt={z.cecha.alt} podpis={z.cecha.podpis} />}

@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 42 drapieżniki | 35 ptaków mokradeł | 13 modułów | 65 lekcji | 132 pytania w quizach | 282 fiszki | 363 zdjęcia |
+| 42 drapieżniki | 35 ptaków mokradeł | 13 modułów | 65 lekcji | 132 pytania w quizach | 282 fiszki | 383 zdjęcia |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
