@@ -18,6 +18,13 @@ Wszystkie są **możliwe, nie pewne**. Część to ptaki zimujące, które na po
 
 ## Czaple, flaming i warzęcha
 
+<margines>
+
+<zdjecie src="/zdjecia/barbate-warzechy-czapla.jpg" width="960" height="540" alt="Kilkanaście białych warzęch i jedna szara czapla siwa żerują w kanale; dwie warzęchy zrywają się do lotu z rozłożonymi skrzydłami" podpis="Warzęchy i czapla siwa w jednym kanale, Marismas del Barbate, 10 października 2026: czaplę wyróżniają szary kolor i dziób jak sztylet" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+</zdjecie>
+
+</margines>
+
 Duże, długonogie ptaki płytkiej wody. Najłatwiej je zobaczyć i od nich warto zacząć.
 
 ### Flaming różowy — *Phoenicopterus roseus* (ang. Greater Flamingo)
@@ -51,6 +58,13 @@ Duża, szara czapla z białą głową i czarnym paskiem nad okiem. Leci powoli, 
 ---
 
 ## Siewkowe
+
+<margines>
+
+<zdjecie src="/zdjecia/barbate-szablodzioby.jpg" width="960" height="1072" alt="Czarno-białe szablodzioby z cienkimi, wygiętymi w górę dziobami żerują na skraju płytkiej wody i mułu" podpis="Szablodzioby na mule, gdy woda zaczęła wracać (Marismas del Barbate, 10 października 2026, ok. 10:40)" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+</zdjecie>
+
+</margines>
 
 Najliczniejsza grupa na liście. Żerują na łachach, a przy przypływie odpoczywają w zwartych stadach. Tu najbardziej przyda się luneta i dobra pora pływu (lekcja 2).
 

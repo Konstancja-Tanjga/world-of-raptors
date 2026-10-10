@@ -608,7 +608,12 @@ export async function autorzyZdjec() {
   for (const m of gotoweModuly) {
     for (const l of m.lekcje) {
       const md = await czytajMarkdown(`moduly/${m.slug}/${l.slug}.md`);
-      for (const [, autor] of md.matchAll(/<zdjecie\b[^>]*\bautor="([^"]*)"/g)) surowe.push(odkoduj(autor));
+      for (const [tag] of md.matchAll(/<zdjecie\b[^>]*>/g)) {
+        // Like the atlas: only photos with a Commons page; the author's own are credited separately.
+        if (!/\bstrona="[^"]+"/.test(tag)) continue;
+        const autor = tag.match(/\bautor="([^"]*)"/)?.[1];
+        if (autor) surowe.push(odkoduj(autor));
+      }
     }
   }
   const nieznani = /^(autor nieznany|nieznany autor|own work)$/i;

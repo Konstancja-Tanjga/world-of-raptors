@@ -42,7 +42,7 @@ export function Stopka() {
         <div className="stopka__kolumna">
           <p className="stopka__naglowek">Kolofon</p>
           <p>
-            Zdjęcia: Wikimedia Commons, z autorem i licencją przy każdym zdjęciu, i jedno zdjęcie autorki. Sylwetki
+            Zdjęcia: Wikimedia Commons, z autorem i licencją przy każdym zdjęciu, i kilka zdjęć autorki. Sylwetki
             rysuje kod kursu na podstawie cech z lekcji B1.
           </p>
           <p>
