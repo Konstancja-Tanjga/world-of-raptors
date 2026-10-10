@@ -1579,6 +1579,16 @@ li {
   flex-direction: column;
   gap: var(--bh-gap-snug);
 }
+/* A bird of marshes: smaller photos (it is one of many in the lesson), then its field marks. */
+.plate__photos--mokradla {
+  max-width: 40rem;
+}
+.plate__photos--mokradla.plate__photos--single {
+  max-width: 24rem;
+}
+.plate__karta {
+  margin: 0;
+}
 .plate__lookalikes {
   list-style: none;
   margin: 0;

@@ -83,8 +83,6 @@ To nie drapieżnik, ale gatunek specjalny tego modułu. Ibis grzywiasty jest na 
 
 <!-- TODO: sprawdzić: aktualne miejsca żerowania ibisów w okolicy Barbate i komu zgłaszać odczyty obrączek -->
 
-Karta ibisa w atlasie: [ibis grzywiasty](/gatunki/ibis-grzywiasty).
-
 ## Mini-quiz
 1. Biało-szary ptak z czarnymi „ramionami” siedzi na drucie przy łące. Kto to?
 2. Całe stado biegusów nagle zrywa się i zbija w kulę. Kogo szukać na niebie?
