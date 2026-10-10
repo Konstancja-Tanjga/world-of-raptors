@@ -1,0 +1,187 @@
+{
+  "uwaga": "Test startowy (Moduł 0, PLAN-KURSU.md): 15 stałych pytań, ten sam test na początku i na końcu kursu. Pytania o wiedzę to odwołania do quizów lekcji (modul/lekcja#numer pytania), nie kopie. Nagrania: Wikimedia Commons (z xeno-canto); pole zatwierdzone ustawia właścicielka po odsłuchaniu nagrania.",
+  "pytania": [
+    {
+      "id": "sylwetka-kania",
+      "rodzaj": "sylwetka",
+      "gatunek": "kania-ruda",
+      "grupa": "kanie",
+      "odpowiedzi": [
+        "kanie",
+        "błotniaki",
+        "myszołowy",
+        "sokoły"
+      ]
+    },
+    {
+      "id": "sylwetka-myszolow",
+      "rodzaj": "sylwetka",
+      "gatunek": "myszolow",
+      "grupa": "myszołowy",
+      "odpowiedzi": [
+        "orły",
+        "myszołowy",
+        "kanie",
+        "krogulce"
+      ]
+    },
+    {
+      "id": "sylwetka-blotniak",
+      "rodzaj": "sylwetka",
+      "gatunek": "blotniak-stawowy",
+      "grupa": "błotniaki",
+      "odpowiedzi": [
+        "kanie",
+        "sokoły",
+        "błotniaki",
+        "myszołowy"
+      ]
+    },
+    {
+      "id": "sylwetka-sokol",
+      "rodzaj": "sylwetka",
+      "gatunek": "sokol-wedrowny",
+      "grupa": "sokoły",
+      "odpowiedzi": [
+        "krogulce",
+        "kanie",
+        "błotniaki",
+        "sokoły"
+      ]
+    },
+    {
+      "id": "sylwetka-sep",
+      "rodzaj": "sylwetka",
+      "gatunek": "sep-plowy",
+      "grupa": "sępy",
+      "odpowiedzi": [
+        "sępy",
+        "orły",
+        "myszołowy",
+        "kanie"
+      ]
+    },
+    {
+      "id": "zdjecie-pustulka",
+      "rodzaj": "zdjecie",
+      "gatunek": "pustulka",
+      "zdjecie": "siedzacy",
+      "odpowiedzi": [
+        "pustuleczka",
+        "pustulka",
+        "kobuz",
+        "krogulec"
+      ]
+    },
+    {
+      "id": "zdjecie-bielik",
+      "rodzaj": "zdjecie",
+      "gatunek": "bielik",
+      "zdjecie": "lot",
+      "odpowiedzi": [
+        "orzel-przedni",
+        "kania-czarna",
+        "bielik",
+        "myszolow"
+      ]
+    },
+    {
+      "id": "zdjecie-jastrzab",
+      "rodzaj": "zdjecie",
+      "gatunek": "jastrzab",
+      "zdjecie": "lot",
+      "odpowiedzi": [
+        "krogulec",
+        "myszolow",
+        "sokol-wedrowny",
+        "jastrzab"
+      ]
+    },
+    {
+      "id": "glos-puszczyk",
+      "rodzaj": "glos",
+      "gatunek": "puszczyk",
+      "nagranie": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Strix_aluco_-_Tawny_Owl_XC457393.mp3",
+        "autor": "Hannu Varkki",
+        "licencja": "CC BY-SA 4.0",
+        "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "strona": "https://commons.wikimedia.org/wiki/File:Strix_aluco_-_Tawny_Owl_XC457393.mp3",
+        "xc": 457393,
+        "ocena": "B",
+        "sekundy": 39.0,
+        "zatwierdzone": false
+      },
+      "odpowiedzi": [
+        "puszczyk",
+        "puszczyk-uralski",
+        "uszatka",
+        "plomykowka"
+      ]
+    },
+    {
+      "id": "glos-pojdzka",
+      "rodzaj": "glos",
+      "gatunek": "pojdzka",
+      "nagranie": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/2/25/Athene_noctua_-_Little_Owl_XC431980.mp3",
+        "autor": "Joost van Bruggen",
+        "licencja": "CC BY-SA 4.0",
+        "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "strona": "https://commons.wikimedia.org/wiki/File:Athene_noctua_-_Little_Owl_XC431980.mp3",
+        "xc": 431980,
+        "ocena": "A",
+        "sekundy": 12.7,
+        "zatwierdzone": false
+      },
+      "odpowiedzi": [
+        "syczek",
+        "pojdzka",
+        "soweczka",
+        "wlochatka"
+      ]
+    },
+    {
+      "id": "glos-myszolow",
+      "rodzaj": "glos",
+      "gatunek": "myszolow",
+      "nagranie": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Buteo_buteo_-_Common_Buzzard_XC538678.mp3",
+        "autor": "Benoît Van Hecke",
+        "licencja": "CC BY-SA 4.0",
+        "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "strona": "https://commons.wikimedia.org/wiki/File:Buteo_buteo_-_Common_Buzzard_XC538678.mp3",
+        "xc": 538678,
+        "ocena": "B",
+        "sekundy": 57.8,
+        "zatwierdzone": false
+      },
+      "odpowiedzi": [
+        "kania-ruda",
+        "jastrzab",
+        "myszolow",
+        "pustulka"
+      ]
+    },
+    {
+      "id": "wiedza-krewni",
+      "rodzaj": "wiedza",
+      "zrodlo": "kim-sa-drapiezniki/05-cwiczenia#2"
+    },
+    {
+      "id": "wiedza-dolki",
+      "rodzaj": "wiedza",
+      "zrodlo": "anatomia/05-cwiczenia#1"
+    },
+    {
+      "id": "wiedza-termiki",
+      "rodzaj": "wiedza",
+      "zrodlo": "wedrowki/05-cwiczenia#3"
+    },
+    {
+      "id": "wiedza-ddt",
+      "rodzaj": "wiedza",
+      "zrodlo": "ochrona/05-cwiczenia#1"
+    }
+  ]
+}

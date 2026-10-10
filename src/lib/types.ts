@@ -247,3 +247,39 @@ export type GrupaSylwetki = {
   /** The atlas species whose silhouette stands for the group. */
   gatunek: string;
 };
+
+/** A bird sound from Wikimedia Commons (most from xeno-canto), with the credit its licence requires. */
+export type Nagranie = {
+  src: string;
+  autor: string;
+  licencja: string;
+  licencjaUrl: string;
+  /** Commons file page; its title names the species, so it is shown only after the answer. */
+  strona: string;
+  /** xeno-canto catalogue number. */
+  xc: number;
+  /** xeno-canto's quality rating, A best. */
+  ocena: string;
+  sekundy: number;
+  /** The owner has listened to it and confirmed the species and that the bird is clearly audible. */
+  zatwierdzone: boolean;
+};
+
+export type RodzajPytaniaTestu = 'sylwetka' | 'zdjecie' | 'glos' | 'wiedza';
+
+/** One question of the starting test (Moduł 0), ready to show: nothing on the question side names the answer. */
+export type PytanieTestu = {
+  id: string;
+  rodzaj: RodzajPytaniaTestu;
+  /** Path A (biology) or B (identification): the result is given per path. */
+  sciezka: 'a' | 'b';
+  pytanie: string;
+  odpowiedzi: string[];
+  poprawna: number;
+  /** For photos and silhouettes: the species, named only after the answer. */
+  gatunek?: { id: string; pl: string; lat: string };
+  zdjecie?: Zdjecie;
+  nagranie?: Nagranie;
+  /** Knowledge questions: the lesson whose quiz it comes from. */
+  zrodlo?: { href: string; tytul: string };
+};
