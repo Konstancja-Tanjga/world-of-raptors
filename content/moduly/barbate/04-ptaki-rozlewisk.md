@@ -10,7 +10,7 @@ Większość gatunków z listy Marismas to nie drapieżniki, tylko ptaki wody i 
 
 </margines>
 
-Te ptaki nie mają planszy sylwetek jak drapieżniki. Rozpoznajesz je głównie po tym, **gdzie stoją, jak żerują i jaki mają dziób i nogi**. Przy każdym gatunku jest jego zdjęcie, jak stoi albo siedzi, a gdy cechę widać najlepiej w locie, także w locie. Link „Karta gatunku” prowadzi do atlasu, gdzie zaznaczysz obserwację.
+Te ptaki nie mają planszy sylwetek jak drapieżniki. Rozpoznajesz je głównie po tym, **gdzie stoją, jak żerują i jaki mają dziób i nogi**. Przy każdym gatunku jest jego zdjęcie, jak stoi albo siedzi, a gdy cechę widać najlepiej w locie albo w innej pozie, także takie zdjęcie. Link „Karta gatunku” prowadzi do atlasu, gdzie zaznaczysz obserwację.
 
 Wszystkie są **możliwe, nie pewne**. Część to ptaki zimujące, które na początku października dopiero przylatują.
 
@@ -169,6 +169,17 @@ Największa rybitwa, wielkości dużej mewy. Masywny, czerwony dziób widać z d
 ### Zimorodek — *Alcedo atthis* (ang. Common Kingfisher)
 
 Mały, turkusowo-pomarańczowy ptak z długim dziobem. Najczęściej widać niebieską smugę nisko nad kanałem i słychać ostry, wysoki gwizd.
+
+### Kormoran — *Phalacrocorax carbo* (ang. Great Cormorant)
+
+<margines>
+
+<zdjecie src="/zdjecia/barbate-kormoran.jpg" width="960" height="762" alt="Ciemna sylwetka kormorana płynącego w kanale, nisko zanurzonego, z długą szyją i dziobem uniesionym lekko w górę" podpis="Kormoran w kanale Marismas del Barbate, 10 października 2026: pod światło widać tylko sylwetkę, ale ona wystarczy" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+</zdjecie>
+
+</margines>
+
+Duży, czarny ptak z długą szyją i haczykowatym dziobem. Pływa nisko zanurzony, z dziobem uniesionym lekko w górę, i często nurkuje. Po nurkowaniu suszy pióra: siedzi na palu, konarze albo brzegu z rozłożonymi skrzydłami.
 
 
 ---

@@ -2253,5 +2253,34 @@
       "fokus": [41, 31]
     },
     "lot": null
+  },
+  "kormoran": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Bamberg-Bug_Regintz_Kormoran_121710.jpg/960px-Bamberg-Bug_Regintz_Kormoran_121710.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1193,
+      "autor": "Ermell",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Bamberg-Bug_Regintz_Kormoran_121710.jpg",
+      "plik": "File:Bamberg-Bug Regintz Kormoran 121710.jpg",
+      "fokus": [45, 17],
+      "oryginal": [2338, 2906]
+    },
+    "lot": null,
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Cormorant_%28Phalacrocorax_carbo%29_%2814%29.JPG/960px-Cormorant_%28Phalacrocorax_carbo%29_%2814%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Ken Billington",
+      "licencja": "CC BY-SA 3.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Cormorant_(Phalacrocorax_carbo)_(14).JPG",
+      "plik": "File:Cormorant (Phalacrocorax carbo) (14).JPG",
+      "podpis": "Suszy skrzydła",
+      "alt": "Czarny kormoran siedzi na konarze nad wodą z szeroko rozłożonymi skrzydłami",
+      "fokus": [50, 40],
+      "oryginal": [1600, 1200]
+    }
   }
 }

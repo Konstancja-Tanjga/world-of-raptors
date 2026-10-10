@@ -7,14 +7,14 @@ import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odzn
 const T = '2026-10-09T08:00:00.000Z';
 const ids = (prefix: string, n: number) => Array.from({ length: n }, (_, i) => `${prefix}-${i + 1}`);
 
-/** The Marismas list as B6 has it: 8 raptors, the ibis, 5 herons, 14 waders, 4 gulls and terns, the kingfisher, 9 passerines. */
+/** The Marismas list as B6 has it: 8 raptors, the ibis, 5 herons, 14 waders, 4 gulls and terns, the kingfisher and the cormorant, 9 passerines. */
 const MARISMAS: { id: GrupaListyMiejsca; gatunki: string[] }[] = [
   { id: 'drapiezniki', gatunki: ids('drapieznik', 8) },
   { id: 'ibisy', gatunki: ['ibis-grzywiasty'] },
   { id: 'czaple', gatunki: ids('czapla', 5) },
   { id: 'siewkowe', gatunki: ids('siewka', 14) },
   { id: 'mewy-i-rybitwy', gatunki: ids('mewa', 4) },
-  { id: 'inne-niewroblowe', gatunki: ['zimorodek'] },
+  { id: 'inne-niewroblowe', gatunki: ['zimorodek', 'kormoran'] },
   { id: 'wroblowe', gatunki: ids('wroblowy', 9) },
 ];
 const WSZYSTKIE = MARISMAS.flatMap((g) => g.gatunki);
@@ -43,15 +43,15 @@ test('the seven Marismas patches exist with their stored ids', () => {
 test('nothing is earned from an empty checklist', () => {
   const n = naszywki({});
   for (const id of ['marismas-pierwsza', 'komplet-marismas', 'ibis-grzywiasty']) assert.equal(n[id].zdobyta, false);
-  assert.deepEqual(n['komplet-marismas'].postep, [0, 42]);
+  assert.deepEqual(n['komplet-marismas'].postep, [0, 43]);
 });
 
-test('the counting patches are earned at 1, 10, 21 and 42 species', () => {
+test('the counting patches are earned at 1, 10, 22 and 43 species', () => {
   const progi: [string, number][] = [
     ['marismas-pierwsza', 1],
     ['marismas-dziesiatka', 10],
-    ['pol-marismas', 21],
-    ['komplet-marismas', 42],
+    ['pol-marismas', 22],
+    ['komplet-marismas', 43],
   ];
   for (const [id, prog] of progi) {
     assert.equal(zdobyta(widziane(WSZYSTKIE.slice(0, prog - 1)), id), false, `${id} at ${prog - 1}`);

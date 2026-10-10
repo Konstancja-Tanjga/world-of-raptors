@@ -1,6 +1,6 @@
 # Lekcja 5: Karta terenowa i quiz
 
-Karta terenowa to lista 42 gatunków możliwych w Marismas del Barbate na początku października. W terenie zaznaczasz to, co naprawdę zobaczyłaś, z datą i krótką notatką. Za obserwacje zdobywasz naszywki w „Moim niebie”.
+Karta terenowa to lista 43 gatunków możliwych w Marismas del Barbate na początku października. W terenie zaznaczasz to, co naprawdę zobaczyłaś, z datą i krótką notatką. Za obserwacje zdobywasz naszywki w „Moim niebie”.
 
 ## 1. Karta terenowa
 
@@ -21,7 +21,7 @@ Jak z niej korzystać:
 3. **Niepewny ptak?** Nie zaznaczaj. Zapisz go w notatce przy podobnym gatunku i sprawdź później w atlasie.
 4. **Pomyłka?** Odznacz gatunek. Data i notatka zostaną zapamiętane, gdybyś zaznaczyła go znowu.
 
-Nad listą widzisz licznik, np. „17 z 42”, i postęp w każdej grupie. W atlasie ten sam zestaw pokazuje filtr [Marismas del Barbate](/gatunki?miejsce=marismas-barbate).
+Nad listą widzisz licznik, np. „17 z 43”, i postęp w każdej grupie. W atlasie ten sam zestaw pokazuje filtr [Marismas del Barbate](/gatunki?miejsce=marismas-barbate).
 
 ## 2. Naszywki Marismas
 
@@ -31,8 +31,8 @@ W „Moim niebie” czeka siedem naszywek za obserwacje z tej listy:
 |---|---|
 | Pierwsza obserwacja w Marismas | 1 gatunek z listy |
 | Dziesiątka z Marismas | 10 gatunków |
-| Pół Marismas | 21 gatunków |
-| Komplet Marismas | wszystkie 42 gatunki |
+| Pół Marismas | 22 gatunki |
+| Komplet Marismas | wszystkie 43 gatunki |
 | Drapieżniki Marismas | wszystkie 8 drapieżników |
 | Łachy przy odpływie | wszystkie 14 siewkowych |
 | Ibis grzywiasty | ibis grzywiasty |
