@@ -8,7 +8,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 | Framework | **Next.js 16** (App Router, TypeScript) | strony generowane statycznie przy buildzie; tylko start renderuje się przy każdym wejściu (gatunek na dziś, niebo o tej porze) |
 | UI | **Big Hat design system** (`@bighat/ui`) | instalowany z GitHuba (`git+https://…bighat-design-system.git#<commit>`), bo nie ma go w npm |
 | Treść lekcji | Markdown w `content/`, renderowany przez `react-markdown` + `remark-gfm` + `rehype-raw` | lekcje czytelne także na GitHubie; `rehype-raw` pozwala na własne znaczniki (`<zdjecie>`, `<margines>`) |
-| Dane | `content/gatunki.json`, `content/moduly.json` | jedno źródło dla atlasu, checklisty i nawigacji |
+| Dane | `content/gatunki.json`, `content/ptaki-mokradel.json`, `content/moduly.json` | jedno źródło dla atlasu, checklisty i nawigacji |
 | Style | `src/app/motyw.css` (motyw: role `--bh-*` i warstwa `--wor-*`), `globals.css` i arkusze stron | bez Tailwinda: wartości z tokenów, nie wpisane na sztywno (wyjątki w CLAUDE.md) |
 | Checklista | `localStorage` + eksport i import do pliku JSON | bez logowania i bez bazy danych |
 | Postęp nauki | `localStorage` (`src/lib/postep.ts`) | ukończone lekcje; moduł jest „zaliczony”, gdy wszystkie lekcje są ukończone, co widać na kartach modułów (pierścień, „Zaliczony”) i w pasku modułu (ukończona lekcja ma ✓ w wypełnionym kółku zamiast numeru) |
@@ -28,7 +28,7 @@ content/
   PLAN-KURSU.md            plan kursu
   moduly.json              ścieżki, moduły, lekcje (kolejność i tytuły)
   gatunki.json             atlas: 42 drapieżniki (regiony, aktywność, cechy, pary do pomylenia, miejsca)
-  ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami (grupa „Ptaki mokradeł”): nazwy, grupa, cechy, miejsca
+  ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami (filtr „Ptaki mokradeł”): nazwy, grupa, cechy, miejsca
   moduly/<slug>/README.md  opis modułu
   moduly/<slug>/NN-*.md    lekcje
   zdjecia.json             zdjęcia gatunków, prawie wszystkie z Commons (autor, licencja, rozmiar oryginału, punkt ostrości)
@@ -99,7 +99,7 @@ src/
 Kolekcja liczona z tego, co przeglądarka już ma (ukończone lekcje, fiszki, checklista). Nic się w niej nie blokuje: każdy moduł jest zawsze otwarty.
 - **Obrączki gatunku:** „Znam” (ukończona lekcja, która go uczy: z jego planszą, a gdy żadna jej nie ma, która go wymienia), „Rozpoznaję” (wszystkie jego fiszki zapamiętane, czyli w powtórkach FSRS z odstępem co najmniej tygodnia i powtórzone innego dnia niż pierwsza odpowiedź, więc jedno szczęśliwe „Od razu” nie wystarcza) i złota „Widziałam” (gatunek jest na checkliście). Gatunki, które widziałam, są złote także w atlasie, na checkliście i w kolekcji na starcie, a na karcie gatunku mają złotą obrączkę.
 - **Gwiazdozbiory:** zaliczony moduł (wszystkie lekcje ukończone) zapala swój gwiazdozbiór, czyli ptaka z `GWIAZDOZBIORY` narysowanego gwiazdami w narożnikach jego sylwetki. Złota gwiazda przychodzi, kiedy moduł jest zaliczony i rozpoznaję jego gatunki: te z planszami w jego lekcjach, a gdy moduł nie ma plansz (A1–A7), te, które jego lekcje wymieniają łacińską nazwą kursywą; B1 uczy ośmiu grup sylwetek, więc prosi o ich ptaki. Nocą zapalone gwiazdozbiory świecą też na niebie startu, w części nieba wolnej od tekstu.
-- **Naszywki:** dwanaście, za umiejętności; zasady i postęp każdej są w `NASZYWKI` w `src/lib/odznaki.ts`.
+- **Naszywki:** dziewiętnaście, za umiejętności i za obserwacje z karty terenowej Marismas; zasady i postęp każdej są w `NASZYWKI` w `src/lib/odznaki.ts`.
 - **Co zdobyte, zostaje:** data zdobycia gwiazdozbioru, złotej gwiazdy i naszywki jest zapisana (`wor:odznaki:v1`), więc nie znika, gdy później coś zapomnę. Nowe ogłasza komunikat na stronie, na której je zdobyłam (poza pierwszym uruchomieniem i wczytaniem kopii: wtedy zapisuje je bez komunikatów), a „Moje niebo” raz odgrywa ich moment, kiedy się na nim pojawią. Pierwsza wizyta pokazuje tak wszystko, co było zdobyte wcześniej. Kopia zapasowa zawiera te daty.
 
 ## Uruchamianie

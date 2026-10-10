@@ -42,7 +42,11 @@ function RysunekEmblematu({ e, kolor, nic, pusta, klip }: { e: Emblemat; kolor: 
     ? { stroke: 'currentColor', strokeOpacity: 0.35, strokeWidth: 2, fill: 'none' }
     : { stroke: kolor, strokeWidth: 4.5, fill: 'none' };
   if (e.rodzaj === 'slady') {
-    return <path d={SLADY} {...kreska} strokeLinecap="round" />;
+    return (
+      <g clipPath={`url(#${klip})`}>
+        <path d={SLADY} {...kreska} strokeLinecap="round" />
+      </g>
+    );
   }
   if (e.rodzaj === 'obraczki') {
     const obraczka = pusta ? { fill: 'none', stroke: 'currentColor', strokeOpacity: 0.35, strokeWidth: 1.5 } : { fill: nic };

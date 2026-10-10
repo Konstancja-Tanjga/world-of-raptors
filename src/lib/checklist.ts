@@ -17,7 +17,7 @@ export { jestWidziany, widziane, type Checklista, type Obserwacja } from './obse
 const teraz = () => new Date().toISOString();
 
 const magazyn = utworzMagazyn<Checklista>('wor:checklista:v2', isChecklista, {
-  poprzednia: { klucz: 'wor:checklista:v1', migruj: (stare) => checklistaZDowolnej(stare, teraz()) },
+  poprzednia: { klucz: 'wor:checklista:v1', migruj: checklistaZDowolnej },
 });
 
 /**

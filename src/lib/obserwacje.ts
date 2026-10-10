@@ -53,21 +53,29 @@ export function isChecklista(value: unknown): value is Checklista {
 }
 
 /**
- * v1 to v2: every stored species was seen. Its fields are kept as they were;
- * `teraz` (ISO) marks the moment of the move, since v1 kept no change times.
+ * The change time of an entry moved forward from v1, which kept none: older
+ * than any real change, so when two copies are merged by `zmieniono`, a tick,
+ * untick or note made anywhere since wins over data that only migrated.
  */
-export function checklistaV1doV2(v1: ChecklistaV1, teraz: string): Checklista {
+export const ZMIENIONO_NIEZNANE = '1970-01-01T00:00:00.000Z';
+
+/** v1 to v2: every stored species was seen. Its fields are kept as they were. */
+export function checklistaV1doV2(v1: ChecklistaV1): Checklista {
   const v2: Checklista = {};
   for (const [id, o] of Object.entries(v1)) {
-    v2[id] = { widziany: true, ...pola(o), zmieniono: teraz };
+    v2[id] = { widziany: true, ...pola(o), zmieniono: ZMIENIONO_NIEZNANE };
   }
   return v2;
 }
 
-/** Any checklist a store or backup may hold, as v2; null when it is neither. */
-export function checklistaZDowolnej(value: unknown, teraz: string): Checklista | null {
+/**
+ * Any checklist a store or backup may hold, as v2; null when it is neither.
+ * The v2 shape is tried first: v1's check ignores unknown fields, so it would
+ * also pass a v2 checklist and turn its unticked species back into seen ones.
+ */
+export function checklistaZDowolnej(value: unknown): Checklista | null {
   if (isChecklista(value)) return value;
-  if (isChecklistaV1(value)) return checklistaV1doV2(value, teraz);
+  if (isChecklistaV1(value)) return checklistaV1doV2(value);
   return null;
 }
 
@@ -96,7 +104,7 @@ export function przelaczObserwacje(lista: Readonly<Checklista>, id: string, dzie
   };
 }
 
-/** Changes the fields of a seen species' entry; an empty text clears its field. */
+/** Changes the fields of an existing entry (an unticked one too); an empty text clears its field. */
 export function zmienObserwacje(
   lista: Readonly<Checklista>,
   id: string,

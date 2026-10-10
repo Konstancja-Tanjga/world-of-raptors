@@ -86,13 +86,13 @@ export function ChecklistView({
 
   const liczba = zakres.filter((p) => jestWidziany(lista, p.id)).length;
   const wFiltrze = wynik.filter((g) => jestWidziany(lista, g.id)).length;
+  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'ptaki mokradeł', wszystkie: null }[filtry.ptaki];
   const etykietaPostepu = miejsce
-    ? `Zaobserwowane w ${miejsce.label}`
-    : filtry.ptaki === 'drapiezne'
-      ? 'Zaobserwowane drapieżniki'
-      : filtry.ptaki === 'ptaki-mokradel'
-        ? 'Zaobserwowane ptaki mokradeł'
-        : 'Zaobserwowane gatunki';
+    ? `Zaobserwowane w ${miejsce.label}${rodzaj ? `: ${rodzaj}` : ''}`
+    : `Zaobserwowane ${rodzaj ?? 'gatunki'}`;
+  // A site's groups as far as the chosen kind of bird reaches (its raptors, its birds of marshes, or all).
+  const wZakresie = new Set(zakres.map((p) => p.id));
+  const grupyMiejsca = listaMiejsca?.filter((g) => g.gatunki.some((id) => wZakresie.has(id)));
 
   const eksportuj = async () => {
     try {
@@ -208,9 +208,9 @@ export function ChecklistView({
         valueText={`${liczba} z ${zakres.length}`}
         tone={zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
       />
-      {listaMiejsca && (
-        <ul className="checklist__podsumowanie" aria-label={`${miejsce!.label}: grupy`}>
-          {listaMiejsca.map((g) => {
+      {miejsce && grupyMiejsca && grupyMiejsca.length > 0 && (
+        <ul className="checklist__podsumowanie" aria-label={`${miejsce.label}: grupy`}>
+          {grupyMiejsca.map((g) => {
             const ile = g.gatunki.filter((id) => jestWidziany(lista, id)).length;
             return (
               <li key={g.id} data-komplet={ile === g.gatunki.length ? '' : undefined}>

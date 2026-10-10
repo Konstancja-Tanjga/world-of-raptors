@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { MIEJSCA, REGIONY, type Aktywnosc, type Kategoria, type Miejsce, type PtakNaLiscie, type Region } from '@/lib/types';
 import { FilterChip, Input, SegmentedControl } from './ds';
 
@@ -36,6 +36,13 @@ export const PUSTE_FILTRY: Filtry = { ptaki: 'drapiezne', miejsca: [], regiony: 
 export const filtryAktywne = (f: Filtry) =>
   f.szukaj.trim() !== '' || f.ptaki !== 'drapiezne' || f.miejsca.length > 0 || f.regiony.length > 0 || f.aktywnosc.length > 0;
 
+/**
+ * Birds of marshes have no region or activity, so those filters are cleared
+ * when only they are shown: hidden chips must not stay on, emptying the list.
+ * Every change of the filters goes through here (useFiltry's setter).
+ */
+const znormalizuj = (f: Filtry): Filtry => (f.ptaki === 'ptaki-mokradel' && (f.regiony.length || f.aktywnosc.length) ? { ...f, regiony: [], aktywnosc: [] } : f);
+
 /** A site switches to every bird, since its field list has both kinds; switching to it again keeps the choice made. */
 export function zMiejscem(f: Filtry, miejsce: Miejsce): Filtry {
   const miejsca = toggle(f.miejsca, miejsce);
@@ -61,14 +68,15 @@ export const wZakresie = (p: PtakNaLiscie, f: Pick<Filtry, 'ptaki' | 'miejsca'>)
   (f.ptaki === 'wszystkie' || p.kategoria === f.ptaki) && (f.miejsca.length === 0 || f.miejsca.some((m) => p.miejsca.includes(m)));
 
 export function useFiltry(ptaki: PtakNaLiscie[]) {
-  const [filtry, setFiltry] = useState<Filtry>(PUSTE_FILTRY);
+  const [filtry, ustawFiltry] = useState<Filtry>(PUSTE_FILTRY);
+  const setFiltry = useCallback((f: Filtry) => ustawFiltry(znormalizuj(f)), []);
 
   useEffect(() => {
     const zAdresu = filtryZAdresu(window.location.search);
     // The page is prerendered without the address's query, so it can only be read after mount.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (zAdresu) setFiltry(zAdresu);
-  }, []);
+  }, [setFiltry]);
 
   const zakres = useMemo(() => ptaki.filter((p) => wZakresie(p, filtry)), [ptaki, filtry]);
 
@@ -102,11 +110,7 @@ export function SpeciesFilters({ filtry, onChange }: { filtry: Filtry; onChange:
           showLegend
           size="sm"
           value={filtry.ptaki}
-          onChange={(v) => {
-            const ptaki = v as ZakresPtakow;
-            // Region and activity are hidden for birds of marshes, so they cannot stay on, unseen, emptying the list.
-            onChange(ptaki === 'ptaki-mokradel' ? { ...filtry, ptaki, regiony: [], aktywnosc: [] } : { ...filtry, ptaki });
-          }}
+          onChange={(v) => onChange({ ...filtry, ptaki: v as ZakresPtakow })}
           options={ZAKRESY}
         />
       </div>

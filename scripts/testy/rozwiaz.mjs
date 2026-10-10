@@ -1,4 +1,4 @@
-// Lets `node --test` run the TypeScript in src/lib as it is written for the
+// Lets `node --test` (Node 23.5 or later: registerHooks, type stripping) run the TypeScript in src/lib as it is written for the
 // bundler: relative imports without an extension, and `@/` for src/. Node
 // strips the types itself; this only finds the files and names their format.
 import { existsSync } from 'node:fs';
@@ -6,7 +6,8 @@ import { registerHooks } from 'node:module';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const src = new URL('../../src/', import.meta.url);
-const ROZSZERZENIA = ['.ts', '.tsx', '/index.ts'];
+// Only .ts: Node strips types but cannot run JSX.
+const ROZSZERZENIA = ['.ts', '/index.ts'];
 
 registerHooks({
   resolve(specifier, context, nextResolve) {

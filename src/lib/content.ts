@@ -35,6 +35,7 @@ import type {
   GrupaSylwetki,
   SylwetkaGatunku,
   Gatunek,
+  GrupaListyMiejsca,
   PtakMokradel,
   Miejsce,
   Modul,
@@ -276,7 +277,7 @@ export const ptakiNaLiscie: PtakNaLiscie[] = [
 ];
 
 /** One group of a site's field list: its raptors, or one group of its birds of marshes. */
-export type GrupaMiejsca = { id: 'drapiezniki' | (typeof GRUPY_MOKRADEL)[number]; nazwa: string; gatunki: string[] };
+export type GrupaMiejsca = { id: GrupaListyMiejsca; nazwa: string; gatunki: string[] };
 
 /** A site's field list, group by group (raptors first, then birds of marshes as types.ts orders them); empty groups left out. */
 export function listaMiejsca(miejsce: Miejsce): GrupaMiejsca[] {
@@ -290,7 +291,6 @@ export function listaMiejsca(miejsce: Miejsce): GrupaMiejsca[] {
   ].filter((g) => g.gatunki.length > 0);
 }
 
-/** Modules whose content covers a species, derived from its regions and activity. */
 /** The owls' module: every owl's page links to it, and so does the home page's night chorus. */
 export const MODUL_SOW = 'sowy';
 /** The regional module a diurnal species' page links to for each of its regions. */
@@ -301,6 +301,7 @@ export const LEKCJA_GRUP = { modul: 'metoda', lekcja: '01-sylwetka' } as const;
 /** The field module a site's species link to. */
 const MODUL_MIEJSCA: Record<Miejsce, string> = { 'marismas-barbate': 'barbate' };
 
+/** Modules whose content covers a raptor: from its activity (owls), its regions and its sites. */
 export function modulyGatunku(g: Gatunek) {
   const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
   for (const m of g.miejsca ?? []) slugi.add(MODUL_MIEJSCA[m]);
@@ -780,6 +781,8 @@ function sprawdzSpojnosc() {
     if (!idGatunkow.has(id) || !SYLWETKI[id]) bledy.push(`rysunki.ts: ${id} nie jest gatunkiem z atlasu z sylwetką`);
   }
   // GWIAZDOZBIORY_KURSU has already failed for a module without a constellation or a bird without a silhouette.
+  const ptakiGwiazdozbiorow = Object.values(GWIAZDOZBIORY_KURSU).map((g) => g.gatunek);
+  if (new Set(ptakiGwiazdozbiorow).size !== ptakiGwiazdozbiorow.length) bledy.push('gwiazdozbiory.ts: dwa moduły mają gwiazdozbiór z tego samego ptaka');
   for (const { gatunek } of Object.values(GWIAZDOZBIORY_KURSU)) {
     if (!idGatunkow.has(gatunek)) bledy.push(`gwiazdozbiory.ts: ${gatunek} nie jest gatunkiem z atlasu`);
   }
@@ -794,9 +797,20 @@ function sprawdzSpojnosc() {
   }
   if (new Set(NASZYWKI.map((n) => n.id)).size !== NASZYWKI.length) bledy.push('odznaki.ts: dwie naszywki mają to samo id');
   // The Marismas patches and the module's text count these groups ("wszystkie 14 siewkowych"); a change is deliberate.
-  const MARISMAS = { drapiezniki: 8, ibisy: 1, czaple: 5, siewkowe: 14, 'mewy-i-rybitwy': 4, 'inne-niewroblowe': 1, wroblowe: 9 };
-  const grupyMarismas = Object.fromEntries(STRUKTURA_NIEBA.marismas.map((g) => [g.id, g.gatunki.length]));
-  if (JSON.stringify(grupyMarismas) !== JSON.stringify(MARISMAS)) {
+  const MARISMAS = {
+    drapiezniki: 8,
+    ibisy: 1,
+    czaple: 5,
+    siewkowe: 14,
+    'mewy-i-rybitwy': 4,
+    'inne-niewroblowe': 1,
+    wroblowe: 9,
+  } satisfies Record<GrupaListyMiejsca, number>;
+  const grupyMarismas: Partial<Record<GrupaListyMiejsca, number>> = Object.fromEntries(
+    STRUKTURA_NIEBA.marismas.map((g) => [g.id, g.gatunki.length]),
+  );
+  const zgodne = (Object.keys(MARISMAS) as GrupaListyMiejsca[]).every((g) => grupyMarismas[g] === MARISMAS[g]);
+  if (!zgodne || Object.keys(grupyMarismas).length !== Object.keys(MARISMAS).length) {
     bledy.push(`content.ts: lista Marismas del Barbate ma grupy ${JSON.stringify(grupyMarismas)}, a lekcje i naszywki B6 zakładają ${JSON.stringify(MARISMAS)}`);
   }
   // With every lesson finished, every flashcard learned and every species

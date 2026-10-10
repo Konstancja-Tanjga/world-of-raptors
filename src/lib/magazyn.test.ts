@@ -1,9 +1,16 @@
 import assert from 'node:assert/strict';
-import { test } from 'node:test';
+import { beforeEach, mock, test } from 'node:test';
 import { utworzMagazyn, type AdapterMagazynu } from './magazyn';
-import { checklistaZDowolnej, isChecklista, type Checklista } from './obserwacje';
+import { checklistaZDowolnej, isChecklista, ZMIENIONO_NIEZNANE, type Checklista } from './obserwacje';
 
 const T = '2026-10-09T08:00:00.000Z';
+
+// The store logs unreadable data and refused saves; keep the test output quiet.
+beforeEach(() => {
+  mock.restoreAll();
+  mock.method(console, 'error', () => {});
+  mock.method(console, 'warn', () => {});
+});
 
 /** Storage kept in a Map, standing in for localStorage. */
 function pamiec(poczatek: Record<string, string> = {}): AdapterMagazynu & { dane: Map<string, string> } {
@@ -19,14 +26,14 @@ function pamiec(poczatek: Record<string, string> = {}): AdapterMagazynu & { dane
 const checklista = (adapter: AdapterMagazynu) =>
   utworzMagazyn<Checklista>('wor:checklista:v2', isChecklista, {
     adapter,
-    poprzednia: { klucz: 'wor:checklista:v1', migruj: (stare) => checklistaZDowolnej(stare, T) },
+    poprzednia: { klucz: 'wor:checklista:v1', migruj: checklistaZDowolnej },
   });
 
 test('the first read moves v1 forward, saves it as v2 and leaves v1 untouched', () => {
   const v1 = JSON.stringify({ kaniuk: { data: '2026-10-01', notatka: 'na słupie' } });
   const adapter = pamiec({ 'wor:checklista:v1': v1 });
   const lista = checklista(adapter).odczytaj();
-  assert.deepEqual(lista, { kaniuk: { widziany: true, data: '2026-10-01', notatka: 'na słupie', zmieniono: T } });
+  assert.deepEqual(lista, { kaniuk: { widziany: true, data: '2026-10-01', notatka: 'na słupie', zmieniono: ZMIENIONO_NIEZNANE } });
   assert.deepEqual(JSON.parse(adapter.dane.get('wor:checklista:v2')!), lista);
   assert.equal(adapter.dane.get('wor:checklista:v1'), v1);
 });
@@ -85,4 +92,20 @@ test('lesson progress keeps its key: a store without a previous version never to
   );
   assert.deepEqual(m.odczytaj(), { 'metoda/01-osiem-grup': '2026-09-01' });
   assert.deepEqual([...adapter.dane.keys()], ['wor:postep:v1']);
+});
+
+test('a v1 that parses but has the wrong shape is kept under :bad, and nothing is written as v2', () => {
+  const adapter = pamiec({ 'wor:checklista:v1': '{"kaniuk":"tak"}' });
+  assert.deepEqual(checklista(adapter).odczytaj(), {});
+  assert.equal(adapter.dane.get('wor:checklista:v2:bad'), '{"kaniuk":"tak"}');
+  assert.equal(adapter.dane.get('wor:checklista:v1'), '{"kaniuk":"tak"}');
+  assert.equal(adapter.dane.has('wor:checklista:v2'), false);
+});
+
+test('a broken v2 goes to :bad and does not migrate v1 again; v1 stays as the copy to go back to', () => {
+  const v1 = JSON.stringify({ kaniuk: {} });
+  const adapter = pamiec({ 'wor:checklista:v1': v1, 'wor:checklista:v2': '{zepsute' });
+  assert.deepEqual(checklista(adapter).odczytaj(), {});
+  assert.equal(adapter.dane.get('wor:checklista:v2:bad'), '{zepsute');
+  assert.equal(adapter.dane.get('wor:checklista:v1'), v1);
 });

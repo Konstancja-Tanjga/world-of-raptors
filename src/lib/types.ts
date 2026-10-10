@@ -1,7 +1,7 @@
 import type { State } from 'ts-fsrs';
 
 export type Region = 'gibraltar' | 'poludnie-hiszpanii' | 'polska';
-/** A site with its own field list (a field module and its checklist). Stored nowhere: renaming one only moves links. */
+/** A site with its own field list (a field module and its checklist). Not in browser storage, but lesson links name it (`?miejsce=`), so a rename must update them. */
 export type Miejsce = 'marismas-barbate';
 export type Aktywnosc = 'dzienny' | 'nocny';
 export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
@@ -76,6 +76,8 @@ export const MIEJSCA: { value: Miejsce; label: string }[] = [{ value: 'marismas-
  */
 export const GRUPY_MOKRADEL = ['ibisy', 'czaple', 'siewkowe', 'mewy-i-rybitwy', 'inne-niewroblowe', 'wroblowe'] as const;
 export type GrupaMokradel = (typeof GRUPY_MOKRADEL)[number];
+/** A group of a site's field list: its raptors, or one group of its birds of marshes. */
+export type GrupaListyMiejsca = 'drapiezniki' | GrupaMokradel;
 export const NAZWY_GRUP_MOKRADEL: Record<GrupaMokradel, string> = {
   ibisy: 'Gatunek specjalny',
   czaple: 'Czaple, flaming, warzęcha',
@@ -95,7 +97,7 @@ export type PtakMokradel = {
   /** What to look for in the field: one or two short sentences. */
   cechy: string[];
   miejsca: Miejsce[];
-  /** What is still to check by hand (shown by the build, never on a page). */
+  /** What is still to check by hand (listed by `next dev`, never on a page). */
   todo?: string;
 };
 

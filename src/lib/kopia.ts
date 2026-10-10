@@ -2,7 +2,7 @@
 
 import { isFiszki, type Fiszki } from './fiszki';
 import { isPostep, type Postep } from './postep';
-import { checklistaV1doV2, isChecklista, isChecklistaV1, type Checklista } from './obserwacje';
+import { checklistaZDowolnej, isChecklista, type Checklista } from './obserwacje';
 import { isZdobyte, type Zdobyte } from './zdobyte';
 import {
   blobNaDataUrl,
@@ -18,7 +18,7 @@ import {
  *
  * v3: as v2, with the checklist in its v2 shape (obserwacje.ts: `widziany`,
  * `zmieniono`, unticked species kept). v1 and v2 files still import: their
- * checklist is moved forward the same way the store moves its own.
+ * checklist goes through checklistaZDowolnej, as the store's own does.
  * v2: `{ wersja: 2, checklista, postep, fiszki, odznaki, zdjecia }`. `fiszki`
  * was added later, so older v2 files lack it; it is also left out when there
  * are no flashcard schedules (or they have not loaded yet), so importing such
@@ -81,7 +81,7 @@ export class NiepoprawnaKopia extends Error {
  * Parses and validates the whole file before anything is written, so a bad
  * file can never leave the store half-replaced.
  */
-export async function odczytajKopie(tekst: string, teraz = new Date().toISOString()): Promise<OdczytanaKopia> {
+export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   let parsed: unknown;
   try {
     parsed = JSON.parse(tekst);
@@ -90,19 +90,17 @@ export async function odczytajKopie(tekst: string, teraz = new Date().toISOStrin
   }
   const obiekt = typeof parsed === 'object' && parsed !== null ? (parsed as Record<string, unknown>) : null;
 
+  if (typeof obiekt?.wersja === 'number' && obiekt.wersja > 3) {
+    throw new NiepoprawnaKopia(`kopia pochodzi z nowszej wersji kursu (format ${obiekt.wersja})`);
+  }
   if (obiekt?.wersja !== 2 && obiekt?.wersja !== 3) {
-    if (!isChecklistaV1(parsed)) throw new NiepoprawnaKopia('plik nie wygląda na kopię checklisty');
-    return { checklista: checklistaV1doV2(parsed, teraz) };
+    const lista = checklistaZDowolnej(parsed);
+    if (!lista) throw new NiepoprawnaKopia('plik nie wygląda na kopię checklisty');
+    return { checklista: lista };
   }
 
   const checklista =
-    obiekt.wersja === 3
-      ? isChecklista(obiekt.checklista)
-        ? obiekt.checklista
-        : null
-      : isChecklistaV1(obiekt.checklista)
-        ? checklistaV1doV2(obiekt.checklista, teraz)
-        : null;
+    obiekt.wersja === 3 ? (isChecklista(obiekt.checklista) ? obiekt.checklista : null) : checklistaZDowolnej(obiekt.checklista);
   if (!checklista) throw new NiepoprawnaKopia('uszkodzona checklista w pliku');
   if (obiekt.fiszki !== undefined && !isFiszki(obiekt.fiszki)) {
     throw new NiepoprawnaKopia('uszkodzone fiszki w pliku');

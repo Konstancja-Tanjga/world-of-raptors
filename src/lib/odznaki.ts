@@ -3,7 +3,7 @@ import { dataLokalna } from './daty';
 import type { Fiszki, ZapisFiszki } from './fiszki';
 import type { Postep } from './postep';
 import { KOCIOL } from './rysunki';
-import { idFiszki, KIERUNKI_NAZW, STAN_KARTY, type IdFiszki, type RodzajZdjecia } from './types';
+import { idFiszki, KIERUNKI_NAZW, STAN_KARTY, type GrupaListyMiejsca, type IdFiszki, type RodzajZdjecia } from './types';
 
 /**
  * "Moje niebo": what the course has to collect, and the rules that decide
@@ -49,7 +49,7 @@ export type StrukturaNieba = {
   /** The bird that draws each of the eight silhouette groups (B1 lesson 1). */
   osiemGrup: string[];
   /** The Marismas del Barbate field list, group by group (raptors and birds of marshes), for its patches. */
-  marismas: { id: string; gatunki: string[] }[];
+  marismas: { id: GrupaListyMiejsca; gatunki: string[] }[];
 };
 
 /**
@@ -127,9 +127,9 @@ const SZYBUJACE = [...new Set(KOCIOL.map((p) => p.id))];
 const ile = (n: number, z: number): [number, number] => [Math.min(n, z), z];
 
 /** Species of the Marismas list seen: in all, or in one of its groups (content.ts, listaMiejsca). */
-const naMarismas = (s: Omit<StanNieba, 'naszywki'>, grupa?: string) =>
+const naMarismas = (s: Omit<StanNieba, 'naszywki'>, grupa?: GrupaListyMiejsca) =>
   grupa ? (s.marismas[grupa] ?? 0) : Object.values(s.marismas).reduce((a, b) => a + b, 0);
-const ileMarismas = (st: StrukturaNieba, grupa?: string) =>
+const ileMarismas = (st: StrukturaNieba, grupa?: GrupaListyMiejsca) =>
   st.marismas.filter((g) => !grupa || g.id === grupa).reduce((n, g) => n + g.gatunki.length, 0);
 
 export const NASZYWKI: Naszywka[] = [
@@ -152,7 +152,7 @@ export const NASZYWKI: Naszywka[] = [
   {
     id: 'pol-atlasu',
     nazwa: 'Pół atlasu',
-    jak: 'Połowa gatunków z atlasu na liście życiowej.',
+    jak: 'Połowa drapieżników z atlasu na liście życiowej.',
     ptaki: ['bielik'],
     kolory: { tlo: '#14243c', brzeg: '#0a1018', nic: '#f5b75b', ptak: '#f2eee6' },
     postep: (s, st) => ile(s.lifery, Math.ceil(st.gatunki.length / 2)),
@@ -160,7 +160,7 @@ export const NASZYWKI: Naszywka[] = [
   {
     id: 'pelny-atlas',
     nazwa: 'Pełny atlas',
-    jak: 'Wszystkie gatunki z atlasu na liście życiowej.',
+    jak: 'Wszystkie drapieżniki z atlasu na liście życiowej.',
     ptaki: ['orzel-przedni'],
     kolory: { tlo: '#d39a3e', brzeg: '#9a6a22', nic: '#14243c', ptak: '#0d131b' },
     postep: (s, st) => ile(s.lifery, st.gatunki.length),
@@ -300,10 +300,10 @@ export type StanNieba = {
   gatunki: Record<string, Obraczki>;
   moduly: Record<string, { zaliczony: boolean; opanowany: boolean }>;
   naszywki: Record<string, { zdobyta: boolean; postep: [ile: number, z: number] }>;
-  /** Species on the checklist that are in the atlas. */
+  /** Raptors on the checklist (birds of marshes count only for the Marismas patches). */
   lifery: number;
   /** Species of the Marismas field list seen, by its group's id. */
-  marismas: Record<string, number>;
+  marismas: Partial<Record<GrupaListyMiejsca, number>>;
   /** Ids of the learned flashcards. */
   zapamietane: ReadonlySet<string>;
 };

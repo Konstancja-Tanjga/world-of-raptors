@@ -165,8 +165,8 @@ function Mapa({ moduly, gwiazdozbiory, stany, pokazane, waska }: WlasciwosciMapy
 /**
  * The night sky of "Moje niebo": a constellation for each module, lit once
  * the module is finished and given a gold star once its birds are
- * recognised; the rest wait as pale sketches. A four-by-three field on wide
- * screens, two columns on narrow ones (CSS shows one). For screen readers, a
+ * recognised; the rest wait as pale sketches. Four columns on wide screens and
+ * two on narrow ones (CSS shows one), as many rows as the modules need. For screen readers, a
  * list of the modules and their state.
  */
 export function MapaGwiazdozbiorow(wlasciwosci: WlasciwosciMapy) {

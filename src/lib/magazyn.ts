@@ -5,8 +5,11 @@ import { dataLokalna } from './daty';
 
 /**
  * Where a store keeps its text: the browser's localStorage today. Stores talk
- * to this, never to localStorage, so a synced backend can take its place.
- * Every method may throw when the browser refuses (blocked storage, quota).
+ * to this, never to localStorage directly. It is synchronous, because React
+ * reads stores synchronously (useSyncExternalStore): a synced backend sits
+ * behind it as a local copy that the sync layer writes and then announces
+ * through `nasluchuj`, rather than replacing it with network calls. Every
+ * method may throw when the browser refuses (blocked storage, quota).
  */
 export type AdapterMagazynu = {
   czytaj(klucz: string): string | null;
@@ -112,8 +115,10 @@ export function utworzMagazyn<T extends object>(
     try {
       const wynik = poprzednia.migruj(JSON.parse(stary));
       if (wynik !== null && poprawny(wynik)) nowe = wynik;
-    } catch {
-      // fall through
+      else console.error(`[${key}] ${poprzednia.klucz} is not in a shape the migration knows`);
+    } catch (err) {
+      // Bad JSON, or a fault in `migruj` itself: say which, not just "unreadable".
+      console.error(`[${key}] migrating ${poprzednia.klucz} failed`, err);
     }
     if (!nowe) {
       // The old key keeps its copy; `:bad` says why this store starts empty.
@@ -125,7 +130,7 @@ export function utworzMagazyn<T extends object>(
       adapter.zapisz(key, tekst);
       surowy = tekst;
     } catch (err) {
-      console.warn(`[${key}] could not save the migrated copy`, err);
+      console.error(`[${key}] could not save the migrated copy; the next read migrates again`, err);
     }
     return nowe;
   }

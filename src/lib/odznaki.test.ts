@@ -1,13 +1,14 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { checklistaV1doV2, przelaczObserwacje, type Checklista } from './obserwacje';
+import type { GrupaListyMiejsca } from './types';
 import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
 
 const T = '2026-10-09T08:00:00.000Z';
 const ids = (prefix: string, n: number) => Array.from({ length: n }, (_, i) => `${prefix}-${i + 1}`);
 
 /** The Marismas list as B6 has it: 8 raptors, the ibis, 5 herons, 14 waders, 4 gulls and terns, the kingfisher, 9 passerines. */
-const MARISMAS = [
+const MARISMAS: { id: GrupaListyMiejsca; gatunki: string[] }[] = [
   { id: 'drapiezniki', gatunki: ids('drapieznik', 8) },
   { id: 'ibisy', gatunki: ['ibis-grzywiasty'] },
   { id: 'czaple', gatunki: ids('czapla', 5) },
@@ -27,7 +28,7 @@ const struktura: StrukturaNieba = {
 };
 
 const widziane = (lista: string[]): Checklista =>
-  checklistaV1doV2(Object.fromEntries(lista.map((id) => [id, { data: '2026-10-09' }])), T);
+  checklistaV1doV2(Object.fromEntries(lista.map((id) => [id, { data: '2026-10-09' }])));
 
 const naszywki = (lista: Checklista) => stanNieba(struktura, {}, {}, lista).naszywki;
 const zdobyta = (lista: Checklista, id: string) => naszywki(lista)[id].zdobyta;
@@ -85,7 +86,7 @@ test('species outside the Marismas list do not count towards its patches', () =>
   assert.equal(n['pierwszy-lifer'].zdobyta, true);
 });
 
-test('unticking takes a species off the count; earned dates are kept elsewhere (zdobyte.ts)', () => {
+test('unticking takes a species off the Marismas count', () => {
   let lista = przelaczObserwacje({}, 'ibis-grzywiasty', '2026-10-09', T);
   assert.equal(zdobyta(lista, 'ibis-grzywiasty'), true);
   lista = przelaczObserwacje(lista, 'ibis-grzywiasty', '2026-10-09', T);
@@ -98,4 +99,29 @@ test('earned patches become stored keys', () => {
   assert.ok(klucze.includes('naszywka:ibis-grzywiasty'));
   assert.ok(klucze.includes('naszywka:marismas-pierwsza'));
   assert.ok(!klucze.includes('naszywka:marismas-dziesiatka'));
+});
+
+test('an unticked raptor earns no lifer and no gold ring', () => {
+  let lista = przelaczObserwacje({}, 'bielik', '2026-10-09', T);
+  assert.equal(stanNieba(struktura, {}, {}, lista).gatunki.bielik.widzialam, true);
+  lista = przelaczObserwacje(lista, 'bielik', '2026-10-09', T);
+  const s = stanNieba(struktura, {}, {}, lista);
+  assert.equal(s.gatunki.bielik.widzialam, false);
+  assert.equal(s.lifery, 0);
+  assert.equal(s.naszywki['pierwszy-lifer'].zdobyta, false);
+});
+
+test('a raptor on the Marismas list counts for both; a bird of marshes is not a lifer', () => {
+  const obie: StrukturaNieba = {
+    ...struktura,
+    gatunki: [...struktura.gatunki, { id: 'kaniuk', pl: 'Kaniuk', dzienny: true, zdjecia: [], lekcje: [] }],
+    marismas: [{ id: 'drapiezniki', gatunki: ['kaniuk'] }, { id: 'czaple', gatunki: ['flaming-rozowy'] }],
+  };
+  const kaniuk = stanNieba(obie, {}, {}, widziane(['kaniuk']));
+  assert.equal(kaniuk.naszywki['pierwszy-lifer'].zdobyta, true);
+  assert.equal(kaniuk.naszywki['marismas-pierwsza'].zdobyta, true);
+  assert.equal(kaniuk.gatunki.kaniuk.widzialam, true);
+  const flaming = stanNieba(obie, {}, {}, widziane(['flaming-rozowy']));
+  assert.equal(flaming.naszywki['marismas-pierwsza'].zdobyta, true);
+  assert.equal(flaming.naszywki['pierwszy-lifer'].zdobyta, false);
 });

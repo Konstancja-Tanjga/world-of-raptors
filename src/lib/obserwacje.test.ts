@@ -9,42 +9,44 @@ import {
   przelaczObserwacje,
   widziane,
   zmienObserwacje,
+  ZMIENIONO_NIEZNANE,
 } from './obserwacje';
 
 const T = '2026-10-09T08:00:00.000Z';
 const T2 = '2026-10-10T08:00:00.000Z';
 
-test('v1 to v2 keeps every seen species with its fields', () => {
+test('v1 to v2 keeps every seen species with its fields, dated older than any real change', () => {
   const v1 = { kaniuk: { data: '2026-10-01', miejsce: 'Barbate', notatka: 'na słupie' }, rybolow: {} };
-  const v2 = checklistaV1doV2(v1, T);
+  const v2 = checklistaV1doV2(v1);
   assert.deepEqual(v2, {
-    kaniuk: { widziany: true, data: '2026-10-01', miejsce: 'Barbate', notatka: 'na słupie', zmieniono: T },
-    rybolow: { widziany: true, zmieniono: T },
+    kaniuk: { widziany: true, data: '2026-10-01', miejsce: 'Barbate', notatka: 'na słupie', zmieniono: ZMIENIONO_NIEZNANE },
+    rybolow: { widziany: true, zmieniono: ZMIENIONO_NIEZNANE },
   });
+  assert.ok(ZMIENIONO_NIEZNANE < T, 'a migrated entry loses to any later change');
   assert.ok(isChecklista(v2));
   assert.deepEqual(widziane(v2), ['kaniuk', 'rybolow']);
 });
 
 test('an empty v1 checklist migrates to an empty v2 one', () => {
-  assert.deepEqual(checklistaV1doV2({}, T), {});
+  assert.deepEqual(checklistaV1doV2({}), {});
 });
 
 test('migration drops unknown fields and leaves the v1 object as it was', () => {
   const v1 = { kaniuk: { data: '2026-10-01', zbedne: 'x' } } as never;
   const kopia = structuredClone(v1);
-  assert.deepEqual(checklistaV1doV2(v1, T), { kaniuk: { widziany: true, data: '2026-10-01', zmieniono: T } });
+  assert.deepEqual(checklistaV1doV2(v1), { kaniuk: { widziany: true, data: '2026-10-01', zmieniono: ZMIENIONO_NIEZNANE } });
   assert.deepEqual(v1, kopia);
 });
 
 test('migrating is idempotent: v2 data passes through unchanged', () => {
-  const v2 = checklistaV1doV2({ kaniuk: { data: '2026-10-01' } }, T);
-  assert.equal(checklistaZDowolnej(v2, T2), v2);
+  const v2 = checklistaV1doV2({ kaniuk: { data: '2026-10-01' } });
+  assert.equal(checklistaZDowolnej(v2), v2);
 });
 
 test('damaged data is neither v1 nor v2', () => {
   for (const zle of [null, [], 'tekst', 3, { kaniuk: 'tak' }, { kaniuk: { data: 5 } }]) {
     assert.equal(isChecklistaV1(zle), false, JSON.stringify(zle));
-    assert.equal(checklistaZDowolnej(zle, T), null, JSON.stringify(zle));
+    assert.equal(checklistaZDowolnej(zle), null, JSON.stringify(zle));
   }
   assert.equal(isChecklista({ kaniuk: { widziany: 'tak', zmieniono: T } }), false);
   assert.equal(isChecklista({ kaniuk: { widziany: true } }), false);
@@ -75,4 +77,10 @@ test('an empty text clears its field; other fields stay', () => {
 
 test('changing a species that is not on the list changes nothing', () => {
   assert.deepEqual(zmienObserwacje({}, 'kaniuk', { notatka: 'x' }, T), {});
+});
+
+test('a v2 checklist is never read as v1: unticked species stay unticked', () => {
+  const v2 = { kaniuk: { widziany: false, data: '2026-10-01', zmieniono: T } };
+  assert.equal(checklistaZDowolnej(v2), v2);
+  assert.equal(jestWidziany(checklistaZDowolnej(v2)!, 'kaniuk'), false);
 });
