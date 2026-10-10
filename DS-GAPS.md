@@ -79,3 +79,10 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co zbudowałam lokalnie:** React `ViewTransition` w `AppFrame` (kluczem jest adres strony) i nazwy `nazwa-<id>` na kartach i tytułach, a animacje w `globals.css`. Big Hat nie ma ani komponentu, ani tokenów dla przejść między stronami.
 - **Co robi gorzej:** półprzezroczyste paski (materiał `chrome` z Big Hat) nie mają w zrzucie przejścia czego rozmywać, więc zrzut paska, który się pojawia, dostaje pełne tło (zrzut paska, który znika, nie jest rysowany, żeby nie zostawiał pustego pasa). Ten wyjątek trzeba pamiętać przy każdym nowym pasku.
 - **Pytanie do design systemu:** czy materiały (`--bh-material-*`) powinny mieć wariant dla przejść, skoro rozmycie tła nie przenosi się na zrzut?
+
+## Przycisk „Zaloguj się przez Google”
+
+- **Po co sięgnęłam:** przycisk logowania na stronie `/konto`.
+- **Co zbudowałam:** przycisk rysuje Google (`src/components/PrzyciskGoogle.tsx`, biblioteka Google Identity Services), a nie `Button` z Big Hat. Google wymaga swojego wyglądu przycisku logowania. Do tego tylko jego okno logowania pokazuje na ekranie zgody adres kursu: przy logowaniu przez przekierowanie Supabase ekran zgody pokazywał adres projektu Supabase (`tvfiymrlvmjpgrkxoums.supabase.co`).
+- **Co robi gorzej:** przycisk siedzi w ramce (iframe) Google, więc nie bierze kolorów, fontu ani pierścienia fokusu z Big Hat, a w ciemnym motywie zostaje jasny. Wybrałam najbliższe ustawienia Google: kształt pigułki jak przyciski Big Hat i jasną ramkę.
+- **Pytanie do design systemu:** czy Big Hat powinien mieć wzorzec przycisku logowania u zewnętrznego dostawcy, z jego wymaganym wyglądem, żeby takie miejsce było opisane, a nie wyjątkiem w produkcie?
