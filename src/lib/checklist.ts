@@ -20,6 +20,13 @@ const magazyn = utworzMagazyn<Checklista>('wor:checklista:v2', isChecklista, {
   poprzednia: { klucz: 'wor:checklista:v1', migruj: checklistaZDowolnej },
 });
 
+/** The checklist, read and saved by the sync (synchronizacjaPrzegladarki.ts). */
+export const checklistaDoSynchronizacji = {
+  czytaj: () => magazyn.odczytajAktualne(),
+  zapisz: (l: Checklista) => magazyn.zapisz(l),
+  subskrybuj: magazyn.subskrybuj,
+};
+
 /**
  * The checklist store (schema and rules: obserwacje.ts). `lista` is `null`
  * until the browser copy has been read, so the server render and first paint

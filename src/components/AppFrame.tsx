@@ -25,6 +25,20 @@ const StraznikOdznak = dynamic(
   { ssr: false },
 );
 
+// Syncing with an account, only where accounts are on. The flag is read here
+// rather than from konto.ts, which would bring Supabase into every page.
+const KONTA = process.env.NEXT_PUBLIC_ACCOUNTS_ENABLED === 'true';
+const Synchronizacja = dynamic(
+  () =>
+    import('./Synchronizacja')
+      .then((m) => m.Synchronizacja)
+      .catch((err: unknown) => {
+        console.error('[Synchronizacja] could not load; this visit does not sync', err);
+        return () => null;
+      }),
+  { ssr: false },
+);
+
 export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
 export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: LekcjaNawigacji[] };
 
@@ -81,6 +95,11 @@ export function AppFrame({
       <CichaGranica nazwa="StraznikOdznak">
         <StraznikOdznak struktura={struktura} />
       </CichaGranica>
+      {KONTA && (
+        <CichaGranica nazwa="Synchronizacja">
+          <Synchronizacja />
+        </CichaGranica>
+      )}
     </>
   );
 }

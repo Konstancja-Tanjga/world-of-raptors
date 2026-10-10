@@ -185,7 +185,7 @@ export function utworzMagazyn<T extends object>(
     return useSyncExternalStore(subscribe, odczytaj, () => null);
   }
 
-  return { odczytaj, odczytajAktualne, zapisz, useMagazyn };
+  return { odczytaj, odczytajAktualne, zapisz, useMagazyn, subskrybuj: subscribe };
 }
 
 export function dzisiaj() {

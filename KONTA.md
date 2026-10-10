@@ -65,11 +65,14 @@ Gotowe: `supabase/migrations/20261009120000_konta.sql` i `20261010120000_limity.
 
 ### Faza 3: synchronizacja
 
-- `utworzMagazyn` zapisuje obok każdego magazynu czas zmiany każdego wpisu i ślady usunięć. Formaty `v1` i kopie zapasowe się nie zmieniają.
-- Wysyłka: wpisy zmienione od ostatniej synchronizacji. Bez sieci czekają i wysyłają się po odzyskaniu połączenia.
-- Pobieranie: wiersze z `synced_at` późniejszym niż ostatnie pobranie; nowsza zmiana wygrywa, przy odznakach wcześniejsza data.
-- Pierwsze logowanie na urządzeniu: scalenie danych lokalnych z kontem i jeden komunikat, np. „Dodałam do konta 5 lekcji i 12 obserwacji z tego urządzenia”.
-- **Wylogowanie:** dane zostają na urządzeniu i przestają się synchronizować. Przy ponownym logowaniu na to samo konto scalają się normalnie. Gdy loguje się inne konto, aplikacja najpierw pyta, czy dołączyć do niego dane z urządzenia.
+**Gotowe** (sprawdzone na prawdziwym koncie, dwie przeglądarki):
+- Silnik (`src/lib/synchronizacja.ts`) bez Reacta, testowany na prawdziwych migracjach w PGlite (`src/lib/synchronizacja.test.ts`): pierwsze logowanie z danymi, nowe urządzenie, odznaczenia, starsza i nowsza zmiana offline, odznaki, karta odpowiedziana później, uszkodzony wiersz z serwera, obce konto.
+- Jedna przepustka: pobranie zmian z serwera od ostatniego razu, scalenie według tych samych reguł co w bazie, wysłanie każdego wpisu, którego serwer nie ma w obecnej wersji. Urządzenie pamięta wersję każdego wpisu uzgodnioną z serwerem (`wor:synchro:v1`), więc zmiana zrobiona offline albo po wylogowaniu wysyła się przy następnej przepustce, a to, co przyszło z serwera, nie wraca.
+- Checklista, fiszki i odznaki miały już wszystko, czego potrzeba (czas zmiany, ślady odznaczeń). Lekcje dostały zapis boczny `wor:postep:slady:v1`: kiedy zmienił się stan lekcji i czy ją odznaczono.
+- Kiedy: zaraz po zalogowaniu, kilka sekund po każdej zmianie, po powrocie internetu albo karty i co 5 minut. Bez internetu zmiany czekają.
+- Pierwsze logowanie na urządzeniu: komunikat, co z tej przeglądarki doszło do konta.
+- **Wylogowanie:** dane zostają na urządzeniu i przestają się synchronizować. Przy ponownym logowaniu na to samo konto scalają się normalnie. Gdy loguje się inne konto, strona `/konto` pyta: dołączyć dane z przeglądarki do tego konta albo usunąć je i pobrać dane konta.
+- Strona `/konto` pokazuje stan: kiedy ostatnio zsynchronizowano, brak internetu albo błąd z „Spróbuj ponownie”.
 
 ### Faza 4: „Moje niebo” na koncie
 

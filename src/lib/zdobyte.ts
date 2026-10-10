@@ -40,6 +40,13 @@ export function isZdobyte(value: unknown): value is Zdobyte {
 const magazyn = utworzMagazyn<Zdobyte>('wor:odznaki:v1', isZdobyte);
 const START = 'start';
 
+/** The earned dates, `start` included, read and saved by the sync (synchronizacjaPrzegladarki.ts). */
+export const zdobyteDoSynchronizacji = {
+  czytaj: () => magazyn.odczytajAktualne(),
+  zapisz: (z: Zdobyte) => magazyn.zapisz(z),
+  subskrybuj: magazyn.subskrybuj,
+};
+
 /** What I have earned, by key (without the `start` mark); `null` until the browser copy has been read. */
 export function useZdobyte(): Zdobyte | null {
   const wszystkie = magazyn.useMagazyn();

@@ -78,6 +78,13 @@ export function zapiszFiszke(id: string, nowy: (zapis: ZapisFiszki | undefined) 
   return zapis ? magazyn.zapisz({ ...obecne, [id]: zapis }) : false;
 }
 
+/** The schedules, read and saved by the sync (synchronizacjaPrzegladarki.ts). */
+export const fiszkiDoSynchronizacji = {
+  czytaj: () => magazyn.odczytajAktualne(),
+  zapisz: (f: Fiszki) => magazyn.zapisz(f),
+  subskrybuj: magazyn.subskrybuj,
+};
+
 /** Flashcard schedules in localStorage. `fiszki` is `null` until the browser copy has been read. */
 export function useFiszki() {
   const fiszki = magazyn.useMagazyn();
