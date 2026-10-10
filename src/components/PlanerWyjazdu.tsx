@@ -7,9 +7,9 @@ import {
   godzina,
   MIEJSCA_PLANERA,
   najlepsze,
+  NiepelnaPrognoza,
   oknaMiejsca,
   prognozaZOdpowiedzi,
-  terazWHiszpanii,
   type MiejscePlanera,
   type Okno,
 } from '@/lib/planer';
@@ -21,10 +21,29 @@ function isWybor(v: unknown): v is Wybor {
   const m = (v as Wybor).miejsce;
   return m === undefined || MIEJSCA_PLANERA.some((x) => x.value === m);
 }
-/** The site last chosen: a convenience (a refused save just keeps the default), not in backups. */
+/** The site last chosen: a convenience, not in backups (a refused save keeps it for this visit only). */
 const wybor = utworzMagazyn<Wybor>('wor:planer:v1', isWybor);
 
-type Stan = { stan: 'wczytywanie' } | { stan: 'blad' } | { stan: 'gotowe'; okna: Okno[] };
+/** What went wrong, so the page can say what helps: the connection, Open-Meteo's answer, or missing data. */
+type Blad = { rodzaj: 'siec' } | { rodzaj: 'serwis'; status: number } | { rodzaj: 'dane' };
+type Stan = { stan: 'wczytywanie' } | { stan: 'blad'; blad: Blad } | { stan: 'gotowe'; okna: Okno[] };
+
+class BladSerwisu extends Error {
+  name = 'BladSerwisu';
+  status: number;
+  constructor(status: number) {
+    super(`Open-Meteo answered HTTP ${status}`);
+    this.status = status;
+  }
+}
+
+const OPIS_BLEDU: Record<Blad['rodzaj'], (b: Blad) => string> = {
+  siec: () => 'Planer potrzebuje internetu: pływy i pogodę pobiera z Open-Meteo. Sprawdź połączenie i spróbuj jeszcze raz.',
+  serwis: (b) =>
+    `Open-Meteo odpowiedziało błędem${b.rodzaj === 'serwis' ? ` (HTTP ${b.status})` : ''}. Zwykle to chwilowe: spróbuj za kilka minut.`,
+  dane: () =>
+    'Prognoza przyszła niepełna (brak pływów albo pogody na większość godzin), więc nie ma z czego liczyć. Spróbuj później albo sprawdź tablicę pływów.',
+};
 
 const DZIEN = new Intl.DateTimeFormat('pl', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
 const dzien = (data: string) => {
@@ -67,16 +86,18 @@ function KartaOkna({ o, najlepsze: wyroznione }: { o: Okno; najlepsze?: boolean 
  */
 export function PlanerWyjazdu() {
   const zapisany = wybor.useMagazyn();
-  const miejsce: MiejscePlanera = zapisany?.miejsce ?? 'marismas-barbate';
+  // null until the stored choice is read: nothing is fetched or shown for a guessed site.
+  const miejsce: MiejscePlanera | null = zapisany ? (zapisany.miejsce ?? 'marismas-barbate') : null;
   const [stan, setStan] = useState<Stan>({ stan: 'wczytywanie' });
   const [proba, setProba] = useState(0);
 
   useEffect(() => {
+    if (!miejsce) return;
     const przerwij = new AbortController();
     const adresy = adresyPrognozy(miejsce);
     const pobierz = async (url: string) => {
       const r = await fetch(url, { signal: przerwij.signal });
-      if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+      if (!r.ok) throw new BladSerwisu(r.status);
       return r.json();
     };
     // A new site or a retry starts from the loading state; the fetch can only run in the browser.
@@ -84,18 +105,27 @@ export function PlanerWyjazdu() {
     setStan({ stan: 'wczytywanie' });
     Promise.all([pobierz(adresy.pogoda), adresy.plywy ? pobierz(adresy.plywy) : Promise.resolve(null)])
       .then(([pogoda, plywy]) => {
-        const prognoza = prognozaZOdpowiedzi(pogoda, plywy);
-        if (!prognoza) throw new Error('unexpected forecast shape');
-        setStan({ stan: 'gotowe', okna: oknaMiejsca(miejsce, prognoza, terazWHiszpanii()) });
+        if (przerwij.signal.aborted) return;
+        setStan({ stan: 'gotowe', okna: oknaMiejsca(miejsce, prognozaZOdpowiedzi(pogoda, plywy), Date.now() / 60000) });
       })
       .catch((err: unknown) => {
-        if (err instanceof DOMException && err.name === 'AbortError') return;
+        // The site changed or the page closed: this answer is no longer wanted.
+        if (przerwij.signal.aborted) return;
         console.error('[planer] forecast failed', err);
-        setStan({ stan: 'blad' });
+        setStan({
+          stan: 'blad',
+          blad:
+            err instanceof BladSerwisu
+              ? { rodzaj: 'serwis', status: err.status }
+              : err instanceof NiepelnaPrognoza || err instanceof SyntaxError
+                ? { rodzaj: 'dane' }
+                : { rodzaj: 'siec' },
+        });
       });
     return () => przerwij.abort();
   }, [miejsce, proba]);
 
+  if (!miejsce) return <StateBlock state="loading" title="Wczytywanie planera" scope="section" />;
   const plywy = MIEJSCA_PLANERA.find((m) => m.value === miejsce)!.plywy;
 
   return (
@@ -121,7 +151,7 @@ export function PlanerWyjazdu() {
         <StateBlock
           state="error"
           title="Nie udało się pobrać prognozy"
-          description="Planer potrzebuje internetu: pływy i pogodę pobiera z Open-Meteo. Sprawdź połączenie i spróbuj jeszcze raz."
+          description={OPIS_BLEDU[stan.blad.rodzaj](stan.blad)}
           action={
             <Button size="sm" variant="secondary" onClick={() => setProba((n) => n + 1)}>
               Spróbuj ponownie
@@ -132,8 +162,12 @@ export function PlanerWyjazdu() {
       ) : stan.okna.length === 0 ? (
         <StateBlock
           state="empty"
-          title="Brak dobrych okien w najbliższych dniach"
-          description={plywy ? 'Przypływy w tych dniach wypadają nocą albo o świcie. Zajrzyj za kilka dni.' : 'Prognoza nie daje w tych dniach dobrego czasu.'}
+          title="Brak terminów w najbliższych dniach"
+          description={
+            plywy
+              ? 'W prognozie nie ma przypływu, przed którym woda rosłaby w świetle dnia, albo dzisiejsze okno już minęło. Zajrzyj jutro.'
+              : 'Dzisiejsze okno już minęło, a dalszych dni nie ma w prognozie. Zajrzyj jutro.'
+          }
           scope="section"
         />
       ) : (
@@ -144,7 +178,7 @@ export function PlanerWyjazdu() {
             </h2>
             <ol className="planer__lista">
               {najlepsze(stan.okna, 3).map((o, i) => (
-                <li key={o.od}>
+                <li key={o.start}>
                   <KartaOkna o={o} najlepsze={i === 0} />
                 </li>
               ))}
@@ -156,7 +190,7 @@ export function PlanerWyjazdu() {
             </h2>
             <ul className="planer__lista">
               {stan.okna.map((o) => (
-                <li key={o.od}>
+                <li key={o.start}>
                   <KartaOkna o={o} />
                 </li>
               ))}

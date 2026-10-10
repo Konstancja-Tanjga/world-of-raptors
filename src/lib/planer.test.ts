@@ -4,24 +4,31 @@ import {
   ekstremaPlywow,
   godzina,
   minuty,
+  naMadryt,
   najlepsze,
+  NiepelnaPrognoza,
   oknaMiejsca,
   prognozaZOdpowiedzi,
-  terazWHiszpanii,
   zMinut,
   type Prognoza,
 } from './planer';
 
 const DNI = ['2026-10-11', '2026-10-12', '2026-10-13'];
 
+/** UTC minutes of a Madrid summer-time wall clock (UTC+2), as in October before the clock change. */
+const lato = (czas: string) => minuty(czas) - 120;
+
+type Pogoda = Partial<{ wiatr: number; kierunek: number; opad: number }>;
+
 /**
- * A forecast for three days: a tide with high water at 15:45 on the first
- * day (period 12 h 25 min, `zakres` metres from low to high), calm dry
- * weather, sunrise 08:26 and sunset 19:53; `pogoda` overrides any hour.
+ * A forecast for three days, in UTC as the page asks for it: a tide with high
+ * water at 15:45 Madrid time on the first day (period 12 h 25 min, `zakres`
+ * metres from low to high), calm dry weather, sunrise 08:26 and sunset 19:53
+ * Madrid time; `pogoda` overrides any hour (given its UTC time).
  */
-function prognoza(zakres = 2.3, pogoda: (czas: string) => Partial<{ wiatr: number; kierunek: number; opad: number }> = () => ({})): Prognoza {
-  const start = minuty('2026-10-11T00:00');
-  const szczyt = minuty('2026-10-11T15:45');
+function prognoza(zakres = 2.3, pogoda: (czas: string) => Pogoda = () => ({})): Prognoza {
+  const start = lato('2026-10-11T00:00');
+  const szczyt = lato('2026-10-11T15:45');
   const czas: string[] = [];
   const poziom: number[] = [];
   for (let m = start; m < start + 3 * 1440; m += 15) {
@@ -37,9 +44,11 @@ function prognoza(zakres = 2.3, pogoda: (czas: string) => Partial<{ wiatr: numbe
       kierunek: godziny.map((c) => pogoda(c).kierunek ?? 270),
       opad: godziny.map((c) => pogoda(c).opad ?? 0),
     },
-    dni: { data: DNI, wschod: DNI.map((d) => `${d}T08:26`), zachod: DNI.map((d) => `${d}T19:53`) },
+    dni: { data: DNI, wschod: DNI.map((d) => `${d}T06:26`), zachod: DNI.map((d) => `${d}T17:53`) },
   };
 }
+
+const RANO = lato('2026-10-11T07:00');
 
 test('high and low waters are found at the turning points', () => {
   const e = ekstremaPlywow(['a', 'b', 'c', 'd', 'e', 'f', 'g'], [0, 1, 1, 0, -1, -0.5, -0.8]);
@@ -53,8 +62,8 @@ test('high and low waters are found at the turning points', () => {
   );
 });
 
-test('the Marismas window is the rising tide: three hours before high water to one after', () => {
-  const [o] = oknaMiejsca('marismas-barbate', prognoza(), '2026-10-11T07:00');
+test('the Marismas window is the rising tide: three hours before high water to one after, on Madrid time', () => {
+  const [o] = oknaMiejsca('marismas-barbate', prognoza(), RANO);
   assert.equal(o.data, '2026-10-11');
   assert.equal(godzina(o.przyplyw!), '15:45');
   assert.equal(godzina(o.od), '12:45');
@@ -62,40 +71,41 @@ test('the Marismas window is the rising tide: three hours before high water to o
 });
 
 test('a high water at night or too early in the morning gives no window', () => {
-  const okna = oknaMiejsca('marismas-barbate', prognoza(), '2026-10-11T00:00');
-  // The night high waters (around 03:30 and 04:15) never make a window.
+  const okna = oknaMiejsca('marismas-barbate', prognoza(), lato('2026-10-11T00:00'));
+  assert.ok(okna.length > 0);
+  // Every window leads to a high water at least an hour and a half after the light (08:56).
   assert.ok(okna.every((o) => minuty(o.przyplyw!) - minuty(`${o.data}T08:56`) >= 90));
 });
 
 test('windows already over are dropped and one under way starts now', () => {
-  const okna = oknaMiejsca('marismas-barbate', prognoza(), '2026-10-11T14:00');
+  const okna = oknaMiejsca('marismas-barbate', prognoza(), lato('2026-10-11T14:00'));
   assert.equal(okna[0].data, '2026-10-11');
   assert.equal(godzina(okna[0].od), '14:00');
-  const pozniej = oknaMiejsca('marismas-barbate', prognoza(), '2026-10-11T16:00');
+  const pozniej = oknaMiejsca('marismas-barbate', prognoza(), lato('2026-10-11T16:00'));
   assert.notEqual(pozniej[0].data, '2026-10-11');
 });
 
 test('a big tide scores higher than a small one', () => {
-  const [duzy] = oknaMiejsca('marismas-barbate', prognoza(2.3), '2026-10-11T07:00');
-  const [maly] = oknaMiejsca('marismas-barbate', prognoza(0.8), '2026-10-11T07:00');
+  const [duzy] = oknaMiejsca('marismas-barbate', prognoza(2.3), RANO);
+  const [maly] = oknaMiejsca('marismas-barbate', prognoza(0.8), RANO);
   assert.ok(duzy.ocena > maly.ocena);
   assert.ok(duzy.powody.some((p) => p.startsWith('Duży pływ')));
   assert.ok(maly.powody.some((p) => p.startsWith('Mały pływ')));
 });
 
 test('rain and a gale take points off; a Levante adds them', () => {
-  const [spokojnie] = oknaMiejsca('marismas-barbate', prognoza(), '2026-10-11T07:00');
-  const [deszcz] = oknaMiejsca('marismas-barbate', prognoza(2.3, () => ({ opad: 1 })), '2026-10-11T07:00');
-  const [wichura] = oknaMiejsca('marismas-barbate', prognoza(2.3, () => ({ wiatr: 50 })), '2026-10-11T07:00');
-  const [lewant] = oknaMiejsca('marismas-barbate', prognoza(2.3, () => ({ wiatr: 20, kierunek: 90 })), '2026-10-11T07:00');
+  const [spokojnie] = oknaMiejsca('marismas-barbate', prognoza(), RANO);
+  const [deszcz] = oknaMiejsca('marismas-barbate', prognoza(2.3, () => ({ opad: 1 })), RANO);
+  const [wichura] = oknaMiejsca('marismas-barbate', prognoza(2.3, () => ({ wiatr: 50 })), RANO);
+  const [lewant] = oknaMiejsca('marismas-barbate', prognoza(2.3, () => ({ wiatr: 20, kierunek: 90 })), RANO);
   assert.ok(deszcz.ocena < spokojnie.ocena);
   assert.ok(wichura.ocena < spokojnie.ocena);
   assert.ok(lewant.ocena > spokojnie.ocena);
 });
 
 test('La Janda has one window a day, late morning to mid-afternoon, and rain ranks a day last', () => {
-  const p = prognoza(2.3, (c) => (c.startsWith('2026-10-12') ? { opad: 1 } : {}));
-  const okna = oknaMiejsca('la-janda', p, '2026-10-11T07:00');
+  const p = prognoza(2.3, (c) => (naMadryt(minuty(c)).startsWith('2026-10-12') ? { opad: 1 } : {}));
+  const okna = oknaMiejsca('la-janda', p, RANO);
   assert.deepEqual(
     okna.map((o) => [o.data, godzina(o.od), godzina(o.do)]),
     DNI.map((d) => [d, '11:00', '16:30']),
@@ -104,25 +114,77 @@ test('La Janda has one window a day, late morning to mid-afternoon, and rain ran
 });
 
 test('the best windows come first, and on a tie the earlier one', () => {
-  const okna = oknaMiejsca('la-janda', prognoza(), '2026-10-11T07:00');
+  const okna = oknaMiejsca('la-janda', prognoza(), RANO);
   assert.deepEqual(
     najlepsze(okna, 2).map((o) => o.data),
     ['2026-10-11', '2026-10-12'],
   );
 });
 
-test('responses without the expected fields are refused', () => {
-  assert.equal(prognozaZOdpowiedzi({}, null), null);
-  assert.equal(prognozaZOdpowiedzi({ hourly: { time: [] } }, null), null);
-  const pogoda = {
-    hourly: { time: [], wind_speed_10m: [], wind_direction_10m: [], precipitation: [] },
-    daily: { time: [], sunrise: [], sunset: [] },
-  };
-  assert.ok(prognozaZOdpowiedzi(pogoda, null));
-  assert.equal(prognozaZOdpowiedzi(pogoda, { error: true }), null);
+test('hours without a forecast count as unknown, not as calm and dry', () => {
+  const p = prognoza();
+  p.godzinowa.wiatr = p.godzinowa.wiatr.map(() => null);
+  const [o] = oknaMiejsca('la-janda', p, RANO);
+  assert.ok(o.powody.some((x) => x.startsWith('Brak prognozy')));
 });
 
-test('now in Spain is the wall-clock time in Madrid', () => {
-  // 12:00 UTC in October is 14:00 in Madrid (summer time).
-  assert.equal(terazWHiszpanii(new Date('2026-10-11T12:00:00Z')), '2026-10-11T14:00');
+test("times are shown on Madrid's clock, across the change to winter time", () => {
+  assert.equal(naMadryt(minuty('2026-10-11T12:00')), '2026-10-11T14:00');
+  assert.equal(naMadryt(minuty('2026-10-26T12:00')), '2026-10-26T13:00');
+  // La Janda's 11:00 is 11:00 in Spain on both sides of 25 October.
+  const p: Prognoza = {
+    godzinowa: { czas: ['2026-10-24T09:00', '2026-10-26T10:00'], wiatr: [5, 5], kierunek: [270, 270], opad: [0, 0] },
+    dni: {
+      data: ['2026-10-24', '2026-10-26'],
+      wschod: ['2026-10-24T06:38', '2026-10-26T06:40'],
+      zachod: ['2026-10-24T17:36', '2026-10-26T17:34'],
+    },
+  };
+  const okna = oknaMiejsca('la-janda', p, minuty('2026-10-24T00:00'));
+  assert.deepEqual(
+    okna.map((o) => [o.data, godzina(o.od), godzina(o.do)]),
+    [
+      ['2026-10-24', '11:00', '16:30'],
+      ['2026-10-26', '11:00', '16:30'],
+    ],
+  );
+  assert.equal(okna[0].start, minuty('2026-10-24T09:00'));
+  assert.equal(okna[1].start, minuty('2026-10-26T10:00'));
+});
+
+/** Open-Meteo's answers for a forecast, in their own field names. */
+function odpowiedzi(p: Prognoza) {
+  return {
+    pogoda: {
+      hourly: {
+        time: p.godzinowa.czas,
+        wind_speed_10m: p.godzinowa.wiatr,
+        wind_direction_10m: p.godzinowa.kierunek,
+        precipitation: p.godzinowa.opad,
+      },
+      daily: { time: p.dni.data, sunrise: p.dni.wschod, sunset: p.dni.zachod },
+    },
+    plywy: { minutely_15: { time: p.plywy!.czas, sea_level_height_msl: p.plywy!.poziom } },
+  };
+}
+
+test('a complete pair of answers becomes a forecast', () => {
+  const { pogoda, plywy } = odpowiedzi(prognoza());
+  assert.ok(prognozaZOdpowiedzi(pogoda, plywy).plywy);
+  assert.equal(prognozaZOdpowiedzi(pogoda, null).plywy, undefined);
+});
+
+test('missing or empty data is refused, not planned on', () => {
+  const { pogoda, plywy } = odpowiedzi(prognoza());
+  const h = pogoda.hourly;
+  const zle: [unknown, unknown][] = [
+    [{}, null],
+    [{ hourly: { time: [] } }, null],
+    [{ ...pogoda, daily: { time: [], sunrise: [], sunset: [] } }, null],
+    [{ ...pogoda, hourly: { ...h, wind_speed_10m: h.wind_speed_10m.slice(1) } }, null],
+    [{ ...pogoda, hourly: { ...h, precipitation: h.precipitation.map(() => null) } }, null],
+    [pogoda, { error: true }],
+    [pogoda, { minutely_15: { ...plywy.minutely_15, sea_level_height_msl: plywy.minutely_15.sea_level_height_msl.map(() => null) } }],
+  ];
+  for (const [p, t] of zle) assert.throws(() => prognozaZOdpowiedzi(p, t), NiepelnaPrognoza);
 });

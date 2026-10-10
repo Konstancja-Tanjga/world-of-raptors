@@ -11,9 +11,12 @@
  * strong Levante pushes the passage west. They are rules of thumb, not a
  * count of birds, and the page says so.
  *
- * Times are local wall-clock strings as Open-Meteo returns them with
- * `timezone=Europe/Madrid` ("2026-10-11T15:45"). They are read as minutes on
- * a naive clock (no time zone), so nothing here depends on the browser's.
+ * Times are asked for in UTC (`timezone=GMT`) and counted in UTC minutes:
+ * with `timezone=Europe/Madrid`, Open-Meteo writes the whole forecast in the
+ * offset of its first day, so after the clock change (the last Sunday of
+ * October and of March) every time would be an hour off. Only what is shown,
+ * and the dates of days, are Madrid wall-clock, through `naMadryt()` (Intl
+ * knows the clock changes), so nothing depends on the browser's time zone.
  */
 
 export type MiejscePlanera = 'marismas-barbate' | 'la-janda';
@@ -38,18 +41,22 @@ export type Ekstremum = { czas: string; poziom: number; rodzaj: 'przyplyw' | 'od
 
 /** One recommended visit: when to be there, how good it looks and why. */
 export type Okno = {
+  /** Madrid date and wall-clock times ("YYYY-MM-DD", "YYYY-MM-DDTHH:MM"), for showing. */
   data: string;
   od: string;
   do: string;
+  /** The same window in UTC minutes, for comparing. */
+  start: number;
+  koniec: number;
   /** 0–100: how good the conditions look by the rules above. */
   ocena: number;
   /** Short reasons in Polish, best first. */
   powody: string[];
-  /** For the Marismas: the high water this window leads up to. */
+  /** For the Marismas: the high water this window leads up to (Madrid wall-clock). */
   przyplyw?: string;
 };
 
-/** Minutes on a naive clock from "YYYY-MM-DDTHH:MM". */
+/** Minutes from "YYYY-MM-DDTHH:MM" read as UTC (as Open-Meteo writes times with `timezone=GMT`). */
 export const minuty = (czas: string) => {
   const [d, t] = czas.split('T');
   const [r, m, dz] = d.split('-').map(Number);
@@ -57,8 +64,31 @@ export const minuty = (czas: string) => {
   return Date.UTC(r, m - 1, dz, g, mi) / 60000;
 };
 
-/** "YYYY-MM-DDTHH:MM" from minutes on the same naive clock. */
+/** "YYYY-MM-DDTHH:MM" in UTC from minutes. */
 export const zMinut = (n: number) => new Date(n * 60000).toISOString().slice(0, 16);
+
+const ZEGAR_MADRYTU = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Europe/Madrid',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hourCycle: 'h23',
+});
+
+/** UTC minutes as Madrid wall-clock, "YYYY-MM-DDTHH:MM", summer or winter time as it falls. */
+export function naMadryt(n: number) {
+  const cz = Object.fromEntries(ZEGAR_MADRYTU.formatToParts(new Date(n * 60000)).map((x) => [x.type, x.value]));
+  return `${cz.year}-${cz.month}-${cz.day}T${cz.hour}:${cz.minute}`;
+}
+
+/** A Madrid wall-clock time on a date, in UTC minutes (Spain is UTC+1 or UTC+2; the offset is read off that date's noon). */
+function zMadrytu(data: string, godz: string) {
+  const naiwnie = minuty(`${data}T${godz}`);
+  const przesuniecie = minuty(naMadryt(minuty(`${data}T12:00`))) - minuty(`${data}T12:00`);
+  return naiwnie - przesuniecie;
+}
 
 /** "HH:MM" of a time string. */
 export const godzina = (czas: string) => czas.slice(11, 16);
@@ -91,30 +121,46 @@ function pogodaWOknie(p: Prognoza, od: number, doMin: number) {
   let wiatr = 0;
   let opad = 0;
   let wschodnie = 0;
+  // Hours with a forecast: a missing value is unknown, not calm or dry.
   let ile = 0;
   g.czas.forEach((c, i) => {
     const m = minuty(c);
     if (m < od - 30 || m > doMin) return;
+    if (g.wiatr[i] === null || g.opad[i] === null) return;
     ile++;
-    wiatr = Math.max(wiatr, g.wiatr[i] ?? 0);
-    opad += g.opad[i] ?? 0;
+    wiatr = Math.max(wiatr, g.wiatr[i] as number);
+    opad += g.opad[i] as number;
     if (g.kierunek[i] !== null && zeWschodu(g.kierunek[i] as number)) wschodnie++;
   });
   return { wiatr, opad, lewant: ile > 0 && wschodnie / ile >= 0.5, ile };
 }
 
-/** Daylight of a date: from half an hour after sunrise (light enough to see colours) to sunset. */
+/** Daylight of a Madrid date, in UTC minutes: from half an hour after sunrise (light enough to see colours) to sunset. */
 function dzien(p: Prognoza, data: string) {
-  const i = p.dni.data.indexOf(data);
+  const i = p.dni.wschod.findIndex((w) => naMadryt(minuty(w)).startsWith(data));
   if (i < 0) return null;
   return { od: minuty(p.dni.wschod[i]) + 30, do: minuty(p.dni.zachod[i]) };
 }
 
-const ogranicz = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
+/** A window as the page gets it: Madrid wall-clock for showing, UTC minutes for comparing. */
+const okno = (od: number, doMin: number, ocena: number, powody: string[], przyplyw?: number): Okno => ({
+  data: naMadryt(od).slice(0, 10),
+  od: naMadryt(od),
+  do: naMadryt(doMin),
+  start: od,
+  koniec: doMin,
+  ocena: Math.max(0, Math.min(100, Math.round(ocena))),
+  powody,
+  ...(przyplyw === undefined ? {} : { przyplyw: naMadryt(przyplyw) }),
+});
 
 /** Rain and wind take points off any window; a light Levante adds them where raptors pass. */
 function pogoda(p: Prognoza, od: number, doMin: number, powody: string[], lewantPomaga: boolean) {
   const w = pogodaWOknie(p, od, doMin);
+  if (w.ile === 0) {
+    powody.push('Brak prognozy wiatru i opadów dla tych godzin: ocena tylko z pływów i pory dnia.');
+    return -10;
+  }
   let punkty = 0;
   if (w.opad >= 2) {
     punkty -= 35;
@@ -151,8 +197,7 @@ export function oknaMarismas(p: Prognoza): Okno[] {
   ekstrema.forEach((e, i) => {
     if (e.rodzaj !== 'przyplyw') return;
     const szczyt = minuty(e.czas);
-    const data = e.czas.slice(0, 10);
-    const swiatlo = dzien(p, data);
+    const swiatlo = dzien(p, naMadryt(szczyt).slice(0, 10));
     if (!swiatlo) return;
     const od = Math.max(szczyt - 180, swiatlo.od);
     const doMin = Math.min(szczyt + 60, swiatlo.do);
@@ -165,8 +210,8 @@ export function oknaMarismas(p: Prognoza): Okno[] {
     let ocena = 45 + Math.round(((Math.min(rosnieWDzien, 180) - 90) / 90) * 25);
     powody.push(
       rosnieWDzien >= 170
-        ? `Woda rośnie przez całe okno w świetle dnia, pełny przypływ ok. ${godzina(e.czas)}.`
-        : `Pełny przypływ ok. ${godzina(e.czas)}; część rosnącej wody przypada na zmrok albo noc.`,
+        ? `Woda rośnie przez całe okno w świetle dnia, pełny przypływ ok. ${godzina(naMadryt(szczyt))}.`
+        : `Pełny przypływ ok. ${godzina(naMadryt(szczyt))}; część rosnącej wody przypada na zmrok albo noc.`,
     );
     if (zakres !== null) {
       // Open-Meteo's range at Barbate: about 2.3 m at spring tides, 0.7 m at neaps.
@@ -179,7 +224,7 @@ export function oknaMarismas(p: Prognoza): Okno[] {
       }
     }
     ocena += pogoda(p, od, doMin, powody, true);
-    okna.push({ data, od: zMinut(od), do: zMinut(doMin), ocena: ogranicz(ocena), powody, przyplyw: e.czas });
+    okna.push(okno(od, doMin, ocena, powody, szczyt));
   });
   return okna;
 }
@@ -190,72 +235,92 @@ export function oknaMarismas(p: Prognoza): Okno[] {
  * fields. It scores by rain and wind, with the Levante as a bonus.
  */
 export function oknaLaJanda(p: Prognoza): Okno[] {
-  return p.dni.data.flatMap((data) => {
+  return p.dni.wschod.flatMap((wschod) => {
+    const data = naMadryt(minuty(wschod)).slice(0, 10);
     const swiatlo = dzien(p, data);
     if (!swiatlo) return [];
-    const od = Math.max(minuty(`${data}T11:00`), swiatlo.od);
-    const doMin = Math.min(minuty(`${data}T16:30`), swiatlo.do);
+    // 11:00 and 16:30 on Spain's clock, summer or winter time.
+    const od = Math.max(zMadrytu(data, '11:00'), swiatlo.od);
+    const doMin = Math.min(zMadrytu(data, '16:30'), swiatlo.do);
     const powody = ['Późny poranek i wczesne popołudnie: powietrze się nagrzało, drapieżniki szybują i polują nad polami.'];
-    const ocena = 60 + pogoda(p, od, doMin, powody, true);
-    return [{ data, od: zMinut(od), do: zMinut(doMin), ocena: ogranicz(ocena), powody }];
+    return [okno(od, doMin, 60 + pogoda(p, od, doMin, powody, true), powody)];
   });
 }
 
 /**
- * A site's windows from `teraz` on (local "YYYY-MM-DDTHH:MM"): those already
- * over are dropped, one under way starts now, and one with less than an hour
- * left is dropped too.
+ * A site's windows from `teraz` on (UTC minutes, e.g. Date.now() / 60000):
+ * those already over are dropped, one under way starts now, and one with less
+ * than an hour left is dropped too.
  */
-export function oknaMiejsca(miejsce: MiejscePlanera, p: Prognoza, teraz: string): Okno[] {
-  const t = minuty(teraz);
+export function oknaMiejsca(miejsce: MiejscePlanera, p: Prognoza, teraz: number): Okno[] {
+  const t = Math.floor(teraz);
   const okna = miejsce === 'marismas-barbate' ? oknaMarismas(p) : oknaLaJanda(p);
   return okna.flatMap((o) => {
-    if (minuty(o.do) - Math.max(t, minuty(o.od)) < 60) return [];
-    return [minuty(o.od) < t ? { ...o, od: zMinut(t) } : o];
+    if (o.koniec - Math.max(t, o.start) < 60) return [];
+    return [o.start < t ? { ...o, start: t, od: naMadryt(t) } : o];
   });
 }
 
-/** The local wall-clock time in Spain now, as Open-Meteo's times are written. */
-export function terazWHiszpanii(d = new Date()) {
-  const cz = Object.fromEntries(
-    new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
-      .formatToParts(d)
-      .map((x) => [x.type, x.value]),
-  );
-  return `${cz.year}-${cz.month}-${cz.day}T${cz.hour}:${cz.minute}`;
-}
-
 /** The best windows first; on a tie, the earlier one. */
-export const najlepsze = (okna: Okno[], ile: number) =>
-  [...okna].sort((a, b) => b.ocena - a.ocena || minuty(a.od) - minuty(b.od)).slice(0, ile);
+export const najlepsze = (okna: Okno[], ile: number) => [...okna].sort((a, b) => b.ocena - a.ocena || a.start - b.start).slice(0, ile);
 
 /** The two Open-Meteo requests for a site, ten days from today. */
 export function adresyPrognozy(miejsce: MiejscePlanera, dni = 10) {
   const m = MIEJSCA_PLANERA.find((x) => x.value === miejsce)!;
-  const wspolne = `latitude=${m.szer}&longitude=${m.dl}&timezone=Europe%2FMadrid&forecast_days=${dni}`;
+  const wspolne = `latitude=${m.szer}&longitude=${m.dl}&timezone=GMT&forecast_days=${dni}`;
   return {
     pogoda: `https://api.open-meteo.com/v1/forecast?${wspolne}&hourly=wind_speed_10m,wind_direction_10m,precipitation&daily=sunrise,sunset`,
     plywy: m.plywy ? `https://marine-api.open-meteo.com/v1/marine?${wspolne}&minutely_15=sea_level_height_msl` : null,
   };
 }
 
-/** The two responses as a Prognoza; null when they do not have the expected shape. */
-export function prognozaZOdpowiedzi(pogoda: unknown, plywy: unknown | null): Prognoza | null {
+/** Why a forecast cannot be used: missing or broken data, as opposed to a forecast with no good time in it. */
+export class NiepelnaPrognoza extends Error {
+  name = 'NiepelnaPrognoza';
+}
+
+const tablica = (v: unknown, dlugosc?: number): v is unknown[] => Array.isArray(v) && (dlugosc === undefined || v.length === dlugosc);
+const wartosci = (v: (number | null)[]) => v.filter((x) => typeof x === 'number').length;
+
+/**
+ * The two responses as a Prognoza. Throws NiepelnaPrognoza when they lack the
+ * expected fields, when the series do not line up, or when they hold too few
+ * values to plan on (a tide series of nulls, a wind forecast missing most
+ * hours): the page then says the data is missing instead of giving advice
+ * built on nothing.
+ */
+export function prognozaZOdpowiedzi(pogoda: unknown, plywy: unknown | null): Prognoza {
   const p = pogoda as {
-    hourly?: { time?: string[]; wind_speed_10m?: (number | null)[]; wind_direction_10m?: (number | null)[]; precipitation?: (number | null)[] };
-    daily?: { time?: string[]; sunrise?: string[]; sunset?: string[] };
+    hourly?: { time?: unknown; wind_speed_10m?: unknown; wind_direction_10m?: unknown; precipitation?: unknown };
+    daily?: { time?: unknown; sunrise?: unknown; sunset?: unknown };
   };
   const h = p?.hourly;
   const d = p?.daily;
-  if (!h?.time || !h.wind_speed_10m || !h.wind_direction_10m || !h.precipitation || !d?.time || !d.sunrise || !d.sunset) return null;
+  if (!h || !tablica(h.time) || !d || !tablica(d.time) || d.time.length === 0) throw new NiepelnaPrognoza('weather: no hourly or daily series');
+  const n = h.time.length;
+  if (!tablica(h.wind_speed_10m, n) || !tablica(h.wind_direction_10m, n) || !tablica(h.precipitation, n)) {
+    throw new NiepelnaPrognoza('weather: series missing or of different lengths');
+  }
+  if (!tablica(d.sunrise, d.time.length) || !tablica(d.sunset, d.time.length) || ![...d.sunrise, ...d.sunset].every((x) => typeof x === 'string')) {
+    throw new NiepelnaPrognoza('weather: sunrise or sunset missing');
+  }
+  const wiatr = h.wind_speed_10m as (number | null)[];
+  const opad = h.precipitation as (number | null)[];
+  if (wartosci(wiatr) < n / 2 || wartosci(opad) < n / 2) throw new NiepelnaPrognoza('weather: most hours have no forecast');
   const wynik: Prognoza = {
-    godzinowa: { czas: h.time, wiatr: h.wind_speed_10m, kierunek: h.wind_direction_10m, opad: h.precipitation },
-    dni: { data: d.time, wschod: d.sunrise, zachod: d.sunset },
+    godzinowa: { czas: h.time as string[], wiatr, kierunek: h.wind_direction_10m as (number | null)[], opad },
+    dni: { data: d.time as string[], wschod: d.sunrise as string[], zachod: d.sunset as string[] },
   };
   if (plywy !== null) {
-    const m = (plywy as { minutely_15?: { time?: string[]; sea_level_height_msl?: (number | null)[] } })?.minutely_15;
-    if (!m?.time || !m.sea_level_height_msl) return null;
-    wynik.plywy = { czas: m.time, poziom: m.sea_level_height_msl };
+    const m = (plywy as { minutely_15?: { time?: unknown; sea_level_height_msl?: unknown } })?.minutely_15;
+    if (!m || !tablica(m.time) || !tablica(m.sea_level_height_msl, m.time.length)) throw new NiepelnaPrognoza('tide: no series');
+    const poziom = m.sea_level_height_msl as (number | null)[];
+    const czas = m.time as string[];
+    // Two days of readings every 15 minutes, and at least one high water in them.
+    if (wartosci(poziom) < 2 * 96 || !ekstremaPlywow(czas, poziom).some((e) => e.rodzaj === 'przyplyw')) {
+      throw new NiepelnaPrognoza('tide: too few readings to find high water');
+    }
+    wynik.plywy = { czas, poziom };
   }
   return wynik;
 }
