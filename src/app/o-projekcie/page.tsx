@@ -334,8 +334,8 @@ export default async function OProjekcie() {
             Zdjęcia zrobili
           </h2>
           <p className="sekcja__lead">
-            Zdjęcia pochodzą z Wikimedia Commons i są na wolnych licencjach, a przy każdym jest autor i licencja. Wyjątkiem jest
-            pójdźka w atlasie: to zdjęcie autorki kursu. Dziękujemy {fotografowie.length}{' '}
+            Zdjęcia pochodzą z Wikimedia Commons i są na wolnych licencjach, a przy każdym jest autor i licencja. Wyjątki to
+            pójdźka w atlasie i zdjęcia z Marismas del Barbate w module B6: to zdjęcia autorki kursu. Dziękujemy {fotografowie.length}{' '}
             {odmiana(fotografowie.length, ['osobie', 'osobom', 'osobom'])} i instytucjom, bez których ten kurs byłby tylko tekstem.
           </p>
         </div>

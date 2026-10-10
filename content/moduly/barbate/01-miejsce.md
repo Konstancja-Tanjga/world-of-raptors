@@ -49,6 +49,13 @@ Do tego dochodzą ptaki osiadłe: kaniuki na słupach, pustułki, czaple, mewy. 
 
 ## Czego się spodziewać
 
+<margines>
+
+<zdjecie src="/zdjecia/barbate-kanaly.jpg" width="960" height="1200" alt="Kręte kanały z wodą wśród niskich, rdzawozielonych krzewinek słonych łąk; w dole kadru żerują białe warzęchy" podpis="Marismas del Barbate 10 października 2026 rano: kanały pływowe, słone łąki i żerujące warzęchy" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+</zdjecie>
+
+</margines>
+
 Wszystkie gatunki z tego modułu są **możliwe, nie pewne**. Nikt nie zobaczy ich wszystkich w jeden dzień. Lista w karcie terenowej (lekcja 5) to mapa możliwości, a nie zadanie do odhaczenia w całości.
 
 Na dobrym wyjściu najwięcej gatunków dają zwykle siewkowe i czaple. Drapieżników będzie mniej, a ibis i rybołów to miłe niespodzianki.

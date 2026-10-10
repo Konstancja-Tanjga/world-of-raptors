@@ -15,6 +15,13 @@ W marismas o tym, co zobaczysz, decydują trzy rzeczy: pora pływu, kierunek wia
 
 Na wybrzeżu atlantyckim morze podnosi się i opada zwykle dwa razy na dobę. Między przypływem a odpływem mija około sześciu godzin. Ptaki żyjące z mułu dopasowują do tego cały dzień.
 
+<margines>
+
+<zdjecie src="/zdjecia/barbate-warzechy-odplyw.jpg" width="960" height="974" alt="Dwie białe warzęchy brodzą w płytkim kanale wśród słonych łąk, jedna z dziobem zanurzonym w wodzie" podpis="Przy niskiej wodzie (10 października 2026, ok. 9:20) łachy były daleko, ale warzęchy żerowały w kanałach blisko brzegu" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+</zdjecie>
+
+</margines>
+
 | Pora | Co robią ptaki | Dla obserwatora |
 |---|---|---|
 | **Pełny odpływ** | Łachy są ogromne, siewkowe rozpraszają się daleko od brzegu. | Najtrudniej: ptaki są małe i daleko. |

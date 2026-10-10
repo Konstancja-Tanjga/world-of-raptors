@@ -124,7 +124,7 @@ Jak dodać lekcję, moduł, gatunek, zdjęcie albo ciekawostkę: [TECH.md](TECH.
 
 ## Zdjęcia
 
-Zdjęcia w kursie (ptaki, ale też miejsca i przedmioty) pochodzą z Wikimedia Commons i są na wolnych licencjach (CC BY, CC BY-SA, CC0) albo w domenie publicznej. Wyjątkiem jest jedno moje zdjęcie: pójdźka w atlasie. Przy każdym zdjęciu są autor i licencja, a na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie) dziękuję fotografom. Zrzuty ekranu w tym pliku pokazują część tych zdjęć, z podpisami jak w kursie.
+Zdjęcia w kursie (ptaki, ale też miejsca i przedmioty) pochodzą z Wikimedia Commons i są na wolnych licencjach (CC BY, CC BY-SA, CC0) albo w domenie publicznej. Wyjątki to moje zdjęcia: pójdźka w atlasie i zdjęcia z Marismas del Barbate w module B6. Przy każdym zdjęciu są autor i licencja, a na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie) dziękuję fotografom. Zrzuty ekranu w tym pliku pokazują część tych zdjęć, z podpisami jak w kursie.
 
 ## Autorstwo
 
