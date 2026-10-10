@@ -20,7 +20,7 @@ Wszystkie są **możliwe, nie pewne**. Część to ptaki zimujące, które na po
 
 <margines>
 
-<zdjecie src="/zdjecia/barbate-warzechy-czapla.jpg" width="960" height="540" alt="Kilkanaście białych warzęch i jedna szara czapla siwa żerują w kanale; dwie warzęchy zrywają się do lotu z rozłożonymi skrzydłami" podpis="Warzęchy i czapla siwa w jednym kanale, Marismas del Barbate, 10 października 2026: czaplę wyróżniają szary kolor i dziób jak sztylet" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+<zdjecie src="/zdjecia/barbate-warzechy-czapla.jpg" width="960" height="540" alt="Kilkanaście białych warzęch i jedna szara czapla siwa żerują w kanale wśród słonych łąk" podpis="Warzęchy i czapla siwa w jednym kanale, Marismas del Barbate, 10 października 2026: czaplę wyróżniają szary kolor i dziób jak sztylet" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
 </zdjecie>
 
 </margines>
