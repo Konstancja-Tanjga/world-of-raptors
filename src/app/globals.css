@@ -2377,3 +2377,45 @@ a.modul:focus-visible {
   color: var(--bh-text-primary);
   font-weight: var(--bh-text-weight-emphasis);
 }
+
+/* "Kiedy jechać": the best windows, then day by day. */
+.planer__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: var(--bh-gap-normal);
+}
+.planer__okno {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--bh-gap-snug);
+}
+.planer__dzien {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+.planer__dzien::first-letter {
+  text-transform: uppercase;
+}
+.planer__godziny {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: var(--bh-text-weight-heading);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--wor-leading-title);
+}
+.planer__powody {
+  margin: 0;
+  padding-inline-start: var(--bh-gap-loose);
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+.planer__uwaga {
+  max-width: 60rem;
+  font-size: var(--bh-text-size-caption);
+}

@@ -12,6 +12,8 @@ Karta terenowa to lista 42 gatunków możliwych w Marismas del Barbate na począ
 
 [Otwórz kartę terenową Marismas](/checklista?miejsce=marismas-barbate): checklista z filtrem „Marismas del Barbate”, podzielona na grupy z tego modułu.
 
+Termin wyjazdu podpowie planer [Kiedy jechać](/kiedy-jechac): najlepsze godziny na Marismas i La Jandę w najbliższych dniach, według pływów i pogody.
+
 Jak z niej korzystać:
 
 1. **Zaznacz gatunek**, gdy jesteś pewna obserwacji. Data ustawi się sama na dziś; możesz ją zmienić.
