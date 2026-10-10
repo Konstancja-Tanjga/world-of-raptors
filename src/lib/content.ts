@@ -77,6 +77,7 @@ for (const g of gatunki) {
 }
 
 const poLacinie = new Map(gatunki.map((g) => [g.lat, g]));
+const poLacinieMokradel = new Map(ptakiMokradel.map((p) => [p.lat, p]));
 const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;
 
 /**
@@ -84,9 +85,13 @@ const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;
  * plate at the end of its section (before the next heading or rule), so the
  * lesson reads heading → description → plate. Every atlas species named in
  * the text is also listed, in order of first mention, for the media section.
+ * A bird of marshes gets its plate the same way, but stays out of both sets:
+ * they say which lessons teach a raptor and what a module's gold star asks
+ * to be recognised, and birds of marshes have no flashcards.
  */
 export function przygotujLekcje(md: string) {
   const wNaglowkach = new Set<string>();
+  const zPlansza = new Set<string>();
   const wszystkie: string[] = [];
   for (const m of md.matchAll(LATIN)) {
     const g = poLacinie.get(m[1]);
@@ -105,14 +110,18 @@ export function przygotujLekcje(md: string) {
     if (/^###\s/.test(line)) {
       const lat = [...line.matchAll(LATIN)][0]?.[1];
       const g = lat ? poLacinie.get(lat) : undefined;
+      const mokradel = lat ? poLacinieMokradel.get(lat) : undefined;
       if (g && !wNaglowkach.has(g.id)) {
         wNaglowkach.add(g.id);
         oczekujacy = g.id;
+      } else if (mokradel && !zPlansza.has(mokradel.id)) {
+        zPlansza.add(mokradel.id);
+        oczekujacy = mokradel.id;
       }
     }
   }
   if (oczekujacy) wynik.push(...tag(oczekujacy));
-  return { md: wynik.join('\n'), wNaglowkach, wszystkie };
+  return { md: wynik.join('\n'), wNaglowkach, zPlansza, wszystkie };
 }
 
 const QUIZ_NAGLOWEK = /^##\s.*Quiz.*próg zaliczenia:\s*(\d+)\s*%/;
@@ -235,7 +244,7 @@ export function znajdzGatunek(id: string) {
   return gatunki.find((g) => g.id === id);
 }
 
-export function znajdzInnegoPtaka(id: string) {
+export function znajdzPtakaMokradel(id: string) {
   return ptakiMokradel.find((p) => p.id === id);
 }
 
@@ -732,6 +741,13 @@ function sprawdzSpojnosc() {
   const miejsca = new Set<string>(MIEJSCA.map((m) => m.value));
   for (const g of gatunki) {
     if (g.miejsca && !g.miejsca.every((m) => miejsca.has(m))) bledy.push(`gatunki.json: ${g.id}: nieznane miejsce w ${JSON.stringify(g.miejsca)}`);
+  }
+  // A bird of marshes shows its photos in a lesson only through a `### Name — *Genus species*` heading.
+  const zPlanszaWLekcji = new Set(
+    gotoweModuly.flatMap((m) => m.lekcje.flatMap((l) => [...przygotujLekcje(czytajSync(`moduly/${m.slug}/${l.slug}.md`)).zPlansza])),
+  );
+  for (const p of ptakiMokradel) {
+    if (!zPlanszaWLekcji.has(p.id)) bledy.push(`ptaki-mokradel.json: ${p.id}: żadna lekcja nie ma nagłówka „### … — *${p.lat}*”, więc nigdzie nie widać jego zdjęć`);
   }
   const idMokradel = new Set<string>();
   for (const p of ptakiMokradel) {

@@ -24,7 +24,7 @@ import {
   strukturaNieba,
   zdjecia,
   znajdzGatunek,
-  znajdzInnegoPtaka,
+  znajdzPtakaMokradel,
 } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { REGIONY, STATUS_LABEL, type Gatunek } from '@/lib/types';
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps<'/gatunki/[id]'>): 
   const { id } = await params;
   const g = znajdzGatunek(id);
   if (g) return { title: g.pl, description: `${g.pl} (${g.lat}): sylwetka, cechy, podobne gatunki i zdjęcia.` };
-  const p = znajdzInnegoPtaka(id);
+  const p = znajdzPtakaMokradel(id);
   return p ? { title: p.pl, description: `${p.pl} (${p.lat}): na co patrzeć w terenie.` } : {};
 }
 
@@ -48,7 +48,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
   const { id } = await params;
   const g = znajdzGatunek(id);
   if (!g) {
-    const p = znajdzInnegoPtaka(id);
+    const p = znajdzPtakaMokradel(id);
     if (!p) notFound();
     return <PtakMokradelStrona p={p} z={zdjecia[p.id]} moduly={modulyMiejsc(p.miejsca)} />;
   }

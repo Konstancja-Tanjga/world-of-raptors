@@ -8,6 +8,9 @@ W marismas o tym, co zobaczysz, decydują trzy rzeczy: pora pływu, kierunek wia
 
 > **Gdzie sprawdzić:** wpisz w wyszukiwarkę „tabla de mareas Barbate”. Tablica podaje godziny przypływu (*pleamar*) i odpływu (*bajamar*) na każdy dzień. Planer [Kiedy jechać](/kiedy-jechac) liczy z prognozy pływów i pogody najlepsze godziny na najbliższe dziesięć dni.
 
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Becasseaux_variables_en_baie_de_Somme.jpg/960px-Becasseaux_variables_en_baie_de_Somme.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Mały brązowo-biały ptak brodzący z długim, lekko zagiętym dziobem idzie po mokrym, pofałdowanym mule, za nim kilka podobnych ptaków" podpis="Biegusy zmienne żerują na odsłoniętym mule (zatoka Sommy, Francja): przy odpływie siewkowe rozchodzą się po łachach i szukają w mule drobnych bezkręgowców" autor="MOREL Florentin" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Becasseaux_variables_en_baie_de_Somme.jpg">
+</zdjecie>
+
 </margines>
 
 Na wybrzeżu atlantyckim morze podnosi się i opada zwykle dwa razy na dobę. Między przypływem a odpływem mija około sześciu godzin. Ptaki żyjące z mułu dopasowują do tego cały dzień.
@@ -18,6 +21,13 @@ Na wybrzeżu atlantyckim morze podnosi się i opada zwykle dwa razy na dobę. Mi
 | **Przypływ (woda rośnie)** | Woda spycha żerujące ptaki coraz bliżej brzegu. | **Bardzo dobrze:** ptaki podchodzą do Ciebie same. |
 | **Pełny przypływ** | Siewkowe zbierają się w zwarte stada na wyższych, suchych miejscach i odpoczywają. | Dobrze: duże stada w jednym miejscu, łatwo porównać gatunki. |
 | **Odpływ (woda opada)** | Pierwsze łachy się odsłaniają i ptaki od razu na nie wracają. | **Bardzo dobrze:** żerowanie blisko krawędzi wody. |
+
+<margines>
+
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/7/78/Hightide_resting.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="640" height="480" alt="Setki małych ptaków brodzących stoją ciasno na niskich, trawiastych kępach wśród płytkiej wody, w tle szersza woda" podpis="Biegusy zmienne odpoczywają w zwartym stadzie przy pełnym przypływie (Morze Wattowe, Niemcy): woda zakryła łachy, więc ptaki czekają na wyższych, suchych kępach" autor="M.Buschmann" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Hightide_resting.jpg">
+</zdjecie>
+
+</margines>
 
 Zasada na początek: **wyjdź przy przypływie albo przy odpływie, nie przy pełnym odpływie.** Najwygodniej przyjść na dwie, trzy godziny przed pełnym przypływem i patrzeć, jak woda przynosi ptaki.
 
@@ -38,6 +48,13 @@ W okolicy cieśniny wieją głównie dwa wiatry: **Levante** (lewant, ze wschodu
 - **Silny wiatr** utrudnia też obserwacje lunetą: obraz drży, a małe siewkowe chowają się za wyższymi kępami. Szukaj miejsca osłoniętego od wiatru.
 
 ## Luneta i lornetka
+
+<margines>
+
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Woman_birdwatching_and_photographing_using_a_Nikon_spotting_scope_-_Stone_Lakes_National_Wildlife_Refuge%2C_Sacramento%2C_California%2C_2009.jpg/960px-Woman_birdwatching_and_photographing_using_a_Nikon_spotting_scope_-_Stone_Lakes_National_Wildlife_Refuge%2C_Sacramento%2C_California%2C_2009.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="706" alt="Kobieta w czerwonej czapce patrzy przez jasną lunetę obserwacyjną zamocowaną na statywie, w tle zielona trawa i krzewy" podpis="Luneta na statywie (rezerwat Stone Lakes, Kalifornia): statyw trzyma obraz nieruchomo, więc przy dużym powiększeniu widać kolor nóg i kształt dzioba dalekiego ptaka" autor="Erica Szlosek of Pacific Southwest Region U.S. Fish and Wildlife Service from Sacramento, US" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Woman_birdwatching_and_photographing_using_a_Nikon_spotting_scope_-_Stone_Lakes_National_Wildlife_Refuge,_Sacramento,_California,_2009.jpg">
+</zdjecie>
+
+</margines>
 
 Lornetka wystarczy do czapli, mew, drapieżników i ptaków z zarośli. Ale siewkowe na dalekich łachach to często szare punkty, których bez **lunety** nie rozpoznasz.
 
