@@ -280,6 +280,6 @@ export type PytanieTestu = {
   gatunek?: { id: string; pl: string; lat: string };
   zdjecie?: Zdjecie;
   nagranie?: Nagranie;
-  /** Knowledge questions: the lesson whose quiz it comes from. */
+  /** Knowledge questions: the lesson that teaches the topic, linked after the answer. */
   zrodlo?: { href: string; tytul: string };
 };

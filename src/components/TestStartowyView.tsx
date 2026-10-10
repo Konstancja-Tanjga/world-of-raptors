@@ -7,7 +7,7 @@ import type { PytanieTestu } from '@/lib/types';
 import { podsumuj, polecenia, type Podsumowanie } from '@/lib/wynikTestu';
 import { srcSetCommons } from '@/lib/zdjecia';
 import { ButtonLink } from './ButtonLink';
-import { Badge, Button, Card, Progress, RadioGroup } from './ds';
+import { Badge, Button, Card, Progress, RadioGroup, StateBlock } from './ds';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 
 const LITERY = 'abcdefgh';
@@ -61,7 +61,7 @@ function Scena({ pytanie, sylwetka, odkryta }: { pytanie: PytanieTestu; sylwetka
     const n = pytanie.nagranie;
     return (
       <figure className="test__nagranie">
-        <audio controls preload="none" src={n.src}>
+        <audio controls preload="none" src={n.src} aria-label="Głos ptaka do rozpoznania">
           Ta przeglądarka nie odtwarza nagrań.
         </audio>
         <figcaption className="test__podpis">
@@ -142,6 +142,8 @@ export function TestStartowyView({
   const [etap, setEtap] = useState<Etap>({ nazwa: 'start' });
   const [odpowiedzi, setOdpowiedzi] = useState<Record<string, number>>({});
   const [zapisano, setZapisano] = useState(true);
+  /** This attempt is the first ever: nothing earlier to compare with. */
+  const [pierwszePodejscie, setPierwszePodejscie] = useState(false);
   const { wyniki, zapisz } = useWynikiTestu();
   const sprawdzZapis = useOstrzezenieZapisu();
   const obszar = useRef<HTMLDivElement>(null);
@@ -161,6 +163,8 @@ export function TestStartowyView({
   };
 
   if (etap.nazwa === 'start') {
+    // The label and the last result depend on what is stored: wait for it rather than guess.
+    if (!wyniki) return <StateBlock state="loading" title="Wczytywanie testu" scope="section" />;
     const ostatni = wyniki?.ostatni ? podsumuj(pytania, wyniki.ostatni.odpowiedzi) : null;
     return (
       <Card actions={<Button onClick={zacznij}>{ostatni ? 'Rozwiąż test jeszcze raz' : 'Zacznij test'}</Button>}>
@@ -184,8 +188,7 @@ export function TestStartowyView({
   if (etap.nazwa === 'wynik') {
     const teraz = podsumuj(pytania, odpowiedzi);
     const pierwszy = wyniki?.pierwszy;
-    const porownanie =
-      pierwszy && JSON.stringify(pierwszy.odpowiedzi) !== JSON.stringify(odpowiedzi) ? podsumuj(pytania, pierwszy.odpowiedzi) : null;
+    const porownanie = pierwszy && !pierwszePodejscie ? podsumuj(pytania, pierwszy.odpowiedzi) : null;
     const { a, b } = polecenia(teraz);
     // Not a Card: the result offers three ways on (two modules and another attempt), and a card holds one.
     return (
@@ -258,6 +261,7 @@ export function TestStartowyView({
       setEtap({ nazwa: 'pytanie', numer: etap.numer + 1, sprawdzona: false, brakWyboru: false });
       return;
     }
+    setPierwszePodejscie(!wyniki?.pierwszy);
     const ok = zapisz(odpowiedzi);
     setZapisano(ok);
     sprawdzZapis(ok);

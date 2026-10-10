@@ -898,7 +898,7 @@ type PytanieTestuWPliku =
   | { id: string; rodzaj: 'sylwetka'; gatunek: string; grupa: string; odpowiedzi: string[] }
   | { id: string; rodzaj: 'zdjecie'; gatunek: string; zdjecie: 'lot' | 'siedzacy'; odpowiedzi: string[] }
   | { id: string; rodzaj: 'glos'; gatunek: string; nagranie: Nagranie; odpowiedzi: string[] }
-  | { id: string; rodzaj: 'wiedza'; zrodlo: string };
+  | { id: string; rodzaj: 'wiedza'; zrodlo: string; lekcja: string };
 
 const PYTANIE_O = { sylwetka: 'Do której grupy należy ten ptak?', zdjecie: 'Co to za gatunek?', glos: 'Czyj to głos?' } as const;
 const wielka = (s: string) => s[0].toLocaleUpperCase('pl') + s.slice(1);
@@ -927,6 +927,11 @@ const TEST_STARTOWY: PytanieTestu[] = (() => {
       const md = czytajSync(`moduly/${sciezka}.md`);
       const pytanie = wyodrebnijQuiz(md, `moduly/${sciezka}.md`).quiz?.pytania[Number(numer) - 1];
       if (!pytanie) throw blad(p.id, `lekcja ${sciezka} nie ma w quizie pytania ${numer}`);
+      // The link after the answer goes to the lesson that teaches it, not back to the quiz.
+      const [slugUczy, lekcjaUczy] = (p.lekcja ?? '').split('/');
+      const modulUczy = znajdzModul(slugUczy);
+      const uczy = modulUczy?.lekcje.find((x) => x.slug === lekcjaUczy);
+      if (!modulUczy || !uczy) throw blad(p.id, `nie ma lekcji ${p.lekcja}, która uczy tematu pytania`);
       return {
         id: p.id,
         rodzaj: 'wiedza',
@@ -934,7 +939,7 @@ const TEST_STARTOWY: PytanieTestu[] = (() => {
         pytanie: pytanie.pytanie,
         odpowiedzi: pytanie.odpowiedzi,
         poprawna: pytanie.poprawna,
-        zrodlo: { href: `/moduly/${slug}/${lekcja}`, tytul: `${l.tytul} (${modul.id})` },
+        zrodlo: { href: `/moduly/${slugUczy}/${lekcjaUczy}`, tytul: `${uczy.tytul} (${modulUczy.id})` },
       };
     }
     const g = gatunek(p.gatunek, p.id);

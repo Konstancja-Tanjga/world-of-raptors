@@ -1,5 +1,5 @@
 {
-  "uwaga": "Test startowy (Moduł 0, PLAN-KURSU.md): 15 stałych pytań, ten sam test na początku i na końcu kursu. Pytania o wiedzę to odwołania do quizów lekcji (modul/lekcja#numer pytania), nie kopie. Nagrania: Wikimedia Commons (z xeno-canto); pole zatwierdzone ustawia właścicielka po odsłuchaniu nagrania.",
+  "uwaga": "Test startowy (Moduł 0, PLAN-KURSU.md): 15 stałych pytań, ten sam test na początku i na końcu kursu. Pytania o wiedzę to odwołania do quizów lekcji (modul/lekcja#numer pytania), nie kopie; lekcja to ta, która uczy tematu (link po odpowiedzi). Nagrania: Wikimedia Commons (z xeno-canto); pole zatwierdzone ustawia właścicielka po odsłuchaniu nagrania.",
   "pytania": [
     {
       "id": "sylwetka-kania",
@@ -166,22 +166,26 @@
     {
       "id": "wiedza-krewni",
       "rodzaj": "wiedza",
-      "zrodlo": "kim-sa-drapiezniki/05-cwiczenia#2"
+      "zrodlo": "kim-sa-drapiezniki/05-cwiczenia#2",
+      "lekcja": "kim-sa-drapiezniki/02-drzewo-rodowe"
     },
     {
       "id": "wiedza-dolki",
       "rodzaj": "wiedza",
-      "zrodlo": "anatomia/05-cwiczenia#1"
+      "zrodlo": "anatomia/05-cwiczenia#1",
+      "lekcja": "anatomia/01-wzrok"
     },
     {
       "id": "wiedza-termiki",
       "rodzaj": "wiedza",
-      "zrodlo": "wedrowki/05-cwiczenia#3"
+      "zrodlo": "wedrowki/05-cwiczenia#3",
+      "lekcja": "wedrowki/02-fizyka-szybowania"
     },
     {
       "id": "wiedza-ddt",
       "rodzaj": "wiedza",
-      "zrodlo": "ochrona/05-cwiczenia#1"
+      "zrodlo": "ochrona/05-cwiczenia#1",
+      "lekcja": "ochrona/02-trucizny"
     }
   ]
 }
