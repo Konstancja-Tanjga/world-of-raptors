@@ -39,8 +39,10 @@ import type {
   PtakMokradel,
   Miejsce,
   Modul,
+  Nagranie,
   PtakNaLiscie,
   PytanieQuizu,
+  PytanieTestu,
   Quiz,
   Region,
   Sciezka,
@@ -889,3 +891,86 @@ function sprawdzSpojnosc() {
 }
 
 sprawdzSpojnosc();
+
+// ---- Moduł 0: the starting test ----
+
+type PytanieTestuWPliku =
+  | { id: string; rodzaj: 'sylwetka'; gatunek: string; grupa: string; odpowiedzi: string[] }
+  | { id: string; rodzaj: 'zdjecie'; gatunek: string; zdjecie: 'lot' | 'siedzacy'; odpowiedzi: string[] }
+  | { id: string; rodzaj: 'glos'; gatunek: string; nagranie: Nagranie; odpowiedzi: string[] }
+  | { id: string; rodzaj: 'wiedza'; zrodlo: string; lekcja: string };
+
+const PYTANIE_O = { sylwetka: 'Do której grupy należy ten ptak?', zdjecie: 'Co to za gatunek?', glos: 'Czyj to głos?' } as const;
+const wielka = (s: string) => s[0].toLocaleUpperCase('pl') + s.slice(1);
+
+/**
+ * The starting test from content/test-startowy.json, read once and checked
+ * when this module is imported, so the build stops on a question whose
+ * species, photo, silhouette, group or quiz question does not exist.
+ */
+const TEST_STARTOWY: PytanieTestu[] = (() => {
+  const plik = 'test-startowy.json';
+  const { pytania } = JSON.parse(czytajSync(plik)) as { pytania: PytanieTestuWPliku[] };
+  const blad = (id: string, co: string) => new Error(`${plik}: pytanie ${id}: ${co}`);
+  const gatunek = (id: string, pytanie: string) => {
+    const g = znajdzGatunek(id);
+    if (!g) throw blad(pytanie, `nie ma gatunku ${id} w atlasie`);
+    return g;
+  };
+  const wynik = pytania.map((p): PytanieTestu => {
+    if (p.rodzaj === 'wiedza') {
+      const [sciezka, numer] = p.zrodlo.split('#');
+      const [slug, lekcja] = sciezka.split('/');
+      const modul = znajdzModul(slug);
+      const l = modul?.lekcje.find((x) => x.slug === lekcja);
+      if (!modul || !l) throw blad(p.id, `nie ma lekcji ${sciezka}`);
+      const md = czytajSync(`moduly/${sciezka}.md`);
+      const pytanie = wyodrebnijQuiz(md, `moduly/${sciezka}.md`).quiz?.pytania[Number(numer) - 1];
+      if (!pytanie) throw blad(p.id, `lekcja ${sciezka} nie ma w quizie pytania ${numer}`);
+      // The link after the answer goes to the lesson that teaches it, not back to the quiz.
+      const [slugUczy, lekcjaUczy] = (p.lekcja ?? '').split('/');
+      const modulUczy = znajdzModul(slugUczy);
+      const uczy = modulUczy?.lekcje.find((x) => x.slug === lekcjaUczy);
+      if (!modulUczy || !uczy) throw blad(p.id, `nie ma lekcji ${p.lekcja}, która uczy tematu pytania`);
+      return {
+        id: p.id,
+        rodzaj: 'wiedza',
+        sciezka: 'a',
+        pytanie: pytanie.pytanie,
+        odpowiedzi: pytanie.odpowiedzi,
+        poprawna: pytanie.poprawna,
+        zrodlo: { href: `/moduly/${slugUczy}/${lekcjaUczy}`, tytul: `${uczy.tytul} (${modulUczy.id})` },
+      };
+    }
+    const g = gatunek(p.gatunek, p.id);
+    if (p.odpowiedzi.length < 2 || new Set(p.odpowiedzi).size !== p.odpowiedzi.length) throw blad(p.id, 'odpowiedzi muszą być co najmniej dwie i różne');
+    const opis = { id: g.id, pl: g.pl, lat: g.lat };
+    if (p.rodzaj === 'sylwetka') {
+      if (!SYLWETKI[g.id]) throw blad(p.id, `gatunek ${g.id} nie ma sylwetki`);
+      const grupy: readonly string[] = GRUPY_SYLWETEK;
+      for (const o of p.odpowiedzi) if (!grupy.includes(o)) throw blad(p.id, `${o} nie jest jedną z ośmiu grup B1`);
+      const poprawna = p.odpowiedzi.indexOf(p.grupa);
+      if (poprawna < 0) throw blad(p.id, `grupy ${p.grupa} nie ma wśród odpowiedzi`);
+      return { id: p.id, rodzaj: 'sylwetka', sciezka: 'b', pytanie: PYTANIE_O.sylwetka, odpowiedzi: p.odpowiedzi.map(wielka), poprawna, gatunek: opis };
+    }
+    const nazwy = p.odpowiedzi.map((id) => gatunek(id, p.id).pl);
+    const poprawna = p.odpowiedzi.indexOf(g.id);
+    if (poprawna < 0) throw blad(p.id, `gatunku ${g.id} nie ma wśród odpowiedzi`);
+    if (p.rodzaj === 'zdjecie') {
+      const z = zdjecia[g.id]?.[p.zdjecie];
+      if (!z) throw blad(p.id, `gatunek ${g.id} nie ma zdjęcia ${p.zdjecie}`);
+      return { id: p.id, rodzaj: 'zdjecie', sciezka: 'b', pytanie: PYTANIE_O.zdjecie, odpowiedzi: nazwy, poprawna, gatunek: opis, zdjecie: z };
+    }
+    if (!/^https:\/\/upload\.wikimedia\.org\//.test(p.nagranie.src) || !p.nagranie.autor || !p.nagranie.licencja) {
+      throw blad(p.id, 'nagranie musi pochodzić z Wikimedia Commons i mieć autora i licencję');
+    }
+    return { id: p.id, rodzaj: 'glos', sciezka: 'b', pytanie: PYTANIE_O.glos, odpowiedzi: nazwy, poprawna, gatunek: opis, nagranie: p.nagranie };
+  });
+  if (new Set(wynik.map((p) => p.id)).size !== wynik.length) throw new Error(`${plik}: identyfikatory pytań muszą być różne`);
+  return wynik;
+})();
+
+/** Moduł 0: the fifteen questions of the starting test, in order. */
+export function testStartowy() {
+  return TEST_STARTOWY;
+}

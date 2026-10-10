@@ -2431,3 +2431,70 @@ a.modul:focus-visible {
   max-width: 60rem;
   font-size: var(--bh-text-size-caption);
 }
+
+/* ---------- Moduł 0: the starting test ---------- */
+
+/* A silhouette on the day sky, as on the silhouette flashcards. Literal sizes: this scene's drawing. */
+.test__scena {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  max-height: 50vh;
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+}
+.test__scena--niebo {
+  background: var(--wor-niebo-dzien);
+}
+.test__scena--niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, var(--wor-blask) 0, var(--wor-blask-miekki) 26%, transparent 62%);
+}
+.test__sylwetka {
+  width: 70%;
+  height: auto;
+  fill: var(--wor-sylwetka);
+}
+.test__zdjecie,
+.test__nagranie {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+/* The photo whole, as on the flashcards: a crop could hide the very mark that identifies the bird. */
+.test__zdjecie img {
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-sunken);
+}
+.test__nagranie audio {
+  width: 100%;
+}
+.test__podpis {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-dense);
+}
+.test__podpis a {
+  color: inherit;
+}
+.test__wynik {
+  padding: var(--bh-padding-section);
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-raised);
+}
+.test__sciezka {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+  padding-top: var(--bh-gap-normal);
+  border-top: 1px solid var(--bh-border-hairline);
+}

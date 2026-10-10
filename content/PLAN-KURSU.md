@@ -9,7 +9,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 ---
 
 ## Moduł 0: Test startowy
-15 pytań (sylwetki, zdjęcia, głosy, wiedza). Wynik pokazuje poziom w każdej ścieżce i proponuje, od czego zacząć. Ten sam test na końcu pokazuje postęp.
+15 pytań (sylwetki, zdjęcia, głosy, wiedza). Wynik pokazuje poziom w każdej ścieżce i proponuje, od czego zacząć. Ten sam test na końcu pokazuje postęp. [Zrób test startowy](/test-startowy).
 
 ---
 
