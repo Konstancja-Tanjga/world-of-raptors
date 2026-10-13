@@ -6,6 +6,7 @@ import { SpeciesObservation } from '@/components/SpeciesObservation';
 import { linkiGatunku } from '@/lib/media';
 import { MIEJSCA, NAZWY_GRUP_MOKRADEL, type PtakMokradel, type Modul, type ZdjeciaGatunku } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
+import { NazwaPtaka } from '../NazwaPtaka';
 
 /**
  * The page of a bird other than a raptor (a site's field list): its photo,
@@ -42,15 +43,15 @@ export function PtakMokradelStrona({
           />
         )}
         <div className="gatunek-hero__tresc">
-          <Breadcrumbs items={[{ label: 'Atlas gatunków', href: '/gatunki' }, { label: p.pl }]} />
+          <Breadcrumbs items={[{ label: 'Atlas gatunków', href: '/gatunki' }, { label: <NazwaPtaka id={p.id} pl={p.pl} /> }]} />
           <ViewTransition name={`nazwa-${p.id}`} share="morf-nazwy" default="none">
             <h1 id="gatunek-nazwa" className="gatunek-hero__nazwa">
-              {p.pl}
+              <NazwaPtaka id={p.id} pl={p.pl} />
             </h1>
           </ViewTransition>
-          <p className="gatunek-hero__lacina">{p.lat}</p>
+          <p className="gatunek-hero__lacina" translate="no" lang="la">{p.lat}</p>
           <p className="gatunek-hero__jezyki">
-            ang. <span lang="en">{p.en}</span>, hiszp. <span lang="es">{p.es}</span>
+            ang. <span lang="en" translate="no">{p.en}</span>, hiszp. <span lang="es" translate="no">{p.es}</span>
           </p>
           <ul className="gatunek-hero__znaczniki" aria-label="Grupa">
             <li>ptaki mokradeł</li>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { jestWidziany, useChecklista } from '@/lib/checklist';
 import { odmiana } from '@/lib/odmiana';
+import { NazwaPtaka } from '../NazwaPtaka';
 
 export type PozycjaKolekcji = { id: string; pl: string; sylwetka: ReactNode };
 
@@ -50,7 +51,7 @@ export function Kolekcja({ gatunki }: { gatunki: PozycjaKolekcji[] }) {
               <Link href={`/gatunki/${g.id}`} className="kolekcja__gatunek">
                 {g.sylwetka}
                 <span className="kolekcja__nazwa">
-                  {g.pl}
+                  <NazwaPtaka id={g.id} pl={g.pl} />
                   {widziany && <span className="visually-hidden">, zaobserwowany</span>}
                 </span>
               </Link>

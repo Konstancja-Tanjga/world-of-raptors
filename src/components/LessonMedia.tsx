@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { znajdzGatunek } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { SpeciesMedia } from './SpeciesMedia';
+import { NazwaPtaka } from './NazwaPtaka';
 
 /**
  * Closing section of every lesson: each atlas species the lesson names, with
@@ -26,10 +27,19 @@ export function LessonMedia({ ids, juzPokazane }: { ids: string[]; juzPokazane: 
         <article key={g.id} className="lesson-media__species" aria-labelledby={`media-${g.id}`}>
           <h3 id={`media-${g.id}`} className="species-card__title">
             <Link href={`/gatunki/${g.id}`} className="text-link">
-              {g.pl}
+              <NazwaPtaka id={g.id} pl={g.pl} />
             </Link>{' '}
             <span className="latin">
-              {g.lat} <span className="en">(ang. {g.en})</span>
+              <span translate="no" lang="la">
+                {g.lat}
+              </span>{' '}
+              <span className="en">
+                (ang.{' '}
+                <span translate="no" lang="en">
+                  {g.en}
+                </span>
+                )
+              </span>
             </span>
           </h3>
           {juzPokazane.has(g.id) ? (

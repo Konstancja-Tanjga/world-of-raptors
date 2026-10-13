@@ -24,6 +24,7 @@ import {
 } from './ds';
 import { filtryAktywne as czyFiltryAktywne, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
+import { NazwaPtaka } from './NazwaPtaka';
 
 type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
 
@@ -296,8 +297,19 @@ export function ChecklistView({
                           {sylwetki[g.id] ?? null}
                         </span>
                         <Checkbox
-                          label={g.pl}
-                          description={`${g.lat} (ang. ${g.en})`}
+                          label={<NazwaPtaka id={g.id} pl={g.pl} />}
+                          description={
+                            <>
+                              <span translate="no" lang="la">
+                                {g.lat}
+                              </span>{' '}
+                              (ang.{' '}
+                              <span translate="no" lang="en">
+                                {g.en}
+                              </span>
+                              )
+                            </>
+                          }
                           checked={Boolean(obs)}
                           onChange={() => sprawdzZapis(przelacz(g.id))}
                         />

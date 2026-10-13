@@ -8,6 +8,7 @@ import { polozenie } from '@/lib/zdjecia';
 import { Button, SegmentedControl, StateBlock } from './ds';
 import { PUSTE_FILTRY, SpeciesFilters, useFiltry, type Filtry } from './SpeciesFilters';
 import { Sylwetka } from './Sylwetka';
+import { NazwaPtaka } from './NazwaPtaka';
 
 type Widok = 'zdjecia' | 'sylwetki' | 'skala';
 
@@ -34,7 +35,9 @@ const CZLOWIEK_CM = 170;
 function NazwaGatunku({ id, klasa, children }: { id: string; klasa: string; children: string }) {
   return (
     <ViewTransition name={`nazwa-${id}`} share="morf-nazwy" default="none">
-      <span className={klasa}>{children}</span>
+      <span className={klasa}>
+        <NazwaPtaka id={id} pl={children} />
+      </span>
     </ViewTransition>
   );
 }
@@ -143,7 +146,7 @@ export function AtlasView({
                     <NazwaGatunku id={g.id} klasa="karta-gatunku__nazwa">
                       {g.pl}
                     </NazwaGatunku>
-                    <span className="karta-gatunku__lacina">{g.lat}</span>
+                    <span className="karta-gatunku__lacina" translate="no" lang="la">{g.lat}</span>
                     <span className="karta-gatunku__meta">
                       {g.grupa}
                       {g.rzadki && <span className="karta-gatunku__znacznik">rzadki</span>}
@@ -186,7 +189,7 @@ export function AtlasView({
                         <NazwaGatunku id={g.id} klasa="plansza-grupy__nazwa">
                           {g.pl}
                         </NazwaGatunku>
-                        <span className="plansza-grupy__lacina">{g.lat}</span>
+                        <span className="plansza-grupy__lacina" translate="no" lang="la">{g.lat}</span>
                         {widziany(g.id) && <span className="atlas__widziany">zaobserwowany</span>}
                       </Link>
                     </li>

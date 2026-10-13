@@ -19,6 +19,7 @@ import { MapaGwiazdozbiorow, type StanGwiazdozbioru } from './MapaGwiazdozbiorow
 import { Naszywka } from './Naszywka';
 import { OBRACZKI } from './Obraczka';
 import type { Rysunek } from './rysunek';
+import { NazwaPtaka } from '../NazwaPtaka';
 
 const DATA = new Intl.DateTimeFormat('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
 const zDaty = (d: string) => DATA.format(new Date(`${d}T12:00:00`));
@@ -146,7 +147,9 @@ export function MojeNiebo({
               <li key={g.id} data-wyglad={wyglad}>
                 <Link href={`/gatunki/${g.id}`} className="lista-zyciowa__gatunek">
                   {sylwetki[g.id]}
-                  <span className="lista-zyciowa__nazwa">{g.pl}</span>
+                  <span className="lista-zyciowa__nazwa">
+                    <NazwaPtaka id={g.id} pl={g.pl} />
+                  </span>
                   <span className="lista-zyciowa__obraczki" aria-hidden="true">
                     {OBRACZKI.map((r) => (
                       <span key={r.rodzaj} className="lista-zyciowa__obraczka" data-rodzaj={r.rodzaj} data-zdobyta={o[r.rodzaj] ? '' : undefined} />
