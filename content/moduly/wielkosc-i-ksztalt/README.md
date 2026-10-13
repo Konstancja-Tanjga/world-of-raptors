@@ -23,3 +23,4 @@ Po ukończeniu modułu potrafisz:
 |---|---|---|
 | 1 | [Ptasia miarka](01-ptasia-miarka.md) | 35 min |
 | 2 | [Proporcje, czyli kształt bez skali](02-proporcje.md) | 35 min |
+| 3 | [Sylwetki grup](03-sylwetki-grup.md) | 30 min |
