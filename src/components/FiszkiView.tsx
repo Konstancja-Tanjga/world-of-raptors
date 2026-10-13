@@ -14,6 +14,7 @@ import { ScenaSylwetki } from './ScenaSylwetki';
 import { CECHY_DZIENNE } from './SpeciesCues';
 import { Sylwetka } from './Sylwetka';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
+import { NazwaPtaka } from './NazwaPtaka';
 
 /** New cards a day; the empty state's "Dodaj … nowych" button raises it by this much for the visit. */
 const NOWYCH_DZIENNIE = 10;
@@ -197,7 +198,7 @@ function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtor
   return (
     <div className="fiszka__scena fiszka__scena--nazwa">
       <p className="fiszka__jezyk">{etykieta}</p>
-      <p className="fiszka__slowo" lang={jezyk}>
+      <p className="fiszka__slowo" lang={jezyk} translate="no">
         {nazwa}
       </p>
     </div>
@@ -218,14 +219,22 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
           {obcy.nazwa}
         </p>
       ) : (
-        <p className="fiszka__nazwa">{g.pl}</p>
+        <p className="fiszka__nazwa">
+          <NazwaPtaka id={g.id} pl={g.pl} />
+        </p>
       )}
       <p className="fiszka__nazwy">
-        <em>{g.lat}</em>
-        {pytaOObcy && <>, {g.pl}</>}
+        <em translate="no" lang="la">
+          {g.lat}
+        </em>
+        {pytaOObcy && (
+          <>
+            , <NazwaPtaka id={g.id} pl={g.pl} />
+          </>
+        )}
         {karta.rodzaj !== 'pl-en' && (
           <>
-            , ang. <span lang="en">{g.en}</span>
+            , ang. <span lang="en" translate="no">{g.en}</span>
           </>
         )}
         {karta.rodzaj !== 'pl-es' && (
@@ -272,7 +281,9 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
             {g.podobne.map((p) => (
               <li key={p.id}>
                 {karta.rodzaj === 'sylwetka' && <Sylwetka id={p.id} klasa="fiszka__mala-sylwetka" />}
-                <Link href={`/gatunki/${p.id}`}>{p.pl}</Link>
+                <Link href={`/gatunki/${p.id}`}>
+                  <NazwaPtaka id={p.id} pl={p.pl} />
+                </Link>
               </li>
             ))}
           </ul>
@@ -280,7 +291,7 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
       )}
 
       <Link href={`/gatunki/${g.id}`} className="fiszka__karta">
-        Karta gatunku: {g.pl}
+        Karta gatunku: <NazwaPtaka id={g.id} pl={g.pl} />
       </Link>
     </>
   );

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { gatunki, MODUL_SOW, zajawkaModulu } from '@/lib/content';
 import { MarkdownInline } from '../Markdown';
 import { Sylwetka } from '../Sylwetka';
+import { NazwaPtaka } from '../NazwaPtaka';
 
 /**
  * The night half of the course next to the day half: the owls of B5, each
@@ -32,7 +33,9 @@ export function Chor() {
             <li key={s.id}>
               <Link href={`/gatunki/${s.id}`} className="chor__sowa">
                 <Sylwetka id={s.id} klasa="chor__sylwetka" dokladnosc={0.3} />
-                <span className="chor__nazwa">{s.pl}</span>
+                <span className="chor__nazwa">
+                  <NazwaPtaka id={s.id} pl={s.pl} />
+                </span>
                 <span className="chor__glos">{s.sylwetka.glos}</span>
               </Link>
             </li>

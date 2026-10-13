@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Table } from './ds';
+import { NazwaPtaka } from './NazwaPtaka';
 
 export type KolumnaCech = {
   id: string;
@@ -37,14 +38,14 @@ export function CuesTable({
         { key: 'cecha', header: 'Cecha', cell: ([, nazwa]) => nazwa },
         {
           key: glowny.id,
-          header: glowny.pl,
+          header: <NazwaPtaka id={glowny.id} pl={glowny.pl} />,
           cell: ([k]) => glowny.cechy[k] ?? '',
         },
         ...podobne.map((g) => ({
           key: g.id,
           header: (
             <Link href={`/gatunki/${g.id}`} className="text-link">
-              {g.pl}
+              <NazwaPtaka id={g.id} pl={g.pl} />
             </Link>
           ),
           cell: ([k]: readonly [string, string]) => g.cechy[k] ?? '',

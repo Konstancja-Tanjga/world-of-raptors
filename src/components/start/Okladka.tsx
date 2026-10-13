@@ -4,6 +4,7 @@ import { zdjecia } from '@/lib/content';
 import { REGIONY, type Gatunek } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Miarka } from '../Miarka';
+import { NazwaPtaka } from '../NazwaPtaka';
 
 /**
  * The species of the day as a magazine cover: the photo opens like a view
@@ -60,12 +61,12 @@ export function Okladka({ g }: { g: Gatunek }) {
         <p className="eyebrow">Gatunek na dziś</p>
         <ViewTransition name={`nazwa-${g.id}`} share="morf-nazwy" default="none">
           <h2 id="gatunek-dnia" className="okladka__nazwa">
-            {g.pl}
+            <NazwaPtaka id={g.id} pl={g.pl} />
           </h2>
         </ViewTransition>
-        <p className="okladka__lacina">{g.lat}</p>
+        <p className="okladka__lacina" translate="no" lang="la">{g.lat}</p>
         <p className="okladka__jezyki">
-          ang. <span lang="en">{g.en}</span>, hiszp. <span lang="es">{g.es}</span>
+          ang. <span lang="en" translate="no">{g.en}</span>, hiszp. <span lang="es" translate="no">{g.es}</span>
         </p>
         <Miarka g={g} />
         <dl className="fakty">

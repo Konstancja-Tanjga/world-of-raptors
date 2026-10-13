@@ -4,6 +4,7 @@ import { linkiGatunku } from '@/lib/media';
 import { CuesTable } from './CuesTable';
 import { Photo } from './Photo';
 import { CECHY_DZIENNE, CECHY_NOCNE, SpeciesCues } from './SpeciesCues';
+import { NazwaPtaka } from './NazwaPtaka';
 
 /**
  * A field-guide plate for one species: the reference photos (in flight first
@@ -81,9 +82,11 @@ export function SpeciesMedia({
                 <li key={m.id}>
                   {foto && <Photo zdjecie={foto} alt={m.pl} maly />}
                   <Link href={`/gatunki/${m.id}`} className="text-link">
-                    {m.pl}
+                    <NazwaPtaka id={m.id} pl={m.pl} />
                   </Link>{' '}
-                  <span className="latin">{m.lat}</span>
+                  <span className="latin" translate="no" lang="la">
+                    {m.lat}
+                  </span>
                 </li>
               );
             })}
