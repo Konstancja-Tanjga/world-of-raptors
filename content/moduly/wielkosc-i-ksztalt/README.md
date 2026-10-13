@@ -22,3 +22,4 @@ Po ukończeniu modułu potrafisz:
 | Lekcja | Temat | Czas |
 |---|---|---|
 | 1 | [Ptasia miarka](01-ptasia-miarka.md) | 35 min |
+| 2 | [Proporcje, czyli kształt bez skali](02-proporcje.md) | 35 min |

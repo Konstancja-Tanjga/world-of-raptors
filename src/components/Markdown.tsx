@@ -90,7 +90,11 @@ const lessonTags = {
       </div>
     );
   },
-  anatomia: () => <Anatomia />,
+  anatomia: () => (
+    <div className="lekcja-cwiczenie">
+      <Anatomia podpis="Kania ruda od spodu. Każdą z tych części porównuj z inną częścią tego samego ptaka, nie z centymetrami." />
+    </div>
+  ),
   'morf-grup': () => (
     <div className="lekcja-scena scena">
       <MorfGrup grupy={grupySylwetek().grupy} />
