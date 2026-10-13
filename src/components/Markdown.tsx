@@ -88,6 +88,9 @@ function rehypeIdNaglowkow() {
 /** Atlas species by their Latin name, for headings like "### Kania czarna — *Milvus migrans*". */
 const PO_LACINIE = new Map([...gatunki, ...ptakiMokradel].map((g) => [g.lat, g]));
 const BINOMIAL = /^[A-Z][a-z]+ [a-z]+(?: [a-z]+)?$/;
+/** A declined Polish phrase in italics ("*Kronice wielkopolskiej*") looks like a binomial; Latin epithets never end so. */
+const POLSKA_KONCOWKA = /(ej|ego|ych|ich|ymi|imi|emu|owi|ami)$/;
+const jestLacina = (t: string) => BINOMIAL.test(t) && !POLSKA_KONCOWKA.test(t.split(' ')[1]);
 const ANG = /(ang\.\s+)([^,;)]+?)(?=[,;)]|$)/g;
 
 /**
@@ -103,7 +106,7 @@ function rehypeNazwy() {
   return (drzewo: HastNode) => {
     const odwiedz = (n: HastNode) => {
       if (n.type !== 'element' && n.type !== 'root') return;
-      if (n.tagName === 'em' && BINOMIAL.test(tekstWezla(n).trim())) {
+      if (n.tagName === 'em' && jestLacina(tekstWezla(n).trim())) {
         n.properties = { ...n.properties, translate: 'no', lang: 'la' };
       }
       const dzieci = n.children ?? [];

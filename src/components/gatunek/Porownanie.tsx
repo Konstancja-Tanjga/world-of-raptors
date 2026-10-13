@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { SegmentedControl } from '../ds';
 import { SuwakMorfu, type StronaMorfu } from '../SuwakMorfu';
+import { NazwaPtaka } from '../NazwaPtaka';
 
 /**
  * A species against each of its look-alikes in turn: choose one, then slide
@@ -22,7 +23,7 @@ export function Porownanie({ gatunek, podobne }: { gatunek: StronaMorfu; podobne
             showLegend
             value={druga.id}
             onChange={setWybrany}
-            options={podobne.map((p) => ({ value: p.id, label: p.pl }))}
+            options={podobne.map((p) => ({ value: p.id, label: <NazwaPtaka id={p.id} pl={p.pl} /> }))}
           />
         </div>
       )}

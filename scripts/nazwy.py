@@ -7,7 +7,7 @@ Spanish are not fetched: the atlas has its own, checked names for them. A
 "name" that is only the Latin name again, or is missing, is left out; the app
 then shows the English name.
 """
-import json, os, time, urllib.parse, urllib.request
+import json, os, re, time, urllib.parse, urllib.request
 
 JEZYKI = ['de', 'fr', 'it', 'pt', 'nl', 'cs', 'sk', 'uk', 'sv', 'da', 'nb', 'fi', 'hu', 'ro']
 # Wikidata files these species under a name the atlas does not use.
@@ -21,6 +21,7 @@ def wczytaj(plik, klucz):
 
 gatunki = wczytaj('gatunki.json', 'gatunki') + wczytaj('ptaki-mokradel.json', 'ptaki')
 po_lacinie = {SYNONIMY.get(g['lat'], g['lat']): g['id'] for g in gatunki}
+RODZAJE = {lat.split()[0] for lat in list(po_lacinie) + [g['lat'] for g in gatunki]}
 
 wartosci = ' '.join(json.dumps(lat) for lat in po_lacinie)
 zapytanie = f"""
@@ -50,7 +51,11 @@ for zrodlo in ('etykieta', 'wikipedia'):
         if w['zrodlo']['value'] != zrodlo:
             continue
         lat, jezyk, nazwa = w['lat']['value'], w['jezyk']['value'], w['nazwa']['value'].strip()
-        if not nazwa or nazwa.lower() == lat.lower() or ' (' in nazwa or jezyk in nazwy[po_lacinie[lat]]:
+        # A Latin name (the queried one, or an old synonym such as Aquila pomarina) is not a common
+        # name. Only a known genus marks it: "Milan noir" has the same shape and is a real name.
+        dwuczlonowa = re.fullmatch(r'([A-Z][a-z]+) [a-z]+', nazwa)
+        latinska = bool(dwuczlonowa) and dwuczlonowa.group(1) in RODZAJE
+        if not nazwa or latinska or ' (' in nazwa or jezyk in nazwy[po_lacinie[lat]]:
             continue
         nazwy[po_lacinie[lat]][jezyk] = nazwa
 
