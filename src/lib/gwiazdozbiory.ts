@@ -21,6 +21,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'poludnie-hiszpanii': { gatunek: 'orzel-iberyjski', nazwa: 'Orzeł iberyjski' },
   sowy: { gatunek: 'puchacz', nazwa: 'Puchacz' },
   barbate: { gatunek: 'rybolow', nazwa: 'Rybołów' },
+  'wielkosc-i-ksztalt': { gatunek: 'kobuz', nazwa: 'Kobuz' },
 };
 
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */

@@ -26,6 +26,8 @@ export type DaneGatunku = {
   grupa: string;
   status: Status[];
   rozpietosc_cm: [number, number];
+  /** Body length, bill tip to tail tip: what a perched bird shows. */
+  dlugosc_cm: [number, number];
   sezon: string;
   cechy: string[];
   mylona_z: string[];
@@ -57,6 +59,12 @@ export type Modul = {
   gotowy: boolean;
   lekcje?: Lekcja[];
 };
+
+/**
+ * A familiar bird to measure raptors against (content/miarka.json, B7): not a
+ * raptor, so it has no silhouette and stays out of the atlas and the flashcards.
+ */
+export type PtakMiarki = { id: string; pl: string; lat: string; dlugosc_cm: [number, number]; rozpietosc_cm: [number, number] };
 
 export type Sciezka = { id: 'a' | 'b'; tytul: string };
 

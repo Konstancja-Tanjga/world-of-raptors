@@ -1985,6 +1985,383 @@ li {
   line-height: var(--wor-leading-snug);
 }
 
+/* ---------- The labelled plate (About page, B7) ---------- */
+
+.anatomia {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  margin: 0;
+}
+.anatomia__plansza {
+  container-type: inline-size;
+  padding: var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+}
+/* The labels are placed against the drawing's own box, not the card's padding. */
+.anatomia__scena {
+  position: relative;
+}
+.anatomia__plansza svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.anatomia__ptak {
+  fill: var(--bh-text-primary);
+}
+.anatomia__odnosnik line {
+  stroke: var(--wor-akcent);
+  stroke-width: 0.6;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.anatomia__odnosnik circle {
+  fill: var(--wor-akcent);
+}
+.anatomia__opis {
+  position: absolute;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--bh-text-leading-tight);
+  translate: 0 -50%;
+}
+.anatomia__opis--l {
+  text-align: right;
+  translate: -100% -50%;
+}
+.anatomia__podpis {
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}
+/* The leader lines draw themselves as the plate comes into view. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .anatomia__odnosnik line {
+      animation: kreska linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+    /* Opacity only: the labels' own translate places them beside the drawing. */
+    .anatomia__opis {
+      animation: przenikanie linear both;
+      animation-timeline: view();
+      animation-range: entry 30% cover 50%;
+    }
+  }
+}
+@keyframes kreska {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes przenikanie {
+  from {
+    opacity: 0;
+  }
+}
+/* A narrow plate lists the labels under the drawing, without leader lines,
+   and crops the empty side margins the labels would otherwise occupy. */
+@container (max-width: 34rem) {
+  .anatomia__scena {
+    overflow: hidden;
+  }
+  .anatomia__plansza svg {
+    width: 150%;
+    margin-inline: -25%;
+  }
+  .anatomia__odnosnik {
+    display: none;
+  }
+  .anatomia__opis,
+  .anatomia__opis--l {
+    position: static;
+    display: block;
+    animation: none;
+    max-width: none !important;
+    margin-top: var(--bh-gap-snug);
+    text-align: left;
+    translate: none;
+  }
+}
+
+/* ---------- The eight groups morph (home page, B7) ---------- */
+
+.morf {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--wor-space-block);
+}
+.morf__scena {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  justify-items: center;
+  /* The sun behind the bird: why a silhouette is all one sees. */
+  background: radial-gradient(circle at 50% 42%, var(--wor-blask) 0, var(--wor-blask-miekki) 26%, transparent 62%);
+}
+.morf__rysunek {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(48vh, 26rem);
+  overflow: visible;
+}
+.morf__ksztalt {
+  fill: var(--wor-sylwetka);
+}
+.morf__slad {
+  fill: none;
+  stroke: var(--wor-sylwetka);
+  stroke-width: 0.5;
+  opacity: 0;
+}
+.morf__nazwa {
+  margin: 0;
+  padding: var(--bh-gap-tight) var(--bh-padding-section);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-panel);
+  color: var(--wor-scena-tekst);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: var(--bh-text-weight-heading);
+}
+.morf__panel {
+  display: grid;
+  gap: var(--bh-padding-section);
+  padding: var(--bh-padding-section);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-scena-panel);
+  -webkit-backdrop-filter: blur(var(--bh-material-regular-blur));
+  backdrop-filter: blur(var(--bh-material-regular-blur));
+}
+.morf__wybor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.morf__opcja {
+  position: relative;
+}
+.morf__opcja input {
+  position: absolute;
+  inset: 0;
+  /* Above the chip, whose backdrop blur would otherwise paint over it. */
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.morf__opcja span {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-md);
+  padding-inline: var(--bh-padding-section);
+  border: 1px solid var(--wor-scena-linia);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-scena-szklo);
+  font-weight: var(--bh-text-weight-emphasis);
+  -webkit-backdrop-filter: blur(var(--bh-material-thin-blur));
+  backdrop-filter: blur(var(--bh-material-thin-blur));
+  transition:
+    background-color var(--wor-dur-quick) var(--wor-ease-out),
+    color var(--wor-dur-quick) var(--wor-ease-out);
+}
+.morf__opcja input:hover + span {
+  border-color: var(--wor-scena-tekst);
+}
+.morf__opcja input:checked + span {
+  border-color: transparent;
+  background: var(--wor-scena-tekst);
+  color: var(--wor-scena-tlo);
+}
+.morf__opcja input:focus-visible + span {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+.morf__cechy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bh-gap-loose) var(--bh-padding-section);
+  margin: 0;
+}
+.morf__cechy > div {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  align-content: start;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-scena-linia);
+}
+.morf__cechy dt {
+  color: var(--wor-scena-tekst);
+  font-size: var(--bh-text-size-caption);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.morf__cechy dd {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-compact);
+}
+.morf__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-loose) var(--bh-padding-section);
+}
+.morf__pokaz {
+  min-height: var(--bh-control-sm);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--wor-scena-tekst);
+  font: inherit;
+  font-size: var(--bh-text-size-caption);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+}
+.morf__pokaz:hover {
+  text-decoration-thickness: 2px;
+}
+.morf__pokaz:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+@media (max-width: 900px) {
+  .morf {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Scenes and exercises inside a lesson (B7) ---------- */
+
+/* A patch of daylit sky in the reading column, for the morph between the groups. */
+.lekcja-scena {
+  isolation: isolate;
+  margin-block: var(--wor-space-block);
+  padding: var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-dzien);
+  color: var(--wor-scena-tekst);
+}
+/* The reading column is too narrow for the morph's two columns. */
+.lekcja-scena .morf {
+  grid-template-columns: minmax(0, 1fr);
+}
+.prose .lekcja-scena dl,
+.prose .lekcja-scena p {
+  margin: 0;
+}
+.lekcja-cwiczenie {
+  margin-block: var(--wor-space-block);
+}
+/* Prefixed with .cwiczenie to win over .prose element rules, as the quiz is. */
+.cwiczenie {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+.cwiczenie .cwiczenie__tytul {
+  margin: 0;
+  font-weight: var(--bh-text-weight-heading);
+}
+.cwiczenie .cwiczenie__polecenie,
+.cwiczenie .cwiczenie__wynik {
+  margin: 0;
+}
+.cwiczenie .ptasia-miarka {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: miarka;
+}
+.cwiczenie .ptasia-miarka__ptak {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--bh-gap-snug) var(--bh-gap-loose);
+  margin: 0;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+  counter-increment: miarka;
+}
+.ptasia-miarka__nazwa {
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.ptasia-miarka__nazwa::before {
+  content: counter(miarka) '. ';
+  color: var(--bh-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.ptasia-miarka__przyciski {
+  display: flex;
+  gap: var(--bh-gap-tight);
+}
+.ptasia-miarka__ocena {
+  grid-column: 1 / -1;
+}
+/* One axis for the drawing and the bar, narrow enough that the biggest bird stays a strip, not a plate. */
+.ptasia-miarka__skala {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--bh-gap-tight);
+  grid-column: 1 / -1;
+  max-width: 16rem;
+}
+.ptasia-miarka__rysunek svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: var(--bh-text-primary);
+}
+.ptasia-miarka__os {
+  position: relative;
+  height: var(--bh-gap-snug);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-linia);
+}
+.ptasia-miarka__zero,
+.ptasia-miarka__pasek {
+  position: absolute;
+  inset-block: 0;
+  border-radius: var(--bh-radius-pill);
+}
+.ptasia-miarka__zero {
+  left: 0;
+  background: var(--wor-akcent-miekki);
+}
+.ptasia-miarka__pasek {
+  background: var(--wor-akcent);
+}
+.ptasia-miarka__wartosc {
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+/* The silhouette against a bright sky: all a bird overhead shows. */
+.zgadnij-sylwetke__niebo {
+  display: grid;
+  place-items: center;
+  padding: var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  background:
+    radial-gradient(circle at 50% 45%, var(--wor-blask) 0, var(--wor-blask-miekki) 30%, transparent 70%),
+    var(--wor-niebo-dzien);
+}
+.zgadnij-sylwetke__niebo svg {
+  display: block;
+  width: min(100%, 22rem);
+  height: auto;
+  fill: var(--wor-sylwetka);
+}
+
 /* ---------- The course: two paths of module cards (home and plan) ---------- */
 
 .kurs {

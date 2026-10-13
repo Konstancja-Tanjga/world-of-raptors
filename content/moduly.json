@@ -386,6 +386,19 @@
           "tytul": "Karta terenowa i quiz"
         }
       ]
+    },
+    {
+      "id": "B7",
+      "slug": "wielkosc-i-ksztalt",
+      "sciezka": "b",
+      "tytul": "Wielkość i kształt",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-ptasia-miarka",
+          "tytul": "Ptasia miarka"
+        }
+      ]
     }
   ]
 }
