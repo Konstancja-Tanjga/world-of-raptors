@@ -4,6 +4,7 @@ import { useMemo, useState, type CSSProperties } from 'react';
 import { obrys, posredni, posredniaPoza, POZA_SZYBOWANIE, sciezka } from '@/lib/sylwetka';
 import { POZY, SYLWETKI } from '@/lib/sylwetki';
 import { Slider } from './ds';
+import { NazwaPtaka } from './NazwaPtaka';
 
 export type StronaMorfu = { id: string; pl: string; cechy: { etykieta: string; tekst: string }[] };
 
@@ -53,7 +54,9 @@ export function SuwakMorfu({ od, do: doGatunku }: { od: StronaMorfu; do: StronaM
               className="suwak-morfu__strona"
               style={{ '--blizej': i === 0 ? 1 - t : t } as CSSProperties}
             >
-              <p className="suwak-morfu__nazwa">{strona.pl}</p>
+              <p className="suwak-morfu__nazwa">
+                <NazwaPtaka id={strona.id} pl={strona.pl} />
+              </p>
               <dl>
                 {strona.cechy.map((c) => (
                   <div key={c.etykieta}>

@@ -3,7 +3,16 @@ import type { ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import { grupySylwetek, grupyDoWyboru, ptakiDoMiarki, pytaniaSylwetek, stronaMorfuLekcji, znajdzGatunek } from '@/lib/content';
+import {
+  gatunki,
+  grupySylwetek,
+  grupyDoWyboru,
+  ptakiDoMiarki,
+  ptakiMokradel,
+  pytaniaSylwetek,
+  stronaMorfuLekcji,
+  znajdzGatunek,
+} from '@/lib/content';
 import { resolveContentHref } from '@/lib/links';
 import { idNaglowkow } from '@/lib/naglowki';
 import type { Zdjecie } from '@/lib/types';
@@ -11,6 +20,7 @@ import { Anatomia } from './Anatomia';
 import { MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
+import { NazwaPtaka } from './NazwaPtaka';
 import { Photo } from './Photo';
 import { SpeciesMedia } from './SpeciesMedia';
 import { Sylwetka } from './Sylwetka';
@@ -60,6 +70,8 @@ const attr = (props: Attrs, name: string) => {
  *   <zgadnij-sylwetke data-gatunki="myszolow kania-ruda pustulka">
  */
 const lessonTags = {
+  // A species name the browser must not translate word by word (see rehypeNazwy).
+  'nazwa-ptaka': (props: Attrs) => <NazwaPtaka id={attr(props, 'data-id')} pl={attr(props, 'data-pl')} />,
   margines: ({ children }: { children?: ReactNode }) => (
     <ArticleMargin>
       <div className="margines">{children}</div>
@@ -149,6 +161,63 @@ function rehypeIdNaglowkow() {
   };
 }
 
+/** Atlas species by their Latin name, for headings like "### Kania czarna — *Milvus migrans*". */
+const PO_LACINIE = new Map([...gatunki, ...ptakiMokradel].map((g) => [g.lat, g]));
+const BINOMIAL = /^[A-Z][a-z]+ [a-z]+(?: [a-z]+)?$/;
+/** A declined Polish phrase in italics ("*Kronice wielkopolskiej*") looks like a binomial; Latin epithets never end so. */
+const POLSKA_KONCOWKA = /(ej|ego|ych|ich|ymi|imi|emu|owi|ami)$/;
+const jestLacina = (t: string) => BINOMIAL.test(t) && !POLSKA_KONCOWKA.test(t.split(' ')[1]);
+const ANG = /(ang\.\s+)([^,;)]+?)(?=[,;)]|$)/g;
+
+/**
+ * Names a browser's translation must leave alone (see src/lib/jezykStrony.ts):
+ * italic Latin binomials and the English name after "ang." are marked
+ * translate="no", and the Polish name in a species heading becomes a
+ * <nazwa-ptaka>, which shows the name in the language the page is
+ * translated into. Polish names inside sentences are declined ("myszołowa"),
+ * so the translator handles those.
+ */
+function rehypeNazwy() {
+  const tekst = (value: string): HastNode => ({ type: 'text', value });
+  return (drzewo: HastNode) => {
+    const odwiedz = (n: HastNode) => {
+      if (n.type !== 'element' && n.type !== 'root') return;
+      if (n.tagName === 'em' && jestLacina(tekstWezla(n).trim())) {
+        n.properties = { ...n.properties, translate: 'no', lang: 'la' };
+      }
+      const dzieci = n.children ?? [];
+      // "### Kania czarna — *Milvus migrans* …": the text before the dash is the species' Polish name.
+      if (n.tagName && /^h[2-4]$/.test(n.tagName)) {
+        const [pierwszy, drugi] = dzieci;
+        const nazwa = pierwszy?.type === 'text' ? /^(.+?)\s+—\s+$/.exec(pierwszy.value ?? '') : null;
+        const g = drugi?.tagName === 'em' ? PO_LACINIE.get(tekstWezla(drugi).trim()) : undefined;
+        if (nazwa && g) {
+          dzieci.splice(0, 1, { type: 'element', tagName: 'nazwa-ptaka', properties: { dataId: g.id, dataPl: nazwa[1] }, children: [] }, tekst(' — '));
+        }
+      }
+      // "ang. Common Buzzard": an English name, the same in every language.
+      for (let i = 0; i < dzieci.length; i++) {
+        const d = dzieci[i];
+        if (d.type !== 'text' || !d.value || !ANG.test(d.value)) continue;
+        ANG.lastIndex = 0;
+        const czesci: HastNode[] = [];
+        let od = 0;
+        for (const m of d.value.matchAll(ANG)) {
+          const poczatek = m.index! + m[1].length;
+          czesci.push(tekst(d.value.slice(od, poczatek)));
+          czesci.push({ type: 'element', tagName: 'span', properties: { translate: 'no', lang: 'en' }, children: [tekst(m[2])] });
+          od = poczatek + m[2].length;
+        }
+        czesci.push(tekst(d.value.slice(od)));
+        dzieci.splice(i, 1, ...czesci);
+        i += czesci.length - 1;
+      }
+      dzieci.forEach(odwiedz);
+    };
+    odwiedz(drzewo);
+  };
+}
+
 /** Numbers the Markdown's own tables in reading order, so each scrollable table region gets a name of its own (see `table` below). */
 function rehypeNumeryTabel() {
   return (drzewo: HastNode) => {
@@ -198,7 +267,7 @@ export function Markdown({ source, baseDir, quiz }: { source: string; baseDir: s
     <div className="prose">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeIdNaglowkow, rehypeNumeryTabel]}
+        rehypePlugins={[rehypeRaw, rehypeIdNaglowkow, rehypeNumeryTabel, rehypeNazwy]}
         components={{
           a: link(baseDir),
           // Focusable, so a keyboard can scroll a wide table sideways; named by its number and first four column headers.
@@ -226,6 +295,7 @@ export function MarkdownInline({ source, baseDir, bezLinkow = false }: { source:
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeNazwy]}
       disallowedElements={bezLinkow ? ['p', 'a'] : ['p']}
       unwrapDisallowed
       components={{ a: link(baseDir) }}

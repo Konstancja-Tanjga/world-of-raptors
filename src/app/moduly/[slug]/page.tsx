@@ -17,6 +17,7 @@ import {
 } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
+import { NazwaPtaka } from '@/components/NazwaPtaka';
 
 export const dynamicParams = false;
 
@@ -94,7 +95,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
         </div>
         {otwarcie && z && (
           <p className="otwarcie__podpis">
-            {otwarcie.gatunek.pl}, {otwarcie.wLocie ? 'w locie' : 'ptak siedzący'}. Fot. {z.autor},{' '}
+            <NazwaPtaka id={otwarcie.gatunek.id} pl={otwarcie.gatunek.pl} />, {otwarcie.wLocie ? 'w locie' : 'ptak siedzący'}. Fot. {z.autor},{' '}
             {z.licencjaUrl ? (
               <a href={z.licencjaUrl} target="_blank" rel="noreferrer">
                 {z.licencja}

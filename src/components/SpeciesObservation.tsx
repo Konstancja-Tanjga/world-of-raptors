@@ -5,6 +5,7 @@ import { jestWidziany, useChecklista } from '@/lib/checklist';
 import { Card, Checkbox, StateBlock } from './ds';
 import { OwnPhotos } from './OwnPhotos';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
+import { NazwaPtaka } from './NazwaPtaka';
 
 /** The checklist entry for one species, shown on its atlas card. */
 export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string }) {
@@ -18,7 +19,11 @@ export function SpeciesObservation({ id, nazwa }: { id: string; nazwa: string })
     <Card padding="snug" accent={obs ? 'success' : 'none'}>
       <div className="checklist__row">
         <Checkbox
-          label={`Zaobserwowałam: ${nazwa}`}
+          label={
+            <>
+              Zaobserwowałam: <NazwaPtaka id={id} pl={nazwa} />
+            </>
+          }
           description={
             obs
               ? [obs.data && `Data: ${obs.data}`, obs.miejsce && `Miejsce: ${obs.miejsce}`]

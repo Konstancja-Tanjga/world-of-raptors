@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, ViewTransition, type ReactNode } from 'react';
 import type { StrukturaNieba } from '@/lib/odznaki';
 import { useOstatniaLekcja } from '@/lib/ostatnia';
+import { odpornoscNaTlumacza } from '@/lib/odpornoscNaTlumacza';
 import { CichaGranica } from './CichaGranica';
 import { SkipLink } from './ds';
 import { Nawigacja } from './Nawigacja';
@@ -24,6 +25,9 @@ const StraznikOdznak = dynamic(
       }),
   { ssr: false },
 );
+
+// Before anything renders in the browser: a page the browser translates must not break React.
+if (typeof window !== 'undefined') odpornoscNaTlumacza();
 
 // Syncing with an account, only where accounts are on. The flag is read here
 // rather than from konto.ts, which would bring Supabase into every page.

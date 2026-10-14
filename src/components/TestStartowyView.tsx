@@ -9,6 +9,7 @@ import { srcSetCommons } from '@/lib/zdjecia';
 import { ButtonLink } from './ButtonLink';
 import { Badge, Button, Card, Progress, RadioGroup, StateBlock } from './ds';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
+import { NazwaPtaka } from './NazwaPtaka';
 
 const LITERY = 'abcdefgh';
 const litera = (i: number) => `${LITERY[i]})`;
@@ -102,8 +103,14 @@ function Wyjasnienie({ pytanie }: { pytanie: PytanieTestu }) {
     const g = (
       <>
         {/* Mid-sentence: the atlas writes names capitalised, as headings. */}
-        <Link href={`/gatunki/${pytanie.gatunek.id}`}>{pytanie.gatunek.pl[0].toLocaleLowerCase('pl') + pytanie.gatunek.pl.slice(1)}</Link> (
-        <em>{pytanie.gatunek.lat}</em>)
+        <Link href={`/gatunki/${pytanie.gatunek.id}`}>
+          <NazwaPtaka id={pytanie.gatunek.id} pl={pytanie.gatunek.pl} mala />
+        </Link>{' '}
+        (
+        <em translate="no" lang="la">
+          {pytanie.gatunek.lat}
+        </em>
+        )
       </>
     );
     return pytanie.rodzaj === 'sylwetka' ? (
