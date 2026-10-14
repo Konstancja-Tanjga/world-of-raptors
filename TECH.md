@@ -82,6 +82,13 @@ src/
 
    Ptak mokradeł (gatunek z listy terenowej, który nie jest drapieżnikiem): wpis w `content/ptaki-mokradel.json` (`grupa` z `GRUPY_MOKRADEL` w `types.ts`, `cechy` to jedno lub dwa krótkie zdania, `miejsca`). Nie potrzebuje sylwetki ani lekcji z planszą; zdjęcie dodaj do `zdjecia.json` tak jak drapieżnikowi. Gdy czegoś nie jesteś pewna, wpisz to w pole `todo` (`next dev` wypisze listę). Drapieżnik, który już jest w atlasie, nie dostaje drugiego wpisu, tylko miejsce w `miejsca`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
+5. Rysunki i ćwiczenia w lekcji (moduł B7) to znaczniki, tak jak `<zdjecie>`: otwierający w osobnej linii, zamykający w następnej, z pustymi liniami dookoła. Zły identyfikator zatrzymuje build.
+   - `<miarka data-id="myszolow">`: rozpiętość gatunku w skali, z rozłożonymi rękami człowieka;
+   - `<anatomia>`: plansza kani rudej z opisanymi częściami sylwetki;
+   - `<morf-grup>`: osiem grup B1 na kawałku nieba;
+   - `<suwak-morfu data-od="myszolow" data-do="trzmielojad">`: suwak między dwoma ptakami dziennymi;
+   - `<ptasia-miarka data-ptaki="wrobel pustulka wrona" data-miara="rozpietosc">`: ćwiczenie „ułóż od najmniejszego”; ptaki z atlasu albo z `content/miarka.json` (ptaki odniesienia), `data-miara` to `rozpietosc` albo `dlugosc` (długość ciała, `dlugosc_cm`); co najmniej trzy ptaki, każdy innej wielkości;
+   - `<zgadnij-sylwetke data-gatunki="myszolow kania-ruda pustulka">`: ćwiczenie „grupa, a potem gatunek” na sylwetkach ptaków dziennych.
 5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo ciekawostka ma być zrozumiała sama, a jedyną drogą dalej jest „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
 6. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:
    ```

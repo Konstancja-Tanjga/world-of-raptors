@@ -25,3 +25,4 @@ Po ukończeniu modułu potrafisz:
 | 2 | [Proporcje, czyli kształt bez skali](02-proporcje.md) | 35 min |
 | 3 | [Sylwetki grup](03-sylwetki-grup.md) | 30 min |
 | 4 | [Kształt w trudnych parach](04-trudne-pary.md) | 40 min |
+| 5 | [Sowy, GISS i ćwiczenia](05-sowy-i-cwiczenia.md) | 40 min + ćwiczenia w terenie |
