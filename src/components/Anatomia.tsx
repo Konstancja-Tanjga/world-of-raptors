@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { obrys, ramka, sciezka } from '@/lib/sylwetka';
 import { POZY, SYLWETKI } from '@/lib/sylwetki';
 
@@ -5,8 +6,13 @@ import { POZY, SYLWETKI } from '@/lib/sylwetki';
  * The red kite's silhouette as a labelled plate: leader lines from the points
  * the generator works with (wrist, fingers, wing root, tail fork, head) to the
  * numbers they stand for. The lines draw themselves as the plate scrolls in.
+ * The About page tells how it is drawn; a lesson says what to compare.
  */
-export function Anatomia() {
+export function Anatomia({
+  podpis = 'Kania ruda z dwudziestu kilku liczb. Rozpiętość skrzydeł to zawsze 200 jednostek, reszta jest proporcją.',
+}: {
+  podpis?: ReactNode;
+}) {
   const k = SYLWETKI['kania-ruda'];
   const poza = POZY['kania-ruda'] ?? { wznios: 0, zgiecie: 0, ogon: 0.6 };
   const punkty = obrys(k, poza);
@@ -54,9 +60,7 @@ export function Anatomia() {
           ))}
         </div>
       </div>
-      <figcaption className="anatomia__podpis">
-        Kania ruda z dwudziestu kilku liczb. Rozpiętość skrzydeł to zawsze 200 jednostek, reszta jest proporcją.
-      </figcaption>
+      <figcaption className="anatomia__podpis">{podpis}</figcaption>
     </figure>
   );
 }

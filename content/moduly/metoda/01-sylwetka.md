@@ -46,7 +46,7 @@ Rozmiar na niebie jest bardzo zwodniczy: bez punktu odniesienia duży ptak dalek
 - „ogon dłuższy niż szerokość skrzydła”: krogulce, kanie, błotniaki, sokoły,
 - „głowa wystaje daleko przed skrzydła”: orły (szczególnie bielik), trzmielojad.
 
-Rozmiar ocenisz dopiero wtedy, gdy obok leci ptak, którego znasz, np. wrona, mewa albo bocian.
+Rozmiar ocenisz dopiero wtedy, gdy obok leci ptak, którego znasz, np. wrona, mewa albo bocian. Jak to robić, uczy [moduł B7 Wielkość i kształt](../wielkosc-i-ksztalt/README.md).
 
 ## Liczenie „palców”
 

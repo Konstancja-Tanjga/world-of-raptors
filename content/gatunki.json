@@ -1,6 +1,6 @@
 {
   "modul": "gibraltar",
-  "uwaga": "Rozpiętości orientacyjne. status: wedrowny, osiadly, zimuje, rzadki. regiony: gibraltar, poludnie-hiszpanii, polska. aktywnosc: dzienny, nocny.",
+  "uwaga": "Rozpiętości i długości ciała orientacyjne (dlugosc_cm: od dzioba do końca ogona, za Collins Bird Guide). status: wedrowny, osiadly, zimuje, rzadki. regiony: gibraltar, poludnie-hiszpanii, polska. aktywnosc: dzienny, nocny.",
   "gatunki": [
     {
       "id": "kania-czarna",
@@ -16,6 +16,10 @@
       "rozpietosc_cm": [
         135,
         155
+      ],
+      "dlugosc_cm": [
+        48,
+        58
       ],
       "sezon": "przelot VII–X (szczyt VIII), wiosną II–III",
       "cechy": [
@@ -60,6 +64,10 @@
         145,
         170
       ],
+      "dlugosc_cm": [
+        60,
+        70
+      ],
       "sezon": "X i zima",
       "cechy": [
         "głęboko wcięty rudy ogon",
@@ -98,6 +106,10 @@
       "rozpietosc_cm": [
         135,
         150
+      ],
+      "dlugosc_cm": [
+        52,
+        60
       ],
       "sezon": "szczyt koniec VIII – pocz. IX; wiosną koniec IV – VI",
       "cechy": [
@@ -139,6 +151,10 @@
       "rozpietosc_cm": [
         110,
         130
+      ],
+      "dlugosc_cm": [
+        48,
+        56
       ],
       "sezon": "cały rok",
       "cechy": [
@@ -183,6 +199,10 @@
         125,
         155
       ],
+      "dlugosc_cm": [
+        50,
+        65
+      ],
       "sezon": "cały rok, coraz częstszy",
       "cechy": [
         "większy od myszołowa, długie skrzydła",
@@ -221,6 +241,10 @@
       "rozpietosc_cm": [
         110,
         135
+      ],
+      "dlugosc_cm": [
+        42,
+        51
       ],
       "sezon": "szczyt poł. IX – pocz. X; wiosną III–IV",
       "cechy": [
@@ -266,6 +290,10 @@
         155,
         170
       ],
+      "dlugosc_cm": [
+        55,
+        65
+      ],
       "sezon": "IX; wiosną III–IV",
       "cechy": [
         "klinowaty (rombowy) ogon w każdym wieku",
@@ -304,6 +332,10 @@
       "rozpietosc_cm": [
         170,
         190
+      ],
+      "dlugosc_cm": [
+        62,
+        69
       ],
       "sezon": "szczyt poł. IX – pocz. X; wiosną II–III",
       "cechy": [
@@ -345,6 +377,10 @@
       "rozpietosc_cm": [
         145,
         170
+      ],
+      "dlugosc_cm": [
+        52,
+        60
       ],
       "sezon": "IX; wiosną III–IV",
       "cechy": [
@@ -388,6 +424,10 @@
         240,
         280
       ],
+      "dlugosc_cm": [
+        95,
+        110
+      ],
       "sezon": "przelot głównie X; cały rok w koloniach",
       "cechy": [
         "ogromny, płowy",
@@ -429,6 +469,10 @@
         220,
         250
       ],
+      "dlugosc_cm": [
+        85,
+        103
+      ],
       "sezon": "głównie X, razem z sępami płowymi",
       "cechy": [
         "ciemniejszy od płowego, łuskowany wzór",
@@ -466,6 +510,10 @@
       "rozpietosc_cm": [
         250,
         295
+      ],
+      "dlugosc_cm": [
+        100,
+        115
       ],
       "sezon": "sporadycznie",
       "cechy": [
@@ -506,6 +554,10 @@
         100,
         120
       ],
+      "dlugosc_cm": [
+        39,
+        50
+      ],
       "sezon": "lęgi IV–VIII, przelot VIII–IX",
       "cechy": [
         "samiec: szary, czarny pasek na wierzchu skrzydła",
@@ -544,6 +596,10 @@
       "rozpietosc_cm": [
         100,
         120
+      ],
+      "dlugosc_cm": [
+        44,
+        52
       ],
       "sezon": "zima",
       "cechy": [
@@ -585,6 +641,10 @@
         115,
         130
       ],
+      "dlugosc_cm": [
+        48,
+        56
+      ],
       "sezon": "cały rok, przelot IX i III–IV",
       "cechy": [
         "skrzydła w wyraźne V",
@@ -625,6 +685,10 @@
         190,
         210
       ],
+      "dlugosc_cm": [
+        74,
+        85
+      ],
       "sezon": "cały rok",
       "cechy": [
         "dorosły: ciemny z białymi 'epoletami'",
@@ -662,6 +726,10 @@
       "rozpietosc_cm": [
         150,
         170
+      ],
+      "dlugosc_cm": [
+        55,
+        65
       ],
       "sezon": "cały rok",
       "cechy": [
@@ -702,6 +770,10 @@
         75,
         85
       ],
+      "dlugosc_cm": [
+        31,
+        35
+      ],
       "sezon": "cały rok",
       "cechy": [
         "biało-szary",
@@ -739,6 +811,10 @@
       "rozpietosc_cm": [
         65,
         80
+      ],
+      "dlugosc_cm": [
+        31,
+        37
       ],
       "sezon": "cały rok",
       "cechy": [
@@ -782,6 +858,10 @@
         58,
         72
       ],
+      "dlugosc_cm": [
+        27,
+        33
+      ],
       "sezon": "lęgi II–IX",
       "cechy": [
         "samiec: rudy grzbiet bez plamek",
@@ -819,6 +899,10 @@
       "rozpietosc_cm": [
         70,
         84
+      ],
+      "dlugosc_cm": [
+        29,
+        35
       ],
       "sezon": "przelot IX–X, IV–V",
       "cechy": [
@@ -862,6 +946,10 @@
         95,
         115
       ],
+      "dlugosc_cm": [
+        36,
+        48
+      ],
       "sezon": "cały rok",
       "cechy": [
         "masywny, 'beczkowaty' tułów",
@@ -903,6 +991,10 @@
         87,
         104
       ],
+      "dlugosc_cm": [
+        36,
+        42
+      ],
       "sezon": "koniec lata – jesień",
       "cechy": [
         "długie skrzydła i ogon",
@@ -943,6 +1035,10 @@
         60,
         80
       ],
+      "dlugosc_cm": [
+        28,
+        38
+      ],
       "sezon": "przelot X",
       "cechy": [
         "krótkie zaokrąglone skrzydła",
@@ -981,6 +1077,10 @@
       "rozpietosc_cm": [
         190,
         225
+      ],
+      "dlugosc_cm": [
+        76,
+        93
       ],
       "sezon": "cały rok",
       "cechy": [
@@ -1023,6 +1123,10 @@
         265,
         285
       ],
+      "dlugosc_cm": [
+        100,
+        115
+      ],
       "sezon": "cały rok",
       "cechy": [
         "sylwetka ogromnego sokoła: wąskie spiczaste skrzydła",
@@ -1060,6 +1164,10 @@
       "rozpietosc_cm": [
         95,
         125
+      ],
+      "dlugosc_cm": [
+        48,
+        62
       ],
       "sezon": "cały rok",
       "cechy": [
@@ -1099,6 +1207,10 @@
         155,
         190
       ],
+      "dlugosc_cm": [
+        59,
+        73
+      ],
       "sezon": "toki I–III",
       "cechy": [
         "ogromny, długie „uszy”",
@@ -1135,6 +1247,10 @@
       "rozpietosc_cm": [
         80,
         95
+      ],
+      "dlugosc_cm": [
+        37,
+        43
       ],
       "sezon": "toki X–XI i II–III",
       "cechy": [
@@ -1173,6 +1289,10 @@
         125,
         135
       ],
+      "dlugosc_cm": [
+        50,
+        62
+      ],
       "sezon": "toki II–IV",
       "cechy": [
         "duży, jasnoszary",
@@ -1208,6 +1328,10 @@
       "rozpietosc_cm": [
         85,
         95
+      ],
+      "dlugosc_cm": [
+        33,
+        39
       ],
       "sezon": "cały rok",
       "cechy": [
@@ -1245,6 +1369,10 @@
       "rozpietosc_cm": [
         90,
         100
+      ],
+      "dlugosc_cm": [
+        31,
+        37
       ],
       "sezon": "toki II–IV, młode VI–VII",
       "cechy": [
@@ -1285,6 +1413,10 @@
         95,
         110
       ],
+      "dlugosc_cm": [
+        33,
+        40
+      ],
       "sezon": "zima, przeloty",
       "cechy": [
         "żółte oczy w czarnej obwódce",
@@ -1322,6 +1454,10 @@
       "rozpietosc_cm": [
         55,
         60
+      ],
+      "dlugosc_cm": [
+        21,
+        23
       ],
       "sezon": "toki II–V",
       "cechy": [
@@ -1363,6 +1499,10 @@
         47,
         54
       ],
+      "dlugosc_cm": [
+        19,
+        21
+      ],
       "sezon": "IV–IX",
       "cechy": [
         "malutki, małe „uszka”",
@@ -1402,6 +1542,10 @@
         50,
         60
       ],
+      "dlugosc_cm": [
+        24,
+        26
+      ],
       "sezon": "toki III–IV",
       "cechy": [
         "duża kwadratowa głowa",
@@ -1439,6 +1583,10 @@
       "rozpietosc_cm": [
         32,
         39
+      ],
+      "dlugosc_cm": [
+        15,
+        19
       ],
       "sezon": "toki III–IV i IX–X",
       "cechy": [
@@ -1478,6 +1626,10 @@
         200,
         245
       ],
+      "dlugosc_cm": [
+        76,
+        92
+      ],
       "sezon": "cały rok; toki od lutego",
       "cechy": [
         "skrzydła prostokątne jak „drzwi”, szybuje płasko",
@@ -1515,6 +1667,10 @@
       "rozpietosc_cm": [
         135,
         160
+      ],
+      "dlugosc_cm": [
+        55,
+        65
       ],
       "sezon": "koniec IV – IX",
       "cechy": [
@@ -1555,6 +1711,10 @@
         155,
         180
       ],
+      "dlugosc_cm": [
+        59,
+        71
+      ],
       "sezon": "IV – IX",
       "cechy": [
         "większy i ciemniejszy od orlika krzykliwego",
@@ -1592,6 +1752,10 @@
         120,
         150
       ],
+      "dlugosc_cm": [
+        50,
+        60
+      ],
       "sezon": "X – IV",
       "cechy": [
         "biały ogon z szerokim ciemnym pasem końcowym",
@@ -1628,6 +1792,10 @@
       "rozpietosc_cm": [
         50,
         65
+      ],
+      "dlugosc_cm": [
+        26,
+        33
       ],
       "sezon": "zima i przeloty",
       "cechy": [
