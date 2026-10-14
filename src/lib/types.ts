@@ -8,6 +8,7 @@ export type Status = 'wedrowny' | 'osiadly' | 'zimuje' | 'rzadki';
 
 /** The eight silhouette groups of B1 lesson 1, in the order it teaches them (lower case, as in `sylwetka.grupa`). */
 export const GRUPY_SYLWETEK = ['sępy', 'orły', 'myszołowy', 'kanie', 'błotniaki', 'krogulce', 'sokoły', 'rybołów'] as const;
+export type GrupaSylwetkiKlucz = (typeof GRUPY_SYLWETEK)[number];
 
 /** What to look at in a diurnal raptor, in the order B1 teaches it (lessons 1–2). */
 export const KLUCZE_DZIENNE = ['grupa', 'skrzydla', 'palce', 'ogon', 'glowa', 'lot'] as const;

@@ -16,7 +16,7 @@ Siedzący ptak pokazuje długość ciała, od czubka głowy do końca ogona. Pta
 **Sóweczka** *Glaucidium passerinum* (ang. Eurasian Pygmy Owl) to najmniejsza sowa Europy, nieco mniejsza od szpaka. **Puchacz** *Bubo bubo* (ang. Eurasian Eagle-Owl) jest od niej mniej więcej cztery razy dłuższy. Wymiary są orientacyjne, za *Collins Bird Guide*.
 
 ## Spróbuj: ułóż sowy według długości
-Te same ptaki miarki i cztery sowy. Ułóż je od najkrótszego do najdłuższego.
+Trzy ptaki miarki (wróbel, gołąb, wrona) i cztery sowy. Ułóż je od najkrótszego do najdłuższego.
 
 <ptasia-miarka data-ptaki="wrobel soweczka pojdzka golab puszczyk wrona puchacz" data-miara="dlugosc">
 </ptasia-miarka>

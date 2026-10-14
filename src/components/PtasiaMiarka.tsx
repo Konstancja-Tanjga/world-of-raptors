@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ocenKolejnosc, przesun, srodek, wymieszaj } from '@/lib/cwiczenia';
+import { ocenKolejnosc, przesun, srodek, wymieszaj, type Miara } from '@/lib/cwiczenia';
 import { Badge, Button, Card, StateBlock } from './ds';
 
 export type PtakDoMiarki = {
@@ -13,10 +13,10 @@ export type PtakDoMiarki = {
   rysunek?: ReactNode;
 };
 
-const MIARY = {
+const MIARY: Record<Miara, { nazwa: string; jednostka: string }> = {
   rozpietosc: { nazwa: 'rozpiętości skrzydeł', jednostka: 'rozpiętość' },
   dlugosc: { nazwa: 'długości ciała', jednostka: 'długość' },
-} as const;
+};
 
 /**
  * B7's bird yardstick: a handful of birds in a random order, to be put in
@@ -25,13 +25,15 @@ const MIARY = {
  * and reveals every bird's measure to scale, so the reader sees how far off
  * a guess was, not only that it was; the measures stay while they correct it.
  */
-export function PtasiaMiarka({ ptaki, miara }: { ptaki: PtakDoMiarki[]; miara: keyof typeof MIARY }) {
+export function PtasiaMiarka({ ptaki, miara }: { ptaki: PtakDoMiarki[]; miara: Miara }) {
   // Shuffled after mount: the server's order is the author's, which may be the answer.
   const [kolejnosc, setKolejnosc] = useState<string[] | null>(null);
   const [sprawdzone, setSprawdzone] = useState<boolean[] | null>(null);
   // Once checked, the measures stay in view while the reader corrects the order.
   const [odkryte, setOdkryte] = useState(false);
   const [fokus, setFokus] = useState<{ id: string; o: -1 | 1 } | null>(null);
+  // Where a moved bird landed, for a screen reader that cannot see the list reorder.
+  const [komunikat, setKomunikat] = useState('');
   const przyciski = useRef(new Map<string, HTMLButtonElement>());
   const wielkosc = Object.fromEntries(ptaki.map((p) => [p.id, srodek(p.zakres)]));
   const maks = Math.max(...ptaki.map((p) => p.zakres[1]));
@@ -57,16 +59,21 @@ export function PtasiaMiarka({ ptaki, miara }: { ptaki: PtakDoMiarki[]; miara: k
   const przesunPtaka = (i: number, o: -1 | 1) => {
     setKolejnosc(przesun(kolejnosc, i, o));
     setFokus({ id: kolejnosc[i], o });
+    setKomunikat(`${ptak.get(kolejnosc[i])!.pl}: miejsce ${i + o + 1} z ${kolejnosc.length}`);
     if (sprawdzone) setSprawdzone(null);
   };
   const odNowa = () => {
     setKolejnosc(wymieszaj(ptaki.map((p) => p.id)));
     setSprawdzone(null);
     setOdkryte(false);
+    setFokus(null);
+    setKomunikat('');
   };
   const sprawdz = () => {
     setSprawdzone(ocenKolejnosc(kolejnosc, wielkosc));
     setOdkryte(true);
+    setFokus(null);
+    setKomunikat('');
   };
 
   return (
@@ -118,7 +125,7 @@ export function PtasiaMiarka({ ptaki, miara }: { ptaki: PtakDoMiarki[]; miara: k
                 {odkryte && (
                   <span className="ptasia-miarka__skala">
                     {p.rysunek && (
-                      // As wide as the bird's largest wingspan on the bar's axis below it.
+                      // About as wide as the bird's largest wingspan on the bar's axis below it.
                       <span className="ptasia-miarka__rysunek" style={{ width: `${(p.zakres[1] / maks) * 100}%` }}>
                         {p.rysunek}
                       </span>
@@ -140,6 +147,7 @@ export function PtasiaMiarka({ ptaki, miara }: { ptaki: PtakDoMiarki[]; miara: k
           })}
         </ol>
         <p className="cwiczenie__wynik" aria-live="polite">
+          {komunikat}
           {sprawdzone &&
             (wszystkieDobrze
               ? 'Wszystkie ptaki są na swoich miejscach.'

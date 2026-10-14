@@ -4,10 +4,13 @@
  * then species).
  */
 
-/** The list in a random order that is never the one given (when it can differ), so the answer is not already in place. */
+/** What the bird yardstick orders by: wingspan in flight, body length perched. */
+export type Miara = 'rozpietosc' | 'dlugosc';
+
+/** The list in a random order that is never the one given (unless every item is the same), so the answer is not already in place. */
 export function wymieszaj<T>(lista: readonly T[], los: () => number = Math.random): T[] {
   const wynik = [...lista];
-  if (wynik.length < 2) return wynik;
+  if (new Set(wynik).size < 2) return wynik;
   do {
     for (let i = wynik.length - 1; i > 0; i--) {
       const j = Math.floor(los() * (i + 1));
@@ -39,9 +42,10 @@ export function ocenKolejnosc(kolejnosc: readonly string[], wielkosc: Readonly<R
 }
 
 /**
- * The species offered for a silhouette: the right one, its look-alikes and
- * then others of its group, `ile` in all, in alphabetical order so the place
- * of the right answer gives nothing away.
+ * The species offered for a silhouette: the right one, its look-alikes, then
+ * others of its group, then any other species, `ile` in all (fewer only when
+ * there are not enough), in alphabetical order so the place of the right
+ * answer gives nothing away.
  */
 export function opcjeGatunku(
   id: string,

@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { wymieszaj } from '@/lib/cwiczenia';
+import type { GrupaSylwetkiKlucz } from '@/lib/types';
 import { Badge, Button, Card, Progress, RadioGroup, StateBlock } from './ds';
 
 export type PytanieSylwetki = {
   id: string;
   pl: string;
   lat: string;
-  /** Its group, as one of `grupy`. */
-  grupa: string;
+  grupa: GrupaSylwetkiKlucz;
   /** Its silhouette, drawn on the server and named without giving the species away. */
   rysunek: ReactNode;
   /** The species offered, the right one among them. */
@@ -26,10 +26,17 @@ const PYTANIE: Record<Krok, string> = { grupa: 'Do której grupy należy ten pta
  * B7's silhouette guess: one bird from below at a time, as it shows against
  * a bright sky. First its group (the eight of B1), then the species among
  * its look-alikes, so the reader practises the order the course teaches:
- * group from shape first, species second. Nothing is stored; the lesson's
- * quiz is what finishes the lesson.
+ * group from shape first, species second. Nothing is stored, and the
+ * exercise does not finish the lesson. Answers are checked by group key;
+ * `nazwa` is only what the reader sees.
  */
-export function ZgadnijSylwetke({ pytania, grupy }: { pytania: PytanieSylwetki[]; grupy: string[] }) {
+export function ZgadnijSylwetke({
+  pytania,
+  grupy,
+}: {
+  pytania: PytanieSylwetki[];
+  grupy: { klucz: GrupaSylwetkiKlucz; nazwa: string }[];
+}) {
   // Shuffled after mount, so every visit asks in a new order.
   const [kolejnosc, setKolejnosc] = useState<PytanieSylwetki[] | null>(null);
   const [etap, setEtap] = useState<Etap>(pytanie(0, 'grupa'));
@@ -85,7 +92,7 @@ export function ZgadnijSylwetke({ pytania, grupy }: { pytania: PytanieSylwetki[]
   const p = kolejnosc[etap.numer];
   const ostatnie = etap.numer === kolejnosc.length - 1;
   const poprawna = etap.krok === 'grupa' ? p.grupa : p.id;
-  const opcje = etap.krok === 'grupa' ? grupy.map((g) => ({ value: g, label: g })) : p.opcje.map((o) => ({ value: o.id, label: o.pl }));
+  const opcje = etap.krok === 'grupa' ? grupy.map((g) => ({ value: g.klucz, label: g.nazwa })) : p.opcje.map((o) => ({ value: o.id, label: o.pl }));
   const dobrze = etap.wybrana === poprawna;
 
   const sprawdz = () => {
@@ -139,7 +146,7 @@ export function ZgadnijSylwetke({ pytania, grupy }: { pytania: PytanieSylwetki[]
                   dobrze ? (
                     'Tak, to ta grupa.'
                   ) : (
-                    `Ten ptak należy do grupy „${p.grupa}”.`
+                    `Ten ptak należy do grupy „${grupy.find((g) => g.klucz === p.grupa)?.nazwa ?? p.grupa}”.`
                   )
                 ) : (
                   <>

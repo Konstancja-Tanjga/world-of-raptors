@@ -32,7 +32,7 @@ Grupę da się zwykle rozpoznać po samym obrysie. Gatunek w obrębie grupy bywa
 
 ## Kiedy grupa zawodzi
 Kilka gatunków nie pasuje do „swojej” grupy i warto je znać:
-- **Kaniuk** *Elanus caeruleus* (ang. Black-winged Kite) formalnie należy do kań, ale ma spiczaste skrzydła, krótki, prawie prosty ogon i zawisa jak pustułka. Wygląda raczej na sokoła albo mewę.
+- **Kaniuk** *Elanus caeruleus* (ang. Black-winged Kite) w tabeli grup należy do kań, ale ma spiczaste skrzydła, krótki, prawie prosty ogon i zawisa jak pustułka. Wygląda raczej na sokoła albo mewę.
 - **Orzełek włochaty** *Aquila pennata* (ang. Booted Eagle) to orzeł wielkości myszołowa. Głowę i palce ma orle, ale wielkość myszołowa, więc łatwo go wziąć za myszołowa albo kanię czarną.
 - **Ścierwnik** *Neophron percnopterus* (ang. Egyptian Vulture) to sęp, ale mały, ze smukłą głową i klinowatym ogonem. Z daleka bardziej przypomina dużego, biało-czarnego bociana albo orła niż sępa płowego.
 - **Trzmielojad** *Pernis apivorus* (ang. European Honey Buzzard) jest w grupie myszołowów, ale ma głowę małą i wysuniętą jak u gołębia oraz dłuższy ogon.
@@ -47,12 +47,12 @@ Grupa to punkt startowy, a nie wyrok. Jeśli sylwetka „prawie” pasuje, spraw
 
 ## Mini-quiz
 1. Dlaczego pytanie o „palce” jest pierwsze w skrócie?
-2. Ptak ma spiczaste skrzydła, krótki ogon i zawisa nad łąką, ale jest biało-szary z czarnymi barkami. Do jakiej grupy należy formalnie i dlaczego łatwo się pomylić?
+2. Ptak ma spiczaste skrzydła, krótki ogon i zawisa nad łąką, ale jest biało-szary z czarnymi barkami. Do jakiej grupy należy w tabeli grup i dlaczego łatwo się pomylić?
 3. Sylwetka nie pasuje do żadnej z siedmiu pierwszych odpowiedzi skrótu. Co to najczęściej oznacza?
 
 <details><summary>Odpowiedzi</summary>
 
 1. Bo ostry koniec skrzydła bez palców widać z bardzo daleka i od razu odróżnia sokoły od wszystkich pozostałych grup.
-2. To kaniuk: formalnie kania, ale kształtem i zawisaniem przypomina sokoła.
+2. To kaniuk: w tabeli grup kania, ale kształtem i zawisaniem przypomina sokoła.
 3. Myszołowa albo innego ptaka z grupy myszołowów, rozpoznawanej po tym, że nie ma cech szczególnych pozostałych grup.
 </details>

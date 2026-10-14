@@ -3,20 +3,17 @@ import type { ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import { grupySylwetek, nazwyGrup, ptakiDoMiarki, pytaniaSylwetek, stronaMorfuLekcji, znajdzGatunek } from '@/lib/content';
+import { grupySylwetek, grupyDoWyboru, ptakiDoMiarki, pytaniaSylwetek, stronaMorfuLekcji, znajdzGatunek } from '@/lib/content';
 import { resolveContentHref } from '@/lib/links';
 import { idNaglowkow } from '@/lib/naglowki';
 import type { Zdjecie } from '@/lib/types';
 import { Anatomia } from './Anatomia';
+import { MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
 import { Photo } from './Photo';
-import { PtasiaMiarka } from './PtasiaMiarka';
 import { SpeciesMedia } from './SpeciesMedia';
-import { MorfGrup } from './start/MorfGrup';
-import { SuwakMorfu } from './SuwakMorfu';
 import { Sylwetka } from './Sylwetka';
-import { ZgadnijSylwetke } from './ZgadnijSylwetke';
 
 type Attrs = Record<string, unknown>;
 const attr = (props: Attrs, name: string) => {
@@ -50,8 +47,10 @@ const attr = (props: Attrs, name: string) => {
  *   The paragraph the note belongs to.
  *
  * B7's drawings and exercises are tags too, each read and checked here, on
- * the server, so a wrong id stops the build and the client gets drawings,
- * not the silhouette generator (except the two morphs, which animate):
+ * the server, so a wrong id stops the build. The exercises get drawings, not
+ * the silhouette generator; the two morphs animate, so a lesson with one
+ * loads it. Each client part loads only where its tag is used
+ * (CwiczeniaLekcji.tsx). Every attribute shown is required:
  *
  *   <miarka data-id="myszolow">                       wingspan to scale
  *   <anatomia>                                        the labelled kite plate
@@ -106,7 +105,7 @@ const lessonTags = {
     </div>
   ),
   'ptasia-miarka': (props: Attrs) => {
-    const { miara, ptaki } = ptakiDoMiarki(attr(props, 'data-ptaki'), attr(props, 'data-miara') || 'rozpietosc');
+    const { miara, ptaki } = ptakiDoMiarki(attr(props, 'data-ptaki'), attr(props, 'data-miara'));
     return (
       <div className="lekcja-cwiczenie">
         <PtasiaMiarka
@@ -123,10 +122,10 @@ const lessonTags = {
   'zgadnij-sylwetke': (props: Attrs) => (
     <div className="lekcja-cwiczenie">
       <ZgadnijSylwetke
-        grupy={nazwyGrup()}
-        pytania={pytaniaSylwetek(attr(props, 'data-gatunki')).map((p, i) => ({
+        grupy={grupyDoWyboru()}
+        pytania={pytaniaSylwetek(attr(props, 'data-gatunki')).map((p) => ({
           ...p,
-          rysunek: <Sylwetka id={p.id} opis={`Sylwetka ptaka od spodu, numer ${i + 1}`} />,
+          rysunek: <Sylwetka id={p.id} opis="Sylwetka ptaka od spodu" />,
         }))}
       />
     </div>

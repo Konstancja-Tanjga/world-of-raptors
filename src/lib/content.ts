@@ -11,7 +11,7 @@ import miarkaJson from '../../content/miarka.json';
 import type { Fiszki, ZapisFiszki } from './fiszki';
 import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbiory';
 import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
-import { opcjeGatunku } from './cwiczenia';
+import { opcjeGatunku, srodek, type Miara } from './cwiczenia';
 import { GATUNKI_RYSUNKOW } from './rysunki';
 import { gwiazdy, obrys, POZA_SZYBOWANIE } from './sylwetka';
 import { POZY, STYL_LOTU, SYLWETKI } from './sylwetki';
@@ -38,6 +38,7 @@ import type {
   SylwetkaGatunku,
   Gatunek,
   GrupaListyMiejsca,
+  GrupaSylwetkiKlucz,
   PtakMiarki,
   PtakMokradel,
   Miejsce,
@@ -388,50 +389,65 @@ export function stronaMorfu(g: GatunekDzienny) {
 /** A lesson tag's species or bird ids, separated by spaces or commas. */
 const listaId = (wartosc: string) => wartosc.split(/[\s,]+/).filter(Boolean);
 
+/** The field of the atlas and of miarka.json each measure orders birds by. */
+const POLE_MIARY = { rozpietosc: 'rozpietosc_cm', dlugosc: 'dlugosc_cm' } as const satisfies Record<Miara, keyof PtakMiarki>;
+
 /**
  * B7's bird yardstick (`<ptasia-miarka data-ptaki="…" data-miara="…">`):
  * atlas species and reference birds (miarka.json) with the range it orders
- * them by. An unknown id, or birds of the same size, stop the build.
+ * them by. A missing or unknown measure, an unknown id, fewer than three
+ * birds or two with the same middle of their range stop the build.
  */
 export function ptakiDoMiarki(ptaki: string, miara: string) {
-  if (miara !== 'rozpietosc' && miara !== 'dlugosc') throw new Error(`<ptasia-miarka>: data-miara ma być „rozpietosc” albo „dlugosc”, jest „${miara}”`);
-  const pole = miara === 'rozpietosc' ? 'rozpietosc_cm' : 'dlugosc_cm';
+  if (!Object.hasOwn(POLE_MIARY, miara)) throw new Error(`<ptasia-miarka>: data-miara ma być „rozpietosc” albo „dlugosc”, jest „${miara}”`);
+  const m = miara as Miara;
   const wynik = listaId(ptaki).map((id) => {
     const p = znajdzGatunek(id) ?? ptakiMiarki.find((x) => x.id === id);
     if (!p) throw new Error(`<ptasia-miarka>: „${id}” nie jest gatunkiem z atlasu ani ptakiem z miarka.json`);
-    return { id, pl: p.pl, zakres: p[pole], drapieznik: gatunki.some((g) => g.id === id) };
+    return { id, pl: p.pl, zakres: p[POLE_MIARY[m]], drapieznik: gatunki.some((g) => g.id === id) };
   });
   if (wynik.length < 3) throw new Error('<ptasia-miarka>: potrzeba co najmniej trzech ptaków');
-  const srodki = wynik.map(({ zakres: [a, b] }) => a + b);
-  if (new Set(srodki).size !== srodki.length) throw new Error(`<ptasia-miarka>: dwa ptaki z „${ptaki}” mają tę samą wielkość`);
-  return { miara: miara as 'rozpietosc' | 'dlugosc', ptaki: wynik };
+  const srodki = wynik.map(({ zakres }) => srodek(zakres));
+  if (new Set(srodki).size !== srodki.length) throw new Error(`<ptasia-miarka>: dwa ptaki z „${ptaki}” mają ten sam środek zakresu`);
+  return { miara: m, ptaki: wynik };
 }
 
-const grupaSylwetki = (g: GatunekDzienny) => g.sylwetka.grupa.split(' ')[0];
+/** A diurnal species' silhouette group (the build checks it is one of the eight). */
+function grupaSylwetki(g: GatunekDzienny): GrupaSylwetkiKlucz {
+  const grupa = g.sylwetka.grupa.split(' ')[0];
+  if (!(GRUPY_SYLWETEK as readonly string[]).includes(grupa)) throw new Error(`gatunki.json: ${g.id}: „${grupa}” nie jest żadną z ośmiu grup`);
+  return grupa as GrupaSylwetkiKlucz;
+}
 
 /**
  * B7's silhouette guess (`<zgadnij-sylwetke data-gatunki="…">`): for each
- * diurnal species its group and the species offered with it (its look-alikes,
- * then its group). A species without a silhouette stops the build.
+ * diurnal species its group and the species offered with it (its diurnal
+ * look-alikes, then its group, then any other diurnal species). No species,
+ * one named twice or one without a silhouette stop the build.
  */
 export function pytaniaSylwetek(ids: string) {
   const dzienne = gatunki.filter((g): g is GatunekDzienny => g.aktywnosc === 'dzienny');
-  const doOpcji = dzienne.map((g) => ({ id: g.id, pl: g.pl, grupa: grupaSylwetki(g), mylona_z: g.mylona_z }));
-  return listaId(ids).map((id) => {
+  const idDziennych = new Set(dzienne.map((g) => g.id));
+  // A look-alike that is an owl has no silhouette to be told from.
+  const doOpcji = dzienne.map((g) => ({ id: g.id, pl: g.pl, grupa: grupaSylwetki(g), mylona_z: g.mylona_z.filter((m) => idDziennych.has(m)) }));
+  const lista = listaId(ids);
+  if (!lista.length) throw new Error('<zgadnij-sylwetke>: data-gatunki jest puste');
+  if (new Set(lista).size !== lista.length) throw new Error(`<zgadnij-sylwetke>: gatunek powtarza się w „${ids}”`);
+  return lista.map((id) => {
     const g = dzienne.find((x) => x.id === id);
     if (!g || !SYLWETKI[id]) throw new Error(`<zgadnij-sylwetke>: „${id}” nie jest ptakiem dziennym z sylwetką`);
     return {
       id,
       pl: g.pl,
       lat: g.lat,
-      grupa: wielkaLitera(grupaSylwetki(g)),
+      grupa: grupaSylwetki(g),
       opcje: opcjeGatunku(id, doOpcji).map((o) => ({ id: o, pl: znajdzGatunek(o)!.pl })),
     };
   });
 }
 
-/** The eight groups as the exercises offer them. */
-export const nazwyGrup = () => GRUPY_SYLWETEK.map(wielkaLitera);
+/** The eight groups as the silhouette guess offers them: the key it checks and the name it shows. */
+export const grupyDoWyboru = () => GRUPY_SYLWETEK.map((klucz) => ({ klucz, nazwa: wielkaLitera(klucz) }));
 
 /** A diurnal species for a lesson's look-alike slider (`<suwak-morfu>`); anything else stops the build. */
 export function stronaMorfuLekcji(id: string) {
@@ -703,8 +719,8 @@ export async function ideaKursu() {
  * large enough to fill most of the screen sharply. A1 opens with the falcon
  * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
- * imperial eagle over the dehesa, B5 with an eagle owl, B7 with the largest
- * bird of the atlas, the cinereous vulture.
+ * imperial eagle over the dehesa, B5 with an eagle owl, B7 with the widest
+ * wingspan of the atlas, the cinereous vulture's.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
   'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', zdjecie: 'siedzacy' },
@@ -811,11 +827,24 @@ function sprawdzSpojnosc() {
       bledy.push(`gatunki.json: ${g.id}: sylwetka.grupa „${g.sylwetka.grupa}” nie zaczyna się od żadnej z ośmiu grup`);
     }
   }
-  for (const [i, p] of ptakiMiarki.entries()) {
-    const ok = para(p.dlugosc_cm, (n) => n > 0) && para(p.rozpietosc_cm, (n) => n > 0) && p.dlugosc_cm[0] <= p.dlugosc_cm[1] && p.rozpietosc_cm[0] <= p.rozpietosc_cm[1];
-    if (!ok) bledy.push(`miarka.json: ${p.id}: dlugosc_cm i rozpietosc_cm mają być [od, do] w centymetrach`);
-    if (idGatunkow.has(p.id)) bledy.push(`miarka.json: id „${p.id}” jest już gatunkiem z atlasu`);
-    if (i > 0 && ptakiMiarki[i - 1].dlugosc_cm[1] > p.dlugosc_cm[0]) bledy.push(`miarka.json: ${p.id}: ptaki mają iść od najmniejszego`);
+  const idMiarki = new Set<string>();
+  const poprawneMiarki = ptakiMiarki.map((p) => {
+    if (!ID.test(p.id)) bledy.push(`miarka.json: id „${p.id}” musi być małymi literami z łącznikami`);
+    if (idGatunkow.has(p.id) || idMiarki.has(p.id)) bledy.push(`miarka.json: id „${p.id}” jest już zajęte`);
+    idMiarki.add(p.id);
+    if (!p.pl?.trim() || !p.lat?.trim()) bledy.push(`miarka.json: ${p.id}: puste pole pl albo lat`);
+    const ok =
+      para(p.dlugosc_cm, (n) => n > 0) &&
+      para(p.rozpietosc_cm, (n) => n > 0) &&
+      p.dlugosc_cm[0] <= p.dlugosc_cm[1] &&
+      p.rozpietosc_cm[0] <= p.rozpietosc_cm[1] &&
+      p.dlugosc_cm[1] < p.rozpietosc_cm[0];
+    if (!ok) bledy.push(`miarka.json: ${p.id}: dlugosc_cm i rozpietosc_cm mają być [od, do] w centymetrach, długość mniejsza niż rozpiętość`);
+    return ok;
+  });
+  for (let i = 1; i < ptakiMiarki.length; i++) {
+    const [a, b] = [ptakiMiarki[i - 1], ptakiMiarki[i]];
+    if (poprawneMiarki[i - 1] && poprawneMiarki[i] && a.dlugosc_cm[1] > b.dlugosc_cm[0]) bledy.push(`miarka.json: ${b.id}: ptaki mają iść od najmniejszego`);
   }
   const miejsca = new Set<string>(MIEJSCA.map((m) => m.value));
   for (const g of gatunki) {

@@ -2262,11 +2262,11 @@ li {
 .lekcja-cwiczenie {
   margin-block: var(--wor-space-block);
 }
-/* Prefixed with .cwiczenie to win over .prose element rules, as the quiz is. */
 .cwiczenie {
   display: grid;
   gap: var(--bh-gap-loose);
 }
+/* The rules below are prefixed with .cwiczenie to win over .prose element rules, as the quiz's are. */
 .cwiczenie .cwiczenie__tytul {
   margin: 0;
   font-weight: var(--bh-text-weight-heading);
