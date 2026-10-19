@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 42 drapieżniki | 35 ptaków mokradeł | 13 modułów | 65 lekcji | 132 pytania w quizach | 282 fiszki | 383 zdjęcia |
+| 42 drapieżniki | 35 ptaków mokradeł | 14 modułów | 70 lekcji | 144 pytania w quizach | 282 fiszki | 385 zdjęć |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki, trzynaście modułów, w każdym pięć lekcji:
+Dwie ścieżki, czternaście modułów, w każdym pięć lekcji:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -29,7 +29,7 @@ Dwie ścieżki, trzynaście modułów, w każdym pięć lekcji:
 | A4&nbsp;[Rozród i życie rodzinne](content/moduly/rozrod/README.md) | B4&nbsp;[Ptaki drapieżne południa Hiszpanii](content/moduly/poludnie-hiszpanii/README.md) |
 | A5&nbsp;[Wędrówki](content/moduly/wedrowki/README.md) | B5&nbsp;[Sowy, drapieżniki nocne](content/moduly/sowy/README.md) |
 | A6&nbsp;[Ochrona](content/moduly/ochrona/README.md) | B6&nbsp;[Marismas del Barbate, początek października](content/moduly/barbate/README.md) |
-| A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | |
+| A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | B7&nbsp;[Wielkość i kształt](content/moduly/wielkosc-i-ksztalt/README.md) |
 
 <table>
   <tr>

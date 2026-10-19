@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './o-projekcie.css';
 import { MarkdownInline } from '@/components/Markdown';
-import { Anatomia } from '@/components/oprojekcie/Anatomia';
+import { Anatomia } from '@/components/Anatomia';
 import { SuwakMorfu } from '@/components/SuwakMorfu';
 import { Sylwetka } from '@/components/Sylwetka';
 import { autorzyZdjec, ideaKursu, statystykiKursu, stronaMorfu, taliaFiszek, znajdzGatunek } from '@/lib/content';

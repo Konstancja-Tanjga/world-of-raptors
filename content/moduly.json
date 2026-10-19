@@ -386,6 +386,35 @@
           "tytul": "Karta terenowa i quiz"
         }
       ]
+    },
+    {
+      "id": "B7",
+      "slug": "wielkosc-i-ksztalt",
+      "sciezka": "b",
+      "tytul": "Wielkość i kształt",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-ptasia-miarka",
+          "tytul": "Ptasia miarka"
+        },
+        {
+          "slug": "02-proporcje",
+          "tytul": "Proporcje, czyli kształt bez skali"
+        },
+        {
+          "slug": "03-sylwetki-grup",
+          "tytul": "Sylwetki grup"
+        },
+        {
+          "slug": "04-trudne-pary",
+          "tytul": "Kształt w trudnych parach"
+        },
+        {
+          "slug": "05-sowy-i-cwiczenia",
+          "tytul": "Sowy, GISS i ćwiczenia"
+        }
+      ]
     }
   ]
 }

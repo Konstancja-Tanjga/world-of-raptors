@@ -27,7 +27,8 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 content/
   PLAN-KURSU.md            plan kursu
   moduly.json              ścieżki, moduły, lekcje (kolejność i tytuły)
-  gatunki.json             atlas: 42 drapieżniki (regiony, aktywność, cechy, pary do pomylenia, miejsca)
+  gatunki.json             atlas: 42 drapieżniki (regiony, aktywność, cechy, pary do pomylenia, miejsca, rozpiętość i długość ciała)
+  miarka.json              ptaki odniesienia modułu B7 (od wróbla do bociana): nie są drapieżnikami, nie trafiają do atlasu ani fiszek
   ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami (filtr „Ptaki mokradeł”): nazwy, grupa, cechy, miejsca
   moduly/<slug>/README.md  opis modułu
   moduly/<slug>/NN-*.md    lekcje
@@ -36,15 +37,15 @@ content/
 src/
   app/                     strony (routing), motyw.css, globals.css i arkusze stron
   components/ds.ts         kliencki most do @bighat/ui
-  components/*.tsx         rama (AppFrame, Nawigacja, PasekModulu, Stopka), Markdown, atlas, fiszki, checklista
+  components/*.tsx         rama (AppFrame, Nawigacja, PasekModulu, Stopka), Markdown, atlas, fiszki, checklista, plansza Anatomia i ćwiczenia B7 (PtasiaMiarka, ZgadnijSylwetke, ładowane przez CwiczeniaLekcji)
   components/start/        sceny strony startowej (niebo, okładka, morf grup, chór sów, kolekcja)
   components/gatunek/      plansza sylwetki i porównania na karcie gatunku
   components/modul/        otwarcie i sylabus modułu
-  components/oprojekcie/   ilustracje strony O projekcie
   components/niebo/        „Moje niebo”: mapa gwiazdozbiorów, lista życiowa, naszywki, obrączki, strażnik nowych odznak
   lib/content.ts           odczyt treści i jej sprawdzenie przy buildzie (tylko serwer)
   lib/sylwetka.ts          rysowanie sylwetki z liczb
   lib/sylwetki.ts          liczby, pozy i sposób lotu każdego gatunku
+  lib/cwiczenia.ts         zasady ćwiczeń B7: mieszanie, przesuwanie, ocena kolejności, gatunki do wyboru
   lib/zdjecia.ts           rozmiary miniatur z Commons i kadrowanie po punkcie ostrości
   lib/niebo.ts             wysokość słońca nad Warszawą i pora dnia
   lib/magazyn.ts           warstwa zapisu: adapter (dziś localStorage), wersjonowane klucze, migracja ze starszej wersji
@@ -82,8 +83,15 @@ src/
 
    Ptak mokradeł (gatunek z listy terenowej, który nie jest drapieżnikiem): wpis w `content/ptaki-mokradel.json` (`grupa` z `GRUPY_MOKRADEL` w `types.ts`, `cechy` to jedno lub dwa krótkie zdania, `miejsca`). Nie potrzebuje sylwetki ani lekcji z planszą; zdjęcie dodaj do `zdjecia.json` tak jak drapieżnikowi. Gdy czegoś nie jesteś pewna, wpisz to w pole `todo` (`next dev` wypisze listę). Drapieżnik, który już jest w atlasie, nie dostaje drugiego wpisu, tylko miejsce w `miejsca`.
 4. Linki między lekcjami pisz jako względne ścieżki do plików `.md`. Aplikacja zamieni je na swoje adresy.
-5. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo ciekawostka ma być zrozumiała sama, a jedyną drogą dalej jest „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
-6. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:
+5. Rysunki i ćwiczenia w lekcji (moduł B7) to znaczniki, tak jak `<zdjecie>`: otwierający w osobnej linii, zamykający w następnej, z pustymi liniami dookoła. Zły identyfikator zatrzymuje build.
+   - `<miarka data-id="myszolow">`: rozpiętość gatunku w skali, z rozłożonymi rękami człowieka;
+   - `<anatomia>`: plansza kani rudej z opisanymi częściami sylwetki;
+   - `<morf-grup>`: osiem grup B1 na kawałku nieba;
+   - `<suwak-morfu data-od="myszolow" data-do="trzmielojad">`: suwak między dwoma ptakami dziennymi;
+   - `<ptasia-miarka data-ptaki="wrobel pustulka wrona" data-miara="rozpietosc">`: ćwiczenie „ułóż od najmniejszego”; ptaki z atlasu albo z `content/miarka.json` (ptaki odniesienia), `data-miara` (obowiązkowe) to `rozpietosc` albo `dlugosc` (długość ciała, `dlugosc_cm`); identyfikatory rozdzielone spacjami albo przecinkami; co najmniej trzy ptaki, każdy z innym środkiem zakresu, bo według niego ćwiczenie ocenia kolejność;
+   - `<zgadnij-sylwetke data-gatunki="myszolow kania-ruda pustulka">`: ćwiczenie „grupa, a potem gatunek” na sylwetkach ptaków dziennych, każdy gatunek raz. Ćwiczenia niczego nie zapisują i nie kończą lekcji.
+6. Nowa ciekawostka: wpis w `content/ciekawostki.json` (`id`, `tekst` z `**pogrubieniem**` i `*kursywą*`, bez linków, bo ciekawostka ma być zrozumiała sama, a jedyną drogą dalej jest „Czytaj dalej” do lekcji; `modul`, `lekcja` albo `null` dla całego modułu, `gatunki` z `id` z atlasu). Tekst musi być zrozumiały bez kontekstu lekcji. Karta pokazuje najpierw ciekawostki pasujące do gatunku lub modułu, a nieoglądane przed powtórkami.
+7. Margines lekcji: zdjęcie albo ramkę `> ` umieść w `<margines>` **przed** akapitem, do którego należy. W środku zostaw puste linie, żeby treść była dalej Markdownem:
    ```
    <margines>
 
@@ -94,7 +102,7 @@ src/
    Akapit, do którego należy uwaga.
    ```
    Na szerokim ekranie notatka stoi obok akapitu, na wąskim nad nim. Nagłówki `##` tworzą spis treści lekcji, więc pisz je zwykłym tekstem, bez pogrubień i linków.
-7. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w pytaniach i odpowiedziach znikają (zob. `DS-GAPS.md`).
+8. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w pytaniach i odpowiedziach znikają (zob. `DS-GAPS.md`).
 
 ## Moje niebo
 Kolekcja liczona z tego, co przeglądarka już ma (ukończone lekcje, fiszki, checklista). Nic się w niej nie blokuje: każdy moduł jest zawsze otwarty.

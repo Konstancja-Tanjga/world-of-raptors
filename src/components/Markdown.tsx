@@ -3,14 +3,27 @@ import type { ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
+import {
+  gatunki,
+  grupySylwetek,
+  grupyDoWyboru,
+  ptakiDoMiarki,
+  ptakiMokradel,
+  pytaniaSylwetek,
+  stronaMorfuLekcji,
+  znajdzGatunek,
+} from '@/lib/content';
 import { resolveContentHref } from '@/lib/links';
 import { idNaglowkow } from '@/lib/naglowki';
-import { gatunki, ptakiMokradel } from '@/lib/content';
 import type { Zdjecie } from '@/lib/types';
+import { Anatomia } from './Anatomia';
+import { MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
+import { Miarka } from './Miarka';
 import { NazwaPtaka } from './NazwaPtaka';
 import { Photo } from './Photo';
 import { SpeciesMedia } from './SpeciesMedia';
+import { Sylwetka } from './Sylwetka';
 
 type Attrs = Record<string, unknown>;
 const attr = (props: Attrs, name: string) => {
@@ -42,6 +55,19 @@ const attr = (props: Attrs, name: string) => {
  *   </margines>
  *
  *   The paragraph the note belongs to.
+ *
+ * B7's drawings and exercises are tags too, each read and checked here, on
+ * the server, so a wrong id stops the build. The exercises get drawings, not
+ * the silhouette generator; the two morphs animate, so a lesson with one
+ * loads it. Each client part loads only where its tag is used
+ * (CwiczeniaLekcji.tsx). Every attribute shown is required:
+ *
+ *   <miarka data-id="myszolow">                       wingspan to scale
+ *   <anatomia>                                        the labelled kite plate
+ *   <morf-grup>                                       the eight groups, on a patch of sky
+ *   <suwak-morfu data-od="myszolow" data-do="trzmielojad">
+ *   <ptasia-miarka data-ptaki="wrobel pustulka wrona" data-miara="rozpietosc|dlugosc">
+ *   <zgadnij-sylwetke data-gatunki="myszolow kania-ruda pustulka">
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -66,6 +92,56 @@ const lessonTags = {
     if (!zdjecie.src) return null;
     return <Photo zdjecie={zdjecie} alt={attr(props, 'alt')} podpis={attr(props, 'podpis') || undefined} />;
   },
+  miarka: (props: Attrs) => {
+    const g = znajdzGatunek(attr(props, 'data-id'));
+    if (!g) throw new Error(`<miarka>: nie ma w atlasie gatunku „${attr(props, 'data-id')}”`);
+    return (
+      <div className="lekcja-cwiczenie">
+        <Miarka g={g} />
+      </div>
+    );
+  },
+  anatomia: () => (
+    <div className="lekcja-cwiczenie">
+      <Anatomia podpis="Kania ruda od spodu. Każdą z tych części porównuj z inną częścią tego samego ptaka, nie z centymetrami." />
+    </div>
+  ),
+  'morf-grup': () => (
+    <div className="lekcja-scena scena">
+      <MorfGrup grupy={grupySylwetek().grupy} />
+    </div>
+  ),
+  'suwak-morfu': (props: Attrs) => (
+    <div className="lekcja-cwiczenie">
+      <SuwakMorfu od={stronaMorfuLekcji(attr(props, 'data-od'))} do={stronaMorfuLekcji(attr(props, 'data-do'))} />
+    </div>
+  ),
+  'ptasia-miarka': (props: Attrs) => {
+    const { miara, ptaki } = ptakiDoMiarki(attr(props, 'data-ptaki'), attr(props, 'data-miara'));
+    return (
+      <div className="lekcja-cwiczenie">
+        <PtasiaMiarka
+          miara={miara}
+          ptaki={ptaki.map(({ drapieznik, ...p }) => ({
+            ...p,
+            // Only a wingspan has a drawing: a silhouette from below is as wide as it.
+            rysunek: drapieznik && miara === 'rozpietosc' ? <Sylwetka id={p.id} /> : undefined,
+          }))}
+        />
+      </div>
+    );
+  },
+  'zgadnij-sylwetke': (props: Attrs) => (
+    <div className="lekcja-cwiczenie">
+      <ZgadnijSylwetke
+        grupy={grupyDoWyboru()}
+        pytania={pytaniaSylwetek(attr(props, 'data-gatunki')).map((p) => ({
+          ...p,
+          rysunek: <Sylwetka id={p.id} opis="Sylwetka ptaka od spodu" />,
+        }))}
+      />
+    </div>
+  ),
 } as unknown as Components;
 
 type HastNode = { type: string; tagName?: string; value?: string; properties?: Attrs; children?: HastNode[] };
