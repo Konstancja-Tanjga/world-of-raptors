@@ -923,8 +923,8 @@ li {
 .prose .margines .photo {
   margin-block: 0;
 }
-.margines > * + .photo {
-  margin-top: var(--bh-gap-normal);
+.prose .margines > * + .photo {
+  margin-top: var(--bh-gap-loose);
 }
 /* The lesson's opening: the slots of Big Hat's Article hold these. */
 .lekcja__eyebrow {
@@ -1542,6 +1542,199 @@ li {
   gap: var(--bh-gap-snug);
 }
 
+
+/* A photo opens in the viewer (PodgladZdjec): the whole photo is the button. */
+.photo__powieksz {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bh-radius-surface);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: zoom-in;
+}
+.photo__powieksz:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- The lesson's width: a wider margin, figures across it ---------- */
+/* Big Hat's Article gives its margin column 13rem, where a photo is too small
+   to show a feather's edge or a field mark. Here the margin takes whatever
+   room the article has beyond the text's full measure (36rem), the contents
+   (11rem, from 63rem of article) and the gutters (1.5rem each), between 13rem
+   and 20rem: so the text never narrows. It reaches 20rem at 57.5rem of
+   article, falls back to 13rem at 63rem, when the contents column appears,
+   and is 20rem again from 70rem. Setting Article's own custom property is the one exception to
+   leaving bh-* classes alone (DS-GAPS.md, "Article: szerokość marginesu").
+   The page is as wide as the widest article, so the lesson sits in the middle
+   of the window. */
+.page.lekcja {
+  max-width: calc(70rem + 2 * var(--wor-gutter));
+}
+@container (width >= 50rem) {
+  .lekcja .bh-article__grid {
+    --bh-article-margin: clamp(13rem, 100cqi - 37.5rem, 20rem);
+  }
+}
+@container (width >= 63rem) {
+  .lekcja .bh-article__grid {
+    --bh-article-margin: clamp(13rem, 100cqi - 50rem, 20rem);
+  }
+}
+/* A gallery and a species plate span the text and the margin, reaching the
+   margin column the way Article's own margin notes do (they read its widths,
+   never set them), below any margin note before them. */
+.lekcja .galeria,
+.lekcja .plate {
+  clear: right;
+}
+@container (width >= 50rem) {
+  .lekcja .galeria,
+  .lekcja .plate {
+    margin-right: calc(-1 * (var(--bh-article-margin) + var(--bh-article-gutter)));
+  }
+}
+
+/* <galeria>: one to six photos, never cropped, laid out by how many there are. */
+.galeria {
+  --galeria-kolumny: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--galeria-kolumny), minmax(0, 1fr));
+  align-items: start;
+  gap: var(--bh-gap-normal);
+  margin-block: var(--wor-space-block);
+}
+.prose .galeria .photo {
+  margin: 0;
+}
+.galeria[data-ile='2'],
+.galeria[data-ile='4'] {
+  --galeria-kolumny: 2;
+}
+.galeria[data-ile='5'],
+.galeria[data-ile='6'] {
+  --galeria-kolumny: 3;
+}
+/* Three: the main photo large on the left, the other two stacked beside it. */
+.galeria[data-ile='3'] {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+.galeria[data-ile='3'] > :first-child {
+  grid-row: span 2;
+}
+@media (max-width: 600px) {
+  .galeria[data-ile='2'],
+  .galeria[data-ile='3'] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .galeria[data-ile='3'] > :first-child {
+    grid-row: auto;
+  }
+  .galeria[data-ile='5'],
+  .galeria[data-ile='6'] {
+    --galeria-kolumny: 2;
+  }
+}
+/* A module's overview reads at 40rem; its galleries widen symmetrically. */
+.modul-strona__opis .galeria {
+  width: min(57.5rem, 100vw - 2 * var(--wor-gutter));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------- The photo viewer (PodgladZdjec) ---------- */
+.podglad {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: var(--bh-padding-section) var(--wor-gutter);
+  border: 0;
+  background: var(--wor-scena-tlo);
+  color: var(--wor-scena-tekst);
+}
+.podglad[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--bh-gap-normal);
+}
+.podglad::backdrop {
+  background: var(--wor-scena-tlo);
+}
+/* The page behind stays still while a photo is open. */
+html:has(.podglad[open]) {
+  overflow: hidden;
+}
+.podglad__pasek,
+.podglad__nawigacja {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal);
+}
+.podglad__nawigacja {
+  justify-content: center;
+}
+.podglad__licznik {
+  margin: 0;
+  color: var(--wor-scena-tekst-2);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-body);
+}
+.podglad__zdjecie {
+  min-height: 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: var(--bh-gap-snug);
+}
+.podglad__zdjecie:focus-visible {
+  outline: 2px solid var(--wor-zloto);
+  outline-offset: 2px;
+}
+.podglad__kadr {
+  min-height: 0;
+}
+.podglad__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.podglad__podpis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-hairline);
+  max-width: var(--wor-measure);
+  margin-inline: auto;
+  text-align: center;
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-caption);
+  color: var(--wor-scena-tekst-2);
+}
+.podglad__tytul {
+  color: var(--wor-scena-tekst);
+  font-size: var(--bh-text-size-body);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.podglad__podpis a {
+  color: inherit;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .podglad[open] {
+    animation: podglad-wejscie var(--bh-duration-normal) var(--bh-easing-enter);
+  }
+}
+@keyframes podglad-wejscie {
+  from {
+    opacity: 0;
+  }
+}
 
 /* Field-guide plate: photos, cues compared with look-alikes, links */
 .plate {

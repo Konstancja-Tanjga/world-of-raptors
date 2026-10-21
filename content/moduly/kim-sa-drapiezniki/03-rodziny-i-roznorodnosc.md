@@ -24,12 +24,12 @@ Na świecie żyje około **11 tysięcy** gatunków ptaków. Drapieżników (dzie
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Fauconnet_moineau_%28microhierax_fringillarius%29.jpg/960px-Fauconnet_moineau_%28microhierax_fringillarius%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Maleńki sokół z czarnym grzbietem, białą piersią i rudym brzuchem siedzi na cienkiej gałązce" podpis="Sokolik czarnouchy (Microhierax fringillarius) z Tajlandii: jeden z najmniejszych dziennych drapieżników świata, wielkości wróbla" autor="Jason Thompson" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Fauconnet_moineau_(microhierax_fringillarius).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Fauconnet_moineau_%28microhierax_fringillarius%29.jpg/960px-Fauconnet_moineau_%28microhierax_fringillarius%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="2473x1979" alt="Maleńki sokół z czarnym grzbietem, białą piersią i rudym brzuchem siedzi na cienkiej gałązce" podpis="Sokolik czarnouchy (Microhierax fringillarius) z Tajlandii: jeden z najmniejszych dziennych drapieżników świata, wielkości wróbla" autor="Jason Thompson" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Fauconnet_moineau_(microhierax_fringillarius).jpg">
 </zdjecie>
 
 > Harpia poluje w koronach lasu deszczowego głównie na leniwce i małpy. Ma skrzydła stosunkowo krótkie i szerokie, bo musi manewrować między gałęziami, a nie szybować nad otwartym terenem.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Harpia_chega_ao_ninho_com_um_macaco-prego.jpg/960px-Harpia_chega_ao_ninho_com_um_macaco-prego.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="614" alt="Duży szaro-biały orzeł z rozpostartymi szerokimi skrzydłami niesie w szponach brązową małpę" podpis="Harpia wielka przylatuje do gniazda z upolowaną małpą (kapucynką); widać szerokie, stosunkowo krótkie skrzydła" autor="Jiang Chunsheng" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Harpia_chega_ao_ninho_com_um_macaco-prego.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Harpia_chega_ao_ninho_com_um_macaco-prego.jpg/960px-Harpia_chega_ao_ninho_com_um_macaco-prego.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="614" oryginal="1769x1131" alt="Duży szaro-biały orzeł z rozpostartymi szerokimi skrzydłami niesie w szponach brązową małpę" podpis="Harpia wielka przylatuje do gniazda z upolowaną małpą (kapucynką); widać szerokie, stosunkowo krótkie skrzydła" autor="Jiang Chunsheng" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Harpia_chega_ao_ninho_com_um_macaco-prego.jpg">
 </zdjecie>
 
 </margines>
@@ -61,7 +61,7 @@ Jastrzębiowate to „wielki worek”, w którym mieści się większość znany
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Osprey_%28Pandion_haliaetus%29_with_fish%2C_in_Morro_Bay%2C_CA.jpg/960px-Osprey_%28Pandion_haliaetus%29_with_fish%2C_in_Morro_Bay%2C_CA.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Rybołów w locie trzyma pod brzuchem rybę obiema stopami" podpis="Rybołów niesie rybę w obu stopach, ustawioną głową do przodu; szorstkie łuski na palcach nie pozwalają jej się wyślizgnąć" autor="Mike Baird from Morro Bay, USA" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Osprey_(Pandion_haliaetus)_with_fish,_in_Morro_Bay,_CA.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Osprey_%28Pandion_haliaetus%29_with_fish%2C_in_Morro_Bay%2C_CA.jpg/960px-Osprey_%28Pandion_haliaetus%29_with_fish%2C_in_Morro_Bay%2C_CA.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="1614x1210" alt="Rybołów w locie trzyma pod brzuchem rybę obiema stopami" podpis="Rybołów niesie rybę w obu stopach, ustawioną głową do przodu; szorstkie łuski na palcach nie pozwalają jej się wyślizgnąć" autor="Mike Baird from Morro Bay, USA" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Osprey_(Pandion_haliaetus)_with_fish,_in_Morro_Bay,_CA.jpg">
 </zdjecie>
 
 </margines>
@@ -83,7 +83,7 @@ Sekretarz (*Sagittarius serpentarius*, ang. Secretarybird) z afrykańskich sawan
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Andean_Condor_in_flight.jpg/960px-Andean_Condor_in_flight.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Ogromny czarno-biały ptak szybuje nad zboczem gór z szeroko rozpostartymi skrzydłami" podpis="Kondor wielki w Andach: rozpiętość skrzydeł ok. 3 m, rozcapierzone lotki jak palce" autor="Pedro Szekely" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Andean_Condor_in_flight.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Andean_Condor_in_flight.jpg/960px-Andean_Condor_in_flight.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="2911x1941" alt="Ogromny czarno-biały ptak szybuje nad zboczem gór z szeroko rozpostartymi skrzydłami" podpis="Kondor wielki w Andach: rozpiętość skrzydeł ok. 3 m, rozcapierzone lotki jak palce" autor="Pedro Szekely" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Andean_Condor_in_flight.jpg">
 </zdjecie>
 
 </margines>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { ViewTransition } from 'react';
 import '../atlas.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
@@ -205,6 +206,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
               </h2>
             </div>
             <div
+              data-galeria
               className={
                 z?.cecha && z.lot && z.siedzacy ? 'gatunek__zdjecia gatunek__zdjecia--trzy' : 'gatunek__zdjecia'
               }
@@ -295,6 +297,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
           </div>
         </section>
       </div>
+      <PodgladZdjec />
     </div>
   );
 }

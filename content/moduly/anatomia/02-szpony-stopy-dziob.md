@@ -7,7 +7,7 @@ Typowa stopa ptaka drapieżnego ma **cztery palce**: trzy skierowane do przodu i
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Bald_eagle_foot_closeup.jpg/960px-Bald_eagle_foot_closeup.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" alt="Zbliżenie jasnego, łuskowatego palca ptaka zakończonego długim, ciemnym, mocno zakrzywionym pazurem" podpis="Stopa bielika amerykańskiego z bliska (okaz muzealny): łuskowata skóra palców i hakowaty, rogowy szpon" autor="Bloopityboop" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Bald_eagle_foot_closeup.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Bald_eagle_foot_closeup.jpg/960px-Bald_eagle_foot_closeup.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" oryginal="1536x2048" alt="Zbliżenie jasnego, łuskowatego palca ptaka zakończonego długim, ciemnym, mocno zakrzywionym pazurem" podpis="Stopa bielika amerykańskiego z bliska (okaz muzealny): łuskowata skóra palców i hakowaty, rogowy szpon" autor="Bloopityboop" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Bald_eagle_foot_closeup.jpg">
 </zdjecie>
 
 </margines>
@@ -40,10 +40,10 @@ Kształt stopy zdradza specjalizację.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Accipiter_nisus_kill.jpg/960px-Accipiter_nisus_kill.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="746" alt="Mały szary jastrzębiowaty ptak z pomarańczowym okiem stoi na żwirze na zdobyczy, wokół leżą wyskubane pióra" podpis="Samiec krogulca skubie upolowanego ptaka: widać bardzo długie, cienkie nogi i palce" autor="Eddy Van 3000" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Accipiter_nisus_kill.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Accipiter_nisus_kill.jpg/960px-Accipiter_nisus_kill.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="746" oryginal="1802x1401" alt="Mały szary jastrzębiowaty ptak z pomarańczowym okiem stoi na żwirze na zdobyczy, wokół leżą wyskubane pióra" podpis="Samiec krogulca skubie upolowanego ptaka: widać bardzo długie, cienkie nogi i palce" autor="Eddy Van 3000" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Accipiter_nisus_kill.jpg">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Booted_Eagle_%28Hieraaetus_pennatus%29_%2849815252166%29.jpg/960px-Booted_Eagle_%28Hieraaetus_pennatus%29_%2849815252166%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="677" alt="Jasny orzeł z brązowymi skrzydłami siedzi na gałęzi, jego nogi są pokryte białymi piórami aż do żółtych palców" podpis="Orzełek włochaty (jasna odmiana): skoki opierzone aż do palców, czyli orzeł „w spodniach”" autor="Imran Shah from Islamabad, Pakistan" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_(Hieraaetus_pennatus)_(49815252166).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Booted_Eagle_%28Hieraaetus_pennatus%29_%2849815252166%29.jpg/960px-Booted_Eagle_%28Hieraaetus_pennatus%29_%2849815252166%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="677" oryginal="1994x1406" alt="Jasny orzeł z brązowymi skrzydłami siedzi na gałęzi, jego nogi są pokryte białymi piórami aż do żółtych palców" podpis="Orzełek włochaty (jasna odmiana): skoki opierzone aż do palców, czyli orzeł „w spodniach”" autor="Imran Shah from Islamabad, Pakistan" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_(Hieraaetus_pennatus)_(49815252166).jpg">
 </zdjecie>
 
 > Sowy też mają odwracalny palec zewnętrzny, jak rybołów. Przypomnienie w [module o sowach](../sowy/01-kim-sa-sowy.md).
@@ -65,7 +65,7 @@ Dziób ptaka drapieżnego jest **haczykowaty**: górna szczęka zakrzywia się w
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/PeregrineTubercle.jpg/960px-PeregrineTubercle.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="767" alt="Profil głowy sokoła wędrownego z ciemnym okiem, żółtą woskówką z okrągłym nozdrzem i zakrzywionym niebieskoszarym dziobem" podpis="Głowa sokoła wędrownego: w okrągłym nozdrzu widać kostny guzek, a na krawędzi dzioba ząbek" autor="Greg Hume (Greg5030)" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:PeregrineTubercle.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/PeregrineTubercle.jpg/960px-PeregrineTubercle.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="767" oryginal="1935x1545" alt="Profil głowy sokoła wędrownego z ciemnym okiem, żółtą woskówką z okrągłym nozdrzem i zakrzywionym niebieskoszarym dziobem" podpis="Głowa sokoła wędrownego: w okrągłym nozdrzu widać kostny guzek, a na krawędzi dzioba ząbek" autor="Greg Hume (Greg5030)" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:PeregrineTubercle.jpg">
 </zdjecie>
 
 </margines>
@@ -78,7 +78,7 @@ Dziób ptaka drapieżnego jest **haczykowaty**: górna szczęka zakrzywia się w
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Honey_Buzzard_Portrait.jpg/960px-Honey_Buzzard_Portrait.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Głowa trzmielojada z żółtym okiem, szarą, gładko opierzoną twarzą i małym ciemnym dziobem" podpis="Trzmielojad: twarz pokryta gęstymi, łuskowatymi piórkami, słaby dziób i szczelinowate nozdrza" autor="Andy Morffew" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Honey_Buzzard_Portrait.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Honey_Buzzard_Portrait.jpg/960px-Honey_Buzzard_Portrait.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="5635x4508" alt="Głowa trzmielojada z żółtym okiem, szarą, gładko opierzoną twarzą i małym ciemnym dziobem" podpis="Trzmielojad: twarz pokryta gęstymi, łuskowatymi piórkami, słaby dziób i szczelinowate nozdrza" autor="Andy Morffew" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Honey_Buzzard_Portrait.jpg">
 </zdjecie>
 
 </margines>

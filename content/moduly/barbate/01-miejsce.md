@@ -8,7 +8,7 @@ Marismas del Barbate to płaski świat wody, mułu i niskiej roślinności przy 
 
 > **Słówko:** *marisma* to po hiszpańsku słone bagno albo rozlewisko przy ujściu rzeki, zalewane przez morze w rytmie pływów.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/PNMarismasBarbate-p1020270.jpg/960px-PNMarismasBarbate-p1020270.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Szerokie, kręte koryto rzeki wśród płaskich, zielonych rozlewisk, wzdłuż brzegów pasy szarego mułu, nad nimi niebo z chmurami" podpis="Rzeka Barbate wije się przez marismas. Wzdłuż brzegów ciągną się pasy mułu, które woda odsłania i zalewa w rytmie pływów (Park Przyrodniczy La Breña y Marismas del Barbate)" autor="El Pantera" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:PNMarismasBarbate-p1020270.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/PNMarismasBarbate-p1020270.jpg/960px-PNMarismasBarbate-p1020270.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2560x1920" alt="Szerokie, kręte koryto rzeki wśród płaskich, zielonych rozlewisk, wzdłuż brzegów pasy szarego mułu, nad nimi niebo z chmurami" podpis="Rzeka Barbate wije się przez marismas. Wzdłuż brzegów ciągną się pasy mułu, które woda odsłania i zalewa w rytmie pływów (Park Przyrodniczy La Breña y Marismas del Barbate)" autor="El Pantera" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:PNMarismasBarbate-p1020270.jpg">
 </zdjecie>
 
 </margines>
@@ -23,7 +23,7 @@ W Marismas del Barbate spotkasz kilka rodzajów miejsc. Każde ma swoje ptaki:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/R%C3%ADo_Barbate_-_P1610259.jpg/960px-R%C3%ADo_Barbate_-_P1610259.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Piaszczysta ścieżka wśród sosen pinii prowadzi ku płaskiej dolinie z rozlewiskami i jasnymi basenami salin, w tle pasmo gór" podpis="Widok z sosnowego lasu La Breña na rozlewiska i saliny nad rzeką Barbate: las na klifach i bagna przy ujściu należą do tego samego parku" autor="El Pantera" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:R%C3%ADo_Barbate_-_P1610259.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/R%C3%ADo_Barbate_-_P1610259.jpg/960px-R%C3%ADo_Barbate_-_P1610259.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2560x1920" alt="Piaszczysta ścieżka wśród sosen pinii prowadzi ku płaskiej dolinie z rozlewiskami i jasnymi basenami salin, w tle pasmo gór" podpis="Widok z sosnowego lasu La Breña na rozlewiska i saliny nad rzeką Barbate: las na klifach i bagna przy ujściu należą do tego samego parku" autor="El Pantera" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:R%C3%ADo_Barbate_-_P1610259.jpg">
 </zdjecie>
 
 </margines>

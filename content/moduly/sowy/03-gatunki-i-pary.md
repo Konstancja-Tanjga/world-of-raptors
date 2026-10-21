@@ -53,7 +53,7 @@ Występowanie: Polska, południe Hiszpanii.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg/960px-Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="481" alt="Płomykówka leci prosto na obiektyw z szeroko rozpostartymi jasnymi skrzydłami, na tle błękitnego nieba i drzew" podpis="Płomykówka w locie z przodu: biała, sercowata twarz i prawie białe skrzydła od spodu" autor="Dannymoore1973" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg/960px-Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="481" oryginal="6629x3318" alt="Płomykówka leci prosto na obiektyw z szeroko rozpostartymi jasnymi skrzydłami, na tle błękitnego nieba i drzew" podpis="Płomykówka w locie z przodu: biała, sercowata twarz i prawie białe skrzydła od spodu" autor="Dannymoore1973" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Front_view_of_a_barn_owl_-_Tyto_alba_-_in_flight.jpg">
 </zdjecie>
 
 </margines>
@@ -88,7 +88,7 @@ Występowanie: Polska, południe Hiszpanii.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Flickr_-_Rainbirder_-_Short-eared_Owl_%28Asio_flammeus%29.jpg/960px-Flickr_-_Rainbirder_-_Short-eared_Owl_%28Asio_flammeus%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="652" alt="Sowa leci nisko nad rudą, suchą trawą ze skrzydłami uniesionymi w górę, widać żółte oczy w ciemnej obwódce" podpis="Uszatka błotna poluje za dnia nisko nad trawami, lotem podobnym do błotniaka (Szkocja, zima)" autor="Steve Garvie from Dunfermline, Fife, Scotland" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Short-eared_Owl_(Asio_flammeus).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Flickr_-_Rainbirder_-_Short-eared_Owl_%28Asio_flammeus%29.jpg/960px-Flickr_-_Rainbirder_-_Short-eared_Owl_%28Asio_flammeus%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="652" oryginal="964x655" alt="Sowa leci nisko nad rudą, suchą trawą ze skrzydłami uniesionymi w górę, widać żółte oczy w ciemnej obwódce" podpis="Uszatka błotna poluje za dnia nisko nad trawami, lotem podobnym do błotniaka (Szkocja, zima)" autor="Steve Garvie from Dunfermline, Fife, Scotland" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Short-eared_Owl_(Asio_flammeus).jpg">
 </zdjecie>
 
 </margines>
@@ -156,7 +156,7 @@ Występowanie: południe Hiszpanii (w Polsce rzadko). Wędrowny.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Juvenile_Eurasian_Scops_Owl_%28Otus_scops%29.jpg/960px-Juvenile_Eurasian_Scops_Owl_%28Otus_scops%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1279" alt="Mała, szarobrązowa sowa z żółtymi oczami siedzi na ziemi wśród suchych liści, prawie niewidoczna" podpis="Młody syczek wśród suchych liści i żwiru: wzór piór zlewa się z otoczeniem" autor="Barnea Teodora-Maria" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Juvenile_Eurasian_Scops_Owl_(Otus_scops).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Juvenile_Eurasian_Scops_Owl_%28Otus_scops%29.jpg/960px-Juvenile_Eurasian_Scops_Owl_%28Otus_scops%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1279" oryginal="1537x2048" alt="Mała, szarobrązowa sowa z żółtymi oczami siedzi na ziemi wśród suchych liści, prawie niewidoczna" podpis="Młody syczek wśród suchych liści i żwiru: wzór piór zlewa się z otoczeniem" autor="Barnea Teodora-Maria" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Juvenile_Eurasian_Scops_Owl_(Otus_scops).jpg">
 </zdjecie>
 
 </margines>

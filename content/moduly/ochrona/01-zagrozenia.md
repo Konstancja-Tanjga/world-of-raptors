@@ -19,7 +19,7 @@ Przez większą część XIX i XX wieku ptaki drapieżne w Europie uważano za *
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Honey_buzzard_at_the_Beaney_2021_%281%29.jpg/960px-Honey_buzzard_at_the_Beaney_2021_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1681" alt="Wypchany brązowy drapieżnik stoi w muzealnej gablocie obok innych okazów" podpis="Wypchany trzmielojad w muzeum Beaney w Canterbury, zastrzelony niegdyś w Deal (Kent): ślad dawnego strzelania i kolekcjonerstwa" autor="Storye book" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard_at_the_Beaney_2021_(1).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Honey_buzzard_at_the_Beaney_2021_%281%29.jpg/960px-Honey_buzzard_at_the_Beaney_2021_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1681" oryginal="1980x3468" alt="Wypchany brązowy drapieżnik stoi w muzealnej gablocie obok innych okazów" podpis="Wypchany trzmielojad w muzeum Beaney w Canterbury, zastrzelony niegdyś w Deal (Kent): ślad dawnego strzelania i kolekcjonerstwa" autor="Storye book" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard_at_the_Beaney_2021_(1).jpg">
 </zdjecie>
 
 </margines>
@@ -47,7 +47,7 @@ Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybo�
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg/960px-Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="695" alt="Szczyt betonowego słupa na tle nieba, na metalowej poprzeczce stoją brązowe ceramiczne izolatory z przewodami" podpis="Groźny dla ptaków słup średniego napięcia: izolatory stoją nad poprzeczką, a osłona chroni tylko środkowy" autor="Wolfgang Ellsässer (Geryones)" licencja="CC BY-SA 3.0 de" licencja-url="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" strona="https://commons.wikimedia.org/wiki/File:Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg/960px-Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="695" oryginal="2001x1448" alt="Szczyt betonowego słupa na tle nieba, na metalowej poprzeczce stoją brązowe ceramiczne izolatory z przewodami" podpis="Groźny dla ptaków słup średniego napięcia: izolatory stoją nad poprzeczką, a osłona chroni tylko środkowy" autor="Wolfgang Ellsässer (Geryones)" licencja="CC BY-SA 3.0 de" licencja-url="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" strona="https://commons.wikimedia.org/wiki/File:Abspannmast_Mittelspannung_stehende_Isolatoren_20130414.jpg">
 </zdjecie>
 
 </margines>
@@ -57,7 +57,7 @@ Skutki były dramatyczne. Orłosęp zniknął z Alp na początku XX wieku, rybo�
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head%2C_Md.%2C_is_retrofitted_with_flight_diverters_on_utility_lines%2C_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1274" alt="Drewniany słup z izolatorami w osłonach, na przewodach wiszą małe kolorowe tabliczki odblaskowe" podpis="Linia przebudowana dla ptaków (Maryland, USA): osłony na izolatorach i kolorowe znaczniki na przewodach, dzięki którym ptaki widzą linię" autor="R. Jason Brunson (U.S. Navy)" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head,_Md.,_is_retrofitted_with_flight_diverters_on_utility_lines,_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head%2C_Md.%2C_is_retrofitted_with_flight_diverters_on_utility_lines%2C_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1274" oryginal="1979x2627" alt="Drewniany słup z izolatorami w osłonach, na przewodach wiszą małe kolorowe tabliczki odblaskowe" podpis="Linia przebudowana dla ptaków (Maryland, USA): osłony na izolatorach i kolorowe znaczniki na przewodach, dzięki którym ptaki widzą linię" autor="R. Jason Brunson (U.S. Navy)" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:US_Navy_100304-N-6932B-091_The_electrical_distribution_system_at_Naval_Support_Facility_Indian_Head,_Md.,_is_retrofitted_with_flight_diverters_on_utility_lines,_plastic_phase_covers_and_fiberglass_cross_arms_to_prevent_mortalit.jpg">
 </zdjecie>
 
 </margines>
@@ -68,7 +68,7 @@ Rozwiązanie jest znane i stosunkowo tanie: przebudowa niebezpiecznych słupów,
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Windenergieanlagen_Tarifa2004.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="637" alt="Rząd turbin wiatrowych na kratownicowych masztach wzdłuż zielonego wzgórza" podpis="Turbiny wiatrowe na grzbiecie koło Tarify, tuż przy jednym z głównych szlaków przelotu sępów i orłów przez Cieśninę Gibraltarską" autor="Manfred Werner" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Windenergieanlagen_Tarifa2004.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Windenergieanlagen_Tarifa2004.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="637" oryginal="900x597" alt="Rząd turbin wiatrowych na kratownicowych masztach wzdłuż zielonego wzgórza" podpis="Turbiny wiatrowe na grzbiecie koło Tarify, tuż przy jednym z głównych szlaków przelotu sępów i orłów przez Cieśninę Gibraltarską" autor="Manfred Werner" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Windenergieanlagen_Tarifa2004.jpg">
 </zdjecie>
 
 </margines>

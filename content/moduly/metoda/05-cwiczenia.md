@@ -32,7 +32,7 @@ Znajdź w sieci (np. na Wikimedia Commons albo Macaulay Library) po jednym zdję
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Common_Buzzard%28js%29_Lodz%28Poland%2901.jpg/960px-Common_Buzzard%28js%29_Lodz%28Poland%2901.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Myszołów w locie na tle błękitnego nieba, widoczne prążkowane lotki i ogon" podpis="Myszołów nad Łodzią: zacznij od najpospolitszego gatunku i opisz wzór brzucha, skrzydeł i ogona" autor="Jerzystrzelecki" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Buzzard(js)_Lodz(Poland)01.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Common_Buzzard%28js%29_Lodz%28Poland%2901.jpg/960px-Common_Buzzard%28js%29_Lodz%28Poland%2901.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="2352x1568" alt="Myszołów w locie na tle błękitnego nieba, widoczne prążkowane lotki i ogon" podpis="Myszołów nad Łodzią: zacznij od najpospolitszego gatunku i opisz wzór brzucha, skrzydeł i ogona" autor="Jerzystrzelecki" licencja="CC BY 3.0" licencja-url="https://creativecommons.org/licenses/by/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Buzzard(js)_Lodz(Poland)01.jpg">
 </zdjecie>
 
 </margines>

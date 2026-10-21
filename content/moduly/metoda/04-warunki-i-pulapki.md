@@ -19,7 +19,7 @@ Zanim sięgniesz po rzadki gatunek, zapytaj:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Norfolk_Dusk_-_Flickr_-_Jon_Bunting.jpg/960px-Norfolk_Dusk_-_Flickr_-_Jon_Bunting.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="636" alt="Czarna sylwetka ptaka drapieżnego w locie na tle pomarańczowego nieba o zachodzie słońca, nad linią drzew" podpis="Myszołów pod światło o zmierzchu: kolorów nie widać, zostaje tylko sylwetka" autor="Jon Bunting from UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Norfolk_Dusk_-_Flickr_-_Jon_Bunting.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Norfolk_Dusk_-_Flickr_-_Jon_Bunting.jpg/960px-Norfolk_Dusk_-_Flickr_-_Jon_Bunting.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="636" oryginal="4928x3264" alt="Czarna sylwetka ptaka drapieżnego w locie na tle pomarańczowego nieba o zachodzie słońca, nad linią drzew" podpis="Myszołów pod światło o zmierzchu: kolorów nie widać, zostaje tylko sylwetka" autor="Jon Bunting from UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Norfolk_Dusk_-_Flickr_-_Jon_Bunting.jpg">
 </zdjecie>
 
 </margines>
@@ -38,10 +38,10 @@ Zanim sięgniesz po rzadki gatunek, zapytaj:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Cuckoo_%2851190988411%29.jpg/960px-Cuckoo_%2851190988411%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Szara kukułka z poprzecznie prążkowanym brzuchem lecąca nisko nad wrzosowiskiem" podpis="Kukułka w locie: prążkowany spód i długi ogon jak u krogulca, ale skrzydła spiczaste, a głowa mała" autor="Andy Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Cuckoo_(51190988411).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Cuckoo_%2851190988411%29.jpg/960px-Cuckoo_%2851190988411%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="5046x4037" alt="Szara kukułka z poprzecznie prążkowanym brzuchem lecąca nisko nad wrzosowiskiem" podpis="Kukułka w locie: prążkowany spód i długi ogon jak u krogulca, ale skrzydła spiczaste, a głowa mała" autor="Andy Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Cuckoo_(51190988411).jpg">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Common_Raven_-_Corvus_corax_%2841514446920%29.jpg/960px-Common_Raven_-_Corvus_corax_%2841514446920%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Czarna sylwetka kruka w locie na tle błękitnego nieba, z rozcapierzonymi lotkami i klinowatym ogonem" podpis="Kruk szybuje jak drapieżnik i ma „palce”, ale zdradza go klinowaty ogon i masywny dziób" autor="Björn S..." licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_Raven_-_Corvus_corax_(41514446920).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Common_Raven_-_Corvus_corax_%2841514446920%29.jpg/960px-Common_Raven_-_Corvus_corax_%2841514446920%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="5184x3456" alt="Czarna sylwetka kruka w locie na tle błękitnego nieba, z rozcapierzonymi lotkami i klinowatym ogonem" podpis="Kruk szybuje jak drapieżnik i ma „palce”, ale zdradza go klinowaty ogon i masywny dziób" autor="Björn S..." licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Common_Raven_-_Corvus_corax_(41514446920).jpg">
 </zdjecie>
 
 </margines>

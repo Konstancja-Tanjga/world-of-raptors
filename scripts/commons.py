@@ -3,12 +3,17 @@
 Search (downloads small previews you can open to check what is in the photo):
     python3 scripts/commons.py search "Haliaeetus albicilla talons" [--out /tmp/previews] [--limit 12]
 
-Make a lesson tag for a chosen file (checks the licence, fills author and licence):
+Make a lesson tag for a chosen file (checks the licence, fills author, licence and original size):
     python3 scripts/commons.py tag "File:Some photo.jpg" --podpis "Szpony bielika" --alt "Stopa bielika ze szponami"
+
+Record the original size (oryginal="WxH") of every Commons photo in the lessons and module
+overviews, moving any full-size original over 960 px to its 960 px thumbnail (own photos are skipped):
+    python3 scripts/commons.py rozmiary-lekcji [--katalog content]
 
 Only freely licensed files are accepted: CC0, public domain, CC BY, CC BY-SA.
 """
 import argparse
+import glob
 import html
 import json
 import os
@@ -114,7 +119,7 @@ def tag(title, podpis, alt):
     f['artist'] = f['artist'] or 'autor nieznany (domena publiczna)'
     q = lambda s: html.escape(s, quote=True)
     print(
-        f'<zdjecie src="{q(f["thumb"])}" width="{f["tw"]}" height="{f["th"]}" alt="{q(alt)}" '
+        f'<zdjecie src="{q(f["thumb"])}" width="{f["tw"]}" height="{f["th"]}" oryginal="{f["w"]}x{f["h"]}" alt="{q(alt)}" '
         f'podpis="{q(podpis)}" autor="{q(f["artist"])}" licencja="{q(f["license"])}" '
         f'licencja-url="{q(f["licenseUrl"])}" strona="{q(f["page"])}">\n</zdjecie>'
     )
@@ -146,15 +151,64 @@ def sizes(path):
     print(f'{len(photos)} photos, {len(titles)} files: original sizes saved in {path}')
 
 
+ZDJECIE = re.compile(r'<zdjecie\b[^>]*>')
+STRONA = re.compile(r'strona="https://commons\.wikimedia\.org/wiki/([^"]+)"')
+
+
+def file_title(strona_match):
+    return 'File:' + urllib.parse.unquote(html.unescape(strona_match.group(1))).removeprefix('File:').replace('_', ' ')
+
+
+def lesson_sizes(root):
+    """Adds oryginal="WxH" to every Commons <zdjecie> in the lessons and module
+    overviews, so the page can offer sharper thumbnails and the photo viewer a
+    large one. A tag pointing at the full-size original (which a margin would
+    download whole) is moved to the 960 px thumbnail."""
+    paths = sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True))
+    tags = {p: ZDJECIE.findall(open(p, encoding='utf-8').read()) for p in paths}
+    titles = sorted({file_title(m) for ts in tags.values() for t in ts if (m := STRONA.search(t))})
+    found = {}
+    for i in range(0, len(titles), 50):
+        for f in imageinfo(titles[i:i + 50], 960):
+            found[f['title']] = f
+        time.sleep(0.5)
+    missing = [t for t in titles if t not in found]
+    if missing:
+        sys.exit('not found on Commons: ' + ', '.join(missing))
+    changed = 0
+    for path, ts in tags.items():
+        text = open(path, encoding='utf-8').read()
+        for t in ts:
+            m = STRONA.search(t)
+            if not m:
+                continue
+            f = found[file_title(m)]
+            new = re.sub(r'\s+oryginal="[^"]*"', '', t)
+            if '/thumb/' not in new and f['thumb'] and f['w'] > 960:
+                new = re.sub(r'src="[^"]*"', f'src="{html.escape(f["thumb"], quote=True)}"', new)
+                new = re.sub(r'width="\d+"', f'width="{f["tw"]}"', new)
+                new = re.sub(r'height="\d+"', f'height="{f["th"]}"', new)
+            new = re.sub(r'(height="\d+")', rf'\1 oryginal="{f["w"]}x{f["h"]}"', new, count=1)
+            if new != t:
+                text = text.replace(t, new)
+                changed += 1
+        with open(path, 'w', encoding='utf-8') as fh:
+            fh.write(text)
+    print(f'{sum(map(len, tags.values()))} tags, {len(titles)} files, {changed} tags updated')
+
+
 ap = argparse.ArgumentParser()
 sub = ap.add_subparsers(dest='cmd', required=True)
 s = sub.add_parser('search'); s.add_argument('query'); s.add_argument('--out', default='/tmp/commons-previews'); s.add_argument('--limit', type=int, default=12)
 t = sub.add_parser('tag'); t.add_argument('title'); t.add_argument('--podpis', required=True); t.add_argument('--alt', required=True)
 r = sub.add_parser('rozmiary'); r.add_argument('--plik', default='content/zdjecia.json')
+rl = sub.add_parser('rozmiary-lekcji'); rl.add_argument('--katalog', default='content')
 a = ap.parse_args()
 if a.cmd == 'search':
     search(a.query, a.out, a.limit)
 elif a.cmd == 'rozmiary':
     sizes(a.plik)
+elif a.cmd == 'rozmiary-lekcji':
+    lesson_sizes(a.katalog)
 else:
     tag(a.title, a.podpis, a.alt)

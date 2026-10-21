@@ -86,3 +86,22 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co zbudowałam:** przycisk rysuje Google (`src/components/PrzyciskGoogle.tsx`, biblioteka Google Identity Services), a nie `Button` z Big Hat. Google wymaga swojego wyglądu przycisku logowania. Do tego tylko jego okno logowania pokazuje na ekranie zgody adres kursu: przy logowaniu przez przekierowanie Supabase ekran zgody pokazywał adres projektu Supabase (`tvfiymrlvmjpgrkxoums.supabase.co`).
 - **Co robi gorzej:** przycisk siedzi w ramce (iframe) Google, więc nie bierze kolorów, fontu ani pierścienia fokusu z Big Hat, a w ciemnym motywie zostaje jasny. Wybrałam najbliższe ustawienia Google: kształt pigułki jak przyciski Big Hat i jasną ramkę.
 - **Pytanie do design systemu:** czy Big Hat powinien mieć wzorzec przycisku logowania u zewnętrznego dostawcy, z jego wymaganym wyglądem, żeby takie miejsce było opisane, a nie wyjątkiem w produkcie?
+
+## Article: szerokość marginesu i ryciny na dwie kolumny
+
+- **Po co sięgnęłam:** zdjęcia w lekcjach (pióra, szpony, cechy do rozpoznania) stały w marginesie `ArticleMargin`, który ma stałe 13rem (208 px). Na takim zdjęciu nie widać krawędzi lotki ani plamki na skrzydle. Do tego cała siatka Article ma stałą szerokość (36 + 13 + 11rem) i stoi przy lewej krawędzi.
+- **Co zbudowałam lokalnie:**
+  - `.lekcja .bh-article__grid` dostaje `--bh-article-margin` od 13 do 20rem, zależnie od miejsca, które artykuł ma poza pełną miarą tekstu (`clamp()` z `cqi`, `globals.css`). Tekst nigdy się nie zwęża. Strona lekcji jest tak szeroka jak artykuł, więc stoi na środku.
+  - Znacznik `<galeria>` i plansze gatunków sięgają przez tekst i margines (`margin-right` liczony z `--bh-article-margin` i `--bh-article-gutter`), tak jak robi to sam `ArticleMargin`.
+- **Co robi gorzej:**
+  - `--bh-article-margin` to wewnętrzna zmienna komponentu, a nie wersjonowane API. To jedyne miejsce, w którym produkt ustawia coś na klasie `bh-*`. Jeśli Big Hat zmieni jej nazwę, kolumna marginesu wróci do 13rem bez żadnego błędu, a galerie i plansze, które czytają naszą wartość, sięgną do 7rem za daleko. Po każdej aktualizacji Big Hat trzeba sprawdzić tę regułę w `globals.css`.
+  - Article nie wie o rycinach szerszych niż tekst, więc odstęp przed nimi (`clear: right`) zależy od notatek w marginesie nad nimi.
+- **Pytanie do design systemu:** czy Article nie powinien mieć propu szerokości marginesu (albo wariantu „ilustrowany”) i slotu na rycinę na całą szerokość treści (`ArticleFigure` z `span="text" | "text+margin"`)?
+
+## Podgląd zdjęcia na pełnym ekranie
+
+- **Po co sięgnęłam:** każde zdjęcie w lekcji i na karcie gatunku można powiększyć na cały ekran, bez kadrowania, z podpisem i licencją, i przejść do następnego w tej samej grupie.
+- **Dlaczego nie `Dialog`:** kontrakt `spec/components/dialog.json` opisuje go jako „a decision or a short task that must finish before the page continues”. Wymaga też tytułu i ma rozmiary, z których największy nie zajmuje całego ekranu.
+- **Co zbudowałam lokalnie:** `src/components/PodgladZdjec.tsx`, natywny `<dialog>` z `showModal()`. Esc i kliknięcie obok zdjęcia zamykają podgląd, a fokus wraca na ostatnio oglądane zdjęcie. Strzałki i przyciski Big Hat „Poprzednie zdjęcie” i „Następne zdjęcie” przechodzą po grupie (`[data-galeria]`), „Zamknij” zamyka podgląd. Kolory sceny (`.scena`).
+- **Co robi gorzej:** własna obsługa klawiatury i fokusu, bez testów kontraktowych Big Hat; wejście to własna klatka kluczowa produktu (na tokenach czasu i krzywej Big Hat), a nie ruch komponentu.
+- **Pytanie do design systemu:** czy przeglądarka mediów (lightbox) to osobny komponent, czy wariant `Dialog` („media”, pełny ekran, bez tytułu w nagłówku)?

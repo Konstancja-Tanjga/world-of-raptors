@@ -23,3 +23,12 @@ export function srcSetCommons(z: Zdjecie): string | undefined {
 export function polozenie(z: Pick<Zdjecie, 'fokus'>): string {
   return z.fokus ? `${z.fokus[0]}% ${z.fokus[1]}%` : '50% 25%';
 }
+
+/** A lesson tag's `oryginal="2091x1375"`, the original's size; undefined when absent or malformed. */
+export function oryginalZAtrybutu(wartosc: string): [number, number] | undefined {
+  const m = /^(\d+)x(\d+)$/.exec(wartosc.trim());
+  if (!m) return undefined;
+  const w = Number(m[1]);
+  const h = Number(m[2]);
+  return w > 0 && h > 0 ? [w, h] : undefined;
+}

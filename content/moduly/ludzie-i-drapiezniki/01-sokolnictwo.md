@@ -12,7 +12,7 @@ Sokolnicy tradycyjnie dzielą ptaki na dwie grupy:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region%2C_Mongolia.jpg/960px-Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region%2C_Mongolia.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="738" alt="Starszy mężczyzna w tradycyjnej czapce, obok niego orzeł przedni siedzący na jego ręce w grubej rękawicy" podpis="Kazachski myśliwy z orłem przednim, region Bajan-Ölgij w Mongolii" autor="Ceyhun Kavakci" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region,_Mongolia.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region%2C_Mongolia.jpg/960px-Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region%2C_Mongolia.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="738" oryginal="4207x3233" alt="Starszy mężczyzna w tradycyjnej czapce, obok niego orzeł przedni siedzący na jego ręce w grubej rękawicy" podpis="Kazachski myśliwy z orłem przednim, region Bajan-Ölgij w Mongolii" autor="Ceyhun Kavakci" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Kazakh_Eagle_Hunter_with_Golden_Eagle_in_Bayan_Olgii_region,_Mongolia.jpg">
 </zdjecie>
 
 > Podział na dwie grupy odpowiada biologii, którą znasz z [modułu o polowaniu](../polowanie-i-ekologia/README.md): sokoły to specjaliści od ataku z nurkowania, a jastrzębie od krótkiego, zwrotnego pościgu między drzewami.
@@ -26,7 +26,7 @@ Nikt nie wie dokładnie, gdzie i kiedy ktoś pierwszy raz zapolował z ptakiem. 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Abdullah_Khan_Uzbeg_out_hawking.jpg/960px-Abdullah_Khan_Uzbeg_out_hawking.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1371" alt="Miniatura: jeździec na koniu, przed nim sokolnik w białym stroju z ptakiem na ręce, obok pies" podpis="Abdullah Chan II, władca Buchary (XVI w.), na łowach: sokolnik podaje mu ptaka w kapturze" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Abdullah_Khan_Uzbeg_out_hawking.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Abdullah_Khan_Uzbeg_out_hawking.jpg/960px-Abdullah_Khan_Uzbeg_out_hawking.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1371" oryginal="1751x2500" alt="Miniatura: jeździec na koniu, przed nim sokolnik w białym stroju z ptakiem na ręce, obok pies" podpis="Abdullah Chan II, władca Buchary (XVI w.), na łowach: sokolnik podaje mu ptaka w kapturze" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Abdullah_Khan_Uzbeg_out_hawking.jpg">
 </zdjecie>
 
 </margines>
@@ -40,7 +40,7 @@ Pewniejsze jest to, co działo się później:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png/960px-De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="599" alt="Średniowieczna miniatura: król na tronie, przed nim klęczą dwaj sokolnicy z ptakami na rękach" podpis="Fryderyk II z sokolnikami: francuski przekład jego traktatu, rękopis z XIII w." autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png/960px-De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="599" oryginal="2965x1851" alt="Średniowieczna miniatura: król na tronie, przed nim klęczą dwaj sokolnicy z ptakami na rękach" podpis="Fryderyk II z sokolnikami: francuski przekład jego traktatu, rękopis z XIII w." autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:De_arte_venandi_cum_avibus-_BNF_MS._Fr._12400.png">
 </zdjecie>
 
 </margines>
@@ -49,10 +49,10 @@ Pewniejsze jest to, co działo się później:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Falcon%27s_Hood%2C_early_17th_century_%28CH_18386309%29.jpg/960px-Falcon%27s_Hood%2C_early_17th_century_%28CH_18386309%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="792" alt="Skórzany kaptur z haftowanymi bokami, piórkowym pomponem na czubku i rzemieniami do zaciągania" podpis="Kaptur sokolniczy z początku XVII w.: zakrywa ptakowi oczy i go uspokaja" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Falcon%27s_Hood,_early_17th_century_(CH_18386309).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Falcon%27s_Hood%2C_early_17th_century_%28CH_18386309%29.jpg/960px-Falcon%27s_Hood%2C_early_17th_century_%28CH_18386309%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="792" oryginal="4096x3381" alt="Skórzany kaptur z haftowanymi bokami, piórkowym pomponem na czubku i rzemieniami do zaciągania" podpis="Kaptur sokolniczy z początku XVII w.: zakrywa ptakowi oczy i go uspokaja" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Falcon%27s_Hood,_early_17th_century_(CH_18386309).jpg">
 </zdjecie>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/5/5e/De_arte_venandi_cum_avibus%2C_025r%2C_Sperber.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1263" alt="Średniowieczny rysunek krogulca siedzącego na kamieniu, obok podpis accipiter" podpis="Krogulec (łac. accipiter) w rękopisie traktatu Fryderyka II, XIII w." autor="Kaiser Friedrich II." licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:De_arte_venandi_cum_avibus,_025r,_Sperber.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/5/5e/De_arte_venandi_cum_avibus%2C_025r%2C_Sperber.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1263" oryginal="602x792" alt="Średniowieczny rysunek krogulca siedzącego na kamieniu, obok podpis accipiter" podpis="Krogulec (łac. accipiter) w rękopisie traktatu Fryderyka II, XIII w." autor="Kaiser Friedrich II." licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:De_arte_venandi_cum_avibus,_025r,_Sperber.jpg">
 </zdjecie>
 
 </margines>
@@ -95,7 +95,7 @@ Współcześni sokolnicy w Europie używają ptaków **wyhodowanych w niewoli**.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Falconer_with_hawk_scareing_off_pigeons_in_Trafalgar_Square%2C_London_2007-12-15_01.jpg/960px-Falconer_with_hawk_scareing_off_pigeons_in_Trafalgar_Square%2C_London_2007-12-15_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1440" alt="Ciemnobrązowy myszołów towarzyski z rudymi barkami siedzi na grubej skórzanej rękawicy i rozkłada skrzydła" podpis="Myszołów towarzyski na rękawicy sokolnika, który odstrasza gołębie z Trafalgar Square w Londynie" autor="Nic McPhee" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Falconer_with_hawk_scareing_off_pigeons_in_Trafalgar_Square,_London_2007-12-15_01.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Falconer_with_hawk_scareing_off_pigeons_in_Trafalgar_Square%2C_London_2007-12-15_01.jpg/960px-Falconer_with_hawk_scareing_off_pigeons_in_Trafalgar_Square%2C_London_2007-12-15_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1440" oryginal="2304x3456" alt="Ciemnobrązowy myszołów towarzyski z rudymi barkami siedzi na grubej skórzanej rękawicy i rozkłada skrzydła" podpis="Myszołów towarzyski na rękawicy sokolnika, który odstrasza gołębie z Trafalgar Square w Londynie" autor="Nic McPhee" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Falconer_with_hawk_scareing_off_pigeons_in_Trafalgar_Square,_London_2007-12-15_01.jpg">
 </zdjecie>
 
 </margines>

@@ -62,7 +62,7 @@ Status: osiadły w regionie, zimuje.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_%2851408192504%29.jpg/960px-Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_%2851408192504%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Trzmielojad w locie od spodu na tle błękitnego nieba, z rozłożonym, prążkowanym ogonem" podpis="Trzmielojad od spodu: mała, wysunięta głowa i ogon z pasami, dwa wąskie u nasady i szeroki na końcu" autor="Pierre-Marie Epiney" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_(51408192504).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_%2851408192504%29.jpg/960px-Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_%2851408192504%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="1800x1200" alt="Trzmielojad w locie od spodu na tle błękitnego nieba, z rozłożonym, prążkowanym ogonem" podpis="Trzmielojad od spodu: mała, wysunięta głowa i ogon z pasami, dwa wąskie u nasady i szeroki na końcu" autor="Pierre-Marie Epiney" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Aa_Bondr%C3%A9e_apivore_Pernis_apivorus_DSC_1469_(51408192504).jpg">
 </zdjecie>
 
 </margines>
@@ -121,10 +121,10 @@ Status: wędrowny.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Booted_Eagle_%28Hieraaetus_pennatus%29_%2853435153609%29.jpg/960px-Booted_Eagle_%28Hieraaetus_pennatus%29_%2853435153609%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Orzełek w locie od spodu: biały tułów i przód skrzydeł, czarne lotki na tylnej krawędzi i końcach skrzydeł" podpis="Jasny orzełek włochaty: kremowobiały spód, czarne lotki i prosto ścięty, jaśniejszy ogon" autor="Birds of Gilgit-Baltistan from Aliabad, Hunza, Pakistan" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_(Hieraaetus_pennatus)_(53435153609).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Booted_Eagle_%28Hieraaetus_pennatus%29_%2853435153609%29.jpg/960px-Booted_Eagle_%28Hieraaetus_pennatus%29_%2853435153609%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2000x1500" alt="Orzełek w locie od spodu: biały tułów i przód skrzydeł, czarne lotki na tylnej krawędzi i końcach skrzydeł" podpis="Jasny orzełek włochaty: kremowobiały spód, czarne lotki i prosto ścięty, jaśniejszy ogon" autor="Birds of Gilgit-Baltistan from Aliabad, Hunza, Pakistan" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_(Hieraaetus_pennatus)_(53435153609).jpg">
 </zdjecie>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/2/22/Egyptian_Vulture_%28Neophron_percnopterus%29_-_Flickr_-_Lip_Kee_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="768" alt="Biało-czarny ścierwnik w locie od spodu, z klinowatym ogonem i żółtą głową" podpis="Dorosły ścierwnik: biało-czarny jak jasny orzełek, ale z klinowatym białym ogonem i żółtą twarzą" autor="Lip Kee from Singapore, Republic of Singapore" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Egyptian_Vulture_(Neophron_percnopterus)_-_Flickr_-_Lip_Kee_(2).jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/2/22/Egyptian_Vulture_%28Neophron_percnopterus%29_-_Flickr_-_Lip_Kee_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="768" oryginal="800x640" alt="Biało-czarny ścierwnik w locie od spodu, z klinowatym ogonem i żółtą głową" podpis="Dorosły ścierwnik: biało-czarny jak jasny orzełek, ale z klinowatym białym ogonem i żółtą twarzą" autor="Lip Kee from Singapore, Republic of Singapore" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Egyptian_Vulture_(Neophron_percnopterus)_-_Flickr_-_Lip_Kee_(2).jpg">
 </zdjecie>
 
 </margines>
@@ -143,7 +143,7 @@ Gadożer jest dużo większy, nie ma kontrastu „biały spód / czarne lotki”
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Booted_Eagle_I_IMG_3234.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" alt="Ciemnobrązowy orzełek w locie od spodu z rozpostartymi skrzydłami i jasnym, prosto ściętym ogonem" podpis="Ciemny orzełek włochaty: ciemnobrązowy spód, ale ogon wyraźnie jaśniejszy od ciała" autor="J.M.Garg" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_I_IMG_3234.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Booted_Eagle_I_IMG_3234.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="720" oryginal="800x600" alt="Ciemnobrązowy orzełek w locie od spodu z rozpostartymi skrzydłami i jasnym, prosto ściętym ogonem" podpis="Ciemny orzełek włochaty: ciemnobrązowy spód, ale ogon wyraźnie jaśniejszy od ciała" autor="J.M.Garg" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Booted_Eagle_I_IMG_3234.jpg">
 </zdjecie>
 
 </margines>
@@ -154,7 +154,7 @@ Orzełek: ogon prosty i **jaśniejszy od ciała**, „światła do lądowania”
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Circaetus_gallicus%28Short-toed_snake_eagle%29.jpg/960px-Circaetus_gallicus%28Short-toed_snake_eagle%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1242" alt="Gadożer w locie od spodu z jasnymi, gęsto prążkowanymi skrzydłami i ogonem" podpis="Gadożer od spodu: jasny, bez ciemnych plam nadgarstkowych, skrzydła i ogon w rzędach prążków" autor="Shino jacob koottanad" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Circaetus_gallicus(Short-toed_snake_eagle).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Circaetus_gallicus%28Short-toed_snake_eagle%29.jpg/960px-Circaetus_gallicus%28Short-toed_snake_eagle%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1242" oryginal="1660x2147" alt="Gadożer w locie od spodu z jasnymi, gęsto prążkowanymi skrzydłami i ogonem" podpis="Gadożer od spodu: jasny, bez ciemnych plam nadgarstkowych, skrzydła i ogon w rzędach prążków" autor="Shino jacob koottanad" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Circaetus_gallicus(Short-toed_snake_eagle).jpg">
 </zdjecie>
 
 </margines>

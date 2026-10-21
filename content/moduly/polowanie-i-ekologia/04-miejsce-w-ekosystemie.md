@@ -14,7 +14,7 @@ Co z tego wynika:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Feldmaus_Microtus_arvalis.jpg/960px-Feldmaus_Microtus_arvalis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="793" alt="Mały brązowoszary gryzoń z krótkim ogonem i małymi uszami siedzi w trawie" podpis="Nornik zwyczajny, główna ofiara pustułki, myszołowa i wielu sów; jego liczebność co kilka lat gwałtownie rośnie" autor="Dieter TD" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Feldmaus_Microtus_arvalis.jpg/960px-Feldmaus_Microtus_arvalis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="793" oryginal="1360x1123" alt="Mały brązowoszary gryzoń z krótkim ogonem i małymi uszami siedzi w trawie" podpis="Nornik zwyczajny, główna ofiara pustułki, myszołowa i wielu sów; jego liczebność co kilka lat gwałtownie rośnie" autor="Dieter TD" licencja="CC BY-SA 3.0" licencja-url="http://creativecommons.org/licenses/by-sa/3.0/" strona="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg">
 </zdjecie>
 
 </margines>
@@ -43,7 +43,7 @@ Drapieżniki reagują na to na dwa sposoby:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Barn_owl_conservation_in_Palestine.jpg/960px-Barn_owl_conservation_in_Palestine.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="466" alt="Wnętrze drewnianej budki: dorosła płomykówka i kilka puchatych, białych piskląt" podpis="Płomykówka z pisklętami w budce lęgowej w dolinie Jordanu: budki dla płomykówek zastępują tam trutki na gryzonie" autor="Mahmiyat PS" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Barn_owl_conservation_in_Palestine.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Barn_owl_conservation_in_Palestine.jpg/960px-Barn_owl_conservation_in_Palestine.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="466" oryginal="1431x694" alt="Wnętrze drewnianej budki: dorosła płomykówka i kilka puchatych, białych piskląt" podpis="Płomykówka z pisklętami w budce lęgowej w dolinie Jordanu: budki dla płomykówek zastępują tam trutki na gryzonie" autor="Mahmiyat PS" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Barn_owl_conservation_in_Palestine.jpg">
 </zdjecie>
 
 </margines>
@@ -60,7 +60,7 @@ Sępy szybko usuwają padlinę, zanim rozwiną się w niej bakterie i zanim dotr
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg/960px-Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1437" alt="Ciemny sęp z białą kryzą na szyi i łysą szarą głową stoi na piasku" podpis="Sęp bengalski w Radżastanie: jeden z sępów Indii, których liczebność przez diklofenak spadła o ponad 99%" autor="Ravi.sangeetha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Gyps_bengalensis_by_Ravi_Sangeetha_(cropped).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg/960px-Gyps_bengalensis_by_Ravi_Sangeetha_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1437" oryginal="2123x3177" alt="Ciemny sęp z białą kryzą na szyi i łysą szarą głową stoi na piasku" podpis="Sęp bengalski w Radżastanie: jeden z sępów Indii, których liczebność przez diklofenak spadła o ponad 99%" autor="Ravi.sangeetha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Gyps_bengalensis_by_Ravi_Sangeetha_(cropped).jpg">
 </zdjecie>
 
 </margines>
@@ -72,7 +72,7 @@ Drapieżniki konkurują o pokarm, miejsca gniazdowe i terytoria. Czasem konkuren
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg/960px-Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Rozrzucone brązowe i białe pióra na kamienistym zboczu porośniętym roślinami" podpis="Oskubane pióra myszołowa przy gnieździe puchacza w Niemczech: ślad drapieżnictwa wewnątrzgildiowego" autor="Falkmart" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg/960px-Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="1577x1183" alt="Rozrzucone brązowe i białe pióra na kamienistym zboczu porośniętym roślinami" podpis="Oskubane pióra myszołowa przy gnieździe puchacza w Niemczech: ślad drapieżnictwa wewnątrzgildiowego" autor="Falkmart" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Plucking_Common_Buzzard_on_a_Eagle_Owl_breeding_site.jpg">
 </zdjecie>
 
 </margines>

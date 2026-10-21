@@ -4,7 +4,7 @@
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Rohrweihenk%C3%BCken.jpg/960px-Rohrweihenk%C3%BCken.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="750" alt="Kilka różowawo-białych, puchatych piskląt z otwartymi dziobami obok jaja" podpis="Świeżo wyklute pisklęta błotniaka stawowego w pierwszym, białym puchu" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Rohrweihenk%C3%BCken.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Rohrweihenk%C3%BCken.jpg/960px-Rohrweihenk%C3%BCken.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="750" oryginal="3112x2432" alt="Kilka różowawo-białych, puchatych piskląt z otwartymi dziobami obok jaja" podpis="Świeżo wyklute pisklęta błotniaka stawowego w pierwszym, białym puchu" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Rohrweihenk%C3%BCken.jpg">
 </zdjecie>
 
 </margines>
@@ -15,10 +15,10 @@ Rozwój przebiega podobnie u wszystkich gatunków, różni się tylko tempem:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Haliaeetus-albicilla.jpg/960px-Haliaeetus-albicilla.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="805" alt="Szare, puchate pisklę bielika siedzi w płaskim gnieździe z patyków na tle stepu" podpis="Pisklę bielika w drugim, szarym puchu (Ukraina, Rezerwat Czarnomorski)" autor="Yu Moskalenko" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Haliaeetus-albicilla.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Haliaeetus-albicilla.jpg/960px-Haliaeetus-albicilla.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="805" oryginal="1625x1362" alt="Szare, puchate pisklę bielika siedzi w płaskim gnieździe z patyków na tle stepu" podpis="Pisklę bielika w drugim, szarym puchu (Ukraina, Rezerwat Czarnomorski)" autor="Yu Moskalenko" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Haliaeetus-albicilla.jpg">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Buteo_nestling_juedischer_Friedhof.JPG/960px-Buteo_nestling_juedischer_Friedhof.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="724" alt="Dwa młode myszołowy z białym puchem na głowie i brązowymi piórami na skrzydłach" podpis="Młode myszołowy w etapie „łaciatym”: spod puchu wyrastają pióra (Berlin)" autor="J. Dietrich" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_nestling_juedischer_Friedhof.JPG">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Buteo_nestling_juedischer_Friedhof.JPG/960px-Buteo_nestling_juedischer_Friedhof.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="724" oryginal="3030x2286" alt="Dwa młode myszołowy z białym puchem na głowie i brązowymi piórami na skrzydłach" podpis="Młode myszołowy w etapie „łaciatym”: spod puchu wyrastają pióra (Berlin)" autor="J. Dietrich" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_nestling_juedischer_Friedhof.JPG">
 </zdjecie>
 
 </margines>
@@ -35,12 +35,12 @@ Czas od wyklucia do wylotu jest mniej więcej tym dłuższy, im większy ptak:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Haliaeetus_albicilla_-Littleisland%2C_Norway_-juvenile-8a_%282%29.jpg/960px-Haliaeetus_albicilla_-Littleisland%2C_Norway_-juvenile-8a_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="751" alt="Młody, ciemnobrązowy bielik z szeroko rozłożonymi skrzydłami na gnieździe przy skale" podpis="Młody bielik ćwiczy machanie skrzydłami na gnieździe przed wylotem (Norwegia)" autor="Littleisland lighthouse" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Haliaeetus_albicilla_-Littleisland,_Norway_-juvenile-8a_(2).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Haliaeetus_albicilla_-Littleisland%2C_Norway_-juvenile-8a_%282%29.jpg/960px-Haliaeetus_albicilla_-Littleisland%2C_Norway_-juvenile-8a_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="751" oryginal="1024x801" alt="Młody, ciemnobrązowy bielik z szeroko rozłożonymi skrzydłami na gnieździe przy skale" podpis="Młody bielik ćwiczy machanie skrzydłami na gnieździe przed wylotem (Norwegia)" autor="Littleisland lighthouse" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Haliaeetus_albicilla_-Littleisland,_Norway_-juvenile-8a_(2).jpg">
 </zdjecie>
 
 > Sokolnicy i badacze często płeć piskląt sokoła wędrownego poznają po **grubości nóg**: samice, które urosną większe, mają wyraźnie grubsze skoki już w gnieździe. To dlatego przy obrączkowaniu dobiera się dla nich większe obrączki.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Peregrine_hatchling_%283575868738%29.jpg/960px-Peregrine_hatchling_%283575868738%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="480" alt="Puchate białe pisklę sokoła trzymane w dłoni w rękawicy" podpis="Pisklę sokoła wędrownego w dłoni badacza podczas obrączkowania na wieżowcu w Toronto" autor="Matt MacGillivray from Toronto, Canada" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_hatchling_(3575868738).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Peregrine_hatchling_%283575868738%29.jpg/960px-Peregrine_hatchling_%283575868738%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="480" oryginal="2940x1470" alt="Puchate białe pisklę sokoła trzymane w dłoni w rękawicy" podpis="Pisklę sokoła wędrownego w dłoni badacza podczas obrączkowania na wieżowcu w Toronto" autor="Matt MacGillivray from Toronto, Canada" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_hatchling_(3575868738).jpg">
 </zdjecie>
 
 </margines>
@@ -108,7 +108,7 @@ Niezależnie od stref, w Polsce ptaki drapieżne są chronione, a prawo zabrania
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Cal_Falcons_-_Annie_and_Grinnell_mating.png/960px-Cal_Falcons_-_Annie_and_Grinnell_mating.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="532" alt="Dwa sokoły wędrowne na kamiennym gzymsie wieży, jeden ląduje z rozpostartymi skrzydłami" podpis="Para sokołów wędrownych na wieży Sather Tower w Berkeley (Kalifornia), gdzie gniazdo śledzą kamery" autor="Sean Peterson" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Cal_Falcons_-_Annie_and_Grinnell_mating.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Cal_Falcons_-_Annie_and_Grinnell_mating.png/960px-Cal_Falcons_-_Annie_and_Grinnell_mating.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="532" oryginal="3489x1935" alt="Dwa sokoły wędrowne na kamiennym gzymsie wieży, jeden ląduje z rozpostartymi skrzydłami" podpis="Para sokołów wędrownych na wieży Sather Tower w Berkeley (Kalifornia), gdzie gniazdo śledzą kamery" autor="Sean Peterson" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Cal_Falcons_-_Annie_and_Grinnell_mating.png">
 </zdjecie>
 
 </margines>

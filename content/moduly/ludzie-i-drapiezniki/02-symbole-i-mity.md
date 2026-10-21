@@ -13,10 +13,10 @@ To **legenda**, a nie opis prawdziwych wydarzeń. Motyw trzech braci pojawia si�
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Przemysl_II_seal_1295_%2816839933%29.png/960px-Przemysl_II_seal_1295_%2816839933%29.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="947" alt="Okrągła pieczęć z tarczą, na której widnieje orzeł z rozpostartymi skrzydłami, wokół napis" podpis="Pieczęć Przemysła II z 1295 r. z orłem w koronie (rycina z XIX-wiecznego wydawnictwa)" autor="Franciszek Piekosiński" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Przemysl_II_seal_1295_(16839933).png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Przemysl_II_seal_1295_%2816839933%29.png/960px-Przemysl_II_seal_1295_%2816839933%29.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="947" oryginal="1137x1122" alt="Okrągła pieczęć z tarczą, na której widnieje orzeł z rozpostartymi skrzydłami, wokół napis" podpis="Pieczęć Przemysła II z 1295 r. z orłem w koronie (rycina z XIX-wiecznego wydawnictwa)" autor="Franciszek Piekosiński" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Przemysl_II_seal_1295_(16839933).png">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Coat_of_arms_of_Poland-official.png/960px-Coat_of_arms_of_Poland-official.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1135" alt="Biały orzeł ze złotą koroną, dziobem i szponami, z rozpostartymi skrzydłami, na czerwonej tarczy" podpis="Godło Rzeczypospolitej Polskiej: biały orzeł w koronie na czerwonym polu" autor="Rząd RP, opracowanie cyfrowe: Aotearoa, DeJotPe" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Poland-official.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Coat_of_arms_of_Poland-official.png/960px-Coat_of_arms_of_Poland-official.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1135" oryginal="1938x2292" alt="Biały orzeł ze złotą koroną, dziobem i szponami, z rozpostartymi skrzydłami, na czerwonej tarczy" podpis="Godło Rzeczypospolitej Polskiej: biały orzeł w koronie na czerwonym polu" autor="Rząd RP, opracowanie cyfrowe: Aotearoa, DeJotPe" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Poland-official.png">
 </zdjecie>
 
 </margines>
@@ -29,7 +29,7 @@ To **legenda**, a nie opis prawdziwych wydarzeń. Motyw trzech braci pojawia si�
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg/960px-Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="587" alt="Dorosły bielik leci nisko nad łąką, widać jasną głowę, żółty dziób, białe pióra ogona i brązowe skrzydła" podpis="Dorosły bielik w Polsce: jasna głowa, żółty dziób i biały ogon" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Adult_white-tailed_eagle_(Haliaeetus_albicilla)_of_central_Poland_in_flight_(2).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg/960px-Adult_white-tailed_eagle_%28Haliaeetus_albicilla%29_of_central_Poland_in_flight_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="587" oryginal="6720x4109" alt="Dorosły bielik leci nisko nad łąką, widać jasną głowę, żółty dziób, białe pióra ogona i brązowe skrzydła" podpis="Dorosły bielik w Polsce: jasna głowa, żółty dziób i biały ogon" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Adult_white-tailed_eagle_(Haliaeetus_albicilla)_of_central_Poland_in_flight_(2).jpg">
 </zdjecie>
 
 > Bielik nie jest „orłem” w sensie biologicznym, tylko osobnym rodzajem *Haliaeetus*, spokrewnionym z kaniami. Więcej o systematyce w [module A1](../kim-sa-drapiezniki/README.md).
@@ -62,7 +62,7 @@ W chrześcijaństwie orzeł jest symbolem **św. Jana Ewangelisty**, a w mitolog
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Edfu_Horus_R04.jpg/960px-Edfu_Horus_R04.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1873" alt="Granitowy posąg sokoła w koronie faraona przed ścianą egipskiej świątyni" podpis="Horus jako sokół w podwójnej koronie: granitowy posąg w świątyni w Edfu" autor="Marc Ryckaert" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Edfu_Horus_R04.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Edfu_Horus_R04.jpg/960px-Edfu_Horus_R04.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1873" oryginal="2490x4858" alt="Granitowy posąg sokoła w koronie faraona przed ścianą egipskiej świątyni" podpis="Horus jako sokół w podwójnej koronie: granitowy posąg w świątyni w Edfu" autor="Marc Ryckaert" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Edfu_Horus_R04.jpg">
 </zdjecie>
 
 </margines>
@@ -73,7 +73,7 @@ Jaki to sokół? Wizerunki są stylizowane. Najczęściej wskazuje się **sokoł
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Garuda_Pancasila.jpg/960px-Garuda_Pancasila.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="861" alt="Złoty posąg mitycznego ptaka z rozpostartymi skrzydłami i tarczą na piersi" podpis="Garuda Pancasila, godło Indonezji: posąg w Pomniku Narodowym w Dżakarcie" autor="Gunawan Kartapranata" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Garuda_Pancasila.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Garuda_Pancasila.jpg/960px-Garuda_Pancasila.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="861" oryginal="1942x1742" alt="Złoty posąg mitycznego ptaka z rozpostartymi skrzydłami i tarczą na piersi" podpis="Garuda Pancasila, godło Indonezji: posąg w Pomniku Narodowym w Dżakarcie" autor="Gunawan Kartapranata" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Garuda_Pancasila.jpg">
 </zdjecie>
 
 </margines>
@@ -84,7 +84,7 @@ Jaki to sokół? Wizerunki są stylizowane. Najczęściej wskazuje się **sokoł
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Athens_-_165-42_BC_-_silver_tetradrachm_-_head_of_Athena_-_owl_on_amphora-_M%C3%BCnchen_AS.jpg/960px-Athens_-_165-42_BC_-_silver_tetradrachm_-_head_of_Athena_-_owl_on_amphora-_M%C3%BCnchen_AS.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="960" alt="Srebrna moneta z wizerunkiem małej sowy stojącej na amforze, wokół greckie litery i wieniec" podpis="Sowa Ateny na srebrnej tetradrachmie ateńskiej, II–I w. p.n.e." autor="ArchaiOptix" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Athens_-_165-42_BC_-_silver_tetradrachm_-_head_of_Athena_-_owl_on_amphora-_M%C3%BCnchen_AS.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Athens_-_165-42_BC_-_silver_tetradrachm_-_head_of_Athena_-_owl_on_amphora-_M%C3%BCnchen_AS.jpg/960px-Athens_-_165-42_BC_-_silver_tetradrachm_-_head_of_Athena_-_owl_on_amphora-_M%C3%BCnchen_AS.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="960" oryginal="1801x1801" alt="Srebrna moneta z wizerunkiem małej sowy stojącej na amforze, wokół greckie litery i wieniec" podpis="Sowa Ateny na srebrnej tetradrachmie ateńskiej, II–I w. p.n.e." autor="ArchaiOptix" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Athens_-_165-42_BC_-_silver_tetradrachm_-_head_of_Athena_-_owl_on_amphora-_M%C3%BCnchen_AS.jpg">
 </zdjecie>
 
 </margines>

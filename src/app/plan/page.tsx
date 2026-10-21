@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Markdown } from '@/components/Markdown';
+import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { Kurs } from '@/components/start/Kurs';
 import { czytajMarkdown, gotoweModuly } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
@@ -29,6 +30,7 @@ export default async function PlanPage() {
       <div className="plan__tekst">
         <Markdown source={plan} baseDir="" />
       </div>
+      <PodgladZdjec />
     </div>
   );
 }
