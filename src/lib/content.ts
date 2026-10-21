@@ -817,6 +817,10 @@ function sprawdzSpojnosc() {
     }
     for (const m of g.mylona_z) {
       if (!idGatunkow.has(m) || m === g.id) bledy.push(`gatunki.json: ${g.id}: mylona_z wskazuje „${m}”, którego nie ma w atlasie`);
+      // The plate compares look-alikes cue by cue, and owls and diurnal raptors have different cues.
+      else if (gatunki.find((x) => x.id === m)?.aktywnosc !== g.aktywnosc) {
+        bledy.push(`gatunki.json: ${g.id}: mylona_z „${m}” to ptak ${g.aktywnosc === 'nocny' ? 'dzienny' : 'nocny'}, a plansza porównuje tylko cechy tego samego rodzaju`);
+      }
     }
     if (!SYLWETKI[g.id]) bledy.push(`sylwetki.ts: brak sylwetki gatunku ${g.id}`);
     if ((g.aktywnosc === 'dzienny') !== Boolean(STYL_LOTU[g.id])) {

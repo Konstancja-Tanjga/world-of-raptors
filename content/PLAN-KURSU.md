@@ -42,7 +42,7 @@ Moduły B2–B6 mają wspólne gatunki. Wszystkie drapieżniki są w jednym [atl
 ---
 
 ## Moja checklista
-Osobna część aplikacji: lista wszystkich gatunków z atlasu, na której odhaczam, co zaobserwowałam. Przy każdej obserwacji: data, miejsce, notatka. Filtry: region, grupa, dzienne/nocne, zaobserwowane/brakujące. Na górze postęp, np. „23 z 42 gatunków”.
+Osobna część aplikacji: lista wszystkich gatunków z atlasu, na której odhaczam, co zaobserwowałam. Przy każdej obserwacji: data, miejsce, notatka. Filtry: region, grupa, dzienne/nocne, zaobserwowane/brakujące. Na górze postęp, np. „23 z 45 gatunków”.
 
 ---
 

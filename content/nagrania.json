@@ -59,6 +59,18 @@
     "sekundy": 11,
     "zatwierdzone": false
   },
+  "puszczyk-mszarny/samiec": {
+    "gatunek": "puszczyk-mszarny",
+    "opis": "Samiec: głos terytorialny, Szwecja, kwiecień 2025",
+    "src": "/nagrania/strix-nebulosa-xc986000.mp3",
+    "autor": "Robert Petersen",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/986000",
+    "xc": 986000,
+    "sekundy": 14,
+    "zatwierdzone": false
+  },
   "plomykowka/glos": {
     "gatunek": "plomykowka",
     "opis": "Wrzask w locie",
@@ -163,6 +175,18 @@
     "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "strona": "https://commons.wikimedia.org/wiki/File:S%C3%B3weczka-samiec.ogg",
     "sekundy": 183,
+    "zatwierdzone": false
+  },
+  "sowa-jarzebata/samiec": {
+    "gatunek": "sowa-jarzebata",
+    "opis": "Samiec: trel godowy, Laponia fińska, maj 2024",
+    "src": "/nagrania/surnia-ulula-xc1063279.mp3",
+    "autor": "Juan Carlos Albero",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/1063279",
+    "xc": 1063279,
+    "sekundy": 7,
     "zatwierdzone": false
   }
 }

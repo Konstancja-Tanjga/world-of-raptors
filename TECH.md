@@ -27,7 +27,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 content/
   PLAN-KURSU.md            plan kursu
   moduly.json              ścieżki, moduły, lekcje (kolejność i tytuły)
-  gatunki.json             atlas: 42 drapieżniki (regiony, aktywność, cechy, pary do pomylenia, miejsca, rozpiętość i długość ciała)
+  gatunki.json             atlas: 45 drapieżników (regiony, aktywność, cechy, pary do pomylenia, miejsca, rozpiętość i długość ciała)
   miarka.json              ptaki odniesienia modułu B7 (od wróbla do bociana): nie są drapieżnikami, nie trafiają do atlasu ani fiszek
   ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami (filtr „Ptaki mokradeł”): nazwy, grupa, cechy, miejsca
   moduly/<slug>/README.md  opis modułu

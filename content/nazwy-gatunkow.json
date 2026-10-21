@@ -764,6 +764,20 @@
   "sv": "kattuggla",
   "uk": "сова сіра"
  },
+ "puszczyk-mszarny": {
+  "cs": "puštík vousatý",
+  "da": "Lapugle",
+  "de": "Bartkauz",
+  "fi": "lapinpöllö",
+  "fr": "chouette lapone",
+  "hu": "szakállas bagoly",
+  "nb": "lappugle",
+  "nl": "Laplanduil",
+  "pt": "Coruja-lapónica",
+  "sk": "sova tmavá",
+  "sv": "lappuggla",
+  "uk": "Сова бородата"
+ },
  "puszczyk-uralski": {
   "cs": "puštík bělavý",
   "da": "Slagugle",
@@ -957,6 +971,35 @@
   "sv": "pilgrimsfalk",
   "uk": "сапсан"
  },
+ "sowa-jarzebata": {
+  "cs": "sovice krahujová",
+  "da": "Høgeugle",
+  "de": "Sperbereule",
+  "fi": "hiiripöllö",
+  "fr": "Chouette épervière",
+  "hu": "karvalybagoly",
+  "nb": "haukugle",
+  "nl": "Sperweruil",
+  "pt": "Coruja-gavião",
+  "sk": "krahuľa hôrna",
+  "sv": "hökuggla",
+  "uk": "Сова яструбина"
+ },
+ "sowa-sniezna": {
+  "cs": "sovice sněžní",
+  "da": "Sneugle",
+  "de": "Schnee-Eule",
+  "fi": "tunturipöllö",
+  "fr": "Harfang des neiges",
+  "hu": "hóbagoly",
+  "nb": "snøugle",
+  "nl": "sneeuwuil",
+  "pt": "coruja-das-neves",
+  "ro": "Bufniță polară",
+  "sk": "Belaňa tundrová",
+  "sv": "fjälluggla",
+  "uk": "Сова біла"
+ },
  "soweczka": {
   "cs": "kulíšek nejmenší",
   "da": "Spurveugle",
@@ -979,7 +1022,7 @@
   "fr": "Pipit farlouse",
   "hu": "réti pityer",
   "nb": "heipiplerke",
-  "nl": "Graspieper",
+  "nl": "graspieper",
   "pt": "Petinha-dos-prados",
   "ro": "Fâsă de luncă",
   "sk": "ľabtuška lúčna",
@@ -1130,7 +1173,7 @@
   "nb": "isfugl",
   "nl": "ijsvogel",
   "pt": "Guarda-rios-comum",
-  "ro": "pescăraș albastru",
+  "ro": "Pescăraș albastru",
   "sk": "rybárik riečny",
   "sv": "kungsfiskare",
   "uk": "рибалочка блакитний"
