@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ViewTransition } from 'react';
 import { Breadcrumbs } from '@/components/ds';
 import { Photo } from '@/components/Photo';
+import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
 import { linkiGatunku } from '@/lib/media';
 import { MIEJSCA, NAZWY_GRUP_MOKRADEL, type PtakMokradel, type Modul, type ZdjeciaGatunku } from '@/lib/types';
@@ -108,7 +109,7 @@ export function PtakMokradelStrona({
                 Zdjęcia
               </h2>
             </div>
-            <div className={z.lot && z.cecha ? 'gatunek__zdjecia gatunek__zdjecia--trzy' : 'gatunek__zdjecia'}>
+            <div data-galeria className={z.lot && z.cecha ? 'gatunek__zdjecia gatunek__zdjecia--trzy' : 'gatunek__zdjecia'}>
               {z.lot && <Photo zdjecie={z.lot} alt={`${p.pl} w locie`} podpis="W locie" />}
               <Photo zdjecie={z.siedzacy} alt={`${p.pl}, ptak siedzący`} podpis="Siedzący" />
               {z.cecha && <Photo zdjecie={z.cecha} alt={z.cecha.alt} podpis={z.cecha.podpis} />}
@@ -159,6 +160,7 @@ export function PtakMokradelStrona({
           </div>
         </section>
       </div>
+      <PodgladZdjec />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
 import miarkaJson from '../../content/miarka.json';
+import { odkoduj, problemyTagow } from './tagi';
 import type { Fiszki, ZapisFiszki } from './fiszki';
 import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbiory';
 import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
@@ -666,15 +667,6 @@ export async function statystykiKursu() {
   };
 }
 
-/** HTML entities in a tag attribute (`&amp;`, `&#x27;`, `&quot;`…) as the characters they stand for. */
-function odkoduj(tekst: string) {
-  const nazwane: Record<string, string> = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: '\u00a0' };
-  return tekst.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (calosc, kod: string) => {
-    if (kod[0] === '#') return String.fromCodePoint(kod[1].toLowerCase() === 'x' ? parseInt(kod.slice(2), 16) : Number(kod.slice(1)));
-    return nazwane[kod.toLowerCase()] ?? calosc;
-  });
-}
-
 /**
  * Everyone whose photos the course shows, from the atlas and from lesson
  * tags: once each, in Polish alphabetical order, without the Flickr-style
@@ -970,6 +962,12 @@ function sprawdzSpojnosc() {
   }
   const zNiczego = zdobyteWStanie(stanNieba(STRUKTURA_NIEBA, {}, {}, {}));
   if (zNiczego.length) bledy.push(`odznaki.ts: bez żadnego postępu byłoby już zdobyte: ${zNiczego.join(', ')}`);
+  for (const m of gotoweModuly) {
+    for (const plik of ['README', ...m.lekcje.map((l) => l.slug)]) {
+      const sciezka = `moduly/${m.slug}/${plik}.md`;
+      bledy.push(...problemyTagow(czytajSync(sciezka), sciezka));
+    }
+  }
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
   for (const slug of [MODUL_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul]) {
     if (!gotowe.has(slug)) bledy.push(`content.ts: kod linkuje do modułu „${slug}”, którego nie ma wśród gotowych`);

@@ -29,7 +29,7 @@ Trzmielojad przylatuje z Afryki późno, zwykle w maju, kiedy kolonie os zaczyna
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Black-chested_snake-eagle_%28Circaetus_pectoralis%29.jpg/960px-Black-chested_snake-eagle_%28Circaetus_pectoralis%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="787" alt="Brązowy orzeł z dużymi żółtymi oczami siedzi na słupku, z dzioba zwisa mu długi wąż" podpis="Gadożer czarnopierśny z Etiopii, afrykański krewny naszego gadożera, połyka węża w całości od głowy" autor="Charles J. Sharp" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Black-chested_snake-eagle_(Circaetus_pectoralis).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Black-chested_snake-eagle_%28Circaetus_pectoralis%29.jpg/960px-Black-chested_snake-eagle_%28Circaetus_pectoralis%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="787" oryginal="2659x2180" alt="Brązowy orzeł z dużymi żółtymi oczami siedzi na słupku, z dzioba zwisa mu długi wąż" podpis="Gadożer czarnopierśny z Etiopii, afrykański krewny naszego gadożera, połyka węża w całości od głowy" autor="Charles J. Sharp" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Black-chested_snake-eagle_(Circaetus_pectoralis).jpg">
 </zdjecie>
 
 </margines>
@@ -49,7 +49,7 @@ Gadożer przylatuje z Afryki wiosną, gdy robi się na tyle ciepło, że gady st
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1228" alt="Stara czarno-biała rycina: duży orzeł w locie atakuje od góry mniejszego ptaka, pod nimi spada ryba" podpis="Kleptopasożytnictwo na drzeworycie z 1832 r.: bielik amerykański atakuje rybołowa, który upuszcza rybę" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1228" oryginal="950x1215" alt="Stara czarno-biała rycina: duży orzeł w locie atakuje od góry mniejszego ptaka, pod nimi spada ryba" podpis="Kleptopasożytnictwo na drzeworycie z 1832 r.: bielik amerykański atakuje rybołowa, który upuszcza rybę" autor="autor nieznany" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Penny_Magazine_1832_245_White-Headed_Eagle_attacking_Fish-Hawk.jpg">
 </zdjecie>
 
 </margines>
@@ -75,7 +75,7 @@ Sępy nie zabijają, szukają padliny, szybując godzinami w kominach termicznyc
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/African_white-backed_vultures_%28Gyps_africanus%29_feeding_on_wildebeest_carcass_with_marabou_stork_and_R%C3%BCppell%27s_griffon_vulture_Serengeti.jpg/960px-African_white-backed_vultures_%28Gyps_africanus%29_feeding_on_wildebeest_carcass_with_marabou_stork_and_R%C3%BCppell%27s_griffon_vulture_Serengeti.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Grupa brązowych sępów tłoczy się przy padlinie na trawiastej sawannie, obok stoi wysoki marabut" podpis="Sępy afrykańskie i sęp plamisty z marabutem przy padlinie gnu w Serengeti: przy jednej tuszy żeruje kilka gatunków" autor="Charles J. Sharp" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:African_white-backed_vultures_(Gyps_africanus)_feeding_on_wildebeest_carcass_with_marabou_stork_and_R%C3%BCppell%27s_griffon_vulture_Serengeti.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/African_white-backed_vultures_%28Gyps_africanus%29_feeding_on_wildebeest_carcass_with_marabou_stork_and_R%C3%BCppell%27s_griffon_vulture_Serengeti.jpg/960px-African_white-backed_vultures_%28Gyps_africanus%29_feeding_on_wildebeest_carcass_with_marabou_stork_and_R%C3%BCppell%27s_griffon_vulture_Serengeti.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="5897x3932" alt="Grupa brązowych sępów tłoczy się przy padlinie na trawiastej sawannie, obok stoi wysoki marabut" podpis="Sępy afrykańskie i sęp plamisty z marabutem przy padlinie gnu w Serengeti: przy jednej tuszy żeruje kilka gatunków" autor="Charles J. Sharp" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:African_white-backed_vultures_(Gyps_africanus)_feeding_on_wildebeest_carcass_with_marabou_stork_and_R%C3%BCppell%27s_griffon_vulture_Serengeti.jpg">
 </zdjecie>
 
 </margines>
@@ -95,7 +95,7 @@ Sępy mają bardzo kwaśny żołądek, który niszczy wiele bakterii obecnych w 
 
 > Ścierwnik w Afryce potrafi rozbijać jaja strusi, rzucając w nie kamieniami. To jeden z nielicznych przykładów używania narzędzi przez ptaki drapieżne.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Aasgier_%2848794413228%29_%28cropped%29.jpg/960px-Aasgier_%2848794413228%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="618" alt="Biały sęp z żółtą twarzą trzyma w dziobie kamień i stoi obok dużego białego jaja na trawie" podpis="Ścierwnik z kamieniem w dziobie przy dużym jaju (ptak w niewoli, pokaz tego naturalnego zachowania)" autor="Tim Strater from Rotterdam, Nederland" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Aasgier_(48794413228)_(cropped).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Aasgier_%2848794413228%29_%28cropped%29.jpg/960px-Aasgier_%2848794413228%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="618" oryginal="3474x2238" alt="Biały sęp z żółtą twarzą trzyma w dziobie kamień i stoi obok dużego białego jaja na trawie" podpis="Ścierwnik z kamieniem w dziobie przy dużym jaju (ptak w niewoli, pokaz tego naturalnego zachowania)" autor="Tim Strater from Rotterdam, Nederland" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Aasgier_(48794413228)_(cropped).jpg">
 </zdjecie>
 
 </margines>

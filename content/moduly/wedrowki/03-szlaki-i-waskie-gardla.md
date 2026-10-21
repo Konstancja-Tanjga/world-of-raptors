@@ -23,7 +23,7 @@ Tutaj tylko krótko, bo cieśnina ma cały [moduł B3](../gibraltar/README.md). 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Flock_of_storks_migrating_over_Istanbul%2C_Turkey.JPG/960px-Flock_of_storks_migrating_over_Istanbul%2C_Turkey.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="710" alt="Setki ciemnych sylwetek dużych ptaków rozsianych po błękitnym niebie" podpis="Stado bocianów nad Stambułem: jesienią Bosfor przekraczają setki tysięcy ptaków szybujących, a wśród nich trzmielojady i orliki" autor="Tema" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Flock_of_storks_migrating_over_Istanbul,_Turkey.JPG">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Flock_of_storks_migrating_over_Istanbul%2C_Turkey.JPG/960px-Flock_of_storks_migrating_over_Istanbul%2C_Turkey.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="710" oryginal="3218x2379" alt="Setki ciemnych sylwetek dużych ptaków rozsianych po błękitnym niebie" podpis="Stado bocianów nad Stambułem: jesienią Bosfor przekraczają setki tysięcy ptaków szybujących, a wśród nich trzmielojady i orliki" autor="Tema" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Flock_of_storks_migrating_over_Istanbul,_Turkey.JPG">
 </zdjecie>
 
 </margines>
@@ -35,7 +35,7 @@ Z Turcji ptaki lecą wzdłuż wschodniego wybrzeża Morza Śródziemnego, przez 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Buteo_buteo_vulpinus%2C_Kruger_NP_%286608140453%29.jpg/960px-Buteo_buteo_vulpinus%2C_Kruger_NP_%286608140453%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="967" alt="Brązowy myszołów z rdzawym odcieniem siedzi na suchej gałęzi na tle jasnego nieba" podpis="Myszołów stepowy na zimowisku w Parku Krugera (RPA): ten podgatunek przelatuje przez Ejlat i Batumi w setkach tysięcy" autor="Mike&#x27;s Birds from Riverside, CA, US" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_buteo_vulpinus,_Kruger_NP_(6608140453).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Buteo_buteo_vulpinus%2C_Kruger_NP_%286608140453%29.jpg/960px-Buteo_buteo_vulpinus%2C_Kruger_NP_%286608140453%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="967" oryginal="1131x1139" alt="Brązowy myszołów z rdzawym odcieniem siedzi na suchej gałęzi na tle jasnego nieba" podpis="Myszołów stepowy na zimowisku w Parku Krugera (RPA): ten podgatunek przelatuje przez Ejlat i Batumi w setkach tysięcy" autor="Mike&#x27;s Birds from Riverside, CA, US" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Buteo_buteo_vulpinus,_Kruger_NP_(6608140453).jpg">
 </zdjecie>
 
 </margines>
@@ -49,7 +49,7 @@ Między Morzem Czarnym a górami Małego Kaukazu zostaje wąski pas lądu. Ptaki
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Falsterbo_fyr.jpg/960px-Falsterbo_fyr.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1434" alt="Ceglana latarnia morska z czarnym pasem, przed nią budynek i baner z napisem Falsterbo Fågelstation" podpis="Latarnia morska w Falsterbo ze stacją ornitologiczną (Falsterbo Fågelstation), gdzie przelot liczy się od dziesięcioleci" autor="Sven Rosborn" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Falsterbo_fyr.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Falsterbo_fyr.jpg/960px-Falsterbo_fyr.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1434" oryginal="2592x3872" alt="Ceglana latarnia morska z czarnym pasem, przed nią budynek i baner z napisem Falsterbo Fågelstation" podpis="Latarnia morska w Falsterbo ze stacją ornitologiczną (Falsterbo Fågelstation), gdzie przelot liczy się od dziesięcioleci" autor="Sven Rosborn" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Falsterbo_fyr.jpg">
 </zdjecie>
 
 </margines>
@@ -92,7 +92,7 @@ Przez Europę Środkową przebiega **przedział wędrówkowy** (ang. *migratory 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Honey_Buzzard_juvenile_Buskett_08_September_2022_-_Alex_Casha.jpg/960px-Honey_Buzzard_juvenile_Buskett_08_September_2022_-_Alex_Casha.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="726" alt="Brązowy drapieżnik z prążkowanym ogonem i skrzydłami leci na tle nieba" podpis="Młody trzmielojad nad Maltą we wrześniu: na środkowej trasie przez Morze Śródziemne młode ptaki częściej ryzykują długi lot nad wodą" autor="Alex Casha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_Buzzard_juvenile_Buskett_08_September_2022_-_Alex_Casha.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Honey_Buzzard_juvenile_Buskett_08_September_2022_-_Alex_Casha.jpg/960px-Honey_Buzzard_juvenile_Buskett_08_September_2022_-_Alex_Casha.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="726" oryginal="4825x3650" alt="Brązowy drapieżnik z prążkowanym ogonem i skrzydłami leci na tle nieba" podpis="Młody trzmielojad nad Maltą we wrześniu: na środkowej trasie przez Morze Śródziemne młode ptaki częściej ryzykują długi lot nad wodą" autor="Alex Casha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_Buzzard_juvenile_Buskett_08_September_2022_-_Alex_Casha.jpg">
 </zdjecie>
 
 </margines>

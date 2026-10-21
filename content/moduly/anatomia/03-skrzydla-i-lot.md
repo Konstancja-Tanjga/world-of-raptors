@@ -25,7 +25,7 @@ W [B1 · Metoda](../metoda/README.md) uczysz się rozpoznawać grupy po sylwetce
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Flying_griffon_vulture.jpg/960px-Flying_griffon_vulture.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Duży brązowy sęp z jasną głową leci z szeroko rozpostartymi skrzydłami, na ich końcach wyraźnie rozdzielone długie pióra" podpis="Sęp płowy szybuje: na końcach szerokich skrzydeł rozcapierzone lotki I-rzędowe, czyli „palce”" autor="Вых Пыхманн" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Flying_griffon_vulture.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Flying_griffon_vulture.jpg/960px-Flying_griffon_vulture.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="2308x1539" alt="Duży brązowy sęp z jasną głową leci z szeroko rozpostartymi skrzydłami, na ich końcach wyraźnie rozdzielone długie pióra" podpis="Sęp płowy szybuje: na końcach szerokich skrzydeł rozcapierzone lotki I-rzędowe, czyli „palce”" autor="Вых Пыхманн" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Flying_griffon_vulture.jpg">
 </zdjecie>
 
 </margines>
@@ -41,7 +41,7 @@ Sokoły nie mają „palców”: ich spiczaste skrzydło z niewielkimi wcięciam
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/1/15/Accipiter_nisus_-in_flight-8.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="641" alt="Mały drapieżnik widziany od dołu na tle nieba, z krótkimi, prążkowanymi skrzydłami i długim ogonem" podpis="Krogulec od spodu: krótkie, zaokrąglone skrzydła i długi, prążkowany ogon do zwrotów między drzewami" autor="Christian Knoch" licencja="CC BY-SA 2.0 de" licencja-url="https://creativecommons.org/licenses/by-sa/2.0/de/deed.en" strona="https://commons.wikimedia.org/wiki/File:Accipiter_nisus_-in_flight-8.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/1/15/Accipiter_nisus_-in_flight-8.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="641" oryginal="900x601" alt="Mały drapieżnik widziany od dołu na tle nieba, z krótkimi, prążkowanymi skrzydłami i długim ogonem" podpis="Krogulec od spodu: krótkie, zaokrąglone skrzydła i długi, prążkowany ogon do zwrotów między drzewami" autor="Christian Knoch" licencja="CC BY-SA 2.0 de" licencja-url="https://creativecommons.org/licenses/by-sa/2.0/de/deed.en" strona="https://commons.wikimedia.org/wiki/File:Accipiter_nisus_-in_flight-8.jpg">
 </zdjecie>
 
 </margines>
@@ -53,7 +53,7 @@ Sokoły nie mają „palców”: ich spiczaste skrzydło z niewielkimi wcięciam
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Circus_aeruginosus_female-crop.jpg/960px-Circus_aeruginosus_female-crop.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="690" alt="Ciemnobrązowy drapieżnik z jasną głową leci tuż nad suchymi trzcinami z uniesionymi skrzydłami" podpis="Samica błotniaka stawowego nisko nad trzcinami: długie, lekkie skrzydła pozwalają lecieć wolno i opaść na zdobycz" autor="Martien Brand from Mariënberg, The Netherlands" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Circus_aeruginosus_female-crop.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Circus_aeruginosus_female-crop.jpg/960px-Circus_aeruginosus_female-crop.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="690" oryginal="1024x736" alt="Ciemnobrązowy drapieżnik z jasną głową leci tuż nad suchymi trzcinami z uniesionymi skrzydłami" podpis="Samica błotniaka stawowego nisko nad trzcinami: długie, lekkie skrzydła pozwalają lecieć wolno i opaść na zdobycz" autor="Martien Brand from Mariënberg, The Netherlands" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Circus_aeruginosus_female-crop.jpg">
 </zdjecie>
 
 </margines>
@@ -84,7 +84,7 @@ Pióra się zużywają: blakną w słońcu, ścierają się i łamią. Dlatego p
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Honey_buzzard%2C_Krantzkloof_NR%2C_Anthony_Paton.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1280" alt="Drapieżnik w locie od spodu, w prążkowanych skrzydłach widać przerwy między lotkami różnej długości" podpis="Pierzący się samiec trzmielojada na zimowisku w RPA: w skrzydłach widać luki po wymienianych lotkach" autor="APaton62" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard,_Krantzkloof_NR,_Anthony_Paton.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Honey_buzzard%2C_Krantzkloof_NR%2C_Anthony_Paton.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1280" oryginal="843x1124" alt="Drapieżnik w locie od spodu, w prążkowanych skrzydłach widać przerwy między lotkami różnej długości" podpis="Pierzący się samiec trzmielojada na zimowisku w RPA: w skrzydłach widać luki po wymienianych lotkach" autor="APaton62" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Honey_buzzard,_Krantzkloof_NR,_Anthony_Paton.jpg">
 </zdjecie>
 
 > Sowy mają specjalną budowę piór wyciszającą lot (grzebyk, postrzępiona krawędź, aksamitna powierzchnia). Dzienne drapieżniki jej nie mają, bo ich zdobycz zwykle i tak widzi atak. Zobacz [moduł o sowach](../sowy/01-kim-sa-sowy.md).

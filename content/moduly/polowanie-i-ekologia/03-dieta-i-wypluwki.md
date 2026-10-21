@@ -6,7 +6,7 @@
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Falco_tinnunculus_Paslieres_20190601_110820.jpg/960px-Falco_tinnunculus_Paslieres_20190601_110820.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="639" alt="Rdzawa pustułka stoi na dachówkach i trzyma w dziobie małego brązowego gryzonia" podpis="Samica pustułki z nornikiem w dziobie: 2–3 takie gryzonie dziennie pokrywają jej zapotrzebowanie" autor="Marie-Lan Nguyen" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Falco_tinnunculus_Paslieres_20190601_110820.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Falco_tinnunculus_Paslieres_20190601_110820.jpg/960px-Falco_tinnunculus_Paslieres_20190601_110820.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="639" oryginal="2000x1331" alt="Rdzawa pustułka stoi na dachówkach i trzyma w dziobie małego brązowego gryzonia" podpis="Samica pustułki z nornikiem w dziobie: 2–3 takie gryzonie dziennie pokrywają jej zapotrzebowanie" autor="Marie-Lan Nguyen" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Falco_tinnunculus_Paslieres_20190601_110820.jpg">
 </zdjecie>
 
 > Wiele drapieżników ma **wole**: rozszerzenie przełyku, w którym gromadzi pokarm. Najedzony ptak ma wyraźne „wybrzuszenie” na piersi. U sępów po uczcie wole widać z daleka.
@@ -24,7 +24,7 @@
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Eagle_Owl_Pellet.jpg/960px-Eagle_Owl_Pellet.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Podłużna, szara wypluwka ze zbitej sierści z wystającym piórem leży na kamieniu" podpis="Stara wypluwka puchacza (11,7 cm) z rezerwatu w Niemczech: zbita sierść z kośćmi i piórem" autor="Martin Lindner" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Eagle_Owl_Pellet.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Eagle_Owl_Pellet.jpg/960px-Eagle_Owl_Pellet.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2048x1536" alt="Podłużna, szara wypluwka ze zbitej sierści z wystającym piórem leży na kamieniu" podpis="Stara wypluwka puchacza (11,7 cm) z rezerwatu w Niemczech: zbita sierść z kośćmi i piórem" autor="Martin Lindner" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Eagle_Owl_Pellet.jpg">
 </zdjecie>
 
 </margines>
@@ -41,10 +41,10 @@ Dlatego klasyczny rozbiór wypluwek dotyczy przede wszystkim **sów**: płomykó
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/6/68/Craneo-Microtus_arvalis_asturianus-Lateralis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="605" alt="Jasna czaszka małego gryzonia z profilu z długimi pomarańczowawymi siekaczami" podpis="Czaszka nornika zwyczajnego z boku: duże, zakrzywione siekacze i płaskie zęby trzonowe, po których rozpoznaje się go w wypluwce" autor="José-Manuel Benito" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:Craneo-Microtus_arvalis_asturianus-Lateralis.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/6/68/Craneo-Microtus_arvalis_asturianus-Lateralis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="605" oryginal="640x403" alt="Jasna czaszka małego gryzonia z profilu z długimi pomarańczowawymi siekaczami" podpis="Czaszka nornika zwyczajnego z boku: duże, zakrzywione siekacze i płaskie zęby trzonowe, po których rozpoznaje się go w wypluwce" autor="José-Manuel Benito" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:Craneo-Microtus_arvalis_asturianus-Lateralis.jpg">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Owl_Pellet_-_Flickr_-_gailhampshire.jpg/960px-Owl_Pellet_-_Flickr_-_gailhampshire.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="778" alt="Okrągła grudka szarej sierści z wystającymi drobnymi białymi kośćmi leży na ściętym pniu" podpis="Wypluwka sowy na pniu: spomiędzy szarej sierści wystają białe kości drobnych ssaków" autor="gailhampshire from Cradley, Malvern, U.K" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Owl_Pellet_-_Flickr_-_gailhampshire.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Owl_Pellet_-_Flickr_-_gailhampshire.jpg/960px-Owl_Pellet_-_Flickr_-_gailhampshire.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="778" oryginal="1140x924" alt="Okrągła grudka szarej sierści z wystającymi drobnymi białymi kośćmi leży na ściętym pniu" podpis="Wypluwka sowy na pniu: spomiędzy szarej sierści wystają białe kości drobnych ssaków" autor="gailhampshire from Cradley, Malvern, U.K" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Owl_Pellet_-_Flickr_-_gailhampshire.jpg">
 </zdjecie>
 
 </margines>
@@ -59,7 +59,7 @@ Dlatego klasyczny rozbiór wypluwek dotyczy przede wszystkim **sów**: płomykó
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Rupfung.jpg/960px-Rupfung.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="658" alt="Kupka szaroniebieskich i białych piór rozrzuconych na trawie" podpis="Oskubane pióra grzywacza w miejscu, gdzie drapieżnik zjadł zdobycz: takie resztki zbiera się do badań diety" autor="Ulrich prokop" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Rupfung.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Rupfung.jpg/960px-Rupfung.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="658" oryginal="2359x1616" alt="Kupka szaroniebieskich i białych piór rozrzuconych na trawie" podpis="Oskubane pióra grzywacza w miejscu, gdzie drapieżnik zjadł zdobycz: takie resztki zbiera się do badań diety" autor="Ulrich prokop" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Rupfung.jpg">
 </zdjecie>
 
 </margines>

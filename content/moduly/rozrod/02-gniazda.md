@@ -13,7 +13,7 @@ Orły i myszołowy budują gniazda z gałęzi, a do wnętrza (tzw. **wyściółk
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Belorepan_gnezdo_%28Haliaeetus_albicilla%29_White-tailed_Eagle_nest.jpg/960px-Belorepan_gnezdo_%28Haliaeetus_albicilla%29_White-tailed_Eagle_nest.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Duże, ciemne gniazdo z gałęzi wysoko między cienkimi pniami drzew" podpis="Gniazdo bielika w koronie wysokich drzew (Serbia): ogromna kopa gałęzi" autor="Nikola Veljković" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Belorepan_gnezdo_(Haliaeetus_albicilla)_White-tailed_Eagle_nest.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Belorepan_gnezdo_%28Haliaeetus_albicilla%29_White-tailed_Eagle_nest.jpg/960px-Belorepan_gnezdo_%28Haliaeetus_albicilla%29_White-tailed_Eagle_nest.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="4608x3456" alt="Duże, ciemne gniazdo z gałęzi wysoko między cienkimi pniami drzew" podpis="Gniazdo bielika w koronie wysokich drzew (Serbia): ogromna kopa gałęzi" autor="Nikola Veljković" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Belorepan_gnezdo_(Haliaeetus_albicilla)_White-tailed_Eagle_nest.jpg">
 </zdjecie>
 
 </margines>
@@ -25,7 +25,7 @@ Orły i myszołowy budują gniazda z gałęzi, a do wnętrza (tzw. **wyściółk
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Golden_eagle_chicks_in_nest_-_DPLA_-_64f3eab352b7c71d50e8b54e8d03d2f5.jpg/960px-Golden_eagle_chicks_in_nest_-_DPLA_-_64f3eab352b7c71d50e8b54e8d03d2f5.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="654" alt="Szeroka platforma z patyków na skalnej półce, na niej dwa białe pisklęta" podpis="Gniazdo orła przedniego na półce skalnej, w nim białe, puchate pisklęta" autor="Garst, Warren, 1922-2016, photographer" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Golden_eagle_chicks_in_nest_-_DPLA_-_64f3eab352b7c71d50e8b54e8d03d2f5.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Golden_eagle_chicks_in_nest_-_DPLA_-_64f3eab352b7c71d50e8b54e8d03d2f5.jpg/960px-Golden_eagle_chicks_in_nest_-_DPLA_-_64f3eab352b7c71d50e8b54e8d03d2f5.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="654" oryginal="1546x1054" alt="Szeroka platforma z patyków na skalnej półce, na niej dwa białe pisklęta" podpis="Gniazdo orła przedniego na półce skalnej, w nim białe, puchate pisklęta" autor="Garst, Warren, 1922-2016, photographer" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Golden_eagle_chicks_in_nest_-_DPLA_-_64f3eab352b7c71d50e8b54e8d03d2f5.jpg">
 </zdjecie>
 
 </margines>
@@ -57,7 +57,7 @@ Sokoły (rodzaj *Falco*) **nie budują gniazd**. To ciekawe, bo są z orłami ty
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cal_Falcons_-_Grinnell_in_Nest_Box.png/960px-Cal_Falcons_-_Grinnell_in_Nest_Box.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="507" alt="Sokół wędrowny leży na rudych jajach w drewnianej skrzynce wysypanej drobnym żwirem" podpis="Samiec sokoła wędrownego wysiaduje jaja w skrzynce lęgowej ze żwirem na wieży w Berkeley: bez żadnego gniazda" autor="Sean Peterson" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Cal_Falcons_-_Grinnell_in_Nest_Box.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cal_Falcons_-_Grinnell_in_Nest_Box.png/960px-Cal_Falcons_-_Grinnell_in_Nest_Box.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="507" oryginal="3840x2026" alt="Sokół wędrowny leży na rudych jajach w drewnianej skrzynce wysypanej drobnym żwirem" podpis="Samiec sokoła wędrownego wysiaduje jaja w skrzynce lęgowej ze żwirem na wieży w Berkeley: bez żadnego gniazda" autor="Sean Peterson" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Cal_Falcons_-_Grinnell_in_Nest_Box.png">
 </zdjecie>
 
 > W Polsce dawniej żyła „drzewna” populacja sokoła wędrownego, gniazdująca w starych gniazdach na drzewach. Wymarła w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Program restytucji Stowarzyszenia „Sokół” odtwarza zarówno populację miejską, jak i drzewną. Więcej w [A6 · Ochrona](../ochrona/README.md).
@@ -70,7 +70,7 @@ Samica sokoła tylko wygrzebuje w podłożu płytki dołek, żeby jaja się nie 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Gryphon_vulture_%28Gyps_fulvus%29_and_chick_in_nest.jpg/960px-Gryphon_vulture_%28Gyps_fulvus%29_and_chick_in_nest.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Dorosły sęp płowy stoi na skale obok puchatego pisklęcia w płaskim gnieździe z patyków" podpis="Sęp płowy z pisklęciem w skromnym gnieździe na skalnej półce (Estremadura)" autor="Charles J. Sharp" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Gryphon_vulture_(Gyps_fulvus)_and_chick_in_nest.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Gryphon_vulture_%28Gyps_fulvus%29_and_chick_in_nest.jpg/960px-Gryphon_vulture_%28Gyps_fulvus%29_and_chick_in_nest.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="2408x1605" alt="Dorosły sęp płowy stoi na skale obok puchatego pisklęcia w płaskim gnieździe z patyków" podpis="Sęp płowy z pisklęciem w skromnym gnieździe na skalnej półce (Estremadura)" autor="Charles J. Sharp" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Gryphon_vulture_(Gyps_fulvus)_and_chick_in_nest.jpg">
 </zdjecie>
 
 </margines>
@@ -84,7 +84,7 @@ Na południu Hiszpanii żyją dwa duże sępy o zupełnie różnych zwyczajach:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Poussins_de_Busard_cendr%C3%A9.jpg/960px-Poussins_de_Busard_cendr%C3%A9.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="576" alt="Cztery jasne, puchate pisklęta w płytkim gnieździe z traw wśród łanu zboża" podpis="Pisklęta błotniaka łąkowego w gnieździe w zbożu, podczas akcji ochrony gniazda we Francji" autor="AlbaneJones" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Poussins_de_Busard_cendr%C3%A9.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Poussins_de_Busard_cendr%C3%A9.jpg/960px-Poussins_de_Busard_cendr%C3%A9.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="576" oryginal="2560x1536" alt="Cztery jasne, puchate pisklęta w płytkim gnieździe z traw wśród łanu zboża" podpis="Pisklęta błotniaka łąkowego w gnieździe w zbożu, podczas akcji ochrony gniazda we Francji" autor="AlbaneJones" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Poussins_de_Busard_cendr%C3%A9.jpg">
 </zdjecie>
 
 </margines>
@@ -96,7 +96,7 @@ Na południu Hiszpanii żyją dwa duże sępy o zupełnie różnych zwyczajach:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Displacement_Activity_%2816990131569%29.jpg/960px-Displacement_Activity_%2816990131569%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Rybołów w locie trzyma w szponach długi suchy patyk, w rogu kadru gniazdo z młodym" podpis="Rybołów przynosi gałąź do gniazda, choć młode już prawie wylatują (Floryda)" autor="Andy Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Displacement_Activity_(16990131569).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Displacement_Activity_%2816990131569%29.jpg/960px-Displacement_Activity_%2816990131569%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="3065x2452" alt="Rybołów w locie trzyma w szponach długi suchy patyk, w rogu kadru gniazdo z młodym" podpis="Rybołów przynosi gałąź do gniazda, choć młode już prawie wylatują (Floryda)" autor="Andy Morffew from Itchen Abbas, Hampshire, UK" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Displacement_Activity_(16990131569).jpg">
 </zdjecie>
 
 </margines>

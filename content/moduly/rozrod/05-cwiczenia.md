@@ -39,7 +39,7 @@ Połącz gatunek z miejscem gniazda. Odpowiedzi znajdziesz w lekcji 2.
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Vautour_moine_Saint-Pierre-des-Tripiers_maison_Vautours_nid.jpg/960px-Vautour_moine_Saint-Pierre-des-Tripiers_maison_Vautours_nid.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Wypchany ciemny sęp z jasną głową stoi na dużej platformie z gałęzi, w której leży jajo" podpis="Rekonstrukcja gniazda sępa kasztanowatego w muzeum Maison des Vautours (Francja): szeroka platforma z grubych gałęzi, jaką ten sęp buduje na drzewie" autor="Père Igor" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Vautour_moine_Saint-Pierre-des-Tripiers_maison_Vautours_nid.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Vautour_moine_Saint-Pierre-des-Tripiers_maison_Vautours_nid.jpg/960px-Vautour_moine_Saint-Pierre-des-Tripiers_maison_Vautours_nid.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="3101x2326" alt="Wypchany ciemny sęp z jasną głową stoi na dużej platformie z gałęzi, w której leży jajo" podpis="Rekonstrukcja gniazda sępa kasztanowatego w muzeum Maison des Vautours (Francja): szeroka platforma z grubych gałęzi, jaką ten sęp buduje na drzewie" autor="Père Igor" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Vautour_moine_Saint-Pierre-des-Tripiers_maison_Vautours_nid.jpg">
 </zdjecie>
 
 </margines>

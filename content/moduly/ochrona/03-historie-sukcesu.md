@@ -29,7 +29,7 @@ Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holand
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Enclos_d%27acclimatation_avant_l%C3%A2chage_de_fancon_p%C3%A9lerin.jpg/960px-Enclos_d%27acclimatation_avant_l%C3%A2chage_de_fancon_p%C3%A9lerin.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Niewielka konstrukcja przykryta czarną siatką stoi na skalistym zboczu wśród gęstych zielonych zarośli" podpis="Zagroda aklimatyzacyjna do hackingu młodych sokołów wędrownych u podnóża klifów Crêt des Roches (Francja)" autor="Espirat" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Enclos_d%27acclimatation_avant_l%C3%A2chage_de_fancon_p%C3%A9lerin.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Enclos_d%27acclimatation_avant_l%C3%A2chage_de_fancon_p%C3%A9lerin.jpg/960px-Enclos_d%27acclimatation_avant_l%C3%A2chage_de_fancon_p%C3%A9lerin.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="3887x2592" alt="Niewielka konstrukcja przykryta czarną siatką stoi na skalistym zboczu wśród gęstych zielonych zarośli" podpis="Zagroda aklimatyzacyjna do hackingu młodych sokołów wędrownych u podnóża klifów Crêt des Roches (Francja)" autor="Espirat" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Enclos_d%27acclimatation_avant_l%C3%A2chage_de_fancon_p%C3%A9lerin.jpg">
 </zdjecie>
 
 </margines>
@@ -48,7 +48,7 @@ Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holand
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Concrete_utility_pole_with_power_line_insulators_and_bird_protection%2C_Ponte_de_sor%2C_Portugal_julesvernex2.jpg/960px-Concrete_utility_pole_with_power_line_insulators_and_bird_protection%2C_Ponte_de_sor%2C_Portugal_julesvernex2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="705" alt="Betonowy słup linii energetycznej z wiszącymi izolatorami, nad szczytem wachlarz cienkich metalowych prętów" podpis="Słup przebudowany z myślą o ptakach (Ponte de Sor, Portugalia): izolatory podwieszone pod poprzeczką i „parasol” z prętów, który nie pozwala siadać nad przewodami" autor="Jules Verne Times Two" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Concrete_utility_pole_with_power_line_insulators_and_bird_protection,_Ponte_de_sor,_Portugal_julesvernex2.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Concrete_utility_pole_with_power_line_insulators_and_bird_protection%2C_Ponte_de_sor%2C_Portugal_julesvernex2.jpg/960px-Concrete_utility_pole_with_power_line_insulators_and_bird_protection%2C_Ponte_de_sor%2C_Portugal_julesvernex2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="705" oryginal="5556x4082" alt="Betonowy słup linii energetycznej z wiszącymi izolatorami, nad szczytem wachlarz cienkich metalowych prętów" podpis="Słup przebudowany z myślą o ptakach (Ponte de Sor, Portugalia): izolatory podwieszone pod poprzeczką i „parasol” z prętów, który nie pozwala siadać nad przewodami" autor="Jules Verne Times Two" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Concrete_utility_pole_with_power_line_insulators_and_bird_protection,_Ponte_de_sor,_Portugal_julesvernex2.jpg">
 </zdjecie>
 
 </margines>
@@ -67,7 +67,7 @@ Dziś liczebność wzrosła do **wielu setek par** (według najnowszych spisów 
 
 <margines>
 
-<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Gymnogyps_californianus1-2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1458" alt="Łyse, puchate pisklę kondora na niebieskim ręczniku przyjmuje pokarm z dzioba kukiełki przypominającej głowę dorosłego kondora" podpis="Pisklę kondora kalifornijskiego karmione kukiełką w kształcie głowy dorosłego ptaka (San Diego Zoo)" autor="Ron Garrison (San Diego Zoo), opracowanie: mik@ni" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Gymnogyps_californianus1-2.jpg">
+<zdjecie src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Gymnogyps_californianus1-2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="960" height="1458" oryginal="725x1101" alt="Łyse, puchate pisklę kondora na niebieskim ręczniku przyjmuje pokarm z dzioba kukiełki przypominającej głowę dorosłego kondora" podpis="Pisklę kondora kalifornijskiego karmione kukiełką w kształcie głowy dorosłego ptaka (San Diego Zoo)" autor="Ron Garrison (San Diego Zoo), opracowanie: mik@ni" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Gymnogyps_californianus1-2.jpg">
 </zdjecie>
 
 </margines>
@@ -78,7 +78,7 @@ Dziś liczebność wzrosła do **wielu setek par** (według najnowszych spisów 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Grand_Canyon_National_Park_California_Condor_87_3462_%285735691958%29.jpg/960px-Grand_Canyon_National_Park_California_Condor_87_3462_%285735691958%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Czarny kondor z czerwonawą łysą głową stoi na skale z rozpostartymi skrzydłami, na jednym skrzydle biały numer 87" podpis="Kondor kalifornijski nr 87 w Wielkim Kanionie suszy skrzydła: numer na znaczniku skrzydłowym pozwala śledzić każdego wypuszczonego ptaka" autor="Grand Canyon National Park" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Grand_Canyon_National_Park_California_Condor_87_3462_(5735691958).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Grand_Canyon_National_Park_California_Condor_87_3462_%285735691958%29.jpg/960px-Grand_Canyon_National_Park_California_Condor_87_3462_%285735691958%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="3000x2400" alt="Czarny kondor z czerwonawą łysą głową stoi na skale z rozpostartymi skrzydłami, na jednym skrzydle biały numer 87" podpis="Kondor kalifornijski nr 87 w Wielkim Kanionie suszy skrzydła: numer na znaczniku skrzydłowym pozwala śledzić każdego wypuszczonego ptaka" autor="Grand Canyon National Park" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Grand_Canyon_National_Park_California_Condor_87_3462_(5735691958).jpg">
 </zdjecie>
 
 </margines>
@@ -94,7 +94,7 @@ Problem: ołów z amunicji wciąż zabija kondory, a wiele ptaków trzeba regula
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/1_Auswilderung_von_Bartgeiern_in_Bayern.jpg/960px-1_Auswilderung_von_Bartgeiern_in_Bayern.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="639" alt="Dwa ciemne, młode orłosępy z długimi klinowatymi ogonami lecą obok siebie na tle błękitnego nieba" podpis="Dwa młode orłosępy, Bavaria i Wally, wypuszczone w Bawarii w ramach alpejskiej reintrodukcji" autor="Bartgeier Fan der ersten Stunde" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:1_Auswilderung_von_Bartgeiern_in_Bayern.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/1_Auswilderung_von_Bartgeiern_in_Bayern.jpg/960px-1_Auswilderung_von_Bartgeiern_in_Bayern.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="639" oryginal="2461x1637" alt="Dwa ciemne, młode orłosępy z długimi klinowatymi ogonami lecą obok siebie na tle błękitnego nieba" podpis="Dwa młode orłosępy, Bavaria i Wally, wypuszczone w Bawarii w ramach alpejskiej reintrodukcji" autor="Bartgeier Fan der ersten Stunde" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:1_Auswilderung_von_Bartgeiern_in_Bayern.jpg">
 </zdjecie>
 
 </margines>

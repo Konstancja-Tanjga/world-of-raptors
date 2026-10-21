@@ -13,7 +13,7 @@ Większość ptaków drapieżnych jest **monogamiczna**: w sezonie lęgowym jedn
 
 > Bieliki są razem cały rok, ale także u nich para co zimę „odnawia” więź: wspólne loty, głosy w duecie i poprawianie gniazda zaczynają się już w grudniu i styczniu.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg/960px-Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1153" alt="Dwa duże brązowe orły z jasnymi głowami i żółtymi dziobami siedzą obok siebie na omszałym głazie nad wodą" podpis="Para dorosłych bielików na nadmorskim głazie w Norwegii: bieliki trzymają się razem przez cały rok" autor="Bouke ten Cate" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg/960px-Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1153" oryginal="2159x2592" alt="Dwa duże brązowe orły z jasnymi głowami i żółtymi dziobami siedzą obok siebie na omszałym głazie nad wodą" podpis="Para dorosłych bielików na nadmorskim głazie w Norwegii: bieliki trzymają się razem przez cały rok" autor="Bouke ten Cate" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Zeearend_-_white-tailed_eagle_-_Haliaeetus_albicilla_3.jpg">
 </zdjecie>
 
 </margines>
@@ -30,7 +30,7 @@ Są też gatunki **kolonijne** albo gniazdujące w luźnych grupach:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Mechinales_iglesia_Saucedilla.JPG/960px-Mechinales_iglesia_Saucedilla.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="643" alt="Kamienna ściana starego kościoła z rzędami niewielkich otworów w murze pod dachem" podpis="Pustułeczka: otwory w murze kościoła w Saucedilli (Estremadura), w których gniazduje kolonia" autor="Lito Encinas" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Mechinales_iglesia_Saucedilla.JPG">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Mechinales_iglesia_Saucedilla.JPG/960px-Mechinales_iglesia_Saucedilla.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="643" oryginal="3872x2592" alt="Kamienna ściana starego kościoła z rzędami niewielkich otworów w murze pod dachem" podpis="Pustułeczka: otwory w murze kościoła w Saucedilli (Estremadura), w których gniazduje kolonia" autor="Lito Encinas" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Mechinales_iglesia_Saucedilla.JPG">
 </zdjecie>
 
 </margines>
@@ -54,7 +54,7 @@ Najbardziej widowiskowy pokaz: dwa ptaki chwytają się szponami w powietrzu i *
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%281%29.jpg/960px-Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" alt="Dwa bieliki z rozpostartymi skrzydłami nisko nad ziemią, jeden wyciąga szpony ku drugiemu, wokół wrony" podpis="Bieliki sczepione szponami na zimowisku w Polsce: tu to walka, nie tok" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Fighting_white-tailed_eagles_(Haliaeetus_albicilla)_(1).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%281%29.jpg/960px-Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%281%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" oryginal="4302x2420" alt="Dwa bieliki z rozpostartymi skrzydłami nisko nad ziemią, jeden wyciąga szpony ku drugiemu, wokół wrony" podpis="Bieliki sczepione szponami na zimowisku w Polsce: tu to walka, nie tok" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Fighting_white-tailed_eagles_(Haliaeetus_albicilla)_(1).jpg">
 </zdjecie>
 
 </margines>
@@ -76,7 +76,7 @@ Karmienie w czasie toków (przynoszenie pokarmu samicy) występuje u wielu gatun
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Peregrine_Falcons_%28Falco_peregrinus%29_mating_on_Morro_Rock.jpg/960px-Peregrine_Falcons_%28Falco_peregrinus%29_mating_on_Morro_Rock.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Mniejszy samiec sokoła wędrownego z uniesionymi skrzydłami na grzbiecie samicy, na szczycie skały" podpis="Kopulacja sokołów wędrownych na szczycie skały Morro Rock (Kalifornia): samiec jest wyraźnie mniejszy" autor="Mike Baird" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcons_(Falco_peregrinus)_mating_on_Morro_Rock.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Peregrine_Falcons_%28Falco_peregrinus%29_mating_on_Morro_Rock.jpg/960px-Peregrine_Falcons_%28Falco_peregrinus%29_mating_on_Morro_Rock.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="1019x679" alt="Mniejszy samiec sokoła wędrownego z uniesionymi skrzydłami na grzbiecie samicy, na szczycie skały" podpis="Kopulacja sokołów wędrownych na szczycie skały Morro Rock (Kalifornia): samiec jest wyraźnie mniejszy" autor="Mike Baird" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine_Falcons_(Falco_peregrinus)_mating_on_Morro_Rock.jpg">
 </zdjecie>
 
 </margines>

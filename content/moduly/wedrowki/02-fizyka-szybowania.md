@@ -35,7 +35,7 @@ Na trasie ptak powtarza jeden cykl:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_02.jpg/960px-Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_02.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Brązowy sęp z jasną głową szybuje z szeroko rozłożonymi skrzydłami nad zalesionym zboczem kanionu" podpis="Sęp płowy w ślizgu nad kanionem Uvac (Serbia): skrzydła rozpostarte na płasko, bez jednego machnięcia" autor="Ivanbuki" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac,_Serbia_02.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_02.jpg/960px-Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac%2C_Serbia_02.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="3300x2475" alt="Brązowy sęp z jasną głową szybuje z szeroko rozłożonymi skrzydłami nad zalesionym zboczem kanionu" podpis="Sęp płowy w ślizgu nad kanionem Uvac (Serbia): skrzydła rozpostarte na płasko, bez jednego machnięcia" autor="Ivanbuki" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Eurasian_griffon_vulture_flying_over_nature_reserve_Uvac,_Serbia_02.jpg">
 </zdjecie>
 
 </margines>
@@ -46,7 +46,7 @@ Duże ptaki drapieżne w ślizgu przelatują w poziomie **kilkanaście metrów**
 
 > Nad punktem obserwacyjnym widać czasem „kocioł”: dziesiątki albo setki trzmielojadów czy bocianów krążących razem w jednym kominie. Ptaki pomagają sobie nawzajem: kto widzi, że inny ptak szybko się wznosi, leci w to samo miejsce.
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/HoneyBuzzardFlock.jpg/960px-HoneyBuzzardFlock.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="708" alt="Kilkadziesiąt ciemnych sylwetek drapieżników rozrzuconych na szarym niebie" podpis="Stado trzmielojadów krąży w kominie termicznym podczas wiosennego przelotu (Pierre-Aiguille, Francja)" autor="P.Adlam" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:HoneyBuzzardFlock.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/HoneyBuzzardFlock.jpg/960px-HoneyBuzzardFlock.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="708" oryginal="1693x1249" alt="Kilkadziesiąt ciemnych sylwetek drapieżników rozrzuconych na szarym niebie" podpis="Stado trzmielojadów krąży w kominie termicznym podczas wiosennego przelotu (Pierre-Aiguille, Francja)" autor="P.Adlam" licencja="CC BY-SA 2.5" licencja-url="https://creativecommons.org/licenses/by-sa/2.5" strona="https://commons.wikimedia.org/wiki/File:HoneyBuzzardFlock.jpg">
 </zdjecie>
 
 </margines>
@@ -58,7 +58,7 @@ Wiatr, który napotyka zbocze albo grzbiet górski, musi się wznieść. Po nawi
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Hawk_Mountain_Sanctuary%2C_PA_-_North_Lookout.jpg/960px-Hawk_Mountain_Sanctuary%2C_PA_-_North_Lookout.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Grupa obserwatorów siedzi na skałach na szczycie zalesionego grzbietu, w dali ciągną się kolejne pasma gór" podpis="Północny punkt widokowy Hawk Mountain w Pensylwanii: jesienią ptaki szybują tu w noszeniu zboczowym wzdłuż grzbietu Appalachów" autor="Zeete" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Hawk_Mountain_Sanctuary,_PA_-_North_Lookout.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Hawk_Mountain_Sanctuary%2C_PA_-_North_Lookout.jpg/960px-Hawk_Mountain_Sanctuary%2C_PA_-_North_Lookout.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="3850x2567" alt="Grupa obserwatorów siedzi na skałach na szczycie zalesionego grzbietu, w dali ciągną się kolejne pasma gór" podpis="Północny punkt widokowy Hawk Mountain w Pensylwanii: jesienią ptaki szybują tu w noszeniu zboczowym wzdłuż grzbietu Appalachów" autor="Zeete" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Hawk_Mountain_Sanctuary,_PA_-_North_Lookout.jpg">
 </zdjecie>
 
 </margines>

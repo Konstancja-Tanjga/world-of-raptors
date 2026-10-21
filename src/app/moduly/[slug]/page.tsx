@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import './modul.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
 import { Markdown, MarkdownInline } from '@/components/Markdown';
+import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { StartModulu } from '@/components/modul/StartModulu';
 import { SylabusModulu } from '@/components/modul/SylabusModulu';
 import {
@@ -138,6 +139,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
           <Ciekawostka {...ciekawostkiDla({ modul: slug })} />
         </div>
       </div>
+      <PodgladZdjec />
     </div>
   );
 }

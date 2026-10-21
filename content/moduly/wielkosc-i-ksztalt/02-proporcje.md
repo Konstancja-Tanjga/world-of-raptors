@@ -22,7 +22,7 @@ Wprawni obserwatorzy rzadko mówią „ogon ma 25 cm”. Mówią „ogon długi 
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Haliaeetus_albicilla_%28Svolv%C3%A6r%2C_2012%29.jpg/960px-Haliaeetus_albicilla_%28Svolv%C3%A6r%2C_2012%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Bielik w locie z boku, na tle zielonego zbocza, z dużą jasną głową, żółtym dziobem i krótkim białym ogonem" podpis="Bielik: głowa wysunięta przed skrzydła prawie tak daleko, jak krótki, klinowaty ogon sięga za nie. Ta proporcja nie zależy od odległości" autor="Yathin S Krishnappa" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Haliaeetus_albicilla_(Svolv%C3%A6r,_2012).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Haliaeetus_albicilla_%28Svolv%C3%A6r%2C_2012%29.jpg/960px-Haliaeetus_albicilla_%28Svolv%C3%A6r%2C_2012%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="3292x2195" alt="Bielik w locie z boku, na tle zielonego zbocza, z dużą jasną głową, żółtym dziobem i krótkim białym ogonem" podpis="Bielik: głowa wysunięta przed skrzydła prawie tak daleko, jak krótki, klinowaty ogon sięga za nie. Ta proporcja nie zależy od odległości" autor="Yathin S Krishnappa" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Haliaeetus_albicilla_(Svolv%C3%A6r,_2012).jpg">
 </zdjecie>
 
 </margines>

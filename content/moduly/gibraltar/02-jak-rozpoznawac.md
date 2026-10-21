@@ -14,10 +14,10 @@ Nad cieśniną ptaki są zwykle **wysoko, pod światło i w ruchu**. Kolory czę
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Circaetus_gallicus_01.jpg/960px-Circaetus_gallicus_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="638" alt="Zbliżenie głowy gadożera z dużymi żółtymi oczami i jasnym, prążkowanym upierzeniem" podpis="Głowa gadożera: duża, okrągła, „sowia”, z jaskrawożółtymi oczami" autor="MarioM" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Circaetus_gallicus_01.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Circaetus_gallicus_01.jpg/960px-Circaetus_gallicus_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="638" oryginal="3008x2000" alt="Zbliżenie głowy gadożera z dużymi żółtymi oczami i jasnym, prążkowanym upierzeniem" podpis="Głowa gadożera: duża, okrągła, „sowia”, z jaskrawożółtymi oczami" autor="MarioM" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Circaetus_gallicus_01.jpg">
 </zdjecie>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Egyptian_Vulture_%2849643401142%29.jpg/960px-Egyptian_Vulture_%2849643401142%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Ciemnobrązowy ptak drapieżny w locie z rozcapierzonymi lotkami i klinowatym ogonem" podpis="Młody ścierwnik: cały ciemnobrązowy, ale już z klinowatym ogonem, cechą na każdy wiek" autor="Mike Prince from Bangalore, India" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Egyptian_Vulture_(49643401142).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Egyptian_Vulture_%2849643401142%29.jpg/960px-Egyptian_Vulture_%2849643401142%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2048x1536" alt="Ciemnobrązowy ptak drapieżny w locie z rozcapierzonymi lotkami i klinowatym ogonem" podpis="Młody ścierwnik: cały ciemnobrązowy, ale już z klinowatym ogonem, cechą na każdy wiek" autor="Mike Prince from Bangalore, India" licencja="CC BY 2.0" licencja-url="https://creativecommons.org/licenses/by/2.0" strona="https://commons.wikimedia.org/wiki/File:Egyptian_Vulture_(49643401142).jpg">
 </zdjecie>
 
 </margines>
@@ -31,7 +31,7 @@ Nad cieśniną ptaki są zwykle **wysoko, pod światło i w ruchu**. Kolory czę
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg/960px-Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" alt="Jasny gadożer w powietrzu z uniesionymi skrzydłami i głową skierowaną w dół, na tle błękitnego nieba" podpis="Gadożer na polowaniu we francuskich Alpach: zawisa i wypatruje w dole węży" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Schlangenadler_(Circaetus_gallicus)_bei_der_Jagd_01.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg/960px-Schlangenadler_%28Circaetus_gallicus%29_bei_der_Jagd_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="2934x2347" alt="Jasny gadożer w powietrzu z uniesionymi skrzydłami i głową skierowaną w dół, na tle błękitnego nieba" podpis="Gadożer na polowaniu we francuskich Alpach: zawisa i wypatruje w dole węży" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Schlangenadler_(Circaetus_gallicus)_bei_der_Jagd_01.jpg">
 </zdjecie>
 
 </margines>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ReactNode } from 'react';
+import { Children, cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
@@ -15,7 +15,9 @@ import {
 } from '@/lib/content';
 import { resolveContentHref } from '@/lib/links';
 import { idNaglowkow } from '@/lib/naglowki';
+import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
+import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
 import { MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
@@ -40,13 +42,17 @@ const attr = (props: Attrs, name: string) => {
  *   <species-photos data-id="kania-czarna">
  *   </species-photos>
  *
- *   <zdjecie src="…" width="960" height="640" alt="…" podpis="…" autor="…"
- *     licencja="CC BY-SA 4.0" licencja-url="…" strona="…">
+ *   <zdjecie src="…" width="960" height="640" oryginal="2091x1375" alt="…" podpis="…" autor="…" licencja="CC BY-SA 4.0" licencja-url="…" strona="…">
  *   </zdjecie>
  *
- * `<margines>` is the one wrapper: it puts a photo or a side note in the
- * lesson's margin. Write it right before the paragraph it belongs to, with
- * blank lines inside so the content between the tags is still Markdown:
+ * (the whole opening tag on one line: tagi.ts checks each line)
+ *
+ * (`oryginal`, the Commons original's size, lets the browser fetch a sharper
+ * thumbnail; `scripts/commons.py tag` writes it.) Two wrappers place photos,
+ * each written with blank lines inside so the content stays Markdown:
+ *
+ * `<margines>` puts a photo or a side note in the lesson's margin. Write it
+ * right before the paragraph it belongs to:
  *
  *   <margines>
  *
@@ -55,6 +61,21 @@ const attr = (props: Attrs, name: string) => {
  *   </margines>
  *
  *   The paragraph the note belongs to.
+ *
+ * `<galeria>` sets one to six photos (nothing else) across the text and the
+ * margin, for what has to be seen large or side by side: a feather against a
+ * feather, a skull, a sequence. It clears the margin notes above it, so write
+ * it after the paragraph a note belongs to, or at the start of a section:
+ *
+ *   <galeria>
+ *
+ *   <zdjecie …>
+ *   </zdjecie>
+ *
+ *   <zdjecie …>
+ *   </zdjecie>
+ *
+ *   </galeria>
  *
  * B7's drawings and exercises are tags too, each read and checked here, on
  * the server, so a wrong id stops the build. The exercises get drawings, not
@@ -72,11 +93,22 @@ const attr = (props: Attrs, name: string) => {
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
   'nazwa-ptaka': (props: Attrs) => <NazwaPtaka id={attr(props, 'data-id')} pl={attr(props, 'data-pl')} />,
+  // Several photos in one margin step through together in the viewer.
   margines: ({ children }: { children?: ReactNode }) => (
     <ArticleMargin>
-      <div className="margines">{children}</div>
+      <div className="margines" data-galeria>
+        {children}
+      </div>
     </ArticleMargin>
   ),
+  galeria: ({ children }: { children?: ReactNode }) => {
+    const zdjecia = Children.toArray(children).filter(isValidElement) as ReactElement<Attrs>[];
+    return (
+      <div className="galeria" data-galeria data-ile={Math.min(zdjecia.length, 6)}>
+        {zdjecia.map((z) => cloneElement(z, { 'data-w-galerii': zdjecia.length }))}
+      </div>
+    );
+  },
   'species-photos': (props: Attrs) => <SpeciesMedia id={attr(props, 'data-id')} linki={false} />,
   zdjecie: (props: Attrs) => {
     const zdjecie: Zdjecie = {
@@ -88,9 +120,18 @@ const lessonTags = {
       licencjaUrl: attr(props, 'licencja-url'),
       strona: attr(props, 'strona'),
       plik: '',
+      oryginal: oryginalZAtrybutu(attr(props, 'oryginal')),
     };
-    if (!zdjecie.src) return null;
-    return <Photo zdjecie={zdjecie} alt={attr(props, 'alt')} podpis={attr(props, 'podpis') || undefined} />;
+    if (!zdjecie.src) throw new Error(`<zdjecie> bez src (alt="${attr(props, 'alt')}")`);
+    const wGalerii = Number(attr(props, 'data-w-galerii'));
+    return (
+      <Photo
+        zdjecie={zdjecie}
+        alt={attr(props, 'alt')}
+        podpis={attr(props, 'podpis') || undefined}
+        sizes={rozmiaryZdjecia(wGalerii > 0 ? { galeria: wGalerii } : 'margines')}
+      />
+    );
   },
   miarka: (props: Attrs) => {
     const g = znajdzGatunek(attr(props, 'data-id'));

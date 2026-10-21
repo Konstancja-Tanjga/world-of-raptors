@@ -7,7 +7,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 |---|---|---|
 | Framework | **Next.js 16** (App Router, TypeScript) | strony generowane statycznie przy buildzie; tylko start renderuje się przy każdym wejściu (gatunek na dziś, niebo o tej porze) |
 | UI | **Big Hat design system** (`@bighat/ui`) | instalowany z GitHuba (`git+https://…bighat-design-system.git#<commit>`), bo nie ma go w npm |
-| Treść lekcji | Markdown w `content/`, renderowany przez `react-markdown` + `remark-gfm` + `rehype-raw` | lekcje czytelne także na GitHubie; `rehype-raw` pozwala na własne znaczniki (`<zdjecie>`, `<margines>`) |
+| Treść lekcji | Markdown w `content/`, renderowany przez `react-markdown` + `remark-gfm` + `rehype-raw` | lekcje czytelne także na GitHubie; `rehype-raw` pozwala na własne znaczniki (`<zdjecie>`, `<margines>`, `<galeria>`) |
 | Dane | `content/gatunki.json`, `content/ptaki-mokradel.json`, `content/moduly.json` | jedno źródło dla atlasu, checklisty i nawigacji |
 | Style | `src/app/motyw.css` (motyw: role `--bh-*` i warstwa `--wor-*`), `globals.css` i arkusze stron | bez Tailwinda: wartości z tokenów, nie wpisane na sztywno (wyjątki w CLAUDE.md) |
 | Checklista | `localStorage` + eksport i import do pliku JSON | bez logowania i bez bazy danych |
@@ -102,6 +102,20 @@ src/
    Akapit, do którego należy uwaga.
    ```
    Na szerokim ekranie notatka stoi obok akapitu, na wąskim nad nim. Nagłówki `##` tworzą spis treści lekcji, więc pisz je zwykłym tekstem, bez pogrubień i linków.
+
+   Zdjęcia, które trzeba zobaczyć duże albo obok siebie (pióro sowy przy piórze myszołowa, czaszka, kolejne etapy), wstaw w `<galeria>`: od jednego do sześciu znaczników `<zdjecie>` i nic poza nimi. Galeria sięga przez tekst i margines i zaczyna się pod notatkami z marginesu, więc wstaw ją po akapicie, do którego należy notatka, albo na początku sekcji:
+   ```
+   <galeria>
+
+   <zdjecie …>
+   </zdjecie>
+
+   <zdjecie …>
+   </zdjecie>
+
+   </galeria>
+   ```
+   Każde zdjęcie otwiera się po kliknięciu na całym ekranie, z podpisem i licencją; zdjęcia z jednej galerii, jednego marginesu albo jednej planszy przegląda się strzałkami. Znacznik `<zdjecie>` z Commons ma atrybut `oryginal="SZERxWYS"` (rozmiar oryginału), dzięki któremu przeglądarka pobiera ostrzejszą miniaturę; `python3 scripts/commons.py tag` wpisuje go sam, a `python3 scripts/commons.py rozmiary-lekcji` uzupełnia go we wszystkich lekcjach. Cały znacznik `<zdjecie>` pisz w jednej linii, małymi literami. Build (w gotowych modułach) zatrzymuje się na zdjęciu spoza Commons i `/zdjecia/`; bez `alt`, autora, licencji albo wymiarów; z Commons bez strony pliku albo, przy miniaturze, bez `oryginal`; na znaczniku wpisanym w tekst, rozbitym na linie albo pisanym wielkimi literami; i na galerii z czymś innym niż od 1 do 6 zdjęć.
 8. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w pytaniach i odpowiedziach znikają (zob. `DS-GAPS.md`).
 
 ## Moje niebo

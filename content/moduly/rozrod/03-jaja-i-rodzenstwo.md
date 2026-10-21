@@ -14,7 +14,7 @@ Różnica zależy od tego, na co ptak poluje:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Keulemans_Onze_vogels_3_01.jpg/960px-Keulemans_Onze_vogels_3_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1341" alt="Dawna kolorowa litografia: mniejszy krogulec z rudawą piersią i większy, brązowo prążkowany" podpis="Krogulec: mały samiec (z lewej) i dużo większa samica. Ilustracja Keulemansa z XIX wieku" autor="John Gerrard Keulemans" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Keulemans_Onze_vogels_3_01.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Keulemans_Onze_vogels_3_01.jpg/960px-Keulemans_Onze_vogels_3_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1341" oryginal="2208x3084" alt="Dawna kolorowa litografia: mniejszy krogulec z rudawą piersią i większy, brązowo prążkowany" podpis="Krogulec: mały samiec (z lewej) i dużo większa samica. Ilustracja Keulemansa z XIX wieku" autor="John Gerrard Keulemans" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Keulemans_Onze_vogels_3_01.jpg">
 </zdjecie>
 
 </margines>
@@ -47,7 +47,7 @@ Wielkość zniesienia (liczba jaj) wiąże się z wielkością ptaka: **duże ga
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Peregrine-clutch.jpg/960px-Peregrine-clutch.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Cztery rudobrązowe, nakrapiane jaja w płytkim zagłębieniu wśród suchych traw" podpis="Zniesienie sokoła wędrownego: cztery jaja w skrzynce lęgowej (Niemcy)" autor="Peter Wegner" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine-clutch.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Peregrine-clutch.jpg/960px-Peregrine-clutch.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2592x1944" alt="Cztery rudobrązowe, nakrapiane jaja w płytkim zagłębieniu wśród suchych traw" podpis="Zniesienie sokoła wędrownego: cztery jaja w skrzynce lęgowej (Niemcy)" autor="Peter Wegner" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Peregrine-clutch.jpg">
 </zdjecie>
 
 </margines>
@@ -64,7 +64,7 @@ Samica składa jaja **w odstępach kilku dni** (u dużych gatunków zwykle 2–4
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Rohrweihenk%C3%BCken_im_Nest_01.jpg/960px-Rohrweihenk%C3%BCken_im_Nest_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" alt="Trzy puchate pisklęta i trzy białe jaja w gnieździe z suchych traw" podpis="Gniazdo błotniaka stawowego: pisklęta już się wykluły, a trzy jaja jeszcze nie. Tak wygląda asynchroniczne klucie" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Rohrweihenk%C3%BCken_im_Nest_01.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Rohrweihenk%C3%BCken_im_Nest_01.jpg/960px-Rohrweihenk%C3%BCken_im_Nest_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="5213x3475" alt="Trzy puchate pisklęta i trzy białe jaja w gnieździe z suchych traw" podpis="Gniazdo błotniaka stawowego: pisklęta już się wykluły, a trzy jaja jeszcze nie. Tak wygląda asynchroniczne klucie" autor="Stephan Sprinz" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:Rohrweihenk%C3%BCken_im_Nest_01.jpg">
 </zdjecie>
 
 </margines>
@@ -73,7 +73,7 @@ Jeśli ptak zaczyna wysiadywać od **pierwszego jaja**, to pisklęta klują się
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Common_Kestrel_Chicks.jpeg/960px-Common_Kestrel_Chicks.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Sześć białych, puchatych piskląt pustułki stłoczonych obok siebie" podpis="Sześć piskląt pustułki w podobnym wieku: u sokołów różnice między rodzeństwem są mniejsze" autor="Revital9" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Kestrel_Chicks.jpeg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Common_Kestrel_Chicks.jpeg/960px-Common_Kestrel_Chicks.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="2592x1944" alt="Sześć białych, puchatych piskląt pustułki stłoczonych obok siebie" podpis="Sześć piskląt pustułki w podobnym wieku: u sokołów różnice między rodzeństwem są mniejsze" autor="Revital9" licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Common_Kestrel_Chicks.jpeg">
 </zdjecie>
 
 </margines>
@@ -82,7 +82,7 @@ Sokoły często zaczynają wysiadywać na dobre dopiero przy przedostatnim lub o
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/P6150074.JPG/960px-P6150074.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" alt="W gnieździe na drzewie większe, opierzone pisklę kani stoi nad mniejszym, puchatym" podpis="Dwa pisklęta kani czarnej: starsze jest wyraźnie większe i bardziej opierzone od młodszego (Brandenburgia)" autor="Buteo" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:P6150074.JPG">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/P6150074.JPG/960px-P6150074.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" oryginal="1536x2048" alt="W gnieździe na drzewie większe, opierzone pisklę kani stoi nad mniejszym, puchatym" podpis="Dwa pisklęta kani czarnej: starsze jest wyraźnie większe i bardziej opierzone od młodszego (Brandenburgia)" autor="Buteo" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:P6150074.JPG">
 </zdjecie>
 
 </margines>

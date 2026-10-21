@@ -6,6 +6,7 @@ import { Ciekawostka } from '@/components/Ciekawostka';
 import { LessonComplete } from '@/components/LessonComplete';
 import { LessonMedia } from '@/components/LessonMedia';
 import { Markdown, MarkdownInline } from '@/components/Markdown';
+import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { QuizKrokowy } from '@/components/QuizKrokowy';
 import {
   ciekawostkiDla,
@@ -103,6 +104,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
         <LessonMedia ids={strona.wszystkie} juzPokazane={strona.wNaglowkach} />
         <Ciekawostka {...ciekawostkiDla({ modul: slug, lekcja })} />
       </Article>
+      <PodgladZdjec />
     </div>
   );
 }

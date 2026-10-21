@@ -8,7 +8,7 @@ Trzy substancje, trzy różne mechanizmy i trzy lekcje dla ochrony przyrody. Wsz
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/1949._B-18_spraying_DDT._Spruce_budworm_control_project._Mt._Hood_area%2C_Oregon._%2833420156136%29.jpg/960px-1949._B-18_spraying_DDT._Spruce_budworm_control_project._Mt._Hood_area%2C_Oregon._%2833420156136%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="770" alt="Czarno-białe zdjęcie lotnicze: nad rozległym lasem iglastym leci samolot, za nim ciągnie się jasna smuga oprysku" podpis="Samolot B-18 rozpyla DDT nad lasami w Oregonie w 1949 r.: tak masowo stosowano ten pestycyd" autor="R6, State &amp; Private Forestry, Forest Health Protection" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:1949._B-18_spraying_DDT._Spruce_budworm_control_project._Mt._Hood_area,_Oregon._(33420156136).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/1949._B-18_spraying_DDT._Spruce_budworm_control_project._Mt._Hood_area%2C_Oregon._%2833420156136%29.jpg/960px-1949._B-18_spraying_DDT._Spruce_budworm_control_project._Mt._Hood_area%2C_Oregon._%2833420156136%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="770" oryginal="1392x1117" alt="Czarno-białe zdjęcie lotnicze: nad rozległym lasem iglastym leci samolot, za nim ciągnie się jasna smuga oprysku" podpis="Samolot B-18 rozpyla DDT nad lasami w Oregonie w 1949 r.: tak masowo stosowano ten pestycyd" autor="R6, State &amp; Private Forestry, Forest Health Protection" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:1949._B-18_spraying_DDT._Spruce_budworm_control_project._Mt._Hood_area,_Oregon._(33420156136).jpg">
 </zdjecie>
 
 </margines>
@@ -33,7 +33,7 @@ Dorosłe ptaki często przeżywały, ale **nie miały potomstwa**. Populacja wym
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Rachel-Carson.jpg/960px-Rachel-Carson.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1215" alt="Czarno-biały portret uśmiechniętej kobiety z krótkimi falowanymi włosami, w ciemnej marynarce z białym kołnierzykiem" podpis="Rachel Carson, biolożka i autorka „Milczącej wiosny”, na oficjalnym zdjęciu z czasów pracy w amerykańskiej służbie ochrony przyrody (ok. 1940 r.)" autor="U.S. Fish and Wildlife Service" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Rachel-Carson.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Rachel-Carson.jpg/960px-Rachel-Carson.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1215" oryginal="1117x1414" alt="Czarno-biały portret uśmiechniętej kobiety z krótkimi falowanymi włosami, w ciemnej marynarce z białym kołnierzykiem" podpis="Rachel Carson, biolożka i autorka „Milczącej wiosny”, na oficjalnym zdjęciu z czasów pracy w amerykańskiej służbie ochrony przyrody (ok. 1940 r.)" autor="U.S. Fish and Wildlife Service" licencja="Public domain" licencja-url="" strona="https://commons.wikimedia.org/wiki/File:Rachel-Carson.jpg">
 </zdjecie>
 
 </margines>
@@ -46,7 +46,7 @@ Dorosłe ptaki często przeżywały, ale **nie miały potomstwa**. Populacja wym
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Indian_White-backed_Vultures_%28Gyps_bengalensis%29_%2820014162659%29.jpg/960px-Indian_White-backed_Vultures_%28Gyps_bengalensis%29_%2820014162659%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="586" alt="Kilka ciemnobrązowych sępów z długimi szyjami i jasnymi kryzami siedzi razem w suchej trawie" podpis="Sępy bengalskie w Parku Narodowym Keoladeo (Indie) w 1991 r., zanim diklofenak zdziesiątkował ich populację" autor="Bernard DUPONT from FRANCE" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Indian_White-backed_Vultures_(Gyps_bengalensis)_(20014162659).jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Indian_White-backed_Vultures_%28Gyps_bengalensis%29_%2820014162659%29.jpg/960px-Indian_White-backed_Vultures_%28Gyps_bengalensis%29_%2820014162659%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="586" oryginal="3159x1927" alt="Kilka ciemnobrązowych sępów z długimi szyjami i jasnymi kryzami siedzi razem w suchej trawie" podpis="Sępy bengalskie w Parku Narodowym Keoladeo (Indie) w 1991 r., zanim diklofenak zdziesiątkował ich populację" autor="Bernard DUPONT from FRANCE" licencja="CC BY-SA 2.0" licencja-url="https://creativecommons.org/licenses/by-sa/2.0" strona="https://commons.wikimedia.org/wiki/File:Indian_White-backed_Vultures_(Gyps_bengalensis)_(20014162659).jpg">
 </zdjecie>
 
 </margines>
@@ -72,7 +72,7 @@ Ekonomiści próbowali oszacować, o ile wzrosła śmiertelność ludzi w rejona
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Misunderstood.jpg/960px-Misunderstood.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="600" alt="Brązowy sęp siedzi na głowie martwego bawołu z rogami na gołej ziemi" podpis="Młody sęp bengalski przy głowie martwego bawołu w „restauracji dla sępów” Jatayu w Nepalu, gdzie wykłada się padlinę wolną od diklofenaku" autor="Prasan Shrestha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Misunderstood.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Misunderstood.jpg/960px-Misunderstood.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="600" oryginal="3574x2234" alt="Brązowy sęp siedzi na głowie martwego bawołu z rogami na gołej ziemi" podpis="Młody sęp bengalski przy głowie martwego bawołu w „restauracji dla sępów” Jatayu w Nepalu, gdzie wykłada się padlinę wolną od diklofenaku" autor="Prasan Shrestha" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Misunderstood.jpg">
 </zdjecie>
 
 </margines>
@@ -91,7 +91,7 @@ W 2013 r. weterynaryjny diklofenak został dopuszczony do użytku m.in. w **Hisz
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Woodpigeon_%28Columba_palumbus%29_4_gunshot_numerous_small_radio-dense_fragments_Pain_2010_pigeon_ramier.png/960px-Woodpigeon_%28Columba_palumbus%29_4_gunshot_numerous_small_radio-dense_fragments_Pain_2010_pigeon_ramier.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="675" alt="Niebieskawe zdjęcie rentgenowskie ptaka z zaznaczonymi kółkami jasnymi punktami śrucin i drobnych odłamków metalu" podpis="Zdjęcie rentgenowskie postrzelonego grzywacza: oprócz śrucin widać mnóstwo drobnych odłamków ołowiu, które połknie drapieżnik zjadający tę ofiarę" autor="Pain DJ i in." licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Woodpigeon_(Columba_palumbus)_4_gunshot_numerous_small_radio-dense_fragments_Pain_2010_pigeon_ramier.png">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Woodpigeon_%28Columba_palumbus%29_4_gunshot_numerous_small_radio-dense_fragments_Pain_2010_pigeon_ramier.png/960px-Woodpigeon_%28Columba_palumbus%29_4_gunshot_numerous_small_radio-dense_fragments_Pain_2010_pigeon_ramier.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="675" oryginal="3910x2748" alt="Niebieskawe zdjęcie rentgenowskie ptaka z zaznaczonymi kółkami jasnymi punktami śrucin i drobnych odłamków metalu" podpis="Zdjęcie rentgenowskie postrzelonego grzywacza: oprócz śrucin widać mnóstwo drobnych odłamków ołowiu, które połknie drapieżnik zjadający tę ofiarę" autor="Pain DJ i in." licencja="CC BY-SA 3.0" licencja-url="https://creativecommons.org/licenses/by-sa/3.0" strona="https://commons.wikimedia.org/wiki/File:Woodpigeon_(Columba_palumbus)_4_gunshot_numerous_small_radio-dense_fragments_Pain_2010_pigeon_ramier.png">
 </zdjecie>
 
 </margines>

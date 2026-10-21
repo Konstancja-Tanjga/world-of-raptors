@@ -30,7 +30,7 @@ Na [xeno-canto.org](https://xeno-canto.org) znajdź po 2 nagrania każdego gatun
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Rodent_Skull.jpg/960px-Rodent_Skull.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" alt="Biała czaszka małego gryzonia z długimi siekaczami leży na czerwonej ziemi" podpis="Czaszka gryzonia wydobyta z wypluwki sowy: po zębach rozpoznasz, kto był ofiarą" autor="Polestar2perf" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Rodent_Skull.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Rodent_Skull.jpg/960px-Rodent_Skull.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="1280" oryginal="1570x2093" alt="Biała czaszka małego gryzonia z długimi siekaczami leży na czerwonej ziemi" podpis="Czaszka gryzonia wydobyta z wypluwki sowy: po zębach rozpoznasz, kto był ofiarą" autor="Polestar2perf" licencja="CC0" licencja-url="http://creativecommons.org/publicdomain/zero/1.0/deed.en" strona="https://commons.wikimedia.org/wiki/File:Rodent_Skull.jpg">
 </zdjecie>
 
 </margines>

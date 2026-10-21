@@ -34,7 +34,7 @@ Dla każdej pary zapisz **dwie** różnice widoczne z daleka:
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/20210930_Falco_tinnunculus.jpg/960px-20210930_Falco_tinnunculus.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" alt="Linie energetyczne na tle nieba z chmurami, na jednym z przewodów siedzi mała sylwetka pustułki" podpis="Pustułka na linii energetycznej: tak zwykle wygląda drapieżnik widziany z samochodu" autor="Flocci Nivis" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:20210930_Falco_tinnunculus.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/20210930_Falco_tinnunculus.jpg/960px-20210930_Falco_tinnunculus.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="641" oryginal="6016x4016" alt="Linie energetyczne na tle nieba z chmurami, na jednym z przewodów siedzi mała sylwetka pustułki" podpis="Pustułka na linii energetycznej: tak zwykle wygląda drapieżnik widziany z samochodu" autor="Flocci Nivis" licencja="CC BY 4.0" licencja-url="https://creativecommons.org/licenses/by/4.0" strona="https://commons.wikimedia.org/wiki/File:20210930_Falco_tinnunculus.jpg">
 </zdjecie>
 
 </margines>

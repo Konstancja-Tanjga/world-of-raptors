@@ -39,7 +39,7 @@ Rytm: 10–15 fiszek dziennie; powtórki po 1, 3, 7, 14, 30 dniach (lub algorytm
 
 <margines>
 
-<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg/960px-29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" alt="Kilkadziesiąt małych sylwetek sępów rozsianych po szarym, pochmurnym niebie" podpis="Trening liczenia: ile sępów płowych krąży nad Monfragüe? Według autora zdjęcia 29" autor="Fernando Losada Rodríguez" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:29_Gyps_fulvus_(volando).102_-_Monfrague.jpg">
+<zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg/960px-29_Gyps_fulvus_%28volando%29.102_-_Monfrague.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="3264x2448" alt="Kilkadziesiąt małych sylwetek sępów rozsianych po szarym, pochmurnym niebie" podpis="Trening liczenia: ile sępów płowych krąży nad Monfragüe? Według autora zdjęcia 29" autor="Fernando Losada Rodríguez" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:29_Gyps_fulvus_(volando).102_-_Monfrague.jpg">
 </zdjecie>
 
 </margines>

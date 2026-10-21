@@ -6,6 +6,10 @@ import { Photo } from './Photo';
 import { CECHY_DZIENNE, CECHY_NOCNE, SpeciesCues } from './SpeciesCues';
 import { NazwaPtaka } from './NazwaPtaka';
 
+/** A plate is as wide as a lesson's gallery: the main photo takes two thirds of it, each other photo one third. */
+const rozmiaryPlanszy = (i: number, ile: number) =>
+  ile === 1 ? '(min-width: 76rem) 57rem, 100vw' : i === 0 ? '(min-width: 76rem) 38rem, (min-width: 38rem) 66vw, 100vw' : '(min-width: 76rem) 19rem, (min-width: 38rem) 33vw, 100vw';
+
 /**
  * A field-guide plate for one species: the reference photos (in flight first
  * for diurnal raptors, perched first for owls, because that is how each is
@@ -53,6 +57,7 @@ export function SpeciesMedia({
     <div className="plate">
       {zdjeciaPlanszy.length > 0 && (
         <div
+          data-galeria
           className={
             zdjeciaPlanszy.length === 1
               ? 'plate__photos plate__photos--single'
@@ -62,7 +67,14 @@ export function SpeciesMedia({
           }
         >
           {zdjeciaPlanszy.map((p, i) => (
-            <Photo key={p.foto.plik} zdjecie={p.foto} alt={p.alt} podpis={p.podpis} wazne={glowne && i === 0} />
+            <Photo
+              key={p.foto.plik}
+              zdjecie={p.foto}
+              alt={p.alt}
+              podpis={p.podpis}
+              wazne={glowne && i === 0}
+              sizes={rozmiaryPlanszy(i, zdjeciaPlanszy.length)}
+            />
           ))}
         </div>
       )}
@@ -131,6 +143,7 @@ function PlanszaMokradel({ id }: { id: string }) {
     <div className="plate">
       {zdjeciaPlanszy.length > 0 && (
         <div
+          data-galeria
           className={`plate__photos plate__photos--mokradla${zdjeciaPlanszy.length === 1 ? ' plate__photos--single' : ''}${zdjeciaPlanszy.length === 3 ? ' plate__photos--three' : ''}`}
         >
           {zdjeciaPlanszy.map((x) => (
