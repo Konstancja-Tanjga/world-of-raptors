@@ -98,6 +98,13 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
   - Article nie wie o rycinach szerszych niż tekst, więc odstęp przed nimi (`clear: right`) zależy od notatek w marginesie nad nimi.
 - **Pytanie do design systemu:** czy Article nie powinien mieć propu szerokości marginesu (albo wariantu „ilustrowany”) i slotu na rycinę na całą szerokość treści (`ArticleFigure` z `span="text" | "text+margin"`)?
 
+## Odtwarzacz nagrań
+
+- **Po co sięgnęłam:** głosy sów w lekcjach i w teście startowym.
+- **Czego nie ma w Big Hat:** komponentu do dźwięku. Użyłam natywnego `<audio controls>` (`src/components/Nagranie.tsx`) z opisem nad nim i podpisem z licencją pod nim.
+- **Co robi gorzej:** wygląd przycisków odtwarzacza zależy od przeglądarki i nie bierze kolorów z motywu; nie ma przewijania sonogramu razem z dźwiękiem.
+- **Pytanie do design systemu:** czy odtwarzacz mediów (dźwięk, z opcjonalnym obrazem fali albo sonogramem) to komponent systemu?
+
 ## Podgląd zdjęcia na pełnym ekranie
 
 - **Po co sięgnęłam:** każde zdjęcie w lekcji i na karcie gatunku można powiększyć na cały ekran, bez kadrowania, z podpisem i licencją, i przejść do następnego w tej samej grupie.

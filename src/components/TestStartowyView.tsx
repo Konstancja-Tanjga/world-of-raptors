@@ -7,6 +7,7 @@ import type { PytanieTestu } from '@/lib/types';
 import { podsumuj, polecenia, type Podsumowanie } from '@/lib/wynikTestu';
 import { srcSetCommons } from '@/lib/zdjecia';
 import { ButtonLink } from './ButtonLink';
+import { Nagranie } from './Nagranie';
 import { Badge, Button, Card, Progress, RadioGroup, StateBlock } from './ds';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 import { NazwaPtaka } from './NazwaPtaka';
@@ -59,32 +60,7 @@ function Scena({ pytanie, sylwetka, odkryta }: { pytanie: PytanieTestu; sylwetka
     );
   }
   if (pytanie.rodzaj === 'glos' && pytanie.nagranie) {
-    const n = pytanie.nagranie;
-    return (
-      <figure className="test__nagranie">
-        <audio controls preload="none" src={n.src} aria-label="Głos ptaka do rozpoznania">
-          Ta przeglądarka nie odtwarza nagrań.
-        </audio>
-        <figcaption className="test__podpis">
-          Nagranie: {n.autor},{' '}
-          <a href={n.licencjaUrl} target="_blank" rel="noreferrer">
-            {n.licencja}
-          </a>
-          {odkryta && (
-            <>
-              ,{' '}
-              <a href={`https://xeno-canto.org/${n.xc}`} target="_blank" rel="noreferrer">
-                xeno-canto XC{n.xc}
-              </a>
-              ,{' '}
-              <a href={n.strona} target="_blank" rel="noreferrer">
-                Wikimedia Commons
-              </a>
-            </>
-          )}
-        </figcaption>
-      </figure>
-    );
+    return <Nagranie nagranie={pytanie.nagranie} etykieta="Głos ptaka do rozpoznania" odkryte={odkryta} />;
   }
   return null;
 }

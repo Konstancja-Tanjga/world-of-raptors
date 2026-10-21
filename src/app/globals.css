@@ -3030,8 +3030,7 @@ a.modul:focus-visible {
   height: auto;
   fill: var(--wor-sylwetka);
 }
-.test__zdjecie,
-.test__nagranie {
+.test__zdjecie {
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-tight);
@@ -3046,8 +3045,32 @@ a.modul:focus-visible {
   border-radius: var(--wor-radius-scene);
   background: var(--bh-surface-sunken);
 }
-.test__nagranie audio {
+/* A recording (Nagranie.tsx): what is heard, the player, the credit. */
+.nagranie {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+.prose .nagranie {
+  margin-block: var(--bh-gap-loose);
+}
+.nagranie__opis {
+  margin: 0;
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-body);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.nagranie audio {
   width: 100%;
+}
+.nagranie__podpis {
+  color: var(--bh-text-muted);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-dense);
+}
+.nagranie__podpis a {
+  color: inherit;
 }
 .test__podpis {
   color: var(--bh-text-muted);

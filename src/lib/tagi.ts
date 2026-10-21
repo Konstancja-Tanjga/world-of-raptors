@@ -1,7 +1,7 @@
 import { oryginalZAtrybutu } from './zdjecia';
 
 /*
- * The photo tags written in lessons and module overviews, read and checked
+ * The photo and recording tags written in lessons and module overviews, read and checked
  * without rendering anything (the build runs these, see sprawdzSpojnosc in
  * content.ts; Markdown.tsx renders the same tags).
  */
@@ -39,9 +39,10 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * size; a tag not written in lowercase on one line of its own with the closing
  * tag on the next (Markdown would wrap it in a paragraph, and a tag over
  * several lines would escape these checks); a gallery with anything but one
- * to six photos inside.
+ * to six photos inside; a `<glos>` not written as a block or naming a
+ * recording `idNagran` does not have.
  */
-export function problemyTagow(md: string, plik: string): string[] {
+export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
   const linie = md.split('\n');
   const gdzie = (i: number) => `${plik}:${i + 1}`;
@@ -71,6 +72,17 @@ export function problemyTagow(md: string, plik: string): string[] {
       if (MINIATURA.test(src) && !oryginalZAtrybutu(a.oryginal ?? '')) {
         bledy.push(`${gdzie(i)}: miniatura z Commons bez oryginal="SZERxWYS" (python3 scripts/commons.py rozmiary-lekcji)`);
       }
+    }
+  }
+
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    if (!/<glos\b/i.test(t)) continue;
+    const id = /^<glos data-id="([^"]+)">$/.exec(t)?.[1];
+    if (!id || linie[i + 1]?.trim() !== '</glos>') {
+      bledy.push(`${gdzie(i)}: zapisz nagranie jako <glos data-id="gatunek/opis"> w osobnej linii, a </glos> w następnej`);
+    } else if (!idNagran.has(id)) {
+      bledy.push(`${gdzie(i)}: nagrania „${id}” nie ma w content/nagrania.json`);
     }
   }
 

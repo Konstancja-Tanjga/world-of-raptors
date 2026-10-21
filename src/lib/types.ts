@@ -257,21 +257,33 @@ export type GrupaSylwetki = {
   gatunek: string;
 };
 
-/** A bird sound from Wikimedia Commons (most from xeno-canto), with the credit its licence requires. */
+/**
+ * A bird sound with the credit its licence requires: a Wikimedia Commons file
+ * (most are xeno-canto mirrors), or a freely licensed xeno-canto recording
+ * served from public/nagrania/ when Commons has none.
+ */
 export type Nagranie = {
   src: string;
   autor: string;
   licencja: string;
   licencjaUrl: string;
-  /** Commons file page; its title names the species, so it is shown only after the answer. */
+  /** The Commons file page, or the xeno-canto page; its title names the species, so the test shows it only after the answer. */
   strona: string;
-  /** xeno-canto catalogue number. */
-  xc: number;
-  /** xeno-canto's quality rating, A best. */
-  ocena: string;
+  /** xeno-canto catalogue number, for a recording that came from there. */
+  xc?: number;
+  /** xeno-canto's quality rating, A best, where it is known. */
+  ocena?: string;
   sekundy: number;
   /** The owner has listened to it and confirmed the species and that the bird is clearly audible. */
   zatwierdzone: boolean;
+};
+
+/** A recording a lesson plays (`<glos data-id="puszczyk/samiec">`), from content/nagrania.json. */
+export type NagranieLekcji = Nagranie & {
+  /** The atlas species heard. */
+  gatunek: string;
+  /** What is heard, shown above the player: "Samiec: głos terytorialny". */
+  opis: string;
 };
 
 export type RodzajPytaniaTestu = 'sylwetka' | 'zdjecie' | 'glos' | 'wiedza';

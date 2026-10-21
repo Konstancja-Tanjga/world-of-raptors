@@ -60,3 +60,10 @@ test('nested, unopened and closing-tag lines in galleries', () => {
 test('an entity that is no character is left as written', () => {
   assert.equal(odkoduj('&#x110000;'), '&#x110000;');
 });
+
+test('a recording tag names a recording in the catalogue, as a block', () => {
+  const ids = new Set(['puszczyk/samiec']);
+  assert.deepEqual(problemyTagow('<glos data-id="puszczyk/samiec">\n</glos>', 'l.md', ids), []);
+  assert.match(problemyTagow('<glos data-id="puszczyk/samica">\n</glos>', 'l.md', ids)[0], /nie ma w content\/nagrania.json/);
+  assert.match(problemyTagow('Słuchaj: <glos data-id="puszczyk/samiec"></glos>', 'l.md', ids)[0], /osobnej linii/);
+});
