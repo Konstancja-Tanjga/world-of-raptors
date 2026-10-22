@@ -3,7 +3,7 @@ import { zdjecia, znajdzGatunek, znajdzPtakaMokradel } from '@/lib/content';
 import { linkiGatunku } from '@/lib/media';
 import { CuesTable } from './CuesTable';
 import { Photo } from './Photo';
-import { CECHY_DZIENNE, CECHY_NOCNE, SpeciesCues } from './SpeciesCues';
+import { CECHY_DZIENNE, CECHY_NOCNE, CECHY_SIEWKOWE, ListaCech, SpeciesCues } from './SpeciesCues';
 import { NazwaPtaka } from './NazwaPtaka';
 
 /** A plate is as wide as a lesson's gallery: the main photo takes two thirds of it, each other photo one third. */
@@ -31,7 +31,7 @@ export function SpeciesMedia({
   glowne?: boolean;
 }) {
   const g = znajdzGatunek(id);
-  if (!g) return <PlanszaMokradel id={id} />;
+  if (!g) return <PlanszaMokradel id={id} ileMylonych={ileMylonych} />;
   const z = zdjecia[id];
   const nocny = g.aktywnosc === 'nocny';
   const mylone = g.mylona_z
@@ -127,10 +127,12 @@ export function SpeciesMedia({
 /**
  * A bird of marshes in a lesson: perched or standing first (that is how it is
  * usually seen), then in flight where a cue shows only on the wing, then the
- * view that most helps identification (`cecha`), and the way to its
- * card, where I tick it. Its field marks are the lesson's own text.
+ * view that most helps identification (`cecha`), and the way to its card,
+ * where I tick it. A wader taught as a full species (B8) also gets its cues
+ * compared with its look-alikes, like a raptor; for the others the field
+ * marks are the lesson's own text.
  */
-function PlanszaMokradel({ id }: { id: string }) {
+function PlanszaMokradel({ id, ileMylonych }: { id: string; ileMylonych: number }) {
   const p = znajdzPtakaMokradel(id);
   if (!p) return null;
   const z = zdjecia[id];
@@ -139,17 +141,48 @@ function PlanszaMokradel({ id }: { id: string }) {
     z?.lot && { foto: z.lot, alt: `${p.pl} w locie`, podpis: 'W locie' },
     z?.cecha && { foto: z.cecha, alt: z.cecha.alt, podpis: z.cecha.podpis },
   ].filter((x) => !!x);
+  const r = p.rozpoznawanie;
+  const mylone = (r?.mylona_z ?? []).map(znajdzPtakaMokradel).filter((m) => m !== undefined).slice(0, ileMylonych);
+  const nazwa = (x: { pl: string }) => x.pl[0].toLocaleUpperCase('pl') + x.pl.slice(1);
   return (
     <div className="plate">
       {zdjeciaPlanszy.length > 0 && (
         <div
           data-galeria
-          className={`plate__photos plate__photos--mokradla${zdjeciaPlanszy.length === 1 ? ' plate__photos--single' : ''}${zdjeciaPlanszy.length === 3 ? ' plate__photos--three' : ''}`}
+          className={`plate__photos${r ? '' : ' plate__photos--mokradla'}${zdjeciaPlanszy.length === 1 ? ' plate__photos--single' : ''}${zdjeciaPlanszy.length === 3 ? ' plate__photos--three' : ''}`}
         >
-          {zdjeciaPlanszy.map((x) => (
-            <Photo key={x.foto.plik} zdjecie={x.foto} alt={x.alt} podpis={x.podpis} />
+          {zdjeciaPlanszy.map((x, i) => (
+            <Photo key={x.foto.plik} zdjecie={x.foto} alt={x.alt} podpis={x.podpis} sizes={r ? rozmiaryPlanszy(i, zdjeciaPlanszy.length) : undefined} />
           ))}
         </div>
+      )}
+      {r && mylone.length > 0 ? (
+        <>
+          <CuesTable
+            podpis={`Na co patrzeć: ${nazwa(p)} i podobne gatunki`}
+            cechy={CECHY_SIEWKOWE}
+            gatunki={[p, ...mylone].map((x) => ({ id: x.id, pl: nazwa(x), cechy: x.rozpoznawanie?.klucz ?? {} }))}
+          />
+          <ul className="plate__lookalikes" aria-label={`Gatunki podobne do: ${p.pl}`}>
+            {mylone.map((m) => {
+              const mz = zdjecia[m.id];
+              const foto = mz?.siedzacy ?? mz?.lot;
+              return (
+                <li key={m.id}>
+                  {foto && <Photo zdjecie={foto} alt={m.pl} maly />}
+                  <Link href={`/gatunki/${m.id}`} className="text-link">
+                    <NazwaPtaka id={m.id} pl={nazwa(m)} />
+                  </Link>{' '}
+                  <span className="latin" translate="no" lang="la">
+                    {m.lat}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      ) : (
+        r && <ListaCech cechy={r.klucz} pola={CECHY_SIEWKOWE} />
       )}
       <p className="plate__karta">
         <Link href={`/gatunki/${p.id}`} className="text-link">

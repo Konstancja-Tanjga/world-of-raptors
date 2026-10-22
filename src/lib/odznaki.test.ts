@@ -1,8 +1,24 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { checklistaV1doV2, przelaczObserwacje, type Checklista } from './obserwacje';
-import type { GrupaListyMiejsca } from './types';
-import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
+import type { ZapisFiszki } from './fiszki';
+import { STAN_KARTY, type GrupaListyMiejsca } from './types';
+import { kartyGatunku, NASZYWKI, stanNieba, zdobyteWStanie, type GatunekNieba, type StrukturaNieba } from './odznaki';
+
+/** A card answered well over days: in review, the next one a month away. */
+const nauczona: ZapisFiszki = {
+  due: '2026-03-01T12:00:00.000Z',
+  stability: 30,
+  difficulty: 5,
+  elapsed_days: 19,
+  scheduled_days: 30,
+  learning_steps: 0,
+  reps: 4,
+  lapses: 0,
+  state: STAN_KARTY.powtorki,
+  last_review: '2026-01-20T12:00:00.000Z',
+  wprowadzona: '2026-01-01',
+};
 
 const T = '2026-10-09T08:00:00.000Z';
 const ids = (prefix: string, n: number) => Array.from({ length: n }, (_, i) => `${prefix}-${i + 1}`);
@@ -22,7 +38,8 @@ const WSZYSTKIE = MARISMAS.flatMap((g) => g.gatunki);
 const struktura: StrukturaNieba = {
   moduly: [],
   // A raptor outside the Marismas list, to show it does not count there.
-  gatunki: [{ id: 'bielik', pl: 'Bielik', dzienny: true, zdjecia: [], lekcje: [] }],
+  gatunki: [{ id: 'bielik', pl: 'Bielik', dzienny: true, zdjecia: [], glos: false, lekcje: [] }],
+  siewkowce: [],
   osiemGrup: [],
   marismas: MARISMAS,
 };
@@ -114,7 +131,7 @@ test('an unticked raptor earns no lifer and no gold ring', () => {
 test('a raptor on the Marismas list counts for both; a bird of marshes is not a lifer', () => {
   const obie: StrukturaNieba = {
     ...struktura,
-    gatunki: [...struktura.gatunki, { id: 'kaniuk', pl: 'Kaniuk', dzienny: true, zdjecia: [], lekcje: [] }],
+    gatunki: [...struktura.gatunki, { id: 'kaniuk', pl: 'Kaniuk', dzienny: true, zdjecia: [], glos: false, lekcje: [] }],
     marismas: [{ id: 'drapiezniki', gatunki: ['kaniuk'] }, { id: 'czaple', gatunki: ['flaming-rozowy'] }],
   };
   const kaniuk = stanNieba(obie, {}, {}, widziane(['kaniuk']));
@@ -124,4 +141,27 @@ test('a raptor on the Marismas list counts for both; a bird of marshes is not a 
   const flaming = stanNieba(obie, {}, {}, widziane(['flaming-rozowy']));
   assert.equal(flaming.naszywki['marismas-pierwsza'].zdobyta, true);
   assert.equal(flaming.naszywki['pierwszy-lifer'].zdobyta, false);
+});
+
+test('a wader has rings of its own: no lifer, no silhouette card, a voice card when it has one', () => {
+  const kulik: GatunekNieba = { id: 'kulik-wielki', pl: 'Kulik wielki', dzienny: false, zdjecia: ['lot'], glos: true, lekcje: ['siewkowce/01'] };
+  const zSiewkowcem: StrukturaNieba = {
+    ...struktura,
+    siewkowce: [kulik],
+    moduly: [{ slug: 'siewkowce', id: 'B8', tytul: 'Siewkowce', lekcje: ['siewkowce/01'], gatunki: ['kulik-wielki'], nazwaGwiazdozbioru: 'Drzemlik' }],
+  };
+  assert.deepEqual(kartyGatunku(kulik), ['kulik-wielki/lot', 'kulik-wielki/pl-en', 'kulik-wielki/pl-es', 'kulik-wielki/en-pl', 'kulik-wielki/es-pl', 'kulik-wielki/glos']);
+  const widziany = stanNieba(zSiewkowcem, {}, {}, widziane(['kulik-wielki']));
+  assert.equal(widziany.siewkowce['kulik-wielki'].widzialam, true);
+  assert.equal(widziany.lifery, 0);
+  assert.equal(widziany.naszywki['pierwszy-lifer'].zdobyta, false);
+  // B8's gold star asks for the wader to be recognised: every card of it learned, the voice too.
+  const postep = { 'siewkowce/01': '2026-10-20' };
+  const bezGlosu = Object.fromEntries(kartyGatunku(kulik).filter((id) => !id.endsWith('/glos')).map((id) => [id, nauczona]));
+  assert.equal(stanNieba(zSiewkowcem, postep, bezGlosu, {}).moduly.siewkowce.opanowany, false);
+  const wszystkie = Object.fromEntries(kartyGatunku(kulik).map((id) => [id, nauczona]));
+  const pelny = stanNieba(zSiewkowcem, postep, wszystkie, {});
+  assert.equal(pelny.siewkowce['kulik-wielki'].rozpoznaje, true);
+  assert.equal(pelny.moduly.siewkowce.opanowany, true);
+  assert.deepEqual(zdobyteWStanie(stanNieba(zSiewkowcem, {}, {}, {})), []);
 });

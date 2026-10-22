@@ -19,7 +19,8 @@ import { SpeciesObservation } from '@/components/SpeciesObservation';
 import {
   ciekawostkiDla,
   modulyGatunku,
-  modulyMiejsc,
+  modulyPtakaMokradel,
+  nagranieGatunku,
   ptakiNaLiscie,
   stronaMorfu,
   strukturaNieba,
@@ -52,7 +53,20 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
   if (!g) {
     const p = znajdzPtakaMokradel(id);
     if (!p) notFound();
-    return <PtakMokradelStrona p={p} z={zdjecia[p.id]} moduly={modulyMiejsc(p.miejsca)} />;
+    const podobne = (p.rozpoznawanie?.mylona_z ?? []).flatMap((m) => {
+      const x = znajdzPtakaMokradel(m);
+      return x ? [{ id: x.id, pl: x.pl }] : [];
+    });
+    return (
+      <PtakMokradelStrona
+        p={p}
+        z={zdjecia[p.id]}
+        moduly={modulyPtakaMokradel(p)}
+        pierscienie={strukturaNieba().siewkowce.find((x) => x.id === p.id)}
+        nagranie={p.rozpoznawanie ? nagranieGatunku(p.id) : undefined}
+        podobne={podobne}
+      />
+    );
   }
 
   const nocny = g.aktywnosc === 'nocny';

@@ -11,6 +11,7 @@ import {
   komplet,
   NASZYWKI,
   zdobyteWStanie,
+  type Obraczki,
   type StrukturaNieba,
 } from '@/lib/odznaki';
 import { odmiana } from '@/lib/odmiana';
@@ -26,7 +27,7 @@ const zDaty = (d: string) => DATA.format(new Date(`${d}T12:00:00`));
 
 /**
  * "Moje niebo": the constellations, my life list with each species' rings,
- * and the wall of patches. Constellations, gold stars and patches stay
+ * B8's waders on a shelf of their own, and the wall of patches. Constellations, gold stars and patches stay
  * earned once earned (with their date, from zdobyte.ts); the rings show what
  * I know now. Whatever has not played its moment yet plays it once, when it
  * comes into view; on the first visit that is everything earned so far.
@@ -93,6 +94,8 @@ export function MojeNiebo({
 
   const lifery = stan.lifery;
   const komplety = struktura.gatunki.filter((g) => komplet(stan.gatunki[g.id])).length;
+  const widzianeSiewkowce = struktura.siewkowce.filter((g) => stan.siewkowce[g.id].widzialam).length;
+  const kompletySiewkowcow = struktura.siewkowce.filter((g) => komplet(stan.siewkowce[g.id])).length;
   const naszywkiZdobyte = NASZYWKI.filter((n) => stan.naszywki[n.id].zdobyta || zdobyte[kluczNaszywki(n.id)]).length;
   // New patches are sewn on one after another, in the wall's order.
   const doPrzyszycia = NASZYWKI.filter((n) => nowe.has(kluczNaszywki(n.id))).map((n) => n.id);
@@ -139,31 +142,42 @@ export function MojeNiebo({
           </dl>
         </header>
         <ul className="lista-zyciowa">
-          {struktura.gatunki.map((g) => {
-            const o = stan.gatunki[g.id];
-            const obraczek = [o.znam, o.rozpoznaje, o.widzialam].filter(Boolean).length;
-            const wyglad = o.widzialam ? 'zloto' : obraczek === 2 ? 'atrament' : obraczek === 1 ? 'szkic' : 'kontur';
-            return (
-              <li key={g.id} data-wyglad={wyglad}>
-                <Link href={`/gatunki/${g.id}`} className="lista-zyciowa__gatunek">
-                  {sylwetki[g.id]}
-                  <span className="lista-zyciowa__nazwa">
-                    <NazwaPtaka id={g.id} pl={g.pl} />
-                  </span>
-                  <span className="lista-zyciowa__obraczki" aria-hidden="true">
-                    {OBRACZKI.map((r) => (
-                      <span key={r.rodzaj} className="lista-zyciowa__obraczka" data-rodzaj={r.rodzaj} data-zdobyta={o[r.rodzaj] ? '' : undefined} />
-                    ))}
-                  </span>
-                  <span className="visually-hidden">
-                    , obrączki: {OBRACZKI.filter((r) => o[r.rodzaj]).map((r) => r.nazwa).join(', ') || 'jeszcze żadnej'}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
+          {struktura.gatunki.map((g) => (
+            <PozycjaListy key={g.id} id={g.id} pl={g.pl} o={stan.gatunki[g.id]} rysunek={sylwetki[g.id]} />
+          ))}
         </ul>
       </section>
+
+      {struktura.siewkowce.length > 0 && (
+        <section className="moje-niebo__sekcja" aria-labelledby="siewkowce">
+          <header className="sekcja sekcja--wiersz">
+            <div>
+              <p className="eyebrow">Moduł B8</p>
+              <h2 id="siewkowce" className="sekcja__tytul">
+                Siewkowce
+              </h2>
+              <p className="sekcja__lead">
+                Te same trzy obrączki co u drapieżników. Siewkowce nie wchodzą do listy życiowej drapieżników, mają swoją półkę.
+              </p>
+            </div>
+            <dl className="moje-niebo__liczby">
+              <div>
+                <dt>{odmiana(widzianeSiewkowce, ['gatunek widziany', 'gatunki widziane', 'gatunków widzianych'])}</dt>
+                <dd>{widzianeSiewkowce}</dd>
+              </div>
+              <div>
+                <dt>{odmiana(kompletySiewkowcow, ['komplet obrączek', 'komplety obrączek', 'kompletów obrączek'])}</dt>
+                <dd>{kompletySiewkowcow}</dd>
+              </div>
+            </dl>
+          </header>
+          <ul className="lista-zyciowa lista-zyciowa--bez-rysunkow">
+            {struktura.siewkowce.map((g) => (
+              <PozycjaListy key={g.id} id={g.id} pl={g.pl} o={stan.siewkowce[g.id]} />
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="moje-niebo__sekcja" aria-labelledby="naszywki">
         <header className="sekcja sekcja--wiersz">
@@ -211,5 +225,29 @@ export function MojeNiebo({
         </ul>
       </section>
     </>
+  );
+}
+
+/** One species on a shelf: its drawing (raptors), its name and its three rings, gold once seen. */
+function PozycjaListy({ id, pl, o, rysunek }: { id: string; pl: string; o: Obraczki; rysunek?: ReactNode }) {
+  const obraczek = [o.znam, o.rozpoznaje, o.widzialam].filter(Boolean).length;
+  const wyglad = o.widzialam ? 'zloto' : obraczek === 2 ? 'atrament' : obraczek === 1 ? 'szkic' : 'kontur';
+  return (
+    <li data-wyglad={wyglad}>
+      <Link href={`/gatunki/${id}`} className="lista-zyciowa__gatunek">
+        {rysunek}
+        <span className="lista-zyciowa__nazwa">
+          <NazwaPtaka id={id} pl={pl} />
+        </span>
+        <span className="lista-zyciowa__obraczki" aria-hidden="true">
+          {OBRACZKI.map((r) => (
+            <span key={r.rodzaj} className="lista-zyciowa__obraczka" data-rodzaj={r.rodzaj} data-zdobyta={o[r.rodzaj] ? '' : undefined} />
+          ))}
+        </span>
+        <span className="visually-hidden">
+          , obrączki: {OBRACZKI.filter((r) => o[r.rodzaj]).map((r) => r.nazwa).join(', ') || 'jeszcze żadnej'}
+        </span>
+      </Link>
+    </li>
   );
 }

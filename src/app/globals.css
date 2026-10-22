@@ -1215,6 +1215,19 @@ li {
   outline: 2px solid var(--wor-zloto);
   outline-offset: 2px;
 }
+/* A voice card: the player and its sonogram, on the same raised paper as a name card. */
+.fiszka__scena--glos {
+  /* As tall as the player, its sonogram and its credit need, also on a phone. */
+  aspect-ratio: auto;
+  max-height: none;
+  align-content: center;
+  padding: var(--wor-space-block);
+  background: var(--bh-surface-raised);
+  box-shadow: var(--bh-elevation-raised);
+}
+.fiszka__scena--glos .nagranie {
+  width: 100%;
+}
 .fiszka__scena--nazwa {
   container-type: inline-size;
   align-content: center;
