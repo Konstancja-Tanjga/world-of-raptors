@@ -38,6 +38,22 @@
 | Stare wierzby i wsie (np. Mazowsze, Kujawy) | pójdźka |
 | Kamieniołomy, skaliste doliny | puchacz |
 
+### Rzadkie sowy północy
+
+Trzy sowy z tajgi i tundry widuje się w Polsce rzadko, ale warto je znać:
+
+- **Puszczyk mszarny** — *Strix nebulosa* (ang. Great Grey Owl): od 2010 r. gniazduje w Lasach Sobiborskich na Polesiu Lubelskim, często na sztucznych platformach. W 2020 r. było tam 16 terytoriów, z czego 10 par lęgowych. Ogromna szara głowa w koncentrycznych kręgach, małe żółte oczy, biała „muszka” pod dziobem. Głos niski i cichy, niesie się tylko na kilkaset metrów, więc łatwo go przeoczyć. Na polskiej czerwonej liście ma status zagrożonego (EN).
+- **Sowa śnieżna** — *Bubo scandiacus* (ang. Snowy Owl): rzadki gość zimowy (X–III), głównie na wybrzeżu i na północy. Siedzi na ziemi w otwartym terenie i poluje za dnia. Samce z wiekiem są prawie białe, samice i młode białe w ciemne prążki. Zimą zwykle milczy.
+- **Sowa jarzębata** — *Surnia ulula* (ang. Northern Hawk-Owl): do końca 2023 r. Komisja Faunistyczna uznała ok. 51 jej stwierdzeń w Polsce, głównie zimą (np. Puszcza Białowieska, Biebrza, ujście Wisły). Wygląda i lata jak krogulec: długi ogon, spiczaste skrzydła. Siedzi wysoko na czubkach drzew i poluje za dnia.
+
+<glos data-id="puszczyk-mszarny/samiec">
+</glos>
+
+<glos data-id="sowa-jarzebata/samiec">
+</glos>
+
+Obserwację sowy jarzębatej albo sowy śnieżnej zgłoś do [Komisji Faunistycznej](https://komisjafaunistyczna.pl), bo w Polsce to gatunki rzadkie, których każde stwierdzenie trzeba udokumentować.
+
 ### Południe Hiszpanii
 
 <margines>
@@ -65,7 +81,8 @@
 - **Nie odtwarzaj głosów (wabienie) w sezonie lęgowym.** Sowa traktuje nagranie jak intruza, traci czas i energię, a może nawet porzucić gniazdo.
 - Nie świeć latarką prosto w sowę dłużej niż kilka sekund.
 - Nie podchodź do dziupli ani gniazd. Puszczyk uralski i puszczyk bronią ich atakiem.
-- Nie publikuj lokalizacji gniazd gatunków rzadkich (puchacz, sóweczka, włochatka).
+- Nie publikuj lokalizacji gniazd gatunków rzadkich (puchacz, puszczyk mszarny, sóweczka, włochatka).
+- Wokół znanych gniazd czterech sów regionalny dyrektor ochrony środowiska (RDOŚ) może wyznaczyć strefy ochronne: u puchacza i puszczyka mszarnego do 200 m przez cały rok i do 500 m od 1 stycznia do 31 lipca, u sóweczki i włochatki do 50 m.
 
 ## Filmy
 - [YouTube: zimowe noclegowisko uszatek](https://www.youtube.com/results?search_query=long-eared+owl+winter+roost)
@@ -77,3 +94,6 @@
 - [Merlin Bird ID (Cornell Lab)](https://merlin.allaboutbirds.org)
 - [eBird: Polska](https://ebird.org/region/PL) i [eBird: Andaluzja](https://ebird.org/region/ES-AN): gdzie i kiedy notowano sowy
 - [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): m.in. monitoring sów leśnych
+- [Rozporządzenie w sprawie ochrony gatunkowej zwierząt (Dz.U. 2022 poz. 2380)](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20220002380): strefy ochronne gniazd
+- [Czerwona lista ptaków Polski (OTOP, 2020)](https://otop.org.pl): status puszczyka mszarnego
+- [Komisja Faunistyczna](https://komisjafaunistyczna.pl): stwierdzenia rzadkich gatunków, w tym sowy jarzębatej

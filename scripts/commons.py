@@ -1,4 +1,4 @@
-"""Wikimedia Commons helpers for adding photos to lessons.
+"""Wikimedia Commons helpers for adding photos and recordings to lessons.
 
 Search (downloads small previews you can open to check what is in the photo):
     python3 scripts/commons.py search "Haliaeetus albicilla talons" [--out /tmp/previews] [--limit 12]
@@ -9,6 +9,10 @@ Make a lesson tag for a chosen file (checks the licence, fills author, licence a
 Record the original size (oryginal="WxH") of every Commons photo in the lessons and module
 overviews, moving any full-size original over 960 px to its 960 px thumbnail (own photos are skipped):
     python3 scripts/commons.py rozmiary-lekcji [--katalog content]
+
+Print an entry for content/nagrania.json from a Commons recording (most are xeno-canto
+mirrors); refuses one whose description, categories or title do not name the species:
+    python3 scripts/commons.py nagranie "File:Strix aluco - Tawny Owl XC583836.mp3" --gatunek puszczyk --lat "Strix aluco" --opis "Samiec: głos terytorialny"
 
 Only freely licensed files are accepted: CC0, public domain, CC BY, CC BY-SA.
 """
@@ -26,7 +30,7 @@ import urllib.request
 
 UA = 'WorldOfRaptors/1.0 (private course; github.com/Konstancja-Tanjga/world-of-raptors)'
 API = 'https://commons.wikimedia.org/w/api.php'
-OK_LICENSE = re.compile(r'^(CC0|Public domain|PD|CC BY(-SA)? [0-9.]+)', re.I)
+OK_LICENSE = re.compile(r'^(CC0( 1\.0)?|Public domain|PD|CC BY(-SA)? [0-9.]+)$', re.I)
 
 
 def fetch(url):
@@ -197,17 +201,64 @@ def lesson_sizes(root):
     print(f'{sum(map(len, tags.values()))} tags, {len(titles)} files, {changed} tags updated')
 
 
+def recording(title, gatunek, lat, opis):
+    d = get({'action': 'query', 'titles': title, 'prop': 'imageinfo|categories', 'iiprop': 'url|size|mime|extmetadata', 'cllimit': 50})
+    page = next(iter(d.get('query', {}).get('pages', {}).values()), {})
+    if 'imageinfo' not in page:
+        sys.exit(f'not found: {title}')
+    ii = page['imageinfo'][0]
+    meta = ii.get('extmetadata', {})
+    if not (ii.get('mime') or '').startswith(('audio/', 'application/ogg')):
+        sys.exit(f"{title}: not an audio file ({ii.get('mime')})")
+    licence = strip(meta.get('LicenseShortName', {}).get('value'))
+    if not OK_LICENSE.match(licence or ''):
+        sys.exit(f'licence not allowed: {licence}')
+    author = clean_author(strip(meta.get('Artist', {}).get('value')))
+    licence_url = strip(meta.get('LicenseUrl', {}).get('value'))
+    if licence.upper().startswith('CC BY') and (not author or not licence_url):
+        sys.exit(f"{title}: no author or licence URL in the metadata; attribution is required")
+    genus, species = lat.split()
+    desc = strip(meta.get('ImageDescription', {}).get('value'))
+    named = re.search(rf'Genus:\s*{genus}\b', desc) and re.search(rf'Species:\s*{species}\b', desc)
+    categories = [c['title'] for c in page.get('categories', [])]
+    in_category = any(re.search(rf'\b{lat}\b', c) for c in categories)
+    if not named and not in_category and lat.replace(' ', '_') not in page['title'].replace(' ', '_'):
+        sys.exit(f'{title}: neither the description (Genus:/Species:), the categories nor the title names {lat}')
+    xc = re.search(r'XC(\d+)', page['title'])
+    src = ii['url'].split('?')[0]
+    # Safari plays no Ogg and a WAV is large: Commons serves every audio file transcoded to MP3 too.
+    if ii.get('mime') != 'audio/mpeg':
+        name = src.rsplit('/', 1)[1]
+        src = src.replace('/wikipedia/commons/', '/wikipedia/commons/transcoded/', 1) + f'/{name}.mp3'
+    entry = {
+        'gatunek': gatunek,
+        'opis': opis,
+        'src': src,
+        'autor': author or 'autor nieznany (domena publiczna)',
+        'licencja': licence,
+        'licencjaUrl': licence_url,
+        'strona': ii['descriptionurl'],
+        **({'xc': int(xc.group(1))} if xc else {}),
+        'sekundy': round(ii.get('duration') or 0),
+        'zatwierdzone': False,
+    }
+    print(json.dumps(entry, ensure_ascii=False, indent=2))
+
+
 ap = argparse.ArgumentParser()
 sub = ap.add_subparsers(dest='cmd', required=True)
 s = sub.add_parser('search'); s.add_argument('query'); s.add_argument('--out', default='/tmp/commons-previews'); s.add_argument('--limit', type=int, default=12)
 t = sub.add_parser('tag'); t.add_argument('title'); t.add_argument('--podpis', required=True); t.add_argument('--alt', required=True)
 r = sub.add_parser('rozmiary'); r.add_argument('--plik', default='content/zdjecia.json')
+n = sub.add_parser('nagranie'); n.add_argument('title'); n.add_argument('--gatunek', required=True); n.add_argument('--lat', required=True); n.add_argument('--opis', required=True)
 rl = sub.add_parser('rozmiary-lekcji'); rl.add_argument('--katalog', default='content')
 a = ap.parse_args()
 if a.cmd == 'search':
     search(a.query, a.out, a.limit)
 elif a.cmd == 'rozmiary':
     sizes(a.plik)
+elif a.cmd == 'nagranie':
+    recording(a.title, a.gatunek, a.lat, a.opis)
 elif a.cmd == 'rozmiary-lekcji':
     lesson_sizes(a.katalog)
 else:

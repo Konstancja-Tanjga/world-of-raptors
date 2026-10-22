@@ -1300,7 +1300,8 @@
         "małe ciemne oczy w gładkiej szlarze"
       ],
       "mylona_z": [
-        "puszczyk"
+        "puszczyk",
+        "puszczyk-mszarny"
       ],
       "gdzie": "Karpaty, stare lasy wschodniej Polski",
       "aktywnosc": "nocny",
@@ -1609,6 +1610,129 @@
         "glowa": "mała",
         "glos": "gwizd „djuu”",
         "sylwetka": "wielkości szpaka, długi ruchliwy ogon"
+      }
+    },
+    {
+      "id": "puszczyk-mszarny",
+      "pl": "Puszczyk mszarny",
+      "lat": "Strix nebulosa",
+      "en": "Great Grey Owl",
+      "es": "Cárabo lapón",
+      "grupa": "sowy",
+      "status": [
+        "osiadly",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        130,
+        150
+      ],
+      "dlugosc_cm": [
+        60,
+        70
+      ],
+      "sezon": "toki II–V",
+      "cechy": [
+        "ogromna okrągła głowa w szarych kręgach",
+        "małe żółte oczy, biała „muszka” pod dziobem",
+        "długi ogon, szerokie skrzydła"
+      ],
+      "mylona_z": [
+        "puszczyk-uralski"
+      ],
+      "gdzie": "stare lasy z mokradłami; w Polsce od 2010 r. gniazduje w Lasach Sobiborskich (Polesie Lubelskie)",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "polska"
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "małe, żółte, w białych półksiężycach",
+        "glowa": "ogromna, okrągła, szlara w szarych kręgach, biała „muszka”",
+        "glos": "niskie, głuche „hu-hu-hu…” w serii 8–12, słychać tylko kilkaset metrów",
+        "sylwetka": "bardzo duża, z długim ogonem"
+      }
+    },
+    {
+      "id": "sowa-sniezna",
+      "pl": "Sowa śnieżna",
+      "lat": "Bubo scandiacus",
+      "en": "Snowy Owl",
+      "es": "Búho nival",
+      "grupa": "sowy",
+      "status": [
+        "zimuje",
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        142,
+        166
+      ],
+      "dlugosc_cm": [
+        53,
+        65
+      ],
+      "sezon": "zalatuje X–III",
+      "cechy": [
+        "biała (samiec) albo biała w ciemne prążki (samica, młode)",
+        "żółte oczy, okrągła głowa",
+        "siedzi na ziemi w otwartym terenie, poluje za dnia"
+      ],
+      "mylona_z": [
+        "plomykowka"
+      ],
+      "gdzie": "otwarte wybrzeża, wydmy i pola; w Polsce rzadko, zimą, głównie na północy",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "polska"
+      ],
+      "sylwetka": {
+        "uszy": "brak (szczątkowe, rzadko widoczne)",
+        "oczy": "żółte",
+        "glowa": "okrągła, biała",
+        "glos": "zimą zwykle milczy; na lęgowiskach niskie „hu” i skrzeczenie",
+        "sylwetka": "duża i masywna, siedzi na ziemi"
+      }
+    },
+    {
+      "id": "sowa-jarzebata",
+      "pl": "Sowa jarzębata",
+      "lat": "Surnia ulula",
+      "en": "Northern Hawk-Owl",
+      "es": "Cárabo gavilán",
+      "grupa": "sowy",
+      "status": [
+        "rzadki"
+      ],
+      "rozpietosc_cm": [
+        69,
+        82
+      ],
+      "dlugosc_cm": [
+        35,
+        43
+      ],
+      "sezon": "zalatuje głównie zimą",
+      "cechy": [
+        "długi, klinowaty ogon",
+        "jasna twarz w czarnej ramce, żółte oczy",
+        "siedzi na czubkach drzew, poluje za dnia"
+      ],
+      "mylona_z": [
+        "soweczka",
+        "uszatka-blotna"
+      ],
+      "gdzie": "lasy iglaste północy; w Polsce wyjątkowo, zimą (Podlasie, Biebrza)",
+      "aktywnosc": "nocny",
+      "regiony": [
+        "polska"
+      ],
+      "sylwetka": {
+        "uszy": "brak",
+        "oczy": "żółte",
+        "glowa": "mała, płaska, jasna twarz w czarnej ramce",
+        "glos": "perliste, narastające trele „hu-hu-hu-ü-ü-ü”",
+        "sylwetka": "jak krogulec: spiczaste skrzydła, długi ogon"
       }
     },
     {

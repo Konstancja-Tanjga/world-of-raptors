@@ -208,6 +208,18 @@ export const SYLWETKI: Record<string, Ksztalt> = {
   soweczka: {
     ...SOWY, glowa: 14, glowaSzer: 19, ramie: 48, dlon: 44, koniecSzer: 33, palceDl: 5, ogonDl: 33, ogonKoniec: [8.5, 11.5],
   },
+  // A huge round head, broad deeply fingered wings and a long tail.
+  'puszczyk-mszarny': {
+    ...SOWY, glowa: 18, glowaSzer: 24, tulow: 20, ramie: 44, dlon: 42, palceDl: 8, ogonDl: 32, ogonKoniec: [11, 15],
+    ogonSrodek: [3, 5], ogonOstry: 0.3,
+  },
+  // Bulky, with broad wings and a short tail.
+  'sowa-sniezna': { ...SOWY, glowa: 15, glowaSzer: 19, tulow: 21, ramie: 44, dlon: 42, koniecSzer: 26, ogonDl: 22 },
+  // Hawk-like: a small flat head, pointed hand and a long graduated tail.
+  'sowa-jarzebata': {
+    ...SOWY, glowa: 13, glowaSzer: 15, glowaPlaska: 0.4, ramie: 40, dlon: 36, koniecY: 10, koniecSzer: 15,
+    koniecOkragly: 0.5, palce: 4, palceDl: 4, ogonDl: 42, ogonKoniec: [8, 11], ogonSrodek: [5, 8], ogonOstry: 0.6,
+  },
 };
 
 /**

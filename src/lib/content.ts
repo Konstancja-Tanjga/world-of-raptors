@@ -1,5 +1,5 @@
 import 'server-only';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import gatunkiJson from '../../content/gatunki.json';
@@ -8,6 +8,8 @@ import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
 import miarkaJson from '../../content/miarka.json';
+import nagraniaJson from '../../content/nagrania.json';
+import { problemyNagrania } from './nagrania';
 import { odkoduj, problemyTagow } from './tagi';
 import type { Fiszki, ZapisFiszki } from './fiszki';
 import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbiory';
@@ -52,6 +54,7 @@ import type {
   Region,
   Sciezka,
   ZdjeciaGatunku,
+  NagranieLekcji,
 } from './types';
 import { idNaglowkow } from './naglowki';
 
@@ -67,6 +70,10 @@ export const sciezki = modulyJson.sciezki as Sciezka[];
 export const moduly = modulyJson.moduly as Modul[];
 // JSON arrays are not tuples to TypeScript; sprawdzSpojnosc() checks that `fokus` and `oryginal` are pairs.
 export const zdjecia = zdjeciaJson as unknown as Partial<Record<string, ZdjeciaGatunku>>;
+
+/** The recordings lessons play, by id (`puszczyk/samiec`); see `<glos>` in Markdown.tsx. */
+export const nagrania = nagraniaJson as Record<string, NagranieLekcji>;
+export const znajdzNagranie = (id: string): NagranieLekcji | undefined => nagrania[id];
 
 // JSON can't be checked against the key sets at compile time, so check once
 // at build: a typo in a cue key would otherwise just hide that row.
@@ -312,6 +319,8 @@ export function listaMiejsca(miejsce: Miejsce): GrupaMiejsca[] {
 
 /** The owls' module: every owl's page links to it, and so does the home page's night chorus. */
 export const MODUL_SOW = 'sowy';
+/** A8, the owls' biology: every owl links to it as well as to B5. */
+export const MODUL_SWIATA_SOW = 'swiat-sow';
 /** The regional module a diurnal species' page links to for each of its regions. */
 const MODUL_REGIONU: Record<Region, string> = { gibraltar: 'gibraltar', 'poludnie-hiszpanii': 'poludnie-hiszpanii', polska: 'polska' };
 /** B1 lesson 1: the home page shows its "Osiem grup" table and links to it. */
@@ -322,7 +331,7 @@ const MODUL_MIEJSCA: Record<Miejsce, string> = { 'marismas-barbate': 'barbate' }
 
 /** Modules whose content covers a raptor: from its activity (owls), its regions and its sites. */
 export function modulyGatunku(g: Gatunek) {
-  const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
+  const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW, MODUL_SWIATA_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
   for (const m of g.miejsca ?? []) slugi.add(MODUL_MIEJSCA[m]);
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
@@ -711,7 +720,8 @@ export async function ideaKursu() {
  * large enough to fill most of the screen sharply. A1 opens with the falcon
  * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
- * imperial eagle over the dehesa, B5 with an eagle owl, B7 with the widest
+ * imperial eagle over the dehesa, A8 with a great grey owl's face, B5 with
+ * an eagle owl, B7 with the widest
  * wingspan of the atlas, the cinereous vulture's.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
@@ -722,6 +732,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   wedrowki: { gatunek: 'sep-plowy', zdjecie: 'lot' },
   ochrona: { gatunek: 'orlosep', zdjecie: 'lot' },
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', zdjecie: 'lot' },
+  'swiat-sow': { gatunek: 'puszczyk-mszarny', zdjecie: 'siedzacy' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },
@@ -810,6 +821,10 @@ function sprawdzSpojnosc() {
     }
     for (const m of g.mylona_z) {
       if (!idGatunkow.has(m) || m === g.id) bledy.push(`gatunki.json: ${g.id}: mylona_z wskazuje „${m}”, którego nie ma w atlasie`);
+      // The plate compares look-alikes cue by cue, and owls and diurnal raptors have different cues.
+      else if (gatunki.find((x) => x.id === m)?.aktywnosc !== g.aktywnosc) {
+        bledy.push(`gatunki.json: ${g.id}: mylona_z „${m}” to ptak ${g.aktywnosc === 'nocny' ? 'dzienny' : 'nocny'}, a plansza porównuje tylko cechy tego samego rodzaju`);
+      }
     }
     if (!SYLWETKI[g.id]) bledy.push(`sylwetki.ts: brak sylwetki gatunku ${g.id}`);
     if ((g.aktywnosc === 'dzienny') !== Boolean(STYL_LOTU[g.id])) {
@@ -962,14 +977,18 @@ function sprawdzSpojnosc() {
   }
   const zNiczego = zdobyteWStanie(stanNieba(STRUKTURA_NIEBA, {}, {}, {}));
   if (zNiczego.length) bledy.push(`odznaki.ts: bez żadnego postępu byłoby już zdobyte: ${zNiczego.join(', ')}`);
+  const lacinaGatunku = new Map(gatunki.map((g) => [g.id, g.lat]));
+  const wPublic = (src: string) => existsSync(path.join(process.cwd(), 'public', src));
+  for (const [id, n] of Object.entries(nagrania)) bledy.push(...problemyNagrania(id, n, lacinaGatunku.get(n.gatunek), wPublic));
+  const idNagran = new Set(Object.keys(nagrania));
   for (const m of gotoweModuly) {
     for (const plik of ['README', ...m.lekcje.map((l) => l.slug)]) {
       const sciezka = `moduly/${m.slug}/${plik}.md`;
-      bledy.push(...problemyTagow(czytajSync(sciezka), sciezka));
+      bledy.push(...problemyTagow(czytajSync(sciezka), sciezka, idNagran));
     }
   }
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
-  for (const slug of [MODUL_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul]) {
+  for (const slug of [MODUL_SOW, MODUL_SWIATA_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul]) {
     if (!gotowe.has(slug)) bledy.push(`content.ts: kod linkuje do modułu „${slug}”, którego nie ma wśród gotowych`);
   }
   if (!gotowe.get(LEKCJA_GRUP.modul)?.lekcje.some((l) => l.slug === LEKCJA_GRUP.lekcja)) {
@@ -987,6 +1006,8 @@ function sprawdzSpojnosc() {
   // What is still to check by hand stops nothing; `next dev` lists it (the build would print it once per worker).
   const doSprawdzenia = ptakiMokradel.filter((p) => p.todo).map((p) => `${p.id}: ${p.todo}`);
   if (doSprawdzenia.length && process.env.NODE_ENV === 'development') console.warn(`ptaki-mokradel.json, do sprawdzenia:\n- ${doSprawdzenia.join('\n- ')}`);
+  const doOdsluchania = Object.entries(nagrania).filter(([, n]) => !n.zatwierdzone).map(([id, n]) => `${id}: ${n.strona}`);
+  if (doOdsluchania.length && process.env.NODE_ENV === 'development') console.warn(`nagrania.json, do odsłuchania (zatwierdzone: false):\n- ${doOdsluchania.join('\n- ')}`);
 }
 
 sprawdzSpojnosc();
@@ -1059,9 +1080,9 @@ const TEST_STARTOWY: PytanieTestu[] = (() => {
       if (!z) throw blad(p.id, `gatunek ${g.id} nie ma zdjęcia ${p.zdjecie}`);
       return { id: p.id, rodzaj: 'zdjecie', sciezka: 'b', pytanie: PYTANIE_O.zdjecie, odpowiedzi: nazwy, poprawna, gatunek: opis, zdjecie: z };
     }
-    if (!/^https:\/\/upload\.wikimedia\.org\//.test(p.nagranie.src) || !p.nagranie.autor || !p.nagranie.licencja) {
-      throw blad(p.id, 'nagranie musi pochodzić z Wikimedia Commons i mieć autora i licencję');
-    }
+    // The same rules as a lesson's recordings (nagrania.json).
+    const problemy = problemyNagrania(`${g.id}/test`, { ...p.nagranie, gatunek: g.id, opis: p.id }, g.lat);
+    if (problemy.length) throw blad(p.id, problemy.join('; '));
     return { id: p.id, rodzaj: 'glos', sciezka: 'b', pytanie: PYTANIE_O.glos, odpowiedzi: nazwy, poprawna, gatunek: opis, nagranie: p.nagranie };
   });
   if (new Set(wynik.map((p) => p.id)).size !== wynik.length) throw new Error(`${plik}: identyfikatory pytań muszą być różne`);

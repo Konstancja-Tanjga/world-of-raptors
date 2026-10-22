@@ -3030,8 +3030,7 @@ a.modul:focus-visible {
   height: auto;
   fill: var(--wor-sylwetka);
 }
-.test__zdjecie,
-.test__nagranie {
+.test__zdjecie {
   display: flex;
   flex-direction: column;
   gap: var(--bh-gap-tight);
@@ -3046,8 +3045,74 @@ a.modul:focus-visible {
   border-radius: var(--wor-radius-scene);
   background: var(--bh-surface-sunken);
 }
-.test__nagranie audio {
+/* A recording (Nagranie.tsx): what is heard, the player, the credit. */
+.nagranie {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+.prose .nagranie {
+  margin-block: var(--bh-gap-loose);
+}
+.nagranie__opis {
+  margin: 0;
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-body);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.nagranie audio {
   width: 100%;
+}
+/* A sonogram with its scales: pitch on the left, time below. */
+.sonogram {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: var(--bh-gap-tight);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-dense);
+  color: var(--bh-text-muted);
+}
+.sonogram__obraz {
+  grid-column: 2;
+  grid-row: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--bh-border-hairline);
+  border-radius: var(--bh-radius-control);
+}
+.sonogram__os {
+  display: flex;
+  justify-content: space-between;
+}
+.sonogram__os--hz {
+  grid-column: 1;
+  grid-row: 1;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sonogram__os--czas {
+  grid-column: 2;
+  grid-row: 2;
+}
+/* Drawn dark on white; in the dark theme it is turned light on dark, so it does not glare. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .sonogram__obraz {
+    filter: invert(1);
+  }
+}
+:root[data-theme='dark'] .sonogram__obraz {
+  filter: invert(1);
+}
+.nagranie__podpis {
+  color: var(--bh-text-muted);
+  font-family: var(--wor-font-ui);
+  font-size: var(--bh-text-size-dense);
+}
+.nagranie__podpis a {
+  color: inherit;
 }
 .test__podpis {
   color: var(--bh-text-muted);

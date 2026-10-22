@@ -214,6 +214,43 @@
       ]
     },
     {
+      "id": "A8",
+      "slug": "swiat-sow",
+      "sciezka": "a",
+      "tytul": "Wspaniały świat sów",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-co-czyni-sowe-sowa",
+          "tytul": "Co czyni sowę sową"
+        },
+        {
+          "slug": "02-sluch-i-cichy-lot",
+          "tytul": "Słuch i cichy lot"
+        },
+        {
+          "slug": "03-oczy-szpony-i-dziob",
+          "tytul": "Oczy, szpony i dziób"
+        },
+        {
+          "slug": "04-rodzina-pokarm-wedrowki",
+          "tytul": "Rodzina, pokarm i wędrówki"
+        },
+        {
+          "slug": "05-glosy-i-sylwetki",
+          "tytul": "Głosy i sylwetki sów"
+        },
+        {
+          "slug": "06-sowy-swiata-i-ludzie",
+          "tytul": "Sowy świata i ludzie"
+        },
+        {
+          "slug": "07-cwiczenia",
+          "tytul": "Ćwiczenia"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

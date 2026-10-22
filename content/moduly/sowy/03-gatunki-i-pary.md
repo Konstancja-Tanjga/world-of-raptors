@@ -1,6 +1,6 @@
 # Lekcja 3: Gatunki i trudne pary
 
-Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia, więc zawsze odsłuchaj nagrania na [xeno-canto](https://xeno-canto.org).
+Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia, więc przy każdym gatunku posłuchaj nagrania, a więcej znajdziesz na [xeno-canto](https://xeno-canto.org).
 
 ---
 
@@ -15,6 +15,9 @@ Występowanie: Polska, południe Hiszpanii.
 - **Głos:** bardzo niskie, dwusylabowe **„uu-hu”**, słyszalne z daleka; tokuje od zimy do wczesnej wiosny.
 - **Gdzie:** skały, wąwozy, kamieniołomy, stare lasy. W Hiszpanii dość częsty w sierras, w Polsce nieliczny.
 
+<glos data-id="puchacz/samiec">
+</glos>
+
 ### Puszczyk uralski — *Strix uralensis* (ang. Ural Owl)
 
 Występowanie: Polska.
@@ -25,6 +28,9 @@ Występowanie: Polska.
 - **Uwaga:** przy gnieździe potrafi zaatakować człowieka, więc trzymaj się z daleka.
 - **Gdzie:** Karpaty, stare lasy wschodniej Polski.
 
+<glos data-id="puszczyk-uralski/samiec">
+</glos>
+
 ### Puszczyk — *Strix aluco* (ang. Tawny Owl)
 
 Występowanie: Polska, południe Hiszpanii.
@@ -33,6 +39,15 @@ Występowanie: Polska, południe Hiszpanii.
 - **Klucz:** okrągła głowa bez „uszu”, **ciemne oczy**, odmiany szara i rdzawa.
 - **Głos:** samiec: drżące **„huuu… hu-hu-hu-huuuu”**; samica: ostre **„kju-wik”**.
 - **Gdzie:** najpospolitsza sowa Polski: lasy, parki, cmentarze, nawet miasta. W Hiszpanii w lasach, np. w Los Alcornocales.
+
+<glos data-id="puszczyk/samiec">
+</glos>
+
+<glos data-id="puszczyk/samica">
+</glos>
+
+<glos data-id="puszczyk/mlode">
+</glos>
 
 ### Puszczyk czy puszczyk uralski?
 | Cecha | Puszczyk | Puszczyk uralski |
@@ -63,6 +78,9 @@ Występowanie: Polska, południe Hiszpanii.
 - **Głos:** przeciągły, **syczący wrzask** „srrriii”; młode chrapią i syczą.
 - **Gdzie:** wieże kościołów, stodoły, pola. W Polsce jej liczebność silnie spadła, w Hiszpanii jest częstsza.
 
+<glos data-id="plomykowka/glos">
+</glos>
+
 ---
 
 ## C. „Uszate” sowy średniej wielkości
@@ -76,6 +94,12 @@ Występowanie: Polska, południe Hiszpanii.
 - **Głos:** samiec: miękkie, niskie **„huu”** co 2–3 sekundy. Młode (VI–VII): piskliwe **„pii-e”**, jak nienaoliwione drzwi.
 - **Ciekawostka:** zimą tworzy **grupowe noclegowiska**, nawet kilkadziesiąt ptaków na jednym drzewie w mieście (także w Polsce).
 
+<glos data-id="uszatka/samiec">
+</glos>
+
+<glos data-id="uszatka/mlode">
+</glos>
+
 ### Uszatka błotna — *Asio flammeus* (ang. Short-eared Owl)
 
 Występowanie: Polska, południe Hiszpanii.
@@ -83,6 +107,9 @@ Występowanie: Polska, południe Hiszpanii.
 - **Rozpiętość:** ok. 95–110 cm
 - **Klucz:** **żółte oczy w czarnej obwódce** (wygląda, jakby miała makijaż), krótkie, rzadko widoczne „uszy”; **poluje za dnia** nisko nad łąkami, lotem podobnym do błotniaka.
 - **Gdzie:** łąki i mokradła. W Hiszpanii zimuje, np. na La Jandzie. W Polsce nieliczna, zimą i w czasie przelotów częstsza.
+
+<glos data-id="uszatka-blotna/samiec">
+</glos>
 
 ### Uszatka czy uszatka błotna?
 
@@ -115,6 +142,9 @@ Występowanie: Polska, południe Hiszpanii.
 - **Głos:** zawodzące **„guuk”** i ostre **„kiju”**.
 - **Gdzie:** w Hiszpanii pospolita (gaje oliwne, ruiny, pola). W Polsce rzadka: stare wierzby, zabudowania wiejskie.
 
+<glos data-id="pojdzka/glos">
+</glos>
+
 ### Włochatka — *Aegolius funereus* (ang. Boreal Owl)
 
 Występowanie: Polska.
@@ -123,6 +153,9 @@ Występowanie: Polska.
 - **Klucz:** **duża kwadratowa głowa**, **żółte oczy**, wyraźna jasna szlara z ciemnym obramowaniem, więc mina „wiecznie zdziwiona”; nogi pokryte gęstym pierzem.
 - **Głos:** szybka seria **„pu-pu-pu-pu-pu”** (5–8 dźwięków), zwykle w marcu i kwietniu, w nocy.
 - **Gdzie:** stare lasy iglaste w górach i na północnym wschodzie. Gniazduje w dziuplach dzięcioła czarnego.
+
+<glos data-id="wlochatka/samiec">
+</glos>
 
 ### Sóweczka — *Glaucidium passerinum* (ang. Eurasian Pygmy Owl)
 
@@ -133,6 +166,9 @@ Występowanie: Polska.
 - **Głos:** monotonne gwizdy **„djuu… djuu”**, a jesienią wznosząca się „gama”.
 - **Gdzie:** stare lasy iglaste: Karpaty, Sudety, Puszcza Białowieska.
 
+<glos data-id="soweczka/samiec">
+</glos>
+
 ### Syczek — *Otus scops* (ang. Eurasian Scops Owl)
 
 Występowanie: południe Hiszpanii (w Polsce rzadko). Wędrowny.
@@ -141,6 +177,12 @@ Występowanie: południe Hiszpanii (w Polsce rzadko). Wędrowny.
 - **Klucz:** malutki, **małe „uszka”**, szarobrązowy wzór **jak kora drzewa**, żółte oczy; prawie niewidoczny w dzień.
 - **Głos:** czysty, monotonny gwizd **„tjuu”** co 2–3 sekundy, przez całą noc; często dwa ptaki „rozmawiają” w nieco innej tonacji.
 - **Gdzie:** parki, ogrody, wioski, gaje oliwne na południu Hiszpanii, **od kwietnia do września**. Zimuje w Afryce. W Polsce pojawia się sporadycznie.
+
+<glos data-id="syczek/samiec">
+</glos>
+
+<glos data-id="syczek/bydgoszcz">
+</glos>
 
 ### Pójdźka, włochatka czy sóweczka?
 | Cecha | Pójdźka | Włochatka | Sóweczka |

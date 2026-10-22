@@ -479,6 +479,63 @@
         "bielik",
         "orlik-krzykliwy"
       ]
+    },
+    {
+      "id": "swiat-sow-pryzmaty",
+      "tekst": "Młode płomykówki wychowywane w okularach z pryzmatami, które przesuwały obraz w bok, zaczęły *słyszeć* dźwięk przesunięty o ten sam kąt. **U sowy to wzrok kalibruje słuch.**",
+      "modul": "swiat-sow",
+      "lekcja": "02-sluch-i-cichy-lot",
+      "gatunki": [
+        "plomykowka"
+      ]
+    },
+    {
+      "id": "swiat-sow-starosc",
+      "tekst": "Płomykówki **nie głuchną ze starości**: 23-letnia sowa słyszała tak samo dobrze jak młode. Uważa się, że to dlatego, że ptaki odtwarzają komórki rzęsate ucha, a ssaki zwykle nie.",
+      "modul": "swiat-sow",
+      "lekcja": "02-sluch-i-cichy-lot",
+      "gatunki": [
+        "plomykowka"
+      ]
+    },
+    {
+      "id": "swiat-sow-szyja",
+      "tekst": "Sowa obraca głowę o ok. 270°, bo w kręgach szyi tętnica biegnie w otworach **ok. 10 razy szerszych** od niej, a u podstawy głowy krew zbiera się w małych zbiornikach.",
+      "modul": "swiat-sow",
+      "lekcja": "03-oczy-szpony-i-dziob",
+      "gatunki": []
+    },
+    {
+      "id": "swiat-sow-wypluwki",
+      "tekst": "Żołądek sowy jest mniej kwaśny niż jastrzębia (pH ok. 2,35 wobec ok. 1,66), dlatego w **wypluwkach sów** zostają całe czaszki myszy, z zębami, po których można rozpoznać gatunek.",
+      "modul": "swiat-sow",
+      "lekcja": "03-oczy-szpony-i-dziob",
+      "gatunki": []
+    },
+    {
+      "id": "swiat-sow-spizarnia",
+      "tekst": "Sóweczka robi na zimę **spiżarnie** w dziuplach i budkach. W Finlandii średni zapas jednej sowy ważył ok. 443 g, a rekordowy ok. 4,5 kg.",
+      "modul": "swiat-sow",
+      "lekcja": "04-rodzina-pokarm-wedrowki",
+      "gatunki": [
+        "soweczka"
+      ]
+    },
+    {
+      "id": "swiat-sow-negocjacje",
+      "tekst": "Pisklęta płomykówki nocą **negocjują**, które zje następną mysz: najgłodniejsze woła najgłośniej, a to, które właśnie dostało jedzenie, milknie.",
+      "modul": "swiat-sow",
+      "lekcja": "04-rodzina-pokarm-wedrowki",
+      "gatunki": [
+        "plomykowka"
+      ]
+    },
+    {
+      "id": "swiat-sow-uszy",
+      "tekst": "„Uszy” sów to pęczki piór, nie uszy. Polscy badacze porównali 184 gatunki i odkryli, że mają je głównie sowy **ściśle nocne**. Uważają, że pomagają im się ukryć w czasie dziennego snu.",
+      "modul": "swiat-sow",
+      "lekcja": "01-co-czyni-sowe-sowa",
+      "gatunki": []
     }
   ]
 }

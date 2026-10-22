@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 42 drapieżniki | 35 ptaków mokradeł | 14 modułów | 70 lekcji | 144 pytania w quizach | 282 fiszki | 385 zdjęć |
+| 45 drapieżników | 35 ptaków mokradeł | 15 modułów | 77 lekcji | 159 pytań w quizach | 300 fiszek | 462 zdjęcia |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki, czternaście modułów, w każdym pięć lekcji:
+Dwie ścieżki i piętnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -30,6 +30,7 @@ Dwie ścieżki, czternaście modułów, w każdym pięć lekcji:
 | A5&nbsp;[Wędrówki](content/moduly/wedrowki/README.md) | B5&nbsp;[Sowy, drapieżniki nocne](content/moduly/sowy/README.md) |
 | A6&nbsp;[Ochrona](content/moduly/ochrona/README.md) | B6&nbsp;[Marismas del Barbate, początek października](content/moduly/barbate/README.md) |
 | A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | B7&nbsp;[Wielkość i kształt](content/moduly/wielkosc-i-ksztalt/README.md) |
+| A8&nbsp;[Wspaniały świat sów](content/moduly/swiat-sow/README.md) | |
 
 <table>
   <tr>
@@ -51,7 +52,7 @@ Lekcja to artykuł ze spisem treści, czasem czytania i marginesem na zdjęcia i
   <img src="docs/readme/atlas-sylwetki.webp" width="100%" alt="Atlas gatunków w widoku sylwetek: rząd sępów widzianych od spodu, sęp płowy wyróżniony złotem, bo jest na mojej liście">
 </picture>
 
-42 gatunki: 32 drapieżniki dzienne i 10 sów. Atlas pokazuje je na zdjęciach, jako sylwetki w grupach (tych z modułu B1, do tego sowy) albo wszystkie w jednej skali. Gatunki, które widziałam, są oznaczone złotem.
+45 gatunków: 32 drapieżniki dzienne i 13 sów. Atlas pokazuje je na zdjęciach, jako sylwetki w grupach (tych z modułu B1, do tego sowy) albo wszystkie w jednej skali. Gatunki, które widziałam, są oznaczone złotem.
 
 Do tego 35 ptaków mokradeł z karty terenowej Marismas del Barbate (moduł B6): czaple, siewkowe, mewy, rybitwy, kormoran, ptaki zarośli i ibis grzywiasty. Atlas pokazuje je po wybraniu „Ptaki mokradeł” albo miejsca „Marismas del Barbate”, tylko na zdjęciach, bo sylwetki i skala są dla drapieżników. Na checkliście karta terenowa liczy postęp, np. „17 z 43”, także w każdej grupie, a za obserwacje są naszywki w „Moim niebie”.
 
@@ -65,7 +66,7 @@ Karta gatunku ma nazwy: polską, łacińską, angielską i hiszpańską, plansz�
 
 <img src="docs/readme/fiszki.webp" width="100%" alt="Fiszka z sylwetką sokoła skalnego: pytanie „Najpierw grupa, potem gatunek. Co to za ptak?” i odpowiedź z cechami">
 
-282 fiszki: ze zdjęć (82), z sylwetek w locie (32) i z nazw po polsku, angielsku i hiszpańsku (168). Powtórki układa algorytm FSRS, ten sam, który można włączyć w Anki: trudne fiszki wracają szybciej, łatwe coraz rzadziej. Każdego dnia dochodzi do 10 nowych.
+300 fiszek: ze zdjęć (88), z sylwetek w locie (32) i z nazw po polsku, angielsku i hiszpańsku (180). Powtórki układa algorytm FSRS, ten sam, który można włączyć w Anki: trudne fiszki wracają szybciej, łatwe coraz rzadziej. Każdego dnia dochodzi do 10 nowych.
 
 ### Checklista
 

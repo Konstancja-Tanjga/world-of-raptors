@@ -12,9 +12,11 @@ import {
   pytaniaSylwetek,
   stronaMorfuLekcji,
   znajdzGatunek,
+  znajdzNagranie,
 } from '@/lib/content';
 import { resolveContentHref } from '@/lib/links';
 import { idNaglowkow } from '@/lib/naglowki';
+import { sciezkaSonogramu } from '@/lib/nagrania';
 import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
@@ -22,6 +24,7 @@ import { Anatomia } from './Anatomia';
 import { MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
+import { Nagranie } from './Nagranie';
 import { NazwaPtaka } from './NazwaPtaka';
 import { Photo } from './Photo';
 import { SpeciesMedia } from './SpeciesMedia';
@@ -76,6 +79,12 @@ const attr = (props: Attrs, name: string) => {
  *   </zdjecie>
  *
  *   </galeria>
+ *
+ * `<glos>` plays a recording from content/nagrania.json, with what is heard
+ * above it and its credit below (an unknown id stops the build):
+ *
+ *   <glos data-id="puszczyk/samiec">
+ *   </glos>
  *
  * B7's drawings and exercises are tags too, each read and checked here, on
  * the server, so a wrong id stops the build. The exercises get drawings, not
@@ -132,6 +141,12 @@ const lessonTags = {
         sizes={rozmiaryZdjecia(wGalerii > 0 ? { galeria: wGalerii } : 'margines')}
       />
     );
+  },
+  glos: (props: Attrs) => {
+    const id = attr(props, 'data-id');
+    const n = znajdzNagranie(id);
+    if (!n) throw new Error(`<glos>: nie ma w content/nagrania.json nagrania „${id}”`);
+    return <Nagranie nagranie={n} opis={n.opis} sonogram={n.sonogram && { src: sciezkaSonogramu(id), khz: n.sonogram.khz }} />;
   },
   miarka: (props: Attrs) => {
     const g = znajdzGatunek(attr(props, 'data-id'));

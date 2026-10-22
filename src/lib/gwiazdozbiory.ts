@@ -15,6 +15,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   wedrowki: { gatunek: 'sep-plowy', nazwa: 'Sęp' },
   ochrona: { gatunek: 'orlosep', nazwa: 'Orłosęp' },
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', nazwa: 'Płomykówka' },
+  'swiat-sow': { gatunek: 'puszczyk', nazwa: 'Puszczyk' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },

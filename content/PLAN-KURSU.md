@@ -24,6 +24,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | A5 | **Wędrówki** | Termiki i szybowanie, „wąskie gardła” (Gibraltar, Bosfor, Falsterbo, Ejlat), telemetria GPS, trasy zachodnia i wschodnia | [gotowy](moduly/wedrowki/README.md) |
 | A6 | **Ochrona** | DDT, diklofenak i sępy w Indiach, ołów, elektrokucje; historie sukcesu: sokół wędrowny w Polsce, orzeł iberyjski, kondor kalifornijski | [gotowy](moduly/ochrona/README.md) |
 | A7 | **Ludzie i drapieżniki** | Sokolnictwo (UNESCO), mitologia i herby, nauka obywatelska (eBird, Observation.org) | [gotowy](moduly/ludzie-i-drapiezniki/README.md) |
+| A8 | **Wspaniały świat sów** | Biologia sów: słuch, cichy lot, oczy i stopy, rok z życia sowy, inwazje i wędrówki, głosy z sonogramami i sylwetki, sowy świata, zagrożenia; trzy sowy północy | [gotowy](moduly/swiat-sow/README.md) |
 
 ## Ścieżka B: Rozpoznawanie w terenie
 
@@ -42,7 +43,7 @@ Moduły B2–B6 mają wspólne gatunki. Wszystkie drapieżniki są w jednym [atl
 ---
 
 ## Moja checklista
-Osobna część aplikacji: lista wszystkich gatunków z atlasu, na której odhaczam, co zaobserwowałam. Przy każdej obserwacji: data, miejsce, notatka. Filtry: region, grupa, dzienne/nocne, zaobserwowane/brakujące. Na górze postęp, np. „23 z 42 gatunków”.
+Osobna część aplikacji: lista wszystkich gatunków z atlasu, na której odhaczam, co zaobserwowałam. Przy każdej obserwacji: data, miejsce, notatka. Filtry: region, grupa, dzienne/nocne, zaobserwowane/brakujące. Na górze postęp, np. „23 z 45 gatunków”.
 
 ---
 
