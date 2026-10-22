@@ -16,6 +16,7 @@ import {
 } from '@/lib/content';
 import { resolveContentHref } from '@/lib/links';
 import { idNaglowkow } from '@/lib/naglowki';
+import { sciezkaSonogramu } from '@/lib/nagrania';
 import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
@@ -145,7 +146,7 @@ const lessonTags = {
     const id = attr(props, 'data-id');
     const n = znajdzNagranie(id);
     if (!n) throw new Error(`<glos>: nie ma w content/nagrania.json nagrania „${id}”`);
-    return <Nagranie nagranie={n} opis={n.opis} />;
+    return <Nagranie nagranie={n} opis={n.opis} sonogram={n.sonogram && { src: sciezkaSonogramu(id), khz: n.sonogram.khz }} />;
   },
   miarka: (props: Attrs) => {
     const g = znajdzGatunek(attr(props, 'data-id'));

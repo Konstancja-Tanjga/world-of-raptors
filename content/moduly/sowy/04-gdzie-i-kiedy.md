@@ -44,7 +44,7 @@ Trzy sowy z tajgi i tundry widuje się w Polsce rzadko, ale warto je znać:
 
 - **Puszczyk mszarny** — *Strix nebulosa* (ang. Great Grey Owl): od 2010 r. gniazduje w Lasach Sobiborskich na Polesiu Lubelskim, często na sztucznych platformach. W 2020 r. było tam 16 terytoriów, z czego 10 par lęgowych. Ogromna szara głowa w koncentrycznych kręgach, małe żółte oczy, biała „muszka” pod dziobem. Głos niski i cichy, niesie się tylko na kilkaset metrów, więc łatwo go przeoczyć. Na polskiej czerwonej liście ma status zagrożonego (EN).
 - **Sowa śnieżna** — *Bubo scandiacus* (ang. Snowy Owl): rzadki gość zimowy (X–III), głównie na wybrzeżu i na północy. Siedzi na ziemi w otwartym terenie i poluje za dnia. Samce z wiekiem są prawie białe, samice i młode białe w ciemne prążki. Zimą zwykle milczy.
-- **Sowa jarzębata** — *Surnia ulula* (ang. Northern Hawk-Owl): do końca 2023 r. Komisja Faunistyczna uznała ok. 50 jej stwierdzeń w Polsce, głównie zimą (np. Puszcza Białowieska, Biebrza, ujście Wisły). Wygląda i lata jak krogulec: długi ogon, spiczaste skrzydła. Siedzi wysoko na czubkach drzew i poluje za dnia.
+- **Sowa jarzębata** — *Surnia ulula* (ang. Northern Hawk-Owl): do końca 2023 r. Komisja Faunistyczna uznała ok. 51 jej stwierdzeń w Polsce, głównie zimą (np. Puszcza Białowieska, Biebrza, ujście Wisły). Wygląda i lata jak krogulec: długi ogon, spiczaste skrzydła. Siedzi wysoko na czubkach drzew i poluje za dnia.
 
 <glos data-id="puszczyk-mszarny/samiec">
 </glos>

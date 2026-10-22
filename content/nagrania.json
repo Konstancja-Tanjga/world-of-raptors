@@ -1,15 +1,35 @@
 {
   "puchacz/samiec": {
     "gatunek": "puchacz",
-    "opis": "Samiec: głos terytorialny",
-    "src": "https://upload.wikimedia.org/wikipedia/commons/3/32/Bubo_bubo_-_Eurasian_Eagle-Owl_XC604112.mp3",
-    "autor": "Robert Petersen",
+    "opis": "Samiec: głos terytorialny, Lombardia",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/be/Bubo_bubo_-_Eurasian_Eagle-Owl_XC461330.mp3",
+    "autor": "Mirko Tomasi",
     "licencja": "CC BY-SA 4.0",
     "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "strona": "https://commons.wikimedia.org/wiki/File:Bubo_bubo_-_Eurasian_Eagle-Owl_XC604112.mp3",
-    "xc": 604112,
-    "sekundy": 61,
-    "zatwierdzone": false
+    "strona": "https://commons.wikimedia.org/wiki/File:Bubo_bubo_-_Eurasian_Eagle-Owl_XC461330.mp3",
+    "xc": 461330,
+    "sekundy": 37,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 2,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/b/be/Bubo_bubo_-_Eurasian_Eagle-Owl_XC461330.mp3"
+    }
+  },
+  "puszczyk/duet": {
+    "gatunek": "puszczyk",
+    "opis": "Duet: samica woła „kju-wik”, w oddali odpowiada samiec",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Strix_aluco_-_Tawny_Owl_XC583840.mp3",
+    "autor": "Alvaro Ortiz Troncoso",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Strix_aluco_-_Tawny_Owl_XC583840.mp3",
+    "xc": 583840,
+    "sekundy": 55,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Strix_aluco_-_Tawny_Owl_XC583840.mp3"
+    }
   },
   "puszczyk/mlode": {
     "gatunek": "puszczyk",
@@ -21,7 +41,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Strix_aluco_-_Tawny_Owl_XC457399.mp3",
     "xc": 457399,
     "sekundy": 42,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Strix_aluco_-_Tawny_Owl_XC457399.mp3"
+    }
   },
   "puszczyk/samica": {
     "gatunek": "puszczyk",
@@ -33,7 +57,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Strix_aluco_-_Tawny_Owl_XC493358.mp3",
     "xc": 493358,
     "sekundy": 17,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/4/42/Strix_aluco_-_Tawny_Owl_XC493358.mp3"
+    }
   },
   "puszczyk/samiec": {
     "gatunek": "puszczyk",
@@ -45,7 +73,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Strix_aluco_-_Tawny_Owl_XC583836.mp3",
     "xc": 583836,
     "sekundy": 166,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Strix_aluco_-_Tawny_Owl_XC583836.mp3"
+    }
   },
   "puszczyk-uralski/samiec": {
     "gatunek": "puszczyk-uralski",
@@ -57,7 +89,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Strix_uralensis_-_Ural_Owl_XC108372.mp3",
     "xc": 108372,
     "sekundy": 11,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 2,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/8/89/Strix_uralensis_-_Ural_Owl_XC108372.mp3"
+    }
   },
   "puszczyk-mszarny/samiec": {
     "gatunek": "puszczyk-mszarny",
@@ -69,7 +105,11 @@
     "strona": "https://xeno-canto.org/986000",
     "xc": 986000,
     "sekundy": 14,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 2,
+      "zrodlo": "/nagrania/strix-nebulosa-xc986000.mp3"
+    }
   },
   "plomykowka/glos": {
     "gatunek": "plomykowka",
@@ -93,7 +133,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Asio_otus_-_Long-eared_Owl_XC423552.mp3",
     "xc": 423552,
     "sekundy": 313,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Asio_otus_-_Long-eared_Owl_XC423552.mp3"
+    }
   },
   "uszatka/samiec": {
     "gatunek": "uszatka",
@@ -105,7 +149,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Asio_otus_-_Long-eared_Owl_XC108293.mp3",
     "xc": 108293,
     "sekundy": 60,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 2,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/3/39/Asio_otus_-_Long-eared_Owl_XC108293.mp3"
+    }
   },
   "uszatka-blotna/samiec": {
     "gatunek": "uszatka-blotna",
@@ -129,7 +177,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Athene_noctua_-_Little_Owl_XC431980.mp3",
     "xc": 431980,
     "sekundy": 13,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/2/25/Athene_noctua_-_Little_Owl_XC431980.mp3"
+    }
   },
   "syczek/bydgoszcz": {
     "gatunek": "syczek",
@@ -140,7 +192,11 @@
     "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
     "strona": "https://commons.wikimedia.org/wiki/File:Syczek,_nagranie_nawo%C5%82uj%C4%85cego_samca.wav",
     "sekundy": 18,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/49/Syczek%2C_nagranie_nawo%C5%82uj%C4%85cego_samca.wav/Syczek%2C_nagranie_nawo%C5%82uj%C4%85cego_samca.wav.mp3"
+    }
   },
   "syczek/samiec": {
     "gatunek": "syczek",
@@ -152,7 +208,11 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Otus_scops_-_Eurasian_Scops_Owl_XC554663.mp3",
     "xc": 554663,
     "sekundy": 11,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Otus_scops_-_Eurasian_Scops_Owl_XC554663.mp3"
+    }
   },
   "wlochatka/samiec": {
     "gatunek": "wlochatka",
@@ -164,7 +224,27 @@
     "strona": "https://commons.wikimedia.org/wiki/File:Aegolius_funereus_-_Boreal_Owl_XC103673.mp3",
     "xc": 103673,
     "sekundy": 69,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Aegolius_funereus_-_Boreal_Owl_XC103673.mp3"
+    }
+  },
+  "wlochatka/seria": {
+    "gatunek": "wlochatka",
+    "opis": "Samiec: krótka seria do policzenia nut",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/2/26/Aegolius_funereus_-_Boreal_Owl_XC407208.mp3",
+    "autor": "Klaus-Jürgen Papke",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Aegolius_funereus_-_Boreal_Owl_XC407208.mp3",
+    "xc": 407208,
+    "sekundy": 10,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/2/26/Aegolius_funereus_-_Boreal_Owl_XC407208.mp3"
+    }
   },
   "soweczka/samiec": {
     "gatunek": "soweczka",
@@ -175,7 +255,11 @@
     "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "strona": "https://commons.wikimedia.org/wiki/File:S%C3%B3weczka-samiec.ogg",
     "sekundy": 183,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/49/S%C3%B3weczka-samiec.ogg/S%C3%B3weczka-samiec.ogg.mp3"
+    }
   },
   "sowa-jarzebata/samiec": {
     "gatunek": "sowa-jarzebata",
@@ -187,6 +271,10 @@
     "strona": "https://xeno-canto.org/1063279",
     "xc": 1063279,
     "sekundy": 7,
-    "zatwierdzone": false
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 4,
+      "zrodlo": "/nagrania/surnia-ulula-xc1063279.mp3"
+    }
   }
 }

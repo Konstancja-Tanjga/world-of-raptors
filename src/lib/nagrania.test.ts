@@ -62,6 +62,16 @@ test('a CC BY recording needs its licence address; a file in public/nagrania/ mu
   assert.match(problemyNagrania('uszatka-blotna/samiec', zXenoCanto, 'Asio flammeus', () => false)[0], /nie ma pliku/);
 });
 
+test('a sonogram marked in the catalogue must have been drawn', () => {
+  const ze: NagranieLekcji = { ...commons, sonogram: { khz: 4, zrodlo: commons.src } };
+  const jest = (s: string) => s === '/sonogramy/puszczyk-samiec.png';
+  assert.deepEqual(problemyNagrania('puszczyk/samiec', ze, 'Strix aluco', jest), []);
+  assert.match(problemyNagrania('puszczyk/samiec', ze, 'Strix aluco', () => false)[0], /sonogramy/);
+  // A recording swapped for another keeps a picture of the old one until it is redrawn.
+  assert.match(problemyNagrania('puszczyk/samiec', { ...ze, src: zXenoCanto.src }, 'Strix aluco', jest).join(), /innego nagrania/);
+  assert.match(problemyNagrania('puszczyk/samiec', { ...ze, sonogram: { khz: 3 as 4, zrodlo: commons.src } }, 'Strix aluco', jest)[0], /2 albo 4/);
+});
+
 test('a file from elsewhere, a non-free licence or a missing credit is caught', () => {
   assert.match(problemyNagrania('puszczyk/samiec', { ...commons, src: 'https://xeno-canto.org/583836/download' }, 'Strix aluco')[0], /spoza/);
   assert.match(problemyNagrania('puszczyk/samiec', { ...commons, licencja: 'CC BY-NC-SA 4.0' }, 'Strix aluco')[0], /nie jest wolna/);

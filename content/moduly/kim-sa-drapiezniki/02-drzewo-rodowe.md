@@ -70,7 +70,7 @@ Skoro sokół i jastrząb nie są bliskimi krewnymi, skąd tak podobne szpony i 
 
 Wśród drapieżników zbieżność pojawia się wielokrotnie:
 - **sokoły i jastrzębiowate**: szpony, haczykowaty dziób, doskonały wzrok,
-- **sowy i dzienne drapieżniki**: to samo, choć sowy wyewoluowały niezależnie (wspomina o tym też [lekcja o sowach](../sowy/01-kim-sa-sowy.md)),
+- **sowy i dzienne drapieżniki**: to samo, ale czy niezależnie, nie jest rozstrzygnięte: Stiller i in. (2024) widzą w sowach najbliższych krewnych szponiastych, a wtedy szpony i dziób mogłyby pochodzić od wspólnego przodka (więcej w [lekcji o tym, co czyni sowę sową](../swiat-sow/01-co-czyni-sowe-sowa.md)),
 - **sępy Starego Świata i kondory**: łyse głowy, szybowanie, padlinożerność, ale to dwie różne linie (lekcja 3).
 
 <margines>

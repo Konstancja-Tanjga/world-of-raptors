@@ -319,6 +319,8 @@ export function listaMiejsca(miejsce: Miejsce): GrupaMiejsca[] {
 
 /** The owls' module: every owl's page links to it, and so does the home page's night chorus. */
 export const MODUL_SOW = 'sowy';
+/** A8, the owls' biology: every owl links to it as well as to B5. */
+export const MODUL_SWIATA_SOW = 'swiat-sow';
 /** The regional module a diurnal species' page links to for each of its regions. */
 const MODUL_REGIONU: Record<Region, string> = { gibraltar: 'gibraltar', 'poludnie-hiszpanii': 'poludnie-hiszpanii', polska: 'polska' };
 /** B1 lesson 1: the home page shows its "Osiem grup" table and links to it. */
@@ -329,7 +331,7 @@ const MODUL_MIEJSCA: Record<Miejsce, string> = { 'marismas-barbate': 'barbate' }
 
 /** Modules whose content covers a raptor: from its activity (owls), its regions and its sites. */
 export function modulyGatunku(g: Gatunek) {
-  const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
+  const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW, MODUL_SWIATA_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
   for (const m of g.miejsca ?? []) slugi.add(MODUL_MIEJSCA[m]);
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
@@ -718,7 +720,8 @@ export async function ideaKursu() {
  * large enough to fill most of the screen sharply. A1 opens with the falcon
  * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
- * imperial eagle over the dehesa, B5 with an eagle owl, B7 with the widest
+ * imperial eagle over the dehesa, A8 with a great grey owl's face, B5 with
+ * an eagle owl, B7 with the widest
  * wingspan of the atlas, the cinereous vulture's.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
@@ -729,6 +732,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   wedrowki: { gatunek: 'sep-plowy', zdjecie: 'lot' },
   ochrona: { gatunek: 'orlosep', zdjecie: 'lot' },
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', zdjecie: 'lot' },
+  'swiat-sow': { gatunek: 'puszczyk-mszarny', zdjecie: 'siedzacy' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },
@@ -984,7 +988,7 @@ function sprawdzSpojnosc() {
     }
   }
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
-  for (const slug of [MODUL_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul]) {
+  for (const slug of [MODUL_SOW, MODUL_SWIATA_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul]) {
     if (!gotowe.has(slug)) bledy.push(`content.ts: kod linkuje do modułu „${slug}”, którego nie ma wśród gotowych`);
   }
   if (!gotowe.get(LEKCJA_GRUP.modul)?.lekcje.some((l) => l.slug === LEKCJA_GRUP.lekcja)) {

@@ -5,6 +5,12 @@ import type { NagranieLekcji } from './types';
  * any file (the build runs them, see sprawdzSpojnosc in content.ts).
  */
 
+/** How much of a recording a sonogram shows: scripts/sonogramy.py draws them so (and how high, per recording). */
+export const SONOGRAM = { sekundy: 12 };
+
+/** Where a recording's sonogram is served from. */
+export const sciezkaSonogramu = (id: string) => `/sonogramy/${id.replace('/', '-')}.png`;
+
 const ID = /^[a-z]+(-[a-z]+)*\/[a-z0-9]+(-[a-z0-9]+)*$/;
 /** An MP3 on Commons, or Commons' MP3 transcode of an Ogg, WAV or FLAC (Safari plays no Ogg, a WAV is large). */
 const COMMONS = /^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/(?:[0-9a-f]\/[0-9a-f]{2}\/[^/]+\.mp3|transcoded\/[0-9a-f]\/[0-9a-f]{2}\/([^/]+\.(?:ogg|oga|wav|flac))\/\1\.mp3)$/i;
@@ -21,7 +27,8 @@ const ADRES_LICENCJI = /^https?:\/\/creativecommons\.org\//;
  * public/nagrania/ (a file served from there must name its xeno-canto page,
  * and `istnieje` says whether it is on disk), or an Ogg or WAV not through
  * Commons' MP3 transcode; a licence that is not free, or a CC BY one without
- * its licence's address; no author, description or length; an xeno-canto
+ * its licence's address; no author, description or length; a sonogram
+ * marked but not drawn, drawn from another recording or with another scale; an xeno-canto
  * mirror on Commons whose title names another species.
  */
 export function problemyNagrania(
@@ -51,5 +58,8 @@ export function problemyNagrania(
   if (!n.opis?.trim()) bledy.push(`${gdzie}: brak opisu, co słychać`);
   if (!(n.sekundy > 0)) bledy.push(`${gdzie}: brak długości (sekundy)`);
   if (n.xc !== undefined && !(Number.isInteger(n.xc) && n.xc > 0)) bledy.push(`${gdzie}: xc ma być numerem z xeno-canto`);
+  if (n.sonogram && ![2, 4].includes(n.sonogram.khz)) bledy.push(`${gdzie}: sonogram.khz ma być 2 albo 4`);
+  if (n.sonogram && n.sonogram.zrodlo !== n.src) bledy.push(`${gdzie}: sonogram narysowano z innego nagrania (python3 scripts/sonogramy.py go odświeży)`);
+  if (n.sonogram && !istnieje(sciezkaSonogramu(id))) bledy.push(`${gdzie}: nie ma pliku public${sciezkaSonogramu(id)} (python3 scripts/sonogramy.py)`);
   return bledy;
 }
