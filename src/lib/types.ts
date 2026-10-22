@@ -16,6 +16,9 @@ export type SylwetkaDzienna = Record<(typeof KLUCZE_DZIENNE)[number], string>;
 /** What to listen and look for in an owl, in the order B5 teaches it (lesson 2). */
 export const KLUCZE_NOCNE = ['glos', 'uszy', 'sylwetka', 'glowa', 'oczy'] as const;
 export type SylwetkaNocna = Record<(typeof KLUCZE_NOCNE)[number], string>;
+/** What to look at in a wader, in the order B8 teaches it: shape before colour. */
+export const KLUCZE_SIEWKOWE = ['wielkosc', 'dziob', 'nogi', 'zachowanie', 'upierzenie', 'lot', 'glos'] as const;
+export type CechySiewkowca = Record<(typeof KLUCZE_SIEWKOWE)[number], string>;
 
 /** Everything about a species except its activity and the cues that go with it. */
 export type DaneGatunku = {
@@ -105,9 +108,27 @@ export type PtakMokradel = {
   grupa: GrupaMokradel;
   /** What to look for in the field: one or two short sentences. */
   cechy: string[];
+  /** Field lists it is on; empty only for a bird taught as a full species (`rozpoznawanie`) that is on none. */
   miejsca: Miejsce[];
   /** What is still to check by hand (listed by `next dev`, never on a page). */
   todo?: string;
+  /** Taught as a full species (the waders of B8): its cues, look-alikes, sizes and flashcards. */
+  rozpoznawanie?: RozpoznawanieMokradel;
+};
+
+/**
+ * What makes a bird of marshes a full species, like a raptor: cues compared
+ * with its look-alikes on its plate, sizes for the bird scale, flashcards and
+ * Moje niebo's rings. Only waders have it so far.
+ */
+export type RozpoznawanieMokradel = {
+  klucz: CechySiewkowca;
+  /** Other birds of marshes with `rozpoznawanie`, of the same group. */
+  mylona_z: string[];
+  rozpietosc_cm: [number, number];
+  /** Body length, bill tip to tail tip. */
+  dlugosc_cm: [number, number];
+  regiony: Region[];
 };
 
 /** The two kinds of bird in the atlas; raptors are the default, birds of marshes are shown on request. */
@@ -215,9 +236,10 @@ export type RodzajZdjecia = Exclude<keyof ZdjeciaGatunku, 'cecha'>;
  * What a flashcard asks. Photo cards (`lot`, `siedzacy`): name the bird in a
  * reference photo. `sylwetka`: name it from its silhouette in flight (diurnal
  * species). Name cards: give the English or Spanish name for the Polish one,
- * or the Polish name for the English or Spanish one.
+ * or the Polish name for the English or Spanish one. `glos`: name it from its
+ * voice (a species with an approved recording marked for its card).
  */
-export type RodzajFiszki = RodzajZdjecia | 'sylwetka' | (typeof KIERUNKI_NAZW)[number];
+export type RodzajFiszki = RodzajZdjecia | 'sylwetka' | (typeof KIERUNKI_NAZW)[number] | 'glos';
 
 /** `<species id>/<rodzaj>`: the key of the card's schedule in localStorage and in backups. Never change it for an existing kind. */
 export type IdFiszki = `${string}/${RodzajFiszki}`;
@@ -230,7 +252,17 @@ export type Fiszka =
   | { id: IdFiszki; rodzaj: RodzajZdjecia; gatunek: string; /** The photo the card asks about. */ zdjecie: Zdjecie }
   | {
       id: IdFiszki;
-      rodzaj: Exclude<RodzajFiszki, RodzajZdjecia>;
+      rodzaj: 'glos';
+      gatunek: string;
+      /** The recording the card plays; its sources (which name the species) wait for the answer. */
+      nagranie: NagranieLekcji;
+      sonogram?: { src: string; khz: number };
+      /** A photo shown with the answer, if any. */
+      zdjecie: Zdjecie | null;
+    }
+  | {
+      id: IdFiszki;
+      rodzaj: Exclude<RodzajFiszki, RodzajZdjecia | 'glos'>;
       gatunek: string;
       /** A photo shown with the answer, if any. */
       zdjecie: Zdjecie | null;
@@ -260,7 +292,8 @@ export const jestFiszkaBudowy = (k: KartaFiszki): k is FiszkaBudowy => k.rodzaj 
 
 /** What the answer side shows about a species. */
 export type GatunekFiszki = Pick<DaneGatunku, 'id' | 'pl' | 'lat' | 'en' | 'es' | 'grupa' | 'cechy' | 'regiony'> &
-  SylwetkaGatunku & {
+  (SylwetkaGatunku | { aktywnosc: null; /** A wader's cues (KLUCZE_SIEWKOWE). */ klucz: CechySiewkowca }) & {
+    kategoria: Kategoria;
     /** Look-alikes from `mylona_z`, with their names. */
     podobne: { id: string; pl: string }[];
   };
@@ -308,6 +341,8 @@ export type NagranieLekcji = Nagranie & {
   opis: string;
   /** A sonogram of its first seconds is in public/sonogramy/, up to `khz`, drawn from `zrodlo` (scripts/sonogramy.py draws it). */
   sonogram?: { khz: 2 | 4; zrodlo: string };
+  /** The species' voice flashcard plays this one (at most one per species; only once `zatwierdzone`). */
+  fiszka?: true;
 };
 
 export type RodzajPytaniaTestu = 'sylwetka' | 'zdjecie' | 'glos' | 'wiedza';

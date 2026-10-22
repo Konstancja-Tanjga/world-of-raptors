@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { problemyNagrania } from './nagrania';
+import { nagraniaFiszek, problemyNagrania } from './nagrania';
 import type { NagranieLekcji } from './types';
 
 const commons: NagranieLekcji = {
@@ -77,4 +77,16 @@ test('a file from elsewhere, a non-free licence or a missing credit is caught', 
   assert.match(problemyNagrania('puszczyk/samiec', { ...commons, licencja: 'CC BY-NC-SA 4.0' }, 'Strix aluco')[0], /nie jest wolna/);
   assert.match(problemyNagrania('puszczyk/samiec', { ...commons, autor: ' ' }, 'Strix aluco')[0], /autora/);
   assert.match(problemyNagrania('uszatka-blotna/samiec', { ...zXenoCanto, strona: 'https://example.com' }, 'Asio flammeus')[0], /xeno-canto/);
+});
+
+test('a voice card plays the marked recording, and only once it is approved', () => {
+  const nagrania = {
+    'puszczyk/samiec': { ...commons, fiszka: true as const },
+    'puszczyk/samica': { ...commons, zatwierdzone: true },
+    'uszatka-blotna/samiec': { ...zXenoCanto, fiszka: true as const, zatwierdzone: true },
+  };
+  const wybrane = nagraniaFiszek(nagrania);
+  assert.equal(wybrane.has('puszczyk'), false);
+  assert.equal(wybrane.get('uszatka-blotna')?.id, 'uszatka-blotna/samiec');
+  assert.equal(nagraniaFiszek({ 'puszczyk/samiec': { ...commons, fiszka: true, zatwierdzone: true } }).get('puszczyk')?.id, 'puszczyk/samiec');
 });
