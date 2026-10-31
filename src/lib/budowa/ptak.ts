@@ -126,7 +126,7 @@ function glowa(b: Budowa) {
     const z = (s.z - cz) / rz;
     if (y < -0.35) return z > -0.25 ? 'gardlo' : 'kark';
     if (z > 0.62 && y > 0.05) return 'czolo';
-    if (z > 0.55 && x > 0.22 && y <= 0.05) return 'kantarek';
+    if (z > 0.42 && x > 0.28 && y > -0.3 && y <= 0.12) return 'kantarek';
     if (x > 0.42 && y > 0.32 && y < 0.6 && z > -0.4 && z < 0.62) return 'brew';
     if (y > 0.5 && z > -0.45) return 'ciemie';
     if (z < -0.45) return 'potylica';
@@ -562,7 +562,7 @@ function szkielet(b: Budowa) {
   const brodawki: THREE.BufferGeometry[] = [];
   for (let i = 0; i < 13; i++) {
     const p = v(nadgarstek).lerp(v(lokiec), (i + 0.5) / 13);
-    brodawki.push(elipsoida([p.x, p.y + 0.012, p.z - 0.055], [0.013, 0.011, 0.013], { w: 8, h: 6 }));
+    brodawki.push(elipsoida([p.x, p.y + 0.018, p.z - 0.05], [0.03, 0.024, 0.03], { w: 10, h: 8 }));
   }
   kosc(para(zlacz(brodawki)), 'brodawki-lotkowe');
   kosc(

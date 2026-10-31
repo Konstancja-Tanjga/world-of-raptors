@@ -1353,6 +1353,24 @@ li {
   object-fit: cover;
   border-radius: var(--bh-radius-surface);
 }
+/* A part of the bird: the model's picture on the light-table colour it was drawn on. */
+.fiszka__scena--budowa {
+  background: var(--wor-scena-tlo);
+}
+.fiszka__ilustracja--budowa img {
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--wor-scena-tlo);
+}
+.fiszka__opis {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-snug);
+}
 .fiszka__mala-sylwetka {
   width: 5.5rem;
   height: auto;

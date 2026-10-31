@@ -236,6 +236,28 @@ export type Fiszka =
       zdjecie: Zdjecie | null;
     };
 
+/**
+ * A card of the "Budowa ptaka" deck (module A9): `czesc-obraz` shows the 3D
+ * model with one part lit and asks its name; `czesc-nazwa` shows the name and
+ * asks where the part lies and what it does. Ids are `budowa:<part>/<kind>`,
+ * so a part's two cards are siblings like a species' cards (`gatunek` is
+ * `budowa:<part>`). Never rename a part id: it is a stored key.
+ */
+export type RodzajFiszkiBudowy = 'czesc-obraz' | 'czesc-nazwa';
+export type FiszkaBudowy = {
+  id: `budowa:${string}/${RodzajFiszkiBudowy}`;
+  rodzaj: RodzajFiszkiBudowy;
+  gatunek: `budowa:${string}`;
+  czesc: { id: string; nazwa: string; lac?: string; opis: string };
+  /** The model with the part lit, drawn by scripts/budowa-obrazy.mjs. */
+  obraz: { src: string; width: number; height: number };
+  /** The lesson that teaches the part. */
+  lekcja: { href: string; tytul: string };
+};
+/** Any card the flashcards page shows. */
+export type KartaFiszki = Fiszka | FiszkaBudowy;
+export const jestFiszkaBudowy = (k: KartaFiszki): k is FiszkaBudowy => k.rodzaj === 'czesc-obraz' || k.rodzaj === 'czesc-nazwa';
+
 /** What the answer side shows about a species. */
 export type GatunekFiszki = Pick<DaneGatunku, 'id' | 'pl' | 'lat' | 'en' | 'es' | 'grupa' | 'cechy' | 'regiony'> &
   SylwetkaGatunku & {

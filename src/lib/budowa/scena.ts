@@ -134,13 +134,16 @@ export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, 
       m.visible = (widoczne.get(warstwa) ?? false) && !(widok?.tylkoTeCzesci && warstwa !== 'zewnatrz' && !(czesc && dozwolone.has(czesc)));
       const baza = (mat.userData.przezroczystosc as number) ?? 1;
       const o = warstwa === 'zewnatrz' ? przezroczystosc : 1;
-      mat.opacity = baza * o;
+      // A chosen glass-like part (an air sac) turns nearly solid, or its light would be too faint to see.
+      mat.opacity = czesc !== null && czesc === wybrana && baza < 1 ? Math.max(baza * o, 0.85) : baza * o;
       mat.transparent = mat.opacity < 0.999;
       mat.depthWrite = mat.opacity > 0.6;
       const swieci = czesc === null ? 0 : czesc === wybrana ? 0.55 : czesc === najechana && dozwolone.has(czesc) ? 0.22 : 0;
       // Lit up: tinted towards the accent (white plumage too, which glow alone would not change) and glowing.
       mat.userData.kolor ??= mat.color.clone();
+      // While a part is chosen, everything else steps back, so even a yellow toe lit orange stands out.
       mat.color.copy(mat.userData.kolor as THREE.Color).lerp(kolorAkcentu, swieci > 0.5 ? 0.65 : swieci > 0 ? 0.3 : 0);
+      if (wybrana && czesc !== wybrana) mat.color.multiplyScalar(0.42);
       mat.emissive.copy(kolorAkcentu).multiplyScalar(swieci * 0.6);
       if (!mat.clippingPlanes) mat.clippingPlanes = [plaszczyzna];
     }
@@ -228,10 +231,23 @@ export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, 
   canvas.addEventListener('pointermove', ruchWskaznika);
   canvas.addEventListener('pointerleave', wyjscie);
 
-  /** The box of a part's visible meshes, in world space. */
-  function ramkaCzesci(id: string) {
+  /** The box of a part's visible meshes, in world space; with `prawa`, of its points on the bird's right only. */
+  function ramkaCzesci(id: string, prawa = false) {
     const box = new THREE.Box3();
-    for (const m of model?.czesci.get(id) ?? []) if (m.visible) box.expandByObject(m);
+    const p = new THREE.Vector3();
+    for (const m of model?.czesci.get(id) ?? []) {
+      if (!m.visible) continue;
+      if (!prawa || m instanceof THREE.InstancedMesh) {
+        box.expandByObject(m);
+        continue;
+      }
+      m.updateWorldMatrix(true, false);
+      const poz = m.geometry.getAttribute('position');
+      for (let i = 0; i < poz.count; i++) {
+        p.fromBufferAttribute(poz, i).applyMatrix4(m.matrixWorld);
+        if (p.x >= 0) box.expandByPoint(p);
+      }
+    }
     return box;
   }
 
@@ -299,7 +315,13 @@ export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, 
           for (const w of WARSTWY) if (nad(w) || (warstwy.has('szkielet') && w !== 'zewnatrz' && w !== 'szkielet')) widoczne.set(w, false);
         }
         odswiezWyglad();
-        const box = ramkaCzesci(id);
+        const ptak = model === modele.get('ptak');
+        let box = ramkaCzesci(id);
+        // A pair (both wings, both legs): frame the right one, the side the cut opens.
+        if (ptak && box.min.x < -0.5 && box.max.x > 0.5) {
+          box = ramkaCzesci(id, true);
+          kierunek.set(0.3, 1, 0.35).normalize();
+        }
         if (!box.isEmpty()) {
           const c = box.getCenter(new THREE.Vector3());
           // An organ or an air sac: cut through its middle and look in from the open side.
@@ -309,7 +331,7 @@ export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, 
             kierunek.set(1, 0.3, 0.25).normalize();
           }
           const r = Math.max(box.getSize(new THREE.Vector3()).length(), 0.25);
-          const p = c.clone().addScaledVector(kierunek, Math.min(Math.max(r * 3.2, model === modele.get('ptak') ? 3.2 : 1.6), 14));
+          const p = c.clone().addScaledVector(kierunek, Math.min(ptak ? Math.max(r * 3.2, 3.2) : Math.max(r * 1.4, 1.6), 14));
           ustawKamere([p.x, p.y, p.z], [c.x, c.y, c.z], true);
         }
       }

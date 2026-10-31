@@ -37,6 +37,7 @@ import type {
   Ciekawostka,
   CiekawostkaDoPokazania,
   Fiszka,
+  FiszkaBudowy,
   GatunekDzienny,
   GatunekFiszki,
   GrupaSylwetki,
@@ -496,6 +497,51 @@ export function scenaBudowy(id: string): DaneSceny {
   };
 }
 
+/** The model's images for the flashcards: one per part, 800 × 450 px. */
+export const OBRAZ_CZESCI = { width: 800, height: 450, src: (id: string) => `/budowa/${id}.jpg` };
+
+/** Each scene's lesson: the first ready lesson with its `<model-3d>` tag. */
+function lekcjeScen() {
+  const wynik = new Map<string, { href: string; tytul: string }>();
+  for (const m of gotoweModuly) {
+    for (const l of m.lekcje) {
+      for (const [, id] of czytajSync(`moduly/${m.slug}/${l.slug}.md`).matchAll(/^<model-3d data-scena="([^"]+)">$/gm)) {
+        if (!wynik.has(id)) wynik.set(id, { href: `/moduly/${m.slug}/${l.slug}`, tytul: `${l.tytul} (${m.id})` });
+      }
+    }
+  }
+  return wynik;
+}
+
+/**
+ * The "Budowa ptaka" flashcards: two cards for every part of the bird, the
+ * feather and the bird's bone that a lesson's model shows (not the self-test,
+ * which repeats them, nor the mammal's bone, which is there for comparison),
+ * one per name (the feather's close-ups repeat "Stosina" and "Promienie").
+ */
+export function taliaBudowy(): FiszkaBudowy[] {
+  const lekcje = lekcjeScen();
+  const nazwy = new Set<string>();
+  const wynik: FiszkaBudowy[] = [];
+  for (const [scena, s] of Object.entries(SCENY)) {
+    const lekcja = lekcje.get(scena);
+    if (s.sprawdzian || !lekcja) continue;
+    for (const w of s.widoki) {
+      if (w.model === 'kosc-ssaka') continue;
+      for (const id of w.czesci) {
+        const c = budowa.czesci[id];
+        if (!c || nazwy.has(c.nazwa)) continue;
+        nazwy.add(c.nazwa);
+        const obraz = { src: OBRAZ_CZESCI.src(id), width: OBRAZ_CZESCI.width, height: OBRAZ_CZESCI.height };
+        for (const rodzaj of ['czesc-obraz', 'czesc-nazwa'] as const) {
+          wynik.push({ id: `budowa:${id}/${rodzaj}`, rodzaj, gatunek: `budowa:${id}`, czesc: { id, ...c }, obraz, lekcja });
+        }
+      }
+    }
+  }
+  return wynik;
+}
+
 /** What is wrong between the scenes in code and their texts: a part, scene or step without a text, or a text nothing shows. */
 function problemyBudowy() {
   const bledy: string[] = [];
@@ -513,6 +559,10 @@ function problemyBudowy() {
   for (const id of new Set([...kroki, ...Object.keys(budowa.kroki)])) {
     if (!kroki.has(id) || !budowa.kroki[id]?.nazwa || !budowa.kroki[id]?.opis) bledy.push(`${plik}: krok „${id}” musi być i w sceny.ts, i tu (z nazwą i opisem)`);
   }
+  // Every part's card needs its picture of the model (scripts/budowa-obrazy.mjs draws them from the running app).
+  // BUDOWA_BEZ_OBRAZOW=1 lets a build through without them, once, to run the app the script draws from.
+  const brak = process.env.BUDOWA_BEZ_OBRAZOW ? [] : taliaBudowy().filter((f) => f.rodzaj === 'czesc-obraz' && !existsSync(path.join(process.cwd(), 'public', f.obraz.src)));
+  if (brak.length) bledy.push(`public/budowa/: brak obrazów części do fiszek (node scripts/budowa-obrazy.mjs): ${brak.map((f) => f.czesc.id).join(', ')}`);
   return bledy;
 }
 
