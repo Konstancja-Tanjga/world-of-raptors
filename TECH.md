@@ -12,6 +12,7 @@ Prywatna aplikacja webowa do własnej nauki, publikowana na **Vercel** (plan Hob
 | Style | `src/app/motyw.css` (motyw: role `--bh-*` i warstwa `--wor-*`), `globals.css` i arkusze stron | bez Tailwinda: wartości z tokenów, nie wpisane na sztywno (wyjątki w CLAUDE.md) |
 | Checklista | `localStorage` + eksport i import do pliku JSON | bez logowania i bez bazy danych |
 | Postęp nauki | `localStorage` (`src/lib/postep.ts`) | ukończone lekcje; moduł jest „zaliczony”, gdy wszystkie lekcje są ukończone, co widać na kartach modułów (pierścień, „Zaliczony”) i w pasku modułu (ukończona lekcja ma ✓ w wypełnionym kółku zamiast numeru) |
+| Modele 3D | **three.js** (moduł A9, `src/lib/budowa/`) | ptak, pióro i kości budowane w kodzie z prostych brył; wczytywane tylko w lekcjach z `<model-3d>` |
 | Zdjęcia | Wikimedia Commons (`content/zdjecia.json`, znacznik `<zdjecie>` w lekcjach) | autor i licencja przy każdym zdjęciu; `scripts/commons.py` szuka i tworzy znaczniki |
 
 ## Zasady design systemu w tym projekcie
@@ -34,6 +35,7 @@ content/
   moduly/<slug>/NN-*.md    lekcje
   zdjecia.json             zdjęcia gatunków, prawie wszystkie z Commons (autor, licencja, rozmiar oryginału, punkt ostrości)
   ciekawostki.json         ciekawostki
+  budowa-ptaka.json        moduł A9: nazwy, łacina i opisy części ptaka, pióra i kości w modelach 3D, podpisy scen i kroki oddechu
 src/
   app/                     strony (routing), motyw.css, globals.css i arkusze stron
   components/ds.ts         kliencki most do @bighat/ui
@@ -55,6 +57,7 @@ src/
   lib/gwiazdozbiory.ts     ptak każdego modułu i rozkład gwiazdozbiorów na niebie
   lib/zdobyte.ts           daty zdobycia gwiazdozbiorów, złotych gwiazd i naszywek (i czy ich moment już się odegrał) w localStorage
   lib/links.ts             zamiana względnych linków Markdown na trasy aplikacji
+  lib/budowa/              modele 3D modułu A9: sceny (sceny.ts, bez three.js), bryły (geometria.ts), ptak (ptak.ts), pióro i kości (mikro.ts), przeglądarka 3D (scena.ts)
 ```
 
 ## Trasy
@@ -117,7 +120,8 @@ src/
    ```
    Każde zdjęcie otwiera się po kliknięciu na całym ekranie, z podpisem i licencją; zdjęcia z jednej galerii, jednego marginesu albo jednej planszy przegląda się strzałkami. Znacznik `<zdjecie>` z Commons ma atrybut `oryginal="SZERxWYS"` (rozmiar oryginału), dzięki któremu przeglądarka pobiera ostrzejszą miniaturę; `python3 scripts/commons.py tag` wpisuje go sam, a `python3 scripts/commons.py rozmiary-lekcji` uzupełnia go we wszystkich lekcjach. Cały znacznik `<zdjecie>` pisz w jednej linii, małymi literami. Build (w gotowych modułach) zatrzymuje się na zdjęciu spoza Commons i `/zdjecia/`; bez `alt`, autora, licencji albo wymiarów; z Commons bez strony pliku albo, przy miniaturze, bez `oryginal`; na znaczniku wpisanym w tekst, rozbitym na linie albo pisanym wielkimi literami; i na galerii z czymś innym niż od 1 do 6 zdjęć.
 8. Nagranie w lekcji: `<glos data-id="puszczyk/samiec">` w osobnej linii i `</glos>` w następnej. Odtwarza wpis z `content/nagrania.json`: nad odtwarzaczem pokazuje, co słychać (`opis`), a pod nim autora i licencję. Nowy wpis z Commons wypisuje `python3 scripts/commons.py nagranie "File:…" --gatunek puszczyk --lat "Strix aluco" --opis "Samiec: głos terytorialny"`. Gdy Commons nie ma nagrania gatunku, można użyć nagrania z xeno-canto na licencji CC0, CC BY albo CC BY-SA (nie NC): plik MP3 w `public/nagrania/`, a `strona` to jego adres na xeno-canto. Każde nagranie ma `zatwierdzone: false`, dopóki go nie odsłucham (`next dev` wypisuje listę). Sonogram (pierwsze 12 s, do 4 kHz, a przy sowach o niskim głosie do 2 kHz) rysuje `python3 scripts/sonogramy.py` (potrzebny ffmpeg); zapisuje go w `public/sonogramy/` i dopisuje do wpisu `"sonogram": {"khz": …, "zrodlo": …}`. Po podmianie nagrania uruchom skrypt jeszcze raz: narysuje sonogram od nowa, a do tego czasu build się zatrzyma. Nagranie, którego sonogram pokazuje sam szum, wpisz w `BEZ_SONOGRAMU` w skrypcie. Build zatrzymuje się na gatunku spoza atlasu, nagraniu spoza Commons i `public/nagrania/`, licencji, która nie jest wolna, i na `<glos>` bez wpisu.
-9. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w pytaniach i odpowiedziach znikają (zob. `DS-GAPS.md`).
+9. Model 3D (moduł A9): `<model-3d data-scena="szkielet">` w osobnej linii i `</model-3d>` w następnej. Sceny (`topografia`, `skrzydlo`, `szkielet`, `wnetrze`, `oddech`, `pioro`, `kosc`, `sprawdzian`) są w `src/lib/budowa/sceny.ts`: który model pokazują, które części można wybrać, które warstwy przełączać, gdzie startuje kamera i przekrój. Nazwy i opisy części, podpis sceny i teksty kroków oddechu są w `content/budowa-ptaka.json`. Nowa część: kształt w `ptak.ts` albo `mikro.ts` (siatka z identyfikatorem części i warstwą), identyfikator w scenie i wpis w JSON-ie. Każda część z modeli lekcji ma też dwie fiszki w talii „Budowa ptaka” (obrazek z podświetloną częścią i nazwa); obrazki w `public/budowa/` rysuje z działającej aplikacji `node --import ./scripts/testy/rozwiaz.mjs scripts/budowa-obrazy.mjs` (po zmianie modelu narysuj je od nowa; nowa część bez obrazka zatrzymuje build, a `BUDOWA_BEZ_OBRAZOW=1 npm run build` przepuszcza jeden build, żeby uruchomić aplikację dla skryptu). Build zatrzymuje się na scenie bez tekstów, części bez nazwy albo opisu, tekście, którego nie pokazuje żadna scena, i na `<model-3d>` z nieznaną sceną; `npm test` sprawdza, czy model rysuje każdą część, którą wymienia scena, i czy szkielet i narządy mieszczą się w ciele.
+10. Quiz krok po kroku: sekcja `## … Quiz (próg zaliczenia: 80%)` z ponumerowanymi pytaniami. Pod każdym pytaniem jedna wcięta linia odpowiedzi `a) … b) … c) …`, poprawna **pogrubiona**. Aplikacja pokazuje jedno pytanie na ekranie, od razu mówi, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną. Build zatrzymuje się, gdy sekcja quizu nie ma pytań, gdy między pytaniami stoi inna linia, gdy próg jest spoza 1–100% albo gdy pytanie nie ma co najmniej dwóch odpowiedzi i dokładnie jednej pogrubionej. Kursywa i pogrubienia w pytaniach i odpowiedziach znikają (zob. `DS-GAPS.md`).
 
 ## Moje niebo
 Kolekcja liczona z tego, co przeglądarka już ma (ukończone lekcje, fiszki, checklista). Nic się w niej nie blokuje: każdy moduł jest zawsze otwarty.

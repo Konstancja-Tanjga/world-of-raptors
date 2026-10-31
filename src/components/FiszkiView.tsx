@@ -7,7 +7,19 @@ import { dataLokalna } from '@/lib/daty';
 import { useFiszki, type Fiszki } from '@/lib/fiszki';
 import { kartaFsrs, ocenFiszke, planista } from '@/lib/planFiszek';
 import { dzisiaj } from '@/lib/magazyn';
-import { gatunekFiszki, REGIONY, type Fiszka, type GatunekFiszki, type Region, type RodzajFiszki, type Zdjecie } from '@/lib/types';
+import {
+  gatunekFiszki,
+  jestFiszkaBudowy,
+  REGIONY,
+  type Fiszka,
+  type FiszkaBudowy,
+  type GatunekFiszki,
+  type KartaFiszki,
+  type Region,
+  type RodzajFiszki,
+  type RodzajFiszkiBudowy,
+  type Zdjecie,
+} from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Button, Progress, SegmentedControl, StateBlock } from './ds';
 import { ScenaSylwetki } from './ScenaSylwetki';
@@ -29,10 +41,12 @@ const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
 ];
 
 type Talia = 'wszystkie' | Region;
-type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy';
+type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy' | 'budowa';
 
 /** Which filter each kind of card belongs to (a Record, so a new kind cannot be left out). */
-const KATEGORIA: Record<RodzajFiszki, Exclude<Rodzaj, 'wszystkie'>> = {
+const KATEGORIA: Record<RodzajFiszki | RodzajFiszkiBudowy, Exclude<Rodzaj, 'wszystkie'>> = {
+  'czesc-obraz': 'budowa',
+  'czesc-nazwa': 'budowa',
   lot: 'zdjecia',
   siedzacy: 'zdjecia',
   sylwetka: 'sylwetki',
@@ -43,7 +57,9 @@ const KATEGORIA: Record<RodzajFiszki, Exclude<Rodzaj, 'wszystkie'>> = {
 };
 
 /** The question each kind of card asks. */
-const PYTANIE: Record<RodzajFiszki, string> = {
+const PYTANIE: Record<RodzajFiszki | RodzajFiszkiBudowy, string> = {
+  'czesc-obraz': 'Jak nazywa się podświetlona część?',
+  'czesc-nazwa': 'Gdzie leży ta część i do czego służy?',
   lot: 'Jaki to gatunek?',
   siedzacy: 'Jaki to gatunek?',
   sylwetka: 'Najpierw grupa, potem gatunek. Co to za ptak?',
@@ -81,7 +97,7 @@ function kolejnosc(id: string, dzien: string) {
  * another card of the same species was answered today (its "sibling"), so one
  * card does not give away the next (Kania ruda → Red Kite, then Red Kite → ?).
  */
-function nastepna(talia: Fiszka[], fiszki: Fiszki, teraz: number, dodatkowe: number) {
+function nastepna(talia: KartaFiszki[], fiszki: Fiszki, teraz: number, dodatkowe: number) {
   const dzien = dzisiaj();
   const doPowtorki = talia
     .filter((f) => fiszki[f.id] && Date.parse(fiszki[f.id].due) <= teraz + WYPRZEDZENIE_MS)
@@ -297,13 +313,63 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
   );
 }
 
+/** A part of the bird: the model with the part lit, or its name, asking for the other. */
+function AwersBudowy({ karta }: { karta: FiszkaBudowy }) {
+  if (karta.rodzaj === 'czesc-obraz') {
+    return (
+      <div className="fiszka__scena fiszka__scena--budowa">
+        {/* eslint-disable-next-line @next/next/no-img-element -- a static picture of the model, shown whole */}
+        <img
+          className="fiszka__zdjecie"
+          src={karta.obraz.src}
+          width={karta.obraz.width}
+          height={karta.obraz.height}
+          alt="Model ptaka z jedną podświetloną częścią do nazwania"
+        />
+      </div>
+    );
+  }
+  return (
+    <div className="fiszka__scena fiszka__scena--nazwa">
+      <p className="fiszka__jezyk">Część ptaka</p>
+      <p className="fiszka__slowo">{karta.czesc.nazwa}</p>
+    </div>
+  );
+}
+
+function RewersBudowy({ karta }: { karta: FiszkaBudowy }) {
+  const { czesc } = karta;
+  return (
+    <>
+      <p className="fiszka__nazwa">{czesc.nazwa}</p>
+      {czesc.lac && (
+        <p className="fiszka__nazwy">
+          <em translate="no" lang="la">
+            {czesc.lac}
+          </em>
+        </p>
+      )}
+      <p className="fiszka__opis">{czesc.opis}</p>
+      {karta.rodzaj === 'czesc-nazwa' && (
+        <figure className="fiszka__ilustracja fiszka__ilustracja--budowa">
+          {/* eslint-disable-next-line @next/next/no-img-element -- a static picture of the model */}
+          <img src={karta.obraz.src} width={karta.obraz.width} height={karta.obraz.height} alt={`Model ptaka: podświetlona część, ${czesc.nazwa.toLowerCase()}`} />
+        </figure>
+      )}
+      <Link href={karta.lekcja.href} className="fiszka__karta">
+        Lekcja: {karta.lekcja.tytul}
+      </Link>
+    </>
+  );
+}
+
 /**
  * Flashcards from the atlas: photos to name, silhouettes in flight, and names
  * between Polish, English and Spanish. Name the bird, reveal the answer, say
  * how it went; FSRS decides when each card comes back. Keys: space reveals
  * the answer, 1–4 rate it.
  */
-export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki: Record<string, GatunekFiszki> }) {
+export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gatunki: Record<string, GatunekFiszki> }) {
   const { fiszki } = useFiszki();
   const sprawdzZapis = useOstrzezenieZapisu();
   const [region, setRegion] = useState<Talia>('wszystkie');
@@ -317,20 +383,20 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
 
   // The deck and the species come from the same atlas, so a card without its
   // species is a bug: it is left out (and logged) rather than blocking the deck.
-  const bezGatunku = useMemo(() => cala.filter((f) => !gatunki[f.gatunek]).map((f) => f.id), [cala, gatunki]);
+  const bezGatunku = useMemo(() => cala.filter((f) => !jestFiszkaBudowy(f) && !gatunki[f.gatunek]).map((f) => f.id), [cala, gatunki]);
   useEffect(() => {
     if (bezGatunku.length) console.error('[fiszki] cards whose species is not in the atlas, left out:', bezGatunku);
   }, [bezGatunku]);
+  // Parts of the bird belong to no region: a region's deck leaves them out.
   const talia = cala.filter(
     (f) =>
-      gatunki[f.gatunek] !== undefined &&
-      (region === 'wszystkie' || gatunki[f.gatunek]?.regiony.includes(region)) &&
+      (jestFiszkaBudowy(f) ? region === 'wszystkie' : gatunki[f.gatunek] !== undefined && (region === 'wszystkie' || gatunki[f.gatunek].regiony.includes(region))) &&
       (rodzaj === 'wszystkie' || KATEGORIA[f.rodzaj] === rodzaj),
   );
   const stan = fiszki ? nastepna(talia, fiszki, teraz, dodatkowe) : null;
   const poznane = fiszki ? talia.filter((f) => fiszki[f.id]).length : 0;
   const karta = stan?.karta;
-  const g = karta ? gatunki[karta.gatunek] : undefined;
+  const g = karta && !jestFiszkaBudowy(karta) ? gatunki[karta.gatunek] : undefined;
 
   // The intervals under the rating buttons and the saved schedule use this same
   // moment: FSRS seeds its fuzz from the review time.
@@ -403,6 +469,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
               { value: 'zdjecia', label: 'Zdjęcia' },
               { value: 'sylwetki', label: 'Sylwetki' },
               { value: 'nazwy', label: 'Nazwy' },
+              { value: 'budowa', label: 'Budowa ptaka' },
             ]}
           />
         </div>
@@ -418,7 +485,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
       </div>
       <Progress label="Poznane fiszki" value={poznane} max={talia.length} valueText={`${poznane} z ${talia.length}`} />
 
-      {!karta || !g ? (
+      {!karta || (!g && !jestFiszkaBudowy(karta)) ? (
         <StateBlock
           state="empty"
           title="Na dziś to wszystko"
@@ -426,7 +493,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
             stan.kolejnaPowtorka !== undefined ? `Następna powtórka ${zaIle(stan.kolejnaPowtorka - teraz)}.` : 'W tej talii nie ma fiszek do powtórki.',
             stan.zostaloNowych > 0 ? `Nowych fiszek w tej talii: ${stan.zostaloNowych}.` : '',
             stan.odlozonych > 0
-              ? `${stan.odlozonych} z nich czeka do jutra, bo ćwiczyłam już dziś inne fiszki tych gatunków.`
+              ? `${stan.odlozonych} z nich czeka do jutra, bo ćwiczyłam już dziś inne fiszki tych gatunków albo części ptaka.`
               : '',
           ]
             .filter(Boolean)
@@ -443,7 +510,11 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
         <section className="fiszka" aria-label="Fiszka" data-rodzaj={karta.rodzaj} data-odkryta={odkryta ? '' : undefined}>
           <div className="fiszka__przod">
             {/* Keyed by card, so the previous bird never lingers while the next photo loads. */}
-            <Awers key={karta.id} karta={karta} g={g} powtorka={fiszki[karta.id]?.reps ?? 0} />
+            {jestFiszkaBudowy(karta) ? (
+              <AwersBudowy key={karta.id} karta={karta} />
+            ) : (
+              <Awers key={karta.id} karta={karta} g={g!} powtorka={fiszki[karta.id]?.reps ?? 0} />
+            )}
             {(karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && <PodpisZdjecia z={karta.zdjecie} zrodlo={odkryta} />}
           </div>
           <div className="fiszka__panel">
@@ -460,7 +531,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: Fiszka[]; gatunki:
               </div>
             ) : (
               <div className="fiszka__odpowiedz" tabIndex={-1} ref={odpowiedzRef}>
-                <Rewers karta={karta} g={g} />
+                {jestFiszkaBudowy(karta) ? <RewersBudowy karta={karta} /> : <Rewers karta={karta} g={g!} />}
                 <div className="fiszka__oceny" role="group" aria-label="Jak mi poszło?">
                   {OCENY.map(({ ocena, etykieta, klawisz }) => {
                     const due = planista.next(kartaFsrs(fiszki[karta.id], new Date(teraz)), new Date(teraz), ocena).card.due;

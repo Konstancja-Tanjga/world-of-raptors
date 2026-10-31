@@ -1,0 +1,163 @@
+{
+  "uwaga": "Nazwy i opisy części ptaka w modelach 3D modułu A9 (Budowa ptaka). Geometria jest w src/lib/budowa/, a to, które części pokazuje każdy widok, w src/lib/budowa/sceny.ts. Model ptaka ma proporcje i barwy dorosłego jastrzębia.",
+  "sceny": {
+    "topografia": {
+      "tytul": "Mapa ptaka",
+      "podpis": "Dorosły jastrząb tuż przed lądowaniem. Kliknij część ptaka albo wybierz ją z listy. Obracaj, przeciągając, a przybliżaj kółkiem albo dwoma palcami."
+    },
+    "skrzydlo": {
+      "tytul": "Pióra na kościach",
+      "podpis": "Prawe skrzydło od góry, z przezroczystymi piórami. Przesuń suwak upierzenia i zobacz, które pióra rosną z ręki, które z przedramienia, a które z ramienia."
+    },
+    "szkielet": {
+      "tytul": "Szkielet",
+      "podpis": "Szkielet w obrysie ptaka. Mięśnie możesz włączyć, a przekrojem zdejmiesz prawą połowę, żeby zajrzeć do klatki piersiowej od środka."
+    },
+    "wnetrze": {
+      "tytul": "Wnętrze ptaka",
+      "podpis": "Prawa połowa ptaka zdjęta przekrojem. Przesuwaj przekrój, wyłączaj warstwy i zaglądaj do środka narządów: przekrój tnie też serce i żołądek."
+    },
+    "oddech": {
+      "tytul": "Dwa oddechy",
+      "podpis": "Jedna porcja świeżego powietrza potrzebuje dwóch wdechów i dwóch wydechów, żeby przejść przez ptaka. Przechodź krok po kroku i patrz, dokąd płynie."
+    },
+    "pioro": {
+      "tytul": "Pióro z bliska",
+      "podpis": "Lotka I-rzędowa w trzech powiększeniach. Przełącz widok, żeby zejść od całego pióra do haczyków, które spinają jego chorągiewkę."
+    },
+    "kosc": {
+      "tytul": "Kość od środka",
+      "podpis": "Kość ramienna przecięta wzdłuż. Suwakiem wejdziesz do jej środka, a przełącznikiem porównasz ją z kością ssaka."
+    },
+    "sprawdzian": {
+      "tytul": "Sprawdzian z budowy",
+      "podpis": "Model pokazuje jedną część ptaka. Wybierz jej nazwę. Dziesięć pytań z całego modułu, za każdym razem w innej kolejności."
+    }
+  },
+  "kroki": {
+    "wdech-1": {
+      "nazwa": "Wdech 1",
+      "opis": "Świeże powietrze płynie tchawicą i oskrzelami, ale prawie całe omija płuca i trafia do **tylnych worków powietrznych** (piersiowych tylnych i brzusznych). Wszystkie worki się rozszerzają."
+    },
+    "wydech-1": {
+      "nazwa": "Wydech 1",
+      "opis": "Tylne worki się kurczą i wypychają to powietrze **do płuc**. Płynie przez cienkie rurki (parabronchy) w jednym kierunku, od tyłu do przodu, i tu oddaje tlen krwi."
+    },
+    "wdech-2": {
+      "nazwa": "Wdech 2",
+      "opis": "Zużyte powietrze przechodzi z płuc do **przednich worków** (szyjnych, obojczykowego i piersiowych przednich). W tym samym czasie kolejna porcja świeżego powietrza wpływa do worków tylnych."
+    },
+    "wydech-2": {
+      "nazwa": "Wydech 2",
+      "opis": "Przednie worki wypychają zużyte powietrze tchawicą na zewnątrz, a tylne wtłaczają następną porcję do płuc. Płuca dostają świeże powietrze **przy wdechu i przy wydechu**."
+    }
+  },
+  "czesci": {
+    "czolo": { "nazwa": "Czoło", "opis": "Przód głowy nad nasadą dzioba, między nim a ciemieniem." },
+    "ciemie": { "nazwa": "Ciemię", "opis": "Wierzch głowy. U dorosłego jastrzębia ciemię jest ciemne, prawie czarne, i odcina się od białej brwi." },
+    "brew": { "nazwa": "Brew", "opis": "Pas piór nad okiem. Biała brew dorosłego jastrzębia to dobra cecha w terenie. Pod nią kostny daszek nad okiem ocienia je i chroni, dlatego ptaki drapieżne wyglądają na „groźne”." },
+    "kantarek": { "nazwa": "Kantarek", "opis": "Pole między okiem a nasadą dzioba. U ptaków drapieżnych porastają je sztywne, szczecinkowate pióra; według jednej z hipotez łatwiej je utrzymać w czystości, kiedy ptak zanurza głowę w zdobyczy." },
+    "policzek": { "nazwa": "Policzek i pokrywy uszne", "opis": "Bok głowy za okiem i pod nim. Pokrywy uszne zasłaniają otwór uszny (ptaki nie mają małżowin). U sokołów ciemny pas pod okiem to „wąs”, ważna cecha w terenie." },
+    "potylica": { "nazwa": "Potylica", "opis": "Tył głowy, za ciemieniem, przechodzący w kark." },
+    "gardlo": { "nazwa": "Podbródek i gardło", "opis": "Spód głowy pod dziobem i przód górnej części szyi. U jastrzębia białe z drobnymi, ciemnymi kreskami." },
+    "oko": { "nazwa": "Oko", "opis": "Duże i nieruchome w oczodole, więc ptak obraca całą głowę. U dorosłego jastrzębia tęczówka jest pomarańczowa do czerwonej, u młodego żółta; po kolorze oka da się więc ocenić wiek. O wzroku więcej w A2." },
+    "woskowka": { "nazwa": "Woskówka", "lac": "cera", "opis": "Miękka, nieuzbrojona w róg skóra u nasady górnej części dzioba, w której leżą nozdrza. Mają ją ptaki drapieżne, sowy, papugi i gołębie. U jastrzębia żółta." },
+    "nozdrze": { "nazwa": "Nozdrze", "opis": "Otwór w woskówce. U sokołów w nozdrzu tkwi kostny guzek, który według popularnej hipotezy osłabia strumień powietrza przy szybkim pikowaniu; to wciąż raczej przypuszczenie niż wynik pomiarów." },
+    "dziob-gorny": { "nazwa": "Górna część dzioba z hakiem", "lac": "maxilla", "opis": "Kość pokryta rogową pochwą, która stale odrasta i ściera się. Ostry hak na końcu rozrywa mięso. Sokoły mają za hakiem dodatkowy „ząb”, którym przecinają rdzeń kręgowy zdobyczy; jastrząb go nie ma." },
+    "dziob-dolny": { "nazwa": "Dolna część dzioba", "lac": "mandibula", "opis": "Żuchwa w rogowej pochwie. Krótsza od górnej, chowa się pod hakiem." },
+    "kark": { "nazwa": "Kark", "opis": "Tył szyi, od potylicy do płaszcza. Wbrew pozorom szyja ptaka jest długa i bardzo ruchoma; pióra karku zakrywają jej esowate wygięcie." },
+    "plaszcz": { "nazwa": "Płaszcz", "opis": "Górna część grzbietu, między karkiem a barkówkami. Razem z grzbietem i barkówkami tworzy jednolitą, łupkowoszarą „wierzchnią stronę” jastrzębia." },
+    "grzbiet": { "nazwa": "Grzbiet", "opis": "Środek wierzchu tułowia, między płaszczem a kuprem. U ptaka z rozłożonymi skrzydłami częściowo zakryty barkówkami." },
+    "kuper": { "nazwa": "Kuper", "opis": "Dolna część grzbietu tuż przed ogonem. Biały „kuper” błotniaków to w rzeczywistości głównie białe pokrywy nadogonowe." },
+    "piers": { "nazwa": "Pierś", "opis": "Przód tułowia pod szyją. Pod nią leżą największe mięśnie ptaka, mięśnie piersiowe, przyczepione do grzebienia mostka. U dorosłego jastrzębia biała w gęste, szare prążki." },
+    "brzuch": { "nazwa": "Brzuch", "opis": "Spód tułowia za piersią, aż do nóg i pokryw podogonowych." },
+    "boki": { "nazwa": "Boki", "opis": "Boki tułowia pod skrzydłami. U wielu ptaków drapieżnych mają inny wzór niż pierś i to bywa cechą gatunku." },
+    "barkowki": { "nazwa": "Barkówki", "opis": "Pióra rosnące z barku, nad nasadą skrzydła. U siedzącego ptaka zakrywają złożone skrzydło od góry, u lecącego leżą na grzbiecie między skrzydłami." },
+    "pokrywy-male": { "nazwa": "Pokrywy małe", "opis": "Drobne pióra na przedniej krawędzi skrzydła. Pod nimi jest fałd skóry (patagium) rozpięty między barkiem a nadgarstkiem, który tworzy gładką, zaokrągloną krawędź natarcia." },
+    "pokrywy-srednie": { "nazwa": "Pokrywy średnie", "opis": "Rząd piór między pokrywami małymi a dużymi. Zachodzą na nasady pokryw dużych jak dachówki." },
+    "pokrywy-duze": { "nazwa": "Pokrywy duże", "opis": "Rząd piór kryjący nasady lotek II-rzędowych. U wielu gatunków mają jaśniejsze końce, które tworzą na skrzydle pasek." },
+    "pokrywy-lotek-1": { "nazwa": "Pokrywy lotek I-rzędowych", "opis": "Pióra kryjące nasady lotek I-rzędowych, na „dłoni” skrzydła. U orła przedniego i innych gatunków bywają widoczne od spodu jako jaśniejsze albo ciemniejsze pole." },
+    "skrzydelko": { "nazwa": "Skrzydełko", "lac": "alula", "opis": "Trzy, cztery małe pióra na palcu przy przedniej krawędzi skrzydła. Ptak unosi je przy wolnym locie i lądowaniu, żeby powietrze nie oderwało się od skrzydła." },
+    "lotki-1": { "nazwa": "Lotki I-rzędowe", "opis": "Dziesięć długich lotek rosnących z „dłoni”: kości nadgarstkowo-śródręcznej i palców. Dają ciąg do przodu. U jastrzębia zewnętrzne lotki są wcięte i w locie rozchylają się w „palce”." },
+    "lotki-2": { "nazwa": "Lotki II-rzędowe", "opis": "Lotki rosnące z przedramienia, przymocowane więzadłami do kości łokciowej. Tworzą tylną krawędź skrzydła i dają większość siły nośnej. Im dłuższe przedramię, tym więcej lotek II-rzędowych: u jastrzębia kilkanaście, u dużych sępów wyraźnie więcej." },
+    "lotki-3": { "nazwa": "Lotki III-rzędowe", "opis": "Kilka lotek najbliżej tułowia, przy łokciu. U wielu ptaków to po prostu najbardziej wewnętrzne lotki II-rzędowe; u siedzącego ptaka osłaniają złożone lotki." },
+    "pokrywy-nadogonowe": { "nazwa": "Pokrywy nadogonowe", "opis": "Pióra kryjące nasady sterówek od góry. Białe pokrywy nadogonowe to „biały kuper” błotniaków zbożowego i łąkowego." },
+    "sterowki": { "nazwa": "Sterówki", "opis": "Pióra ogona, u ptaków drapieżnych zwykle dwanaście, po sześć z każdej strony. Wyrastają z pygostylu. Długi ogon jastrzębia pozwala mu skręcać ostro między drzewami." },
+    "pokrywy-podogonowe": { "nazwa": "Pokrywy podogonowe", "opis": "Miękkie pióra pod nasadą ogona, za nogami. U jastrzębia śnieżnobiałe i puszyste; w toku samiec stroszy je i pokazuje." },
+    "portki": { "nazwa": "Portki", "opis": "Długie pióra na goleni, czyli na kości piszczelowo-stępowej. Wyglądają jak spodnie. Tam, gdzie się kończą, zaczyna się goły skok." },
+    "skok": { "nazwa": "Skok", "opis": "Widoczna, „cienka noga”, czyli kość stępowo-śródstopia pokryta łuskami. U jastrzębia naga i żółta. U orła przedniego i myszołowa włochatego opierzona aż do palców." },
+    "palce": { "nazwa": "Palce", "opis": "Cztery palce: trzy do przodu i jeden, palec I, do tyłu. Rybołów i sowy mogą obrócić palec zewnętrzny do tyłu i trzymać zdobycz dwa na dwa." },
+    "szpony": { "nazwa": "Szpony", "opis": "Rogowe pochwy na ostatnich kościach palców. U jastrzębiowatych największe są szpony palca tylnego i wewnętrznego: to one przebijają zdobycz." },
+
+    "czaszka": { "nazwa": "Czaszka", "opis": "Lekka, z cienkich, zrośniętych kości, z ogromnymi oczodołami. Górna część dzioba łączy się z czaszką elastycznym zawiasem, więc ptak może ją lekko unosić." },
+    "pierscien-twardowkowy": { "nazwa": "Pierścień twardówkowy", "opis": "Kilkanaście cienkich kostnych płytek w ścianie oka, ułożonych jak dachówki. Usztywnia duże oko. U sów tworzy kostną rurkę, dlatego ich oczy są nieruchome." },
+    "kregi-szyjne": { "nazwa": "Kręgi szyjne", "opis": "Ssaki mają prawie zawsze siedem kręgów szyjnych, ptaki od kilkunastu do ponad dwudziestu; sowy czternaście. Ułożone w literę S pozwalają obrócić głowę daleko do tyłu i wysunąć ją szybko do przodu." },
+    "kregoslup-piersiowy": { "nazwa": "Kręgi piersiowe", "opis": "Kręgi, do których przyczepione są żebra. U wielu ptaków część z nich się zrasta. Razem z synsakrum i pygostylem tułów ptaka jest prawie sztywny: ruchome zostają szyja i ogon." },
+    "zebra": { "nazwa": "Żebra", "opis": "Każde żebro ma dwie kostne części połączone stawem: kręgową i mostkową. Przy oddechu mostek opada i unosi się, a żebra składają się i rozkładają jak nożyce." },
+    "wyrostki-haczykowate": { "nazwa": "Wyrostki haczykowate", "lac": "processus uncinati", "opis": "Kostne „haczyki” na żebrach, zachodzące na następne żebro. Usztywniają klatkę piersiową i działają jak dźwignie dla mięśni oddechowych." },
+    "mostek": { "nazwa": "Mostek", "lac": "sternum", "opis": "Szeroka, wklęsła płyta pod tułowiem, chroniąca serce i wątrobę. Ruchy mostka w górę i w dół pompują powietrze do worków powietrznych." },
+    "grzebien-mostka": { "nazwa": "Grzebień mostka", "lac": "carina", "opis": "Kostny „kil” pod mostkiem. Przyczepiają się do niego oba mięśnie lotu. Ptaki nielotne, jak struś, grzebienia nie mają." },
+    "kosc-krucza": { "nazwa": "Kość krucza", "lac": "coracoideum", "opis": "Mocna kość jak rozpórka między barkiem a mostkiem. Przy uderzeniu skrzydłem w dół nie pozwala, żeby mięśnie piersiowe zgniotły klatkę piersiową." },
+    "widelki": { "nazwa": "Widełki", "lac": "furcula", "opis": "Zrośnięte obojczyki w kształcie litery U albo V. Działają jak sprężyna: u szpaka na zdjęciach rentgenowskich widać, jak rozchylają się i schodzą przy każdym uderzeniu skrzydeł." },
+    "lopatka": { "nazwa": "Łopatka", "lac": "scapula", "opis": "Wąska kość jak szabla, leżąca na żebrach równolegle do kręgosłupa. W miejscu, gdzie styka się z kością kruczą i widełkami, jest kanał, przez który biegnie ścięgno mięśnia unoszącego skrzydło." },
+    "kosc-ramienna": { "nazwa": "Kość ramienna", "lac": "humerus", "opis": "Kość ramienia, krótka i mocna. U większości ptaków latających jest pusta w środku i wypełniona powietrzem z worka obojczykowego (zobacz model kości)." },
+    "kosc-lokciowa": { "nazwa": "Kość łokciowa", "lac": "ulna", "opis": "Grubsza z dwóch kości przedramienia, z tyłu skrzydła. Do niej przyczepiają się lotki II-rzędowe." },
+    "kosc-promieniowa": { "nazwa": "Kość promieniowa", "lac": "radius", "opis": "Cieńsza kość przedramienia, z przodu. Gdy ptak prostuje łokieć, przesuwa się względem łokciowej i prostuje nadgarstek: skrzydło rozkłada się jednym ruchem." },
+    "brodawki-lotkowe": { "nazwa": "Brodawki lotkowe", "opis": "Rząd guzków na kości łokciowej, gdzie więzadła mocują lotki II-rzędowe. Takie guzki znaleziono też na kości łokciowej welociraptora, co wskazuje, że miał pióra na rękach." },
+    "nadgarstkowo-srodreczna": { "nazwa": "Kość nadgarstkowo-śródręczna", "lac": "carpometacarpus", "opis": "Kości nadgarstka i śródręcza zrośnięte w jedną, sztywną ramkę. Z niej i z palców rosną lotki I-rzędowe." },
+    "palce-skrzydla": { "nazwa": "Palce skrzydła", "opis": "Z dłoni zostały dwa krótkie palce: większy z dwoma paliczkami i mniejszy z jednym. Niosą zewnętrzne lotki I-rzędowe." },
+    "palec-skrzydelka": { "nazwa": "Palec skrzydełka", "opis": "Najmniejszy palec, z przodu przy nadgarstku, zwykle nazywany kciukiem. Niesie skrzydełko. To, którym palcom ręki dinozaura odpowiadają palce ptaka, wciąż jest przedmiotem sporu." },
+    "synsakrum": { "nazwa": "Synsakrum", "lac": "synsacrum", "opis": "Kilkanaście kręgów (ostatnie piersiowe, lędźwiowe, krzyżowe i pierwsze ogonowe) zrośniętych ze sobą i z miednicą. Sztywny dach nad brzuchem; w jego zagłębieniach leżą nerki." },
+    "miednica": { "nazwa": "Miednica", "opis": "Kości biodrowe, kulszowe i łonowe zrośnięte z synsakrum. U prawie wszystkich ptaków jest otwarta od spodu, kości łonowe się nie stykają, więc przez miednicę przechodzi duże jajo." },
+    "kregi-ogonowe": { "nazwa": "Kręgi ogonowe", "opis": "Kilka wolnych, ruchomych kręgów między synsakrum a pygostylem. Dzięki nim ptak unosi, opuszcza i skręca ogon." },
+    "pygostyl": { "nazwa": "Pygostyl", "lac": "pygostylus", "opis": "Ostatnie kręgi ogonowe zrośnięte w jedną płytkę. Niesie sterówki i mięśnie, które je rozkładają w wachlarz. Długi kostny ogon praptaków zamienił się w ten krótki kikut." },
+    "kosc-udowa": { "nazwa": "Kość udowa", "lac": "femur", "opis": "Krótka, ustawiona prawie poziomo i schowana w tułowiu. Kolano ptaka jest ukryte pod piórami przy brzuchu." },
+    "piszczelowo-stepowa": { "nazwa": "Kość piszczelowo-stępowa", "lac": "tibiotarsus", "opis": "Piszczel zrośnięta z kośćmi stępu. To „podudzie” kurczaka, na zewnątrz okryte portkami." },
+    "strzalka": { "nazwa": "Strzałka", "lac": "fibula", "opis": "Cienka, zanikająca kość przy kości piszczelowo-stępowej, krótsza od niej." },
+    "stepowo-srodstopie": { "nazwa": "Kość stępowo-śródstopia", "lac": "tarsometatarsus", "opis": "Kości stępu i śródstopia zrośnięte w jedną. To kość skoku. Staw nad nią, który wygląda jak kolano zgięte do tyłu, to w rzeczywistości staw skokowy, czyli kostka." },
+    "palce-stopy": { "nazwa": "Kości palców stopy", "opis": "Paliczki palców: zwykle 2 w palcu tylnym, potem 3, 4 i 5 w kolejnych palcach. Ostatni paliczek każdego palca nosi szpon." },
+
+    "miesien-piersiowy": { "nazwa": "Mięsień piersiowy", "lac": "musculus pectoralis", "opis": "Największy mięsień ptaka, przyczepiony do mostka i grzebienia, a drugim końcem do kości ramiennej. Ciągnie skrzydło w dół, czyli daje uderzenie, które niesie ptaka. Mięśnie lotu stanowią zwykle mniej więcej od jednej szóstej do jednej czwartej masy ciała." },
+    "miesien-nadkruczy": { "nazwa": "Mięsień nadkruczy", "lac": "musculus supracoracoideus", "opis": "Leży pod mięśniem piersiowym, też na mostku, a mimo to unosi skrzydło. Robi to przez ścięgno przełożone jak lina przez bloczek. U ptaków szybujących jest mały, u kolibrów bardzo duży." },
+    "sciegno-nadkruczego": { "nazwa": "Ścięgno mięśnia nadkruczego", "opis": "Biegnie w górę przez kanał trójkostny, między kością kruczą, widełkami i łopatką, i przyczepia się do wierzchu kości ramiennej. Gdy mięsień się kurczy, ciągnie skrzydło w górę." },
+    "tchawica": { "nazwa": "Tchawica", "opis": "Rura z chrzęstnych albo kostnych pierścieni, od gardła do oskrzeli. U ptaków jest dłuższa i szersza niż u ssaka tej samej wielkości." },
+    "krtan-dolna": { "nazwa": "Krtań dolna", "lac": "syrinx", "opis": "Narząd głosu ptaków, w miejscu, gdzie tchawica dzieli się na dwa oskrzela. Krtań u wejścia do tchawicy nie ma u ptaków strun głosowych; głos powstaje tutaj, głęboko w klatce piersiowej." },
+    "przelyk": { "nazwa": "Przełyk", "opis": "Rozciągliwa rura od gardła do żołądka. Biegnie wzdłuż tchawicy, a u nasady szyi rozszerza się w wole." },
+    "wole": { "nazwa": "Wole", "opis": "Rozszerzenie przełyku u nasady szyi, w którym ptak drapieżny trzyma pokarm po dużym posiłku. Pełne wole widać jako wypukłość pod gardłem. Sowy wola nie mają." },
+    "zoladek-gruczolowy": { "nazwa": "Żołądek gruczołowy", "lac": "proventriculus", "opis": "Pierwsza część żołądka. Wydziela kwas i enzymy, które zaczynają trawić mięso, a u sępów zabijają też wiele bakterii z padliny." },
+    "zoladek-miesniowy": { "nazwa": "Żołądek mięśniowy", "lac": "ventriculus", "opis": "U ptaków ziarnożernych gruby i twardy jak młynek, u drapieżnych cieńszy. Tu zbierają się pióra, sierść i kości, z których ptak formuje wypluwkę." },
+    "jelita": { "nazwa": "Jelita", "opis": "U ptaków mięsożernych stosunkowo krótkie, bo mięso trawi się łatwiej niż rośliny." },
+    "stek": { "nazwa": "Stek", "lac": "cloaca", "opis": "Wspólne ujście przewodu pokarmowego, moczowego i rozrodczego. Ptaki wydalają azot jako kwas moczowy, czyli białą część odchodów." },
+    "watroba": { "nazwa": "Wątroba", "opis": "Duża, dwupłatowa. Jej płaty otaczają serce od tyłu i z boków." },
+    "serce": { "nazwa": "Serce", "opis": "Czterokomorowe, jak u ssaków, ale w stosunku do ciała zwykle większe i bije szybko. Przetnij je przekrojem, żeby zajrzeć do środka." },
+    "pluca": { "nazwa": "Płuca", "opis": "Małe, sztywne i wrośnięte między żebra; prawie nie zmieniają objętości. Powietrze płynie przez nie w jedną stronę, przez sieć cienkich rurek, parabronchów, a wymiana gazów odbywa się przy wdechu i przy wydechu." },
+    "nerki": { "nazwa": "Nerki", "opis": "Wydłużone, ułożone w zagłębieniach synsakrum, pod kręgosłupem." },
+    "worki-szyjne": { "nazwa": "Worki szyjne", "opis": "Para małych worków u nasady szyi, w grupie worków przednich. Ich uchyłki wchodzą do kręgów szyjnych." },
+    "worek-obojczykowy": { "nazwa": "Worek obojczykowy", "opis": "Jedyny nieparzysty worek, w wejściu do klatki piersiowej, wokół krtani dolnej. Jego uchyłek wchodzi do kości ramiennej." },
+    "worki-piersiowe-przednie": { "nazwa": "Worki piersiowe przednie", "opis": "Para worków po bokach, za sercem. Należą do worków przednich, do których trafia powietrze już zużyte w płucach." },
+    "worki-piersiowe-tylne": { "nazwa": "Worki piersiowe tylne", "opis": "Para worków za przednimi. Należą do worków tylnych, które przyjmują świeże powietrze." },
+    "worki-brzuszne": { "nazwa": "Worki brzuszne", "opis": "Największe worki, sięgające w głąb brzucha między jelita. Gromadzą świeże powietrze i przy wydechu wtłaczają je do płuc." },
+
+    "dudka": { "nazwa": "Dudka", "lac": "calamus", "opis": "Pusta w środku, przezroczysta rurka u nasady pióra, tkwiąca w skórze. Spójrz od strony otworu: w środku nie ma nic." },
+    "stosina": { "nazwa": "Stosina", "lac": "rachis", "opis": "Przedłużenie dudki niosące chorągiewki. W odróżnieniu od dudki jest wypełniona lekką, gąbczastą tkanką, przez co jest sztywna, a lekka." },
+    "choragiewka-zewnetrzna": { "nazwa": "Chorągiewka zewnętrzna", "opis": "Węższa strona lotki, od przedniej krawędzi skrzydła. Niesymetryczna lotka działa jak małe skrzydło i sama ustawia się pod wiatr; po tym poznasz lotkę w lesie." },
+    "choragiewka-wewnetrzna": { "nazwa": "Chorągiewka wewnętrzna", "opis": "Szersza strona lotki. W złożonym skrzydle leży pod sąsiednią lotką." },
+    "czesc-puchowa": { "nazwa": "Część puchowa", "opis": "U nasady chorągiewek promienie nie mają haczyków i układają się luźno, jak puch. Ta część leży pod innymi piórami i grzeje." },
+    "wciecie": { "nazwa": "Wcięcie", "opis": "Miejsce, gdzie chorągiewki lotki nagle się zwężają (emarginacja); podświetlony jest zwężony koniec. Między zwężonymi końcami sąsiednich lotek otwierają się szczeliny: „palce” skrzydła orła, myszołowa czy jastrzębia." },
+    "stosina-z-bliska": { "nazwa": "Stosina", "opis": "W tym powiększeniu widać tylko jej kawałek. Promienie wyrastają z niej po obu stronach; tu pokazana jest jedna." },
+    "promien": { "nazwa": "Promienie", "opis": "Odgałęzienia stosiny, ustawione skośnie ku końcowi pióra. W jednej lotce są ich setki. Każdy promień niesie na obu bokach jeszcze mniejsze odgałęzienia, promyki." },
+    "promyki": { "nazwa": "Promyki", "opis": "Odgałęzienia promieni. Te skierowane ku końcowi pióra (dystalne) zachodzą na te skierowane ku nasadzie (proksymalne) sąsiedniego promienia. Przejdź do następnego powiększenia, żeby zobaczyć, jak się łączą." },
+    "promien-z-bliska": { "nazwa": "Promienie", "opis": "Dwa sąsiednie promienie chorągiewki, widziane z bardzo bliska. Nawet one są płaskimi listewkami, ustawionymi na sztorc, żeby się nie zginały w górę i w dół." },
+    "promyki-proksymalne": { "nazwa": "Promyki proksymalne", "opis": "Promyki skierowane ku nasadzie pióra, z podwiniętym brzegiem jak rynienka. O ten brzeg zaczepiają się haczyki." },
+    "promyki-dystalne": { "nazwa": "Promyki dystalne", "opis": "Promyki skierowane ku końcowi pióra. Leżą na promykach proksymalnych sąsiedniego promienia i mają na końcach haczyki." },
+    "haczyki": { "nazwa": "Haczyki", "lac": "hamuli", "opis": "Drobne zaczepy na promykach dystalnych, chwytające rynienki promyków proksymalnych jak suwak. Kiedy chorągiewka się rozdzieli, ptak przeciąga pióro przez dziób i zapina je z powrotem." },
+
+    "sciana-kosci": { "nazwa": "Ściana kości", "opis": "Cienka, ale z twardego, gęstego materiału. Pusta rura jest prawie tak sztywna jak pełny pręt tej samej grubości, a znacznie lżejsza. Kości ptaków są więc nie tyle lżejsze, co mądrzej zbudowane: według badania z 2010 r. cały szkielet ptaka waży mniej więcej tyle samo w stosunku do ciała, co szkielet ssaka." },
+    "beleczki": { "nazwa": "Beleczki", "opis": "Kostne rozpórki w środku kości, najgęstsze przy stawach, gdzie działa największy nacisk. Usztywniają ściany jak kratownica w moście." },
+    "otwor-pneumatyczny": { "nazwa": "Otwór pneumatyczny", "opis": "Otwór przy główce kości ramiennej, przez który do środka kości wchodzi powietrze." },
+    "uchylek-worka": { "nazwa": "Uchyłek worka powietrznego", "opis": "Przedłużenie worka obojczykowego, które przez otwór pneumatyczny wnika do kości i wyściela jej wnętrze. W kości jest więc powietrze z układu oddechowego. U ptaków nurkujących kości są mniej puste niż u szybujących." },
+    "sciana-kosci-ssaka": { "nazwa": "Ściana kości ssaka", "opis": "Wyraźnie grubsza niż u ptaka tej samej wielkości." },
+    "szpik": { "nazwa": "Szpik", "opis": "Wypełnia środek długich kości ssaków. Ptaki też mają szpik, ale w kościach, do których nie wchodzą worki powietrzne, na przykład w nogach wielu gatunków." },
+    "kosc-gabczasta": { "nazwa": "Kość gąbczasta", "opis": "Gęsta sieć drobnych beleczek na końcach kości, pod stawami. U ptaka tych beleczek jest mniej i są większe, z dużymi przestrzeniami powietrza między nimi." }
+  }
+}
