@@ -28,6 +28,7 @@ export {
   Progress,
   RadioGroup,
   SegmentedControl,
+  Select,
   SkipLink,
   Slider,
   StateBlock,

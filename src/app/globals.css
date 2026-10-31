@@ -2455,6 +2455,178 @@ html:has(.podglad[open]) {
 .lekcja-cwiczenie {
   margin-block: var(--wor-space-block);
 }
+
+/* ---------- A9's 3D models (<model-3d>) ---------- */
+
+/* A dark light-table: the model floats over it, its controls sit below. It
+   spans the text and the margin like a gallery, because a body needs room. */
+.lekcja-model {
+  clear: right;
+  margin-block: var(--wor-space-block);
+}
+@container (width >= 50rem) {
+  .lekcja .lekcja-model {
+    margin-right: calc(-1 * (var(--bh-article-margin) + var(--bh-article-gutter)));
+  }
+}
+.model3d {
+  container-type: inline-size;
+  display: grid;
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: var(--bh-padding-section);
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-scena-tlo);
+  color: var(--bh-text-primary);
+}
+.model3d__glowka {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal);
+}
+.prose .model3d__tytul {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-title);
+}
+.model3d__plotno {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--wor-radius-scene);
+  overflow: hidden;
+  touch-action: none;
+}
+/* The light under the model, so dark plumage and a dark sky never merge. */
+.model3d__plotno::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse at 50% 45%, var(--wor-scena-linia) 0, transparent 70%), var(--bh-surface-raised);
+}
+@container (width >= 40rem) {
+  .model3d__plotno {
+    aspect-ratio: 16 / 9;
+  }
+}
+/* Under the labels, over the light. */
+.model3d__plotno canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.model3d__plotno canvas:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: -2px;
+}
+/* The chosen part's name on the model, and the name under the pointer. */
+.model3d__etykieta,
+.model3d__podpowiedz {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--bh-gap-tight) var(--bh-gap-snug);
+  border-radius: var(--bh-radius-pill);
+  font-size: var(--bh-text-size-caption);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.model3d__etykieta {
+  transform: translate(-50%, calc(-100% - var(--bh-gap-normal)));
+  background: var(--bh-action-primary-bg);
+  color: var(--bh-action-primary-fg);
+  font-weight: var(--bh-text-weight-heading);
+}
+.model3d__podpowiedz {
+  transform: translate(var(--bh-gap-normal), var(--bh-gap-normal));
+  border: 1px solid var(--wor-scena-linia);
+  background: var(--wor-scena-panel);
+  color: var(--bh-text-primary);
+}
+.model3d__etykieta[hidden],
+.model3d__podpowiedz[hidden] {
+  display: none;
+}
+.model3d__panel {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+@container (width >= 40rem) {
+  .model3d__panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .model3d__kroki {
+    grid-column: 1 / -1;
+  }
+}
+.model3d__sterowanie,
+.model3d__czesci,
+.model3d__kroki,
+.model3d__sprawdzian {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-normal);
+}
+.model3d__przyciski,
+.model3d__odpowiedzi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+}
+.model3d__warstwy {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.model3d__warstwy legend {
+  margin-bottom: var(--bh-gap-snug);
+  padding: 0;
+  font-size: var(--bh-text-size-label);
+  font-weight: var(--bh-text-weight-heading);
+}
+.prose .model3d__opis p,
+.prose .model3d__krok,
+.prose .model3d__sprawdzian p {
+  margin: 0;
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-snug);
+}
+.model3d__opis {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  min-height: 4lh;
+}
+.prose .model3d__nazwa {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+}
+.prose .model3d__nazwa i {
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  font-weight: normal;
+  color: var(--bh-text-secondary);
+}
+.prose .model3d__wskazowka,
+.prose .model3d__licznik {
+  color: var(--bh-text-secondary);
+}
+.prose .model3d__podpis {
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-secondary);
+}
 .cwiczenie {
   display: grid;
   gap: var(--bh-gap-loose);

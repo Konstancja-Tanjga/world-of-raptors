@@ -25,6 +25,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | A6 | **Ochrona** | DDT, diklofenak i sępy w Indiach, ołów, elektrokucje; historie sukcesu: sokół wędrowny w Polsce, orzeł iberyjski, kondor kalifornijski | [gotowy](moduly/ochrona/README.md) |
 | A7 | **Ludzie i drapieżniki** | Sokolnictwo (UNESCO), mitologia i herby, nauka obywatelska (eBird, Observation.org) | [gotowy](moduly/ludzie-i-drapiezniki/README.md) |
 | A8 | **Wspaniały świat sów** | Biologia sów: słuch, cichy lot, oczy i stopy, rok z życia sowy, inwazje i wędrówki, głosy z sonogramami i sylwetki, sowy świata, zagrożenia; trzy sowy północy | [gotowy](moduly/swiat-sow/README.md) |
+| A9 | **Budowa ptaka** | Topografia (nazwy części ciała), pióra od dudki po haczyki, nazwy lotek i pokryw, szkielet (mostek z grzebieniem, widełki, synsakrum, pygostyl, „kolano” do tyłu), mięśnie lotu, worki powietrzne i oddech w jedną stronę, kości pneumatyczne; interaktywne modele 3D z przekrojem i sprawdzianem | [gotowy](moduly/budowa-ptaka/README.md) |
 
 ## Ścieżka B: Rozpoznawanie w terenie
 

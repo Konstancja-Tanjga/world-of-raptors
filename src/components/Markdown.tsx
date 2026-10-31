@@ -10,6 +10,7 @@ import {
   ptakiDoMiarki,
   ptakiMokradel,
   pytaniaSylwetek,
+  scenaBudowy,
   stronaMorfuLekcji,
   znajdzGatunek,
   znajdzNagranie,
@@ -21,7 +22,7 @@ import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
-import { MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
+import { Model3D, MorfGrup, PtasiaMiarka, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
 import { Nagranie } from './Nagranie';
@@ -98,6 +99,12 @@ const attr = (props: Attrs, name: string) => {
  *   <suwak-morfu data-od="myszolow" data-do="trzmielojad">
  *   <ptasia-miarka data-ptaki="wrobel pustulka wrona" data-miara="rozpietosc|dlugosc">
  *   <zgadnij-sylwetke data-gatunki="myszolow kania-ruda pustulka">
+ *
+ * A9's 3D models are one tag, a scene from src/lib/budowa/sceny.ts with its
+ * texts from content/budowa-ptaka.json; three.js loads only when one is near
+ * the screen:
+ *
+ *   <model-3d data-scena="szkielet">
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -187,6 +194,11 @@ const lessonTags = {
       </div>
     );
   },
+  'model-3d': (props: Attrs) => (
+    <div className="lekcja-model">
+      <Model3D scena={scenaBudowy(attr(props, 'data-scena'))} />
+    </div>
+  ),
   'zgadnij-sylwetke': (props: Attrs) => (
     <div className="lekcja-cwiczenie">
       <ZgadnijSylwetke

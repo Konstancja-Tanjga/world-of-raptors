@@ -9,6 +9,8 @@ import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
 import miarkaJson from '../../content/miarka.json';
 import nagraniaJson from '../../content/nagrania.json';
+import budowaJson from '../../content/budowa-ptaka.json';
+import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
 import { problemyNagrania } from './nagrania';
 import { odkoduj, problemyTagow } from './tagi';
 import type { Fiszki, ZapisFiszki } from './fiszki';
@@ -466,6 +468,54 @@ export function stronaMorfuLekcji(id: string) {
   return stronaMorfu(g);
 }
 
+// ---- A9: the 3D models of a bird ----
+
+type TekstyBudowy = {
+  sceny: Record<string, { tytul: string; podpis: string }>;
+  kroki: Record<string, { nazwa: string; opis: string }>;
+  czesci: Record<string, { nazwa: string; lac?: string; opis: string }>;
+};
+const budowa = budowaJson as TekstyBudowy;
+
+/**
+ * A scene of the 3D viewer (`<model-3d data-scena="…">`): its views from
+ * src/lib/budowa/sceny.ts with every part named and described from
+ * content/budowa-ptaka.json. An unknown scene stops the build.
+ */
+export function scenaBudowy(id: string): DaneSceny {
+  const scena = SCENY[id];
+  const tekst = budowa.sceny[id];
+  if (!scena || !tekst) throw new Error(`<model-3d>: nie ma sceny „${id}” (src/lib/budowa/sceny.ts i content/budowa-ptaka.json)`);
+  return {
+    id,
+    tytul: tekst.tytul,
+    podpis: tekst.podpis,
+    widoki: scena.widoki.map((w) => ({ ...w, czesci: w.czesci.map((c) => ({ id: c, ...budowa.czesci[c] })) })),
+    kroki: (scena.kroki ?? []).map((k) => ({ id: k, ...budowa.kroki[k] })),
+    sprawdzian: !!scena.sprawdzian,
+  };
+}
+
+/** What is wrong between the scenes in code and their texts: a part, scene or step without a text, or a text nothing shows. */
+function problemyBudowy() {
+  const bledy: string[] = [];
+  const plik = 'budowa-ptaka.json';
+  const czesci = new Set(wszystkieCzesci());
+  for (const id of czesci) {
+    const c = budowa.czesci[id];
+    if (!c?.nazwa?.trim() || !c.opis?.trim()) bledy.push(`${plik}: część „${id}” (sceny.ts) nie ma nazwy albo opisu`);
+  }
+  for (const id of Object.keys(budowa.czesci)) if (!czesci.has(id)) bledy.push(`${plik}: części „${id}” nie pokazuje żadna scena`);
+  for (const id of new Set([...Object.keys(SCENY), ...Object.keys(budowa.sceny)])) {
+    if (!SCENY[id] || !budowa.sceny[id]?.tytul || !budowa.sceny[id]?.podpis) bledy.push(`${plik}: scena „${id}” musi być i w sceny.ts, i tu (z tytułem i podpisem)`);
+  }
+  const kroki = new Set(Object.values(SCENY).flatMap((s) => s.kroki ?? []));
+  for (const id of new Set([...kroki, ...Object.keys(budowa.kroki)])) {
+    if (!kroki.has(id) || !budowa.kroki[id]?.nazwa || !budowa.kroki[id]?.opis) bledy.push(`${plik}: krok „${id}” musi być i w sceny.ts, i tu (z nazwą i opisem)`);
+  }
+  return bledy;
+}
+
 export async function czytajMarkdown(relPath: string) {
   return readFile(path.join(CONTENT_DIR, relPath), 'utf8');
 }
@@ -720,7 +770,8 @@ export async function ideaKursu() {
  * large enough to fill most of the screen sharply. A1 opens with the falcon
  * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
- * imperial eagle over the dehesa, A8 with a great grey owl's face, B5 with
+ * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
+ * the goshawk its 3D model is built after, B5 with
  * an eagle owl, B7 with the widest
  * wingspan of the atlas, the cinereous vulture's.
  */
@@ -733,6 +784,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   ochrona: { gatunek: 'orlosep', zdjecie: 'lot' },
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', zdjecie: 'lot' },
   'swiat-sow': { gatunek: 'puszczyk-mszarny', zdjecie: 'siedzacy' },
+  'budowa-ptaka': { gatunek: 'jastrzab', zdjecie: 'lot' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },
@@ -1002,6 +1054,7 @@ function sprawdzSpojnosc() {
     }
     for (const id of c.gatunki) if (!idGatunkow.has(id)) bledy.push(`ciekawostki.json: ${c.id}: gatunku „${id}” nie ma w atlasie`);
   }
+  bledy.push(...problemyBudowy());
   if (bledy.length) throw new Error(`Niespójna treść kursu:\n- ${bledy.join('\n- ')}`);
   // What is still to check by hand stops nothing; `next dev` lists it (the build would print it once per worker).
   const doSprawdzenia = ptakiMokradel.filter((p) => p.todo).map((p) => `${p.id}: ${p.todo}`);

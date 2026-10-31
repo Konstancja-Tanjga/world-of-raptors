@@ -251,6 +251,35 @@
       ]
     },
     {
+      "id": "A9",
+      "slug": "budowa-ptaka",
+      "sciezka": "a",
+      "tytul": "Budowa ptaka",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-mapa-ptaka",
+          "tytul": "Mapa ptaka, czyli nazwy części ciała"
+        },
+        {
+          "slug": "02-piora",
+          "tytul": "Pióra: budowa, rodzaje i układ na skrzydle"
+        },
+        {
+          "slug": "03-szkielet",
+          "tytul": "Szkielet: lekki, sztywny i zrośnięty"
+        },
+        {
+          "slug": "04-wnetrze",
+          "tytul": "Wnętrze: mięśnie lotu, oddech i narządy"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i sprawdzian"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

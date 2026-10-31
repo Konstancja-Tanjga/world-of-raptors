@@ -1,3 +1,4 @@
+import { SCENY } from './budowa/sceny';
 import { oryginalZAtrybutu } from './zdjecia';
 
 /*
@@ -40,7 +41,8 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * tag on the next (Markdown would wrap it in a paragraph, and a tag over
  * several lines would escape these checks); a gallery with anything but one
  * to six photos inside; a `<glos>` not written as a block or naming a
- * recording `idNagran` does not have.
+ * recording `idNagran` does not have; a `<model-3d>` not written as a block
+ * or naming a scene sceny.ts does not have.
  */
 export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
@@ -83,6 +85,17 @@ export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<st
       bledy.push(`${gdzie(i)}: zapisz nagranie jako <glos data-id="gatunek/opis"> w osobnej linii, a </glos> w następnej`);
     } else if (!idNagran.has(id)) {
       bledy.push(`${gdzie(i)}: nagrania „${id}” nie ma w content/nagrania.json`);
+    }
+  }
+
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    if (!/<model-3d\b/i.test(t)) continue;
+    const id = /^<model-3d data-scena="([^"]+)">$/.exec(t)?.[1];
+    if (!id || linie[i + 1]?.trim() !== '</model-3d>') {
+      bledy.push(`${gdzie(i)}: zapisz model jako <model-3d data-scena="…"> w osobnej linii, a </model-3d> w następnej`);
+    } else if (!SCENY[id]) {
+      bledy.push(`${gdzie(i)}: sceny „${id}” nie ma w src/lib/budowa/sceny.ts`);
     }
   }
 

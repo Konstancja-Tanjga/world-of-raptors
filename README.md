@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 45 drapieżników | 35 ptaków mokradeł | 15 modułów | 77 lekcji | 159 pytań w quizach | 300 fiszek | 462 zdjęcia |
+| 45 drapieżników | 35 ptaków mokradeł | 16 modułów | 82 lekcje | 174 pytania w quizach | 300 fiszek | 462 zdjęcia |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki i piętnaście modułów, w każdym pięć lekcji, a w A8 siedem:
+Dwie ścieżki i szesnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -31,6 +31,7 @@ Dwie ścieżki i piętnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 | A6&nbsp;[Ochrona](content/moduly/ochrona/README.md) | B6&nbsp;[Marismas del Barbate, początek października](content/moduly/barbate/README.md) |
 | A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | B7&nbsp;[Wielkość i kształt](content/moduly/wielkosc-i-ksztalt/README.md) |
 | A8&nbsp;[Wspaniały świat sów](content/moduly/swiat-sow/README.md) | |
+| A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | |
 
 <table>
   <tr>
@@ -44,6 +45,8 @@ Dwie ścieżki i piętnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 </table>
 
 Lekcja to artykuł ze spisem treści, czasem czytania i marginesem na zdjęcia i notatki. Moduł kończą ćwiczenia i quiz krok po kroku: jedno pytanie na ekranie, od razu wiadomo, czy odpowiedź jest dobra, a zaliczony quiz oznacza lekcję jako ukończoną.
+
+Moduł A9 ma w każdej lekcji model 3D jastrzębia, pióra albo kości: można go obracać, przecinać, rozbierać na warstwy (pióra, mięśnie, narządy, worki powietrzne, szkielet), wejść do środka kości ramiennej, rozpiąć haczyki pióra i przejść z jedną porcją powietrza przez dwa oddechy. Każdą część da się kliknąć albo wybrać z listy, a ostatnia lekcja ma na modelu sprawdzian z nazw.
 
 ### Atlas gatunków
 
@@ -99,7 +102,8 @@ Kolekcja liczona z tego, czego się nauczyłam i co widziałam. Zaliczony moduł
 - **Niebo.** [`src/lib/niebo.ts`](src/lib/niebo.ts) liczy wysokość słońca nad Warszawą. Kolory nieba są mieszane w OKLCH i OKLab.
 - **Bez kont i bez serwera z danymi.** Postęp, fiszki, checklista i „Moje niebo” są w `localStorage`, własne zdjęcia w IndexedDB. Kopia zapasowa to jeden plik.
 - **Design system.** Interfejs stoi na design systemie [Big Hat](https://konstancja-tanjga.github.io/bighat-design-system/), który zaprojektowałam: kurs używa jego komponentów i ról kolorów. Kurs nadaje tym rolom własne wartości: jasny motyw „Papier terenowy” i ciemny „Zmierzch”, z kontrastem tekstu zgodnym z WCAG AA (zmierzonym w przeglądarce, także na zdjęciach i niebie). Przy `prefers-reduced-motion` ruchu jest mniej. Tytuły są złożone Półtawskim Nowym, tekst Newsreaderem.
-- **Stos.** Next.js 16 (App Router), React 19, TypeScript, react-markdown, ts-fsrs. Wdrożenie na Vercelu z gałęzi `main`.
+- **Modele 3D.** Ptak, pióro i kości modułu A9 też są z liczb: [`src/lib/budowa/`](src/lib/budowa/) buduje je z prostych brył w three.js (szkielet w mięśniach i narządach, wszystko w upierzeniu), a nazwy i opisy części są w [`content/budowa-ptaka.json`](content/budowa-ptaka.json). three.js wczytuje się tylko w lekcjach z modelem, kiedy model jest blisko ekranu, a rysuje tylko wtedy, gdy coś się zmienia.
+- **Stos.** Next.js 16 (App Router), React 19, TypeScript, react-markdown, ts-fsrs, three.js. Wdrożenie na Vercelu z gałęzi `main`.
 
 ## Uruchamianie
 
