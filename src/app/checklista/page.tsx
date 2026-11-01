@@ -3,7 +3,8 @@ import { ChecklistView } from '@/components/ChecklistView';
 import { Sylwetka } from '@/components/Sylwetka';
 import { gatunki, listaMiejsca, ptakiNaLiscie } from '@/lib/content';
 
-export const metadata: Metadata = { title: 'Moja checklista' };
+// Personal: what I saw, learned and earned, kept in this browser; nothing for a search engine.
+export const metadata: Metadata = { title: 'Moja checklista', robots: { index: false } };
 
 export default function ChecklistaPage() {
   return (

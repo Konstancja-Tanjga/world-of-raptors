@@ -6,7 +6,13 @@ import { Ciekawostka } from '@/components/Ciekawostka';
 import { ciekawostkiDla, gatunki, ptakiMokradel, ptakiNaLiscie, zdjecia } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 
-export const metadata: Metadata = { title: 'Atlas gatunków' };
+export const metadata: Metadata = {
+  title: 'Atlas gatunków',
+  description:
+    'Drapieżniki dzienne i sowy Polski, południa Hiszpanii i Cieśniny Gibraltarskiej: zdjęcia, sylwetki w locie, porównanie w jednej skali i gatunki, z którymi łatwo je pomylić.',
+  // The filters (`?ptaki=`, `?miejsce=`) show the same atlas.
+  alternates: { canonical: '/gatunki' },
+};
 
 export default function GatunkiPage() {
   const dzienne = gatunki.filter((g) => g.aktywnosc === 'dzienny').length;

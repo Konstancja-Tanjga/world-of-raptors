@@ -3,7 +3,10 @@ import { Sylwetka } from '@/components/Sylwetka';
 import { TestStartowyView } from '@/components/TestStartowyView';
 import { gotoweModuly, testStartowy } from '@/lib/content';
 
-export const metadata: Metadata = { title: 'Test startowy' };
+export const metadata: Metadata = {
+  title: 'Test startowy',
+  description: 'Sprawdź, ile już wiesz o ptakach drapieżnych i sowach, i od którego modułu kursu zacząć.',
+};
 
 export default function TestStartowyPage() {
   const pytania = testStartowy();

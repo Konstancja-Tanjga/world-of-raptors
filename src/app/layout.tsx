@@ -8,6 +8,7 @@ import { ToastProvider } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
 import { czytajMarkdown, gotoweModuly, progQuizu, strukturaNieba } from '@/lib/content';
 import { ZNAK } from '@/lib/rysunki';
+import { ADRES } from '@/lib/seo';
 
 // Titles: an antiqua drawn for Polish, its diacritics designed in from the start.
 const poltawski = Poltawski_Nowy({
@@ -28,7 +29,7 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   // Production origin for absolute metadata URLs such as the share card's; Vercel previews and next dev use their own.
-  metadataBase: new URL('https://world-of-raptors.vercel.app'),
+  metadataBase: new URL(ADRES),
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
   description:
     'Kurs o drapieżnikach dziennych i nocnych: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Pomysł, plan i treść: Konstancja Tanjga. Projekt, ruch i kod: razem z Claude (Anthropic).',
@@ -36,7 +37,6 @@ export const metadata: Metadata = {
   creator: 'Konstancja Tanjga',
   openGraph: { type: 'website', locale: 'pl_PL', siteName: 'World of Raptors' },
   twitter: { card: 'summary_large_image' },
-  robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {

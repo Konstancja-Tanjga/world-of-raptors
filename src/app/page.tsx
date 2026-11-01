@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import './start.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
+import { DaneStrukturalne } from '@/components/DaneStrukturalne';
 import { Chor } from '@/components/start/Chor';
 import { Sylwetka } from '@/components/Sylwetka';
 import { Kolekcja } from '@/components/start/Kolekcja';
@@ -23,6 +25,7 @@ import {
 } from '@/lib/content';
 import { CIASTKO_PORY, jakoPora, poraDnia, type PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
+import { ADRES } from '@/lib/seo';
 
 // Rendered per request: the species of the day must change at midnight, the
 // sky follows the sun (or the time of day I chose, kept in a cookie), and a
@@ -30,6 +33,12 @@ import { odmiana } from '@/lib/odmiana';
 // and the Markdown it quotes (the eight groups, the module hooks) are read
 // once, when content.ts is first imported.
 export const dynamic = 'force-dynamic';
+
+// `?pora=` only changes the sky.
+export const metadata: Metadata = { alternates: { canonical: '/' } };
+
+/** The site's name for search results, which Google reads from the home page only. */
+const WITRYNA = { '@type': 'WebSite', name: 'World of Raptors', url: ADRES, inLanguage: 'pl' };
 
 /** Same species all day (Polish time), a different one tomorrow. */
 function gatunekDnia() {
@@ -93,6 +102,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
 
   return (
     <div className="start">
+      <DaneStrukturalne dane={WITRYNA} />
       <NieboStartu
         wybranaNaSerwerze={wybrana}
         zegar={poraDnia(teraz)}
