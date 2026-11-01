@@ -4,8 +4,9 @@
  * here runs Next.js or Supabase, so tests can run it: the route
  * (src/app/zgloszenie/route.ts) passes the services in. Who is writing comes
  * only from their session token, checked by Supabase; everything else in the
- * request is the person's own text and is treated as such: checked, cut to
- * length, and mailed as plain text, never as HTML.
+ * request is the person's own text and is treated as such: checked (a bad
+ * kind, note or page is refused), the extras cut to length, and mailed as
+ * plain text, never as HTML.
  */
 
 export const RODZAJE = { popraw: 'Popraw', dodaj: 'Dodaj', usun: 'Usuń', inne: 'Inne' } as const;
@@ -43,6 +44,9 @@ export type Zgloszenie = {
 
 const obiekt = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
 
+/** Own keys only: `in` would also accept "constructor" or "toString". */
+const klucz = <T extends object>(slownik: T, v: unknown): v is keyof T => typeof v === 'string' && Object.hasOwn(slownik, v);
+
 /** One line: control characters and runs of whitespace become single spaces. */
 const linia = (s: string, maks: number) => przytnij(s.replace(/[\p{Cc}\s]+/gu, ' ').trim(), maks);
 
@@ -75,8 +79,8 @@ function sekcja(v: unknown): Sekcja | undefined {
 }
 
 function fragment(v: unknown): Fragment | undefined {
-  if (!obiekt(v) || typeof v.typ !== 'string' || !(v.typ in TYPY_FRAGMENTU) || typeof v.tekst !== 'string') return undefined;
-  const typ = v.typ as TypFragmentu;
+  if (!obiekt(v) || !klucz(TYPY_FRAGMENTU, v.typ) || typeof v.tekst !== 'string') return undefined;
+  const typ = v.typ;
   const tekst = linia(v.tekst, MAKS_FRAGMENTU);
   const zdjecie = typ === 'zdjecie' ? adresZdjecia(v.zdjecie) : undefined;
   if (!tekst && !zdjecie) return undefined;
@@ -90,7 +94,7 @@ function fragment(v: unknown): Fragment | undefined {
  */
 export function sprawdzZgloszenie(dane: unknown): { zgloszenie: Zgloszenie } | { blad: string } {
   if (!obiekt(dane)) return { blad: 'Zgłoszenie jest puste.' };
-  if (typeof dane.rodzaj !== 'string' || !(dane.rodzaj in RODZAJE)) return { blad: 'Wybierz rodzaj zgłoszenia.' };
+  if (!klucz(RODZAJE, dane.rodzaj)) return { blad: 'Wybierz rodzaj zgłoszenia.' };
   const tresc = typeof dane.tresc === 'string' ? akapity(dane.tresc) : '';
   if (!tresc) return { blad: 'Napisz, co trzeba zmienić.' };
   if (tresc.length > MAKS_TRESCI) return { blad: `Zgłoszenie może mieć najwyżej ${MAKS_TRESCI} znaków.` };
@@ -98,7 +102,7 @@ export function sprawdzZgloszenie(dane: unknown): { zgloszenie: Zgloszenie } | {
     return { blad: 'Nie wiadomo, której strony dotyczy zgłoszenie.' };
   }
   const zgloszenie: Zgloszenie = {
-    rodzaj: dane.rodzaj as Rodzaj,
+    rodzaj: dane.rodzaj,
     tresc,
     strona: dane.strona,
     tytul: typeof dane.tytul === 'string' ? linia(dane.tytul, 200) : '',
@@ -110,7 +114,7 @@ export function sprawdzZgloszenie(dane: unknown): { zgloszenie: Zgloszenie } | {
   return { zgloszenie };
 }
 
-/** Text fragments need these encoded on top of what encodeURIComponent does. */
+/** Text fragments also need the dash encoded, which encodeURIComponent leaves alone. */
 const kodujTekst = (s: string) => encodeURIComponent(s).replace(/-/g, '%2D');
 
 /**
@@ -146,12 +150,24 @@ export function mailZgloszenia(z: Zgloszenie, { email, origin, kiedy }: { email?
   return { temat, tekst: wiersze.join('\n') };
 }
 
+export type WynikLicznika = 'ok' | 'limit' | { blad: string };
+
+/** What adding to the daily count came to: the trigger raises 54000 at the limit (20261101130000_zgloszenia_blokada.sql). */
+export function wynikLicznika(blad: { code?: string; message: string } | null): WynikLicznika {
+  if (!blad) return 'ok';
+  return blad.code === '54000' ? 'limit' : { blad: blad.message };
+}
+
 export type UslugiZgloszen = {
-  /** The account the access token belongs to, or null when it is not a valid session. */
-  uzytkownik(token: string): Promise<{ id: string; email?: string } | null>;
+  /**
+   * The account the access token belongs to, null when the token is not a
+   * valid session, or an error when the accounts server could not tell.
+   */
+  uzytkownik(token: string): Promise<{ id: string; email?: string } | null | { blad: string }>;
   /** Adds the note to the account's daily count, as the account itself (row level security). */
-  policz(token: string, id: string): Promise<'ok' | 'limit' | { blad: string }>;
-  wyslij(mail: { temat: string; tekst: string; odpowiedzDo?: string }): Promise<{ blad?: string }>;
+  policz(token: string, id: string): Promise<WynikLicznika>;
+  /** `trwaly`: the mail service refused the request itself (a key or an address), so trying again will not help. */
+  wyslij(mail: { temat: string; tekst: string; odpowiedzDo?: string }): Promise<{ blad?: string; trwaly?: boolean }>;
 };
 
 export type OdpowiedzZgloszenia = {
@@ -162,8 +178,9 @@ export type OdpowiedzZgloszenia = {
 /**
  * The route's work, in order: accounts on, the server set up, a valid
  * session, a well-formed note, room in the account's daily count, the mail.
- * A note whose mail fails still counts towards the day's 10: the count only
- * grows, so nobody can reset it.
+ * A note whose mail fails still counts towards the 10: the account cannot
+ * delete its rows, so it cannot reset the count; rows leave only once they
+ * are a day old.
  */
 export async function wyslijZgloszenie(
   naglowek: string | null,
@@ -177,21 +194,27 @@ export async function wyslijZgloszenie(
   if (!token) return { status: 401, cialo: { blad: 'Brak sesji. Zaloguj się ponownie.' } };
   const uzytkownik = await uslugi.uzytkownik(token);
   if (!uzytkownik) return { status: 401, cialo: { blad: 'Sesja wygasła. Zaloguj się ponownie.' } };
+  if ('blad' in uzytkownik) {
+    console.error('[zgloszenie] checking the session failed', uzytkownik.blad);
+    return { status: 502, cialo: { blad: 'Serwer kont nie odpowiada. Spróbuj jeszcze raz za chwilę.' } };
+  }
   const sprawdzone = sprawdzZgloszenie(dane);
   if ('blad' in sprawdzone) return { status: 400, cialo: { blad: sprawdzone.blad } };
   const licznik = await uslugi.policz(token, uzytkownik.id);
   if (licznik === 'limit') {
-    return { status: 429, cialo: { blad: 'Dziś wysłano już 10 zgłoszeń z tego konta. Kolejne będzie można wysłać jutro.' } };
+    return { status: 429, cialo: { blad: 'Z tego konta wysłano już 10 zgłoszeń w ciągu doby. Kolejne będzie można wysłać, gdy minie doba od najstarszego z nich.' } };
   }
   if (licznik !== 'ok') {
     console.error('[zgloszenie] counting the note failed', licznik.blad);
     return { status: 502, cialo: { blad: 'Serwer kont nie przyjął zgłoszenia. Spróbuj jeszcze raz za chwilę.' } };
   }
   const { temat, tekst } = mailZgloszenia(sprawdzone.zgloszenie, { email: uzytkownik.email, origin, kiedy });
-  const { blad } = await uslugi.wyslij({ temat, tekst, odpowiedzDo: uzytkownik.email });
+  const { blad, trwaly } = await uslugi.wyslij({ temat, tekst, odpowiedzDo: uzytkownik.email });
   if (blad) {
-    console.error('[zgloszenie] sending the mail failed', blad);
-    return { status: 502, cialo: { blad: 'Nie udało się wysłać maila. Spróbuj jeszcze raz za chwilę.' } };
+    console.error('[zgloszenie] sending the mail failed', trwaly ? '(refused: check the Resend key and FEEDBACK_EMAIL_TO)' : '', blad);
+    return trwaly
+      ? { status: 503, cialo: { blad: 'Zgłoszenia są chwilowo niedostępne. Ponowna próba teraz nie pomoże, spróbuj za kilka godzin.' } }
+      : { status: 502, cialo: { blad: 'Nie udało się wysłać maila. Spróbuj jeszcze raz za chwilę.' } };
   }
   return { status: 200, cialo: { wyslano: true } };
 }

@@ -158,8 +158,14 @@ describe('feedback log', () => {
 
   it('lets an account send 10 notes a day, then refuses', async () => {
     for (let i = 0; i < 10; i++) await zglos(A);
-    await assert.rejects(zglos(A), /feedback limit/);
+    // The route tells the limit from other errors by this code (54000).
+    await assert.rejects(zglos(A), (e: { code?: string }) => e.code === '54000');
     await zglos(B);
+  });
+
+  it('counts the whole last day, not less', async () => {
+    await db.exec(`update public.feedback_log set created_at = now() - interval '23 hours' where user_id = '${A}'`);
+    await assert.rejects(zglos(A), /feedback limit/);
   });
 
   it('counts only the last day, and clears older rows', async () => {

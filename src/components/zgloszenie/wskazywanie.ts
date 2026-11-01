@@ -4,7 +4,8 @@ import { MAKS_FRAGMENTU, przytnij, type Fragment, type Sekcja, type TypFragmentu
  * What can be pointed at, and what a pointed-at element tells the owner: its
  * kind, its text, its photo, and the `##` section it sits in. Only the
  * course's own content counts. The person's own things (the checklist, their
- * notes and photos, "Moje niebo", the account) never go into a mail.
+ * notes and photos, "Moje niebo", the account) cannot be pointed at, and a
+ * selection that touches them is not taken.
  */
 
 const KANDYDACI = 'h1, h2, h3, h4, p, li, blockquote, tr, dt, dd, .quiz__pytanie, img';
@@ -91,11 +92,15 @@ export function zaznaczenie(sciezka: string): Miejsce | null {
   const sel = window.getSelection();
   const t = sel?.toString().replace(/\s+/g, ' ').trim();
   if (!sel || !t || !moznaWskazywac(sciezka)) return null;
-  const wezel = sel.anchorNode;
-  const el = wezel instanceof Element ? wezel : wezel?.parentElement;
-  if (!el || !tresc()?.contains(el) || el.closest(PRYWATNE)) return null;
+  const main = tresc();
+  const element = (w: Node | null) => (w instanceof Element ? w : w?.parentElement);
+  const el = element(sel.anchorNode);
+  const koniec = element(sel.focusNode);
+  if (!main || !el || !koniec || !main.contains(el) || !main.contains(koniec)) return null;
+  const zakres = sel.getRangeAt(0);
+  if ([...main.querySelectorAll(PRYWATNE)].some((p) => zakres.intersectsNode(p))) return null;
   return { sekcja: sekcja(el), fragment: { typ: 'zaznaczenie', tekst: przytnij(t, MAKS_FRAGMENTU) } };
 }
 
-/** The page's title without the site's name (the title template in layout.tsx). */
-export const tytulStrony = () => document.title.replace(/, World of Raptors$/, '');
+/** The page's title without the site's name (the title template in layout.tsx); the home page's own title is long, so it is named instead. */
+export const tytulStrony = (sciezka: string) => (sciezka === '/' ? 'Strona główna' : document.title.replace(/, World of Raptors$/, ''));

@@ -28,7 +28,7 @@ Zalogowana osoba wskazuje miejsce w kursie, które trzeba poprawić, dodać albo
 Temat: [Feedback_WorldofRaptors] Popraw: Kania ruda — Sylwetka w locie
 
 Rodzaj: Popraw
-Strona: B2 Kanie i błotniaki › Kania ruda
+Strona: Kania ruda
 Sekcja: Sylwetka w locie
 Wskazany fragment (akapit):
   „Ogon głęboko wcięty, rdzawy…”
@@ -38,11 +38,12 @@ Zgłoszenie:
 
 Prosto do miejsca: https://world-of-raptors.vercel.app/…#:~:text=…
 Od: osoba@gmail.com
+Wysłano: 1 listopada 2026 22:30
 ```
 
 - **Reply-To** to adres osoby, więc odpowiada się zwykłym „Odpowiedz”.
-- **Link „prosto do miejsca”** (tzw. text fragment) przewija stronę do wskazanego zdania i je podświetla. Gdy przeglądarka go nie obsługuje, otwiera stronę na sekcji, bo link ma też kotwicę nagłówka.
-- **Przy zdjęciu** mail podaje plik z Commons, autora i podpis.
+- **Link „prosto do miejsca”** (tzw. text fragment) przewija stronę do wskazanego zdania i je podświetla. Gdy przeglądarka go nie obsługuje, otwiera stronę na sekcji, jeśli fragment leży pod nagłówkiem `##` (link ma wtedy też jego kotwicę), a w przeciwnym razie na początku strony.
+- **Przy zdjęciu** mail podaje adres pliku (miniatura z Commons albo własne zdjęcie kursu) i tekst podpisu, a w nim zwykle autora.
 
 ## Architektura
 
@@ -52,7 +53,8 @@ przeglądarka (token sesji Supabase)
       1. token → supabase.auth.getUser            401 bez sesji
       2. walidacja: rodzaj, długość, adres strony z kursu   400
       3. wiersz w feedback_log (RLS: tylko swój; wyzwalacz: 10 na dobę)   429 po limicie
-      4. mail przez Resend (czysty tekst)         502 przy błędzie wysyłki, wiersz cofnięty
+      4. mail przez Resend (czysty tekst)         502 przy błędzie wysyłki (zgłoszenie i tak się liczy),
+                                                  503, gdy Resend odmawia (zły klucz albo adres)
 ```
 
 - **Resend** wysyła maila. Bez własnej domeny można wysyłać tylko na adres właściciela konta Resend, a tu odbiorca jest jeden (do sprawdzenia przy zakładaniu konta).
@@ -64,13 +66,14 @@ przeglądarka (token sesji Supabase)
   Bez nich trasa odpowiada „Zgłoszenia nie są jeszcze skonfigurowane na serwerze” (503).
 
   Właścicielka wpisuje je sama w Vercelu i w `.env.local`.
-- **Tabela `feedback_log`:** `id`, `user_id` (kasowany razem z kontem), `created_at`. Wiersze starsze niż doba nie są do niczego potrzebne; usuwa je ten sam wyzwalacz. Konto może tylko dodać wiersz: nie czyta, nie zmienia i nie usuwa, więc nie zresetuje sobie limitu. Zgłoszenie, którego mail się nie wysłał, też się liczy.
+- **Tabela `feedback_log`:** `id`, `user_id` (kasowany razem z kontem), `created_at`. Wiersze starsze niż doba nie są do niczego potrzebne; usuwa je ten sam wyzwalacz przy następnym zgłoszeniu z tego konta. Blokada na koncie (druga migracja) sprawia, że zgłoszenia wysłane w tej samej chwili czekają na siebie, więc limitu nie da się obejść równoległymi wysyłkami. Konto może tylko dodać wiersz: nie czyta, nie zmienia i nie usuwa, więc nie zresetuje sobie limitu. Zgłoszenie, którego mail się nie wysłał, też się liczy.
 
 ## Pliki
 
 | Plik | Co |
 |---|---|
 | `supabase/migrations/20261101120000_zgloszenia.sql` | `feedback_log`, RLS, wyzwalacz limitu i sprzątania |
+| `supabase/migrations/20261101130000_zgloszenia_blokada.sql` | blokada na koncie w wyzwalaczu (po przeglądzie kodu) |
 | `supabase/tests/konta.test.mts` | RLS i limit na PGlite |
 | `src/lib/zgloszenie.ts` + `.test.ts` | walidacja, temat i treść maila, link do miejsca (czyste funkcje) |
 | `src/app/zgloszenie/route.ts` | trasa POST |
@@ -91,7 +94,7 @@ Kod jest gotowy (gałąź `feature/zglos-poprawke`), sprawdzony testami, buildem
    - `zgloszenie.ts`,
    - trasa,
    - tryb wskazywania i formularz.
-3. **Właścicielka:** migracja w Supabase (SQL Editor) i zmienne w Vercelu.
+3. **Właścicielka:** obie migracje w Supabase (SQL Editor, po kolei) i zmienne w Vercelu.
 4. **Test na localhost:**
    - zgłoszenie dociera z etykietą,
    - link prowadzi do miejsca,

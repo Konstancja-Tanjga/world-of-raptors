@@ -115,7 +115,7 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 
 ## Wskazywanie fragmentu strony
 
-- **Po co sięgnęłam:** „Zgłoś poprawkę” (`ZGLOSZENIA.md`). Zalogowana osoba wskazuje fragment treści (akapit, zdjęcie, wiersz tabeli), a obok otwiera się formularz zgłoszenia.
+- **Po co sięgnęłam:** „Zgłoś poprawkę” (`ZGLOSZENIA.md`). Zalogowana osoba wskazuje fragment treści (akapit, zdjęcie, wiersz tabeli), a formularz zgłoszenia najlepiej otwierałby się obok niego.
 - **Czego nie ma w Big Hat:** trybu wskazywania (podświetlenie elementu pod kursorem albo fokusem, wybór kliknięciem lub Enterem) i okienka przypiętego do elementu strony (popover z formularzem).
 - **Co zbudowałam lokalnie:** `src/components/zgloszenie/ZglosPoprawke.tsx`. Pasek z instrukcją u góry ekranu (`.wskazywanie`), obramowanie wskazanego fragmentu (`.wskazywanie__ramka`) i tymczasowe `tabindex="0"` na fragmentach, żeby dało się do nich przejść Tabem. Formularz jest w `Dialog`, a nie obok fragmentu; fragment widać w formularzu jako cytat.
 - **Co robi gorzej:** własna obsługa klawiatury i fokusu w trybie wskazywania, bez testów kontraktowych Big Hat. Okno dialogowe zasłania stronę, więc wskazanego miejsca nie widać obok formularza.

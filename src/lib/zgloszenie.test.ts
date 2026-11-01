@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { mock, test } from 'node:test';
-import { linkDoMiejsca, mailZgloszenia, sprawdzZgloszenie, wyslijZgloszenie, type UslugiZgloszen, type Zgloszenie } from './zgloszenie';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { linkDoMiejsca, mailZgloszenia, sprawdzZgloszenie, wynikLicznika, wyslijZgloszenie, type UslugiZgloszen, type Zgloszenie } from './zgloszenie';
 
 const ORIGIN = 'https://world-of-raptors.vercel.app';
 const KIEDY = new Date('2026-11-01T10:00:00Z');
@@ -32,6 +34,28 @@ test('refuses a note without a kind, a text or a page of the course', () => {
   assert.ok('blad' in sprawdzZgloszenie({ ...poprawne, strona: 'https://zla-strona.example' }));
   assert.ok('blad' in sprawdzZgloszenie({ ...poprawne, strona: '//zla-strona.example/x' }));
   assert.ok('blad' in sprawdzZgloszenie({ ...poprawne, strona: '/gatunki/<script>' }));
+});
+
+test('refuses kinds and fragment types inherited from Object', () => {
+  for (const r of ['toString', 'constructor', '__proto__', 'hasOwnProperty']) {
+    assert.ok('blad' in sprawdzZgloszenie({ ...poprawne, rodzaj: r }), r);
+  }
+  assert.equal(sprawdzone({ ...poprawne, fragment: { typ: 'toString', tekst: 'x' } }).fragment, undefined);
+});
+
+test('accepts every page of the course as the page of a note', () => {
+  const tresc = path.join(import.meta.dirname, '..', '..', 'content');
+  const czytaj = (plik: string) => JSON.parse(readFileSync(path.join(tresc, plik), 'utf8'));
+  const { moduly } = czytaj('moduly.json') as { moduly: { slug?: string; lekcje?: { slug: string }[] }[] };
+  const strony = ['/', '/gatunki', '/checklista', '/fiszki', '/plan', '/moje-niebo', '/o-projekcie', '/konto'];
+  for (const m of moduly) {
+    if (!m.slug) continue;
+    strony.push(`/moduly/${m.slug}`, ...(m.lekcje ?? []).map((l) => `/moduly/${m.slug}/${l.slug}`));
+  }
+  for (const { id } of [...czytaj('gatunki.json').gatunki, ...czytaj('ptaki-mokradel.json').ptaki] as { id: string }[]) {
+    strony.push(`/gatunki/${id}`);
+  }
+  for (const strona of strony) assert.ok('zgloszenie' in sprawdzZgloszenie({ ...poprawne, strona }), strona);
 });
 
 test('drops a section or fragment that does not check out, and keeps the note', () => {
@@ -85,11 +109,20 @@ test("the subject carries the Gmail label's tag, the body is plain text", () => 
   assert.match(tekst, /Wysłano: 1 listopada 2026/);
 });
 
-const uslugi = (opcje: { limit?: boolean; bladLicznika?: string; bladMaila?: string } = {}) => {
+test('tells the daily limit from other database errors', () => {
+  assert.equal(wynikLicznika(null), 'ok');
+  assert.equal(wynikLicznika({ code: '54000', message: 'feedback limit reached' }), 'limit');
+  assert.deepEqual(wynikLicznika({ code: '42501', message: 'row-level security' }), { blad: 'row-level security' });
+});
+
+const uslugi = (opcje: { limit?: boolean; bladLicznika?: string; bladMaila?: string; trwaly?: boolean; bladSesji?: string } = {}) => {
   const wyslane: Parameters<UslugiZgloszen['wyslij']>[0][] = [];
   const policzone: string[] = [];
   const u: UslugiZgloszen = {
-    uzytkownik: async (token) => (token === 'token-ani' ? { id: 'ania', email: 'ania@example.com' } : null),
+    uzytkownik: async (token) => {
+      if (opcje.bladSesji) return { blad: opcje.bladSesji };
+      return token === 'token-ani' ? { id: 'ania', email: 'ania@example.com' } : null;
+    },
     policz: async (_token, id) => {
       if (opcje.bladLicznika) return { blad: opcje.bladLicznika };
       if (opcje.limit) return 'limit';
@@ -97,7 +130,7 @@ const uslugi = (opcje: { limit?: boolean; bladLicznika?: string; bladMaila?: str
       return 'ok';
     },
     wyslij: async (mail) => {
-      if (opcje.bladMaila) return { blad: opcje.bladMaila };
+      if (opcje.bladMaila) return { blad: opcje.bladMaila, trwaly: opcje.trwaly };
       wyslane.push(mail);
       return {};
     },
@@ -139,6 +172,10 @@ test('says so when the server is not set up, or accounts are off', async () => {
 
 test('reports a failed count or mail instead of claiming success', async () => {
   mock.method(console, 'error', () => {});
+  const sesja = await wyslijZgloszenie('Bearer token-ani', poprawne, uslugi({ bladSesji: '503: unavailable' }).u, ustawienia);
+  assert.equal(sesja.status, 502, 'a server that cannot check the session is not an expired session');
+  const trwaly = await wyslijZgloszenie('Bearer token-ani', poprawne, uslugi({ bladMaila: 'Resend 403', trwaly: true }).u, ustawienia);
+  assert.equal(trwaly.status, 503, 'a refusal retrying cannot fix');
   assert.equal((await wyslijZgloszenie('Bearer token-ani', poprawne, uslugi({ bladLicznika: 'db down' }).u, ustawienia)).status, 502);
   assert.equal((await wyslijZgloszenie('Bearer token-ani', poprawne, uslugi({ bladMaila: 'resend down' }).u, ustawienia)).status, 502);
 });

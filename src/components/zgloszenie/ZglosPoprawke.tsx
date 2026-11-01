@@ -10,10 +10,11 @@ import { kandydat, moznaWskazywac, opisz, tytulStrony, wszyscyKandydaci, zaznacz
 
 /**
  * "Zgłoś poprawkę" in the footer, for signed-in people only. Selected text
- * goes straight into the form; otherwise the page switches to pointing: the
- * piece of content under the pointer (or the keyboard's focus) is outlined,
- * and choosing it opens the form with that piece quoted. The note goes to
- * the owner by mail (src/app/zgloszenie/route.ts).
+ * goes straight into the form; otherwise the page switches to pointing (on
+ * the person's own pages the form opens at once): the piece of content under
+ * the pointer (or the keyboard's focus) is outlined, and choosing it opens the
+ * form with that piece quoted. The note goes to the owner by mail
+ * (src/app/zgloszenie/route.ts).
  */
 export function ZglosPoprawke() {
   const konto = useKonto();
@@ -49,22 +50,31 @@ export function ZglosPoprawke() {
     else otworzFormularz({});
   };
 
-  const anulujWskazywanie = () => {
+  // Back to the button: the form would hand focus back to the piece of
+  // content it was opened from, which no longer takes focus once pointing ends.
+  const zamknij = () => {
     setEtap('nic');
-    przycisk.current?.focus();
+    requestAnimationFrame(() => przycisk.current?.focus());
   };
 
   const wyslij = async () => {
     setWysylanie(true);
     setBlad(undefined);
-    const zgloszenie: Zgloszenie = { rodzaj, tresc, strona: sciezka, tytul: tytulStrony(), ...miejsce };
-    const { blad: b } = await wyslijNaSerwer(zgloszenie);
-    setWysylanie(false);
+    let b: string | undefined;
+    try {
+      const zgloszenie: Zgloszenie = { rodzaj, tresc, strona: sciezka, tytul: tytulStrony(sciezka), ...miejsce };
+      b = (await wyslijNaSerwer(zgloszenie)).blad;
+    } catch (err) {
+      console.error('[ZglosPoprawke] sending failed', err);
+      b = 'Coś poszło nie tak przy wysyłaniu. Spróbuj jeszcze raz.';
+    } finally {
+      setWysylanie(false);
+    }
     if (b) {
       setBlad(b);
       return;
     }
-    setEtap('nic');
+    zamknij();
     setTresc('');
     setRodzaj('popraw');
     setMiejsce({});
@@ -87,15 +97,15 @@ export function ZglosPoprawke() {
         <TrybWskazywania
           onWybierz={(el) => otworzFormularz(opisz(el))}
           onBezWskazywania={() => otworzFormularz({})}
-          onAnuluj={anulujWskazywanie}
+          onAnuluj={zamknij}
         />
       )}
       <Dialog
         open={etap === 'formularz'}
-        onClose={() => !wysylanie && setEtap('nic')}
+        onClose={() => !wysylanie && zamknij()}
         dismissible={!wysylanie}
         title="Zgłoś poprawkę"
-        description={`Strona: ${tytulStrony()}${sekcja ? `, sekcja „${sekcja.tekst}”` : ''}.`}
+        description={`Strona: ${tytulStrony(sciezka)}${sekcja ? `, sekcja „${sekcja.tekst}”` : ''}.`}
         footer={
           <>
             {moznaWskazywac(sciezka) && (
@@ -103,7 +113,7 @@ export function ZglosPoprawke() {
                 Wskaż inne miejsce
               </Button>
             )}
-            <Button variant="secondary" onClick={() => setEtap('nic')} disabled={wysylanie}>
+            <Button variant="secondary" onClick={zamknij} disabled={wysylanie}>
               Anuluj
             </Button>
             <Button onClick={wyslij} loading={wysylanie} loadingLabel="Wysyłam zgłoszenie" disabled={!tresc.trim()}>
@@ -147,7 +157,8 @@ export function ZglosPoprawke() {
 async function wyslijNaSerwer(zgloszenie: Zgloszenie): Promise<{ blad?: string }> {
   const sb = supabase();
   if (!sb) return { blad: 'Konta są wyłączone.' };
-  const { data } = await sb.auth.getSession();
+  const { data, error } = await sb.auth.getSession();
+  if (error) console.error('[ZglosPoprawke] reading the session failed', error);
   const token = data.session?.access_token;
   if (!token) return { blad: 'Brak sesji. Zaloguj się ponownie.' };
   let odpowiedz: Response;
@@ -157,19 +168,21 @@ async function wyslijNaSerwer(zgloszenie: Zgloszenie): Promise<{ blad?: string }
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(zgloszenie),
     });
-  } catch {
+  } catch (err) {
+    console.error('[ZglosPoprawke] request failed', err);
     return { blad: 'Nie udało się połączyć z serwerem. Sprawdź internet i spróbuj jeszcze raz.' };
   }
-  if (odpowiedz.ok) return {};
-  const cialo = (await odpowiedz.json().catch(() => null)) as { blad?: string } | null;
-  return { blad: cialo?.blad ?? `Serwer odpowiedział kodem ${odpowiedz.status}.` };
+  const cialo = (await odpowiedz.json().catch(() => null)) as { wyslano?: true; blad?: string } | null;
+  if (odpowiedz.ok && cialo?.wyslano) return {};
+  return { blad: cialo?.blad ?? `Serwer odpowiedział kodem ${odpowiedz.status}. Spróbuj jeszcze raz za chwilę.` };
 }
 
 /**
  * Pointing: a bar at the top says what to do, the piece of content under the
  * pointer or focus is outlined, and a click, a tap or Enter chooses it. While
  * it lasts, clicks choose instead of following links, and every piece of
- * content can be reached with Tab.
+ * content can be reached with Tab (one that was focusable only from code, like
+ * a quiz's result title, too).
  */
 function TrybWskazywania({
   onWybierz,
@@ -184,7 +197,7 @@ function TrybWskazywania({
   const instrukcja = useRef<HTMLParagraphElement>(null);
   const [ramka, setRamka] = useState<DOMRect | null>(null);
 
-  // The handlers change on every render of the form; the listeners read the latest ones.
+  // The handlers are new on every render of ZglosPoprawke; the listeners read the latest ones.
   const wywolania = useRef({ onWybierz, onAnuluj });
   useEffect(() => {
     wywolania.current = { onWybierz, onAnuluj };
@@ -204,13 +217,14 @@ function TrybWskazywania({
     };
     const wPasku = (cel: EventTarget | null) => cel instanceof Node && Boolean(pasek.current?.contains(cel));
 
-    // Tab reaches every piece of content while pointing, and nothing keeps the tab stop afterwards.
+    // Tab reaches every piece of content while pointing; afterwards each gets back the tabindex it had.
     const kandydaci = wszyscyKandydaci();
-    const dodane: HTMLElement[] = [];
+    const poprzednie = new Map<HTMLElement, string | null>();
     for (const el of kandydaci) {
-      if (el.hasAttribute('tabindex')) continue;
+      const t = el.getAttribute('tabindex');
+      if (t !== null && Number(t) >= 0) continue;
+      poprzednie.set(el, t);
       el.setAttribute('tabindex', '0');
-      dodane.push(el);
     }
 
     const ruch = (e: PointerEvent) => podswietl(kandydat(document.elementFromPoint(e.clientX, e.clientY)));
@@ -255,7 +269,10 @@ function TrybWskazywania({
 
     return () => {
       cancelAnimationFrame(klatka);
-      for (const el of dodane) el.removeAttribute('tabindex');
+      for (const [el, t] of poprzednie) {
+        if (t === null) el.removeAttribute('tabindex');
+        else el.setAttribute('tabindex', t);
+      }
       document.documentElement.classList.remove('wskazywanie-aktywne');
       document.removeEventListener('pointermove', ruch);
       document.removeEventListener('focusin', fokus);

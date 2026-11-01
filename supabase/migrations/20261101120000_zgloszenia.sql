@@ -2,8 +2,8 @@
 -- the server route (src/app/zgloszenie/route.ts) mails to the owner. The note
 -- itself is never stored. This table only records who sent one and when, so
 -- each account can send at most 10 a day and nobody can flood the owner's
--- inbox. Rows older than a day count for nothing and are cleared as new ones
--- arrive.
+-- inbox. Rows older than a day count for nothing; an account's are cleared
+-- when it sends its next note.
 
 create table public.feedback_log (
   id bigint generated always as identity primary key,
@@ -13,10 +13,12 @@ create table public.feedback_log (
 
 create index feedback_log_user_created on public.feedback_log (user_id, created_at);
 
--- Security definer, so it can clear the account's old rows, which no policy
--- lets the account delete itself (a delete policy would let it reset its own
--- limit). It writes only the account in the request's session: user_id and
--- created_at are set here, whatever the request sent.
+-- Security definer, because no policy lets the account read or delete its own
+-- rows (a select policy would show it the log, a delete policy would let it
+-- reset its limit), yet the trigger must count them and clear the old ones:
+-- run as the account, the count would always be 0. It writes only the account
+-- in the request's session: user_id and created_at are set here, whatever the
+-- request sent. 20261101130000_zgloszenia_blokada.sql adds a per-account lock.
 create function private.limit_zgloszen()
 returns trigger
 language plpgsql
