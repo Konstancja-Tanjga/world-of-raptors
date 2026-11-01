@@ -3,7 +3,8 @@
  * with a stub of the parts of Supabase it relies on: auth.users, auth.uid()
  * read from the request's JWT claim, and the anon and authenticated roles.
  * Covers the merge rules the triggers enforce, the data limits, row level
- * security between two people, and deleting an account.
+ * security between two people, the feedback log's daily limit, and deleting
+ * an account.
  */
 import { PGlite } from '@electric-sql/pglite';
 import assert from 'node:assert/strict';
@@ -152,6 +153,40 @@ describe('per-account limits', () => {
   });
 });
 
+describe('feedback log', () => {
+  const zglos = (kto: string | null) => jako(kto, `insert into public.feedback_log (user_id) values (auth.uid())`);
+
+  it('lets an account send 10 notes a day, then refuses', async () => {
+    for (let i = 0; i < 10; i++) await zglos(A);
+    await assert.rejects(zglos(A), /feedback limit/);
+    await zglos(B);
+  });
+
+  it('counts only the last day, and clears older rows', async () => {
+    await db.exec(`update public.feedback_log set created_at = now() - interval '25 hours' where user_id = '${A}'`);
+    await zglos(A);
+    const [w] = (await db.query<{ n: number }>(`select count(*)::int as n from public.feedback_log where user_id = '${A}'`)).rows;
+    assert.equal(w.n, 1);
+  });
+
+  it('writes the sender from the session, whatever the request says', async () => {
+    await jako(B, `insert into public.feedback_log (user_id, created_at) values ('${A}', now() - interval '2 days')`);
+    const [w] = (
+      await db.query<{ n: number }>(
+        `select count(*)::int as n from public.feedback_log where user_id = '${B}' and created_at > now() - interval '1 minute'`,
+      )
+    ).rows;
+    assert.equal(w.n, 2);
+  });
+
+  it('lets nobody read, change or delete the rows, and gives a signed-out visitor nothing', async () => {
+    assert.equal((await jako(A, `select * from public.feedback_log`)).length, 0);
+    assert.equal((await jako(A, `update public.feedback_log set created_at = now() - interval '2 days' returning 1`)).length, 0);
+    assert.equal((await jako(A, `delete from public.feedback_log returning 1`)).length, 0);
+    await assert.rejects(zglos(null));
+  });
+});
+
 describe('deleting an account', () => {
   it('deletes every row of it', async () => {
     await db.exec(`delete from auth.users where id = '${A}'`);
@@ -159,7 +194,8 @@ describe('deleting an account', () => {
     const [w] = (
       await db.query<{ n: number }>(
         `select ((select count(*) from public.lesson_progress) + (select count(*) from public.observations)
-               + (select count(*) from public.flashcards) + (select count(*) from public.user_badges))::int as n`,
+               + (select count(*) from public.flashcards) + (select count(*) from public.user_badges)
+               + (select count(*) from public.feedback_log))::int as n`,
       )
     ).rows;
     assert.equal(w.n, 0);

@@ -112,3 +112,11 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co zbudowałam lokalnie:** `src/components/PodgladZdjec.tsx`, natywny `<dialog>` z `showModal()`. Esc i kliknięcie obok zdjęcia zamykają podgląd, a fokus wraca na ostatnio oglądane zdjęcie. Strzałki i przyciski Big Hat „Poprzednie zdjęcie” i „Następne zdjęcie” przechodzą po grupie (`[data-galeria]`), „Zamknij” zamyka podgląd. Kolory sceny (`.scena`).
 - **Co robi gorzej:** własna obsługa klawiatury i fokusu, bez testów kontraktowych Big Hat; wejście to własna klatka kluczowa produktu (na tokenach czasu i krzywej Big Hat), a nie ruch komponentu.
 - **Pytanie do design systemu:** czy przeglądarka mediów (lightbox) to osobny komponent, czy wariant `Dialog` („media”, pełny ekran, bez tytułu w nagłówku)?
+
+## Wskazywanie fragmentu strony
+
+- **Po co sięgnęłam:** „Zgłoś poprawkę” (`ZGLOSZENIA.md`). Zalogowana osoba wskazuje fragment treści (akapit, zdjęcie, wiersz tabeli), a obok otwiera się formularz zgłoszenia.
+- **Czego nie ma w Big Hat:** trybu wskazywania (podświetlenie elementu pod kursorem albo fokusem, wybór kliknięciem lub Enterem) i okienka przypiętego do elementu strony (popover z formularzem).
+- **Co zbudowałam lokalnie:** `src/components/zgloszenie/ZglosPoprawke.tsx`. Pasek z instrukcją u góry ekranu (`.wskazywanie`), obramowanie wskazanego fragmentu (`.wskazywanie__ramka`) i tymczasowe `tabindex="0"` na fragmentach, żeby dało się do nich przejść Tabem. Formularz jest w `Dialog`, a nie obok fragmentu; fragment widać w formularzu jako cytat.
+- **Co robi gorzej:** własna obsługa klawiatury i fokusu w trybie wskazywania, bez testów kontraktowych Big Hat. Okno dialogowe zasłania stronę, więc wskazanego miejsca nie widać obok formularza.
+- **Pytanie do design systemu:** czy popover przypięty do elementu (z fokusem i Escape jak w `Dialog`, ale bez zasłaniania strony) to komponent systemu?
