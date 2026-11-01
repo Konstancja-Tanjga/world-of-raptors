@@ -17,7 +17,7 @@ import {
   zajawkaModulu,
   znajdzModul,
 } from '@/lib/content';
-import { ADRES, opis } from '@/lib/seo';
+import { ADRES, AUTORKA, opis } from '@/lib/seo';
 
 export const dynamicParams = false;
 
@@ -81,7 +81,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
         description: opis(strona.lead ?? zajawkaModulu(slug) ?? biezaca.tytul),
         inLanguage: 'pl',
         url: adres,
-        author: { '@type': 'Person', name: 'Konstancja Tanjga', url: `${ADRES}/o-projekcie` },
+        author: AUTORKA,
         isPartOf: { '@type': 'WebSite', name: 'World of Raptors', url: ADRES },
       },
       {

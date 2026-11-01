@@ -13,7 +13,7 @@ test('attributes are decoded', () => {
 test('a complete photo and gallery pass', () => {
   assert.deepEqual(problemyTagow(`Tekst\n\n${zdjecie()}\n`, 'l.md'), []);
   assert.deepEqual(problemyTagow(`<galeria>\n\n${zdjecie()}\n\n${zdjecie()}\n\n</galeria>\n`, 'l.md'), []);
-  const wlasne = '<zdjecie src="/zdjecia/barbate-kanaly.jpg" width="960" height="1200" alt="Kanały" autor="Konstancja Tanjga" licencja="CC BY 4.0" strona="">\n</zdjecie>';
+  const wlasne = '<zdjecie src="/zdjecia/barbate-kanaly.jpg" width="960" height="1200" alt="Kanały" autor="Konstancja Tanjga-Nawrot" licencja="CC BY 4.0" strona="">\n</zdjecie>';
   assert.deepEqual(problemyTagow(wlasne, 'l.md'), []);
 });
 

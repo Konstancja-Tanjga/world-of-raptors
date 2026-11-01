@@ -25,7 +25,7 @@ import {
 } from '@/lib/content';
 import { CIASTKO_PORY, jakoPora, poraDnia, type PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
-import { ADRES } from '@/lib/seo';
+import { ADRES, AUTORKA } from '@/lib/seo';
 
 // Rendered per request: the species of the day must change at midnight, the
 // sky follows the sun (or the time of day I chose, kept in a cookie), and a
@@ -34,11 +34,15 @@ import { ADRES } from '@/lib/seo';
 // once, when content.ts is first imported.
 export const dynamic = 'force-dynamic';
 
-// `?pora=` only changes the sky.
-export const metadata: Metadata = { alternates: { canonical: '/' } };
+export const metadata: Metadata = {
+  // My name in the title too: people who search for it should find the course.
+  title: { absolute: 'World of Raptors, kurs o ptakach drapieżnych. Autorka: Konstancja Tanjga-Nawrot' },
+  // `?pora=` only changes the sky.
+  alternates: { canonical: '/' },
+};
 
-/** The site's name for search results, which Google reads from the home page only. */
-const WITRYNA = { '@type': 'WebSite', name: 'World of Raptors', url: ADRES, inLanguage: 'pl' };
+/** The site's name for search results, which Google reads from the home page only, and its author. */
+const WITRYNA = { '@type': 'WebSite', name: 'World of Raptors', url: ADRES, inLanguage: 'pl', author: AUTORKA };
 
 /** Same species all day (Polish time), a different one tomorrow. */
 function gatunekDnia() {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './o-projekcie.css';
+import { DaneStrukturalne } from '@/components/DaneStrukturalne';
 import { MarkdownInline } from '@/components/Markdown';
 import { Anatomia } from '@/components/Anatomia';
 import { SuwakMorfu } from '@/components/SuwakMorfu';
@@ -8,10 +9,11 @@ import { Sylwetka } from '@/components/Sylwetka';
 import { autorzyZdjec, ideaKursu, statystykiKursu, stronaMorfu, taliaFiszek, znajdzGatunek } from '@/lib/content';
 import type { PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
+import { ADRES, AUTORKA } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'O projekcie',
-  description: 'Jak powstał World of Raptors: pomysł i treść Konstancji Tanjgi, projekt, ruch i kod razem z Claude.',
+  title: 'O projekcie i autorce',
+  description: 'Jak powstał World of Raptors: pomysł i treść: Konstancja Tanjga-Nawrot; projekt, ruch i kod razem z Claude.',
 };
 
 /** A diurnal atlas species for the morph slider; the build would fail if the id stopped being one. */
@@ -95,6 +97,7 @@ export default async function OProjekcie() {
 
   return (
     <div className="oprojekcie">
+      <DaneStrukturalne dane={{ '@type': 'AboutPage', url: `${ADRES}/o-projekcie`, inLanguage: 'pl', about: { '@type': 'WebSite', name: 'World of Raptors', url: ADRES }, author: AUTORKA }} />
       <section className="czolowka scena" data-scena aria-labelledby="oprojekcie-tytul">
         <Sylwetka id="kania-ruda" klasa="czolowka__ptak" />
         <div className="czolowka__wnetrze">
@@ -106,7 +109,7 @@ export default async function OProjekcie() {
           <dl className="czolowka__autorzy">
             <div>
               <dt>Pomysł, plan kursu i treść</dt>
-              <dd className="czolowka__autorka">Konstancja Tanjga</dd>
+              <dd className="czolowka__autorka">Konstancja Tanjga-Nawrot</dd>
             </div>
             <div>
               <dt>Projekt, ruch i kod, razem z autorką</dt>
@@ -302,7 +305,7 @@ export default async function OProjekcie() {
         <dl className="op-technika">
           <div>
             <dt>Big Hat</dt>
-            <dd>Design system, który zaprojektowała Konstancja Tanjga. Kurs używa jego komponentów i ról kolorów.</dd>
+            <dd>Design system, który zaprojektowała Konstancja Tanjga-Nawrot. Kurs używa jego komponentów i ról kolorów.</dd>
           </div>
           <div>
             <dt>Next.js 16 i React 19</dt>
@@ -350,7 +353,7 @@ export default async function OProjekcie() {
 
       <section className="podpis scena" data-scena aria-label="Podpis">
         <Sylwetka id="kania-czarna" klasa="podpis__ptak" />
-        <p className="podpis__imie">Konstancja Tanjga</p>
+        <p className="podpis__imie">Konstancja Tanjga-Nawrot</p>
         <p className="podpis__z">i Claude</p>
         <p className="podpis__rok">2026</p>
       </section>

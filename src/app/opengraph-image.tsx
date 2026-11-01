@@ -10,14 +10,14 @@ import { POZY, SYLWETKI } from '@/lib/sylwetki';
  */
 
 export const alt =
-  'Niebo o zmierzchu z krążącymi sylwetkami ptaków drapieżnych i tytułem „Naucz się czytać niebo”. World of Raptors, kurs Konstancji Tanjgi.';
+  'Niebo o zmierzchu z krążącymi sylwetkami ptaków drapieżnych i tytułem „Naucz się czytać niebo”. World of Raptors, autorka: Konstancja Tanjga-Nawrot.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 const MARKA = 'World of Raptors';
 const TYTUL = ['Naucz się', 'czytać niebo'];
 const PODTYTUL = 'Kurs o drapieżnikach dziennych i nocnych, od polskich pól po Cieśninę Gibraltarską';
-const AUTORKA = 'Konstancja Tanjga';
+const AUTORKA = 'Konstancja Tanjga-Nawrot';
 
 // Every font gets every letter on the card, so moving a line to the other
 // font cannot leave a letter out (ImageResponse would quietly draw it in a

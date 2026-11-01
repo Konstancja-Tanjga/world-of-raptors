@@ -17,7 +17,7 @@ export function Stopka({ zglos }: { zglos?: ReactNode }) {
             Hiszpanii i Cieśnina Gibraltarska.
           </p>
           <p className="stopka__autorzy">
-            Pomysł, plan i treść: <strong>Konstancja Tanjga</strong>. Projekt, ruch i kod: razem z Claude (Anthropic).{' '}
+            Pomysł, plan i treść: <strong>Konstancja Tanjga-Nawrot</strong>. Projekt, ruch i kod: razem z Claude (Anthropic).{' '}
             <Link href="/o-projekcie">O projekcie</Link>
           </p>
           {zglos}

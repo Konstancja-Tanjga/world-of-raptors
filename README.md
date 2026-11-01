@@ -139,4 +139,4 @@ Zdjęcia w kursie (ptaki, ale też miejsca i przedmioty) pochodzą z Wikimedia C
 
 <img src="docs/readme/o-projekcie.webp" width="100%" alt="Strona O projekcie: sylwetka kani rudej na niebie o zmierzchu, tytuł i autorzy kursu">
 
-Pomysł, plan kursu i cała treść: **Konstancja Tanjga**. Projekt, ruch i kod nowej wersji powstały razem z Claude, modelem AI firmy Anthropic, w Claude Code. Szczegóły i podziękowania dla fotografów są na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie).
+Pomysł, plan kursu i cała treść: **Konstancja Tanjga-Nawrot**. Projekt, ruch i kod nowej wersji powstały razem z Claude, modelem AI firmy Anthropic, w Claude Code. Szczegóły i podziękowania dla fotografów są na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie).

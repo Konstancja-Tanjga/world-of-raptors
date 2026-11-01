@@ -4,7 +4,10 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { kluczLekcji, usePostep } from '@/lib/postep';
 
-/** `lead` comes rendered from the server (it is Markdown, and the renderer is server-only); `obraz` is the lesson's model or first photo. */
+/**
+ * `lead` comes rendered from the server (it is Markdown, and the renderer is server-only); `obraz` is the lesson's model or first photo,
+ * and `sylwetka`, also drawn on the server so the generator stays out of this bundle, stands in for a lesson without one.
+ */
 export type LekcjaSylabusu = {
   slug: string;
   tytul: string;
@@ -12,6 +15,7 @@ export type LekcjaSylabusu = {
   progQuizu: number | null;
   lead: ReactNode;
   obraz: { src: string; srcSet?: string; polozenie?: string } | null;
+  sylwetka: ReactNode;
 };
 
 /** Reading time, short: "ok. 12 min". */
@@ -51,6 +55,7 @@ export function SylabusModulu({ modul, lekcje }: { modul: string; lekcje: Lekcja
                 // eslint-disable-next-line @next/next/no-img-element -- Commons and /budowa/ serve their own sizes
                 <img className="sylabus__obraz" src={l.obraz.src} srcSet={l.obraz.srcSet} sizes="(max-width: 600px) 5.5rem, 9rem" style={{ objectPosition: l.obraz.polozenie }} alt="" loading="lazy" decoding="async" />
               )}
+              {!l.obraz && l.sylwetka && <span className="sylabus__obraz sylabus__obraz--sylwetka">{l.sylwetka}</span>}
             </Link>
           </li>
         );
