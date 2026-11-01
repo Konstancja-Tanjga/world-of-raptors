@@ -589,6 +589,97 @@
       "gatunki": [
         "pustulka"
       ]
+    },
+    {
+      "id": "obraczka-czarna-n",
+      "tekst": "W kodach obrączek kolorowych siewkowców **czarna obrączka to litera N**, od francuskiego *noir*. Litera B jest już zajęta przez obrączkę niebieską (*blue*).",
+      "modul": "siewkowce",
+      "lekcja": "07-liczenie-obraczki-etyka",
+      "gatunki": []
+    },
+    {
+      "id": "rycyki-ryzowiska",
+      "tekst": "Licząc, jaka część **rycyków** na portugalskich polach ryżowych nosi holenderskie obrączki, badacze oszacowali, że zatrzymuje się tam ok. 38–44% rycyków z północno-zachodniej Europy. Kilka odczytanych obrączek mówi o całej populacji.",
+      "modul": "siewkowce",
+      "lekcja": "07-liczenie-obraczki-etyka",
+      "gatunki": []
+    },
+    {
+      "id": "sieweczki-plaza",
+      "tekst": "Na kalifornijskiej plaży zimujące **sieweczki** płoszono średnio co 27 minut w weekend i co 43 minuty w dni robocze. Każde poderwanie to stracony czas żerowania i energia, której ptak potrzebuje na zimę albo na dalszą drogę.",
+      "modul": "siewkowce",
+      "lekcja": "07-liczenie-obraczki-etyka",
+      "gatunki": []
+    },
+    {
+      "id": "kulik-ptak-maja",
+      "tekst": "W Irlandii **kulika mniejszego** nazywano kiedyś ptakiem maja. W kwietniu i maju kuliki wielkie siedzą już w parach na lęgowiskach, więc wiosenne stadko „kulików” to najpewniej właśnie kuliki mniejsze.",
+      "modul": "siewkowce",
+      "lekcja": "06-trudne-pary-duze",
+      "gatunki": []
+    },
+    {
+      "id": "siewnica-pachy",
+      "tekst": "**Siewnicę** w locie zdradzają czarne „pachy” u nasady spodu skrzydła. Ma je w każdej szacie, więc rozstrzygają nawet zimą, gdy siewnica i siewka złota wyglądają podobnie.",
+      "modul": "siewkowce",
+      "lekcja": "05-trudne-pary-male",
+      "gatunki": []
+    },
+    {
+      "id": "zwirowiec-mewowce",
+      "tekst": "**Żwirowiec łąkowy** uchodzi za siewkowca, ale w systematyce jest bliżej mew i rybitw: należy do podrzędu mewowców i łapie owady w locie, jak jaskółka.",
+      "modul": "siewkowce",
+      "lekcja": "01-ksztalt-przed-kolorem",
+      "gatunki": []
+    },
+    {
+      "id": "czajka-tupanie",
+      "tekst": "**Czajka** ma swój sposób na dżdżownice: drobi nogą po ziemi, a drgania wywabiają zdobycz na powierzchnię.",
+      "modul": "siewkowce",
+      "lekcja": "01-ksztalt-przed-kolorem",
+      "gatunki": []
+    },
+    {
+      "id": "batalion-trzy-strategie",
+      "tekst": "U **batalionów** samce mają trzy strategie. Ok. 84% broni maleńkich terytoriów na tokowisku, ok. 16% to „satelity” z białymi kryzami, a ok. 1% wygląda jak samice i podkrada kopulacje.",
+      "modul": "siewkowce",
+      "lekcja": "02-biegus-zmienny-jako-miara",
+      "gatunki": []
+    },
+    {
+      "id": "piaskowiec-bez-palca",
+      "tekst": "**Piaskowiec** jako jedyny z małych biegusów nie ma tylnego palca.",
+      "modul": "siewkowce",
+      "lekcja": "02-biegus-zmienny-jako-miara",
+      "gatunki": []
+    },
+    {
+      "id": "platkonog-wir",
+      "tekst": "**Płatkonóg szydłodzioby** kręci się na wodzie jak bączek. Wir, który wzbudza, podnosi drobną zdobycz ku powierzchni, uważa się, że nawet z ok. 30 cm głębokości.",
+      "modul": "siewkowce",
+      "lekcja": "03-zerowanie-i-plyw",
+      "gatunki": []
+    },
+    {
+      "id": "baltyk-bez-plywu",
+      "tekst": "Na Bałtyku pływu prawie nie ma: w Zatoce Gdańskiej to ok. 3 cm. Za to silny wiatr potrafi podnieść wodę przy brzegu nawet o pół metra, a siewkowce tracą wtedy żerowiska, które zwykle odsłania woda.",
+      "modul": "siewkowce",
+      "lekcja": "03-zerowanie-i-plyw",
+      "gatunki": []
+    },
+    {
+      "id": "biegusy-ujscie-redy",
+      "tekst": "26 września 1999 r. grupa KULING naliczyła w ujściu Redy naraz 654 **biegusy zmienne**. We wrześniu to głównie młode ptaki, które lecą na zimowiska bez rodziców.",
+      "modul": "siewkowce",
+      "lekcja": "04-wiek-i-pierzenie",
+      "gatunki": []
+    },
+    {
+      "id": "biegus-krzywodzioby-szata",
+      "tekst": "Młode **biegusy krzywodzioby** przelatują nad Bałtykiem w świeżej szacie młodocianej. Pierzenie zaczynają dopiero na postojach i zimowiskach.",
+      "modul": "siewkowce",
+      "lekcja": "04-wiek-i-pierzenie",
+      "gatunki": []
     }
   ]
 }
