@@ -9,7 +9,7 @@ Przewodniki terenowe opisują ptaki językiem topografii: „jasne pokrywy podog
 
 [Moduł A2 · Anatomia łowcy](../anatomia/README.md) mówi o narzędziach drapieżnika: wzroku, szponach, dziobie i trawieniu. Ten moduł opisuje budowę, którą ptaki drapieżne dzielą z innymi ptakami. Tam, gdzie A2 już coś wyjaśnia, znajdziesz krótkie przypomnienie i link.
 
-Każda lekcja ma interaktywny model 3D. Model można obracać, przybliżać, przecinać i rozbierać na warstwy, a każdą część można kliknąć albo wybrać z listy, żeby przeczytać, jak się nazywa i do czego służy. Modele pozwalają zajrzeć tam, gdzie zdjęcie nie sięga: do wnętrza kości ramiennej, między haczyki pióra i do środka klatki piersiowej.
+Każda lekcja ma interaktywny model 3D. Model można obracać, przybliżać, przecinać i rozbierać na warstwy, a każdą część można wskazać na modelu albo wybrać z listy, żeby przeczytać, jak się nazywa i do czego służy. Modele pozwalają zajrzeć tam, gdzie zdjęcie nie sięga: do wnętrza kości ramiennej, między haczyki pióra i do środka klatki piersiowej.
 
 ## Cele modułu
 Po ukończeniu modułu potrafisz:
@@ -31,7 +31,7 @@ Po ukończeniu modułu potrafisz:
 
 ## Jak korzystać z modeli
 - **Obracanie:** przeciągnij model albo użyj suwaka obrotu. **Przybliżanie:** kółko myszy, dwa palce albo przyciski „Przybliż” i „Oddal”.
-- **Części:** kliknij część na modelu albo wybierz ją z listy. Z listy kamera sama do niej podleci, a jeśli część leży głębiej, upierzenie zrobi się przezroczyste.
+- **Części:** wskaż część na modelu albo wybierz ją z listy. Z listy kamera sama do niej podleci, a jeśli część leży głębiej, upierzenie zrobi się przezroczyste.
 - **Przekrój** zdejmuje prawą połowę ptaka (albo przednią połowę kości). Przecięte powierzchnie są od środka ciemniejsze, więc widać, gdzie kończy się ściana, a zaczyna wnętrze.
 - **Warstwy** włączasz i wyłączasz pod modelem: pióra i skóra, mięśnie lotu, narządy, worki powietrzne, szkielet.
 

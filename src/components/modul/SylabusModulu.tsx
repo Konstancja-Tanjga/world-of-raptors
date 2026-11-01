@@ -4,8 +4,15 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { kluczLekcji, usePostep } from '@/lib/postep';
 
-/** `lead` comes rendered from the server (it is Markdown, and the renderer is server-only). */
-export type LekcjaSylabusu = { slug: string; tytul: string; minuty: number; progQuizu: number | null; lead: ReactNode };
+/** `lead` comes rendered from the server (it is Markdown, and the renderer is server-only); `obraz` is the lesson's model or first photo. */
+export type LekcjaSylabusu = {
+  slug: string;
+  tytul: string;
+  minuty: number;
+  progQuizu: number | null;
+  lead: ReactNode;
+  obraz: { src: string; srcSet?: string } | null;
+};
 
 /** Reading time, short: "ok. 12 min". */
 const czas = (minuty: number) => (minuty === 1 ? 'ok. minuty' : `ok. ${minuty} min`);
@@ -13,8 +20,8 @@ const czas = (minuty: number) => (minuty === 1 ? 'ok. minuty' : `ok. ${minuty} m
 /**
  * The module's lessons as a numbered syllabus: each lesson is one link with
  * its title, the first lines of its lead, the reading time, the quiz pass
- * mark and whether I finished it (shown once the browser copy of progress
- * is read).
+ * mark, whether I finished it (shown once the browser copy of progress is
+ * read) and a picture of what it shows.
  */
 export function SylabusModulu({ modul, lekcje }: { modul: string; lekcje: LekcjaSylabusu[] }) {
   const { postep } = usePostep();
@@ -40,6 +47,10 @@ export function SylabusModulu({ modul, lekcje }: { modul: string; lekcje: Lekcja
                   {data && <span className="sylabus__gotowa">Ukończona {data}</span>}
                 </span>
               </span>
+              {l.obraz && (
+                // eslint-disable-next-line @next/next/no-img-element -- Commons and /budowa/ serve their own sizes
+                <img className="sylabus__obraz" src={l.obraz.src} srcSet={l.obraz.srcSet} sizes="10rem" alt="" loading="lazy" decoding="async" />
+              )}
             </Link>
           </li>
         );

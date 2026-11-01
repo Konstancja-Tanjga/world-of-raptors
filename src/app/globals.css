@@ -2696,6 +2696,19 @@ html:has(.podglad[open]) {
   font-weight: var(--bh-text-weight-heading);
 }
 
+/* Words that differ by pointer: "Kliknij" with a mouse, "Stuknij" on a touch screen. */
+.tylko-dotyk {
+  display: none;
+}
+@media (pointer: coarse) {
+  .tylko-mysz {
+    display: none;
+  }
+  .tylko-dotyk {
+    display: inline;
+  }
+}
+
 /* ---------- A9's 3D models (<model-3d>) ---------- */
 
 /* A dark light-table: the model floats over it, its controls sit below. It
@@ -2738,7 +2751,8 @@ html:has(.podglad[open]) {
   isolation: isolate;
   display: grid;
   place-items: center;
-  aspect-ratio: 4 / 3;
+  /* Square below 40rem (phones): katPionowy() in scena.ts widens the camera so the wings still fit across, and the shorter canvas brings the panel under it (a tapped part's description, in scenes without breathing steps) into view. */
+  aspect-ratio: 1;
   border-radius: var(--wor-radius-scene);
   overflow: hidden;
   touch-action: none;

@@ -10,7 +10,7 @@ Nazwy przydają się też we własnych notatkach. Zapisz „biały pas na kuprze
 
 ## Model: jastrząb przed lądowaniem
 
-Model poniżej ma proporcje i barwy dorosłego jastrzębia: łupkowoszary wierzch, białą, gęsto prążkowaną pierś, białą brew i pomarańczowe oko. Skrzydła są rozłożone, a nogi wysunięte do przodu, jak u ptaka, który za chwilę wyląduje. Dzięki temu widać naraz skrzydło od góry i od dołu, ogon i całe nogi. Kliknij dowolną część albo wybierz ją z listy.
+Model poniżej ma proporcje i barwy dorosłego jastrzębia: łupkowoszary wierzch, białą, gęsto prążkowaną pierś, białą brew i pomarańczowe oko. Skrzydła są rozłożone, a nogi wysunięte do przodu, jak u ptaka, który za chwilę wyląduje. Dzięki temu widać naraz skrzydło od góry i od dołu, ogon i całe nogi. Wskaż dowolną część na modelu albo wybierz ją z listy.
 
 <model-3d data-scena="topografia">
 </model-3d>
