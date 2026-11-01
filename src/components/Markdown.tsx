@@ -9,6 +9,7 @@ import {
   grupyDoWyboru,
   ptakiDoMiarki,
   ptakiMokradel,
+  ptakiStyluLotu,
   pytaniaSylwetek,
   kominPunktu,
   scenaBudowy,
@@ -24,7 +25,7 @@ import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
-import { Komin, Model3D, MorfGrup, PtasiaMiarka, PunktObserwacyjny, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
+import { Komin, Model3D, MorfGrup, Pikowanie, PtasiaMiarka, PunktObserwacyjny, StyleLotu, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
 import { Nagranie } from './Nagranie';
@@ -107,6 +108,12 @@ const attr = (props: Attrs, name: string) => {
  * the screen:
  *
  *   <model-3d data-scena="szkielet">
+ *
+ * A11's flight: a gallery of species flying in their styles, and a falcon's
+ * stoop on a slider:
+ *
+ *   <style-lotu data-gatunki="pustulka kania-ruda krogulec">
+ *   <pikowanie>
  *
  * B8's watch point: a session of content/punkt-obserwacyjny.json to count,
  * and a kettle to estimate:
@@ -205,6 +212,16 @@ const lessonTags = {
   'model-3d': (props: Attrs) => (
     <div className="lekcja-model">
       <Model3D scena={scenaBudowy(attr(props, 'data-scena'))} />
+    </div>
+  ),
+  'style-lotu': (props: Attrs) => (
+    <div className="lekcja-model">
+      <StyleLotu ptaki={ptakiStyluLotu(attr(props, 'data-gatunki'))} />
+    </div>
+  ),
+  pikowanie: () => (
+    <div className="lekcja-cwiczenie">
+      <Pikowanie />
     </div>
   ),
   'punkt-obserwacyjny': (props: Attrs) => {

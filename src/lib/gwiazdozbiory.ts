@@ -17,6 +17,10 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', nazwa: 'Płomykówka' },
   'swiat-sow': { gatunek: 'puszczyk', nazwa: 'Puszczyk' },
   'budowa-ptaka': { gatunek: 'jastrzab', nazwa: 'Jastrząb' },
+  ewolucja: { gatunek: 'sep-kasztanowaty', nazwa: 'Sęp kasztanowaty' },
+  lot: { gatunek: 'kaniuk', nazwa: 'Kaniuk' },
+  krukowate: { gatunek: 'scierwnik', nazwa: 'Ścierwnik' },
+  'male-ptaki': { gatunek: 'krogulec', nazwa: 'Krogulec' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },
@@ -25,6 +29,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   barbate: { gatunek: 'rybolow', nazwa: 'Rybołów' },
   'wielkosc-i-ksztalt': { gatunek: 'kobuz', nazwa: 'Kobuz' },
   'punkt-obserwacyjny': { gatunek: 'kania-czarna', nazwa: 'Kania czarna' },
+  'wiek-orlow': { gatunek: 'orlik-krzykliwy', nazwa: 'Orlik' },
   'projekt-koncowy': { gatunek: 'orzelek-wlochaty', nazwa: 'Orzełek' },
 };
 
