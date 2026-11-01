@@ -31,7 +31,7 @@ Po ukończeniu modułu potrafisz:
 
 ## Jak korzystać z modeli
 - **Obracanie:** przeciągnij model albo użyj suwaka obrotu. **Przybliżanie:** kółko myszy, dwa palce albo przyciski „Przybliż” i „Oddal”.
-- **Części:** kliknij część na modelu albo wybierz ją z listy. Z listy kamera sama do niej podleci, a jeśli część leży głębiej, upierzenie zrobi się przezroczyste.
+- **Części:** wskaż część na modelu albo wybierz ją z listy. Z listy kamera sama do niej podleci, a jeśli część leży głębiej, upierzenie zrobi się przezroczyste.
 - **Przekrój** zdejmuje prawą połowę ptaka (albo przednią połowę kości). Przecięte powierzchnie są od środka ciemniejsze, więc widać, gdzie kończy się ściana, a zaczyna wnętrze.
 - **Warstwy** włączasz i wyłączasz pod modelem: pióra i skóra, mięśnie lotu, narządy, worki powietrzne, szkielet.
 

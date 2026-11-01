@@ -2683,6 +2683,19 @@ html:has(.podglad[open]) {
   font-weight: var(--bh-text-weight-heading);
 }
 
+/* Words that differ by pointer: "Kliknij" with a mouse, "Stuknij" on a touch screen. */
+.tylko-dotyk {
+  display: none;
+}
+@media (pointer: coarse) {
+  .tylko-mysz {
+    display: none;
+  }
+  .tylko-dotyk {
+    display: inline;
+  }
+}
+
 /* ---------- A9's 3D models (<model-3d>) ---------- */
 
 /* A dark light-table: the model floats over it, its controls sit below. It
@@ -2725,7 +2738,8 @@ html:has(.podglad[open]) {
   isolation: isolate;
   display: grid;
   place-items: center;
-  aspect-ratio: 4 / 3;
+  /* Square on a phone: the camera keeps the wings across (katPionowy() in scena.ts), and the height leaves room for the description right under it. */
+  aspect-ratio: 1;
   border-radius: var(--wor-radius-scene);
   overflow: hidden;
   touch-action: none;

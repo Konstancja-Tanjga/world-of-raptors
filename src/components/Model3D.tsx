@@ -276,6 +276,97 @@ export function Model3D({ scena }: { scena: DaneSceny }) {
             </p>
           </div>
         )}
+        {scena.sprawdzian ? (
+          <div className="model3d__sprawdzian" aria-live="polite">
+            {koniec ? (
+              <>
+                <p className="model3d__nazwa">
+                  Wynik: {wynik} z {pytania.length}
+                </p>
+                <p>{wynik >= pytania.length * 0.8 ? 'Znasz budowę ptaka.' : 'Wróć do lekcji, w których te części były opisane, i spróbuj jeszcze raz.'}</p>
+                <Button size="sm" onClick={zacznijSprawdzian}>
+                  Jeszcze raz
+                </Button>
+              </>
+            ) : pytanie ? (
+              <>
+                <p className="model3d__licznik">
+                  Pytanie {numer + 1} z {pytania.length}
+                </p>
+                <p className="model3d__nazwa">Co pokazuje podświetlona część?</p>
+                <div className="model3d__odpowiedzi">
+                  {pytanie.odpowiedzi.map((o) => (
+                    <Button
+                      key={o.id}
+                      size="sm"
+                      variant={odpowiedz === null ? 'secondary' : o.id === pytanie.czesc.id ? 'primary' : 'ghost'}
+                      aria-disabled={odpowiedz !== null}
+                      onClick={() => {
+                        if (odpowiedz !== null) return;
+                        setOdpowiedz(o.id);
+                        if (o.id === pytanie.czesc.id) setWynik((w) => w + 1);
+                      }}
+                    >
+                      {o.nazwa}
+                    </Button>
+                  ))}
+                </div>
+                {odpowiedz !== null && (
+                  <>
+                    <p>
+                      <strong>{odpowiedz === pytanie.czesc.id ? 'Dobrze.' : `To ${pytanie.czesc.nazwa.toLowerCase()}.`}</strong> {pytanie.czesc.opis}
+                    </p>
+                    <Button
+                      size="sm"
+                      onClick={() => {
+                        setOdpowiedz(null);
+                        setNumer(numer + 1);
+                        pokazPytanie(pytania[numer + 1]);
+                      }}
+                    >
+                      {numer + 1 < pytania.length ? 'Następne pytanie' : 'Pokaż wynik'}
+                    </Button>
+                  </>
+                )}
+              </>
+            ) : (
+              <StateBlock state="loading" title="Układam pytania" scope="inline" />
+            )}
+          </div>
+        ) : (
+          <div className="model3d__czesci">
+            <div className="model3d__opis" aria-live="polite">
+              {opisana ? (
+                <>
+                  <p className="model3d__nazwa">
+                    {opisana.nazwa}
+                    {opisana.lac && (
+                      <>
+                        {' '}
+                        <i lang="la" translate="no">
+                          {opisana.lac}
+                        </i>
+                      </>
+                    )}
+                  </p>
+                  <p>{opisana.opis}</p>
+                </>
+              ) : (
+                <p className="model3d__wskazowka">
+                  <span className="tylko-mysz">Kliknij</span>
+                  <span className="tylko-dotyk">Stuknij</span> część na modelu albo wybierz ją z listy.
+                </p>
+              )}
+            </div>
+            <Select
+              label="Część"
+              placeholder="Wybierz część"
+              options={widok.czesci.map((c) => ({ value: c.id, label: c.nazwa }))}
+              value={wybrana ?? ''}
+              onChange={(e) => wybierz(e.currentTarget.value || null, true)}
+            />
+          </div>
+        )}
         <div className="model3d__sterowanie">
           <Slider
             label="Obrót wokół modelu"
@@ -366,95 +457,6 @@ export function Model3D({ scena }: { scena: DaneSceny }) {
             </fieldset>
           )}
         </div>
-
-        {scena.sprawdzian ? (
-          <div className="model3d__sprawdzian" aria-live="polite">
-            {koniec ? (
-              <>
-                <p className="model3d__nazwa">
-                  Wynik: {wynik} z {pytania.length}
-                </p>
-                <p>{wynik >= pytania.length * 0.8 ? 'Znasz budowę ptaka.' : 'Wróć do lekcji, w których te części były opisane, i spróbuj jeszcze raz.'}</p>
-                <Button size="sm" onClick={zacznijSprawdzian}>
-                  Jeszcze raz
-                </Button>
-              </>
-            ) : pytanie ? (
-              <>
-                <p className="model3d__licznik">
-                  Pytanie {numer + 1} z {pytania.length}
-                </p>
-                <p className="model3d__nazwa">Co pokazuje podświetlona część?</p>
-                <div className="model3d__odpowiedzi">
-                  {pytanie.odpowiedzi.map((o) => (
-                    <Button
-                      key={o.id}
-                      size="sm"
-                      variant={odpowiedz === null ? 'secondary' : o.id === pytanie.czesc.id ? 'primary' : 'ghost'}
-                      aria-disabled={odpowiedz !== null}
-                      onClick={() => {
-                        if (odpowiedz !== null) return;
-                        setOdpowiedz(o.id);
-                        if (o.id === pytanie.czesc.id) setWynik((w) => w + 1);
-                      }}
-                    >
-                      {o.nazwa}
-                    </Button>
-                  ))}
-                </div>
-                {odpowiedz !== null && (
-                  <>
-                    <p>
-                      <strong>{odpowiedz === pytanie.czesc.id ? 'Dobrze.' : `To ${pytanie.czesc.nazwa.toLowerCase()}.`}</strong> {pytanie.czesc.opis}
-                    </p>
-                    <Button
-                      size="sm"
-                      onClick={() => {
-                        setOdpowiedz(null);
-                        setNumer(numer + 1);
-                        pokazPytanie(pytania[numer + 1]);
-                      }}
-                    >
-                      {numer + 1 < pytania.length ? 'Następne pytanie' : 'Pokaż wynik'}
-                    </Button>
-                  </>
-                )}
-              </>
-            ) : (
-              <StateBlock state="loading" title="Układam pytania" scope="inline" />
-            )}
-          </div>
-        ) : (
-          <div className="model3d__czesci">
-            <Select
-              label="Część"
-              placeholder="Wybierz część"
-              options={widok.czesci.map((c) => ({ value: c.id, label: c.nazwa }))}
-              value={wybrana ?? ''}
-              onChange={(e) => wybierz(e.currentTarget.value || null, true)}
-            />
-            <div className="model3d__opis" aria-live="polite">
-              {opisana ? (
-                <>
-                  <p className="model3d__nazwa">
-                    {opisana.nazwa}
-                    {opisana.lac && (
-                      <>
-                        {' '}
-                        <i lang="la" translate="no">
-                          {opisana.lac}
-                        </i>
-                      </>
-                    )}
-                  </p>
-                  <p>{opisana.opis}</p>
-                </>
-              ) : (
-                <p className="model3d__wskazowka">Kliknij część na modelu albo wybierz ją z listy.</p>
-              )}
-            </div>
-          </div>
-        )}
       </div>
 
       <figcaption className="model3d__podpis">{scena.podpis}</figcaption>

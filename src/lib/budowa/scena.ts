@@ -32,6 +32,22 @@ export type WidokDoPokazania = Omit<Widok, 'czesci'> & { czesci: (string | { id:
 
 const NIEPRZEZROCZYSTE = 0.5;
 
+/** The camera's vertical angle (degrees) on the 16:9 canvas the scenes' cameras were placed for. */
+const KAT_PIONOWY = 32;
+const PROPORCJE_SCEN = 16 / 9;
+
+/**
+ * The vertical angle for a canvas of these proportions. On a narrower canvas
+ * (a phone's) the angle opens so the horizontal one stays as at 16:9: the
+ * spread wings still fit across, with more room above and below, instead of
+ * the bird being cropped at the sides.
+ */
+export function katPionowy(proporcje: number) {
+  if (proporcje >= PROPORCJE_SCEN) return KAT_PIONOWY;
+  const polowa = THREE.MathUtils.degToRad(KAT_PIONOWY / 2);
+  return THREE.MathUtils.radToDeg(2 * Math.atan((Math.tan(polowa) * PROPORCJE_SCEN) / proporcje));
+}
+
 export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, { ruch, akcent }: { ruch: boolean; akcent: string }) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -50,7 +66,7 @@ export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, 
   wypelniajace.position.set(-6, 2, -5);
   scena.add(wypelniajace);
 
-  const kamera = new THREE.PerspectiveCamera(32, 1, 0.01, 200);
+  const kamera = new THREE.PerspectiveCamera(KAT_PIONOWY, 1, 0.01, 200);
   const sterowanie = new OrbitControls(kamera, canvas);
   sterowanie.enableDamping = ruch;
   sterowanie.dampingFactor = 0.12;
@@ -107,6 +123,7 @@ export function utworzPrzegladarke(kontener: HTMLElement, zdarzenia: Zdarzenia, 
     if (!width || !height) return;
     renderer.setSize(width, height, false);
     kamera.aspect = width / height;
+    kamera.fov = katPionowy(kamera.aspect);
     kamera.updateProjectionMatrix();
     zaplanuj();
   };
