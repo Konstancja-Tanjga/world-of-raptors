@@ -1,5 +1,7 @@
 # Lekcja 2: Gatunki i trudne pary
 
+Bielik ma skrzydła prostokątne jak drzwi i krótki, klinowaty ogon, orzeł przedni skrzydła zwężone u nasady i dłuższy ogon. Poznasz drapieżniki Polski i trudne pary: orlika krzykliwego i myszołowa, myszołowa i myszołowa włochatego, pustułkę, kobuza i drzemlika.
+
 Rozpiętości skrzydeł są orientacyjne.
 
 ---

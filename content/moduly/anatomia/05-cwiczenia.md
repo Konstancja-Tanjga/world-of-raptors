@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Myszołów na słupie przekrzywia głowę, a pustułka w zawisie trzyma ją nieruchomo, i obie rzeczy mają związek ze wzrokiem. Najpierw quiz, który zalicza moduł (próg 80%), potem ćwiczenia: czytanie budowy pięciu gatunków, obserwacja zachowań w terenie i własna karta anatomiczna wybranego ptaka.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Ile dołków środkowych ma w każdym oku większość dziennych ptaków drapieżnych?

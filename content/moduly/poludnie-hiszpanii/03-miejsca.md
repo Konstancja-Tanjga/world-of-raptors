@@ -1,5 +1,7 @@
 # Lekcja 3: Najlepsze miejsca
 
+W Sierra de Andújar zimą masz szansę na orła iberyjskiego, sępa kasztanowatego, a nawet rysia iberyjskiego, w Cazorli na orłosępa. Zobaczysz najlepsze miejsca Andaluzji z porą na każde, trzy przykładowe trasy i zasady obserwacji w parkach i przy koloniach.
+
 <margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Pinar_de_la_algaida_sanl%C3%BAcar_de_barrameda.jpg/960px-Pinar_de_la_algaida_sanl%C3%BAcar_de_barrameda.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="720" oryginal="1024x768" alt="Piaszczysta droga między rozłożystymi sosnami pinia, nad nimi kłębiaste chmury" podpis="Pinar de la Algaida koło Sanlúcar de Barrameda: sosnowe lasy na skraju marismy to część Doñany" autor="Antonio M. Romero Dorado" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Pinar_de_la_algaida_sanl%C3%BAcar_de_barrameda.jpg">

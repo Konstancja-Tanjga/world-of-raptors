@@ -1,5 +1,7 @@
 # Lekcja 4: Jak badamy wędrówki
 
+Młody trzmielojad leci do Afryki zupełnie sam, kilka tygodni po rodzicach, a mimo to kieruje się na południe. Zobaczysz, co wiemy o wrodzonym kierunku i ptasich kompasach, jak badacze śledzą wędrówki obrączkami, nadajnikami GPS i wieloletnimi liczeniami oraz jak możesz w tym pomóc sama.
+
 ## Skąd ptak wie, dokąd lecieć?
 To wciąż jedno z najciekawszych pytań biologii i wiele w nim niewiadomych. Poniżej to, co jest dość dobrze ustalone, i to, co pozostaje hipotezą.
 

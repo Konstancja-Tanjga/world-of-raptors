@@ -1,5 +1,7 @@
 # Lekcja 1: Cieśnina, wiatry i kalendarz przelotu
 
+Według Fundación Migres nad Cieśniną Gibraltarską przelatuje co roku ponad 400 000 ptaków szybujących, bo między Tarifą a Marokiem jest tylko ok. 14 km wody bez termik. Poznasz wiatry Levante i Poniente, które decydują, gdzie stanąć, i kalendarz przelotu jesienią i wiosną.
+
 ## Dlaczego tutaj?
 
 <margines>

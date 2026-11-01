@@ -1,5 +1,7 @@
 # Lekcja 1: Pary, toki i terytoria
 
+Samiec błotniaka upuszcza zdobycz w locie, a samica łapie ją, obracając się na grzbiet. Poznasz pięć rodzajów toków, od lotów tokowych po sczepianie się szponami, a także to, jak długo trwają pary, czego bronią terytoria i które drapieżniki zaczynają sezon w Polsce pierwsze, a które ostatnie.
+
 ## Monogamia, ale z wyjątkami
 Większość ptaków drapieżnych jest **monogamiczna**: w sezonie lęgowym jedna samica i jeden samiec wspólnie wychowują młode. Różnią się za to tym, **jak długo** para trwa.
 

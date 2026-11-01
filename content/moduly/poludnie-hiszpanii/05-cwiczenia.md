@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Skąd orłosęp ma rdzawy spód i gdzie najłatwiej o sępa kasztanowatego? Quiz z takimi pytaniami zalicza moduł, a po nim czekają ćwiczenie z różnic między parami widocznych w locie z daleka i projekt własnej trasy po Andaluzji na 5–7 dni.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Duży ciemny orzeł z białymi plamami na skrzydłach i białym ogonem z czarnym pasem końcowym to:

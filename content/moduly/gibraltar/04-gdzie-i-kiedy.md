@@ -1,5 +1,7 @@
 # Lekcja 4: Gdzie i kiedy — punkty obserwacyjne
 
+Przy Levante stań na wzgórzu Cazalla nad Tarifą, przy Poniente w El Algarrobo, na Punta Carnero albo na Skale Gibraltarskiej. Poznasz punkty obserwacji przelotu, miejsca na gatunki lokalne, od La Jandy po Sierra de Grazalema, i kalendarz, który podpowie, kiedy jechać.
+
 ## Punkty obserwacji przelotu
 
 <margines>

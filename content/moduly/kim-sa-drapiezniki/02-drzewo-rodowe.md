@@ -1,5 +1,7 @@
 # Lekcja 2: Drzewo rodowe, czyli taksonomia i filogeneza
 
+Jeszcze w XX wieku orły, jastrzębie i sokoły stały w jednym rzędzie, ale badania DNA rozdzieliły je na dwie odległe gałęzie drzewa ptaków. Zobaczysz, jak wygląda dzisiejsze drzewo rodowe drapieżników, czym jest ewolucja zbieżna i dlaczego kondory tak długo nie miały na nim stałego miejsca.
+
 ## Dwa słowa na początek
 - **Taksonomia** nadaje nazwy i układa grupy w hierarchię: rząd, rodzina, rodzaj, gatunek.
 - **Filogeneza** to drzewo pokrewieństw: kto od kogo pochodzi i kto jest czyim najbliższym krewnym.

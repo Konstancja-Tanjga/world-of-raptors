@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Jedna budka dla pustułki albo okno oklejone gęstym wzorem to już realna ochrona. Najpierw quiz, który zalicza moduł, potem mapa zagrożeń dla trzech gatunków i obserwacja gniazda sokoła wędrownego przez kamerę, a na koniec projekt „Moja cegiełka”: jedno zadanie dla ptaków do wykonania w ciągu miesiąca.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Jak DDT szkodziło sokołom wędrownym?

@@ -1,5 +1,7 @@
 # Lekcja 1: Region i siedliska
 
+Hiszpania to stolica sępów Europy: żyje tu zdecydowana większość europejskich sępów płowych. Poznasz pięć siedlisk Andaluzji, od wąwozów Grazalemy i dehesy Sierra Morena po stepy, mokradła i białe miasteczka, i dowiesz się, których drapieżników w każdym szukać.
+
 ## Dlaczego południe Hiszpanii jest tak bogate?
 - **Mozaika siedlisk:** wysokie góry, lasy korkowe, pastwiska z dębami, stepy, mokradła i wybrzeże, a wszystko to w odległości kilku godzin jazdy.
 - **Tradycyjne rolnictwo i pasterstwo:** otwarte tereny są pełne królików, kuropatw i gadów, a padlina zwierząt hodowlanych karmi sępy.

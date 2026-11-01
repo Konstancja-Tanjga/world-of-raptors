@@ -1,5 +1,7 @@
 # Lekcja 4: Dorastanie i życie dorosłe
 
+Wylot z gniazda nie oznacza samodzielności: młode jeszcze tygodnie, a u dużych orłów i sępów nawet miesiące, żebrzą o pokarm u rodziców. Zobaczysz, jak pisklę staje się dorosłym ptakiem, dlaczego bielik zaczyna lęgi dopiero po ok. 5 latach i jak oglądać życie rodzinne drapieżników bez szkody dla nich.
+
 ## Pisklę: od puchu do piór
 
 <margines>

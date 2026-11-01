@@ -1,5 +1,7 @@
 # Lekcja 2: Symbole i mity
 
+Za wzór Orła Białego najczęściej uważa się bielika, ale pewności nie ma, bo heraldyczna biel może być po prostu barwą srebra. Poznasz legendę o Lechu, orły imperiów od Rzymu po Meksyk, sokoła Horusa, mitycznego Garudę i sowy, które u Greków były symbolem mądrości, a u Słowian złą wróżbą.
+
 ## Dlaczego akurat drapieżniki?
 Orzeł szybuje wyżej niż inne ptaki, sokół jest najszybszy, sowa widzi w ciemności. Nic dziwnego, że ludzie od zawsze łączyli je z **władzą, siłą, czujnością i mądrością**, a sowy także ze śmiercią i tajemnicą. W tej lekcji przechodzisz przez najważniejsze symbole, od Egiptu po Polskę.
 

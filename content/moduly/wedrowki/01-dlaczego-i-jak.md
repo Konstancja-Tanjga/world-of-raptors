@@ -1,5 +1,7 @@
 # Lekcja 1: Dlaczego i jak wędrują
 
+Ptaki drapieżne nie uciekają przed mrozem, tylko przed głodem: trzmielojad, który żywi się larwami os, leci aż do tropikalnej Afryki, a myszołów często zostaje w Polsce. Zobaczysz, kto odlatuje, kto zostaje, kto przylatuje do nas na zimę i czym różnią się wędrowcy, którzy szybują, od tych, którzy machają skrzydłami.
+
 ## Wędrówka to pogoń za jedzeniem
 Ptaki nie odlatują przed mrozem, tylko przed **brakiem pokarmu**. Dobrze upierzony drapieżnik zniesie zimno, ale nie przeżyje, jeśli nie ma czego jeść.
 

@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia, quiz i projekt końcowy
 
+Zacznij od fiszek z sylwetkami i trudnymi parami, a quiz końcowy z dwunastoma pytaniami zaliczy moduł. Dalej czekają wirtualny punkt obserwacyjny, zadania z kamer na gniazdach i nagrań sów oraz projekt końcowy: plan czterodniowego wyjazdu do Tarify.
+
 ## 1. Fiszki (powtórki rozłożone w czasie)
 Dane w [atlasie gatunków](../../gatunki.json). Trzy typy fiszek dla każdego gatunku:
 - **Sylwetka → gatunek** (zdjęcie ptaka w locie, pod światło)

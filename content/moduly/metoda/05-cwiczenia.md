@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i zadanie terenowe
 
+Najlepszy trening rozpoznawania to setki obserwacji najpospolitszego gatunku, bo wtedy każdy inny ptak od razu „zgrzyta”. Najpierw quiz, który zalicza moduł, potem ćwiczenie z ośmioma sylwetkami na czas i dwa zadania terenowe: dziesięć opisanych myszołowów i zapisywanie obserwacji w stałej kolejności patrzenia.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Skrzydła spiczaste, bez „palców”. Jaka grupa?

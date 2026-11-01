@@ -1,5 +1,7 @@
 # Lekcja 3: Najlepsze miejsca
 
+Wiosną rozlewiska Biebrzy są łowiskiem orlików i błotniaków, a jesienią wzdłuż Mierzei Helskiej ciągną krogulce. Zobaczysz najlepsze miejsca na drapieżniki w Polsce z porą na każde, kamery na gniazdach i zasady, dzięki którym obserwacja nie szkodzi ptakom.
+
 <margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Biebrza%C5%84ski_Park_Narodowy%2C_wiosenne_rozlewiska%2C_kacze%C5%84ce%2C_bocian_bia%C5%82y.jpg/960px-Biebrza%C5%84ski_Park_Narodowy%2C_wiosenne_rozlewiska%2C_kacze%C5%84ce%2C_bocian_bia%C5%82y.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="1620x1080" alt="Zalana łąka pokryta żółtymi kwiatami kaczeńców, na pierwszym planie brodzi bocian biały" podpis="Wiosenne rozlewiska Biebrzy z kaczeńcami i bocianem: tak wyglądają łowiska orlików i błotniaków w maju" autor="Dariusz Kowalczyk" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Biebrza%C5%84ski_Park_Narodowy,_wiosenne_rozlewiska,_kacze%C5%84ce,_bocian_bia%C5%82y.jpg">

@@ -1,5 +1,7 @@
 # Lekcja 2: Fizyka szybowania
 
+Z wysokości jednego kilometra duży ptak drapieżny przelatuje w ślizgu często ponad 10 km bez jednego machnięcia skrzydłem. Poznasz kominy ciepłego powietrza i noszenie zboczowe, cykl „wznieś się i ślizgaj” oraz powód, dla którego migranci szybujący omijają morze, nawet jeśli droga lądem jest dużo dłuższa.
+
 ## Darmowa winda
 Duży ptak, który macha skrzydłami, spala dużo energii. Ten sam ptak, który szybuje, zużywa jej **wielokrotnie mniej**, niewiele więcej niż w spoczynku. Na trasie długiej na tysiące kilometrów ta różnica decyduje o przeżyciu.
 

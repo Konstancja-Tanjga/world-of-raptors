@@ -1,5 +1,7 @@
 # Lekcja 4: Nauka obywatelska i pomoc ptakom
 
+Kompletna lista w eBird jest dla naukowców cenniejsza niż pojedyncza obserwacja, bo pokazuje też, czego nie było. Dowiesz się, gdzie wysyłać obserwacje, jak zgłosić odczytaną obrączkę, co zrobić z rannym ptakiem albo młodą sową siedzącą na gałęzi i jak godzić ptaki drapieżne z hodowcami gołębi i drobiu.
+
 ## Twoja obserwacja ma znaczenie
 **Nauka obywatelska** (*citizen science*) to badania, w których dane zbierają nie tylko naukowcy, ale też tysiące wolontariuszy. W ornitologii działa to wyjątkowo dobrze: ptaków jest dużo, obserwatorów też, a pojedynczy naukowiec nie obejmie całego kontynentu. Z takich danych powstają atlasy rozmieszczenia, trendy liczebności i mapy wędrówek.
 

@@ -1,5 +1,7 @@
 # Lekcja 2: Jak patrzeć — metoda rozpoznawania w locie
 
+Kanię poznasz po wciętym ogonie, którym stale steruje, a gadożera po zawisaniu w miejscu, zanim zobaczysz jakikolwiek kolor. To skrót metody czterech kroków (sylwetka, sposób lotu, wzór upierzenia, a na końcu wiek i płeć) ze słowniczkiem terminów.
+
 <margines>
 
 > To skrót metody. Pełna wersja z 8 grupami sylwetek, sposobem lotu, wiekiem i pułapkami jest w module [B1 · Metoda rozpoznawania w locie](../metoda/README.md).
