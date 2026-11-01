@@ -14,6 +14,7 @@ import budowaJson from '../../content/budowa-ptaka.json';
 import punktJson from '../../content/punkt-obserwacyjny.json';
 import type { PtakPunktu, Sesja } from './punkt';
 import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
+import { oryginalZAtrybutu, srcSetCommons } from './zdjecia';
 import { nagraniaFiszek, problemyNagrania, sciezkaSonogramu } from './nagrania';
 import { odkoduj, problemyTagow } from './tagi';
 import type { Fiszki, ZapisFiszki } from './fiszki';
@@ -1024,13 +1025,53 @@ export function otwarcieModulu(slug: string) {
 
 /**
  * A module's README for its overview page: the title, the path line and the
- * hook are shown by the opening scene, so they are taken out of the text; the
- * rest (scope, goals, plan, any other quotes) is returned as Markdown.
+ * hook are shown by the opening scene, so they are taken out of the text. The
+ * plan's table repeats the list of lessons above it, so it is dropped too, and
+ * only its total time (the heading's "(ok. 3,5 h nauki + zadania)") is kept,
+ * for the opening's facts. What comes before the second `##` section (the
+ * scope, "Po co ten moduł") stays in view; each later section (goals, how to
+ * use the models, a note on facts) is returned on its own, for the page to fold.
  */
 export function przygotujOpisModulu(md: string, plik: string) {
   const { bloki, indeks, zajawka } = hakModulu(md, plik);
-  const reszta = bloki.filter((b, i) => i !== indeks && !/^Ścieżka [AB]:/.test(b.trim()));
-  return { zajawka, md: reszta.join('\n\n') };
+  const tekst = bloki.filter((b, i) => i !== indeks && !/^Ścieżka [AB]:/.test(b.trim())).join('\n\n');
+  // split() makes no empty first piece when the text starts with a heading, so the intro is checked for one.
+  const kawalki = tekst.split(/^(?=## )/m);
+  const wstep = kawalki[0].startsWith('## ') ? '' : kawalki[0];
+  const reszta = wstep ? kawalki.slice(1) : kawalki;
+  let czas: { ile: string; czego: string } | null = null;
+  const sekcje: { tytul: string; md: string }[] = [];
+  for (const s of reszta) {
+    const [naglowek, ...tresc] = s.split('\n');
+    const tytul = naglowek.replace(/^##\s+/, '').trim();
+    const plan = /^Plan\b(?:\s*\((.*)\))?/.exec(tytul);
+    if (plan) {
+      const m = /^(ok\. [\d,–-]+ h)\s*(.*)$/.exec(plan[1] ?? '');
+      if (m) czas = { ile: m[1], czego: m[2] || 'nauki' };
+      continue;
+    }
+    sekcje.push({ tytul, md: tresc.join('\n').trim() });
+  }
+  const [pierwsza, ...zwijane] = sekcje;
+  const widoczny = [wstep.trim(), pierwsza ? `## ${pierwsza.tytul}\n\n${pierwsza.md}` : ''].filter(Boolean).join('\n\n');
+  return { zajawka, md: widoczny, zwijane, czas };
+}
+
+/**
+ * A lesson's picture for the syllabus: its 3D model (the first part of its
+ * first scene, as drawn for the flashcards), else its first photo, else none.
+ */
+function obrazLekcji(md: string): { src: string; srcSet?: string } | null {
+  const scena = /<model-3d\s+data-scena="([^"]+)"/.exec(md)?.[1];
+  const czesc = scena ? SCENY[scena]?.widoki[0]?.czesci[0] : undefined;
+  if (czesc) return { src: OBRAZ_CZESCI.src(czesc) };
+  const tag = /<zdjecie\b[^>]*>/.exec(md)?.[0];
+  if (!tag) return null;
+  const attr = (n: string) => new RegExp(`\\b${n}="([^"]*)"`).exec(tag)?.[1]?.replace(/&amp;/g, '&');
+  const src = attr('src');
+  if (!src) return null;
+  const oryginal = oryginalZAtrybutu(attr('oryginal') ?? '');
+  return { src, srcSet: srcSetCommons({ src, oryginal } as Zdjecie) };
 }
 
 /** Lessons of a module with what the syllabus shows (reading time, quiz pass mark) and the atlas species each names. */
@@ -1040,7 +1081,8 @@ export async function sylabusModulu(slug: string) {
   return Promise.all(
     modul.lekcje.map(async (l) => {
       const plik = `moduly/${slug}/${l.slug}.md`;
-      const strona = przygotujStroneLekcji(await czytajMarkdown(plik), plik);
+      const md = await czytajMarkdown(plik);
+      const strona = przygotujStroneLekcji(md, plik);
       return {
         slug: l.slug,
         tytul: l.tytul,
@@ -1048,6 +1090,7 @@ export async function sylabusModulu(slug: string) {
         progQuizu: strona.quiz?.prog ?? null,
         lead: strona.lead,
         gatunki: strona.wszystkie,
+        obraz: obrazLekcji(md),
       };
     }),
   );

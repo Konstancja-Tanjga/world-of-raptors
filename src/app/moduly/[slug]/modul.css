@@ -254,7 +254,8 @@
 }
 .sylabus__lekcja {
   display: grid;
-  grid-template-columns: var(--wor-size-numer) minmax(0, 1fr);
+  grid-template-columns: var(--wor-size-numer) minmax(0, 1fr) auto;
+  align-items: start;
   gap: var(--bh-padding-section);
   padding: var(--bh-padding-section) var(--bh-gap-snug) var(--bh-padding-section) 0;
   border-bottom: 1px solid var(--wor-linia);
@@ -314,6 +315,19 @@
   color: var(--wor-akcent);
   font-weight: var(--bh-text-weight-heading);
 }
+/* What the lesson shows (its 3D model or first photo), beside the text, so the list is not only words. */
+.sylabus__obraz {
+  width: 9rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--bh-radius-surface);
+  background: var(--bh-surface-sunken);
+}
+@media (max-width: 600px) {
+  .sylabus__obraz {
+    width: 5.5rem;
+  }
+}
 /* A finished lesson: its number struck through in the accent colour, so the column of numbers reads as progress. */
 .sylabus__lekcja[data-gotowa] .sylabus__nr {
   color: var(--bh-text-muted);
@@ -328,6 +342,10 @@
   width: 100%;
   max-width: var(--wor-measure);
   margin-inline: auto;
+}
+/* The README's later sections (goals, how to use the models, a note on facts), folded under the intro. */
+.modul-strona__wiecej {
+  margin-top: var(--wor-space-block);
 }
 .modul-strona__ciekawostka {
   width: 100%;

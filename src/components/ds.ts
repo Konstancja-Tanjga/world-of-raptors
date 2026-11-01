@@ -7,6 +7,8 @@
  * this module, never from '@bighat/ui'.
  */
 export {
+  Accordion,
+  AccordionItem,
   AppBar,
   AppShell,
   Article,

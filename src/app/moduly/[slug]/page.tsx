@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import './modul.css';
 import { Ciekawostka } from '@/components/Ciekawostka';
+import { Accordion, AccordionItem } from '@/components/ds';
 import { Markdown, MarkdownInline } from '@/components/Markdown';
 import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { StartModulu } from '@/components/modul/StartModulu';
@@ -37,7 +38,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
   if (!modul) notFound();
 
   const baseDir = `moduly/${slug}`;
-  const { zajawka, md } = przygotujOpisModulu(await czytajMarkdown(`${baseDir}/README.md`), `${baseDir}/README.md`);
+  const { zajawka, md, zwijane, czas } = przygotujOpisModulu(await czytajMarkdown(`${baseDir}/README.md`), `${baseDir}/README.md`);
   const lekcje = await sylabusModulu(slug);
   const otwarcie = otwarcieModulu(slug);
   const sciezka = sciezki.find((s) => s.id === modul.sciezka);
@@ -85,6 +86,12 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
                 <dd>{gatunkow}</dd>
               </div>
             )}
+            {czas && (
+              <div>
+                <dt>{czas.czego}</dt>
+                <dd>{czas.ile}</dd>
+              </div>
+            )}
             {quizy > 0 && (
               <div>
                 <dt>{odmiana(quizy, ['quiz', 'quizy', 'quizów'])}</dt>
@@ -123,17 +130,29 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
           </h2>
           <SylabusModulu
             modul={slug}
-            lekcje={lekcje.map(({ slug: lekcja, tytul, minuty, progQuizu, lead }) => ({
+            lekcje={lekcje.map(({ slug: lekcja, tytul, minuty, progQuizu, lead, obraz }) => ({
               slug: lekcja,
               tytul,
               minuty,
               progQuizu,
               lead: lead ? <MarkdownInline source={lead} baseDir={baseDir} bezLinkow /> : null,
+              obraz,
             }))}
           />
         </section>
         <div className="modul-strona__opis">
           <Markdown source={md} baseDir={baseDir} />
+          {zwijane.length > 0 && (
+            <div className="modul-strona__wiecej">
+              <Accordion multiple headingLevel={2}>
+                {zwijane.map((s) => (
+                  <AccordionItem key={s.tytul} id={s.tytul} title={s.tytul}>
+                    <Markdown source={s.md} baseDir={baseDir} />
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
         </div>
         <div className="modul-strona__ciekawostka">
           <Ciekawostka {...ciekawostkiDla({ modul: slug })} />
