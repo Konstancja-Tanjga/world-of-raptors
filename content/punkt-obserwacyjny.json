@@ -1,0 +1,353 @@
+{
+  "uwaga": "Sesje wirtualnego punktu obserwacyjnego (moduł B8). Liczby ptaków i proporcje gatunków są uproszczone, ale odpowiadają temu, co dominuje w danym miejscu i porze roku (kalendarz w B3 i B2). wysokosc: nisko, srednio albo wysoko; stado: [od, do] ptaków w jednym stadzie. Odpowiedzi do wyboru (opcje) muszą zawierać wszystkie gatunki sesji.",
+  "sesje": {
+    "rozgrzewka": {
+      "tytul": "Rozgrzewka",
+      "miejsce": "Skraj lasu w Polsce, pogodny dzień we wrześniu",
+      "opis": "Kilka ptaków, które znasz z B2, nisko i bez pośpiechu: myszołowy, pustułki, krogulec i kania ruda.",
+      "czas": 60,
+      "kierunek": 1,
+      "gatunki": [
+        {
+          "id": "myszolow",
+          "ile": 5,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "pustulka",
+          "ile": 2,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "krogulec",
+          "ile": 2,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "kania-ruda",
+          "ile": 1,
+          "wysokosc": "nisko"
+        }
+      ],
+      "opcje": [
+        "myszolow",
+        "pustulka",
+        "krogulec",
+        "kania-ruda",
+        "jastrzab",
+        "trzmielojad"
+      ]
+    },
+    "ciesnina-sierpien": {
+      "tytul": "Koniec sierpnia, Levante",
+      "miejsce": "Wzgórza nad Tarifą, koniec sierpnia, wiatr ze wschodu",
+      "opis": "Szczyt przelotu trzmielojadów. Przelatują stadami nisko nad wybrzeżem, między nimi kanie czarne, a od czasu do czasu błotniak, orzełek albo ścierwnik.",
+      "czas": 120,
+      "kierunek": 1,
+      "gatunki": [
+        {
+          "id": "trzmielojad",
+          "ile": 46,
+          "stado": [
+            3,
+            14
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "kania-czarna",
+          "ile": 18,
+          "stado": [
+            1,
+            5
+          ],
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "blotniak-lakowy",
+          "ile": 3,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "orzelek-wlochaty",
+          "ile": 3,
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "scierwnik",
+          "ile": 2,
+          "wysokosc": "wysoko"
+        },
+        {
+          "id": "pustuleczka",
+          "ile": 4,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "nisko"
+        }
+      ],
+      "opcje": [
+        "trzmielojad",
+        "myszolow",
+        "kania-czarna",
+        "blotniak-lakowy",
+        "blotniak-stawowy",
+        "orzelek-wlochaty",
+        "scierwnik",
+        "pustuleczka",
+        "pustulka"
+      ]
+    },
+    "ciesnina-pazdziernik": {
+      "tytul": "Początek października, Poniente",
+      "miejsce": "Cazalla nad Tarifą, początek października, wiatr z zachodu",
+      "opis": "Sępy płowe w dużych stadach wysoko, gadożery i orzełki pojedynczo albo po kilka, krogulce nisko i szybko. Kanie czarne to już maruderzy.",
+      "czas": 120,
+      "kierunek": -1,
+      "gatunki": [
+        {
+          "id": "sep-plowy",
+          "ile": 38,
+          "stado": [
+            8,
+            18
+          ],
+          "wysokosc": "wysoko"
+        },
+        {
+          "id": "gadozer",
+          "ile": 9,
+          "stado": [
+            1,
+            3
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "orzelek-wlochaty",
+          "ile": 12,
+          "stado": [
+            1,
+            4
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "kania-czarna",
+          "ile": 5,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "krogulec",
+          "ile": 6,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "kania-ruda",
+          "ile": 3,
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "blotniak-stawowy",
+          "ile": 2,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "rybolow",
+          "ile": 1,
+          "wysokosc": "srednio"
+        }
+      ],
+      "opcje": [
+        "sep-plowy",
+        "gadozer",
+        "orzelek-wlochaty",
+        "myszolow",
+        "trzmielojad",
+        "kania-czarna",
+        "kania-ruda",
+        "krogulec",
+        "blotniak-stawowy",
+        "rybolow"
+      ]
+    },
+    "polska-wrzesien": {
+      "tytul": "Wrzesień w Polsce",
+      "miejsce": "Wybrzeże Bałtyku, druga połowa września",
+      "opis": "Nie ma tu wąskiego gardła jak w cieśninie, więc ptaki lecą rzadziej i szerszym frontem. Najwięcej jest myszołowów i krogulców; trafiają się błotniaki, kanie rude, pustułki, a z rzadka orlik albo bielik.",
+      "czas": 120,
+      "kierunek": 1,
+      "gatunki": [
+        {
+          "id": "myszolow",
+          "ile": 20,
+          "stado": [
+            1,
+            4
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "krogulec",
+          "ile": 13,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "blotniak-stawowy",
+          "ile": 5,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "kania-ruda",
+          "ile": 4,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "pustulka",
+          "ile": 4,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "trzmielojad",
+          "ile": 3,
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "orlik-krzykliwy",
+          "ile": 2,
+          "wysokosc": "wysoko"
+        },
+        {
+          "id": "bielik",
+          "ile": 1,
+          "wysokosc": "srednio"
+        }
+      ],
+      "opcje": [
+        "myszolow",
+        "trzmielojad",
+        "krogulec",
+        "jastrzab",
+        "blotniak-stawowy",
+        "blotniak-zbozowy",
+        "kania-ruda",
+        "kania-czarna",
+        "pustulka",
+        "orlik-krzykliwy",
+        "bielik"
+      ]
+    },
+    "egzamin": {
+      "tytul": "Egzamin: mieszany dzień",
+      "miejsce": "Cieśnina, połowa września, słaby wiatr",
+      "opis": "Dzień, w którym wszystko leci naraz i wyżej niż zwykle. Trudne pary przelatują blisko siebie: trzmielojady i myszołowy, kanie i błotniaki, krogulce i jastrząb, a między nimi szybkie sokoły.",
+      "czas": 150,
+      "kierunek": 1,
+      "gatunki": [
+        {
+          "id": "trzmielojad",
+          "ile": 20,
+          "stado": [
+            2,
+            8
+          ],
+          "wysokosc": "wysoko"
+        },
+        {
+          "id": "myszolow",
+          "ile": 6,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "wysoko"
+        },
+        {
+          "id": "kania-czarna",
+          "ile": 10,
+          "stado": [
+            1,
+            3
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "blotniak-stawowy",
+          "ile": 3,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "blotniak-lakowy",
+          "ile": 2,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "gadozer",
+          "ile": 4,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "wysoko"
+        },
+        {
+          "id": "orzelek-wlochaty",
+          "ile": 5,
+          "stado": [
+            1,
+            2
+          ],
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "krogulec",
+          "ile": 4,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "jastrzab",
+          "ile": 1,
+          "wysokosc": "nisko"
+        },
+        {
+          "id": "kobuz",
+          "ile": 2,
+          "wysokosc": "srednio"
+        },
+        {
+          "id": "sokol-wedrowny",
+          "ile": 1,
+          "wysokosc": "srednio"
+        }
+      ],
+      "opcje": [
+        "trzmielojad",
+        "myszolow",
+        "kania-czarna",
+        "blotniak-stawowy",
+        "blotniak-lakowy",
+        "gadozer",
+        "orzelek-wlochaty",
+        "krogulec",
+        "jastrzab",
+        "kobuz",
+        "sokol-wedrowny",
+        "pustulka"
+      ]
+    }
+  }
+}
