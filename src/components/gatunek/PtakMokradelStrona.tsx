@@ -16,7 +16,7 @@ import { NazwaPtaka } from '../NazwaPtaka';
 /**
  * The page of a bird other than a raptor (a site's field list): its photo,
  * names, what to look for, my observation and where to read on. A wader
- * taught as a full species (B8) also has its rings, its cues by the B8
+ * taught as a full species (B9) also has its rings, its cues by the B9
  * method, its sizes, its look-alikes and its voice; the raptor page's flight
  * and scale are built on silhouettes these birds do not have.
  */

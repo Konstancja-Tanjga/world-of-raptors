@@ -36,7 +36,7 @@ const ETYKIETY_SIEWKOWE: Record<keyof CechySiewkowca, string> = {
   glos: 'Głos',
 };
 
-/** The cues with their labels, in the order the lessons teach them (B1 for raptors, B5 for owls, B8 for waders). */
+/** The cues with their labels, in the order the lessons teach them (B1 for raptors, B5 for owls, B9 for waders). */
 export const CECHY_DZIENNE = KLUCZE_DZIENNE.map((k) => [k, ETYKIETY_DZIENNE[k]] as const);
 export const CECHY_NOCNE = KLUCZE_NOCNE.map((k) => [k, ETYKIETY_NOCNE[k]] as const);
 export const CECHY_SIEWKOWE = KLUCZE_SIEWKOWE.map((k) => [k, ETYKIETY_SIEWKOWE[k]] as const);

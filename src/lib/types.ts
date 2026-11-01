@@ -17,7 +17,7 @@ export type SylwetkaDzienna = Record<(typeof KLUCZE_DZIENNE)[number], string>;
 /** What to listen and look for in an owl, in the order B5 teaches it (lesson 2). */
 export const KLUCZE_NOCNE = ['glos', 'uszy', 'sylwetka', 'glowa', 'oczy'] as const;
 export type SylwetkaNocna = Record<(typeof KLUCZE_NOCNE)[number], string>;
-/** What to look at in a wader, in the order B8 teaches it: shape before colour. */
+/** What to look at in a wader, in the order B9 teaches it: shape before colour. */
 export const KLUCZE_SIEWKOWE = ['wielkosc', 'dziob', 'nogi', 'zachowanie', 'upierzenie', 'lot', 'glos'] as const;
 export type CechySiewkowca = Record<(typeof KLUCZE_SIEWKOWE)[number], string>;
 
@@ -117,7 +117,7 @@ export type PtakMokradel = {
   miejsca: Miejsce[];
   /** What is still to check by hand (listed by `next dev`, never on a page). */
   todo?: string;
-  /** Taught as a full species (the waders of B8): its cues, look-alikes, sizes and flashcards. */
+  /** Taught as a full species (the waders of B9): its cues, look-alikes, sizes and flashcards. */
   rozpoznawanie?: RozpoznawanieMokradel;
 };
 

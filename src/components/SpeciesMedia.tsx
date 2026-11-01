@@ -128,7 +128,7 @@ export function SpeciesMedia({
  * A bird of marshes in a lesson: perched or standing first (that is how it is
  * usually seen), then in flight where a cue shows only on the wing, then the
  * view that most helps identification (`cecha`), and the way to its card,
- * where I tick it. A wader taught as a full species (B8) also gets its cues
+ * where I tick it. A wader taught as a full species (B9) also gets its cues
  * compared with its look-alikes, like a raptor; for the others the field
  * marks are the lesson's own text.
  */

@@ -174,7 +174,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-/* B8's waders have no silhouettes: name and rings only. */
+/* B9's waders have no silhouettes: name and rings only. */
 .lista-zyciowa--bez-rysunkow .lista-zyciowa__gatunek {
   align-content: center;
 }

@@ -43,7 +43,7 @@ const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
 
 type Talia = 'wszystkie' | Region;
 type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy' | 'glosy' | 'budowa';
-/** Raptors or the waders of B8: the two decks mix otherwise (parts of the bird belong to neither). */
+/** Raptors or the waders of B9: the two decks mix otherwise (parts of the bird belong to neither). */
 type Ptaki = 'wszystkie' | 'drapiezne' | 'siewkowce';
 
 /** Which filter each kind of card belongs to (a Record, so a new kind cannot be left out). */
@@ -380,7 +380,7 @@ function RewersBudowy({ karta }: { karta: FiszkaBudowy }) {
 }
 
 /**
- * Flashcards from the atlas and B8's waders: photos to name, silhouettes in
+ * Flashcards from the atlas and B9's waders: photos to name, silhouettes in
  * flight, voices, and names between Polish, English and Spanish. Name the bird, reveal the answer, say
  * how it went; FSRS decides when each card comes back. Keys: space reveals
  * the answer, 1–4 rate it.

@@ -148,14 +148,14 @@ test('a wader has rings of its own: no lifer, no silhouette card, a voice card w
   const zSiewkowcem: StrukturaNieba = {
     ...struktura,
     siewkowce: [kulik],
-    moduly: [{ slug: 'siewkowce', id: 'B8', tytul: 'Siewkowce', lekcje: ['siewkowce/01'], gatunki: ['kulik-wielki'], nazwaGwiazdozbioru: 'Drzemlik' }],
+    moduly: [{ slug: 'siewkowce', id: 'B9', tytul: 'Siewkowce', lekcje: ['siewkowce/01'], gatunki: ['kulik-wielki'], nazwaGwiazdozbioru: 'Drzemlik' }],
   };
   assert.deepEqual(kartyGatunku(kulik), ['kulik-wielki/lot', 'kulik-wielki/pl-en', 'kulik-wielki/pl-es', 'kulik-wielki/en-pl', 'kulik-wielki/es-pl', 'kulik-wielki/glos']);
   const widziany = stanNieba(zSiewkowcem, {}, {}, widziane(['kulik-wielki']));
   assert.equal(widziany.siewkowce['kulik-wielki'].widzialam, true);
   assert.equal(widziany.lifery, 0);
   assert.equal(widziany.naszywki['pierwszy-lifer'].zdobyta, false);
-  // B8's gold star asks for the wader to be recognised: every card of it learned, the voice too.
+  // B9's gold star asks for the wader to be recognised: every card of it learned, the voice too.
   const postep = { 'siewkowce/01': '2026-10-20' };
   const bezGlosu = Object.fromEntries(kartyGatunku(kulik).filter((id) => !id.endsWith('/glos')).map((id) => [id, nauczona]));
   assert.equal(stanNieba(zSiewkowcem, postep, bezGlosu, {}).moduly.siewkowce.opanowany, false);

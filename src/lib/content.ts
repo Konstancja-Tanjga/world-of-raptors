@@ -106,7 +106,7 @@ for (const g of gatunki) {
   }
 }
 
-/** Birds of marshes taught as full species (B8's waders): flashcards, look-alikes, rings. */
+/** Birds of marshes taught as full species (B9's waders): flashcards, look-alikes, rings. */
 export const siewkowce = ptakiMokradel.filter((p): p is PtakMokradel & { rozpoznawanie: RozpoznawanieMokradel } => Boolean(p.rozpoznawanie));
 for (const p of siewkowce) {
   if (p.grupa !== 'siewkowe') throw new Error(`ptaki-mokradel.json: ${p.id}: rozpoznawanie mają na razie tylko siewkowe, a to „${p.grupa}”`);
@@ -129,7 +129,7 @@ const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;
  * lesson reads heading → description → plate. Every atlas species named in
  * the text is also listed, in order of first mention, for the media section.
  * A bird of marshes gets its plate the same way (`zPlansza`). Only one
- * taught as a full species (a B8 wader) joins `wNaglowkach` too, which says
+ * taught as a full species (a B9 wader) joins `wNaglowkach` too, which says
  * which lessons teach it and what a module's gold star asks to be
  * recognised: the others have no flashcards.
  */
@@ -364,10 +364,10 @@ export function modulyGatunku(g: Gatunek) {
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 
-/** B8, the waders: every wader taught as a full species links to it. */
+/** B9, the waders: every wader taught as a full species links to it. */
 export const MODUL_SIEWKOWCOW = 'siewkowce';
 
-/** The modules a bird of marshes links to: its sites' field modules, and B8 for a wader taught as a full species. */
+/** The modules a bird of marshes links to: its sites' field modules, and B9 for a wader taught as a full species. */
 export function modulyPtakaMokradel(p: PtakMokradel) {
   const slugi = new Set(p.miejsca.map((m) => MODUL_MIEJSCA[m]));
   if (p.rozpoznawanie) slugi.add(MODUL_SIEWKOWCOW);
@@ -502,7 +502,7 @@ export function ptakiDoMiarki(ptaki: string, miara: string) {
   const wynik = listaId(ptaki).map((id) => {
     const s = siewkowce.find((x) => x.id === id);
     const p = znajdzGatunek(id) ?? ptakiMiarki.find((x) => x.id === id) ?? (s && { pl: wielkaLitera(s.pl), ...s.rozpoznawanie });
-    if (!p) throw new Error(`<ptasia-miarka>: „${id}” nie jest gatunkiem z atlasu, siewkowcem z B8 ani ptakiem z miarka.json`);
+    if (!p) throw new Error(`<ptasia-miarka>: „${id}” nie jest gatunkiem z atlasu, siewkowcem z B9 ani ptakiem z miarka.json`);
     return { id, pl: p.pl, zakres: p[POLE_MIARY[m]], drapieznik: gatunki.some((g) => g.id === id) };
   });
   if (wynik.length < 3) throw new Error('<ptasia-miarka>: potrzeba co najmniej trzech ptaków');
@@ -1015,7 +1015,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
 /** The photo and species that open a module (every ready module has one; the build checks). */
 export function otwarcieModulu(slug: string) {
   const o = OTWARCIA_MODULOW[slug];
-  // A raptor, or (B8) a wader: the page shows only its name.
+  // A raptor, or (B9) a wader: the page shows only its name.
   const p = o && !znajdzGatunek(o.gatunek) ? znajdzPtakaMokradel(o.gatunek) : undefined;
   const g = o && (znajdzGatunek(o.gatunek) ?? (p && { id: p.id, pl: wielkaLitera(p.pl) }));
   const zdjecie = o && zdjecia[o.gatunek]?.[o.zdjecie];
@@ -1303,7 +1303,7 @@ function sprawdzSpojnosc() {
     }
   }
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
-  // B8 is linked to once a wader is taught as a full species.
+  // B9 is linked to once a wader is taught as a full species.
   const linkowane = [MODUL_SOW, MODUL_SWIATA_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul];
   if (siewkowce.length) linkowane.push(MODUL_SIEWKOWCOW);
   for (const slug of linkowane) {

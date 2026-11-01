@@ -27,7 +27,7 @@ const zDaty = (d: string) => DATA.format(new Date(`${d}T12:00:00`));
 
 /**
  * "Moje niebo": the constellations, my life list with each species' rings,
- * B8's waders on a shelf of their own, and the wall of patches. Constellations, gold stars and patches stay
+ * B9's waders on a shelf of their own, and the wall of patches. Constellations, gold stars and patches stay
  * earned once earned (with their date, from zdobyte.ts); the rings show what
  * I know now. Whatever has not played its moment yet plays it once, when it
  * comes into view; on the first visit that is everything earned so far.
@@ -152,7 +152,7 @@ export function MojeNiebo({
         <section className="moje-niebo__sekcja" aria-labelledby="siewkowce">
           <header className="sekcja sekcja--wiersz">
             <div>
-              <p className="eyebrow">Moduł B8</p>
+              <p className="eyebrow">Moduł B9</p>
               <h2 id="siewkowce" className="sekcja__tytul">
                 Siewkowce
               </h2>

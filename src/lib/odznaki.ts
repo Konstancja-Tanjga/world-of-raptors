@@ -50,7 +50,7 @@ export type StrukturaNieba = {
   moduly: ModulNieba[];
   /** The raptors of the atlas: the life list and most patches count these. */
   gatunki: GatunekNieba[];
-  /** Waders taught as full species (B8): rings of their own, a shelf of their own, no part in the life list. */
+  /** Waders taught as full species (B9): rings of their own, a shelf of their own, no part in the life list. */
   siewkowce: GatunekNieba[];
   /** The bird that draws each of the eight silhouette groups (B1 lesson 1). */
   osiemGrup: string[];
@@ -306,7 +306,7 @@ export const NASZYWKI: Naszywka[] = [
 export type StanNieba = {
   /** The raptors' rings. */
   gatunki: Record<string, Obraczki>;
-  /** The waders' rings (B8). */
+  /** The waders' rings (B9). */
   siewkowce: Record<string, Obraczki>;
   moduly: Record<string, { zaliczony: boolean; opanowany: boolean }>;
   naszywki: Record<string, { zdobyta: boolean; postep: [ile: number, z: number] }>;
