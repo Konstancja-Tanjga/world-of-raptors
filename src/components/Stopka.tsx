@@ -1,7 +1,12 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 
-/** The footer: where things are, where the photos and shapes come from, and the colophon. */
-export function Stopka() {
+/**
+ * The footer: where things are, where the photos and shapes come from, and the
+ * colophon. `zglos` is "Zgłoś poprawkę", which AppFrame passes in only where
+ * accounts are on.
+ */
+export function Stopka({ zglos }: { zglos?: ReactNode }) {
   return (
     <footer className="stopka">
       <div className="stopka__wnetrze">
@@ -15,6 +20,7 @@ export function Stopka() {
             Pomysł, plan i treść: <strong>Konstancja Tanjga-Nawrot</strong>. Projekt, ruch i kod: razem z Claude (Anthropic).{' '}
             <Link href="/o-projekcie">O projekcie</Link>
           </p>
+          {zglos}
         </div>
         <nav aria-label="Stopka" className="stopka__kolumna">
           <p className="stopka__naglowek">Kurs</p>

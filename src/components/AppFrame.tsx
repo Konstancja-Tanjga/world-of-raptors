@@ -43,6 +43,18 @@ const Synchronizacja = dynamic(
   { ssr: false },
 );
 
+// "Zgłoś poprawkę" in the footer, for signed-in people, so only where accounts are on.
+const ZglosPoprawke = dynamic(
+  () =>
+    import('./zgloszenie/ZglosPoprawke')
+      .then((m) => m.ZglosPoprawke)
+      .catch((err: unknown) => {
+        console.error('[ZglosPoprawke] could not load; the footer goes on without it', err);
+        return () => null;
+      }),
+  { ssr: false },
+);
+
 export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
 export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: LekcjaNawigacji[] };
 
@@ -95,7 +107,15 @@ export function AppFrame({
           <div className="tresc__strona">{children}</div>
         </ViewTransition>
       </main>
-      <Stopka />
+      <Stopka
+        zglos={
+          KONTA && (
+            <CichaGranica nazwa="ZglosPoprawke">
+              <ZglosPoprawke />
+            </CichaGranica>
+          )
+        }
+      />
       <CichaGranica nazwa="StraznikOdznak">
         <StraznikOdznak struktura={struktura} />
       </CichaGranica>
