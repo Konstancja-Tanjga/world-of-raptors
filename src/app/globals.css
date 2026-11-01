@@ -2738,7 +2738,7 @@ html:has(.podglad[open]) {
   isolation: isolate;
   display: grid;
   place-items: center;
-  /* Square on a phone: the camera keeps the wings across (katPionowy() in scena.ts), and the height leaves room for the description right under it. */
+  /* Square below 40rem (phones): katPionowy() in scena.ts widens the camera so the wings still fit across, and the shorter canvas brings the panel under it (a tapped part's description, in scenes without breathing steps) into view. */
   aspect-ratio: 1;
   border-radius: var(--wor-radius-scene);
   overflow: hidden;

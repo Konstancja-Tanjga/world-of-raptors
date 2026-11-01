@@ -233,7 +233,7 @@ export function Model3D({ scena }: { scena: DaneSceny }) {
           <StateBlock
             state="error"
             title="Nie da się pokazać modelu"
-            description="Ta przeglądarka nie udostępnia grafiki 3D (WebGL) albo ją wyłączyła. Części i ich opisy są nadal na liście obok."
+            description="Ta przeglądarka nie udostępnia grafiki 3D (WebGL) albo ją wyłączyła. Części i ich opisy są nadal na liście poniżej."
             scope="inline"
           />
         )}

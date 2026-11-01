@@ -9,7 +9,7 @@ Przewodniki terenowe opisują ptaki językiem topografii: „jasne pokrywy podog
 
 [Moduł A2 · Anatomia łowcy](../anatomia/README.md) mówi o narzędziach drapieżnika: wzroku, szponach, dziobie i trawieniu. Ten moduł opisuje budowę, którą ptaki drapieżne dzielą z innymi ptakami. Tam, gdzie A2 już coś wyjaśnia, znajdziesz krótkie przypomnienie i link.
 
-Każda lekcja ma interaktywny model 3D. Model można obracać, przybliżać, przecinać i rozbierać na warstwy, a każdą część można kliknąć albo wybrać z listy, żeby przeczytać, jak się nazywa i do czego służy. Modele pozwalają zajrzeć tam, gdzie zdjęcie nie sięga: do wnętrza kości ramiennej, między haczyki pióra i do środka klatki piersiowej.
+Każda lekcja ma interaktywny model 3D. Model można obracać, przybliżać, przecinać i rozbierać na warstwy, a każdą część można wskazać na modelu albo wybrać z listy, żeby przeczytać, jak się nazywa i do czego służy. Modele pozwalają zajrzeć tam, gdzie zdjęcie nie sięga: do wnętrza kości ramiennej, między haczyki pióra i do środka klatki piersiowej.
 
 ## Cele modułu
 Po ukończeniu modułu potrafisz:
