@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Article } from '@/components/ds';
 import { Ciekawostka } from '@/components/Ciekawostka';
+import { DaneStrukturalne } from '@/components/DaneStrukturalne';
 import { LessonComplete } from '@/components/LessonComplete';
 import { LessonMedia } from '@/components/LessonMedia';
 import { Markdown, MarkdownInline } from '@/components/Markdown';
@@ -13,8 +14,10 @@ import {
   czytajMarkdown,
   gotoweModuly,
   przygotujStroneLekcji,
+  zajawkaModulu,
   znajdzModul,
 } from '@/lib/content';
+import { ADRES, opis } from '@/lib/seo';
 
 export const dynamicParams = false;
 
@@ -26,7 +29,14 @@ export async function generateMetadata({
   params,
 }: PageProps<'/moduly/[slug]/[lekcja]'>): Promise<Metadata> {
   const { slug, lekcja } = await params;
-  return { title: znajdzModul(slug)?.lekcje.find((l) => l.slug === lekcja)?.tytul };
+  const plik = `moduly/${slug}/${lekcja}.md`;
+  // A lesson without a lead is described by its module's hook.
+  const { lead } = przygotujStroneLekcji(await czytajMarkdown(plik), plik);
+  const zrodlo = lead ?? zajawkaModulu(slug);
+  return {
+    title: znajdzModul(slug)?.lekcje.find((l) => l.slug === lekcja)?.tytul,
+    description: zrodlo ? opis(zrodlo) : undefined,
+  };
 }
 
 /** "około 12 minut": after "około" Polish takes the genitive, "minuty" only for one. */
@@ -62,8 +72,32 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
         }
       : { etykieta: 'Koniec kursu', tytul: 'Moja checklista', href: '/checklista', akcja: 'Otwórz checklistę' };
 
+  const adres = `${ADRES}/moduly/${slug}/${lekcja}`;
+  const dane = {
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: biezaca.tytul,
+        description: opis(strona.lead ?? zajawkaModulu(slug) ?? biezaca.tytul),
+        inLanguage: 'pl',
+        url: adres,
+        author: { '@type': 'Person', name: 'Konstancja Tanjga', url: `${ADRES}/o-projekcie` },
+        isPartOf: { '@type': 'WebSite', name: 'World of Raptors', url: ADRES },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { name: 'Kurs', item: `${ADRES}/plan` },
+          { name: `${modul.id} ${modul.tytul}`, item: `${ADRES}/moduly/${slug}` },
+          { name: biezaca.tytul, item: adres },
+        ].map((e, i) => ({ '@type': 'ListItem', position: i + 1, ...e })),
+      },
+    ],
+  };
+
   return (
     <div className="page lekcja">
+      <DaneStrukturalne dane={dane} />
       <Article
         eyebrow={
           <span className="lekcja__eyebrow">

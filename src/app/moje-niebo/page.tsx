@@ -6,7 +6,8 @@ import { Sylwetka } from '@/components/Sylwetka';
 import { gwiazdozbioryKursu, strukturaNieba } from '@/lib/content';
 import { NASZYWKI } from '@/lib/odznaki';
 
-export const metadata: Metadata = { title: 'Moje niebo' };
+// Personal: what I saw, learned and earned, kept in this browser; nothing for a search engine.
+export const metadata: Metadata = { title: 'Moje niebo', robots: { index: false } };
 
 export default function MojeNieboPage() {
   const struktura = strukturaNieba();

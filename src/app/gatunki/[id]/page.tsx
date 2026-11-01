@@ -42,9 +42,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<'/gatunki/[id]'>): Promise<Metadata> {
   const { id } = await params;
   const g = znajdzGatunek(id);
-  if (g) return { title: g.pl, description: `${g.pl} (${g.lat}): sylwetka, cechy, podobne gatunki i zdjęcia.` };
+  // The English and Spanish names too: they are on the page, and people search by them.
+  if (g) return { title: g.pl, description: `${g.pl} (${g.lat}, ang. ${g.en}, hiszp. ${g.es}): sylwetka, cechy, podobne gatunki i zdjęcia.` };
   const p = znajdzPtakaMokradel(id);
-  return p ? { title: p.pl, description: `${p.pl} (${p.lat}): na co patrzeć w terenie.` } : {};
+  return p ? { title: p.pl, description: `${p.pl} (${p.lat}, ang. ${p.en}, hiszp. ${p.es}): na co patrzeć w terenie.` } : {};
 }
 
 export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>) {

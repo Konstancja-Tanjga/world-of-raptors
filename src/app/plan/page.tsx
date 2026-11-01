@@ -5,7 +5,11 @@ import { Kurs } from '@/components/start/Kurs';
 import { czytajMarkdown, gotoweModuly } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 
-export const metadata: Metadata = { title: 'Plan kursu' };
+export const metadata: Metadata = {
+  title: 'Plan kursu',
+  description:
+    'Dwie ścieżki kursu o ptakach drapieżnych: biologia (jak żyją, polują i wędrują) i rozpoznawanie w terenie, od polskich pól po Cieśninę Gibraltarską.',
+};
 
 /**
  * "Kurs" in the navigation: the modules first, as cards with my progress,

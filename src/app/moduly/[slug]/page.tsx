@@ -15,9 +15,11 @@ import {
   przygotujOpisModulu,
   sciezki,
   sylabusModulu,
+  zajawkaModulu,
   znajdzModul,
 } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
+import { opis } from '@/lib/seo';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { NazwaPtaka } from '@/components/NazwaPtaka';
 
@@ -29,7 +31,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<'/moduly/[slug]'>): Promise<Metadata> {
   const { slug } = await params;
-  return { title: znajdzModul(slug)?.tytul };
+  const zajawka = zajawkaModulu(slug);
+  return { title: znajdzModul(slug)?.tytul, description: zajawka ? opis(zajawka) : undefined };
 }
 
 export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>) {

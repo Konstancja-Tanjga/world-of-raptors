@@ -160,8 +160,10 @@ npm test         # testy migracji zapisu, kopii zapasowej i odznak (node --test,
 2. Każdy push na `main` publikuje wersję produkcyjną, a każda inna gałąź dostaje własny adres podglądu.
 3. Aktualizacja design systemu: zmień hash commita przy `@bighat/ui` w `package.json` i uruchom `npm install`.
 
-### Dostęp tylko dla mnie (opcjonalnie)
-Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten ją otworzy. Jeśli ma być zamknięta: prosta blokada hasłem (HTTP Basic Auth) w `src/proxy.ts` (w Next.js 16 plik `middleware` nazywa się `proxy`), z hasłem w zmiennej środowiskowej na Vercel.
+### Wyszukiwarki
+Kurs, atlas i narzędzia są otwarte dla wyszukiwarek: `src/app/sitemap.ts` wylicza wszystkie publiczne strony (nowa publiczna strona spoza modułów i atlasu potrzebuje tam linijki), a `src/app/robots.ts` wskazuje sitemapę. Strony osobiste (checklista, fiszki, Moje niebo, konto) mają `robots: { index: false }`. Opis lekcji w wynikach to jej akapit wstępu (bez niego: zajawka modułu), więc wstęp warto pisać tak, żeby sam zachęcał. Adres produkcyjny jest w jednym miejscu, `ADRES` w `src/lib/seo.ts`: przy przejściu na własną domenę zmień go tam i ustaw przekierowanie z `vercel.app` w ustawieniach domen na Vercel.
+
+Gdyby strona miała znów być zamknięta: `noindex` w `metadata` w `layout.tsx`, a dla pełnej blokady hasło (HTTP Basic Auth) w `src/proxy.ts` (w Next.js 16 plik `middleware` nazywa się `proxy`), z hasłem w zmiennej środowiskowej na Vercel.
 
 ## Etapy
 1. Gotowe: **MVP:** moduły A1–A7 i B1–B6, atlas gatunków, checklista, deploy.

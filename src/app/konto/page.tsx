@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { KontoView } from '@/components/KontoView';
 
-export const metadata: Metadata = { title: 'Konto' };
+// Personal: my account; nothing for a search engine.
+export const metadata: Metadata = { title: 'Konto', robots: { index: false } };
 
 export default function KontoPage() {
   // Accounts ship behind a flag; with it off, or with Supabase or Google not
