@@ -19,6 +19,7 @@ import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbi
 import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
 import { opcjeGatunku, srodek, type Miara } from './cwiczenia';
 import { MIEJSCA_PLANERA } from './planer';
+import { KOLORY, ZACHOWANIA } from './rozpoznawanie';
 import { OKOLICE, WIATRY, type PunktObserwacji } from './punkty';
 import { GATUNKI_RYSUNKOW } from './rysunki';
 import { gwiazdy, obrys, POZA_SZYBOWANIE } from './sylwetka';
@@ -893,7 +894,8 @@ export async function sylabusModulu(slug: string) {
  * removing a drawing, a card, a crop, a link or a module's opening: species
  * fields and look-alikes, silhouettes and flight styles, photo focus and
  * sizes, module openings, the modules and lesson the code links to by name,
- * the curiosities' lessons and species, the observation points (fields,
+ * the curiosities' lessons and species, the colours and behaviours
+ * "Rozpoznaj" asks about, the observation points (fields,
  * months, birds, lesson and planner site), the species drawn by name
  * (rysunki.ts, the constellations, the patches), and "Moje niebo": every
  * species taught or named by a lesson, room on its map for every module,
@@ -920,6 +922,12 @@ function sprawdzSpojnosc() {
       bledy.push(`gatunki.json: ${g.id}: regiony ${JSON.stringify(g.regiony)} mają być niepustą listą z ${[...regiony].join(', ')}`);
     }
     if (!g.status?.every((s) => s in STATUS_LABEL)) bledy.push(`gatunki.json: ${g.id}: nieznany status w ${JSON.stringify(g.status)}`);
+    if (!g.kolory?.length || !g.kolory.every((k) => KOLORY.some((x) => x.value === k))) {
+      bledy.push(`gatunki.json: ${g.id}: kolory ${JSON.stringify(g.kolory)} mają być niepustą listą z ${KOLORY.map((x) => x.value).join(', ')}`);
+    }
+    if (!g.zachowania?.length || !g.zachowania.every((z) => ZACHOWANIA.some((x) => x.value === z))) {
+      bledy.push(`gatunki.json: ${g.id}: zachowania ${JSON.stringify(g.zachowania)} mają być niepustą listą z ${ZACHOWANIA.map((x) => x.value).join(', ')}`);
+    }
     if (!para(g.rozpietosc_cm, (n) => n > 0) || g.rozpietosc_cm[0] > g.rozpietosc_cm[1]) {
       bledy.push(`gatunki.json: ${g.id}: rozpietosc_cm ma być [od, do] w centymetrach`);
     }

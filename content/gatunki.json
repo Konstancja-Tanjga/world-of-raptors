@@ -1,6 +1,6 @@
 {
   "modul": "gibraltar",
-  "uwaga": "Rozpiętości i długości ciała orientacyjne (dlugosc_cm: od dzioba do końca ogona, za Collins Bird Guide). status: wedrowny, osiadly, zimuje, rzadki. regiony: gibraltar, poludnie-hiszpanii, polska. aktywnosc: dzienny, nocny.",
+  "uwaga": "Rozpiętości i długości ciała orientacyjne (dlugosc_cm: od dzioba do końca ogona, za Collins Bird Guide). status: wedrowny, osiadly, zimuje, rzadki. regiony: gibraltar, poludnie-hiszpanii, polska. aktywnosc: dzienny, nocny. kolory (do rozpoznawania krok po kroku): bialy, szary, czarny, brazowy, rudy, plowy, czyli barwy upierzenia widoczne w terenie: obu płci, ptaka młodego i dorosłego, wszystkich odmian. zachowania: krazy, zawisa, nisko, goni, woda, slup, ziemia, noc.",
   "gatunki": [
     {
       "id": "kania-czarna",
@@ -27,6 +27,8 @@
         "ciemnobrązowa, mało kontrastowa",
         "stale kręci ogonem"
       ],
+      "kolory": ["brazowy", "czarny", "szary"],
+      "zachowania": ["krazy", "woda", "slup"],
       "mylona_z": [
         "kania-ruda",
         "blotniak-stawowy",
@@ -74,6 +76,8 @@
         "duże białe okna na spodzie ręki",
         "kontrastowa, jasna głowa"
       ],
+      "kolory": ["rudy", "bialy", "czarny", "szary"],
+      "zachowania": ["krazy", "nisko", "slup"],
       "mylona_z": [
         "kania-czarna"
       ],
@@ -117,6 +121,8 @@
         "skrzydła płasko lub lekko opuszczone",
         "ogon: 2 wąskie pasy u nasady + szeroki pas końcowy"
       ],
+      "kolory": ["brazowy", "bialy", "szary", "czarny"],
+      "zachowania": ["krazy", "slup", "ziemia"],
       "mylona_z": [
         "myszolow",
         "orzelek-wlochaty"
@@ -162,6 +168,8 @@
         "skrzydła w płytkie V",
         "krótki, gęsto prążkowany ogon"
       ],
+      "kolory": ["brazowy", "bialy"],
+      "zachowania": ["krazy", "zawisa", "slup", "ziemia"],
       "mylona_z": [
         "trzmielojad",
         "kurhannik",
@@ -209,6 +217,8 @@
         "rudawy, prawie nieprążkowany ogon",
         "jasna głowa, ciemne nadgarstki"
       ],
+      "kolory": ["rudy", "plowy", "brazowy", "czarny"],
+      "zachowania": ["krazy", "zawisa", "slup"],
       "mylona_z": [
         "myszolow"
       ],
@@ -252,6 +262,8 @@
         "białe 'światła do lądowania' u nasady skrzydeł",
         "dwie odmiany: jasna i ciemna"
       ],
+      "kolory": ["bialy", "brazowy", "czarny"],
+      "zachowania": ["krazy", "slup"],
       "mylona_z": [
         "scierwnik",
         "gadozer",
@@ -300,6 +312,8 @@
         "dorosły biało-czarny z żółtą twarzą",
         "młody ciemnobrązowy"
       ],
+      "kolory": ["bialy", "czarny", "brazowy"],
+      "zachowania": ["krazy", "ziemia"],
       "mylona_z": [
         "orzelek-wlochaty"
       ],
@@ -343,6 +357,8 @@
         "ciemny 'kaptur' – głowa i pierś",
         "zawisa w powietrzu"
       ],
+      "kolory": ["bialy", "brazowy"],
+      "zachowania": ["krazy", "zawisa", "slup"],
       "mylona_z": [
         "rybolow",
         "orzelek-wlochaty"
@@ -388,6 +404,8 @@
         "ciemne plamy nadgarstkowe",
         "ciemny pas przez oko"
       ],
+      "kolory": ["bialy", "brazowy", "czarny"],
+      "zachowania": ["krazy", "zawisa", "woda", "slup"],
       "mylona_z": [
         "gadozer",
         "bielik"
@@ -434,6 +452,8 @@
         "jasne pokrywy vs ciemne lotki od spodu",
         "skrzydła w lekkie V, bardzo krótki ogon"
       ],
+      "kolory": ["plowy", "brazowy", "czarny", "bialy"],
+      "zachowania": ["krazy", "ziemia", "slup"],
       "mylona_z": [
         "sep-plamisty",
         "sep-kasztanowaty"
@@ -479,6 +499,8 @@
         "2–3 cienkie jasne linie na spodzie skrzydła",
         "nieco smuklejszy"
       ],
+      "kolory": ["brazowy", "czarny", "plowy", "bialy"],
+      "zachowania": ["krazy", "ziemia"],
       "mylona_z": [
         "sep-plowy"
       ],
@@ -521,6 +543,8 @@
         "skrzydła płasko jak deska",
         "głębokie 'palce'"
       ],
+      "kolory": ["czarny", "brazowy"],
+      "zachowania": ["krazy", "ziemia"],
       "mylona_z": [
         "sep-plowy"
       ],
@@ -564,6 +588,8 @@
         "samiec: rdzawe kreski na spodzie",
         "samica: brązowa z białym kuprem"
       ],
+      "kolory": ["szary", "czarny", "brazowy", "rudy", "bialy"],
+      "zachowania": ["nisko", "krazy", "ziemia"],
       "mylona_z": [
         "blotniak-zbozowy"
       ],
@@ -607,6 +633,8 @@
         "szeroki ciemny pas na tylnej krawędzi skrzydła",
         "masywniejszy od łąkowego"
       ],
+      "kolory": ["szary", "bialy", "czarny", "brazowy"],
+      "zachowania": ["nisko", "ziemia"],
       "mylona_z": [
         "blotniak-lakowy"
       ],
@@ -651,6 +679,8 @@
         "samiec trzykolorowy: brąz, szary, czarny",
         "samica ciemnobrązowa z kremową głową"
       ],
+      "kolory": ["brazowy", "szary", "czarny", "plowy"],
+      "zachowania": ["nisko", "krazy", "ziemia"],
       "mylona_z": [
         "kania-czarna"
       ],
@@ -695,6 +725,8 @@
         "jasna głowa i kark",
         "młody: jednolicie płowy/rudawy"
       ],
+      "kolory": ["czarny", "brazowy", "bialy", "plowy", "rudy"],
+      "zachowania": ["krazy", "slup"],
       "mylona_z": [
         "orzel-poludniowy"
       ],
@@ -737,6 +769,8 @@
         "ciemny pas na pokrywach spodu skrzydła",
         "szeroki ciemny pas końcowy ogona"
       ],
+      "kolory": ["bialy", "brazowy", "czarny"],
+      "zachowania": ["krazy", "goni", "slup"],
       "mylona_z": [
         "orzel-iberyjski",
         "gadozer"
@@ -780,6 +814,8 @@
         "czarne 'ramiona'",
         "czerwone oczy, zawisa"
       ],
+      "kolory": ["bialy", "szary", "czarny"],
+      "zachowania": ["zawisa", "slup"],
       "mylona_z": [],
       "gdzie": "La Janda, słupy i druty",
       "aktywnosc": "dzienny",
@@ -822,6 +858,8 @@
         "samiec: rudy grzbiet w plamki",
         "czarne pazury"
       ],
+      "kolory": ["rudy", "szary", "brazowy", "czarny"],
+      "zachowania": ["zawisa", "slup"],
       "mylona_z": [
         "pustuleczka",
         "drzemlik"
@@ -868,6 +906,8 @@
         "samiec: szaroniebieski pas na skrzydle",
         "jasne pazury, kolonie"
       ],
+      "kolory": ["rudy", "szary", "plowy"],
+      "zachowania": ["zawisa", "slup"],
       "mylona_z": [
         "pustulka"
       ],
@@ -910,6 +950,8 @@
         "ciemne wąsy",
         "rude 'portki' u dorosłego"
       ],
+      "kolory": ["szary", "bialy", "czarny", "rudy"],
+      "zachowania": ["goni", "slup"],
       "mylona_z": [
         "sokol-wedrowny",
         "sokol-skalny",
@@ -956,6 +998,8 @@
         "szerokie czarne wąsy",
         "szerokie u nasady trójkątne skrzydła"
       ],
+      "kolory": ["szary", "bialy", "czarny"],
+      "zachowania": ["goni", "krazy", "slup"],
       "mylona_z": [
         "kobuz"
       ],
@@ -1001,6 +1045,8 @@
         "odmiana jasna i ciemna",
         "ciemne pokrywy kontrastują z jaśniejszymi lotkami od spodu"
       ],
+      "kolory": ["brazowy", "szary", "bialy", "czarny"],
+      "zachowania": ["goni", "slup"],
       "mylona_z": [
         "kobuz"
       ],
@@ -1045,6 +1091,8 @@
         "długi prosty ogon",
         "lot: seria uderzeń + ślizg"
       ],
+      "kolory": ["szary", "rudy", "brazowy", "bialy"],
+      "zachowania": ["goni", "krazy", "slup"],
       "mylona_z": [
         "pustulka"
       ],
@@ -1088,6 +1136,8 @@
         "szybuje w lekkie V",
         "młody: białe plamy na skrzydłach i biały ogon z czarnym pasem"
       ],
+      "kolory": ["brazowy", "plowy", "bialy", "czarny"],
+      "zachowania": ["krazy", "slup"],
       "mylona_z": [
         "orzel-iberyjski",
         "orzel-poludniowy",
@@ -1133,6 +1183,8 @@
         "długi klinowaty ogon",
         "dorosły: rdzawy spód, czarna „broda”"
       ],
+      "kolory": ["rudy", "czarny", "szary", "bialy"],
+      "zachowania": ["krazy", "slup"],
       "mylona_z": [
         "scierwnik",
         "sep-plowy"
@@ -1175,6 +1227,8 @@
         "wyraźna jasna brew",
         "białe puszyste pokrywy podogonowe"
       ],
+      "kolory": ["szary", "bialy", "brazowy"],
+      "zachowania": ["goni", "krazy", "slup"],
       "mylona_z": [
         "krogulec"
       ],
@@ -1217,6 +1271,8 @@
         "pomarańczowe oczy",
         "głos: bardzo niskie „uu-hu”"
       ],
+      "kolory": ["brazowy", "rudy", "plowy", "czarny"],
+      "zachowania": ["noc", "slup"],
       "mylona_z": [
         "uszatka"
       ],
@@ -1258,6 +1314,8 @@
         "ciemne oczy",
         "głos: drżące „huuu… hu-hu-huuu”, samica „kju-wik”"
       ],
+      "kolory": ["brazowy", "szary", "rudy"],
+      "zachowania": ["noc", "slup"],
       "mylona_z": [
         "puszczyk-uralski"
       ],
@@ -1299,6 +1357,8 @@
         "długi ogon",
         "małe ciemne oczy w gładkiej szlarze"
       ],
+      "kolory": ["szary", "bialy", "brazowy"],
+      "zachowania": ["noc", "slup"],
       "mylona_z": [
         "puszczyk",
         "puszczyk-mszarny"
@@ -1340,6 +1400,8 @@
         "czarne oczy",
         "głos: syczący wrzask"
       ],
+      "kolory": ["bialy", "plowy", "szary"],
+      "zachowania": ["noc", "nisko", "slup"],
       "mylona_z": [],
       "gdzie": "kościoły, stodoły, pola",
       "aktywnosc": "nocny",
@@ -1381,6 +1443,8 @@
         "pomarańczowe oczy",
         "młode piszczą jak nienaoliwione drzwi"
       ],
+      "kolory": ["brazowy", "plowy", "rudy"],
+      "zachowania": ["noc", "slup"],
       "mylona_z": [
         "uszatka-blotna",
         "puchacz"
@@ -1424,6 +1488,8 @@
         "poluje za dnia nad łąkami",
         "biała tylna krawędź skrzydła"
       ],
+      "kolory": ["plowy", "brazowy", "bialy"],
+      "zachowania": ["nisko", "ziemia", "noc"],
       "mylona_z": [
         "uszatka"
       ],
@@ -1466,6 +1532,8 @@
         "białe „brwi”",
         "siedzi za dnia na murkach i słupach"
       ],
+      "kolory": ["brazowy", "bialy"],
+      "zachowania": ["slup", "ziemia", "noc"],
       "mylona_z": [
         "wlochatka",
         "soweczka",
@@ -1510,6 +1578,8 @@
         "wzór jak kora drzewa",
         "głos: „tjuu” co 2–3 s"
       ],
+      "kolory": ["szary", "brazowy"],
+      "zachowania": ["noc", "slup"],
       "mylona_z": [
         "pojdzka",
         "uszatka"
@@ -1553,6 +1623,8 @@
         "„zdziwiona” mina, ciemna obwódka szlary",
         "głos: szybka seria „pu-pu-pu-pu”"
       ],
+      "kolory": ["brazowy", "bialy"],
+      "zachowania": ["noc", "slup"],
       "mylona_z": [
         "pojdzka",
         "soweczka"
@@ -1595,6 +1667,8 @@
         "długi, ruchliwy ogon",
         "aktywna o zmierzchu i świcie"
       ],
+      "kolory": ["brazowy", "bialy"],
+      "zachowania": ["slup", "noc"],
       "mylona_z": [
         "pojdzka",
         "wlochatka"
@@ -1637,6 +1711,8 @@
         "małe żółte oczy, biała „muszka” pod dziobem",
         "długi ogon, szerokie skrzydła"
       ],
+      "kolory": ["szary", "bialy", "czarny"],
+      "zachowania": ["slup", "noc"],
       "mylona_z": [
         "puszczyk-uralski"
       ],
@@ -1678,6 +1754,8 @@
         "żółte oczy, okrągła głowa",
         "siedzi na ziemi w otwartym terenie, poluje za dnia"
       ],
+      "kolory": ["bialy", "czarny"],
+      "zachowania": ["ziemia", "slup", "nisko"],
       "mylona_z": [
         "plomykowka"
       ],
@@ -1718,6 +1796,8 @@
         "jasna twarz w czarnej ramce, żółte oczy",
         "siedzi na czubkach drzew, poluje za dnia"
       ],
+      "kolory": ["brazowy", "bialy", "szary", "czarny"],
+      "zachowania": ["slup", "goni"],
       "mylona_z": [
         "soweczka",
         "uszatka-blotna"
@@ -1760,6 +1840,8 @@
         "krótki klinowaty ogon, u dorosłego biały",
         "ogromna głowa z masywnym dziobem wystaje daleko przed skrzydła"
       ],
+      "kolory": ["brazowy", "bialy", "plowy"],
+      "zachowania": ["krazy", "woda", "slup", "ziemia"],
       "mylona_z": [
         "orzel-przedni",
         "rybolow"
@@ -1802,6 +1884,8 @@
         "szybuje z opuszczoną „ręką”",
         "pokrywy podskrzydłowe jaśniejsze lub tak jasne jak lotki"
       ],
+      "kolory": ["brazowy", "plowy"],
+      "zachowania": ["krazy", "slup", "ziemia"],
       "mylona_z": [
         "myszolow",
         "orlik-grubodzioby"
@@ -1845,6 +1929,8 @@
         "pokrywy podskrzydłowe ciemniejsze od lotek",
         "młody z białymi kropkami na wierzchu skrzydeł"
       ],
+      "kolory": ["brazowy", "czarny"],
+      "zachowania": ["krazy", "slup"],
       "mylona_z": [
         "orlik-krzykliwy"
       ],
@@ -1886,6 +1972,8 @@
         "ciemna plama na brzuchu, duże ciemne nadgarstki",
         "często zawisa"
       ],
+      "kolory": ["bialy", "brazowy", "czarny", "plowy"],
+      "zachowania": ["zawisa", "slup", "krazy"],
       "mylona_z": [
         "myszolow"
       ],
@@ -1927,6 +2015,8 @@
         "krótkie skrzydła szerokie u nasady",
         "szybki, niski lot tuż nad ziemią, nie zawisa"
       ],
+      "kolory": ["szary", "rudy", "brazowy", "plowy"],
+      "zachowania": ["goni", "nisko", "slup"],
       "mylona_z": [
         "pustulka",
         "kobuz"

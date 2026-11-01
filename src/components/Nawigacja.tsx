@@ -11,6 +11,7 @@ const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }
   { href: '/gatunki', etykieta: 'Atlas', aktywny: (p) => p.startsWith('/gatunki') },
   { href: '/fiszki', etykieta: 'Fiszki', aktywny: (p) => p === '/fiszki' },
   { href: '/checklista', etykieta: 'Checklista', aktywny: (p) => p === '/checklista' },
+  { href: '/rozpoznaj', etykieta: 'Rozpoznaj', aktywny: (p) => p === '/rozpoznaj' },
   { href: '/kiedy-i-gdzie', etykieta: 'Kiedy i gdzie', aktywny: (p) => p === '/kiedy-i-gdzie' },
   { href: '/moje-niebo', etykieta: 'Moje niebo', aktywny: (p) => p === '/moje-niebo' },
   // Accounts ship behind a flag (KONTA.md). Read inline, not from konto.ts, which would bring Supabase into every page.
