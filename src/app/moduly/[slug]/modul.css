@@ -325,6 +325,8 @@
 }
 /* A lesson without a picture: its bird's silhouette from below, like the B1 plates. */
 .sylabus__obraz--sylwetka {
+  /* Padding inside the 4:3 box, so the tile is as wide as a photo's and the text column keeps its width. */
+  box-sizing: border-box;
   display: grid;
   place-items: center;
   padding: var(--bh-gap-snug);
