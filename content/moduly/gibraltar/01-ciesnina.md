@@ -44,8 +44,8 @@ W cieśninie dominują dwa wiatry:
 
 | Wiatr | Kierunek | Co robią ptaki | Gdzie obserwować |
 |---|---|---|---|
-| **Levante** | ze wschodu | Przelatują bezpośrednio nad Tarifą | wybrzeże i wzgórza **Tarify** |
-| **Poniente** | z zachodu | Punkty odlotu przesuwają się na wschód | **Algeciras**, **Punta Carnero**, Cazalla, Gibraltar |
+| **Levante** | ze wschodu | Przelot przesuwa się na zachód, nad Tarifę | wzgórza **Tarify**: **Cazalla**, Santuario, przy silnym wietrze aż Bolonia |
+| **Poniente** | z zachodu | Punkty odlotu przesuwają się na wschód | okolice **Algeciras**: **El Algarrobo**, **Punta Carnero**, Gibraltar |
 
 Przy bardzo silnym wietrze ptaki często **czekają** — krążą nad wzgórzami, siadają, zbierają się w duże stada. Sępy płowe potrafią podchodzić do przelotu wiele razy i zawracać. Dla obserwatora to paradoksalnie świetne dni.
 
@@ -90,6 +90,8 @@ Przy bardzo silnym wietrze ptaki często **czekają** — krążą nad wzgórzam
 
 ## Źródła
 - [Fundación Migres: Programa Migres](https://www.fundacionmigres.org/en/programa-migres/): liczenia przelotu w cieśninie
+- [Andalucia Bird Society, José Barrera: Migration watching sites](https://www.andaluciabirdsociety.org/article-library/birding-sites/migration-watching-sites/): punkty obserwacji przelotu, z El Algarrobo i Punta Carnero przy zachodnim wietrze
+- [Birdingplaces: Cazalla – Tarifa](https://www.birdingplaces.eu/birdingplaces/spain/cazalla-tarifa) i [Birdingplaces: El Algarrobo Migration Watchpoint](https://www.birdingplaces.eu/birdingplaces/spain/el-algarrabo-migration-watchpoint): Cazalla przy wschodnim wietrze, El Algarrobo przy zachodnim
 - [Wikipedia: Cieśnina Gibraltarska](https://pl.wikipedia.org/wiki/Cie%C5%9Bnina_Gibraltarska)
 - [Wikipedia: Bird migration](https://en.wikipedia.org/wiki/Bird_migration): wędrówki ptaków, szybowanie i „wąskie gardła”
 - [Wikipedia: Thermal](https://en.wikipedia.org/wiki/Thermal): kominy termiczne
