@@ -1123,7 +1123,7 @@ function obrazLekcji(md: string): { src: string; srcSet?: string; polozenie?: st
   return { src, srcSet: srcSetCommons({ src, oryginal }), polozenie: pionowe ? polozenie({}) : undefined };
 }
 
-/** Lessons of a module with what the syllabus shows (reading time, quiz pass mark) and the atlas species each names. */
+/** Lessons of a module with what the syllabus shows (reading time, quiz pass mark, a picture or a silhouette's species id) and the atlas species each names. */
 export async function sylabusModulu(slug: string) {
   const modul = znajdzModul(slug);
   if (!modul) return [];
@@ -1132,6 +1132,7 @@ export async function sylabusModulu(slug: string) {
       const plik = `moduly/${slug}/${l.slug}.md`;
       const md = await czytajMarkdown(plik);
       const strona = przygotujStroneLekcji(md, plik);
+      const obraz = obrazLekcji(md);
       return {
         slug: l.slug,
         tytul: l.tytul,
@@ -1139,7 +1140,11 @@ export async function sylabusModulu(slug: string) {
         progQuizu: strona.quiz?.prog ?? null,
         lead: strona.lead,
         gatunki: strona.wszystkie,
-        obraz: obrazLekcji(md),
+        obraz,
+        // A lesson with no picture gets a silhouette: its first plate's species, else the first it names, else the module's constellation bird.
+        sylwetka: obraz
+          ? null
+          : ([...strona.wNaglowkach, ...strona.wszystkie, GWIAZDOZBIORY[slug]?.gatunek].find((id) => id && SYLWETKI[id]) ?? null),
       };
     }),
   );

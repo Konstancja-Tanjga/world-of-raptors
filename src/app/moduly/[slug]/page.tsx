@@ -7,6 +7,7 @@ import { Markdown, MarkdownInline } from '@/components/Markdown';
 import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { StartModulu } from '@/components/modul/StartModulu';
 import { SylabusModulu } from '@/components/modul/SylabusModulu';
+import { Sylwetka } from '@/components/Sylwetka';
 import {
   ciekawostkiDla,
   czytajMarkdown,
@@ -45,6 +46,8 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
   const { zajawka, md, zwijane, czas } = przygotujOpisModulu(await czytajMarkdown(`${baseDir}/README.md`), `${baseDir}/README.md`);
   // Accordion ids go into aria-controls/aria-labelledby, which split on spaces, so the titles become slugs.
   const idySekcji = idNaglowkow(zwijane.map((s) => s.tytul));
+  // What to know first and what the module aims at are read before starting, so they start open.
+  const otwarte = zwijane.flatMap((s, i) => (/^(Zanim zaczniesz|Cele modułu)/.test(s.tytul) ? [`opis-${idySekcji[i]}`] : []));
   const lekcje = await sylabusModulu(slug);
   const otwarcie = otwarcieModulu(slug);
   const sciezka = sciezki.find((s) => s.id === modul.sciezka);
@@ -136,13 +139,14 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
           </h2>
           <SylabusModulu
             modul={slug}
-            lekcje={lekcje.map(({ slug: lekcja, tytul, minuty, progQuizu, lead, obraz }) => ({
+            lekcje={lekcje.map(({ slug: lekcja, tytul, minuty, progQuizu, lead, obraz, sylwetka }) => ({
               slug: lekcja,
               tytul,
               minuty,
               progQuizu,
               lead: lead ? <MarkdownInline source={lead} baseDir={baseDir} bezLinkow /> : null,
               obraz,
+              sylwetka: sylwetka ? <Sylwetka id={sylwetka} klasa="sylabus__sylwetka" dokladnosc={0.4} /> : null,
             }))}
           />
         </section>
@@ -150,7 +154,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
           <Markdown source={md} baseDir={baseDir} />
           {zwijane.length > 0 && (
             <div className="modul-strona__wiecej">
-              <Accordion multiple headingLevel={2}>
+              <Accordion multiple headingLevel={2} defaultOpen={otwarte}>
                 {zwijane.map((s, i) => (
                   <AccordionItem key={s.tytul} id={`opis-${idySekcji[i]}`} title={s.tytul}>
                     <Markdown source={s.md} baseDir={baseDir} />
