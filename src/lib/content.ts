@@ -10,6 +10,8 @@ import zdjeciaJson from '../../content/zdjecia.json';
 import miarkaJson from '../../content/miarka.json';
 import nagraniaJson from '../../content/nagrania.json';
 import budowaJson from '../../content/budowa-ptaka.json';
+import punktJson from '../../content/punkt-obserwacyjny.json';
+import type { PtakPunktu, Sesja } from './punkt';
 import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
 import { problemyNagrania } from './nagrania';
 import { odkoduj, problemyTagow } from './tagi';
@@ -469,6 +471,55 @@ export function stronaMorfuLekcji(id: string) {
   return stronaMorfu(g);
 }
 
+// ---- B8: the virtual watch point ----
+
+const sesjePunktu = Object.fromEntries(
+  Object.entries((punktJson as { sesje: Record<string, Omit<Sesja, 'id'>> }).sesje).map(([id, s]) => [id, { id, ...s } as Sesja]),
+);
+
+/** A diurnal species as the watch point draws it (its name, mid wingspan and flight style). */
+function ptakPunktu(id: string): PtakPunktu | null {
+  const g = znajdzGatunek(id);
+  const styl = STYL_LOTU[id];
+  if (!g || g.aktywnosc !== 'dzienny' || !SYLWETKI[id] || !styl) return null;
+  return { id, pl: g.pl, rozpietosc: srodek(g.rozpietosc_cm), styl };
+}
+
+/** A session of the watch point (`<punkt-obserwacyjny data-sesja="…">`) with every bird it shows or offers; an unknown one stops the build. */
+export function sesjaPunktu(id: string) {
+  const sesja = sesjePunktu[id];
+  if (!sesja) throw new Error(`<punkt-obserwacyjny>: nie ma sesji „${id}” w content/punkt-obserwacyjny.json`);
+  const ptaki = Object.fromEntries(sesja.opcje.map((g) => [g, ptakPunktu(g)!]));
+  return { sesja, ptaki };
+}
+
+/** A kettle (`<komin data-gatunek="…" data-ile="…">`): a diurnal species and how many birds circle in it. */
+export function kominPunktu(gatunek: string, ile: string) {
+  const ptak = ptakPunktu(gatunek);
+  const n = Number(ile);
+  if (!ptak || !Number.isInteger(n) || n < 5 || n > 400) {
+    throw new Error(`<komin>: „${gatunek}” nie jest ptakiem dziennym z sylwetką albo liczba „${ile}” jest spoza 5–400`);
+  }
+  return { ptak, ile: n };
+}
+
+/** What is wrong with the watch point's sessions: unknown or unflyable species, answers that leave a species out, empty flocks. */
+function problemyPunktu() {
+  const bledy: string[] = [];
+  for (const s of Object.values(sesjePunktu)) {
+    const gdzie = `punkt-obserwacyjny.json: ${s.id}`;
+    if (!s.tytul || !s.miejsce || !s.opis || !(s.czas >= 30) || (s.kierunek !== 1 && s.kierunek !== -1)) bledy.push(`${gdzie}: tytuł, miejsce, opis, czas (≥ 30 s) i kierunek (1 albo -1)`);
+    for (const id of s.opcje) if (!ptakPunktu(id)) bledy.push(`${gdzie}: ${id} nie jest ptakiem dziennym z sylwetką i stylem lotu`);
+    if (new Set(s.opcje).size !== s.opcje.length) bledy.push(`${gdzie}: odpowiedzi się powtarzają`);
+    for (const g of s.gatunki) {
+      if (!s.opcje.includes(g.id)) bledy.push(`${gdzie}: ${g.id} leci, ale nie ma go wśród odpowiedzi`);
+      if (!(g.ile > 0) || (g.stado && !(g.stado[0] >= 1 && g.stado[0] <= g.stado[1]))) bledy.push(`${gdzie}: ${g.id}: ile > 0 i stado [od, do]`);
+      if (!['nisko', 'srednio', 'wysoko'].includes(g.wysokosc)) bledy.push(`${gdzie}: ${g.id}: wysokosc nisko, srednio albo wysoko`);
+    }
+  }
+  return bledy;
+}
+
 // ---- A9: the 3D models of a bird ----
 
 type TekstyBudowy = {
@@ -823,7 +874,8 @@ export async function ideaKursu() {
  * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
  * the goshawk its 3D model is built after, B5 with
  * an eagle owl, B7 with the widest
- * wingspan of the atlas, the cinereous vulture's, B10 with a perched
+ * wingspan of the atlas, the cinereous vulture's, B8 with a honey buzzard,
+ * the bird of the Strait's busiest days, and B10 with a perched
  * white-tailed eagle, the bird that takes five years to grow up.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
@@ -843,6 +895,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   sowy: { gatunek: 'puchacz', zdjecie: 'lot' },
   barbate: { gatunek: 'rybolow', zdjecie: 'lot' },
   'wielkosc-i-ksztalt': { gatunek: 'sep-kasztanowaty', zdjecie: 'lot' },
+  'punkt-obserwacyjny': { gatunek: 'trzmielojad', zdjecie: 'lot' },
   'wiek-orlow': { gatunek: 'bielik', zdjecie: 'siedzacy' },
 };
 
@@ -1106,7 +1159,7 @@ function sprawdzSpojnosc() {
     }
     for (const id of c.gatunki) if (!idGatunkow.has(id)) bledy.push(`ciekawostki.json: ${c.id}: gatunku „${id}” nie ma w atlasie`);
   }
-  bledy.push(...problemyBudowy());
+  bledy.push(...problemyBudowy(), ...problemyPunktu());
   if (bledy.length) throw new Error(`Niespójna treść kursu:\n- ${bledy.join('\n- ')}`);
   // What is still to check by hand stops nothing; `next dev` lists it (the build would print it once per worker).
   const doSprawdzenia = ptakiMokradel.filter((p) => p.todo).map((p) => `${p.id}: ${p.todo}`);

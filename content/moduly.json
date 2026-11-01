@@ -483,6 +483,35 @@
       ]
     },
     {
+      "id": "B8",
+      "slug": "punkt-obserwacyjny",
+      "sciezka": "b",
+      "tytul": "Wirtualny punkt obserwacyjny",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-jak-liczy-sie-przelot",
+          "tytul": "Jak liczy się przelot"
+        },
+        {
+          "slug": "02-sierpien-w-ciesninie",
+          "tytul": "Sierpień w cieśninie: trzmielojady i kanie"
+        },
+        {
+          "slug": "03-pazdziernik-w-ciesninie",
+          "tytul": "Październik w cieśninie: sępy, gadożery i orzełki"
+        },
+        {
+          "slug": "04-wrzesien-w-polsce",
+          "tytul": "Wrzesień w Polsce: myszołowy i krogulce"
+        },
+        {
+          "slug": "05-egzamin",
+          "tytul": "Egzamin na punkcie"
+        }
+      ]
+    },
+    {
       "id": "B10",
       "slug": "wiek-orlow",
       "sciezka": "b",

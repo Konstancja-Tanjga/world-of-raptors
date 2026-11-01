@@ -38,6 +38,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | B5 | **Sowy, drapieżniki nocne** | Ten sam układ co moduły o ptakach dziennych: biologia sów, rozpoznawanie po głosie, 10 gatunków Polski i Hiszpanii, trudne pary, kalendarz głosów, etyka | [gotowy](moduly/sowy/README.md) |
 | B6 | **Marismas del Barbate, początek października** | Moduł terenowy: rozlewiska u ujścia, pływy i wiatr, 8 drapieżników i ibis grzywiasty, czaple, siewkowe, mewy, rybitwy i wróblowe, karta terenowa z naszywkami | [gotowy](moduly/barbate/README.md) |
 | B7 | **Wielkość i kształt** | Ptasia miarka (wróbel, gołąb, wrona, mewa, bocian), proporcje niezależne od odległości, skrót do ośmiu grup, kształt w trudnych parach, wielkość i kształt siedzących sów, GISS; ćwiczenia: układanie ptaków według wielkości, zgadywanie sylwetek, suwak między podobnymi gatunkami | [gotowy](moduly/wielkosc-i-ksztalt/README.md) |
+| B8 | **Wirtualny punkt obserwacyjny** | Jak liczy się przelot (linia liczenia, liczniki, Trektellen, liczenie dziesiątkami), symulacja punktu: stada przelatują w tempie i na wysokości gatunku, rozpoznawanie i liczenie na żywo albo ptak po ptaku; sesje: cieśnina pod koniec sierpnia i na początku października, Polska we wrześniu, egzamin; szacowanie kominów | [gotowy](moduly/punkt-obserwacyjny/README.md) |
 | B10 | **Wiek i upierzenie dużych orłów** | Po co oceniać wiek (szaty, lata kalendarzowe, 1K/2K), pierzenie falami i tylna krawędź skrzydła, bielik rok po roku, orzeł przedni (białe plamy), orzeł iberyjski (z płowego w czarnego), sęp płowy (kryza); ćwiczenia z opisu i zadania na zimowisku | [gotowy](moduly/wiek-orlow/README.md) |
 
 Moduły B2–B6 mają wspólne gatunki. Wszystkie drapieżniki są w jednym [atlasie](gatunki.json), a każdy gatunek ma przypisane regiony (Polska, cieśnina, południe Hiszpanii) i aktywność (dzienna, nocna). Ptaki mokradeł z listy terenowej B6 (wszystkie gatunki tej listy poza drapieżnikami) są w osobnym pliku ([ptaki-mokradel.json](ptaki-mokradel.json)) i w atlasie pokazuje je filtr „Ptaki mokradeł”.
@@ -61,5 +62,5 @@ Osobna część aplikacji: lista wszystkich gatunków z atlasu, na której odhac
 - 2–3 pytania kontrolne po każdej lekcji, quiz modułu z progiem 80%,
 - fiszki z powtórkami rozłożonymi w czasie (sylwetki, cechy, trudne pary, głosy),
 - quiz „porównaj”: dwa podobne gatunki obok siebie,
-- „wirtualny punkt obserwacyjny”: sylwetki przelatują w tempie prawdziwego przelotu, a Ty rozpoznajesz i liczysz,
+- „wirtualny punkt obserwacyjny” (moduł B8): sylwetki przelatują w tempie prawdziwego przelotu, a Ty rozpoznajesz i liczysz,
 - zadania terenowe i zadania z kamerami na gniazdach.
