@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PlanerWyjazdu } from '@/components/PlanerWyjazdu';
 import { PunktyObserwacji, type DanePunktow } from '@/components/PunktyObserwacji';
+import { TrzymajKotwice } from '@/components/TrzymajKotwice';
 import { gotoweModuly, punktyObserwacji, znajdzGatunek, znajdzPtakaMokradel } from '@/lib/content';
 import './kiedy-i-gdzie.css';
 
@@ -85,6 +86,7 @@ export default function KiedyIGdziePage() {
         </header>
         <PunktyObserwacji {...danePunktow()} />
       </section>
+      <TrzymajKotwice />
     </div>
   );
 }

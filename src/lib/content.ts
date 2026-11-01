@@ -75,8 +75,8 @@ export const ptakiMiarki = miarkaJson.ptaki as PtakMiarki[];
 export const sciezki = modulyJson.sciezki as Sciezka[];
 export const moduly = modulyJson.moduly as Modul[];
 // JSON arrays are not tuples to TypeScript; sprawdzSpojnosc() checks that `fokus` and `oryginal` are pairs.
-export const punktyObserwacji = punktyJson.punkty as PunktObserwacji[];
 export const zdjecia = zdjeciaJson as unknown as Partial<Record<string, ZdjeciaGatunku>>;
+export const punktyObserwacji = punktyJson.punkty as PunktObserwacji[];
 
 /** The recordings lessons play, by id (`puszczyk/samiec`); see `<glos>` in Markdown.tsx. */
 export const nagrania = nagraniaJson as Record<string, NagranieLekcji>;
@@ -1114,23 +1114,31 @@ function sprawdzSpojnosc() {
   const okolice = new Set<string>(OKOLICE.map((o) => o.value));
   const miesiac = (n: unknown) => Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 12;
   const idPunktow = new Set<string>();
+  const tekst = (v: unknown): v is string => typeof v === 'string' && v.trim() !== '';
   for (const p of punktyObserwacji) {
     const gdzie = `punkty-obserwacji.json: ${p.id}`;
-    if (!ID.test(p.id) || idPunktow.has(p.id)) bledy.push(`${gdzie}: id ma być unikalne, małymi literami z łącznikami`);
+    // Fields are checked for their type first, so one bad point is reported with the rest instead of crashing the check.
+    if (typeof p.id !== 'string' || !ID.test(p.id) || idPunktow.has(p.id)) bledy.push(`${gdzie}: id ma być unikalne, małymi literami z łącznikami`);
     idPunktow.add(p.id);
-    for (const pole of ['nazwa', 'opis', 'dojazd', 'pora_dnia'] as const) if (!p[pole]?.trim()) bledy.push(`${gdzie}: puste pole ${pole}`);
+    for (const pole of ['nazwa', 'opis', 'dojazd', 'pora_dnia', 'lekcja'] as const) if (!tekst(p[pole])) bledy.push(`${gdzie}: puste pole ${pole}`);
     if (!okolice.has(p.okolica)) bledy.push(`${gdzie}: nieznana okolica „${p.okolica}”`);
     if (p.rodzaj !== 'przelot' && p.rodzaj !== 'lokalne') bledy.push(`${gdzie}: rodzaj ma być „przelot” albo „lokalne”`);
     if (!(Math.abs(p.szer) <= 90 && Math.abs(p.dl) <= 180)) bledy.push(`${gdzie}: szer i dl mają być stopniami dziesiętnymi`);
     if (!Array.isArray(p.wiatr) || !p.wiatr.every((w) => (WIATRY as readonly string[]).includes(w))) bledy.push(`${gdzie}: wiatr ma być listą z ${WIATRY.join(', ')}`);
-    if (!p.miesiace?.length || !p.miesiace.every(miesiac)) bledy.push(`${gdzie}: miesiace mają być niepustą listą numerów 1–12`);
-    if (!p.szczyt?.every((n) => p.miesiace?.includes(n))) bledy.push(`${gdzie}: każdy miesiąc ze szczytu ma być też w miesiacach`);
-    if (!p.gatunki?.length) bledy.push(`${gdzie}: brak gatunków`);
-    for (const id of p.gatunki ?? []) if (!idPtakow.has(id)) bledy.push(`${gdzie}: gatunku „${id}” nie ma w atlasie ani wśród ptaków mokradeł`);
-    const [modul, lekcja] = p.lekcja.split('/');
-    if (!gotowe.get(modul)?.lekcje.some((l) => l.slug === lekcja)) bledy.push(`${gdzie}: lekcji „${p.lekcja}” nie ma wśród gotowych modułów`);
+    const listaMiesiecy = (v: unknown): v is number[] => Array.isArray(v) && v.length > 0 && v.every(miesiac);
+    if (!listaMiesiecy(p.miesiace)) bledy.push(`${gdzie}: miesiace mają być niepustą listą numerów 1–12`);
+    if (!listaMiesiecy(p.szczyt)) bledy.push(`${gdzie}: szczyt ma być niepustą listą numerów 1–12`);
+    else if (!p.szczyt.every((n) => p.miesiace?.includes(n))) bledy.push(`${gdzie}: każdy miesiąc ze szczytu ma być też w miesiacach`);
+    if (!Array.isArray(p.gatunki) || !p.gatunki.length) bledy.push(`${gdzie}: brak gatunków`);
+    else for (const id of p.gatunki) if (!idPtakow.has(id)) bledy.push(`${gdzie}: gatunku „${id}” nie ma w atlasie ani wśród ptaków mokradeł`);
+    if (tekst(p.lekcja)) {
+      const [modul, lekcja] = p.lekcja.split('/');
+      if (!gotowe.get(modul)?.lekcje.some((l) => l.slug === lekcja)) bledy.push(`${gdzie}: lekcji „${p.lekcja}” nie ma wśród gotowych modułów`);
+    }
     if (p.planer && !MIEJSCA_PLANERA.some((m) => m.value === p.planer)) bledy.push(`${gdzie}: planer nie zna miejsca „${p.planer}”`);
-    if (!p.zrodla.every((z) => z.nazwa.trim() && /^https:\/\//.test(z.url))) bledy.push(`${gdzie}: źródło ma mieć nazwę i adres https`);
+    if (!Array.isArray(p.zrodla) || !p.zrodla.every((z) => tekst(z?.nazwa) && typeof z.url === 'string' && /^https:\/\//.test(z.url))) {
+      bledy.push(`${gdzie}: zrodla mają być listą źródeł z nazwą i adresem https`);
+    }
   }
   if (bledy.length) throw new Error(`Niespójna treść kursu:\n- ${bledy.join('\n- ')}`);
   // What is still to check by hand stops nothing; `next dev` lists it (the build would print it once per worker).

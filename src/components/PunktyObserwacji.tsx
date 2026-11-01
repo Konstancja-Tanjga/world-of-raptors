@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { utworzMagazyn } from '@/lib/magazyn';
 import {
   adresGeokodowania,
@@ -12,7 +12,6 @@ import {
   NAZWY_MIESIECY,
   najblizsze,
   naWiatr,
-  NiepelnaOdpowiedz,
   OKOLICE,
   wspolrzedneZTekstu,
   zakresMiesiecy,
@@ -52,6 +51,11 @@ function isZapis(v: unknown): v is Zapis {
 }
 /** The place last chosen: a convenience, not in backups (a refused save keeps it for this visit only). */
 const zapamietane = utworzMagazyn<Zapis>('wor:punkty:v1', isZapis);
+
+const BLAD_WYSZUKIWANIA = 'Nie udało się wyszukać miejsca';
+
+/** How long to wait for the browser to answer a location request, prompt included. */
+const CZEKANIE_NA_LOKALIZACJE_MS = 30_000;
 
 /** Past this, the nearest point is far enough to say the list does not cover the area yet. */
 const DALEKO_KM = 150;
@@ -113,7 +117,7 @@ function Punkt({ p, od, dane }: { p: PunktObserwacji; od?: PunktOdMiejsca; dane:
           </p>
         )}
         <div className="punkt__znaczniki">
-          <Badge tone="neutral">{p.rodzaj === 'przelot' ? 'Punkt przelotu' : 'Ptaki osiadłe i zimujące'}</Badge>
+          <Badge tone="neutral">{p.rodzaj === 'przelot' ? 'Punkt przelotu' : 'Ptaki na miejscu'}</Badge>
           {p.wiatr.map((w) => (
             <Badge key={w} tone="info">
               {w === 'lewant' ? 'Najlepiej przy lewancie' : 'Najlepiej przy poniente'}
@@ -126,7 +130,6 @@ function Punkt({ p, od, dane }: { p: PunktObserwacji; od?: PunktOdMiejsca; dane:
       <DescriptionList
         layout="rows"
         density="compact"
-        ariaLabel={`${p.nazwa}: szczegóły`}
         items={[
           { term: 'Pora dnia', value: p.pora_dnia },
           {
@@ -221,11 +224,24 @@ export function PunktyObserwacji(dane: DanePunktow) {
   const [wiatr, setWiatr] = useState<Wiatr | null>(null);
 
   const ustaw = (s: Skad | undefined) => zapamietane.zapisz({ skad: s });
+  // Each search or location request gets a number; a newer request, or going back to areas, makes older answers stale.
+  const zadanie = useRef(0);
+  const przerwij = useRef<AbortController | null>(null);
+  const czuwanie = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const nowe = () => {
+    przerwij.current?.abort();
+    przerwij.current = null;
+    if (czuwanie.current) clearTimeout(czuwanie.current);
+    czuwanie.current = null;
+    return ++zadanie.current;
+  };
+  useEffect(() => () => void nowe(), []);
 
   async function szukaj(e: FormEvent) {
     e.preventDefault();
     const zapytanie = tekst.trim();
     if (!zapytanie) return;
+    const numer = nowe();
     const wsp = wspolrzedneZTekstu(zapytanie);
     if (wsp) {
       ustaw({ ...wsp, nazwa: zapytanie, opis: '', zrodlo: 'wpisane' });
@@ -233,52 +249,90 @@ export function PunktyObserwacji(dane: DanePunktow) {
       return;
     }
     setSzukanie({ stan: 'szukam' });
+    const kontroler = new AbortController();
+    przerwij.current = kontroler;
+    let r: Response;
     try {
-      const r = await fetch(adresGeokodowania(zapytanie));
-      if (!r.ok) {
-        setSzukanie({
-          stan: 'blad',
-          tytul: 'Nie udało się wyszukać miejsca',
-          opis: `Open-Meteo odpowiedziało błędem (HTTP ${r.status}). Zwykle to chwilowe: spróbuj za kilka minut albo wpisz współrzędne.`,
-        });
-        return;
-      }
-      const miejsca = miejscaZGeokodowania(await r.json());
-      if (!miejsca.length) {
-        setSzukanie({ stan: 'brak', zapytanie });
-        return;
-      }
-      ustaw({ ...miejsca[0], zrodlo: 'wpisane' });
-      setSzukanie(miejsca.length > 1 ? { stan: 'wybor', miejsca } : { stan: 'spokoj' });
+      r = await fetch(adresGeokodowania(zapytanie), { signal: kontroler.signal });
     } catch (err) {
-      console.error('[punkty] geocoding failed', err);
-      setSzukanie(
-        err instanceof NiepelnaOdpowiedz || err instanceof SyntaxError
-          ? { stan: 'blad', tytul: 'Nie udało się wyszukać miejsca', opis: 'Wyszukiwarka odpowiedziała czymś, czego nie umiem odczytać. Spróbuj później albo wpisz współrzędne.' }
-          : { stan: 'blad', tytul: 'Nie udało się wyszukać miejsca', opis: 'Wyszukiwanie po nazwie potrzebuje internetu. Sprawdź połączenie albo wpisz współrzędne, np. 36.01, -5.60.' },
-      );
+      if (numer !== zadanie.current) return;
+      console.error('[punkty] geocoding request failed', err);
+      setSzukanie({
+        stan: 'blad',
+        tytul: BLAD_WYSZUKIWANIA,
+        opis: 'Wyszukiwanie po nazwie potrzebuje internetu. Sprawdź połączenie albo wpisz współrzędne, np. 36.01, -5.60.',
+      });
+      return;
     }
+    if (numer !== zadanie.current) return;
+    if (!r.ok) {
+      setSzukanie({
+        stan: 'blad',
+        tytul: BLAD_WYSZUKIWANIA,
+        opis: `Open-Meteo odpowiedziało błędem (HTTP ${r.status}). Zwykle to chwilowe: spróbuj za kilka minut albo wpisz współrzędne.`,
+      });
+      return;
+    }
+    let miejsca: ZnalezioneMiejsce[];
+    try {
+      miejsca = miejscaZGeokodowania(await r.json());
+    } catch (err) {
+      if (numer !== zadanie.current) return;
+      console.error('[punkty] geocoding answer unreadable', err);
+      setSzukanie({
+        stan: 'blad',
+        tytul: BLAD_WYSZUKIWANIA,
+        opis: 'Wyszukiwarka odpowiedziała czymś, czego nie da się odczytać. Spróbuj później albo wpisz współrzędne.',
+      });
+      return;
+    }
+    if (numer !== zadanie.current) return;
+    przerwij.current = null;
+    if (!miejsca.length) {
+      setSzukanie({ stan: 'brak', zapytanie });
+      return;
+    }
+    ustaw({ ...miejsca[0], zrodlo: 'wpisane' });
+    setSzukanie(miejsca.length > 1 ? { stan: 'wybor', miejsca } : { stan: 'spokoj' });
   }
 
   function lokalizuj() {
+    const numer = nowe();
     if (!('geolocation' in navigator)) {
       setSzukanie({ stan: 'blad', tytul: 'Ta przeglądarka nie podaje lokalizacji', opis: 'Wpisz miejscowość albo współrzędne.' });
       return;
     }
     setSzukanie({ stan: 'lokalizuje' });
+    // The browser's own timeout starts only once access is allowed; a prompt closed without an answer calls neither callback.
+    czuwanie.current = setTimeout(() => {
+      if (numer !== zadanie.current) return;
+      nowe();
+      setSzukanie({
+        stan: 'blad',
+        tytul: 'Nie udało się ustalić lokalizacji',
+        opis: 'Przeglądarka nie odpowiedziała na prośbę o lokalizację. Spróbuj jeszcze raz albo wpisz miejscowość.',
+      });
+    }, CZEKANIE_NA_LOKALIZACJE_MS);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
+        if (numer !== zadanie.current) return;
+        nowe();
         ustaw({ nazwa: 'Twoja lokalizacja', opis: '', szer: pos.coords.latitude, dl: pos.coords.longitude, zrodlo: 'lokalizacja' });
         setSzukanie({ stan: 'spokoj' });
       },
       (err) => {
+        if (numer !== zadanie.current) return;
+        nowe();
+        console.error('[punkty] geolocation failed', err.code, err.message);
         setSzukanie({
           stan: 'blad',
           tytul: 'Nie udało się ustalić lokalizacji',
           opis:
             err.code === err.PERMISSION_DENIED
               ? 'Przeglądarka nie dała dostępu do lokalizacji. Możesz na to pozwolić w ustawieniach strony albo wpisać miejscowość.'
-              : 'Przeglądarka nie zdążyła ustalić, gdzie jesteś. Spróbuj jeszcze raz albo wpisz miejscowość.',
+              : err.code === err.POSITION_UNAVAILABLE
+                ? 'Przeglądarka nie zna teraz Twojej lokalizacji (sprawdź, czy usługi lokalizacji są włączone). Wpisz miejscowość.'
+                : 'Przeglądarka nie zdążyła ustalić, gdzie jesteś. Spróbuj jeszcze raz albo wpisz miejscowość.',
         });
       },
       { enableHighAccuracy: false, timeout: 15000, maximumAge: 10 * 60 * 1000 },
@@ -332,7 +386,10 @@ export function PunktyObserwacji(dane: DanePunktow) {
           label="Które miejsce?"
           description="Znalazło się kilka miejsc o tej nazwie"
           value={String(szukanie.miejsca.findIndex((m) => m.szer === skad.szer && m.dl === skad.dl))}
-          onChange={(e) => ustaw({ ...szukanie.miejsca[Number(e.target.value)], zrodlo: 'wpisane' })}
+          onChange={(e) => {
+            nowe();
+            ustaw({ ...szukanie.miejsca[Number(e.target.value)], zrodlo: 'wpisane' });
+          }}
           options={szukanie.miejsca.map((m, i) => ({ value: String(i), label: m.opis ? `${m.nazwa} (${m.opis})` : m.nazwa }))}
         />
       )}
@@ -347,6 +404,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
             variant="ghost"
             size="sm"
             onClick={() => {
+              nowe();
               ustaw(undefined);
               setSzukanie({ stan: 'spokoj' });
             }}
@@ -376,7 +434,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
           {wOdleglosci[0] && wOdleglosci[0].km > DALEKO_KM && (
             <p className="muted">
               Najbliższy punkt jest {odlegloscSlownie(wOdleglosci[0].km)} stąd. Na razie są tu punkty z okolic Cieśniny
-              Gibraltarskiej, La Jandy i kilka miejsc w Polsce.
+              Gibraltarskiej, La Jandy i Barbate oraz kilka miejsc w Polsce.
             </p>
           )}
           <ol className="punkty__lista">
@@ -415,7 +473,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
           {NOWA_KARTA}
         </a>{' '}
         (dane GeoNames, CC BY 4.0); wpisana nazwa trafia do ich serwera. Twoja lokalizacja zostaje w przeglądarce: odległości
-        liczę tutaj. Punkty przelotu w cieśninie opisuję za{' '}
+        liczę tutaj. Większość punktów przelotu w cieśninie opisuję za{' '}
         <a
           href="https://www.andaluciabirdsociety.org/article-library/birding-sites/migration-watching-sites/"
           target="_blank"
@@ -425,7 +483,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
           Andalucia Bird Society
           {NOWA_KARTA}
         </a>
-        ; zanim pojedziesz, sprawdź dojazd na miejscu, bo drogi i tablice się zmieniają.
+        , a źródła każdego punktu są przy nim. Zanim pojedziesz, sprawdź dojazd na miejscu, bo drogi i tablice się zmieniają.
       </p>
     </div>
   );
