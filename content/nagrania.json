@@ -276,5 +276,527 @@
       "khz": 4,
       "zrodlo": "/nagrania/surnia-ulula-xc1063279.mp3"
     }
+  },
+  "sieweczka-obrozna/lot": {
+    "gatunek": "sieweczka-obrozna",
+    "opis": "Głos w locie nocą, Niemcy, sierpień 2020",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Charadrius_hiaticula_-_Common_Ringed_Plover_XC612617.mp3",
+    "autor": "Jens Loose",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_hiaticula_-_Common_Ringed_Plover_XC612617.mp3",
+    "xc": 612617,
+    "sekundy": 2,
+    "zatwierdzone": false,
+    "ocena": "B",
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Charadrius_hiaticula_-_Common_Ringed_Plover_XC612617.mp3"
+    }
+  },
+  "sieweczka-rzeczna/glos": {
+    "gatunek": "sieweczka-rzeczna",
+    "opis": "Głos, Estremadura, maj 2026",
+    "src": "/nagrania/charadrius-dubius-xc1143443.mp3",
+    "autor": "Tanguy Loïs",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/1143443",
+    "xc": 1143443,
+    "ocena": "B",
+    "sekundy": 30,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/charadrius-dubius-xc1143443.mp3"
+    }
+  },
+  "sieweczka-morska/lot": {
+    "gatunek": "sieweczka-morska",
+    "opis": "Głos w locie, Andaluzja, sierpień 2018",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/67/Charadrius_alexandrinus_-_Kentish_Plover_XC432232.mp3",
+    "autor": "Joost van Bruggen",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_alexandrinus_-_Kentish_Plover_XC432232.mp3",
+    "xc": 432232,
+    "sekundy": 7,
+    "zatwierdzone": false,
+    "ocena": "B",
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/6/67/Charadrius_alexandrinus_-_Kentish_Plover_XC432232.mp3"
+    }
+  },
+  "siewnica/lot": {
+    "gatunek": "siewnica",
+    "opis": "Głos w locie, Holandia, październik 2023",
+    "src": "/nagrania/pluvialis-squatarola-xc835257.mp3",
+    "autor": "Jochem verweij",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/835257",
+    "xc": 835257,
+    "ocena": "B",
+    "sekundy": 40,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/pluvialis-squatarola-xc835257.mp3"
+    }
+  },
+  "siewka-zlota/lot": {
+    "gatunek": "siewka-zlota",
+    "opis": "Głos w locie, Holandia, wrzesień 2023",
+    "src": "/nagrania/pluvialis-apricaria-xc829451.mp3",
+    "autor": "Benjamin Simmelink",
+    "licencja": "CC BY 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "strona": "https://xeno-canto.org/829451",
+    "xc": 829451,
+    "ocena": "B",
+    "sekundy": 4,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/pluvialis-apricaria-xc829451.mp3"
+    }
+  },
+  "czajka/lot": {
+    "gatunek": "czajka",
+    "opis": "Głos w locie, Galicja, listopad 2024",
+    "src": "/nagrania/vanellus-vanellus-xc951952.mp3",
+    "autor": "Amadeo A. Pombo Eirín",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/951952",
+    "xc": 951952,
+    "ocena": "B",
+    "sekundy": 5,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/vanellus-vanellus-xc951952.mp3"
+    }
+  },
+  "biegus-krzywodzioby/lot": {
+    "gatunek": "biegus-krzywodzioby",
+    "opis": "Głos w locie nocą, Normandia (Francja), wrzesień 2025",
+    "src": "/nagrania/calidris-ferruginea-xc1041162.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/1041162",
+    "xc": 1041162,
+    "sekundy": 4,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-ferruginea-xc1041162.mp3"
+    }
+  },
+  "biegus-malutki/lot": {
+    "gatunek": "biegus-malutki",
+    "opis": "Głos w locie, Normandia (Francja), styczeń 2025",
+    "src": "/nagrania/calidris-minuta-xc959583.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/959583",
+    "xc": 959583,
+    "sekundy": 4,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-minuta-xc959583.mp3"
+    }
+  },
+  "biegus-maly/lot": {
+    "gatunek": "biegus-maly",
+    "opis": "Głos w locie, Normandia (Francja), maj 2026",
+    "src": "/nagrania/calidris-temminckii-xc1107764.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/1107764",
+    "xc": 1107764,
+    "sekundy": 2,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-temminckii-xc1107764.mp3"
+    }
+  },
+  "biegus-rdzawy/lot": {
+    "gatunek": "biegus-rdzawy",
+    "opis": "Głos w locie nocą, Olandia (Szwecja), maj 2024",
+    "src": "/nagrania/calidris-canutus-xc903762.mp3",
+    "autor": "Jochem verweij",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/903762",
+    "xc": 903762,
+    "sekundy": 7,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-canutus-xc903762.mp3"
+    }
+  },
+  "piaskowiec/lot": {
+    "gatunek": "piaskowiec",
+    "opis": "Głos w locie, Normandia (Francja), wrzesień 2024",
+    "src": "/nagrania/calidris-alba-xc938621.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/938621",
+    "xc": 938621,
+    "sekundy": 8,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-alba-xc938621.mp3"
+    }
+  },
+  "batalion/glos": {
+    "gatunek": "batalion",
+    "opis": "Głos, Finnmark (Norwegia), lipiec 2026",
+    "src": "/nagrania/calidris-pugnax-xc1157164.mp3",
+    "autor": "Teet Sirotkin",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/1157164",
+    "xc": 1157164,
+    "sekundy": 8,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-pugnax-xc1157164.mp3"
+    }
+  },
+  "kamusznik/glos": {
+    "gatunek": "kamusznik",
+    "opis": "Głos, Normandia (Francja), maj 2023",
+    "src": "/nagrania/arenaria-interpres-xc815490.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/815490",
+    "xc": 815490,
+    "sekundy": 19,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/arenaria-interpres-xc815490.mp3"
+    }
+  },
+  "krwawodziob/glos": {
+    "gatunek": "krwawodziob",
+    "opis": "Głos: opadające „tju” i seria „tjuk”, Norwegia (Finnmark), lipiec 2026",
+    "src": "/nagrania/tringa-totanus-xc1157250.mp3",
+    "autor": "Teet Sirotkin",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/1157250",
+    "xc": 1157250,
+    "ocena": "A",
+    "sekundy": 19,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/tringa-totanus-xc1157250.mp3"
+    }
+  },
+  "brodziec-sniady/lot": {
+    "gatunek": "brodziec-sniady",
+    "opis": "Głos w locie nocą: wznoszące „czu-it”, Niemcy (Saksonia-Anhalt), sierpień 2026",
+    "src": "/nagrania/tringa-erythropus-xc1165040.mp3",
+    "autor": "Matthias Keller",
+    "licencja": "CC BY 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "strona": "https://xeno-canto.org/1165040",
+    "xc": 1165040,
+    "ocena": "B",
+    "sekundy": 16,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/tringa-erythropus-xc1165040.mp3"
+    }
+  },
+  "kwokacz/lot": {
+    "gatunek": "kwokacz",
+    "opis": "Głos w locie: potrójne „tiu-tiu-tiu”, Holandia, sierpień 2023",
+    "src": "/nagrania/tringa-nebularia-xc826147.mp3",
+    "autor": "Jochem Verweij",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/826147",
+    "xc": 826147,
+    "ocena": "B",
+    "sekundy": 6,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/tringa-nebularia-xc826147.mp3"
+    }
+  },
+  "leczak/glos": {
+    "gatunek": "leczak",
+    "opis": "Głos, Szwajcaria, lipiec 2019",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tringa_glareola_-_Wood_Sandpiper_XC487833.mp3",
+    "autor": "Pascal Christe",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Tringa_glareola_-_Wood_Sandpiper_XC487833.mp3",
+    "xc": 487833,
+    "ocena": "B",
+    "sekundy": 13,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tringa_glareola_-_Wood_Sandpiper_XC487833.mp3"
+    }
+  },
+  "brodziec-piskliwy/lot": {
+    "gatunek": "brodziec-piskliwy",
+    "opis": "Głos w locie, Andaluzja (Isla Mayor koło Sewilli), sierpień 2018",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Actitis_hypoleucos_-_Common_Sandpiper_XC432214.mp3",
+    "autor": "Joost van Bruggen",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Actitis_hypoleucos_-_Common_Sandpiper_XC432214.mp3",
+    "xc": 432214,
+    "ocena": "B",
+    "sekundy": 27,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Actitis_hypoleucos_-_Common_Sandpiper_XC432214.mp3"
+    }
+  },
+  "samotnik/lot": {
+    "gatunek": "samotnik",
+    "opis": "Głos w locie nocą, Holandia, wrzesień 2018",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Tringa_ochropus_-_Green_Sandpiper_XC432903.mp3",
+    "autor": "Joost van Bruggen",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Tringa_ochropus_-_Green_Sandpiper_XC432903.mp3",
+    "xc": 432903,
+    "ocena": "A",
+    "sekundy": 14,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Tringa_ochropus_-_Green_Sandpiper_XC432903.mp3"
+    }
+  },
+  "rycyk/tok": {
+    "gatunek": "rycyk",
+    "opis": "Głos tokowy, Terschelling (Holandia), kwiecień 2019",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Limosa_limosa_-_Black-tailed_Godwit_XC466468.mp3",
+    "autor": "Pascal Christe",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Limosa_limosa_-_Black-tailed_Godwit_XC466468.mp3",
+    "xc": 466468,
+    "sekundy": 24,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Limosa_limosa_-_Black-tailed_Godwit_XC466468.mp3"
+    }
+  },
+  "kulik-wielki/glos": {
+    "gatunek": "kulik-wielki",
+    "opis": "Głos „kur-li” i trel, Terschelling (Holandia), kwiecień 2019",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Numenius_arquata_-_Eurasian_Curlew_XC466469.mp3",
+    "autor": "Pascal Christe",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Numenius_arquata_-_Eurasian_Curlew_XC466469.mp3",
+    "xc": 466469,
+    "sekundy": 12,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Numenius_arquata_-_Eurasian_Curlew_XC466469.mp3"
+    }
+  },
+  "kulik-mniejszy/lot": {
+    "gatunek": "kulik-mniejszy",
+    "opis": "Głos w locie nocą, Asturia (Hiszpania), kwiecień 2020",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Numenius_phaeopus_-_Whimbrel_XC551246.mp3",
+    "autor": "Luis Alvarez Menendez",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Numenius_phaeopus_-_Whimbrel_XC551246.mp3",
+    "xc": 551246,
+    "sekundy": 25,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Numenius_phaeopus_-_Whimbrel_XC551246.mp3"
+    }
+  },
+  "kszyk/lot": {
+    "gatunek": "kszyk",
+    "opis": "Głos w locie nocą, Arnhem (Holandia), marzec 2018",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/2/25/Gallinago_gallinago_-_Common_Snipe_XC433287.mp3",
+    "autor": "Joost van Bruggen",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Gallinago_gallinago_-_Common_Snipe_XC433287.mp3",
+    "xc": 433287,
+    "sekundy": 21,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/2/25/Gallinago_gallinago_-_Common_Snipe_XC433287.mp3"
+    }
+  },
+  "slonka/ciag": {
+    "gatunek": "slonka",
+    "opis": "Głos samca, prawdopodobnie przy ciągu, Dolna Saksonia (Niemcy), kwiecień 2025",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/97/Chocha_perdiz_%28Scolopax_rusticola%29_y_Mosquitero_com%C3%BAn_%28Phylloscopus_collybita%29.mp3",
+    "autor": "ChristianSW",
+    "licencja": "CC0",
+    "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "strona": "https://commons.wikimedia.org/wiki/File:Chocha_perdiz_(Scolopax_rusticola)_y_Mosquitero_com%C3%BAn_(Phylloscopus_collybita).mp3",
+    "xc": 987566,
+    "sekundy": 6,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Chocha_perdiz_%28Scolopax_rusticola%29_y_Mosquitero_com%C3%BAn_%28Phylloscopus_collybita%29.mp3"
+    }
+  },
+  "szablodziob/glos": {
+    "gatunek": "szablodziob",
+    "opis": "Głosy, Majorka (s’Albufera), kwiecień 2022",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/60/Pied_Avocet_%28Recurvirostra_avosetta%29_-_Parc_Natural_de_s%27Albufera%2C_Spain_2022-04-21_%2805%29.mp3",
+    "autor": "Ryan Hodnett",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Pied_Avocet_(Recurvirostra_avosetta)_-_Parc_Natural_de_s%27Albufera,_Spain_2022-04-21_(05).mp3",
+    "sekundy": 45,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/6/60/Pied_Avocet_%28Recurvirostra_avosetta%29_-_Parc_Natural_de_s%27Albufera%2C_Spain_2022-04-21_%2805%29.mp3"
+    }
+  },
+  "szczudlak/glos": {
+    "gatunek": "szczudlak",
+    "opis": "Głosy, Maroko (Oued Martil koło Tetuanu)",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/97/Black-winged_stilt_calls_at_Oued_Martil_of_Tetouan%2C_Morocco.wav/Black-winged_stilt_calls_at_Oued_Martil_of_Tetouan%2C_Morocco.wav.mp3",
+    "autor": "عثمان",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Black-winged_stilt_calls_at_Oued_Martil_of_Tetouan,_Morocco.wav",
+    "sekundy": 12,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/97/Black-winged_stilt_calls_at_Oued_Martil_of_Tetouan%2C_Morocco.wav/Black-winged_stilt_calls_at_Oued_Martil_of_Tetouan%2C_Morocco.wav.mp3"
+    }
+  },
+  "ostrygojad/glos": {
+    "gatunek": "ostrygojad",
+    "opis": "Głos, Holandia (Holandia Południowa)",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/43/Haematopus_ostralegus_-_Eurasian_Oystercatcher_XC503632.mp3",
+    "autor": "Jochem verweij",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Haematopus_ostralegus_-_Eurasian_Oystercatcher_XC503632.mp3",
+    "xc": 503632,
+    "sekundy": 11,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/4/43/Haematopus_ostralegus_-_Eurasian_Oystercatcher_XC503632.mp3"
+    }
+  },
+  "platkonog-szydlodzioby/glos": {
+    "gatunek": "platkonog-szydlodzioby",
+    "opis": "Głosy przy żerowaniu, Kalifornia",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/db/Phalaropus_lobatus_-_Red-necked_Phalarope_XC109658.mp3",
+    "autor": "Jonathon Jongsma",
+    "licencja": "CC BY-SA 3.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "strona": "https://commons.wikimedia.org/wiki/File:Phalaropus_lobatus_-_Red-necked_Phalarope_XC109658.mp3",
+    "xc": 109658,
+    "sekundy": 9,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/d/db/Phalaropus_lobatus_-_Red-necked_Phalarope_XC109658.mp3"
+    }
+  },
+  "kulon/glos": {
+    "gatunek": "kulon",
+    "opis": "Głosy, Francja (Loara Atlantycka), maj 2026",
+    "src": "/nagrania/burhinus-oedicnemus-xc1105684.mp3",
+    "autor": "Pablo Maurin",
+    "licencja": "CC BY 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "strona": "https://xeno-canto.org/1105684",
+    "xc": 1105684,
+    "sekundy": 17,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/burhinus-oedicnemus-xc1105684.mp3"
+    }
+  },
+  "biegus-zmienny/lot": {
+    "gatunek": "biegus-zmienny",
+    "opis": "Głos w locie, Normandia (Francja), listopad 2024",
+    "src": "/nagrania/calidris-alpina-xc945972.mp3",
+    "autor": "Sonothèque ADVL (Sébastien Provost)",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/945972",
+    "xc": 945972,
+    "sekundy": 7,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/calidris-alpina-xc945972.mp3"
+    }
+  },
+  "bekasik/tok": {
+    "gatunek": "bekasik",
+    "opis": "Tok na lęgowisku, Finnmark (Norwegia), lipiec 2026",
+    "src": "/nagrania/lymnocryptes-minimus-xc1157243.mp3",
+    "autor": "Teet Sirotkin",
+    "licencja": "CC BY-SA 4.0",
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/1157243",
+    "xc": 1157243,
+    "sekundy": 12,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/lymnocryptes-minimus-xc1157243.mp3"
+    }
+  },
+  "szlamnik/lot": {
+    "gatunek": "szlamnik",
+    "opis": "Głosy w locie wieczorem, Normandia (Francja), kwiecień 2026",
+    "src": "/nagrania/limosa-lapponica-xc1107762.mp3",
+    "autor": "Sonothèque ADVL (Sébastien Provost)",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/1107762",
+    "xc": 1107762,
+    "sekundy": 21,
+    "zatwierdzone": false,
+    "sonogram": {
+      "khz": 8,
+      "zrodlo": "/nagrania/limosa-lapponica-xc1107762.mp3"
+    }
   }
 }

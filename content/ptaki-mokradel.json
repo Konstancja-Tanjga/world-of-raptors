@@ -87,7 +87,22 @@
         "Czarno-biały, z cienkim dziobem wygiętym w górę.",
         "Żeruje, kosząc dziobem płytką wodę na boki."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie większy od krwawodzioba, smukły, z długą szyją i małą, okrągłą głową.",
+          "dziob": "Długi, cienki, czarny i wyraźnie wygięty w górę jak szabla; jedyny taki dziób wśród naszych siewkowców.",
+          "nogi": "Długie, niebieskoszare; w locie wystają za ogon.",
+          "zachowanie": "Brodzi w płytkiej wodzie i kosi dziobem na boki tuż pod powierzchnią, wyczuwając zdobycz dotykiem; chętnie wchodzi głębiej i pływa. Zwykle w stadach, na lagunach i solniskach.",
+          "upierzenie": "Biały z czarną czapeczką, czarnym karkiem i czarnymi pasami na grzbiecie i skrzydłach; u młodych czerń jest brązowawa.",
+          "lot": "Od spodu prawie cały biały, tylko końce skrzydeł czarne; z góry czarne pasy na białym tworzą wyraźny wzór; nogi wystają za ogon.",
+          "glos": "Czyste, fletowe „klit” lub „kluit”, w niepokoju powtarzane szybko; miękkie, bez szczekliwego tonu szczudłaka."
+        },
+        "mylona_z": ["szczudlak"],
+        "dlugosc_cm": [42, 46],
+        "rozpietosc_cm": [67, 77],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "szczudlak",
@@ -97,7 +112,22 @@
       "es": "cigüeñuela común",
       "grupa": "siewkowe",
       "cechy": ["Bardzo długie różowe nogi, czarne skrzydła, biały spód i cienki, prosty dziób."],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Tułów nieco większy niż u krwawodzioba, ale ptak wydaje się dużo wyższy przez niezwykle długie nogi; bardzo smukły.",
+          "dziob": "Długi, prosty i cienki jak igła, czarny.",
+          "nogi": "Niezwykle długie, różowoczerwone; w locie wystają daleko za ogon.",
+          "zachowanie": "Brodzi wysoko na nogach i wydziobuje zdobycz z powierzchni wody, wypatrując jej wzrokiem; w ciemne noce przechodzi na żerowanie dotykiem. Laguny, solniska, rozlewiska.",
+          "upierzenie": "Biały spód, czarne skrzydła; u samca grzbiet czarny z połyskiem, u samicy brązowawy; czerń na głowie bywa różnie rozległa.",
+          "lot": "Skrzydła całe czarne, z wierzchu i od spodu; ciało białe, a różowe nogi ciągną się daleko za ogonem.",
+          "glos": "Ostre, szczekliwe „kek” lub „kiek”, uporczywie powtarzane przy gnieździe; ostrzejsze i bardziej nosowe niż fletowe „klit” szablodzioba."
+        },
+        "mylona_z": ["szablodziob"],
+        "dlugosc_cm": [33, 36],
+        "rozpietosc_cm": [67, 83],
+        "regiony": ["poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "sieweczka-morska",
@@ -110,7 +140,23 @@
         "Mała, jasna sieweczka z ciemnymi nogami.",
         "Obroża jest niepełna: tylko ciemne plamy po bokach piersi."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Mniejsza od sieweczki obrożnej, podobna do sieweczki rzecznej; dość duża głowa, sprawia wrażenie wyższej na nogach.",
+          "dziob": "Krótki, cienki i cały czarny.",
+          "nogi": "Ciemne, szarooliwkowe do czarnych: jedyna z trzech sieweczek o ciemnych nogach.",
+          "zachowanie": "Biega bardzo szybko po suchym piasku plaż, solniskach i salinach; w Kadyksie gniazduje, w Polsce bardzo rzadka.",
+          "upierzenie": "Obroża niepełna, tylko ciemne plamy po bokach piersi; wierzch jasny, piaskowy; samiec wiosną z rdzawą czapeczką, samica i ptaki zimą bledsze.",
+          "lot": "Wyraźny biały pasek na skrzydle i dużo bieli po bokach ogona.",
+          "glos": "Krótkie, miękkie „pit”, często powtarzane, i terkoczące „prrr”; bez gwizdanego „tu-ip” obrożnej i „piu” rzecznej."
+        },
+        "mylona_z": ["sieweczka-obrozna", "sieweczka-rzeczna"],
+        "dlugosc_cm": [15, 17],
+        "rozpietosc_cm": [42, 45],
+        "regiony": ["poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z Beaman i Madge (za madeirabirds.com), nie z Collinsa; sprawdzić. Opis głosu z Wikipedii i pamięci, sprawdzić w Collinsie. Commons nie ma wolnego zdjęcia w locie (stan na 1.11.2026); dodać, gdy się pojawi albo z własnych zdjęć."
     },
     {
       "id": "sieweczka-obrozna",
@@ -123,7 +169,23 @@
         "Pełna ciemna obroża na piersi i pomarańczowe nogi.",
         "W locie widać białą wstęgę na skrzydle."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wielkości biegusa zmiennego, krępa i okrągłogłowa; wyraźnie pełniejsza niż sieweczka rzeczna.",
+          "dziob": "Krótki i gruby; latem pomarańczowy z czarnym końcem, zimą i u młodych ciemny, zwykle z pomarańczową nasadą.",
+          "nogi": "Krótkie, jaskrawopomarańczowe (u młodych matowo żółtopomarańczowe).",
+          "zachowanie": "Bieg, przystanek, dziobnięcie: żeruje na plażach, muliskach i płyciznach, zwykle przy morzu, na przelotach także nad jeziorami.",
+          "upierzenie": "Pełna, szeroka czarna obroża (u młodych brązowa); za okiem biała brew; obrączka wokół oka niewidoczna lub ledwie zaznaczona.",
+          "lot": "Wyraźny, szeroki biały pasek na skrzydle.",
+          "glos": "Miękkie, wznoszące się, dwusylabowe „tu-ip”; sieweczka rzeczna woła opadającym „piu”, sieweczka morska krótkim „pit”."
+        },
+        "mylona_z": ["sieweczka-rzeczna", "sieweczka-morska"],
+        "dlugosc_cm": [18, 20],
+        "rozpietosc_cm": [48, 57],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z HBW (za polską Wikipedią); angielska Wikipedia podaje rozpiętość 35–41 cm, sprawdzić w Collinsie."
     },
     {
       "id": "siewnica",
@@ -136,7 +198,22 @@
         "Krępa siewka z krótkim, mocnym dziobem; jesienią szaro nakrapiana.",
         "W locie czarne „pachy” pod skrzydłem: najpewniejsza cecha."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wielkości krwawodzioba, ale krępa; nieco większa i masywniejsza od siewki złotej, z dużą, kanciastą głową.",
+          "dziob": "Krótki, mocny i czarny, wyraźnie grubszy niż u siewki złotej.",
+          "nogi": "Średniej długości, ciemnoszare.",
+          "zachowanie": "Przy morzu: na rozległych muliskach i plażach, zwykle pojedynczo lub w luźnych grupach; długo stoi nieruchomo, potem biegnie kilka kroków.",
+          "upierzenie": "Zimą szara, srebrzyście nakrapiana, bez złotego tonu; latem czarny przód od twarzy po brzuch, białe podogonie, wierzch srebrzysto-czarny.",
+          "lot": "Czarne „pachy” pod skrzydłem w każdej szacie; biały kuper i wyraźny biały pasek na skrzydle.",
+          "glos": "Żałosny, trzysylabowy gwizd „tli-u-i”, obniżony w środku; siewka złota woła jednym opadającym „tiuu”."
+        },
+        "mylona_z": ["siewka-zlota"],
+        "dlugosc_cm": [27, 31],
+        "rozpietosc_cm": [71, 83],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "biegus-zmienny",
@@ -149,7 +226,22 @@
         "Mały, szarobrązowy biegus z dość długim dziobem lekko zagiętym w dół.",
         "Często żeruje w dużych, zwartych stadach."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Miarka kursu: z nim porównuje się inne małe siewkowce. Nieco większy od szpaka, krępy, przygarbiony, z krótką szyją.",
+          "dziob": "Dłuższy od głowy, czarny, prosty u nasady i opadający dopiero przy końcu.",
+          "nogi": "Krótkie, czarne.",
+          "zachowanie": "Żeruje w zwartych stadach na błocie i płyciznach, szybko i rytmicznie dziobiąc i sondując; stado w locie skręca jak jeden ptak.",
+          "upierzenie": "Wiosną i latem czarna plama na brzuchu i rdzawy grzbiet; zimą jednolicie szarobrązowy z kreskowaną piersią. Młode jesienią mają czarne plamki na bokach brzucha i rdzawo obrzeżone pióra grzbietu.",
+          "lot": "Wąska biała wstęga na skrzydle; kuper biały tylko po bokach, przez środek ciemny pas.",
+          "glos": "Szorstkie, chrapliwe „trrii”, zwykle w locie; ostrzejsze niż miękkie „czirrip” biegusa krzywodziobego."
+        },
+        "mylona_z": ["biegus-krzywodzioby", "biegus-rdzawy", "piaskowiec"],
+        "dlugosc_cm": [16, 20],
+        "rozpietosc_cm": [38, 43],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "piaskowiec",
@@ -162,7 +254,22 @@
         "Bardzo jasny biegus z czarnym dziobem i czarnymi nogami.",
         "Biega szybko za cofającą się falą na plaży."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Nieco większy od biegusa zmiennego, krępy, z krótką szyją; w ruchu wygląda jak nakręcana zabawka.",
+          "dziob": "Krótki, prosty, czarny, dość gruby; krótszy niż u biegusa zmiennego.",
+          "nogi": "Czarne; brak tylnego palca, co widać przy dobrym podejściu.",
+          "zachowanie": "Biega bardzo szybko wzdłuż linii fal: za cofającą się wodą i przed nadchodzącą; najczęściej na piaszczystych plażach.",
+          "upierzenie": "Zimą najbielszy biegus: jasnoszary grzbiet, czysto biały spód i czarna plama na zgięciu skrzydła. Latem głowa i pierś rdzawe, nakrapiane.",
+          "lot": "Bardzo szeroka, jaskrawobiała wstęga na skrzydle, kontrastująca z czarnym przednim brzegiem skrzydła; kuper biały po bokach.",
+          "glos": "Krótkie, ostre „plit” lub „twik”, zwykle w locie; czystsze niż chrapliwe „trrii” biegusa zmiennego."
+        },
+        "mylona_z": ["biegus-zmienny", "biegus-malutki"],
+        "dlugosc_cm": [20, 21],
+        "rozpietosc_cm": [40, 45],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "kamusznik",
@@ -175,7 +282,22 @@
         "Krępy, z krótkim dziobem, pomarańczowymi nogami i ciemnym, pstrym wzorem na piersi.",
         "Odwraca kamienie i wodorosty w poszukiwaniu jedzenia."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Większy i dużo krępszy od biegusa zmiennego; przysadzisty, z krótką szyją i niską sylwetką.",
+          "dziob": "Krótki, mocny, klinowaty, czarny.",
+          "nogi": "Krótkie, pomarańczowe.",
+          "zachowanie": "Odwraca dziobem kamienie, muszle i wodorosty na kamienistych brzegach, falochronach i wśród wyrzuconych przez morze roślin; często mało płochliwy.",
+          "upierzenie": "Pstry, czarno-biały wzór na głowie i ciemny śliniak na piersi; latem grzbiet rudo-czarny, zimą ciemnobrązowy.",
+          "lot": "Bardzo pstry: biała wstęga i biała plama u nasady skrzydła, biały pas wzdłuż grzbietu, biały kuper z ciemną przepaską i czarny pas na końcu ogona.",
+          "glos": "Szybkie, terkoczące „tuk-tuk-tuk” lub „tuk-e-tuk”, często przy zrywaniu się."
+        },
+        "mylona_z": ["sieweczka-obrozna", "piaskowiec"],
+        "dlugosc_cm": [22, 24],
+        "rozpietosc_cm": [50, 57],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "krwawodziob",
@@ -188,7 +310,23 @@
         "Czerwone nogi i czerwona nasada dzioba.",
         "W locie szeroki biały pas na tylnym brzegu skrzydła; głośny, nerwowy głos."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "todo": "Wymiary z Collinsa (Svensson, cytowany w niemieckiej Wikipedii); inne źródła podają więcej (27–29 cm, rozpiętość ok. 59–66 cm): sprawdzić.",
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Średni brodziec, wyraźnie większy od biegusa zmiennego; krępszy, krótszonogi i krótszoszyi niż brodziec śniady.",
+          "dziob": "Prosty, mniej więcej półtorej długości głowy; czerwony u nasady obu szczęk, z ciemnym końcem.",
+          "nogi": "Średniej długości, jaskrawo pomarańczowoczerwone (u młodych bardziej pomarańczowe lub żółtawe).",
+          "zachowanie": "Czujny i hałaśliwy: zwykle pierwszy zrywa się z alarmem; dziobie i sonduje muł na brzegu, na łąkach i w płytkiej wodzie, często kiwa ciałem.",
+          "upierzenie": "Szarobrązowy, latem gęsto kreskowany i plamkowany, zimą gładszy; brew krótka i słaba, wyraźna jasna obrączka oczna.",
+          "lot": "Szeroki, biały tylny brzeg skrzydła (najlepsza cecha z daleka) i biały klin na grzbiecie; palce wystają za ogon tylko nieznacznie.",
+          "glos": "Opadające, melancholijne „tju” albo „tju-hu-hu”; przy niepokoju natarczywe „tjuk-tjuk-tjuk”. Brodziec śniady woła odwrotnie, wznosząco: „czu-it”."
+        },
+        "mylona_z": ["brodziec-sniady", "batalion"],
+        "dlugosc_cm": [24, 27],
+        "rozpietosc_cm": [47, 53],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "kwokacz",
@@ -201,7 +339,22 @@
         "Jasny, smukły brodziec z zielonkawymi nogami i lekko zadartym dziobem.",
         "Głos: głośne, zwykle potrójne „tiu-tiu-tiu”."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Największy z brodźców, wyraźnie większy od krwawodzioba; masywny, z mocną szyją i głową.",
+          "dziob": "Długi, gruby u nasady i lekko zadarty ku górze; szaroczarny, u nasady szarozielonkawy.",
+          "nogi": "Długie, ale proporcjonalne do dużego ciała, szarozielone lub żółtozielone; w locie wystają za ogon tylko trochę.",
+          "zachowanie": "Żeruje aktywnie, często biega w płytkiej wodzie za drobnymi rybami, przechylając się na boki; czujny, głośno ostrzega.",
+          "upierzenie": "Szary z wierzchu, czysto biały od spodu; głowa i szyja jasne, drobno kreskowane, latem na grzbiecie czarne plamy.",
+          "lot": "Skrzydła jednolicie ciemne, bez paska; długi biały klin od ogona aż po środek grzbietu.",
+          "glos": "Dźwięczne, donośne „tiu-tiu-tiu”, zwykle trzy równe sylaby na jednej wysokości."
+        },
+        "mylona_z": ["brodziec-plawny", "brodziec-sniady"],
+        "dlugosc_cm": [30, 34],
+        "rozpietosc_cm": [55, 62],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
     },
     {
       "id": "kulik-wielki",
@@ -211,7 +364,23 @@
       "es": "zarapito real",
       "grupa": "siewkowe",
       "cechy": ["Duży, brązowo nakrapiany, z bardzo długim dziobem zakrzywionym w dół."],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Największy z naszych siewkowców, wyraźnie większy od kulika mniejszego; masywny, z długą szyją.",
+          "dziob": "Bardzo długi, łukowato zgięty w dół równo na całej długości; u samicy najdłuższy, u samca i młodego krótszy, więc sama długość nie rozstrzyga.",
+          "nogi": "Długie, szaroniebieskie.",
+          "zachowanie": "Wolno kroczy po mułach, łąkach i polach, głęboko sondując dziobem i wyciągając kraby i dżdżownice; płochliwy, zrywa się z daleka.",
+          "upierzenie": "Płowobrązowy, gęsto kreskowany; głowa jednolita, drobno kreskowana, bez wyraźnych pasów, wokół oka jasna obwódka.",
+          "lot": "Biały klin od kupra na grzbiet; zewnętrzna część skrzydła ciemniejsza od wewnętrznej; spokojne, mewie uderzenia skrzydeł.",
+          "glos": "Dźwięczne, wznoszące się „kur-li” (stąd jego nazwa w wielu językach), na lęgowisku perlisty, przyspieszający trel; nigdy szybka seria równych gwizdów jak u kulika mniejszego."
+        },
+        "mylona_z": ["kulik-mniejszy"],
+        "rozpietosc_cm": [80, 100],
+        "dlugosc_cm": [50, 60],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z HBW (przez polską Wikipedię i oiseaux-birds.com), nie z Collinsa, sprawdzić."
     },
     {
       "id": "kulik-mniejszy",
@@ -224,7 +393,23 @@
         "Jak mały kulik wielki, ale z krótszym dziobem i ciemnymi paskami na głowie.",
         "Głos: szybki, równy trel."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie mniejszy od kulika wielkiego, wielkości rycyka; krótsza szyja, drobniejsza głowa.",
+          "dziob": "Krótszy niż u kulika wielkiego, prosty przez ok. dwie trzecie długości, potem załamany w dół; sama długość myli, bo młode kuliki wielkie mają krótkie dzioby.",
+          "nogi": "Szaroniebieskie, stosunkowo krótsze niż u kulika wielkiego.",
+          "zachowanie": "Na wybrzeżach, równiach pływowych i skałach, chętnie łowi kraby; w Polsce przelotny, a stadko kulików w kwietniu lub maju to najpewniej ten gatunek.",
+          "upierzenie": "Głowa w pasy: ciemna czapeczka przedzielona jasnym paskiem środkowym, jasna brew i ciemny pasek przez oko; ogólnie ciemniejszy i chłodniejszy w tonie od kulika wielkiego.",
+          "lot": "Biały klin od kupra na grzbiet jak u kulika wielkiego, ale skrzydła bardziej jednolicie ciemne i szybsze uderzenia skrzydeł.",
+          "glos": "Szybki, równy trel ok. siedmiu gwizdów „pi-pi-pi-pi-pi-pi-pi” na jednej wysokości, zamiast dwusylabowego „kur-li” kulika wielkiego."
+        },
+        "mylona_z": ["kulik-wielki", "szlamnik"],
+        "rozpietosc_cm": [75, 90],
+        "dlugosc_cm": [40, 45],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z HBW (przez oiseaux-birds.com), nie z Collinsa; Wikipedia (All About Birds) podaje 37–47 cm i 75–90 cm, sprawdzić."
     },
     {
       "id": "szlamnik",
@@ -237,7 +422,23 @@
         "Długi, lekko zadarty dziób; jesienią szarobrązowy.",
         "W locie bez białego paska na skrzydle, a ogon jest prążkowany."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Nieco mniejszy i krępszy od rycyka, z krótszą szyją; wyraźnie większy od krwawodzioba.",
+          "dziob": "Długi, wyraźnie lekko zadarty ku górze, z różową nasadą i ciemnym końcem; u samicy dłuższy.",
+          "nogi": "Ciemne, zwykle krótsze niż u rycyka: nad stawem skokowym widać mniej nagiego uda.",
+          "zachowanie": "Ptak wybrzeża: żeruje na mulistych i piaszczystych równiach pływowych, idąc za odpływającą wodą; w głębi lądu rzadki.",
+          "upierzenie": "Zimą szarobrązowy, wierzch kreskowany i łuskowany jak u kulika; samiec w szacie godowej cały rdzawy od głowy po podogonie.",
+          "lot": "Skrzydło bez białego paska; biały klin wchodzi z kupra na grzbiet, ogon drobno prążkowany; nogi wystają za ogon tylko trochę.",
+          "glos": "Rzadko słyszany; w locie nosowe „kewik” lub ostre „kik-kik”, wyższe i ostrzejsze niż „wed” rycyka."
+        },
+        "mylona_z": ["rycyk", "kulik-mniejszy"],
+        "rozpietosc_cm": [70, 80],
+        "dlugosc_cm": [37, 41],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z HBW (przez Wikipedię i oiseaux-birds.com), nie z Collinsa, sprawdzić. Zdjęcie w locie (istniejące) przedstawia ptaka z Pacyfiku, bez białego klina na grzbiecie: rozważyć europejskie."
     },
     {
       "id": "ostrygojad",
@@ -247,7 +448,598 @@
       "es": "ostrero euroasiático",
       "grupa": "siewkowe",
       "cechy": ["Czarno-biały, z mocnym pomarańczowoczerwonym dziobem i różowymi nogami."],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Dużo większy i masywniejszy od krwawodzioba; krępy, z krótką szyją.",
+          "dziob": "Długi, prosty, gruby, jaskrawo pomarańczowoczerwony.",
+          "nogi": "Średniej długości, grube, różowe.",
+          "zachowanie": "Otwiera małże i ślimaki dziobem, sonduje muł w poszukiwaniu robaków; za dnia szuka zdobyczy wzrokiem, nocą dotykiem. Wybrzeża, plaże, skały, łąki nad rzekami.",
+          "upierzenie": "Czarna głowa, pierś i wierzch, biały spód, czerwone oko; zimą i u młodych biała półobroża na gardle.",
+          "lot": "Szeroki biały pas wzdłuż całego skrzydła i biały klin od kupra na grzbiet; koniec ogona czarny.",
+          "glos": "Głośne, przenikliwe „kliip” lub „kubik”; w tokach rozkręca się w długi, piskliwy tryl."
+        },
+        "mylona_z": [],
+        "dlugosc_cm": [40, 45],
+        "rozpietosc_cm": [80, 85],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "sieweczka-rzeczna",
+      "pl": "sieweczka rzeczna",
+      "lat": "Charadrius dubius",
+      "en": "Little Ringed Plover",
+      "es": "chorlitejo chico",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Mała sieweczka z jaskrawożółtą obwódką wokół oka i całkiem czarnym dziobem.",
+        "W locie nie ma białego paska na skrzydle."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie mniejsza od biegusa zmiennego i sieweczki obrożnej, wielkości skowronka; smukła, z wydłużonym tyłem ciała.",
+          "dziob": "Krótki, cienki i cały czarny (najwyżej z bladą nasadą żuchwy).",
+          "nogi": "Matowe, cielistoróżowe do żółtawych, nigdy jaskrawopomarańczowe.",
+          "zachowanie": "Bieg, przystanek, dziobnięcie; zwykle w głębi lądu: żwirowiska, brzegi rzek, wyrobiska i błotniste brzegi stawów.",
+          "upierzenie": "Jaskrawożółta obrączka wokół oka (u młodych słabsza); nad czarną przepaską na czole cienka biała linia, za okiem bez białej brwi (u młodych najwyżej słaba, płowa).",
+          "lot": "Brak białego paska na skrzydle (najwyżej ledwie widoczny): najprostsza różnica od sieweczki obrożnej.",
+          "glos": "Opadające, gwiżdżące „piu” lub „pi-ju”; sieweczka obrożna woła wznoszącym się „tu-ip”."
+        },
+        "mylona_z": ["sieweczka-obrozna", "sieweczka-morska"],
+        "dlugosc_cm": [14, 17],
+        "rozpietosc_cm": [42, 48],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z HBW (za polską Wikipedią), nie z Collinsa; sprawdzić."
+    },
+    {
+      "id": "siewka-zlota",
+      "pl": "siewka złota",
+      "lat": "Pluvialis apricaria",
+      "en": "European Golden Plover",
+      "es": "chorlito dorado europeo",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Siewka o złociście nakrapianym wierzchu, latem z czarnym spodem.",
+        "W locie białe „pachy” pod skrzydłem; zwykle w stadach na polach."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Nieco mniejsza i smuklejsza od siewnicy, z mniejszą, okrągłą głową; wyraźnie większa od biegusa zmiennego.",
+          "dziob": "Krótki, cienki i czarny, delikatniejszy niż u siewnicy.",
+          "nogi": "Średniej długości, szare.",
+          "zachowanie": "Na polach, łąkach i pastwiskach w głębi lądu, często w dużych, zwartych stadach, nierzadko razem z czajkami; rzadko na muliskach.",
+          "upierzenie": "Wierzch złociście nakrapiany w każdej szacie; latem czarny spód od twarzy po brzuch, z białym obrzeżeniem; zimą płowa, z jasnym brzuchem.",
+          "lot": "Pachy i spód skrzydła białe; kuper ciemny, bez białej plamy; pasek na skrzydle słaby.",
+          "glos": "Krótkie, żałosne, lekko opadające „tiuu”; siewnica gwiżdże trzysylabowe „tli-u-i”."
+        },
+        "mylona_z": ["siewnica", "czajka"],
+        "dlugosc_cm": [26, 29],
+        "rozpietosc_cm": [67, 76],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z Birds of the World (za polską Wikipedią), nie z Collinsa; sprawdzić. Czy zimuje regularnie przy Cieśninie (La Janda), sprawdzić."
+    },
+    {
+      "id": "czajka",
+      "pl": "czajka",
+      "lat": "Vanellus vanellus",
+      "en": "Northern Lapwing",
+      "es": "avefría europea",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Z daleka czarno-biała, z długim czubem i zielonym połyskiem na grzbiecie.",
+        "W locie szerokie, zaokrąglone skrzydła; woła płaczliwym „ki-wit”."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wielkości gołębia, większa od siewki złotej; krępa, z długim, cienkim czubem na głowie.",
+          "dziob": "Krótki i czarny.",
+          "nogi": "Średniej długości, matowo różowawe do ciemnoczerwonawych.",
+          "zachowanie": "Na łąkach, pastwiskach, polach i błotnistych brzegach; biega i przystaje jak siewki, poza lęgami w stadach, często z siewkami złotymi; wiosną akrobatyczny lot tokowy.",
+          "upierzenie": "Z daleka czarno-biała; z bliska wierzch zielony z metalicznym połyskiem, czarna pierś, biały brzuch i rdzawe podogonie.",
+          "lot": "Bardzo szerokie, zaokrąglone skrzydła; spód kontrastowo czarno-biały; biały ogon z czarnym pasem na końcu; lot powolny, chwiejny.",
+          "glos": "Płaczliwe, nosowe „ki-wit” (stąd nazwy w wielu językach); siewka złota woła czystym „tiuu”."
+        },
+        "mylona_z": ["siewka-zlota"],
+        "dlugosc_cm": [28, 33],
+        "rozpietosc_cm": [67, 87],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z angielskiej Wikipedii, nie z Collinsa; sprawdzić."
+    },
+    {
+      "id": "biegus-krzywodzioby",
+      "pl": "biegus krzywodzioby",
+      "lat": "Calidris ferruginea",
+      "en": "Curlew Sandpiper",
+      "es": "correlimos zarapitín",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Smuklejszy i wyższy od biegusa zmiennego, z dłuższym dziobem łukowato wygiętym na całej długości.",
+        "W locie czysto biały kuper."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Nieco większy od biegusa zmiennego, ale smuklejszy: dłuższa szyja i dłuższe nogi, przez co stoi wyżej i wygląda elegancko.",
+          "dziob": "Dłuższy niż u biegusa zmiennego, czarny, cienki, łukowato wygięty na całej długości, nie tylko przy końcu.",
+          "nogi": "Czarne, wyraźnie dłuższe niż u biegusa zmiennego.",
+          "zachowanie": "Zwykle pojedynczo lub w małych grupkach wśród biegusów zmiennych; chętnie brodzi w nieco głębszej wodzie.",
+          "upierzenie": "Wiosną spód i głowa ceglastordzawe; zimą szary z białym spodem i wyraźną jasną brwią. Młode (sierpień, wrzesień) mają łuskowaty grzbiet z jasnymi obrzeżeniami i czystą, płowo nalaną pierś bez plam na brzuchu.",
+          "lot": "Czysto biały kuper, widoczny z daleka nawet w stadzie biegusów zmiennych; wąska biała wstęga na skrzydle.",
+          "glos": "Miękkie, płynne „czirrip”, łagodniejsze od chrapliwego „trrii” biegusa zmiennego."
+        },
+        "mylona_z": ["biegus-zmienny", "biegus-rdzawy"],
+        "dlugosc_cm": [18, 19],
+        "rozpietosc_cm": [42, 46],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "biegus-malutki",
+      "pl": "biegus malutki",
+      "lat": "Calidris minuta",
+      "en": "Little Stint",
+      "es": "correlimos menudo",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Najmniejszy biegus, z krótkim prostym dziobem i czarnymi nogami.",
+        "Bardzo ruchliwy; młode jesienią mają na grzbiecie jasne „V”."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie mniejszy od biegusa zmiennego, wielkości wróbla na nogach; krępy i okrągławy, z krótkim ogonem.",
+          "dziob": "Krótki, prosty, czarny, cienki na końcu.",
+          "nogi": "Czarne.",
+          "zachowanie": "Bardzo ruchliwy, szybko dziobie na otwartym błocie, często wśród biegusów zmiennych; spłoszony odlatuje nisko, w stadku.",
+          "upierzenie": "Młode jesienią: rdzawo obrzeżony grzbiet z wyraźnym jasnym „V” i biała pierś z rdzawym nalotem po bokach. Dorosłe latem rdzawe na głowie i piersi, zimą szare.",
+          "lot": "Wąska biała wstęga na skrzydle, ciemny środek kupra; boczne sterówki szare, nie białe.",
+          "glos": "Krótkie, ostre „stit” lub „tit-tit”; nie ma trelu biegusa małego."
+        },
+        "mylona_z": ["biegus-maly", "biegus-zmienny"],
+        "dlugosc_cm": [12, 14],
+        "rozpietosc_cm": [34, 37],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "biegus-maly",
+      "pl": "biegus mały",
+      "lat": "Calidris temminckii",
+      "en": "Temminck's Stint",
+      "es": "correlimos de Temminck",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Maleńki, jednolicie szarobrązowy biegus z jasnymi nogami, jak miniatura brodźca piskliwego.",
+        "Spłoszony wzbija się stromo z suchym trelem."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Tak mały jak biegus malutki, ale smuklejszy i bardziej wydłużony: ogon wystaje za złożone skrzydła.",
+          "dziob": "Krótki, cienki, ciemny, zwykle lekko opadający na końcu.",
+          "nogi": "Żółtawe do zielonkawobrązowych; zabłocone mogą wyglądać na ciemne.",
+          "zachowanie": "Skrada się powoli, przygarbiony, przy zarośniętych brzegach stawów i rozlewisk, rzadko na otwartym wybrzeżu; spłoszony wzbija się stromo, zygzakiem.",
+          "upierzenie": "Jednolicie szarobrązowy grzbiet i pierś, jak u brodźca piskliwego, bez jasnego „V” na grzbiecie; latem między szarymi piórami kilka czarnych.",
+          "lot": "Białe boczne sterówki (u biegusa malutkiego szare); wąska biała wstęga na skrzydle.",
+          "glos": "Suchy, dźwięczny trel „tirrrr”, często powtarzany przy zrywaniu się; zupełnie inny niż „stit” biegusa malutkiego."
+        },
+        "mylona_z": ["biegus-malutki", "brodziec-piskliwy"],
+        "dlugosc_cm": [13, 15],
+        "rozpietosc_cm": [34, 37],
+        "regiony": ["polska", "poludnie-hiszpanii"]
+      },
+      "todo": "Sprawdzić, czy biegus mały jest regularny w rejonie Cieśniny (teraz tylko Polska i południe Hiszpanii)."
+    },
+    {
+      "id": "biegus-rdzawy",
+      "pl": "biegus rdzawy",
+      "lat": "Calidris canutus",
+      "en": "Red Knot",
+      "es": "correlimos gordo",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Duży, przysadzisty biegus z krótkim prostym dziobem; zimą jednolicie popielatoszary.",
+        "Wiosną spód i twarz ceglastordzawe."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie większy i masywniejszy od biegusa zmiennego, prawie wielkości krwawodzioba; przysadzisty, z krótką szyją i krótkimi nogami.",
+          "dziob": "Prosty, czarny, mocny u nasady, mniej więcej długości głowy: w proporcji krótszy niż u biegusa zmiennego.",
+          "nogi": "Krótkie, oliwkowozielone lub szarozielone.",
+          "zachowanie": "Na wybrzeżach, w zwartych, często wielkich stadach; żeruje spokojnie, z głową w dół, wolniej niż biegus zmienny.",
+          "upierzenie": "Zimą jednolicie popielatoszary z białym spodem i jasną brwią; latem spód i twarz ceglastordzawe. Młode mają łuskowaty grzbiet.",
+          "lot": "Jasnoszary, drobno prążkowany kuper i ogon (bez czystej bieli); wąska biała wstęga na skrzydle.",
+          "glos": "Niskie, nosowe „knut”, w locie czasem podwójne „kłit-kłit”; niższe i mniej chrapliwe niż „trrii” biegusa zmiennego."
+        },
+        "mylona_z": ["biegus-zmienny", "biegus-krzywodzioby"],
+        "dlugosc_cm": [23, 26],
+        "rozpietosc_cm": [47, 53],
+        "regiony": ["polska", "poludnie-hiszpanii"]
+      },
+      "todo": "Sprawdzić, czy biegus rdzawy bywa regularnie w rejonie Cieśniny (Barbate, Los Lances); teraz tylko Polska i południe Hiszpanii."
+    },
+    {
+      "id": "batalion",
+      "pl": "batalion",
+      "lat": "Calidris pugnax",
+      "en": "Ruff",
+      "es": "combatiente",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Samiec dużo większy od samicy; mała głowa, długa szyja i łuskowaty grzbiet.",
+        "Wiosną samce mają barwne kryzy, każdy inną."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Płcie bardzo różnej wielkości: samiec mniej więcej jak krwawodziób lub większy, samica wyraźnie mniejsza, niewiele większa od biegusa zmiennego. Mała głowa, długa szyja, pękate ciało.",
+          "dziob": "Mniej więcej długości głowy, lekko opadający, ciemny (czasem z jaśniejszą nasadą); krótszy niż u krwawodzioba.",
+          "nogi": "Dość długie, różnej barwy: zielonkawe u młodych, żółtawe do pomarańczowych u dorosłych; nigdy tak jaskrawoczerwone jak u krwawodzioba.",
+          "zachowanie": "Chodzi spokojnie, dostojnie, po zalanych łąkach i błotach; wiosną samce tokują na arenach, a stada przelotne często żerują na polach.",
+          "upierzenie": "Grzbiet łuskowaty: ciemne środki piór z jasnymi obrzeżeniami, najwyraźniej u młodych z płową głową i piersią. Samiec wiosną nosi kryzę i pióra na głowie, czarne, rude lub białe, u każdego inne.",
+          "lot": "Dwie owalne białe plamy po bokach ciemnego środka kupra i wąska wstęga na skrzydle; lot luźny, z wolnymi uderzeniami. Krwawodziób ma biały klin na grzbiecie i szeroki biały tylny brzeg skrzydła.",
+          "glos": "Prawie zawsze milczy, czasem ciche „ge-ge”; krwawodziób przeciwnie, głośno alarmuje."
+        },
+        "mylona_z": ["krwawodziob"],
+        "dlugosc_cm": [22, 32],
+        "rozpietosc_cm": [46, 60],
+        "regiony": ["polska", "poludnie-hiszpanii"]
+      },
+      "todo": "Sprawdzić, czy batalion jest regularny w rejonie Cieśniny (teraz tylko Polska i południe Hiszpanii)."
+    },
+    {
+      "id": "brodziec-sniady",
+      "pl": "brodziec śniady",
+      "lat": "Tringa erythropus",
+      "en": "Spotted Redshank",
+      "es": "archibebe oscuro",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Smukły, długonogi brodziec z długim, cienkim dziobem czerwonym tylko u nasady żuchwy.",
+        "Latem prawie czarny, zimą jasnopopielaty z wyraźną białą brwią; w locie bez białego tylnego brzegu skrzydła."
+      ],
+      "miejsca": [],
+      "todo": "Wymiary z angielskiej Wikipedii (The Shorebird Guide) i polskiej (HBW), nie z Collinsa: sprawdzić. Rozpiętość wypada dużo większa niż u krwawodzioba, bo jego wymiary są z Collinsa.",
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Nieco większy i wyraźnie smuklejszy od krwawodzioba: dłuższa szyja i dłuższe nogi, sylwetka bardziej elegancka.",
+          "dziob": "Wyraźnie dłuższy i cieńszy niż u krwawodzioba, z lekko opadłym końcem; czerwony tylko u nasady żuchwy (dolnej szczęki).",
+          "nogi": "Długie, ciemnoczerwone; w szacie godowej tak ciemne, że wyglądają na prawie czarne.",
+          "zachowanie": "Często brodzi głęboko, nawet po brzuch, a bywa że pływa; żeruje szybkimi wypadami, czasem grupą zaganiając drobne ryby.",
+          "upierzenie": "Latem sadzowoczarny z białym nakrapianiem na grzbiecie. Zimą jasnopopielaty, jaśniejszy od krwawodzioba, z wyraźną białą brwią przed okiem i ciemną kreską oczną.",
+          "lot": "Skrzydło jednolicie ciemne, bez białego tylnego brzegu; wąski biały klin na grzbiecie; nogi wystają daleko za ogon.",
+          "glos": "Wyraźne, wznoszące się „czu-it” (drugi element wyżej), zwykle w locie; zupełnie inne niż opadające „tju-hu-hu” krwawodzioba."
+        },
+        "mylona_z": ["krwawodziob", "kwokacz"],
+        "dlugosc_cm": [29, 31],
+        "rozpietosc_cm": [61, 67],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "brodziec-plawny",
+      "pl": "brodziec pławny",
+      "lat": "Tringa stagnatilis",
+      "en": "Marsh Sandpiper",
+      "es": "archibebe fino",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Drobny, bardzo smukły brodziec na długich, zielonkawych nogach, z cienkim jak igła, prostym dziobem.",
+        "Wygląda jak miniaturowy kwokacz; w locie biały klin na grzbiecie i nogi wystające daleko za ogon."
+      ],
+      "miejsca": [],
+      "todo": "Wymiary z HBW (polska i angielska Wikipedia), nie z Collinsa: sprawdzić. Regiony: w Polsce nieliczny, ale coroczny na przelotach; w Kadyksie rzadki, więc pominięty; sprawdzić.",
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie mniejszy i drobniejszy od kwokacza, mniej więcej wielkości łęczaka, ale na znacznie dłuższych nogach; mała, okrągła główka i cienka szyja: „miniaturowy kwokacz”.",
+          "dziob": "Prosty, cienki jak igła, ciemny, wyraźnie dłuższy od głowy; bez zadarcia i bez grubej nasady kwokacza.",
+          "nogi": "Bardzo długie w stosunku do ciała, cienkie, zielonkawe lub żółtawe; w locie wystają daleko za ogon.",
+          "zachowanie": "Brodzi delikatnie i szybko w płytkiej wodzie, wybierając drobiazg z powierzchni; zwykle pojedynczo lub w małych grupach.",
+          "upierzenie": "Zimą bardzo jasny: szary wierzch, białe czoło, brew i cały spód. Latem grzbiet z ciemnymi plamkami, szyja i pierś drobno kropkowane.",
+          "lot": "Biały klin na grzbiecie jak u kwokacza, ale nogi wystają daleko za ogon, a sylwetka jest drobniejsza.",
+          "glos": "Cichsze i wyższe niż u kwokacza, pojedyncze lub powtarzane „kju” albo „tju”; bez donośnej potrójnej frazy kwokacza."
+        },
+        "mylona_z": ["kwokacz", "leczak"],
+        "dlugosc_cm": [22, 26],
+        "rozpietosc_cm": [55, 59],
+        "regiony": ["polska"]
+      }
+    },
+    {
+      "id": "leczak",
+      "pl": "łęczak",
+      "lat": "Tringa glareola",
+      "en": "Wood Sandpiper",
+      "es": "andarríos bastardo",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Smukły, brązowy, gęsto nakrapiany brodziec z długą, białą brwią i jasnymi, żółtawymi nogami.",
+        "W locie jasny spód skrzydła i palce wystające za ogon; głos: suche „cif-if-if”."
+      ],
+      "miejsca": [],
+      "todo": "Wymiary z niemieckiej Wikipedii (bez przypisu, zgodne z Collinsem z pamięci): sprawdzić w Collinsie.",
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Mały, smukły brodziec, nieco większy od biegusa zmiennego; smuklejszy i dłuższonogi niż samotnik.",
+          "dziob": "Prosty, dość krótki (mniej więcej długości głowy), ciemny, u nasady zielonkawy.",
+          "nogi": "Dość długie, jasne, żółtawe lub zielonkawożółte; w locie palce wyraźnie wystają za ogon.",
+          "zachowanie": "Żeruje na płyciznach śródlądowych, rozlewiskach i zalanych łąkach, często w luźnych stadkach; poderwany zrywa się z głośnym wołaniem.",
+          "upierzenie": "Wierzch brązowy, gęsto nakrapiany jasnymi plamkami; długa, wyraźna biała brew sięgająca daleko za oko.",
+          "lot": "Spód skrzydła jasny, szarawy; biały kuper i gęsto prążkowany ogon; brak paska na skrzydle; palce wyraźnie za ogonem.",
+          "glos": "Wysokie, szybkie, suche „cif-if-if”, zwykle przy zrywaniu się; bardziej szczebiotliwe niż dźwięczne „tluit” samotnika."
+        },
+        "mylona_z": ["samotnik", "brodziec-plawny"],
+        "dlugosc_cm": [19, 21],
+        "rozpietosc_cm": [36, 40],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "samotnik",
+      "pl": "samotnik",
+      "lat": "Tringa ochropus",
+      "en": "Green Sandpiper",
+      "es": "andarríos grande",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Ciemny, krępy brodziec z krótką brwią przed okiem i ostro odciętą od białego brzucha piersią.",
+        "W locie czarny spód skrzydła i jaskrawo biały kuper; głos: dźwięczne „tluit”."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Mniej więcej wielkości łęczaka, ale krępszy i krótszonogi; z daleka wygląda na ciemnego, przysadzistego ptaka.",
+          "dziob": "Prosty, nieco dłuższy niż głowa, ciemny; wydaje się mocniejszy niż u łęczaka.",
+          "nogi": "Raczej krótkie, szarozielone (ciemniejsze niż u łęczaka); w locie palce ledwie wystają za ogon.",
+          "zachowanie": "Zwykle pojedynczo, na brzegach rowów, rzek, stawów i małych oczek, często wśród drzew; kiwa tylną częścią ciała; poderwany wzbija się wysoko, zygzakiem.",
+          "upierzenie": "Wierzch ciemny, oliwkowobrązowy, z drobnymi jasnymi kropkami; brew krótka, tylko przed okiem, z białą obrączką oczną („okulary”); ciemna pierś ostro oddzielona od białego brzucha.",
+          "lot": "Spód skrzydła prawie czarny, w kontraście z białym kuprem i brzuchem: z daleka czarno-biały jak duża jaskółka oknówka; ogon z kilkoma szerokimi, ciemnymi prążkami.",
+          "glos": "Dźwięczne, czyste, wznoszące się „tluit-tlu-it-it”, zwykle przy zrywaniu się; melodyjniejsze niż suche „cif-if-if” łęczaka."
+        },
+        "mylona_z": ["leczak", "brodziec-piskliwy"],
+        "dlugosc_cm": [20, 24],
+        "rozpietosc_cm": [39, 44],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "brodziec-piskliwy",
+      "pl": "brodziec piskliwy",
+      "lat": "Actitis hypoleucos",
+      "en": "Common Sandpiper",
+      "es": "andarríos chico",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Mały, brązowy brodziec, który nieustannie kiwa tyłem ciała; biały klin między piersią a skrzydłem.",
+        "Leci nisko nad wodą na sztywnych, drgających skrzydłach, z białym paskiem na skrzydle."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Mały, mniej więcej wielkości biegusa zmiennego, przysadzisty i krótkonogi, z wydłużonym tyłem: ogon wystaje daleko za złożone skrzydła.",
+          "dziob": "Krótki, prosty, ciemny, mniej więcej długości głowy.",
+          "nogi": "Krótkie, szarozielone lub żółtawooliwkowe.",
+          "zachowanie": "Nieustannie kiwa tylną częścią ciała i ogonem; żeruje pojedynczo na kamienistych brzegach, nabrzeżach portów i rzekach, rzadko na otwartym błocie.",
+          "upierzenie": "Wierzch jednolicie oliwkowobrązowy; szarobrązowe boki piersi, a między nimi a zgięciem skrzydła biały klin wcinający się w górę; brzuch biały.",
+          "lot": "Leci nisko nad wodą, na sztywnych, drgających skrzydłach przerywanych krótkimi ślizgami; wyraźny biały pasek na skrzydle, ciemny kuper i środek ogona (bez białego kupra samotnika).",
+          "glos": "Wysokie, przenikliwe, opadające „hi-di-di” lub „ti-ti-ti”, zwykle przy zrywaniu się i w niskim locie nad wodą."
+        },
+        "mylona_z": ["samotnik", "leczak"],
+        "dlugosc_cm": [18, 20.5],
+        "rozpietosc_cm": [32, 35],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      }
+    },
+    {
+      "id": "rycyk",
+      "pl": "rycyk",
+      "lat": "Limosa limosa",
+      "en": "Black-tailed Godwit",
+      "es": "aguja colinegra",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Długi, prosty dziób i długie nogi; wiosną rdzawa szyja i pierś.",
+        "W locie szeroki biały pasek na skrzydle, biały kuper i czarny ogon."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Duży, wyraźnie większy od krwawodzioba; smukły, z długą szyją i długimi nogami, smuklejszy od szlamnika.",
+          "dziob": "Bardzo długi i prosty (najwyżej ledwie wygięty), z różową lub pomarańczową nasadą i ciemnym końcem.",
+          "nogi": "Długie, ciemne; nad stawem skokowym widać dużo nagiego uda.",
+          "zachowanie": "Brodzi w głębszej wodzie i wbija dziób aż po oczy; zwykle na słodkich wodach, wilgotnych łąkach i polach ryżowych, na morskim wybrzeżu rzadziej niż szlamnik.",
+          "upierzenie": "Zimą jednolicie szary, gładki, bez kreskowania; w szacie godowej szyja i pierś rdzawe, a boki i brzuch w ciemne prążki.",
+          "lot": "Szeroki biały pasek przez całe skrzydło, kwadratowy biały kuper i czarny ogon; nogi wystają daleko za ogon.",
+          "glos": "Poza lęgowiskiem raczej cichy; w stadzie krótkie „wed” lub „kek”, na lęgowisku nosowe „grutjo-grutjo” w locie tokowym."
+        },
+        "mylona_z": ["szlamnik"],
+        "rozpietosc_cm": [70, 82],
+        "dlugosc_cm": [36, 44],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary nie z Collinsa (HBW przez oiseaux-birds.com i BWPi przez Wikipedię), sprawdzić. Transkrypcje głosu z polskiej Wikipedii (bez przypisu), sprawdzić z nagraniem."
+    },
+    {
+      "id": "kszyk",
+      "pl": "kszyk",
+      "lat": "Gallinago gallinago",
+      "en": "Common Snipe",
+      "es": "agachadiza común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Bardzo długi, prosty dziób, krótkie nogi i jasne podłużne pasy na głowie i grzbiecie.",
+        "Spłoszony zrywa się z daleka z ochrypłym okrzykiem i ucieka zygzakiem."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie większy od biegusa zmiennego, mniejszy od krwawodzioba; krępy, krótkonogi, dużo mniejszy od słonki.",
+          "dziob": "Bardzo długi i prosty, ok. dwóch długości głowy, ciemny.",
+          "nogi": "Krótkie, zielonkawe.",
+          "zachowanie": "Żeruje na błotnistych brzegach i podmokłych łąkach, szybko wbijając dziób w muł jak igła maszyny do szycia; spłoszony zrywa się wcześnie i ucieka wysoko zygzakiem.",
+          "upierzenie": "Na głowie jasny pasek środkowy między ciemnymi pasami ciemienia i pojedyncza jasna brew; na grzbiecie płowe podłużne pasy; brzuch biały.",
+          "lot": "Szybki, wysoki, zygzakowaty; wąski biały tylny brzeg skrzydła, ogon z rdzawą przepaską; długi dziób wyraźnie sterczy przed ptakiem.",
+          "glos": "Przy zrywaniu się ochrypłe, chrapliwe „kszek” lub „ecz” (stąd nazwa); wiosną rytmiczne „tike-tike-tike” i „beczenie” sterówek w locie tokowym. Bekasik zrywa się zwykle bez głosu."
+        },
+        "mylona_z": ["bekasik", "slonka"],
+        "rozpietosc_cm": [44, 47],
+        "dlugosc_cm": [25, 27],
+        "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z HBW i Snow & Perrins (przez Wikipedię), nie z Collinsa; polska Wikipedia (Sterry) podaje 37–45 cm rozpiętości, sprawdzić. Obecność w rejonie Cieśniny (La Janda, Barbate) zimą przyjęta z ogólnej wiedzy, sprawdzić."
+    },
+    {
+      "id": "bekasik",
+      "pl": "bekasik",
+      "lat": "Lymnocryptes minimus",
+      "en": "Jack Snipe",
+      "es": "agachadiza chica",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Mniejszy od kszyka, z krótszym dziobem, ciemnym ciemieniem i podwójną jasną brwią.",
+        "Żerując podryguje jak na sprężynach; zrywa się dopiero spod nóg, bez głosu."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Najmniejszy z bekasów, ok. dwie trzecie kszyka; niewiele większy od biegusa zmiennego, krępy.",
+          "dziob": "Wyraźnie krótszy niż u kszyka, niewiele dłuższy od głowy, grubszy u nasady.",
+          "nogi": "Krótkie, zielonkawe.",
+          "zachowanie": "Żerując rytmicznie podryguje całym ciałem; ukryty w gęstej roślinności, przylega do ziemi i zrywa się dopiero spod nóg, leci nisko, prosto i krótko, po czym zaraz zapada.",
+          "upierzenie": "Ciemię całe ciemne, bez jasnego paska środkowego; jasna brew rozdzielona ciemną kreską (podwójna); na ciemnym, połyskliwym grzbiecie jaskrawe złotawe pasy.",
+          "lot": "Niski, prosty, bez zygzaków, na krótkich skrzydłach; ogon klinowaty, ciemny, bez rdzawej przepaski; krótki dziób słabo sterczy.",
+          "glos": "Spłoszony zwykle milczy, najwyżej ciche „gach”; na lęgowiskach na północy tok brzmi jak stłumiony stukot końskich kopyt."
+        },
+        "mylona_z": ["kszyk"],
+        "rozpietosc_cm": [38, 42],
+        "dlugosc_cm": [17, 19],
+        "regiony": ["polska", "poludnie-hiszpanii"]
+      },
+      "todo": "Wymiary z HBW (przez oiseaux-birds.com), nie z Collinsa; Wikipedia (Dunning) podaje 18–25 cm i 30–41 cm, polska Wikipedia 18–20 cm i 33–36 cm (bez źródła), sprawdzić. Nie dodano regionu „gibraltar”: zimuje w Andaluzji nielicznie, nie znalazłam potwierdzenia dla rejonu Cieśniny."
+    },
+    {
+      "id": "slonka",
+      "pl": "słonka",
+      "lat": "Scolopax rusticola",
+      "en": "Eurasian Woodcock",
+      "es": "chocha perdiz",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Krępa, rdzawobrązowa jak suche liście, z poprzecznymi pasami na tyle głowy.",
+        "Wiosną o zmierzchu samiec przelatuje nad lasem, chrapiąc i psykając."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Dużo większa i krępsza od kszyka, ok. wielkości gołębia; krótka szyja, okrągła sylwetka.",
+          "dziob": "Długi i prosty, ok. dwóch długości głowy, gruby u nasady, różowawy z ciemnym końcem.",
+          "nogi": "Bardzo krótkie, różowawoszare.",
+          "zachowanie": "Ptak lasu, nie błota: za dnia ukryta w ściółce wilgotnych lasów liściastych i mieszanych, żeruje o zmroku; wiosną o zmierzchu samiec „ciągnie” wolno nad koronami drzew.",
+          "upierzenie": "Rdzawobrązowa jak suche liście; na tyle głowy poprzeczne ciemne pasy (u kszyka podłużne); duże ciemne oko osadzone wysoko i z tyłu głowy; spód drobno prążkowany w poprzek.",
+          "lot": "Szerokie, zaokrąglone skrzydła i ciężki, sowi lot z dziobem skierowanym w dół; bez białego brzegu skrzydła i bez zygzaków kszyka.",
+          "glos": "Przy ciągu na przemian głuche chrapanie „korr-korr-korr” i ostre, wysokie „psik”; poza tym prawie zawsze milczy."
+        },
+        "mylona_z": ["kszyk"],
+        "rozpietosc_cm": [55, 65],
+        "dlugosc_cm": [33, 38],
+        "regiony": ["polska", "poludnie-hiszpanii"]
+      },
+      "todo": "Nazwa „słonka” jak na liście ptaków Polski; lista ptaków świata (Mielczarek i Kuziemko) używa „słonka zwyczajna”, zdecydować. Nie dodano regionu „gibraltar”: zimuje w lasach Andaluzji (np. Los Alcornocales), ale nie znalazłam potwierdzenia dla samego rejonu Cieśniny."
+    },
+    {
+      "id": "platkonog-szydlodzioby",
+      "pl": "płatkonóg szydłodzioby",
+      "lat": "Phalaropus lobatus",
+      "en": "Red-necked Phalarope",
+      "es": "falaropo picofino",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Mały siewkowiec, który pływa po wodzie jak maleńka mewa, z dziobem cienkim jak igła.",
+        "Kręci się w kółko na wodzie i szybko wydziobuje podniesioną zdobycz."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Mniejszy od biegusa zmiennego, smukły, z cienką szyją i małą głową; na wodzie siedzi wysoko, lekko jak korek.",
+          "dziob": "Mniej więcej długości głowy, bardzo cienki, prosty i czarny, jak igła.",
+          "nogi": "Krótkie, szare; palce z płatkowatymi błonami, na pływającym ptaku niewidoczne.",
+          "zachowanie": "Pływa i szybko kręci się w kółko, wzbudzając wir, który podnosi zdobycz ku powierzchni; dziobie ją bardzo szybko. Często mało płochliwy. Na przelotach na stawach, zalewach i przy brzegu morza.",
+          "upierzenie": "Wiosną ciemnoszary, z płowymi pasami na grzbiecie, rdzawą szyją i białym gardłem; samica jaskrawsza od samca. Młode i ptaki zimowe biało-szare z czarną plamą za okiem, młode z płowymi pasami na grzbiecie.",
+          "lot": "Wąski biały pasek na skrzydle i białe boki kupra z ciemnym środkiem; lot szybki i rzucający się.",
+          "glos": "Krótkie, twarde „kit” lub „kett”, w stadzie świergotliwe; ostrzejsze niż płynne „plit” piaskowca."
+        },
+        "mylona_z": ["piaskowiec"],
+        "dlugosc_cm": [17, 20],
+        "rozpietosc_cm": [30, 36],
+        "regiony": ["polska"]
+      },
+      "todo": "Wymiary z polskiej Wikipedii (17–20 i 30–36 cm), nie z Collinsa: sprawdzić. Sprawdzić też, czy płatkonóg bywa regularnie w Kadyksie (tu tylko „polska”)."
+    },
+    {
+      "id": "kulon",
+      "pl": "kulon",
+      "lat": "Burhinus oedicnemus",
+      "en": "Eurasian Stone-curlew",
+      "es": "alcaraván común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Płowy, gęsto kreskowany, z wielkim żółtym okiem; żyje na suchym, otwartym terenie.",
+        "Najaktywniejszy o zmierzchu i nocą, kiedy słychać jego zawodzące głosy."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Wyraźnie większy od krwawodzioba, krępy, z dużą okrągłą głową i grubymi stawami nóg.",
+          "dziob": "Krótszy od głowy, mocny, żółty u nasady i czarny na końcu.",
+          "nogi": "Dość długie, żółte, z grubymi stawami skokowymi.",
+          "zachowanie": "Żyje na suchym terenie (ugory, stepy, wydmy, kamieniste pola), nie na mule; za dnia zwykle stoi albo leży bez ruchu, ufając maskowaniu. Żeruje o zmierzchu i nocą.",
+          "upierzenie": "Płowobrązowy, gęsto kreskowany; duże żółte oko, jasny pas pod okiem i biało-czarny pasek na złożonym skrzydle.",
+          "lot": "Na wierzchu skrzydła czarne lotki z białymi plamami i jasny pas na pokrywach; lot nisko, sztywnymi uderzeniami.",
+          "glos": "Nocą zawodzące, narastające „kur-li”, często w chórze kilku ptaków; przypomina głos kulika wielkiego, ale zwykle jest wyższe i ostrzejsze."
+        },
+        "mylona_z": [],
+        "dlugosc_cm": [40, 44],
+        "rozpietosc_cm": [77, 85],
+        "regiony": ["poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Sprawdzić nazwę w aktualnej liście (Wikipedia podaje „kulon (zwyczajny)”). Wymiary z polskiej Wikipedii (Collinsa nie sprawdzono): sprawdzić. Commons nie ma wolnego zdjęcia w locie (stan na 1.11.2026); dodać, gdy się pojawi albo z własnych zdjęć."
+    },
+    {
+      "id": "zwirowiec",
+      "pl": "żwirowiec łąkowy",
+      "lat": "Glareola pratincola",
+      "en": "Collared Pratincole",
+      "es": "canastera común",
+      "grupa": "siewkowe",
+      "cechy": [
+        "Wygląda i lata jak duża jaskółka: długie skrzydła i głęboko wcięty ogon.",
+        "Płowe gardło obrzeżone czarną linią; od spodu kasztanowe skrzydła."
+      ],
+      "miejsca": [],
+      "rozpoznawanie": {
+        "klucz": {
+          "wielkosc": "Mniej więcej wielkości krwawodzioba, ale na krótkich nogach, z długimi skrzydłami i ogonem; stojący przypomina dużą jaskółkę.",
+          "dziob": "Krótki, lekko zakrzywiony, czarny z czerwoną nasadą.",
+          "nogi": "Krótkie, ciemne.",
+          "zachowanie": "Łapie owady w locie jak jaskółka albo rybitwa, często w luźnych stadach nad mokradłami i polami; na ziemi biega krótko jak sieweczka. Gniazduje na suchych, nagich rozlewiskach i solniskach.",
+          "upierzenie": "Oliwkowobrązowy wierzch, płowokremowe gardło obrzeżone czarną linią, biały brzuch; młode łuskowane, bez wyraźnego obramowania gardła.",
+          "lot": "Biały kuper i głęboko wcięty, czarno zakończony ogon; od spodu kasztanowe pokrywy podskrzydłowe i wąski biały tylny brzeg skrzydła.",
+          "glos": "Skrzeczące, rybitwopodobne „kirrik” lub „kitik”, najczęściej w locie."
+        },
+        "mylona_z": [],
+        "dlugosc_cm": [24, 28],
+        "rozpietosc_cm": [60, 70],
+        "regiony": ["poludnie-hiszpanii", "gibraltar"]
+      },
+      "todo": "Wymiary z hiszpańskiej Wikipedii (24–28 i 60–70 cm), nie z Collinsa: sprawdzić. Brak nagrania na wolnej licencji z xeno-canto i Commons."
     },
     {
       "id": "mewa-cienkodzioba",

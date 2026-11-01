@@ -58,7 +58,7 @@ export function problemyNagrania(
   if (!n.opis?.trim()) bledy.push(`${gdzie}: brak opisu, co słychać`);
   if (!(n.sekundy > 0)) bledy.push(`${gdzie}: brak długości (sekundy)`);
   if (n.xc !== undefined && !(Number.isInteger(n.xc) && n.xc > 0)) bledy.push(`${gdzie}: xc ma być numerem z xeno-canto`);
-  if (n.sonogram && ![2, 4].includes(n.sonogram.khz)) bledy.push(`${gdzie}: sonogram.khz ma być 2 albo 4`);
+  if (n.sonogram && ![2, 4, 8].includes(n.sonogram.khz)) bledy.push(`${gdzie}: sonogram.khz ma być 2, 4 albo 8`);
   if (n.sonogram && n.sonogram.zrodlo !== n.src) bledy.push(`${gdzie}: sonogram narysowano z innego nagrania (python3 scripts/sonogramy.py go odświeży)`);
   if (n.sonogram && !istnieje(sciezkaSonogramu(id))) bledy.push(`${gdzie}: nie ma pliku public${sciezkaSonogramu(id)} (python3 scripts/sonogramy.py)`);
   return bledy;
