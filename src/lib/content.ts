@@ -370,9 +370,9 @@ export function modulyGatunku(g: Gatunek) {
 /** B9, the waders: every wader taught as a full species links to it. */
 export const MODUL_SIEWKOWCOW = 'siewkowce';
 
-/** The modules a bird of marshes links to: its sites' field modules, and B9 for a wader taught as a full species. */
+/** The modules a bird of marshes links to: its sites' field modules, the modules that name it, and B9 for a wader taught as a full species. */
 export function modulyPtakaMokradel(p: PtakMokradel) {
-  const slugi = new Set(p.miejsca.map((m) => MODUL_MIEJSCA[m]));
+  const slugi = new Set([...p.miejsca.map((m) => MODUL_MIEJSCA[m]), ...(p.moduly ?? [])]);
   if (p.rozpoznawanie) slugi.add(MODUL_SIEWKOWCOW);
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
@@ -1239,7 +1239,8 @@ function sprawdzSpojnosc() {
     gotoweModuly.flatMap((m) => m.lekcje.flatMap((l) => [...przygotujLekcje(czytajSync(`moduly/${m.slug}/${l.slug}.md`)).zPlansza])),
   );
   for (const p of ptakiMokradel) {
-    if (!zPlanszaWLekcji.has(p.id)) bledy.push(`ptaki-mokradel.json: ${p.id}: żadna lekcja nie ma nagłówka „### … — *${p.lat}*”, więc nigdzie nie widać jego zdjęć`);
+    // A bird the course only names (A12, A13) has its photo on its own page and the checklist, not on a lesson plate.
+    if (p.miejsca.length && !zPlanszaWLekcji.has(p.id)) bledy.push(`ptaki-mokradel.json: ${p.id}: żadna lekcja nie ma nagłówka „### … — *${p.lat}*”, więc nigdzie nie widać jego zdjęć`);
   }
   const idMokradel = new Set<string>();
   for (const p of ptakiMokradel) {
@@ -1252,9 +1253,16 @@ function sprawdzSpojnosc() {
     }
     if (!(GRUPY_MOKRADEL as readonly string[]).includes(p.grupa)) bledy.push(`ptaki-mokradel.json: ${p.id}: nieznana grupa „${p.grupa}”`);
     if (!p.cechy?.length || p.cechy.length > 2) bledy.push(`ptaki-mokradel.json: ${p.id}: cechy to jedno albo dwa krótkie zdania`);
-    // A wader taught as a full species may be on no field list; every other bird of marshes is there because a list has it.
-    if (!Array.isArray(p.miejsca) || (!p.miejsca.length && !p.rozpoznawanie) || !p.miejsca.every((m) => miejsca.has(m))) {
-      bledy.push(`ptaki-mokradel.json: ${p.id}: miejsca ${JSON.stringify(p.miejsca)} mają być listą z ${[...miejsca].join(', ')}, pustą tylko u ptaka z „rozpoznawanie”`);
+    // A wader taught as a full species, or a bird a module names, may be on no field list; every other bird is there because a list has it.
+    if (!Array.isArray(p.miejsca) || (!p.miejsca.length && !p.rozpoznawanie && !p.moduly?.length) || !p.miejsca.every((m) => miejsca.has(m))) {
+      bledy.push(`ptaki-mokradel.json: ${p.id}: miejsca ${JSON.stringify(p.miejsca)} mają być listą z ${[...miejsca].join(', ')}, pustą tylko u ptaka z „rozpoznawanie” albo „moduly”`);
+    }
+    for (const slug of p.moduly ?? []) {
+      const m = gotoweModuly.find((x) => x.slug === slug);
+      if (!m) bledy.push(`ptaki-mokradel.json: ${p.id}: moduły wskazują „${slug}”, którego nie ma wśród gotowych`);
+      else if (!m.lekcje.some((l) => czytajSync(`moduly/${slug}/${l.slug}.md`).includes(`*${p.lat}*`))) {
+        bledy.push(`ptaki-mokradel.json: ${p.id}: żadna lekcja modułu „${slug}” nie wymienia *${p.lat}*`);
+      }
     }
   }
   const idSiewkowcow = new Set(siewkowce.map((p) => p.id));

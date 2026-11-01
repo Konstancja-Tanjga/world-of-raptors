@@ -31,7 +31,7 @@ content/
   gatunki.json             atlas: 45 drapieżników (regiony, aktywność, cechy, pary do pomylenia, miejsca, rozpiętość i długość ciała)
   miarka.json              ptaki odniesienia modułu B7 (od wróbla do bociana): nie są drapieżnikami, nie trafiają do atlasu ani fiszek
   punkty-obserwacji.json   punkty obserwacji: współrzędne, dojazd, miesiące, pora dnia, wiatr, ptaki, lekcja, źródła
-  ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami (filtr „Ptaki mokradeł”): nazwy, grupa, cechy, miejsca
+  ptaki-mokradel.json      ptaki mokradeł, czyli gatunki z list terenowych, które nie są drapieżnikami, oraz krukowate i małe ptaki z A12 i A13 (pole `moduly`; filtr „Inne ptaki”): nazwy, grupa, cechy, miejsca
   moduly/<slug>/README.md  opis modułu
   moduly/<slug>/NN-*.md    lekcje
   zdjecia.json             zdjęcia gatunków, prawie wszystkie z Commons (autor, licencja, rozmiar oryginału, punkt ostrości)

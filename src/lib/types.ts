@@ -86,8 +86,8 @@ export const REGIONY: { value: Region; label: string }[] = [
 export const MIEJSCA: { value: Miejsce; label: string }[] = [{ value: 'marismas-barbate', label: 'Marismas del Barbate' }];
 
 /**
- * Birds of marshes, the species other than raptors ("Ptaki mokradeł", content/ptaki-mokradel.json): the other
- * species of a site's field list. They live outside gatunki.json because
+ * Birds of marshes, the species other than raptors ("Inne ptaki" on the atlas and the checklist, content/ptaki-mokradel.json):
+ * the other species of a site's field list, and the birds a module names (A12's corvids, A13's small birds). They live outside gatunki.json because
  * everything built on raptors (silhouettes, flashcards, the scale view, Moje
  * niebo's rings) has nothing to say about them.
  */
@@ -113,8 +113,10 @@ export type PtakMokradel = {
   grupa: GrupaMokradel;
   /** What to look for in the field: one or two short sentences. */
   cechy: string[];
-  /** Field lists it is on; empty only for a bird taught as a full species (`rozpoznawanie`) that is on none. */
+  /** Field lists it is on; empty only for a bird taught as a full species (`rozpoznawanie`) or named by `moduly`. */
   miejsca: Miejsce[];
+  /** Modules whose lessons name it (A12's corvids, A13's small birds), so it can be ticked on the checklist; module slugs. */
+  moduly?: string[];
   /** What is still to check by hand (listed by `next dev`, never on a page). */
   todo?: string;
   /** Taught as a full species (the waders of B9): its cues, look-alikes, sizes and flashcards. */

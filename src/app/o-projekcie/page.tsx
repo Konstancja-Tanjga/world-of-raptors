@@ -84,7 +84,7 @@ export default async function OProjekcie() {
     { n: liczby.gatunki, slowo: odmiana(liczby.gatunki, ['gatunek drapieżnika', 'gatunki drapieżników', 'gatunków drapieżników']) },
     {
       n: liczby.ptakiMokradel,
-      slowo: odmiana(liczby.ptakiMokradel, ['ptak mokradeł', 'ptaki mokradeł', 'ptaków mokradeł']),
+      slowo: odmiana(liczby.ptakiMokradel, ['inny ptak', 'inne ptaki', 'innych ptaków']),
     },
     { n: liczby.moduly, slowo: odmiana(liczby.moduly, ['moduł', 'moduły', 'modułów']) },
     { n: liczby.lekcje, slowo: odmiana(liczby.lekcje, ['lekcja', 'lekcje', 'lekcji']) },

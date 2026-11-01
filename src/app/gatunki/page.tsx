@@ -26,9 +26,9 @@ export default function GatunkiPage() {
           {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} z modułów kursu: {dzienne}{' '}
           {odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])} i {sowy}{' '}
           {odmiana(sowy, ['sowa', 'sowy', 'sów'])} z Polski, południa Hiszpanii i Cieśniny Gibraltarskiej. Zobacz je na
-          zdjęciach, jako sylwetki na tle nieba albo wszystkie w jednej skali. Filtr „Ptaki mokradeł” pokazuje jeszcze{' '}
-          {ptakiMokradel.length} {odmiana(ptakiMokradel.length, ['gatunek', 'gatunki', 'gatunków'])} z list terenowych, np. z
-          Marismas del Barbate. Nie wiesz, co widzisz?{' '}
+          zdjęciach, jako sylwetki na tle nieba albo wszystkie w jednej skali. Filtr „Inne ptaki” pokazuje jeszcze{' '}
+          {ptakiMokradel.length} {odmiana(ptakiMokradel.length, ['gatunek', 'gatunki', 'gatunków'])} z list terenowych (np. z
+          Marismas del Barbate) i z modułów o siewkowcach, krukowatych i małych ptakach. Nie wiesz, co widzisz?{' '}
           <Link href="/rozpoznaj" className="text-link">
             Rozpoznaj krok po kroku
           </Link>

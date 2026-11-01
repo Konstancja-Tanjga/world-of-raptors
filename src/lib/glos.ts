@@ -128,9 +128,10 @@ export function wKursie(lat: string, poLacinie: ReadonlyMap<string, string>): st
   return poLacinie.get(INNE_NAZWY[lat] ?? lat);
 }
 
-/** BirdNET's name for an atlas species whose name it spells otherwise (today only the booted eagle). */
+/** BirdNET's name for a course species whose name it spells otherwise (the booted eagle, the jackdaw). */
 export const INNE_NAZWY: Record<string, string> = {
   'Hieraaetus pennatus': 'Aquila pennata',
+  'Corvus monedula': 'Coloeus monedula',
 };
 
 /** Atlas species the model does not know under any name, so it can never name them (glos.test.ts checks the list against the labels). */
