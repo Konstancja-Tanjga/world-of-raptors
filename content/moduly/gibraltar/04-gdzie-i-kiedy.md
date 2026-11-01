@@ -13,11 +13,14 @@
 
 | Punkt | Najlepszy przy | Co zobaczysz |
 |---|---|---|
-| **Wybrzeże i wzgórza Tarify** (m.in. Algarrobo) | Levante | masowy przelot bezpośrednio nad miastem i wybrzeżem |
-| **Cazalla** (nad Tarifą) | Poniente / słabe wiatry | klasyczny punkt liczeń; ptaki nadlatują nad wzgórza przed przelotem |
+| **Cazalla** (nad Tarifą) | Levante | klasyczny punkt liczeń; ptaki nadlatują nad wzgórza przed przelotem |
+| **Santuario, Bolonia** (na zachód od Tarify) | silny Levante | przelot zepchnięty najdalej na zachód |
+| **El Algarrobo** (między Tarifą a Algeciras) | Poniente | masowy przelot drapieżników i bocianów; dobry też wiosną |
 | **Punta Carnero** (koło Algeciras) | Poniente | przelot bardziej na wschodzie cieśniny |
 | **Skała Gibraltarska** (okolice Jews' Gate) | Poniente | ptaki nisko nad skałą; obserwatorium GONHS |
 | **Jebel Musa / wybrzeże Maroka** | — | „druga strona”: przylot jesienią, odlot wiosną |
+
+Wszystkie punkty z dojazdem, kalendarzem i porą dnia, ułożone od miejsca, z którego ruszasz, są na stronie [Kiedy i gdzie](/kiedy-i-gdzie#gdzie).
 
 ## Miejsca na gatunki lokalne
 
@@ -66,6 +69,8 @@
 
 ## Źródła i dalsza nauka
 - [Fundación Migres — Programa Migres](https://www.fundacionmigres.org/en/programa-migres/) — liczenia i dane o przelocie
+- [Andalucia Bird Society, José Barrera: Migration watching sites](https://www.andaluciabirdsociety.org/article-library/birding-sites/migration-watching-sites/) — dojazd, wysokość i pora roku każdego punktu w cieśninie
+- [Birdingplaces: Cazalla – Tarifa](https://www.birdingplaces.eu/birdingplaces/spain/cazalla-tarifa) i [Birdingplaces: El Algarrobo Migration Watchpoint](https://www.birdingplaces.eu/birdingplaces/spain/el-algarrabo-migration-watchpoint) — przy jakim wietrze który punkt
 - [Fundación Migres — Centrum CIMA](https://www.fundacionmigres.org/en/centro-de-la-migracion-y-cambio-global/)
 - [Inglorious Bustards — przewodnik po przelocie jesiennym](https://ingloriousbustards.com/2026/08/03/early-autumn-migration-guide-faq-myths-milanadas-the-year-round-flyway/)
 - [Doñana Wings — przelot ptaków szybujących w cieśninie](https://www.donanawings.com/migration-birds-strait-gibraltar/)

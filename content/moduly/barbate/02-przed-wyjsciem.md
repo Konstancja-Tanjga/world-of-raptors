@@ -6,7 +6,7 @@ W marismas o tym, co zobaczysz, decydują trzy rzeczy: pora pływu, kierunek wia
 
 <margines>
 
-> **Gdzie sprawdzić:** wpisz w wyszukiwarkę „tabla de mareas Barbate”. Tablica podaje godziny przypływu (*pleamar*) i odpływu (*bajamar*) na każdy dzień. Planer [Kiedy jechać](/kiedy-jechac) liczy z prognozy pływów i pogody najlepsze godziny na najbliższe dziesięć dni.
+> **Gdzie sprawdzić:** wpisz w wyszukiwarkę „tabla de mareas Barbate”. Tablica podaje godziny przypływu (*pleamar*) i odpływu (*bajamar*) na każdy dzień. Planer na stronie [Kiedy i gdzie](/kiedy-i-gdzie#kiedy) liczy z prognozy pływów i pogody najlepsze godziny na najbliższe dziesięć dni.
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Becasseaux_variables_en_baie_de_Somme.jpg/960px-Becasseaux_variables_en_baie_de_Somme.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="6000x4000" alt="Mały brązowo-biały ptak brodzący z długim, lekko zagiętym dziobem idzie po mokrym, pofałdowanym mule, za nim kilka podobnych ptaków" podpis="Biegusy zmienne żerują na odsłoniętym mule (zatoka Sommy, Francja): przy odpływie siewkowe rozchodzą się po łachach i szukają w mule drobnych bezkręgowców" autor="MOREL Florentin" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Becasseaux_variables_en_baie_de_Somme.jpg">
 </zdjecie>

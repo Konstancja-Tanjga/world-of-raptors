@@ -7,6 +7,7 @@ import mokradlaJson from '../../content/ptaki-mokradel.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
+import punktyJson from '../../content/punkty-obserwacji.json';
 import miarkaJson from '../../content/miarka.json';
 import nagraniaJson from '../../content/nagrania.json';
 import budowaJson from '../../content/budowa-ptaka.json';
@@ -19,6 +20,9 @@ import type { Fiszki, ZapisFiszki } from './fiszki';
 import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbiory';
 import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
 import { opcjeGatunku, srodek, type Miara } from './cwiczenia';
+import { MIEJSCA_PLANERA } from './planer';
+import { KOLORY, ZACHOWANIA } from './rozpoznawanie';
+import { OKOLICE, WIATRY, type PunktObserwacji } from './punkty';
 import { GATUNKI_RYSUNKOW } from './rysunki';
 import { gwiazdy, obrys, POZA_SZYBOWANIE } from './sylwetka';
 import { POZY, STYL_LOTU, SYLWETKI } from './sylwetki';
@@ -75,6 +79,7 @@ export const sciezki = modulyJson.sciezki as Sciezka[];
 export const moduly = modulyJson.moduly as Modul[];
 // JSON arrays are not tuples to TypeScript; sprawdzSpojnosc() checks that `fokus` and `oryginal` are pairs.
 export const zdjecia = zdjeciaJson as unknown as Partial<Record<string, ZdjeciaGatunku>>;
+export const punktyObserwacji = punktyJson.punkty as PunktObserwacji[];
 
 /** The recordings lessons play, by id (`puszczyk/samiec`); see `<glos>` in Markdown.tsx. */
 export const nagrania = nagraniaJson as Record<string, NagranieLekcji>;
@@ -884,8 +889,9 @@ export async function ideaKursu() {
  * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
  * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
- * the goshawk its 3D model is built after, A11 with a black-winged kite,
- * the hoverer, B5 with
+ * the goshawk its 3D model is built after, A10 with a cinereous vulture
+ * perched like a living fossil, A11 with a black-winged kite, the hoverer,
+ * B5 with
  * an eagle owl, B7 with the widest
  * wingspan of the atlas, the cinereous vulture's, B8 with a honey buzzard,
  * the bird of the Strait's busiest days.
@@ -900,6 +906,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', zdjecie: 'lot' },
   'swiat-sow': { gatunek: 'puszczyk-mszarny', zdjecie: 'siedzacy' },
   'budowa-ptaka': { gatunek: 'jastrzab', zdjecie: 'lot' },
+  ewolucja: { gatunek: 'sep-kasztanowaty', zdjecie: 'siedzacy' },
   lot: { gatunek: 'kaniuk', zdjecie: 'lot' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
@@ -956,7 +963,9 @@ export async function sylabusModulu(slug: string) {
  * removing a drawing, a card, a crop, a link or a module's opening: species
  * fields and look-alikes, silhouettes and flight styles, photo focus and
  * sizes, module openings, the modules and lesson the code links to by name,
- * the curiosities' lessons and species, the species drawn by name
+ * the curiosities' lessons and species, the colours and behaviours
+ * "Rozpoznaj" asks about, the observation points (fields,
+ * months, birds, lesson and planner site), the species drawn by name
  * (rysunki.ts, the constellations, the patches), and "Moje niebo": every
  * species taught or named by a lesson, room on its map for every module,
  * every patch and gold star earnable once everything is done, and nothing
@@ -982,6 +991,12 @@ function sprawdzSpojnosc() {
       bledy.push(`gatunki.json: ${g.id}: regiony ${JSON.stringify(g.regiony)} mają być niepustą listą z ${[...regiony].join(', ')}`);
     }
     if (!g.status?.every((s) => s in STATUS_LABEL)) bledy.push(`gatunki.json: ${g.id}: nieznany status w ${JSON.stringify(g.status)}`);
+    if (!g.kolory?.length || !g.kolory.every((k) => KOLORY.some((x) => x.value === k))) {
+      bledy.push(`gatunki.json: ${g.id}: kolory ${JSON.stringify(g.kolory)} mają być niepustą listą z ${KOLORY.map((x) => x.value).join(', ')}`);
+    }
+    if (!g.zachowania?.length || !g.zachowania.every((z) => ZACHOWANIA.some((x) => x.value === z))) {
+      bledy.push(`gatunki.json: ${g.id}: zachowania ${JSON.stringify(g.zachowania)} mają być niepustą listą z ${ZACHOWANIA.map((x) => x.value).join(', ')}`);
+    }
     if (!para(g.rozpietosc_cm, (n) => n > 0) || g.rozpietosc_cm[0] > g.rozpietosc_cm[1]) {
       bledy.push(`gatunki.json: ${g.id}: rozpietosc_cm ma być [od, do] w centymetrach`);
     }
@@ -1172,10 +1187,42 @@ function sprawdzSpojnosc() {
     for (const id of c.gatunki) if (!idGatunkow.has(id)) bledy.push(`ciekawostki.json: ${c.id}: gatunku „${id}” nie ma w atlasie`);
   }
   bledy.push(...problemyBudowy(), ...problemyPunktu());
+  const idPtakow = new Set([...idGatunkow, ...ptakiMokradel.map((p) => p.id)]);
+  const okolice = new Set<string>(OKOLICE.map((o) => o.value));
+  const miesiac = (n: unknown) => Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 12;
+  const idPunktow = new Set<string>();
+  const tekst = (v: unknown): v is string => typeof v === 'string' && v.trim() !== '';
+  for (const p of punktyObserwacji) {
+    const gdzie = `punkty-obserwacji.json: ${p.id}`;
+    // Fields are checked for their type first, so one bad point is reported with the rest instead of crashing the check.
+    if (typeof p.id !== 'string' || !ID.test(p.id) || idPunktow.has(p.id)) bledy.push(`${gdzie}: id ma być unikalne, małymi literami z łącznikami`);
+    idPunktow.add(p.id);
+    for (const pole of ['nazwa', 'opis', 'dojazd', 'pora_dnia', 'lekcja'] as const) if (!tekst(p[pole])) bledy.push(`${gdzie}: puste pole ${pole}`);
+    if (!okolice.has(p.okolica)) bledy.push(`${gdzie}: nieznana okolica „${p.okolica}”`);
+    if (p.rodzaj !== 'przelot' && p.rodzaj !== 'lokalne') bledy.push(`${gdzie}: rodzaj ma być „przelot” albo „lokalne”`);
+    if (!(Math.abs(p.szer) <= 90 && Math.abs(p.dl) <= 180)) bledy.push(`${gdzie}: szer i dl mają być stopniami dziesiętnymi`);
+    if (!Array.isArray(p.wiatr) || !p.wiatr.every((w) => (WIATRY as readonly string[]).includes(w))) bledy.push(`${gdzie}: wiatr ma być listą z ${WIATRY.join(', ')}`);
+    const listaMiesiecy = (v: unknown): v is number[] => Array.isArray(v) && v.length > 0 && v.every(miesiac);
+    if (!listaMiesiecy(p.miesiace)) bledy.push(`${gdzie}: miesiace mają być niepustą listą numerów 1–12`);
+    if (!listaMiesiecy(p.szczyt)) bledy.push(`${gdzie}: szczyt ma być niepustą listą numerów 1–12`);
+    else if (!p.szczyt.every((n) => p.miesiace?.includes(n))) bledy.push(`${gdzie}: każdy miesiąc ze szczytu ma być też w miesiacach`);
+    if (!Array.isArray(p.gatunki) || !p.gatunki.length) bledy.push(`${gdzie}: brak gatunków`);
+    else for (const id of p.gatunki) if (!idPtakow.has(id)) bledy.push(`${gdzie}: gatunku „${id}” nie ma w atlasie ani wśród ptaków mokradeł`);
+    if (tekst(p.lekcja)) {
+      const [modul, lekcja] = p.lekcja.split('/');
+      if (!gotowe.get(modul)?.lekcje.some((l) => l.slug === lekcja)) bledy.push(`${gdzie}: lekcji „${p.lekcja}” nie ma wśród gotowych modułów`);
+    }
+    if (p.planer && !MIEJSCA_PLANERA.some((m) => m.value === p.planer)) bledy.push(`${gdzie}: planer nie zna miejsca „${p.planer}”`);
+    if (!Array.isArray(p.zrodla) || !p.zrodla.every((z) => tekst(z?.nazwa) && typeof z.url === 'string' && /^https:\/\//.test(z.url))) {
+      bledy.push(`${gdzie}: zrodla mają być listą źródeł z nazwą i adresem https`);
+    }
+  }
   if (bledy.length) throw new Error(`Niespójna treść kursu:\n- ${bledy.join('\n- ')}`);
   // What is still to check by hand stops nothing; `next dev` lists it (the build would print it once per worker).
   const doSprawdzenia = ptakiMokradel.filter((p) => p.todo).map((p) => `${p.id}: ${p.todo}`);
   if (doSprawdzenia.length && process.env.NODE_ENV === 'development') console.warn(`ptaki-mokradel.json, do sprawdzenia:\n- ${doSprawdzenia.join('\n- ')}`);
+  const punktyDoSprawdzenia = punktyObserwacji.filter((p) => p.todo).map((p) => `${p.id}: ${p.todo}`);
+  if (punktyDoSprawdzenia.length && process.env.NODE_ENV === 'development') console.warn(`punkty-obserwacji.json, do sprawdzenia:\n- ${punktyDoSprawdzenia.join('\n- ')}`);
   const doOdsluchania = Object.entries(nagrania).filter(([, n]) => !n.zatwierdzone).map(([id, n]) => `${id}: ${n.strona}`);
   if (doOdsluchania.length && process.env.NODE_ENV === 'development') console.warn(`nagrania.json, do odsłuchania (zatwierdzone: false):\n- ${doOdsluchania.join('\n- ')}`);
 }

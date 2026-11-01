@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import './atlas.css';
 import { AtlasView } from '@/components/AtlasView';
 import { Ciekawostka } from '@/components/Ciekawostka';
@@ -21,7 +22,11 @@ export default function GatunkiPage() {
           {odmiana(sowy, ['sowa', 'sowy', 'sów'])} z Polski, południa Hiszpanii i Cieśniny Gibraltarskiej. Zobacz je na
           zdjęciach, jako sylwetki na tle nieba albo wszystkie w jednej skali. Filtr „Ptaki mokradeł” pokazuje jeszcze{' '}
           {ptakiMokradel.length} {odmiana(ptakiMokradel.length, ['gatunek', 'gatunki', 'gatunków'])} z list terenowych, np. z
-          Marismas del Barbate.
+          Marismas del Barbate. Nie wiesz, co widzisz?{' '}
+          <Link href="/rozpoznaj" className="text-link">
+            Rozpoznaj krok po kroku
+          </Link>
+          .
         </p>
       </header>
       <AtlasView
