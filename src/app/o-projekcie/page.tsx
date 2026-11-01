@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './o-projekcie.css';
+import { DaneStrukturalne } from '@/components/DaneStrukturalne';
 import { MarkdownInline } from '@/components/Markdown';
 import { Anatomia } from '@/components/Anatomia';
 import { SuwakMorfu } from '@/components/SuwakMorfu';
@@ -8,9 +9,10 @@ import { Sylwetka } from '@/components/Sylwetka';
 import { autorzyZdjec, ideaKursu, statystykiKursu, stronaMorfu, taliaFiszek, znajdzGatunek } from '@/lib/content';
 import type { PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
+import { ADRES, AUTORKA } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'O projekcie',
+  title: 'O projekcie i autorce',
   description: 'Jak powstał World of Raptors: pomysł i treść Konstancji Tanjgi, projekt, ruch i kod razem z Claude.',
 };
 
@@ -95,6 +97,7 @@ export default async function OProjekcie() {
 
   return (
     <div className="oprojekcie">
+      <DaneStrukturalne dane={{ '@type': 'AboutPage', url: `${ADRES}/o-projekcie`, inLanguage: 'pl', about: { '@type': 'WebSite', name: 'World of Raptors', url: ADRES }, author: AUTORKA }} />
       <section className="czolowka scena" data-scena aria-labelledby="oprojekcie-tytul">
         <Sylwetka id="kania-ruda" klasa="czolowka__ptak" />
         <div className="czolowka__wnetrze">

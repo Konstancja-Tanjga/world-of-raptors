@@ -8,6 +8,21 @@ import { odkoduj } from './tagi';
 /** The production origin: `metadataBase`, the sitemap and robots.txt, and structured data all use it. */
 export const ADRES = 'https://world-of-raptors.vercel.app';
 
+/**
+ * The author as structured data. `sameAs` names her other profiles, so a search
+ * for her name can connect them to this course.
+ */
+export const AUTORKA = {
+  '@type': 'Person',
+  name: 'Konstancja Tanjga',
+  url: `${ADRES}/o-projekcie`,
+  sameAs: [
+    'https://konstancja-tanjga.github.io/portfolio-site/',
+    'https://github.com/Konstancja-Tanjga',
+    'https://www.linkedin.com/in/konstancja-tanjga/',
+  ],
+};
+
 /** Roughly what Google shows under a result before it cuts the snippet. */
 const DLUGOSC_OPISU = 160;
 
