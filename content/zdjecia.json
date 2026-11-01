@@ -3248,5 +3248,365 @@
       "podpis": "Młody ptak",
       "alt": "Młody żwirowiec łąkowy stoi na błocie: płowoszary, łuskowany wierzch, bez czarnego obramowania gardła."
     }
+  },
+  "sroka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Eurasian_Magpie_2023-10-16_02.jpg/960px-Eurasian_Magpie_2023-10-16_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Alexis Lours",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Magpie_2023-10-16_02.jpg",
+      "plik": "File:Eurasian Magpie 2023-10-16 02.jpg",
+      "oryginal": [5143, 3429],
+      "fokus": [25, 20]
+    },
+    "lot": null
+  },
+  "kruk": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Corvus_corax_ad_berlin_090516.jpg/960px-Corvus_corax_ad_berlin_090516.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 620,
+      "autor": "Accipiter (R. Altenkamp, Berlin)",
+      "licencja": "CC BY-SA 3.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Corvus_corax_ad_berlin_090516.jpg",
+      "plik": "File:Corvus corax ad berlin 090516.jpg",
+      "oryginal": [1656, 1069],
+      "fokus": [25, 35]
+    },
+    "lot": null
+  },
+  "czarnowron": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Carrion_Crow_2025_10_26.jpg/960px-Carrion_Crow_2025_10_26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Alexis Lours",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Carrion_Crow_2025_10_26.jpg",
+      "plik": "File:Carrion Crow 2025 10 26.jpg",
+      "oryginal": [6038, 4025],
+      "fokus": [48, 17]
+    },
+    "lot": null
+  },
+  "wrona-siwa": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/20190504_Wrona_siwa_na_ulicy_Budapesztu_1450_2350_DxO.jpg/960px-20190504_Wrona_siwa_na_ulicy_Budapesztu_1450_2350_DxO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 638,
+      "autor": "Jakub Hałun",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:20190504_Wrona_siwa_na_ulicy_Budapesztu_1450_2350_DxO.jpg",
+      "plik": "File:20190504 Wrona siwa na ulicy Budapesztu 1450 2350 DxO.jpg",
+      "oryginal": [4048, 2691],
+      "fokus": [67, 14]
+    },
+    "lot": null
+  },
+  "gawron": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Corvus_frugilegus%2C_Rook%2C_Saatkr%C3%A4he_03.JPG/960px-Corvus_frugilegus%2C_Rook%2C_Saatkr%C3%A4he_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Wald1siedel",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Corvus_frugilegus,_Rook,_Saatkr%C3%A4he_03.JPG",
+      "plik": "File:Corvus frugilegus, Rook, Saatkrähe 03.JPG",
+      "oryginal": [3702, 2778],
+      "fokus": [60, 32]
+    },
+    "lot": null
+  },
+  "kawka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Coloeus_monedula%2C_Mutzig%2C_Bas-Rhin%2C_France.jpg/960px-Coloeus_monedula%2C_Mutzig%2C_Bas-Rhin%2C_France.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Gzen92",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Coloeus_monedula,_Mutzig,_Bas-Rhin,_France.jpg",
+      "plik": "File:Coloeus monedula, Mutzig, Bas-Rhin, France.jpg",
+      "oryginal": [5472, 3648],
+      "fokus": [35, 20]
+    },
+    "lot": null
+  },
+  "sojka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Eurasian_Jay_France.jpg/960px-Eurasian_Jay_France.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Alexis Lours",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Jay_France.jpg",
+      "plik": "File:Eurasian Jay France.jpg",
+      "oryginal": [4896, 3672],
+      "fokus": [42, 33]
+    },
+    "lot": null
+  },
+  "orzechowka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Nucifraga_caryocatactes%2C_Kotka%2C_Finland_1.jpg/960px-Nucifraga_caryocatactes%2C_Kotka%2C_Finland_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 641,
+      "autor": "Jyrki Salmi",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Nucifraga_caryocatactes,_Kotka,_Finland_1.jpg",
+      "plik": "File:Nucifraga caryocatactes, Kotka, Finland 1.jpg",
+      "oryginal": [4107, 2741],
+      "fokus": [36, 27]
+    },
+    "lot": null
+  },
+  "wieszczek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Red-billed_Chough_%28Pyrrhocorax_pyrrhocorax%29%2C_Great_Orme%27s_Head_-_geograph.org.uk_-_6250161.jpg/960px-Red-billed_Chough_%28Pyrrhocorax_pyrrhocorax%29%2C_Great_Orme%27s_Head_-_geograph.org.uk_-_6250161.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Mike Pennington",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Red-billed_Chough_(Pyrrhocorax_pyrrhocorax),_Great_Orme%27s_Head_-_geograph.org.uk_-_6250161.jpg",
+      "plik": "File:Red-billed Chough (Pyrrhocorax pyrrhocorax), Great Orme's Head - geograph.org.uk - 6250161.jpg",
+      "oryginal": [1600, 1067],
+      "fokus": [53, 36]
+    },
+    "lot": null
+  },
+  "sroka-blekitna": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Iberian_magpie_%28Cyanopica_cooki%29_2.jpg/960px-Iberian_magpie_%28Cyanopica_cooki%29_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Iberian_magpie_(Cyanopica_cooki)_2.jpg",
+      "plik": "File:Iberian magpie (Cyanopica cooki) 2.jpg",
+      "oryginal": [3535, 2356],
+      "fokus": [64, 36]
+    },
+    "lot": null
+  },
+  "skowronek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Alauda_arvensis_Ehedydd.jpg/960px-Alauda_arvensis_Ehedydd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1094,
+      "autor": "Alun Williams333",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Alauda_arvensis_Ehedydd.jpg",
+      "plik": "File:Alauda arvensis Ehedydd.jpg",
+      "oryginal": [2339, 2665],
+      "fokus": [56, 26]
+    },
+    "lot": null
+  },
+  "gasiorek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/JKRUK_20200627_G%C4%85siorek_dzierzba_g%C4%85siorek_Lanius_collurio_DSCN7336A.jpg/960px-JKRUK_20200627_G%C4%85siorek_dzierzba_g%C4%85siorek_Lanius_collurio_DSCN7336A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Jarosław Roland Kruk",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:JKRUK_20200627_G%C4%85siorek_dzierzba_g%C4%85siorek_Lanius_collurio_DSCN7336A.jpg",
+      "plik": "File:JKRUK 20200627 Gąsiorek dzierzba gąsiorek Lanius collurio DSCN7336A.jpg",
+      "oryginal": [4608, 3456],
+      "fokus": [60, 27]
+    },
+    "lot": null
+  },
+  "kos": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Blackbird_%2827176456674%29.jpg/960px-Blackbird_%2827176456674%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 735,
+      "autor": "hedera.baltica from Wrocław, Poland",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Blackbird_(27176456674).jpg",
+      "plik": "File:Blackbird (27176456674).jpg",
+      "oryginal": [1000, 766],
+      "fokus": [63, 15]
+    },
+    "lot": null
+  },
+  "szpak": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Cherry_picker_%2827797285546%29.jpg/960px-Cherry_picker_%2827797285546%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 897,
+      "autor": "hedera.baltica from Wrocław, Poland",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Cherry_picker_(27797285546).jpg",
+      "plik": "File:Cherry picker (27797285546).jpg",
+      "oryginal": [1000, 934],
+      "fokus": [60, 33]
+    },
+    "lot": null
+  },
+  "kowalik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Eurasian_Nuthatch_%28Sitta_europaea%29_on_log.jpg/960px-Eurasian_Nuthatch_%28Sitta_europaea%29_on_log.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 686,
+      "autor": "Peter Mulligan",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Nuthatch_(Sitta_europaea)_on_log.jpg",
+      "plik": "File:Eurasian Nuthatch (Sitta europaea) on log.jpg",
+      "oryginal": [1581, 1129],
+      "fokus": [44, 29]
+    },
+    "lot": null
+  },
+  "poklaskwa": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Flickr_-_Rainbirder_-_Whinchat_%28Saxicola_rubetra%29.jpg/960px-Flickr_-_Rainbirder_-_Whinchat_%28Saxicola_rubetra%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 637,
+      "autor": "Steve Garvie from Dunfermline, Fife, Scotland",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Whinchat_(Saxicola_rubetra).jpg",
+      "plik": "File:Flickr - Rainbirder - Whinchat (Saxicola rubetra).jpg",
+      "oryginal": [1000, 664],
+      "fokus": [53, 32]
+    },
+    "lot": null
+  },
+  "mysikrolik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Goldcrest_2025_11_21_05.jpg/960px-Goldcrest_2025_11_21_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Alexis Lours",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Goldcrest_2025_11_21_05.jpg",
+      "plik": "File:Goldcrest 2025 11 21 05.jpg",
+      "oryginal": [4710, 3140],
+      "fokus": [57, 33]
+    },
+    "lot": null
+  },
+  "mazurek": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Eurasian_Tree_Sparrow_by_Tisha_Mukherjee_05.jpg/960px-Eurasian_Tree_Sparrow_by_Tisha_Mukherjee_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Tisha Mukherjee",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Tree_Sparrow_by_Tisha_Mukherjee_05.jpg",
+      "plik": "File:Eurasian Tree Sparrow by Tisha Mukherjee 05.jpg",
+      "oryginal": [4357, 2905],
+      "fokus": [44, 37]
+    },
+    "lot": null
+  },
+  "bogatka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Great_tit_%28Parus_major%29%2C_North_Rhine-Westphalia.jpg/960px-Great_tit_%28Parus_major%29%2C_North_Rhine-Westphalia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Great_tit_(Parus_major),_North_Rhine-Westphalia.jpg",
+      "plik": "File:Great tit (Parus major), North Rhine-Westphalia.jpg",
+      "oryginal": [2726, 1817],
+      "fokus": [57, 19]
+    },
+    "lot": null
+  },
+  "zieba": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Chaffinch_%28Fringilla_coelebs%29.jpg/960px-Chaffinch_%28Fringilla_coelebs%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chaffinch_(Fringilla_coelebs).jpg",
+      "plik": "File:Chaffinch (Fringilla coelebs).jpg",
+      "oryginal": [2085, 1390],
+      "fokus": [26, 25]
+    },
+    "lot": null
+  },
+  "rudzik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/030_European_robin_in_the_Camargue_Photo_by_Giles_Laurent.jpg/960px-030_European_robin_in_the_Camargue_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Giles Laurent",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:030_European_robin_in_the_Camargue_Photo_by_Giles_Laurent.jpg",
+      "plik": "File:030 European robin in the Camargue Photo by Giles Laurent.jpg",
+      "oryginal": [3564, 2376],
+      "fokus": [64, 29]
+    },
+    "lot": null
+  },
+  "trznadel": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Male_bunting.jpg/960px-Male_bunting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Горбунова М.С.",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Male_bunting.jpg",
+      "plik": "File:Male bunting.jpg",
+      "oryginal": [5386, 3591],
+      "fokus": [58, 29]
+    },
+    "lot": null
+  },
+  "modraszka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/2025-01-12_Germany%2C_Berlin%2C_Eurasian_blue_tit_DSC_9758_DxO.jpg/960px-2025-01-12_Germany%2C_Berlin%2C_Eurasian_blue_tit_DSC_9758_DxO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 639,
+      "autor": "Laurens R. Krol",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:2025-01-12_Germany,_Berlin,_Eurasian_blue_tit_DSC_9758_DxO.jpg",
+      "plik": "File:2025-01-12 Germany, Berlin, Eurasian blue tit DSC 9758 DxO.jpg",
+      "oryginal": [5585, 3716],
+      "fokus": [48, 36]
+    },
+    "lot": null
+  },
+  "wrobel-domowy": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/House_sparrow_%28Passer_domesticus%29%2C_Amrum.jpg/960px-House_sparrow_%28Passer_domesticus%29%2C_Amrum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 638,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:House_sparrow_(Passer_domesticus),_Amrum.jpg",
+      "plik": "File:House sparrow (Passer domesticus), Amrum.jpg",
+      "oryginal": [4553, 3027],
+      "fokus": [40, 27]
+    },
+    "lot": null
   }
 }

@@ -1,5 +1,5 @@
 {
-  "uwaga": "Ptaki mokradeł: gatunki z list terenowych, które nie są drapieżnikami. To gatunki MOŻLIWE w danym miejscu i porze, nie pewne. Cechy: to, na co patrzeć w terenie, bez liczb. Pole „todo” to rzecz do sprawdzenia ręcznie.",
+  "uwaga": "Ptaki mokradeł (na stronie „Inne ptaki”): gatunki z list terenowych, które nie są drapieżnikami, oraz ptaki, które wymieniają moduły (pole „moduly”: krukowate z A12, małe ptaki z A13), żeby można je było odhaczyć na checkliście. Gatunki z list to gatunki MOŻLIWE w danym miejscu i porze, nie pewne. Cechy: to, na co patrzeć w terenie, bez liczb. Pole „todo” to rzecz do sprawdzenia ręcznie.",
   "ptaki": [
     {
       "id": "ibis-grzywiasty",
@@ -1178,7 +1178,8 @@
       "es": "lavandera blanca",
       "grupa": "wroblowe",
       "cechy": ["Czarno-biało-szara, z długim ogonem, którym ciągle porusza; chodzi po brzegach, plażach i drogach."],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "moduly": ["male-ptaki"]
     },
     {
       "id": "swiergotek-lakowy",
@@ -1191,7 +1192,8 @@
         "Brązowy i kreskowany jak skowronek, ale smuklejszy i bez czuba.",
         "Zrywa się z cienkim, powtarzanym „ist-ist”."
       ],
-      "miejsca": ["marismas-barbate"]
+      "miejsca": ["marismas-barbate"],
+      "moduly": ["male-ptaki"]
     },
     {
       "id": "podrozniczek",
@@ -1228,6 +1230,342 @@
       "grupa": "wroblowe",
       "cechy": ["Mały, oliwkowobrązowy i ruchliwy, z ciemnymi nogami; co chwilę porusza ogonkiem w dół."],
       "miejsca": ["marismas-barbate"]
+    },
+    {
+      "id": "sroka",
+      "pl": "sroka",
+      "lat": "Pica pica",
+      "en": "Eurasian Magpie",
+      "es": "urraca común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Czarno-biała, z długim, klinowatym ogonem, który w słońcu połyskuje zielenią i fioletem.",
+        "W locie białe plamy na skrzydłach i trzepotliwy lot z krótkimi ślizgami."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "kruk",
+      "pl": "kruk",
+      "lat": "Corvus corax",
+      "en": "Northern Raven",
+      "es": "cuervo grande",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Największy krukowaty: cały czarny, z masywnym dziobem i klinowatym ogonem w locie.",
+        "Głos to niskie, dźwięczne „krok”; często szybuje i wykonuje akrobacje jak drapieżnik."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "czarnowron",
+      "pl": "czarnowron",
+      "lat": "Corvus corone",
+      "en": "Carrion Crow",
+      "es": "corneja negra",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Cała czarna wrona z prostym, ciemnym dziobem opierzonym u nasady.",
+        "Na zachodzie Europy zastępuje wronę siwą; w Polsce spotkasz go głównie na zachodzie kraju."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "wrona-siwa",
+      "pl": "wrona siwa",
+      "lat": "Corvus cornix",
+      "en": "Hooded Crow",
+      "es": "corneja cenicienta",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Szary tułów, czarne głowa, gardło, skrzydła i ogon.",
+        "Najpospolitsza wrona w Polsce: pola, miasta, wysypiska."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "gawron",
+      "pl": "gawron",
+      "lat": "Corvus frugilegus",
+      "en": "Rook",
+      "es": "graja",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Czarny z fioletowym połyskiem; dorosły ma nagą, szarawą skórę u nasady dziobu.",
+        "Gniazduje w koloniach (gawroniskach) i zimą zbiera się w wielkie stada."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "kawka",
+      "pl": "kawka",
+      "lat": "Coloeus monedula",
+      "en": "Western Jackdaw",
+      "es": "grajilla occidental",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Mała, szaroczarna, z szarym karkiem i jasnym, perłowym okiem.",
+        "Głos to krótkie, metaliczne „kia”; często w parach, także w miastach."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "sojka",
+      "pl": "sójka",
+      "lat": "Garrulus glandarius",
+      "en": "Eurasian Jay",
+      "es": "arrendajo euroasiático",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Różowobrązowa, z biało-czarnym kuprem i niebiesko-czarnym lusterkiem na skrzydle.",
+        "Ostry, chrapliwy wrzask ostrzega las przed drapieżnikiem; jesienią nosi żołędzie."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "orzechowka",
+      "pl": "orzechówka",
+      "lat": "Nucifraga caryocatactes",
+      "en": "Spotted Nutcracker",
+      "es": "cascanueces común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Ciemnobrązowa w gęste białe kropki, z białym podogoniem i mocnym dziobem.",
+        "Ptak gór i borów świerkowych; zimą chowa nasiona na zapas."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "wieszczek",
+      "pl": "wieszczek",
+      "lat": "Pyrrhocorax pyrrhocorax",
+      "en": "Red-billed Chough",
+      "es": "chova piquirroja",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Czarny, z długim, zakrzywionym czerwonym dziobem i czerwonymi nogami.",
+        "Ptak klifów i gór, w Hiszpanii częsty; w locie palczaste końce skrzydeł i akrobacje."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "sroka-blekitna",
+      "pl": "sroka błękitna",
+      "lat": "Cyanopica cooki",
+      "en": "Iberian Magpie",
+      "es": "rabilargo ibérico",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Czarna czapeczka, beżowy tułów, niebieskie skrzydła i długi niebieski ogon.",
+        "Żyje stadkami w dąbrowach i gajach oliwnych południowo-zachodniej Hiszpanii i Portugalii."
+      ],
+      "miejsca": [],
+      "moduly": ["krukowate"]
+    },
+    {
+      "id": "skowronek",
+      "pl": "skowronek",
+      "lat": "Alauda arvensis",
+      "en": "Eurasian Skylark",
+      "es": "alondra común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Brązowy, kreskowany, z krótkim czubem i białymi brzegami ogona.",
+        "Wiosną śpiewa długo, wznosząc się i wisząc wysoko nad polem."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "gasiorek",
+      "pl": "gąsiorek",
+      "lat": "Lanius collurio",
+      "en": "Red-backed Shrike",
+      "es": "alcaudón dorsirrojo",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Samiec: szara głowa z czarną maską, rdzawy grzbiet, różowawy spód.",
+        "Wypatruje zdobyczy z krzewu lub drutu i nabija ją na ciernie."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "kos",
+      "pl": "kos",
+      "lat": "Turdus merula",
+      "en": "Common Blackbird",
+      "es": "mirlo común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Samiec cały czarny, z pomarańczowożółtym dziobem i obrączką wokół oka; samica ciemnobrązowa.",
+        "Głośny alarm „czik-czik” często zdradza drapieżnika, np. krogulca lub sowę."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "szpak",
+      "pl": "szpak",
+      "lat": "Sturnus vulgaris",
+      "en": "Common Starling",
+      "es": "estornino pinto",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Czarny z metalicznym połyskiem, jesienią i zimą w jasnych kropkach.",
+        "Wielkie stada tańczą nad trzcinowiskami, uciekając przed sokołami."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "kowalik",
+      "pl": "kowalik",
+      "lat": "Sitta europaea",
+      "en": "Eurasian Nuthatch",
+      "es": "trepador azul",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Niebieskoszary wierzch, czarny pasek przez oko, płowy spód.",
+        "Jedyny nasz ptak, który chodzi po pniu także głową w dół."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "poklaskwa",
+      "pl": "pokląskwa",
+      "lat": "Saxicola rubetra",
+      "en": "Whinchat",
+      "es": "tarabilla norteña",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Kreskowana, z wyraźną jasną brwią i płowopomarańczową piersią.",
+        "Siada na czubkach roślin i palikach na wilgotnych łąkach."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "mysikrolik",
+      "pl": "mysikrólik",
+      "lat": "Regulus regulus",
+      "en": "Goldcrest",
+      "es": "reyezuelo sencillo",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Najmniejszy ptak Europy: oliwkowy, z żółtym, czarno obrzeżonym paskiem na czubku głowy.",
+        "Bardzo wysoki, cienki głos w koronach świerków."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "mazurek",
+      "pl": "mazurek",
+      "lat": "Passer montanus",
+      "en": "Eurasian Tree Sparrow",
+      "es": "gorrión molinero",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Kasztanowa czapka i czarna plama na białym policzku, u obu płci tak samo.",
+        "Częściej na wsi i skrajach pól niż w centrum miasta."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "wrobel-domowy",
+      "pl": "wróbel",
+      "lat": "Passer domesticus",
+      "en": "House Sparrow",
+      "es": "gorrión común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Samiec: szara czapka, kasztanowe boki głowy i czarny śliniaczek; samica szarobrązowa.",
+        "Trzyma się ludzi i zabudowań; ulubiona zdobycz krogulca."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "bogatka",
+      "pl": "bogatka",
+      "lat": "Parus major",
+      "en": "Great Tit",
+      "es": "carbonero común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Czarna głowa z białymi policzkami, żółty spód z czarnym pasem przez środek.",
+        "Najpospolitsza sikora w parkach i lasach; donośne „ci-ta, ci-ta”."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "zieba",
+      "pl": "zięba",
+      "lat": "Fringilla coelebs",
+      "en": "Common Chaffinch",
+      "es": "pinzón vulgar",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Samiec: szaroniebieska głowa, różowordzawa pierś; obie płcie z dwoma białymi pasami na skrzydle.",
+        "Jeden z najpospolitszych ptaków Polski, w każdym lesie i parku."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "rudzik",
+      "pl": "rudzik",
+      "lat": "Erithacus rubecula",
+      "en": "European Robin",
+      "es": "petirrojo europeo",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Pomarańczowa twarz i pierś, oliwkowobrązowy wierzch.",
+        "Śpiewa także jesienią i zimą, często o zmroku."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "trznadel",
+      "pl": "trznadel",
+      "lat": "Emberiza citrinella",
+      "en": "Yellowhammer",
+      "es": "escribano cerillo",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Samiec z jaskrawożółtą głową i spodem, rdzawym kuprem.",
+        "Siada na krzewach przy polach; śpiew kończy się przeciągłą nutą."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
+    },
+    {
+      "id": "modraszka",
+      "pl": "modraszka",
+      "lat": "Cyanistes caeruleus",
+      "en": "Eurasian Blue Tit",
+      "es": "herrerillo común",
+      "grupa": "wroblowe",
+      "cechy": [
+        "Niebieska czapeczka i skrzydła, biała twarz z ciemnym paskiem, żółty spód.",
+        "Mniejsza od bogatki, zwinnie zwisa z cienkich gałązek."
+      ],
+      "miejsca": [],
+      "moduly": ["male-ptaki"]
     }
   ]
 }

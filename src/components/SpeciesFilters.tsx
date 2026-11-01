@@ -22,7 +22,7 @@ const AKTYWNOSC: { value: Aktywnosc; label: string }[] = [
 
 const ZAKRESY: { value: ZakresPtakow; label: string }[] = [
   { value: 'drapiezne', label: 'Drapieżniki' },
-  { value: 'ptaki-mokradel', label: 'Ptaki mokradeł' },
+  { value: 'ptaki-mokradel', label: 'Inne ptaki' },
   { value: 'wszystkie', label: 'Wszystkie' },
 ];
 

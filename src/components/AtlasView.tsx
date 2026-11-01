@@ -147,7 +147,7 @@ export function AtlasView({
         <StateBlock
           state="empty"
           title="Ten widok jest tylko dla drapieżników"
-          description="Sylwetki i skala są narysowane dla ptaków drapieżnych. Ptaki mokradeł zobaczysz w widoku „Zdjęcia”."
+          description="Sylwetki i skala są narysowane dla ptaków drapieżnych. Inne ptaki zobaczysz w widoku „Zdjęcia”."
           action={
             <Button size="sm" variant="secondary" onClick={() => setWidok('zdjecia')}>
               Pokaż zdjęcia
@@ -157,7 +157,7 @@ export function AtlasView({
         />
       ) : widok === 'sylwetki' ? (
         <div className="atlas__plansze">
-          {zMokradlami && <p className="atlas__uwaga">Sylwetki są tylko dla drapieżników. Ptaki mokradeł są w widoku „Zdjęcia”.</p>}
+          {zMokradlami && <p className="atlas__uwaga">Sylwetki są tylko dla drapieżników. Inne ptaki są w widoku „Zdjęcia”.</p>}
           {KOLEJNOSC_GRUP.map((grupa) => {
             const wGrupie = drapiezne.filter((g) => grupaSylwetki(g) === grupa);
             if (wGrupie.length === 0) return null;
@@ -189,7 +189,7 @@ export function AtlasView({
           <p className="skala__opis">
             Każda sylwetka w tej samej skali: szerokość pola to {maks} cm, rozpiętość skrzydeł największego ptaka w atlasie.
             Najmniejsze sowy mają około jednej ósmej tego.
-            {zMokradlami && ' Skala jest tylko dla drapieżników; ptaki mokradeł są w widoku „Zdjęcia”.'}
+            {zMokradlami && ' Skala jest tylko dla drapieżników; inne ptaki są w widoku „Zdjęcia”.'}
           </p>
           <ul className="skala__lista">
             <li className="skala__czlowiek">

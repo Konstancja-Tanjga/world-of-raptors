@@ -96,7 +96,7 @@ export function ChecklistView({
 
   const liczba = zakres.filter((p) => jestWidziany(lista, p.id)).length;
   const wFiltrze = wynik.filter((g) => jestWidziany(lista, g.id)).length;
-  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'ptaki mokradeł', wszystkie: null }[filtry.ptaki];
+  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'inne ptaki', wszystkie: null }[filtry.ptaki];
   const etykietaPostepu = miejsce
     ? `Zaobserwowane w ${miejsce.label}${rodzaj ? `: ${rodzaj}` : ''}`
     : `Zaobserwowane ${rodzaj ?? 'gatunki'}`;

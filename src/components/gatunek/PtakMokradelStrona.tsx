@@ -68,7 +68,8 @@ export function PtakMokradelStrona({
             ang. <span lang="en" translate="no">{p.en}</span>, hiszp. <span lang="es" translate="no">{p.es}</span>
           </p>
           <ul className="gatunek-hero__znaczniki" aria-label="Grupa">
-            <li>ptaki mokradeł</li>
+            {/* A corvid or small bird a module names is not a bird of marshes; its group says enough. */}
+            {(p.miejsca.length > 0 || p.rozpoznawanie) && <li>ptaki mokradeł</li>}
             <li>{NAZWY_GRUP_MOKRADEL[p.grupa].toLocaleLowerCase('pl')}</li>
           </ul>
           {pierscienie && <ObraczkiGatunku gatunek={pierscienie} />}
