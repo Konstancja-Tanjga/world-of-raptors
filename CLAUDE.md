@@ -112,7 +112,7 @@ UI is built on Big Hat (`@bighat/ui`, installed from GitHub at a pinned commit, 
 - Facts are hedged ("ok.", "uważa się") when uncertain; don't state precise figures you can't source.
 - Lesson photos come from Wikimedia Commons with free licences only. Verify each photo visually and check that the file title names the right species (past mistakes: a Bald Eagle filed as White-tailed Eagle, *Circus hudsonius* as Hen Harrier, a Tawny Eagle as Short-toed Eagle).
 - Curiosities (`ciekawostki.json`) must stand alone: bold/italic only, no links (the block's way on is "Czytaj dalej").
-- Credits: the idea, the plan and the content are Konstancja Tanjga's; the redesign (design, motion, code) was made with Claude. The footer, the About page (`/o-projekcie`), the root metadata (`layout.tsx`) and README.md say so; keep them in agreement.
+- Credits: the idea, the plan and the content are Konstancja Tanjga-Nawrot's; the redesign (design, motion, code) was made with Claude. The footer, the About page (`/o-projekcie`), the root metadata (`layout.tsx`) and README.md say so; keep them in agreement.
 
 ## Workflow
 

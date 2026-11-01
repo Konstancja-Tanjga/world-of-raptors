@@ -51,7 +51,7 @@ Do tego dochodzą ptaki osiadłe: kaniuki na słupach, pustułki, czaple, mewy. 
 
 <margines>
 
-<zdjecie src="/zdjecia/barbate-kanaly.jpg" width="960" height="1200" alt="Kręte kanały z wodą wśród niskich, rdzawozielonych krzewinek słonych łąk; w dole kadru żerują białe warzęchy" podpis="Marismas del Barbate 10 października 2026 rano: kanały pływowe, słone łąki i żerujące warzęchy" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+<zdjecie src="/zdjecia/barbate-kanaly.jpg" width="960" height="1200" alt="Kręte kanały z wodą wśród niskich, rdzawozielonych krzewinek słonych łąk; w dole kadru żerują białe warzęchy" podpis="Marismas del Barbate 10 października 2026 rano: kanały pływowe, słone łąki i żerujące warzęchy" autor="Konstancja Tanjga-Nawrot" licencja="zdjęcie własne" licencja-url="" strona="">
 </zdjecie>
 
 </margines>

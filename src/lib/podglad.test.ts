@@ -56,7 +56,7 @@ test('a gallery photo asks for its share of the gallery', () => {
 
 test('what Photo writes, the viewer reads back', () => {
   const commons = { src: zdjecie.src, width: 960, height: 640, autor: 'Ktoś', licencja: 'CC BY 4.0', licencjaUrl: 'https://creativecommons.org/licenses/by/4.0', strona: 'https://commons.wikimedia.org/wiki/File:A.jpg' };
-  const wlasne = { src: '/zdjecia/barbate.jpg', width: 960, height: 1200, autor: 'Konstancja Tanjga', licencja: 'CC BY 4.0', licencjaUrl: '', strona: '' };
+  const wlasne = { src: '/zdjecia/barbate.jpg', width: 960, height: 1200, autor: 'Konstancja Tanjga-Nawrot', licencja: 'CC BY 4.0', licencjaUrl: '', strona: '' };
   for (const [z, alt, srcSet] of [[commons, 'Puszczyk', 'a 960w, b 1280w'], [wlasne, 'Kanały', undefined], [commons, '', undefined]] as const) {
     const dane = danePodgladu(z, alt, 'Podpis', srcSet);
     assert.deepEqual(odczytajPodglad(JSON.stringify(dane)), dane);

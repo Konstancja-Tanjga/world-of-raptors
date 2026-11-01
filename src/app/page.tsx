@@ -36,7 +36,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   // My name in the title too: people who search for it should find the course.
-  title: { absolute: 'World of Raptors: kurs o ptakach drapieżnych Konstancji Tanjgi' },
+  title: { absolute: 'World of Raptors, kurs o ptakach drapieżnych. Autorka: Konstancja Tanjga-Nawrot' },
   // `?pora=` only changes the sky.
   alternates: { canonical: '/' },
 };

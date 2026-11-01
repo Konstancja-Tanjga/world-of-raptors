@@ -14,7 +14,7 @@ export const ADRES = 'https://world-of-raptors.vercel.app';
  */
 export const AUTORKA = {
   '@type': 'Person',
-  name: 'Konstancja Tanjga',
+  name: 'Konstancja Tanjga-Nawrot',
   url: `${ADRES}/o-projekcie`,
   sameAs: [
     'https://konstancja-tanjga.github.io/portfolio-site/',

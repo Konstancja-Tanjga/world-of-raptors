@@ -13,7 +13,7 @@ import { ADRES, AUTORKA } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'O projekcie i autorce',
-  description: 'Jak powstał World of Raptors: pomysł i treść Konstancji Tanjgi, projekt, ruch i kod razem z Claude.',
+  description: 'Jak powstał World of Raptors: pomysł i treść: Konstancja Tanjga-Nawrot; projekt, ruch i kod razem z Claude.',
 };
 
 /** A diurnal atlas species for the morph slider; the build would fail if the id stopped being one. */
@@ -109,7 +109,7 @@ export default async function OProjekcie() {
           <dl className="czolowka__autorzy">
             <div>
               <dt>Pomysł, plan kursu i treść</dt>
-              <dd className="czolowka__autorka">Konstancja Tanjga</dd>
+              <dd className="czolowka__autorka">Konstancja Tanjga-Nawrot</dd>
             </div>
             <div>
               <dt>Projekt, ruch i kod, razem z autorką</dt>
@@ -305,7 +305,7 @@ export default async function OProjekcie() {
         <dl className="op-technika">
           <div>
             <dt>Big Hat</dt>
-            <dd>Design system, który zaprojektowała Konstancja Tanjga. Kurs używa jego komponentów i ról kolorów.</dd>
+            <dd>Design system, który zaprojektowała Konstancja Tanjga-Nawrot. Kurs używa jego komponentów i ról kolorów.</dd>
           </div>
           <div>
             <dt>Next.js 16 i React 19</dt>
@@ -353,7 +353,7 @@ export default async function OProjekcie() {
 
       <section className="podpis scena" data-scena aria-label="Podpis">
         <Sylwetka id="kania-czarna" klasa="podpis__ptak" />
-        <p className="podpis__imie">Konstancja Tanjga</p>
+        <p className="podpis__imie">Konstancja Tanjga-Nawrot</p>
         <p className="podpis__z">i Claude</p>
         <p className="podpis__rok">2026</p>
       </section>
