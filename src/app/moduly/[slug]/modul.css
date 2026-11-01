@@ -323,6 +323,18 @@
   border-radius: var(--bh-radius-surface);
   background: var(--bh-surface-sunken);
 }
+/* A lesson without a picture: its bird's silhouette from below, like the B1 plates. */
+.sylabus__obraz--sylwetka {
+  display: grid;
+  place-items: center;
+  padding: var(--bh-gap-snug);
+  color: var(--bh-text-muted);
+}
+.sylabus__sylwetka {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
 @media (max-width: 600px) {
   .sylabus__obraz {
     width: 5.5rem;
