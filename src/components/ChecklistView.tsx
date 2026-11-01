@@ -26,7 +26,7 @@ import { filtryAktywne as czyFiltryAktywne, PUSTE_FILTRY, SpeciesFilters, useFil
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 import { NazwaPtaka } from './NazwaPtaka';
 
-type Widok = 'wszystkie' | 'zaobserwowane' | 'brakujace';
+type Widok = 'wszystkie' | 'widziane' | 'do-zobaczenia';
 
 /** One group of a site's field list (content.ts, listaMiejsca). */
 export type GrupaListy = { id: string; nazwa: string; gatunki: string[] };
@@ -49,6 +49,15 @@ export function ChecklistView({
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
   const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
   const [widok, setWidok] = useState<Widok>('wszystkie');
+  // Species whose date, place, note and photos are open; a species opens when ticked.
+  const [otwarte, setOtwarte] = useState<ReadonlySet<string>>(new Set());
+  const ustawOtwarty = (id: string, otwarty: boolean) =>
+    setOtwarte((s) => {
+      const nowe = new Set(s);
+      if (otwarty) nowe.add(id);
+      else nowe.delete(id);
+      return nowe;
+    });
   const filtryAktywne = czyFiltryAktywne(filtry);
   const miejsce = filtry.miejsca.length === 1 ? MIEJSCA.find((m) => m.value === filtry.miejsca[0]) : undefined;
   const listaMiejsca = miejsce ? listyMiejsc[miejsce.value] : null;
@@ -66,7 +75,7 @@ export function ChecklistView({
 
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
-    return wynik.filter((g) => (widok === 'zaobserwowane') === jestWidziany(lista, g.id));
+    return wynik.filter((g) => (widok === 'widziane') === jestWidziany(lista, g.id));
   }, [wynik, lista, widok]);
 
   const grupy = useMemo((): [string, PtakNaLiscie[]][] => {
@@ -209,6 +218,22 @@ export function ChecklistView({
         valueText={`${liczba} z ${zakres.length}`}
         tone={zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
       />
+      <div className="scroll-x">
+        <SegmentedControl
+          legend="Pokaż"
+          showLegend
+          value={widok}
+          onChange={(v) => setWidok(v as Widok)}
+          options={[
+            { value: 'wszystkie', label: <EtykietaWidoku nazwa="Wszystkie" liczba={wynik.length} /> },
+            { value: 'widziane', label: <EtykietaWidoku nazwa="Już widziane" liczba={wFiltrze} /> },
+            { value: 'do-zobaczenia', label: <EtykietaWidoku nazwa="Jeszcze do zobaczenia" liczba={wynik.length - wFiltrze} /> },
+          ]}
+        />
+      </div>
+      <p className="visually-hidden" aria-live="polite">
+        W tym filtrze: {wFiltrze} z {wynik.length} zaobserwowanych
+      </p>
       {miejsce && grupyMiejsca && grupyMiejsca.length > 0 && (
         <ul className="checklist__podsumowanie" aria-label={`${miejsce.label}: grupy`}>
           {grupyMiejsca.map((g) => {
@@ -227,25 +252,6 @@ export function ChecklistView({
 
       <SpeciesFilters filtry={filtry} onChange={setFiltry} />
 
-      <div className="row">
-        <div className="scroll-x">
-          <SegmentedControl
-          legend="Pokaż"
-          showLegend
-          value={widok}
-          onChange={(v) => setWidok(v as Widok)}
-          options={[
-            { value: 'wszystkie', label: 'Wszystkie' },
-            { value: 'zaobserwowane', label: 'Zaobserwowane' },
-            { value: 'brakujace', label: 'Brakujące' },
-            ]}
-          />
-        </div>
-        <p className="muted" aria-live="polite">
-          W tym filtrze: {wFiltrze} z {wynik.length} zaobserwowanych
-        </p>
-      </div>
-
       {grupy.length === 0 ? (
         filtryAktywne ? (
           <StateBlock
@@ -260,14 +266,14 @@ export function ChecklistView({
             scope="section"
           />
         ) : (
-          // Only the view ("Zaobserwowane" / "Brakujące") empties the list: say why, offer the way back.
+          // Only the view ("Już widziane" / "Jeszcze do zobaczenia") empties the list: say why, offer the way back.
           <StateBlock
             state="empty"
-            title={widok === 'zaobserwowane' ? 'Nie masz jeszcze obserwacji' : 'Masz już wszystkie gatunki'}
+            title={widok === 'widziane' ? 'Jeszcze żadnych obserwacji' : 'Wszystkie już widziane'}
             description={
-              widok === 'zaobserwowane'
-                ? 'Zaznacz gatunek na liście, kiedy go zobaczysz.'
-                : 'Każdy gatunek z tej listy jest już wśród Twoich obserwacji.'
+              widok === 'widziane'
+                ? 'Gatunek pojawi się tutaj, kiedy zaznaczę go na liście.'
+                : 'Każdy gatunek z tej listy jest już wśród moich obserwacji.'
             }
             action={
               <Button size="sm" variant="secondary" onClick={() => setWidok('wszystkie')}>
@@ -289,8 +295,10 @@ export function ChecklistView({
             <ul className="checklist">
               {lista_.map((g) => {
                 const obs = jestWidziany(lista, g.id) ? lista[g.id] : undefined;
+                const otwarty = Boolean(obs) && otwarte.has(g.id);
+                const notka = obs ? [obs.data && dataPolska(obs.data), obs.miejsce].filter(Boolean).join(', ') : '';
                 return (
-                  <li key={g.id}>
+                  <li key={g.id} data-otwarty={otwarty ? '' : undefined}>
                     <Card padding="snug" accent={obs ? 'success' : 'none'}>
                       <div className="checklist__row" data-widziany={obs ? '' : undefined}>
                         <span className="checklist__sylwetka" aria-hidden="true">
@@ -308,38 +316,67 @@ export function ChecklistView({
                                 {g.en}
                               </span>
                               )
+                              {obs && !otwarty && (notka || obs.notatka) && (
+                                <span className="checklist__notka">
+                                  {notka && <span>{notka}</span>}
+                                  {obs.notatka && <span className="checklist__notatka">{obs.notatka}</span>}
+                                </span>
+                              )}
                             </>
                           }
                           checked={Boolean(obs)}
-                          onChange={() => sprawdzZapis(przelacz(g.id))}
+                          onChange={() => {
+                            ustawOtwarty(g.id, !obs);
+                            sprawdzZapis(przelacz(g.id));
+                          }}
                         />
-                        <Link href={`/gatunki/${g.id}`} className="text-link">
-                          Karta gatunku<span className="visually-hidden">: {g.pl}</span>
-                        </Link>
+                        <div className="checklist__akcje">
+                          {obs && (
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              aria-expanded={otwarty}
+                              aria-controls={`szczegoly-${g.id}`}
+                              onClick={() => ustawOtwarty(g.id, !otwarty)}
+                            >
+                              {otwarty ? 'Zwiń' : notka || obs.notatka ? 'Edytuj' : 'Dodaj szczegóły'}
+                              <span className="visually-hidden">: {g.pl}</span>
+                            </Button>
+                          )}
+                          <Link href={`/gatunki/${g.id}`} className="text-link">
+                            Karta gatunku<span className="visually-hidden">: {g.pl}</span>
+                          </Link>
+                        </div>
                       </div>
                       {obs && (
-                        <div className="checklist__details">
-                          <DatePicker
-                            label="Data obserwacji"
-                            description="Domyślnie dzień zaznaczenia."
-                            max={dzisiaj()}
-                            value={obs.data ?? ''}
-                            onChange={(e) => sprawdzZapis(aktualizuj(g.id, { data: e.target.value }))}
-                          />
-                          <Input
-                            label="Miejsce"
-                            value={obs.miejsce ?? ''}
-                            onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
-                          />
-                          <Textarea
-                            label="Notatka"
-                            rows={2}
-                            value={obs.notatka ?? ''}
-                            onChange={(e) => sprawdzZapis(aktualizuj(g.id, { notatka: e.target.value }))}
-                          />
+                        <div id={`szczegoly-${g.id}`} className="checklist__szczegoly" hidden={!otwarty}>
+                          {otwarty && (
+                            <>
+                              <div className="checklist__details">
+                                <DatePicker
+                                  label="Data obserwacji"
+                                  description="Domyślnie dzień zaznaczenia."
+                                  max={dzisiaj()}
+                                  value={obs.data ?? ''}
+                                  onChange={(e) => sprawdzZapis(aktualizuj(g.id, { data: e.target.value }))}
+                                />
+                                <Input
+                                  label="Miejsce"
+                                  value={obs.miejsce ?? ''}
+                                  onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
+                                />
+                                <Textarea
+                                  label="Notatka"
+                                  rows={2}
+                                  value={obs.notatka ?? ''}
+                                  onChange={(e) => sprawdzZapis(aktualizuj(g.id, { notatka: e.target.value }))}
+                                />
+                              </div>
+                              <OwnPhotos gatunek={g.id} nazwa={g.pl} edycja />
+                            </>
+                          )}
                         </div>
                       )}
-                      {obs && <OwnPhotos gatunek={g.id} nazwa={g.pl} edycja />}
                     </Card>
                   </li>
                 );
@@ -380,6 +417,21 @@ export function ChecklistView({
       </section>
     </div>
   );
+}
+
+/** A segment's name with how many species it would show. */
+function EtykietaWidoku({ nazwa, liczba }: { nazwa: string; liczba: number }) {
+  return (
+    <span>
+      {nazwa} <span className="checklist__licznik">{liczba}</span>
+    </span>
+  );
+}
+
+/** "2026-10-10" as "10 października 2026". */
+function dataPolska(data: string) {
+  const d = new Date(`${data}T12:00:00`);
+  return Number.isNaN(d.getTime()) ? data : d.toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
 /** A heading id from a group's name ("Czaple, flaming, warzęcha" has spaces and commas). */
