@@ -337,6 +337,8 @@ export default async function OProjekcie() {
             Zdjęcia pochodzą z Wikimedia Commons i są na wolnych licencjach, a przy każdym jest autor i licencja. Wyjątki to
             pójdźka w atlasie i zdjęcia z Marismas del Barbate w module B6: to zdjęcia autorki kursu. Dziękujemy {fotografowie.length}{' '}
             {odmiana(fotografowie.length, ['osobie', 'osobom', 'osobom'])} i instytucjom, bez których ten kurs byłby tylko tekstem.
+            Głosy w „Rozpoznaj po głosie” rozpoznaje BirdNET (Cornell Lab of Ornithology i Uniwersytet Techniczny w Chemnitz,
+            model na licencji CC BY-SA 4.0).
           </p>
         </div>
         <ul className="op-zdjecia__lista">

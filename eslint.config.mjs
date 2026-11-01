@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Real build output behind the .next symlink (see CLAUDE.md).
     ".next.nosync/**",
     "node_modules.nosync/**",
+    // BirdNET Live's worker and TensorFlow.js, downloaded as they are (scripts/birdnet.sh).
+    "public/birdnet/**",
   ]),
 ]);
 

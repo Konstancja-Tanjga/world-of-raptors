@@ -32,7 +32,11 @@ export default function RozpoznajPage() {
           <Link href="/gatunki" className="text-link">
             atlasu
           </Link>
-          , które pasują najbardziej. Każde pytanie możesz pominąć.
+          , które pasują najbardziej. Każde pytanie możesz pominąć. Słyszysz go, a nie widzisz? Na telefonie spróbuj{' '}
+          <Link href="/rozpoznaj/glos" className="text-link">
+            rozpoznawania po głosie
+          </Link>
+          .
         </p>
       </header>
       <Rozpoznaj gatunki={dane} odniesienia={odniesienia} />
