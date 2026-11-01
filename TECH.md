@@ -159,5 +159,5 @@ Strona ma `noindex`, więc wyszukiwarki jej nie pokażą, ale kto ma link, ten j
 3. Gotowe: quiz krok po kroku w lekcjach z ćwiczeniami na końcu każdego modułu i fiszki (zdjęcia, sylwetki w locie i nazwy w trzech językach) z powtórkami rozłożonymi w czasie (`ts-fsrs`, `/fiszki`).
 4. Częściowo gotowe: punkty obserwacyjne z wyszukiwaniem najbliższych (`/kiedy-i-gdzie`, razem z planerem). Dalej: mapa punktów (Leaflet + OpenStreetMap), quiz „porównaj”, „wirtualny punkt obserwacyjny”.
 5. Gotowe: „Moje niebo”: gwiazdozbiory modułów, obrączki gatunków i naszywki za umiejętności (`/moje-niebo`).
-7. Rozpoznawanie krok po kroku (`/rozpoznaj`): gotowe dla drapieżników i sów. Dalej: ptaki mokradeł (każdy potrzebuje długości ciała, najlepiej z Collinsa jak w B7, kolorów i zachowań, a kreator pytania „Ptak drapieżny czy wodny?” albo wyników w dwóch grupach) i miesiąc obserwacji (dziś `sezon` jest zwykłym tekstem).
 6. Opcjonalnie: checklista zapisywana w bazie (np. Supabase albo Neon przez Vercel Marketplace), żeby była wspólna na telefonie i komputerze.
+7. Rozpoznawanie krok po kroku (`/rozpoznaj`): gotowe dla drapieżników i sów. Dalej: ptaki mokradeł (każdy potrzebuje długości ciała, najlepiej z Collinsa jak w B7, kolorów i zachowań, a kreator pytania „Ptak drapieżny czy wodny?” albo wyników w dwóch grupach) i miesiąc obserwacji (dziś `sezon` jest zwykłym tekstem).

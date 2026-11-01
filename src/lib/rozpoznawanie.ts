@@ -4,10 +4,11 @@
  * so the rules can be tested; the page asks the questions (Rozpoznaj.tsx).
  *
  * Every step can be skipped. A region rules a species out; the other steps
- * only score it, because size and colour are easy to misjudge in the field:
+ * score it, because size and colour are easy to misjudge in the field:
  * a neighbouring size still scores half, and colours score the share of the
- * chosen ones the species shows. The species are ranked by the mean score of
- * the steps answered.
+ * chosen ones the species shows. A species that fits none of the steps
+ * answered is left out too; the rest are ranked by the mean score of the
+ * steps answered.
  */
 import type { Region } from './types';
 
@@ -142,7 +143,8 @@ export const ROZNICA_NAJLEPSZYCH = 0.25;
 /** Splits matches into the best and the rest (all are best while nothing is answered: every score is 1). */
 export function najlepsze<G>(wyniki: Dopasowanie<G>[]) {
   const szczyt = wyniki[0]?.wynik ?? 0;
-  const granica = szczyt - ROZNICA_NAJLEPSZYCH;
+  // Scores built from thirds are not exact in floating point: a score exactly ROZNICA below the top must not land on either side by rounding.
+  const granica = szczyt - ROZNICA_NAJLEPSZYCH + 1e-9;
   const i = wyniki.findIndex((w) => w.wynik <= granica);
   return i < 0 ? { najlepsze: wyniki, reszta: [] } : { najlepsze: wyniki.slice(0, i), reszta: wyniki.slice(i) };
 }

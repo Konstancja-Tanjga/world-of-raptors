@@ -29,7 +29,7 @@ import { NazwaGatunku } from './NazwaPtaka';
 export type GatunekRozpoznania = CechyRozpoznania & {
   pl: string;
   lat: string;
-  /** In flight and perched; the results show the one that fits what the bird was doing. */
+  /** In flight and perched; the results show the flight photo when the bird was flying, otherwise the perched one. */
   zdjecia: { lot: Zdjecie | null; siedzacy: Zdjecie | null };
 };
 
@@ -104,7 +104,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
   const naglowek = useRef<HTMLHeadingElement>(null);
   const pierwszy = useRef(true);
 
-  // Focus follows the step, as in the lesson quiz; not on the first render, which would jump the page.
+  // Focus moves to the new step's heading (the lesson quiz moves it to each new question too); not on the first render, which would jump the page.
   useEffect(() => {
     if (pierwszy.current) {
       pierwszy.current = false;
@@ -117,6 +117,14 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
   const numer = krok === 'wyniki' ? KROKI.length : KROKI.indexOf(krok);
   const dalej = () => setKrok(numer + 1 < KROKI.length ? KROKI[numer + 1] : 'wyniki');
   const wstecz = () => setKrok(KROKI[Math.max(0, numer - 1)]);
+  /** Clears this step's answer and moves on: an answered question can still be skipped. */
+  const pominOdpowiedziane = () => {
+    if (krok === 'gdzie') setOdp({ ...odp, region: undefined });
+    else if (krok === 'wielkosc') setOdp({ ...odp, wielkosc: undefined });
+    else if (krok === 'kolory') setOdp({ ...odp, kolory: undefined });
+    else if (krok === 'zachowanie') setOdp({ ...odp, rodzaj: undefined, zachowanie: undefined });
+    dalej();
+  };
   const odNowa = () => {
     setOdp({});
     setWszystkie(false);
@@ -129,7 +137,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
     return (
       <div className="rozpoznaj stack">
         <h2 className="rozpoznaj__pytanie" tabIndex={-1} ref={naglowek}>
-          {n.length === 1 ? 'Najbardziej pasuje' : 'Najbardziej pasują'}
+          {wyniki.length === 0 ? 'Wyniki' : n.length === 1 ? 'Najbardziej pasuje' : 'Najbardziej pasują'}
         </h2>
         {wyniki.length === 0 ? (
           <StateBlock
@@ -214,7 +222,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
         {krok === 'wielkosc' && (
           <RadioGroup
             legend="Wielkość w porównaniu ze znanym ptakiem"
-            description="Długość od dzioba do końca ogona. Pod niebem ptak zwykle wydaje się mniejszy, niż jest."
+            description="Długość od dzioba do końca ogona. Na tle nieba wielkość łatwo ocenić źle: porównaj ptaka z tym, którego wielkość znasz."
             value={odp.wielkosc ?? ''}
             onChange={(v) => setOdp({ ...odp, wielkosc: v })}
             options={skala.map((w, i) => ({
@@ -296,6 +304,11 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
         {numer > 0 && (
           <Button variant="secondary" onClick={wstecz}>
             Wstecz
+          </Button>
+        )}
+        {odpowiedziano(krok, odp) && (
+          <Button variant="ghost" onClick={pominOdpowiedziane}>
+            Pomiń to pytanie
           </Button>
         )}
       </div>

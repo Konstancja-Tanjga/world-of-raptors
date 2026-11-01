@@ -114,3 +114,54 @@ test('dopasuj: a kind of behaviour matches any behaviour of that kind', () => {
     ['myszolow', 'pustulka'],
   );
 });
+
+test('najlepsze: a score exactly 0.25 below the top goes to the rest, thirds included', () => {
+  // Gołąb and one colour: the buzzard is a neighbouring size (0.5 + 1/3), the vulture a far one (0 + 1/3).
+  const w = dopasuj([SEP, MYSZOLOW], { wielkosc: 'golab', kolory: ['brazowy'] }, SKALA);
+  const sep = w.find((d) => d.gatunek.id === 'sep-plowy')!;
+  assert.equal(sep.wielkosc, 'nie');
+  assert.deepEqual(
+    najlepsze(w).reszta.map((d) => d.gatunek.id),
+    ['sep-plowy'],
+  );
+});
+
+test('dopasuj: colours ticked and unticked again count as skipped', () => {
+  const w = dopasuj(WSZYSTKIE, { kolory: [] }, SKALA);
+  assert.equal(w.length, 3);
+  assert.ok(w.every((d) => d.wynik === 1 && d.kolory === undefined));
+});
+
+test('dopasuj: the largest and smallest sizes have one neighbour each', () => {
+  const duzy = dopasuj(WSZYSTKIE, { wielkosc: 'bocian' }, SKALA);
+  assert.deepEqual(
+    duzy.map((d) => [d.gatunek.id, d.wielkosc]),
+    [
+      ['sep-plowy', 'pasuje'],
+      ['myszolow', 'blisko'],
+    ],
+  );
+  const maly = dopasuj(WSZYSTKIE, { wielkosc: 'wrobel' }, SKALA);
+  assert.deepEqual(
+    maly.map((d) => [d.gatunek.id, d.wielkosc]),
+    [['pustulka', 'blisko']],
+  );
+});
+
+test('dopasuj: a size band includes its lower edge, a species its whole range', () => {
+  const na = (dlugosc_cm: [number, number]): CechyRozpoznania => ({ ...PUSTULKA, id: dlugosc_cm.join('-'), dlugosc_cm });
+  // Gołąb runs to 40, wrona from 40.
+  const [doGranicy] = dopasuj([na([35, 40])], { wielkosc: 'wrona' }, SKALA);
+  assert.equal(doGranicy.wielkosc, 'pasuje');
+  const [odGranicy] = dopasuj([na([40, 45])], { wielkosc: 'golab' }, SKALA);
+  assert.equal(odGranicy.wielkosc, 'blisko');
+});
+
+test('dopasuj: an unknown size is a skipped step; the night keeps owls', () => {
+  assert.deepEqual(dopasuj(WSZYSTKIE, { wielkosc: 'nie-ma' }, SKALA), dopasuj(WSZYSTKIE, {}, SKALA));
+  const SOWA: CechyRozpoznania = { ...PUSTULKA, id: 'puszczyk', zachowania: ['noc', 'slup'] };
+  assert.deepEqual(
+    dopasuj([...WSZYSTKIE, SOWA], { rodzaj: 'noc' }, SKALA).map((d) => d.gatunek.id),
+    ['puszczyk'],
+  );
+});

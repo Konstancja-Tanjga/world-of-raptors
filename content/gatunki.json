@@ -121,7 +121,7 @@
         "skrzydła płasko lub lekko opuszczone",
         "ogon: 2 wąskie pasy u nasady + szeroki pas końcowy"
       ],
-      "kolory": ["brazowy", "bialy", "szary", "czarny"],
+      "kolory": ["brazowy", "bialy", "szary", "czarny", "rudy"],
       "zachowania": ["krazy", "slup", "ziemia"],
       "mylona_z": [
         "myszolow",
@@ -168,7 +168,7 @@
         "skrzydła w płytkie V",
         "krótki, gęsto prążkowany ogon"
       ],
-      "kolory": ["brazowy", "bialy"],
+      "kolory": ["brazowy", "bialy", "plowy", "czarny"],
       "zachowania": ["krazy", "zawisa", "slup", "ziemia"],
       "mylona_z": [
         "trzmielojad",
@@ -262,7 +262,7 @@
         "białe 'światła do lądowania' u nasady skrzydeł",
         "dwie odmiany: jasna i ciemna"
       ],
-      "kolory": ["bialy", "brazowy", "czarny"],
+      "kolory": ["bialy", "brazowy", "czarny", "rudy"],
       "zachowania": ["krazy", "slup"],
       "mylona_z": [
         "scierwnik",
@@ -313,7 +313,7 @@
         "młody ciemnobrązowy"
       ],
       "kolory": ["bialy", "czarny", "brazowy"],
-      "zachowania": ["krazy", "ziemia"],
+      "zachowania": ["krazy", "ziemia", "slup"],
       "mylona_z": [
         "orzelek-wlochaty"
       ],
@@ -769,7 +769,7 @@
         "ciemny pas na pokrywach spodu skrzydła",
         "szeroki ciemny pas końcowy ogona"
       ],
-      "kolory": ["bialy", "brazowy", "czarny"],
+      "kolory": ["bialy", "brazowy", "czarny", "rudy"],
       "zachowania": ["krazy", "goni", "slup"],
       "mylona_z": [
         "orzel-iberyjski",
@@ -998,7 +998,7 @@
         "szerokie czarne wąsy",
         "szerokie u nasady trójkątne skrzydła"
       ],
-      "kolory": ["szary", "bialy", "czarny"],
+      "kolory": ["szary", "bialy", "czarny", "brazowy", "plowy"],
       "zachowania": ["goni", "krazy", "slup"],
       "mylona_z": [
         "kobuz"
@@ -1045,7 +1045,7 @@
         "odmiana jasna i ciemna",
         "ciemne pokrywy kontrastują z jaśniejszymi lotkami od spodu"
       ],
-      "kolory": ["brazowy", "szary", "bialy", "czarny"],
+      "kolory": ["brazowy", "szary", "bialy", "czarny", "rudy"],
       "zachowania": ["goni", "slup"],
       "mylona_z": [
         "kobuz"
@@ -1227,7 +1227,7 @@
         "wyraźna jasna brew",
         "białe puszyste pokrywy podogonowe"
       ],
-      "kolory": ["szary", "bialy", "brazowy"],
+      "kolory": ["szary", "bialy", "brazowy", "plowy"],
       "zachowania": ["goni", "krazy", "slup"],
       "mylona_z": [
         "krogulec"
