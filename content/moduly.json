@@ -280,6 +280,35 @@
       ]
     },
     {
+      "id": "A11",
+      "slug": "lot",
+      "sciezka": "a",
+      "tytul": "Lot w praktyce",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-machanie",
+          "tytul": "Jak ptak macha skrzydłami"
+        },
+        {
+          "slug": "02-zawisanie",
+          "tytul": "Zawisanie: stać w miejscu w powietrzu"
+        },
+        {
+          "slug": "03-pikowanie",
+          "tytul": "Pikowanie: najszybszy spadek świata"
+        },
+        {
+          "slug": "04-lot-w-polowaniu",
+          "tytul": "Lot w polowaniu: patrol, zasadzka, pościg"
+        },
+        {
+          "slug": "05-ladowanie-i-cwiczenia",
+          "tytul": "Lądowanie i ćwiczenia"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",
