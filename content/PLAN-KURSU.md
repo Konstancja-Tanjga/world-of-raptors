@@ -29,6 +29,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | A10 | **Ewolucja ptaków drapieżnych** | Ptaki to dinozaury (archeopteryks, pierzaste dinozaury, ptasie kości u teropodów), wymieranie sprzed 66 mln lat i ptaki terroru, wymarłe olbrzymy (argentawis, orzeł Haasta, sowa olbrzymia, kondory epoki lodowcowej), ewolucja dziś (odmiany myszołowa, miejskie sokoły, „ogniste jastrzębie”, krótsze wędrówki, wyspy) | [gotowy](moduly/ewolucja/README.md) |
 | A11 | **Lot w praktyce** | Uderzenie skrzydła i sześć stylów lotu (galeria animacji), zawisanie pustułki i nieruchoma głowa, pikowanie sokoła (model prędkości granicznej), lot w polowaniu: patrol błotniaka, zasadzka krogulca, łowy kobuza w powietrzu, nurkowanie rybołowa; lądowanie | [gotowy](moduly/lot/README.md) |
 | A12 | **Krukowate: sąsiedzi drapieżników** | Kim są krukowate (wróblowe, inteligencja i jej granice, spiżarnie, życie społeczne), rozpoznawanie siedmiu krukowatych Polski i dwóch z Hiszpanii, kruk czy drapieżnik w locie, przeganianie drapieżników, gniazda po krukowatych (kobuz, uszatka), padlina, krukowate jako zdobycz jastrzębia, życie obok ludzi | [gotowy](moduly/krukowate/README.md) |
+| A13 | **Małe ptaki: codzienni sąsiedzi i zdobycz** | Ptaki wróblowe i jak zacząć je rozpoznawać, najpospolitsze małe ptaki miasta, lasu, łąki i pola, kto na nie poluje (krogulec, sóweczka, kobuz, drzemlik), karmniki a krogulce, jak się bronią: dwa rodzaje alarmu, przeganianie sów, stado, kamuflaż | [gotowy](moduly/male-ptaki/README.md) |
 
 ## Ścieżka B: Rozpoznawanie w terenie
 

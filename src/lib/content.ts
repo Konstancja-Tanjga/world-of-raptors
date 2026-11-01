@@ -891,9 +891,10 @@ export async function ideaKursu() {
  * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
  * the goshawk its 3D model is built after, A10 with a cinereous vulture
  * perched like a living fossil, A11 with a black-winged kite, the hoverer,
- * A12 with a long-eared owl, a tenant of old crows' nests, B5 with an eagle
- * owl, B7 with the widest wingspan of the atlas, the cinereous vulture's, B8
- * with a honey buzzard, the bird of the Strait's busiest days.
+ * A12 with a long-eared owl, a tenant of old crows' nests, A13 with a
+ * sparrowhawk, the hunter of small birds, B5 with an eagle owl, B7 with the
+ * widest wingspan of the atlas, the cinereous vulture's, B8 with a honey
+ * buzzard, the bird of the Strait's busiest days.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
   'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', zdjecie: 'siedzacy' },
@@ -908,6 +909,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   ewolucja: { gatunek: 'sep-kasztanowaty', zdjecie: 'siedzacy' },
   lot: { gatunek: 'kaniuk', zdjecie: 'lot' },
   krukowate: { gatunek: 'uszatka', zdjecie: 'lot' },
+  'male-ptaki': { gatunek: 'krogulec', zdjecie: 'siedzacy' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },

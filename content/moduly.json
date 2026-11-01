@@ -367,6 +367,35 @@
       ]
     },
     {
+      "id": "A13",
+      "slug": "male-ptaki",
+      "sciezka": "a",
+      "tytul": "Małe ptaki: codzienni sąsiedzi i zdobycz",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-male-ptaki-wokol-nas",
+          "tytul": "Małe ptaki wokół nas"
+        },
+        {
+          "slug": "02-w-miescie",
+          "tytul": "W mieście: wróble, sikory, kosy i krogulec"
+        },
+        {
+          "slug": "03-w-lesie",
+          "tytul": "W lesie: zięby, rudziki, kowaliki i sóweczka"
+        },
+        {
+          "slug": "04-na-lace-i-polu",
+          "tytul": "Na łące i w polu: skowronki, trznadle i drzemlik"
+        },
+        {
+          "slug": "05-jak-sie-bronia",
+          "tytul": "Jak małe ptaki bronią się przed drapieżnikami"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

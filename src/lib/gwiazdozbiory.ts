@@ -20,6 +20,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   ewolucja: { gatunek: 'sep-kasztanowaty', nazwa: 'Sęp kasztanowaty' },
   lot: { gatunek: 'kaniuk', nazwa: 'Kaniuk' },
   krukowate: { gatunek: 'scierwnik', nazwa: 'Ścierwnik' },
+  'male-ptaki': { gatunek: 'krogulec', nazwa: 'Krogulec' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },
