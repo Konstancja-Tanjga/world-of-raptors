@@ -15,7 +15,7 @@ import punktJson from '../../content/punkt-obserwacyjny.json';
 import type { PtakPunktu, Sesja } from './punkt';
 import kalendarzJson from '../../content/kalendarz-siewkowcow.json';
 import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
-import { oryginalZAtrybutu, srcSetCommons } from './zdjecia';
+import { oryginalZAtrybutu, polozenie, srcSetCommons } from './zdjecia';
 import { nagraniaFiszek, problemyNagrania, sciezkaSonogramu } from './nagrania';
 import { odkoduj, problemyTagow } from './tagi';
 import type { Fiszki, ZapisFiszki } from './fiszki';
@@ -1073,7 +1073,8 @@ export function otwarcieModulu(slug: string) {
  * hook are shown by the opening scene, so they are taken out of the text. The
  * plan's table repeats the list of lessons above it, so it is dropped too, and
  * only its total time (the heading's "(ok. 3,5 h nauki + zadania)") is kept,
- * for the opening's facts. What comes before the second `##` section (the
+ * for the opening's facts; a plan without such a time (the final project's,
+ * whose table gives each project's own length) stays, as a section to fold. What comes before the second `##` section (the
  * scope, "Po co ten moduł") stays in view; each later section (goals, how to
  * use the models, a note on facts) is returned on its own, for the page to fold.
  */
@@ -1089,12 +1090,13 @@ export function przygotujOpisModulu(md: string, plik: string) {
   for (const s of reszta) {
     const [naglowek, ...tresc] = s.split('\n');
     const tytul = naglowek.replace(/^##\s+/, '').trim();
-    const plan = /^Plan\b(?:\s*\((.*)\))?/.exec(tytul);
-    if (plan) {
-      const m = /^(ok\. [\d,–-]+ h)\s*(.*)$/.exec(plan[1] ?? '');
-      if (m) czas = { ile: m[1], czego: m[2] || 'nauki' };
+    const plan = /^Plan(?:\s*\((.*)\))?$/.exec(tytul);
+    const m = plan && /^(ok\. [\d,–-]+ h)\s*(.*)$/.exec(plan[1] ?? '');
+    if (m) {
+      czas = { ile: m[1], czego: m[2] || 'nauki' };
       continue;
     }
+    if (plan?.[1]?.startsWith('ok.')) throw new Error(`${plik}: nieczytelny czas w nagłówku „${tytul}” (oczekiwano np. „ok. 3,5 h nauki”)`);
     sekcje.push({ tytul, md: tresc.join('\n').trim() });
   }
   const [pierwsza, ...zwijane] = sekcje;
@@ -1106,7 +1108,7 @@ export function przygotujOpisModulu(md: string, plik: string) {
  * A lesson's picture for the syllabus: its 3D model (the first part of its
  * first scene, as drawn for the flashcards), else its first photo, else none.
  */
-function obrazLekcji(md: string): { src: string; srcSet?: string } | null {
+function obrazLekcji(md: string): { src: string; srcSet?: string; polozenie?: string } | null {
   const scena = /<model-3d\s+data-scena="([^"]+)"/.exec(md)?.[1];
   const czesc = scena ? SCENY[scena]?.widoki[0]?.czesci[0] : undefined;
   if (czesc) return { src: OBRAZ_CZESCI.src(czesc) };
@@ -1116,7 +1118,9 @@ function obrazLekcji(md: string): { src: string; srcSet?: string } | null {
   const src = attr('src');
   if (!src) return null;
   const oryginal = oryginalZAtrybutu(attr('oryginal') ?? '');
-  return { src, srcSet: srcSetCommons({ src, oryginal } as Zdjecie) };
+  // Lesson photos have no `fokus`; a portrait one is cropped towards the top, where a perched bird's head usually is.
+  const pionowe = oryginal && oryginal[1] > oryginal[0];
+  return { src, srcSet: srcSetCommons({ src, oryginal }), polozenie: pionowe ? polozenie({}) : undefined };
 }
 
 /** Lessons of a module with what the syllabus shows (reading time, quiz pass mark) and the atlas species each names. */

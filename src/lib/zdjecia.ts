@@ -9,7 +9,7 @@ const STOPNIE = [960, 1280, 1920, 3840];
  * retina screen and a phone still downloads the small file. Own photos and
  * full-size originals have no thumbnail URL to vary and get no `srcset`.
  */
-export function srcSetCommons(z: Zdjecie): string | undefined {
+export function srcSetCommons(z: Pick<Zdjecie, 'src' | 'oryginal'>): string | undefined {
   const m = z.src.match(/^(.*\/thumb\/.+\/)(\d+)px-([^/?]+)(\?.*)?$/);
   if (!m || !z.oryginal) return undefined;
   const [, poczatek, , plik] = m;
