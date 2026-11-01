@@ -25,6 +25,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   sowy: { gatunek: 'puchacz', nazwa: 'Puchacz' },
   barbate: { gatunek: 'rybolow', nazwa: 'Rybołów' },
   'wielkosc-i-ksztalt': { gatunek: 'kobuz', nazwa: 'Kobuz' },
+  'punkt-obserwacyjny': { gatunek: 'kania-czarna', nazwa: 'Kania czarna' },
 };
 
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */

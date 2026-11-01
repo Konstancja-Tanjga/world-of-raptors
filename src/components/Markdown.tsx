@@ -11,7 +11,9 @@ import {
   ptakiMokradel,
   ptakiStyluLotu,
   pytaniaSylwetek,
+  kominPunktu,
   scenaBudowy,
+  sesjaPunktu,
   stronaMorfuLekcji,
   znajdzGatunek,
   znajdzNagranie,
@@ -23,7 +25,7 @@ import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
-import { Model3D, MorfGrup, Pikowanie, PtasiaMiarka, StyleLotu, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
+import { Komin, Model3D, MorfGrup, Pikowanie, PtasiaMiarka, PunktObserwacyjny, StyleLotu, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
 import { Nagranie } from './Nagranie';
@@ -112,6 +114,12 @@ const attr = (props: Attrs, name: string) => {
  *
  *   <style-lotu data-gatunki="pustulka kania-ruda krogulec">
  *   <pikowanie>
+ *
+ * B8's watch point: a session of content/punkt-obserwacyjny.json to count,
+ * and a kettle to estimate:
+ *
+ *   <punkt-obserwacyjny data-sesja="ciesnina-sierpien">
+ *   <komin data-gatunek="sep-plowy" data-ile="120">
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -216,6 +224,22 @@ const lessonTags = {
       <Pikowanie />
     </div>
   ),
+  'punkt-obserwacyjny': (props: Attrs) => {
+    const { sesja, ptaki } = sesjaPunktu(attr(props, 'data-sesja'));
+    return (
+      <div className="lekcja-model">
+        <PunktObserwacyjny sesja={sesja} ptaki={ptaki} />
+      </div>
+    );
+  },
+  komin: (props: Attrs) => {
+    const { ptak, ile } = kominPunktu(attr(props, 'data-gatunek'), attr(props, 'data-ile'));
+    return (
+      <div className="lekcja-cwiczenie">
+        <Komin ptak={ptak} ile={ile} />
+      </div>
+    );
+  },
   'zgadnij-sylwetke': (props: Attrs) => (
     <div className="lekcja-cwiczenie">
       <ZgadnijSylwetke
