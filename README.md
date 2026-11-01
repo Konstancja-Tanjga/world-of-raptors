@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 45 drapieżników | 35 ptaków mokradeł | 16 modułów | 82 lekcje | 174 pytania w quizach | 300 fiszek | 462 zdjęcia |
+| 45 drapieżników | 35 ptaków mokradeł | 17 modułów | 87 lekcji | 186 pytań w quizach | 300 fiszek | 462 zdjęcia |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki i szesnaście modułów, w każdym pięć lekcji, a w A8 siedem:
+Dwie ścieżki i siedemnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -32,6 +32,7 @@ Dwie ścieżki i szesnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 | A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | B7&nbsp;[Wielkość i kształt](content/moduly/wielkosc-i-ksztalt/README.md) |
 | A8&nbsp;[Wspaniały świat sów](content/moduly/swiat-sow/README.md) | |
 | A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | |
+| A10&nbsp;[Ewolucja ptaków drapieżnych](content/moduly/ewolucja/README.md) | |
 
 <table>
   <tr>
