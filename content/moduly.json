@@ -481,6 +481,35 @@
           "tytul": "Sowy, GISS i ćwiczenia"
         }
       ]
+    },
+    {
+      "id": "B10",
+      "slug": "wiek-orlow",
+      "sciezka": "b",
+      "tytul": "Wiek i upierzenie dużych orłów",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-po-co-wiek",
+          "tytul": "Po co oceniać wiek"
+        },
+        {
+          "slug": "02-pierzenie-falami",
+          "tytul": "Pierzenie falami i tylna krawędź skrzydła"
+        },
+        {
+          "slug": "03-bielik",
+          "tytul": "Bielik: pięć lat do białego ogona"
+        },
+        {
+          "slug": "04-orly-i-sepy",
+          "tytul": "Orzeł przedni, orzeł iberyjski i sęp płowy"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i obserwacje"
+        }
+      ]
     }
   ]
 }
