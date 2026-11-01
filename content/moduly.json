@@ -280,6 +280,35 @@
       ]
     },
     {
+      "id": "A10",
+      "slug": "ewolucja",
+      "sciezka": "a",
+      "tytul": "Ewolucja ptaków drapieżnych",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-dinozaury-z-piorami",
+          "tytul": "Ptaki to dinozaury"
+        },
+        {
+          "slug": "02-po-asteroidzie",
+          "tytul": "Po asteroidzie: skąd wzięli się dzisiejsi drapieżnicy"
+        },
+        {
+          "slug": "03-olbrzymy",
+          "tytul": "Wymarłe olbrzymy"
+        },
+        {
+          "slug": "04-ewolucja-trwa",
+          "tytul": "Ewolucja trwa"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i projekt"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

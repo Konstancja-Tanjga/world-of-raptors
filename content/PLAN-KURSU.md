@@ -26,6 +26,7 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | A7 | **Ludzie i drapieżniki** | Sokolnictwo (UNESCO), mitologia i herby, nauka obywatelska (eBird, Observation.org) | [gotowy](moduly/ludzie-i-drapiezniki/README.md) |
 | A8 | **Wspaniały świat sów** | Biologia sów: słuch, cichy lot, oczy i stopy, rok z życia sowy, inwazje i wędrówki, głosy z sonogramami i sylwetki, sowy świata, zagrożenia; trzy sowy północy | [gotowy](moduly/swiat-sow/README.md) |
 | A9 | **Budowa ptaka** | Topografia (nazwy części ciała), pióra od dudki po haczyki, nazwy lotek i pokryw, szkielet (mostek z grzebieniem, widełki, synsakrum, pygostyl, „kolano” do tyłu), mięśnie lotu, worki powietrzne i oddech w jedną stronę, kości pneumatyczne; interaktywne modele 3D z przekrojem i sprawdzianem | [gotowy](moduly/budowa-ptaka/README.md) |
+| A10 | **Ewolucja ptaków drapieżnych** | Ptaki to dinozaury (archeopteryks, pierzaste dinozaury, ptasie kości u teropodów), wymieranie sprzed 66 mln lat i ptaki terroru, wymarłe olbrzymy (argentawis, orzeł Haasta, sowa olbrzymia, kondory epoki lodowcowej), ewolucja dziś (odmiany myszołowa, miejskie sokoły, „ogniste jastrzębie”, krótsze wędrówki, wyspy) | [gotowy](moduly/ewolucja/README.md) |
 
 ## Ścieżka B: Rozpoznawanie w terenie
 
