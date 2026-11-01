@@ -24,6 +24,9 @@ function isWybor(v: unknown): v is Wybor {
 /** The site last chosen: a convenience, not in backups (a refused save keeps it for this visit only). */
 const wybor = utworzMagazyn<Wybor>('wor:planer:v1', isWybor);
 
+/** Shows the planner for a site (the observation points' link to it). */
+export const wybierzMiejscePlanera = (miejsce: MiejscePlanera) => wybor.zapisz({ miejsce });
+
 /** What went wrong, so the page can say what helps: the connection, Open-Meteo's answer, or missing data. */
 type Blad = { rodzaj: 'siec' } | { rodzaj: 'serwis'; status: number } | { rodzaj: 'dane' };
 type Stan = { stan: 'wczytywanie' } | { stan: 'blad'; blad: Blad } | { stan: 'gotowe'; okna: Okno[] };
@@ -173,9 +176,9 @@ export function PlanerWyjazdu() {
       ) : (
         <>
           <section className="stack" aria-labelledby="planer-najlepsze">
-            <h2 id="planer-najlepsze" className="checklist__naglowek">
+            <h3 id="planer-najlepsze" className="checklist__naglowek">
               Najlepsze terminy
-            </h2>
+            </h3>
             <ol className="planer__lista">
               {najlepsze(stan.okna, 3).map((o, i) => (
                 <li key={o.start}>
@@ -185,9 +188,9 @@ export function PlanerWyjazdu() {
             </ol>
           </section>
           <section className="stack" aria-labelledby="planer-dni">
-            <h2 id="planer-dni" className="checklist__naglowek">
+            <h3 id="planer-dni" className="checklist__naglowek">
               Dzień po dniu
-            </h2>
+            </h3>
             <ul className="planer__lista">
               {stan.okna.map((o) => (
                 <li key={o.start}>
