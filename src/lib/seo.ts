@@ -8,6 +8,15 @@ import { odkoduj } from './tagi';
 /** The production origin: `metadataBase`, the sitemap and robots.txt, and structured data all use it. */
 export const ADRES = 'https://world-of-raptors.vercel.app';
 
+/** My handle on X, for the link previews X draws. */
+export const X = '@KTanjga';
+
+/**
+ * Open Graph for every page. A page that sets its own `openGraph` replaces this
+ * whole object (Next merges metadata shallowly), so it spreads it first.
+ */
+export const OPEN_GRAPH = { type: 'website', locale: 'pl_PL', siteName: 'World of Raptors' } as const;
+
 /**
  * The author as structured data. `sameAs` names her other profiles, so a search
  * for her name can connect them to this course.
