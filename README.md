@@ -34,6 +34,7 @@ Dwie ścieżki i osiemnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 | A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | |
 | A10&nbsp;[Ewolucja ptaków drapieżnych](content/moduly/ewolucja/README.md) | |
 | A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | |
+| A12&nbsp;[Krukowate: sąsiedzi drapieżników](content/moduly/krukowate/README.md) | |
 
 <table>
   <tr>
