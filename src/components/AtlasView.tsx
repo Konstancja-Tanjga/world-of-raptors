@@ -1,14 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, ViewTransition } from 'react';
+import { useState } from 'react';
 import { jestWidziany, useChecklista } from '@/lib/checklist';
 import type { Gatunek, PtakNaLiscie, Zdjecie } from '@/lib/types';
 import { polozenie } from '@/lib/zdjecia';
 import { Button, SegmentedControl, StateBlock } from './ds';
 import { PUSTE_FILTRY, SpeciesFilters, useFiltry, type Filtry } from './SpeciesFilters';
 import { Sylwetka } from './Sylwetka';
-import { NazwaPtaka } from './NazwaPtaka';
+import { NazwaGatunku } from './NazwaPtaka';
 
 type Widok = 'zdjecia' | 'sylwetki' | 'skala';
 
@@ -26,21 +26,6 @@ const NAZWA_GRUPY: Record<string, string> = {
   sowy: 'Sowy',
 };
 const CZLOWIEK_CM = 170;
-
-/**
- * A species' name that flies into the title of its page when it is opened
- * (globals.css, "morf-nazwy"). Only one view of the atlas is shown at a time,
- * so each name appears once, as a shared transition needs.
- */
-function NazwaGatunku({ id, klasa, children }: { id: string; klasa: string; children: string }) {
-  return (
-    <ViewTransition name={`nazwa-${id}`} share="morf-nazwy" default="none">
-      <span className={klasa}>
-        <NazwaPtaka id={id} pl={children} />
-      </span>
-    </ViewTransition>
-  );
-}
 
 /** A species' silhouette group: its own cue for diurnal species ("orły (mały orzeł)" counts as orły), owls for owls. */
 function grupaSylwetki(g: Gatunek) {

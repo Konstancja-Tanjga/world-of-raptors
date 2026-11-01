@@ -536,6 +536,59 @@
       "modul": "swiat-sow",
       "lekcja": "01-co-czyni-sowe-sowa",
       "gatunki": []
+    },
+    {
+      "id": "dzierzby-ciernie",
+      "tekst": "**Gąsiorek**, mała dzierzba niewiele większa od wróbla, nabija złapane chrząszcze, pasikoniki, jaszczurki, a czasem nornice i pisklęta na ciernie tarniny, głogu i dzikiej róży albo na kolczasty drut. Ma haczykowaty dziób, ale słabe stopy ptaka wróblowego, więc cierń zastępuje mu szpony: przytrzymuje zdobycz, kiedy ptak ją rozrywa.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "dzierzby-spizarnia",
+      "tekst": "Nabita na ciernie zdobycz to dla dzierzby także **spiżarnia**. W ciepłe, obfite dni gąsiorek łapie więcej, niż zje, a w chłodne i deszczowe, kiedy owady się chowają, wraca do zapasów. Krzak tarniny z kilkoma zasuszonymi chrząszczami na kolcach to znak, że w pobliżu ma terytorium dzierzba.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "dzierzby-wartownik",
+      "tekst": "**Srokosz** to największa dzierzba Polski, a jego łacińska nazwa *Lanius excubitor* znaczy mniej więcej „rzeźnik wartownik”. Siedzi wysoko na czubku drzewa albo na drucie i wypatruje zdobyczy, a zimą, kiedy owadów brak, poluje na nornice i małe ptaki, które też nabija na ciernie.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "dzierzby-trucizna",
+      "tekst": "Na Florydzie zaobserwowano, że północnoamerykańska dzierzba *Lanius ludovicianus* nabija na ciernie **trujące** koniki polne i nie zjada ich od razu, tylko czeka dzień, dwa. Przez ten czas trucizna w ciele owada słabnie i można go bezpiecznie zjeść. Spiżarnia działa więc czasem jak kuchnia.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "dzierzby-posag",
+      "tekst": "Spiżarnia bywa też wizytówką. W badaniach dzierzb na pustyni Negew samice chętniej wybierały samców, którzy mieli więcej zdobyczy nabitej na ciernie w swoim terytorium. Pełna spiżarnia mówi samicy, że samiec jest dobrym myśliwym i wykarmi pisklęta.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": []
+    },
+    {
+      "id": "dzierzby-zab",
+      "tekst": "Dzierzby i sokoły mają podobne dzioby: z ostrym hakiem i dodatkowym **„zębem”** za nim, którym przecinają kark zdobyczy. Nie są ze sobą blisko spokrewnione. To przykład, jak podobny tryb życia prowadzi do podobnych narzędzi u zupełnie różnych ptaków.",
+      "modul": "kim-sa-drapiezniki",
+      "lekcja": "01-co-czyni-drapieznika",
+      "gatunki": [
+        "pustulka"
+      ]
+    },
+    {
+      "id": "pustulka-schowek",
+      "tekst": "Także **pustułka** robi zapasy. Gdy złapie więcej norników, niż zje, chowa nadwyżkę w kępie trawy, na gałęzi albo w zagłębieniu budynku i wraca do niej później, często pod wieczór, przed nocą. Holenderskie obserwacje pustułek pokazały, że to sposób na wyrównanie dni dobrych i złych łowów.",
+      "modul": "polowanie-i-ekologia",
+      "lekcja": "03-dieta-i-wypluwki",
+      "gatunki": [
+        "pustulka"
+      ]
     }
   ]
 }

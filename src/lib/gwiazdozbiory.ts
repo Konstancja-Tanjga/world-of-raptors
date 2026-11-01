@@ -17,6 +17,10 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', nazwa: 'Płomykówka' },
   'swiat-sow': { gatunek: 'puszczyk', nazwa: 'Puszczyk' },
   'budowa-ptaka': { gatunek: 'jastrzab', nazwa: 'Jastrząb' },
+  ewolucja: { gatunek: 'sep-kasztanowaty', nazwa: 'Sęp kasztanowaty' },
+  lot: { gatunek: 'kaniuk', nazwa: 'Kaniuk' },
+  krukowate: { gatunek: 'scierwnik', nazwa: 'Ścierwnik' },
+  'male-ptaki': { gatunek: 'krogulec', nazwa: 'Krogulec' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },
@@ -24,6 +28,9 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   sowy: { gatunek: 'puchacz', nazwa: 'Puchacz' },
   barbate: { gatunek: 'rybolow', nazwa: 'Rybołów' },
   'wielkosc-i-ksztalt': { gatunek: 'kobuz', nazwa: 'Kobuz' },
+  'punkt-obserwacyjny': { gatunek: 'kania-czarna', nazwa: 'Kania czarna' },
+  'wiek-orlow': { gatunek: 'orlik-krzykliwy', nazwa: 'Orlik' },
+  'projekt-koncowy': { gatunek: 'orzelek-wlochaty', nazwa: 'Orzełek' },
 };
 
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */
@@ -40,7 +47,7 @@ export type Polozenie = { x: number; y: number; szer: number; obrot: number };
 
 const KOLUMNY = [0.135, 0.375, 0.625, 0.865];
 /** The most rows the wide map takes; the narrow map has twice as many. */
-const NAJWIECEJ_WIERSZY = 4;
+const NAJWIECEJ_WIERSZY = 6;
 /**
  * Small offsets (dx within ±0.01, dy within ±0.02: ukladNaNiebie relies on
  * those bounds) and tilts, one per place, so a grid of constellations reads

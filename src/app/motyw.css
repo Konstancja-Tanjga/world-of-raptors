@@ -147,6 +147,14 @@
   --wor-zloto: #f5b75b;
   --wor-sylwetka: #0d131b;
 
+  /* Plumage colours "Rozpoznaj" asks about: samples of the bird, the same in both themes */
+  --wor-probka-bialy: #f7f5ef;
+  --wor-probka-szary: #8e959b;
+  --wor-probka-czarny: #1d1b19;
+  --wor-probka-brazowy: #6b4a2e;
+  --wor-probka-rudy: #b4562a;
+  --wor-probka-plowy: #d9bf8c;
+
   /* The sky by time of day (top to horizon), interpolated in OKLCH (dawn and dusk: sampled, see below) */
   --wor-niebo-noc: linear-gradient(in oklch 180deg, #04070e 0%, #0a1222 55%, #1a2742 100%);
   /* Dawn and dusk run from navy through purple to rose and orange: their hue
