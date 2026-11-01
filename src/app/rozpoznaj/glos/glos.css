@@ -1,0 +1,78 @@
+/* "Rozpoznaj po głosie": a phone held up in the field, one big button and what it hears. */
+
+.glos,
+.glos__start {
+  display: grid;
+  gap: var(--bh-padding-section);
+  max-width: 40rem;
+}
+.glos__start p {
+  margin: 0;
+  font-family: var(--wor-font-text);
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-reading);
+}
+.glos__sterowanie {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+.glos__naglowek {
+  margin: 0 0 var(--bh-gap-normal);
+  padding-top: var(--bh-gap-loose);
+  border-top: 1px solid var(--wor-linia);
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-subtitle);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-title);
+}
+.glos__teraz p,
+.glos__zrodlo {
+  margin: 0;
+}
+.glos__zrodlo {
+  max-width: 40rem;
+  margin-top: var(--bh-padding-section);
+  font-size: var(--bh-text-size-caption);
+}
+.glos__lista {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Name on the left, how sure and when on the right, the way into the course below. */
+.glos__ptak {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--bh-gap-snug) var(--bh-gap-normal);
+  padding-block: var(--bh-gap-normal);
+  border-bottom: 1px solid var(--wor-linia);
+}
+.glos__nazwy,
+.glos__ocena {
+  display: grid;
+  gap: var(--bh-gap-hairline);
+}
+.glos__ocena {
+  justify-items: end;
+  font-size: var(--bh-text-size-caption);
+}
+.glos__pl {
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.glos__lat {
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+  font-style: italic;
+}
+.glos__pewnosc {
+  font-size: var(--bh-text-size-body);
+  font-variant-numeric: tabular-nums;
+}
+.glos__w-kursie {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-normal);
+}
