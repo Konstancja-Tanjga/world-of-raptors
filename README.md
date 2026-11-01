@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
 
-| 45 drapieżników | 35 ptaków mokradeł | 23 moduły | 117 lekcji | 246 pytań w quizach | 300 fiszek | 462 zdjęcia |
+| 45 drapieżników | 55 ptaków mokradeł | 24 moduły | 125 lekcji | 261 pytań w quizach | 502 fiszki | 581 zdjęć |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki, dwadzieścia dwa moduły i projekt końcowy, w każdym pięć lekcji, a w A8 siedem:
+Dwie ścieżki, dwadzieścia trzy moduły i projekt końcowy, w każdym pięć lekcji, w A8 siedem, a w B9 osiem:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -31,9 +31,9 @@ Dwie ścieżki, dwadzieścia dwa moduły i projekt końcowy, w każdym pięć le
 | A6&nbsp;[Ochrona](content/moduly/ochrona/README.md) | B6&nbsp;[Marismas del Barbate, początek października](content/moduly/barbate/README.md) |
 | A7&nbsp;[Ludzie i drapieżniki](content/moduly/ludzie-i-drapiezniki/README.md) | B7&nbsp;[Wielkość i kształt](content/moduly/wielkosc-i-ksztalt/README.md) |
 | A8&nbsp;[Wspaniały świat sów](content/moduly/swiat-sow/README.md) | B8&nbsp;[Wirtualny punkt obserwacyjny](content/moduly/punkt-obserwacyjny/README.md) |
-| A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | B10&nbsp;[Wiek i upierzenie dużych orłów](content/moduly/wiek-orlow/README.md) |
-| A10&nbsp;[Ewolucja ptaków drapieżnych](content/moduly/ewolucja/README.md) | P&nbsp;[Projekt końcowy](content/moduly/projekt-koncowy/README.md) |
-| A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | |
+| A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | B9&nbsp;[Siewkowce](content/moduly/siewkowce/README.md) |
+| A10&nbsp;[Ewolucja ptaków drapieżnych](content/moduly/ewolucja/README.md) | B10&nbsp;[Wiek i upierzenie dużych orłów](content/moduly/wiek-orlow/README.md) |
+| A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | P&nbsp;[Projekt końcowy](content/moduly/projekt-koncowy/README.md) |
 | A12&nbsp;[Krukowate: sąsiedzi drapieżników](content/moduly/krukowate/README.md) | |
 | A13&nbsp;[Małe ptaki: codzienni sąsiedzi i zdobycz](content/moduly/male-ptaki/README.md) | |
 
@@ -61,7 +61,7 @@ Moduł A9 ma w każdej lekcji model 3D jastrzębia, pióra albo kości: można g
 
 45 gatunków: 32 drapieżniki dzienne i 13 sów. Atlas pokazuje je na zdjęciach, jako sylwetki w grupach (tych z modułu B1, do tego sowy) albo wszystkie w jednej skali. Gatunki, które widziałam, są oznaczone złotem.
 
-Do tego 35 ptaków mokradeł z karty terenowej Marismas del Barbate (moduł B6): czaple, siewkowe, mewy, rybitwy, kormoran, ptaki zarośli i ibis grzywiasty. Atlas pokazuje je po wybraniu „Ptaki mokradeł” albo miejsca „Marismas del Barbate”, tylko na zdjęciach, bo sylwetki i skala są dla drapieżników. Na checkliście karta terenowa liczy postęp, np. „17 z 43”, także w każdej grupie, a za obserwacje są naszywki w „Moim niebie”.
+Do tego 55 ptaków mokradeł: 35 z karty terenowej Marismas del Barbate (moduł B6), czyli czaple, siewkowe, mewy, rybitwy, kormoran, ptaki zarośli i ibis grzywiasty, i 20 kolejnych siewkowców Polski i Andaluzji z modułu B9. Wszystkie 34 siewkowce mają, jak drapieżniki, plansze z tabelą cech i sobowtórami, fiszki, wymiary, nagranie głosu (32 z 34: brodziec pławny i żwirowiec nie mają nagrania na wolnej licencji) i własną półkę w „Moim niebie”. Atlas pokazuje je po wybraniu „Ptaki mokradeł” albo miejsca „Marismas del Barbate”, tylko na zdjęciach, bo sylwetki i skala są dla drapieżników. Na checkliście karta terenowa liczy postęp, np. „17 z 43”, także w każdej grupie, a za obserwacje są naszywki w „Moim niebie”.
 
 <img src="docs/readme/gatunek.webp" width="100%" alt="Karta kani rudej: zdjęcie w locie, nazwa polska, łacińska, angielska i hiszpańska, status i obrączki">
 
@@ -73,7 +73,7 @@ Karta gatunku ma nazwy: polską, łacińską, angielską i hiszpańską, plansz�
 
 <img src="docs/readme/fiszki.webp" width="100%" alt="Fiszka z sylwetką sokoła skalnego: pytanie „Najpierw grupa, potem gatunek. Co to za ptak?” i odpowiedź z cechami">
 
-300 fiszek: ze zdjęć (88), z sylwetek w locie (32) i z nazw po polsku, angielsku i hiszpańsku (180). Powtórki układa algorytm FSRS, ten sam, który można włączyć w Anki: trudne fiszki wracają szybciej, łatwe coraz rzadziej. Każdego dnia dochodzi do 10 nowych.
+502 fiszki dla drapieżników i siewkowców: ze zdjęć (154), z sylwetek w locie (32) i z nazw po polsku, angielsku i hiszpańsku (316). Fiszki z głosem dochodzą, kiedy odsłucham i zatwierdzę nagranie. Powtórki układa algorytm FSRS, ten sam, który można włączyć w Anki: trudne fiszki wracają szybciej, łatwe coraz rzadziej. Każdego dnia dochodzi do 10 nowych.
 
 ### Checklista
 
