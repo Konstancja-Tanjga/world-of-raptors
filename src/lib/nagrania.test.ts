@@ -69,7 +69,7 @@ test('a sonogram marked in the catalogue must have been drawn', () => {
   assert.match(problemyNagrania('puszczyk/samiec', ze, 'Strix aluco', () => false)[0], /sonogramy/);
   // A recording swapped for another keeps a picture of the old one until it is redrawn.
   assert.match(problemyNagrania('puszczyk/samiec', { ...ze, src: zXenoCanto.src }, 'Strix aluco', jest).join(), /innego nagrania/);
-  assert.match(problemyNagrania('puszczyk/samiec', { ...ze, sonogram: { khz: 3 as 4, zrodlo: commons.src } }, 'Strix aluco', jest)[0], /2 albo 4/);
+  assert.match(problemyNagrania('puszczyk/samiec', { ...ze, sonogram: { khz: 3 as 4, zrodlo: commons.src } }, 'Strix aluco', jest)[0], /2, 4 albo 8/);
 });
 
 test('a file from elsewhere, a non-free licence or a missing credit is caught', () => {

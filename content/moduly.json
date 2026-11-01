@@ -628,6 +628,47 @@
       ]
     },
     {
+      "id": "B9",
+      "slug": "siewkowce",
+      "sciezka": "b",
+      "tytul": "Siewkowce",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-ksztalt-przed-kolorem",
+          "tytul": "Kształt przed kolorem"
+        },
+        {
+          "slug": "02-biegus-zmienny-jako-miara",
+          "tytul": "Biegus zmienny jako miara"
+        },
+        {
+          "slug": "03-zerowanie-i-plyw",
+          "tytul": "Jak żerują i jak działa pływ"
+        },
+        {
+          "slug": "04-wiek-i-pierzenie",
+          "tytul": "Wiek i pierzenie"
+        },
+        {
+          "slug": "05-trudne-pary-male",
+          "tytul": "Trudne pary: sieweczki, siewki i biegusy"
+        },
+        {
+          "slug": "06-trudne-pary-duze",
+          "tytul": "Trudne pary: brodźce, szlamniki, kuliki i bekasy"
+        },
+        {
+          "slug": "07-liczenie-obraczki-etyka",
+          "tytul": "Liczyć, czytać obrączki, nie płoszyć"
+        },
+        {
+          "slug": "08-cwiczenia",
+          "tytul": "Ćwiczenia"
+        }
+      ]
+    },
+    {
       "id": "B10",
       "slug": "wiek-orlow",
       "sciezka": "b",

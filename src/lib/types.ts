@@ -345,7 +345,7 @@ export type NagranieLekcji = Nagranie & {
   /** What is heard, shown above the player: "Samiec: głos terytorialny". */
   opis: string;
   /** A sonogram of its first seconds is in public/sonogramy/, up to `khz`, drawn from `zrodlo` (scripts/sonogramy.py draws it). */
-  sonogram?: { khz: 2 | 4; zrodlo: string };
+  sonogram?: { khz: 2 | 4 | 8; zrodlo: string };
   /** The species' voice flashcard plays this one (at most one per species; only once `zatwierdzone`). */
   fiszka?: true;
 };

@@ -1,0 +1,340 @@
+{
+  "kroki": [
+    "1–15 lipca",
+    "16–31 lipca",
+    "1–15 sierpnia",
+    "16–31 sierpnia",
+    "1–15 września",
+    "16–30 września",
+    "1–15 października",
+    "16–31 października"
+  ],
+  "obszar": "Zatoka Pucka i Zatoka Gdańska (ujście Redy, Rewa, Jastarnia, ujście Wisły); dane głównie z liczeń i odłowów KULING. Liczenia w ujściu Redy obejmowały 5 lipca – 5 października, więc październik jest słabo pokryty.",
+  "zrodla": [
+    {
+      "id": "meissner2009reda",
+      "opis": "Meissner W., Włodarczak-Komosińska A., Górecki D., Wójcik C., Ściborski M., Krupa R., Zięcik P., Kozakiewicz M., Rydzkowski P., Remisiewicz M. 2009. Autumn migration of waders (Charadrii) at the Reda mouth (N Poland). The Ring 31(1): 23–39.",
+      "url": "https://reference-global.com/article/10.2478/v10050-008-0046-6"
+    },
+    {
+      "id": "meissner2006biegus",
+      "opis": "Meissner W., Strzałkowska M. 2006. Autumn migration dynamics of the Dunlin (Calidris alpina) at the Reda Mouth (southern Baltic). The Ring 28(1): 33–43.",
+      "url": "https://reference-global.com/article/10.2478/v10050-008-0029-7"
+    },
+    {
+      "id": "meissner2006krzywodzioby",
+      "opis": "Meissner W. 2006. Timing and phenology of Curlew Sandpiper Calidris ferruginea on southward migration through Puck Bay, Poland. International Wader Studies 19: 121–124.",
+      "url": "https://www.waderstudygroup.org/?p=20458"
+    },
+    {
+      "id": "meissner2018pierzenie",
+      "opis": "Meissner W., Zaniewicz G., Kośmicki A., Włodarczak-Komosińska A. 2019. Low asymmetry of primary moult in Dunlins Calidris alpina alpina migrating to wintering grounds. Journal of Ornithology 160: 229–237 (online 2018).",
+      "url": "https://doi.org/10.1007/s10336-018-1602-8"
+    },
+    {
+      "id": "meissner2009wiek",
+      "opis": "Meissner W. 2009. Part 4: Ageing and sexing the Dunlin Calidris alpina. Wader Study Group Bulletin 116(1): 35–38 (pełny tekst niedostępny; cytat znany tylko z wyszukiwarki).",
+      "url": "https://www.waderstudygroup.org/article/2445/"
+    },
+    {
+      "id": "pinchuk2008",
+      "opis": "Pinchuk P., Remisiewicz M., Włodarczyk R., Karlionova N. 2008. Observations of primary moult in adult Wood Sandpipers Tringa glareola on southward migration through east and central Europe. Wader Study Group Bulletin 115(1): 24–28.",
+      "url": "https://www.waderstudygroup.org/?p=2643"
+    },
+    {
+      "id": "dietz2013",
+      "opis": "Dietz M.W., Rogers K.G., Piersma T. 2013. When the seasons don't fit: speedy molt as a routine carry-over cost of reproduction. PLoS ONE 8(1): e53890.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3547963/"
+    },
+    {
+      "id": "bz-biegus-zmienny",
+      "opis": "Blasco-Zumeta J., Heinze G.-M. Ageing and sexing: Dunlin (Calidris alpina). Ibercaja / Aranzadi (karta gatunku, rozdział Moult).",
+      "url": "https://www.blascozumeta.com/specie_files/05120_ENG_Calidris_alpina_aranzadi.pdf"
+    },
+    {
+      "id": "bz-biegus-krzywodzioby",
+      "opis": "Blasco-Zumeta J., Heinze G.-M. Ageing and sexing: Curlew Sandpiper (Calidris ferruginea). Aranzadi.",
+      "url": "https://www.blascozumeta.com/specie_files/05090_ENG_Calidris_ferruginea_aranzadi.pdf"
+    },
+    {
+      "id": "bz-biegus-malutki",
+      "opis": "Blasco-Zumeta J., Heinze G.-M. Ageing and sexing: Little Stint (Calidris minuta). Aranzadi.",
+      "url": "https://www.blascozumeta.com/specie_files/05010_ENG_Calidris_minuta_aranzadi.pdf"
+    },
+    {
+      "id": "bz-batalion",
+      "opis": "Blasco-Zumeta J., Heinze G.-M. Ageing and sexing: Ruff (Calidris pugnax). Aranzadi.",
+      "url": "https://www.blascozumeta.com/specie_files/05170_ENG_Calidris_pugnax_aranzadi.pdf"
+    },
+    {
+      "id": "bz-leczak",
+      "opis": "Blasco-Zumeta J., Heinze G.-M. Ageing and sexing: Wood Sandpiper (Tringa glareola). Aranzadi.",
+      "url": "https://www.blascozumeta.com/specie_files/05540_ENG_Tringa_glareola_aranzadi.pdf"
+    },
+    {
+      "id": "bz-krwawodziob",
+      "opis": "Blasco-Zumeta J., Heinze G.-M. Ageing and sexing: Redshank (Tringa totanus). Aranzadi.",
+      "url": "https://www.blascozumeta.com/specie_files/05460_ENG_Tringa_totanus_aranzadi.pdf"
+    },
+    {
+      "id": "swale-szlamnik",
+      "opis": "Swale Wader Group (Kent). Ageing & sexing: Bar-tailed Godwit, opis szat miesiąc po miesiącu (ptaki z Wielkiej Brytanii).",
+      "url": "https://swalewaders.co.uk/index.php/ageing-sexing/bar-tailed-godwit"
+    },
+    {
+      "id": "swale-krwawodziob",
+      "opis": "Swale Wader Group (Kent). Ageing & sexing: Redshank, opis szat miesiąc po miesiącu (ptaki z Wielkiej Brytanii).",
+      "url": "https://swalewaders.co.uk/index.php/ageing-sexing/redshank"
+    },
+    {
+      "id": "wiki-krzywodzioby",
+      "opis": "Wikipedia (en), Curlew sandpiper, sekcja o szatach i pierzeniu, za: Mlodinow S.G., Medrano F. 2023. Curlew Sandpiper, v. 2.0. Birds of the World.",
+      "url": "https://en.wikipedia.org/wiki/Curlew_sandpiper"
+    },
+    {
+      "id": "wiki-batalion",
+      "opis": "Wikipedia (en), Ruff (bird), za: Mullarney K. i in. 1999 (Collins Bird Guide), Pearson D.J. 1981 (Ibis 123: 158–182), Baccetti N. i in. 1998 (International Wader Studies 10).",
+      "url": "https://en.wikipedia.org/wiki/Ruff_(bird)"
+    },
+    {
+      "id": "wiki-leczak",
+      "opis": "Wikipedia (en), Wood sandpiper, za: Remisiewicz M., Tree A.J., Underhill L.G., Burman M.S. 2017. Ibis 159: 91–102.",
+      "url": "https://en.wikipedia.org/wiki/Wood_sandpiper"
+    },
+    {
+      "id": "wiki-rdzawy",
+      "opis": "Wikipedia (en), Red knot, opis szaty młodocianej (linie podkrańcowe na piórach wierzchu).",
+      "url": "https://en.wikipedia.org/wiki/Red_knot"
+    }
+  ],
+  "gatunki": [
+    {
+      "id": "biegus-zmienny",
+      "szczyt": [4, 5],
+      "okresy": [
+        {
+          "od": 1,
+          "do": 3,
+          "kto": "dorosle",
+          "szata": "Zużyta szata godowa: czarna plama na brzuchu, rdzawy grzbiet; z czasem coraz więcej szarych piór, lotki jeszcze stare",
+          "zrodla": ["meissner2006biegus", "meissner2009reda", "bz-biegus-zmienny"]
+        },
+        {
+          "od": 4,
+          "do": 6,
+          "kto": "dorosle",
+          "liczebnosc": "nielicznie",
+          "szata": "Głównie szare, zimowe pióra, na brzuchu pojedyncze czarne; część ptaków wymienia lotki",
+          "zrodla": ["meissner2009reda", "meissner2006biegus", "meissner2018pierzenie"],
+          "przyblizone": true
+        },
+        {
+          "od": 2,
+          "do": 3,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: rdzawe i płowe obrzeżenia piór grzbietu, słabe jasne „V” na grzbiecie, czarne plamki na bokach brzucha",
+          "zrodla": ["meissner2009reda", "meissner2006biegus"]
+        },
+        {
+          "od": 4,
+          "do": 7,
+          "kto": "mlode",
+          "szata": "Pierzenie do szaty pierwszej zimy: między płowymi piórami młodocianymi pojawiają się gładkie szare na grzbiecie; plamki na brzuchu zostają",
+          "zrodla": ["meissner2009reda", "meissner2006biegus", "meissner2009wiek", "bz-biegus-zmienny"],
+          "przyblizone": true
+        }
+      ],
+      "uwaga": "Ptaki w drugim roku życia przelatują zwykle nieco wcześniej niż starsze. Pojedyncze młode już w lipcu to ptaki z miejscowych lęgów (podgatunek schinzii). Młode stanowią ponad połowę przelatujących od ostatnich dni sierpnia, a liczenia do końca września obejmują tylko trochę ponad połowę ich przelotu, więc biegusy zmienne są liczne jeszcze w październiku."
+    },
+    {
+      "id": "biegus-krzywodzioby",
+      "szczyt": [0, 1, 4],
+      "okresy": [
+        {
+          "od": 0,
+          "do": 2,
+          "kto": "dorosle",
+          "szata": "Szata godowa: ceglastordzawa głowa, pierś i brzuch, coraz bardziej plamista od białych i szarych piór",
+          "zrodla": ["meissner2006krzywodzioby", "meissner2009reda", "bz-biegus-krzywodzioby"]
+        },
+        {
+          "od": 3,
+          "do": 4,
+          "kto": "dorosle",
+          "liczebnosc": "nielicznie",
+          "szata": "Resztki szaty godowej: rdzawe plamy na piersi wśród szarych piór",
+          "zrodla": ["meissner2006krzywodzioby", "meissner2009reda", "bz-biegus-krzywodzioby"]
+        },
+        {
+          "od": 3,
+          "do": 5,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: szarobrązowy, łuskowany wierzch (jasne obrzeżenia piór), brzoskwiniowopłowa pierś, białe boki",
+          "zrodla": [
+            "meissner2006krzywodzioby",
+            "meissner2009reda",
+            "wiki-krzywodzioby",
+            "bz-biegus-krzywodzioby"
+          ]
+        }
+      ],
+      "uwaga": "Dwie wyraźne fale: dorosłe (samce średnio ok. 10 dni przed samicami) w lipcu, młode od połowy sierpnia ze szczytem w pierwszym tygodniu września. Młode nie zmieniają szaty przed dotarciem na zimowiska (pierzenie od października), więc na Bałtyku widać je zawsze w świeżej szacie młodocianej."
+    },
+    {
+      "id": "biegus-malutki",
+      "szczyt": [4, 5],
+      "okresy": [
+        {
+          "od": 1,
+          "do": 4,
+          "kto": "dorosle",
+          "szata": "Lekko zużyta szata godowa: rdzawe tony wyblakłe, na wierzchu pojedyncze nowe szarobrązowe pióra, plamkowana pierś",
+          "zrodla": ["meissner2009reda", "bz-biegus-malutki"]
+        },
+        {
+          "od": 2,
+          "do": 6,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: ciemny wierzch z jaskraworudymi obrzeżeniami i wyraźnym białym „V” na grzbiecie, czysto biały spód",
+          "zrodla": ["meissner2009reda", "bz-biegus-malutki"]
+        }
+      ],
+      "uwaga": "Trzy fale: same dorosłe od połowy lipca do pierwszych dni sierpnia, dorosłe z młodymi od drugiej dekady sierpnia do początku września, we wrześniu same młode (wtedy przelot najsilniejszy). Przelot trwa też w październiku, poza okresem liczeń; jak długo, źródła nie podają."
+    },
+    {
+      "id": "biegus-rdzawy",
+      "okresy": [
+        {
+          "od": 1,
+          "do": 2,
+          "kto": "dorosle",
+          "szata": "Szata godowa z ceglastym spodem, zwykle już zużyta i przetykana szarymi piórami",
+          "zrodla": ["meissner2009reda", "dietz2013"],
+          "przyblizone": true
+        },
+        {
+          "od": 3,
+          "do": 5,
+          "kto": "dorosle",
+          "liczebnosc": "nielicznie",
+          "szata": "Pojedyncze dorosłe, z resztkami rdzawego spodu",
+          "zrodla": ["meissner2009reda"],
+          "przyblizone": true
+        },
+        {
+          "od": 3,
+          "do": 5,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: szary wierzch łuskowany ciemnymi liniami i białymi obrzeżeniami piór, płowy nalot na piersi",
+          "zrodla": ["meissner2009reda", "wiki-rdzawy"]
+        }
+      ],
+      "uwaga": "Dorosłe od połowy lipca do końca pierwszej dekady sierpnia, pierwsze młode od ok. 12 sierpnia, pojedyncze dorosłe do 18 września. Dorosłe syberyjskie (canutus) nie wymieniają lotek przed zimowiskami w Afryce Zachodniej."
+    },
+    {
+      "id": "batalion",
+      "szczyt": [3, 4],
+      "okresy": [
+        {
+          "od": 0,
+          "do": 2,
+          "kto": "dorosle",
+          "liczebnosc": "nielicznie",
+          "szata": "Samce już bez kryzy i pęczków, w pierzeniu, przypominają duże samice; samice w zużytej szacie godowej z czarnymi plamami na piersi",
+          "zrodla": ["meissner2009reda", "wiki-batalion", "bz-batalion"],
+          "przyblizone": true
+        },
+        {
+          "od": 3,
+          "do": 5,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: łuskowany wierzch (ciemne środki, płowe obrzeżenia piór), płowopomarańczowa szyja i pierś, nogi zielonkawe",
+          "zrodla": ["meissner2009reda", "wiki-batalion", "bz-batalion"],
+          "przyblizone": true
+        }
+      ],
+      "uwaga": "W ujściu Redy batalion jest od początku lipca, ale nieliczny do połowy sierpnia; więcej ptaków od połowy sierpnia do połowy września. Praca nie podaje wieku batalionów, więc przypisanie lipca dorosłym, a szczytu młodym opiera się na ogólnym wzorcu (samce odlatują z lęgowisk na przełomie czerwca i lipca, samice i młode później). W głębi kraju przelot zaczyna się pod koniec czerwca i ma dwa szczyty: w lipcu oraz w sierpniu lub wrześniu."
+    },
+    {
+      "id": "leczak",
+      "szczyt": [2, 3],
+      "okresy": [
+        {
+          "od": 0,
+          "do": 2,
+          "kto": "dorosle",
+          "szata": "Zużyta szata godowa: wierzch wyblakły, mniej nakrapiany, pierś kreskowana; część ptaków zaczyna wymieniać lotki",
+          "zrodla": ["meissner2009reda", "bz-leczak", "pinchuk2008", "wiki-leczak"]
+        },
+        {
+          "od": 1,
+          "do": 4,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: ciemnobrązowy wierzch gęsto nakrapiany płowymi plamkami, pierś delikatnie kreskowana",
+          "zrodla": ["meissner2009reda", "bz-leczak"]
+        },
+        {
+          "od": 5,
+          "do": 5,
+          "kto": "mlode",
+          "liczebnosc": "nielicznie",
+          "szata": "Pojedyncze młode; płowe plamki na wierzchu blakną",
+          "zrodla": ["meissner2009reda"]
+        }
+      ],
+      "uwaga": "Dwie fale: w lipcu i od sierpnia do początku września. Udział dorosłych w odłowach szybko spada od połowy lipca, ostatnie dorosłe łapano w połowie sierpnia. Najpóźniejsza obserwacja: 29 września. Dorosłe wymieniają lotki głównie na zimowiskach w Afryce (sierpień–grudzień)."
+    },
+    {
+      "id": "krwawodziob",
+      "szczyt": [3, 4],
+      "okresy": [
+        {
+          "od": 0,
+          "do": 3,
+          "kto": "dorosle",
+          "szata": "Zużyta szata godowa, gęsto kreskowana i plamkowana; wiele ptaków w pierzeniu lotek",
+          "zrodla": ["meissner2009reda", "swale-krwawodziob", "bz-krwawodziob"],
+          "przyblizone": true
+        },
+        {
+          "od": 1,
+          "do": 5,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: brązowy wierzch z płowymi plamkami na brzegach pokryw i lotek III rzędu, nogi żółtawopomarańczowe",
+          "zrodla": ["meissner2009reda", "swale-krwawodziob", "bz-krwawodziob"],
+          "przyblizone": true
+        }
+      ],
+      "uwaga": "W ujściu Redy przelot bez wyraźnych szczytów; najwięcej ptaków w trzeciej dekadzie sierpnia i na przełomie pierwszej dekady września, od połowy września pojedyncze. Dostępne źródła nie dzielą tu krwawodziobów na dorosłe i młode: podział w kalendarzu to przybliżenie z opisów szat (Wielka Brytania) i trzeba go sprawdzić w pracy Meissnera (2000, Vogelwarte 40: 179–188)."
+    },
+    {
+      "id": "szlamnik",
+      "szczyt": [0, 1, 3, 4, 5, 6],
+      "okresy": [
+        {
+          "od": 0,
+          "do": 2,
+          "kto": "dorosle",
+          "szata": "Szata godowa: samce z ceglastorudym spodem, samice płowe lub różowawe tylko na piersi",
+          "zrodla": ["meissner2009reda", "swale-szlamnik"]
+        },
+        {
+          "od": 3,
+          "do": 4,
+          "kto": "dorosle",
+          "liczebnosc": "nielicznie",
+          "szata": "Pojedyncze dorosłe, często jeszcze z rudym na brzuchu i szyi",
+          "zrodla": ["meissner2009reda", "swale-szlamnik"]
+        },
+        {
+          "od": 3,
+          "do": 6,
+          "kto": "mlode",
+          "szata": "Świeża szata młodociana: pokrywy z płowymi brzegami, prążkowane lotki III rzędu, płowa pierś",
+          "zrodla": ["meissner2009reda", "swale-szlamnik"]
+        }
+      ],
+      "uwaga": "W lipcu i na początku sierpnia tylko dorosłe (największe stado: 40 dorosłych 29 lipca), młode od ok. połowy sierpnia (51 ptaków, głównie młodych, 9 września), ostatnie dorosłe 7 września. Liczenia kończyły się 5 października, a szlamniki były wtedy wciąż liczne."
+    }
+  ]
+}

@@ -1,4 +1,33 @@
 {
+ "batalion": {
+  "cs": "jespák bojovný",
+  "da": "brushane",
+  "de": "Kampfläufer",
+  "fi": "suokukko",
+  "fr": "Combattant varié",
+  "hu": "pajzsos cankó",
+  "nb": "brushane",
+  "nl": "kemphaan",
+  "pt": "Philomachus pugnax",
+  "ro": "bătăuș",
+  "sk": "Bojovník bahenný",
+  "sv": "brushane",
+  "uk": "Брижач"
+ },
+ "bekasik": {
+  "cs": "slučka malá",
+  "da": "Enkeltbekkasin",
+  "de": "Zwergschnepfe",
+  "fi": "jänkäkurppa",
+  "fr": "Bécassine sourde",
+  "hu": "kis sárszalonka",
+  "nb": "kvartbekkasin",
+  "nl": "Bokje",
+  "pt": "Narceja-galega",
+  "sk": "močiarnička tichá",
+  "sv": "dvärgbeckasin",
+  "uk": "баранець малий"
+ },
  "bialorzytka": {
   "cs": "bělořit šedý",
   "da": "stenpikker",
@@ -12,6 +41,62 @@
   "sk": "skaliarik sivý",
   "sv": "stenskvätta",
   "uk": "кам'янка звичайна"
+ },
+ "biegus-krzywodzioby": {
+  "cs": "jespák křivozobý",
+  "da": "Krumnæbbet ryle",
+  "de": "Sichelstrandläufer",
+  "fi": "kuovisirri",
+  "fr": "Bécasseau cocorli",
+  "hu": "sarlós partfutó",
+  "nb": "tundrasnipe",
+  "nl": "krombekstrandloper",
+  "pt": "pilrito-de-bico-comprido",
+  "sk": "pobrežník krivozobý",
+  "sv": "spovsnäppa",
+  "uk": "побережник червоногрудий"
+ },
+ "biegus-malutki": {
+  "cs": "jespák malý",
+  "da": "Dværgryle",
+  "de": "Zwergstrandläufer",
+  "fi": "pikkusirri",
+  "fr": "Bécasseau minute",
+  "hu": "apró partfutó",
+  "nb": "dvergsnipe",
+  "nl": "Kleine strandloper",
+  "pt": "Pilrito-pequeno",
+  "sk": "pobrežník malý",
+  "sv": "småsnäppa",
+  "uk": "побережник малий"
+ },
+ "biegus-maly": {
+  "cs": "jespák šedý",
+  "da": "Temmincksryle",
+  "de": "Temminckstrandläufer",
+  "fi": "lapinsirri",
+  "fr": "Bécasseau de Temminck",
+  "hu": "Temminck-partfutó",
+  "nb": "temmincksnipe",
+  "nl": "Temmincks strandloper",
+  "pt": "Pilrito-de-temminck",
+  "sk": "pobrežník sivý",
+  "sv": "mosnäppa",
+  "uk": "побережник білохвостий"
+ },
+ "biegus-rdzawy": {
+  "cs": "jespák rezavý",
+  "da": "Islandsk ryle",
+  "de": "Knutt",
+  "fi": "isosirri",
+  "fr": "Bécasseau maubèche",
+  "hu": "sarki partfutó",
+  "nb": "Polarsnipe",
+  "nl": "Kanoet",
+  "pt": "Seixoeira",
+  "sk": "pobrežník hrdzavý",
+  "sv": "kustsnäppa",
+  "uk": "побережник ісландський"
  },
  "biegus-zmienny": {
   "cs": "jespák obecný",
@@ -88,6 +173,51 @@
   "sv": "blå kärrhök",
   "uk": "Лунь польовий"
  },
+ "brodziec-piskliwy": {
+  "cs": "pisík obecný",
+  "da": "Mudderklire",
+  "de": "Flussuferläufer",
+  "fi": "rantasipi",
+  "fr": "Chevalier guignette",
+  "hu": "billegetőcankó",
+  "nb": "strandsnipe",
+  "nl": "oeverloper",
+  "pt": "Maçarico-das-rochas",
+  "ro": "Fluierar de munte",
+  "sk": "kalužiak malý",
+  "sv": "drillsnäppa",
+  "uk": "Набережник"
+ },
+ "brodziec-plawny": {
+  "cs": "vodouš štíhlý",
+  "da": "Damklire",
+  "de": "Teichwasserläufer",
+  "fi": "lampiviklo",
+  "fr": "Chevalier stagnatile",
+  "hu": "tavi cankó",
+  "nb": "Damsnipe",
+  "nl": "poelruiter",
+  "pt": "perna-verde-fino",
+  "ro": "Fluierar de lac",
+  "sk": "kalužiak štíhly",
+  "sv": "dammsnäppa",
+  "uk": "Коловодник ставковий"
+ },
+ "brodziec-sniady": {
+  "cs": "vodouš tmavý",
+  "da": "Sortklire",
+  "de": "Dunkler Wasserläufer",
+  "fi": "mustaviklo",
+  "fr": "Chevalier arlequin",
+  "hu": "füstös cankó",
+  "nb": "sotsnipe",
+  "nl": "zwarte ruiter",
+  "pt": "Perna-vermelha-escuro",
+  "ro": "fluierar negru",
+  "sk": "kalužiak tmavý",
+  "sv": "svartsnäppa",
+  "uk": "коловодник чорний"
+ },
  "chwastowka": {
   "cs": "cistovník rákosníkový",
   "da": "Cistussanger",
@@ -101,6 +231,21 @@
   "sk": "cistovník ryšavý",
   "sv": "grässångare",
   "uk": "Таміка віялохвоста"
+ },
+ "czajka": {
+  "cs": "čejka chocholatá",
+  "da": "vibe",
+  "de": "Kiebitz",
+  "fi": "töyhtöhyyppä",
+  "fr": "Vanneau huppé",
+  "hu": "bíbic",
+  "nb": "vipe",
+  "nl": "kievit",
+  "pt": "Abibe-comum",
+  "ro": "nagâț",
+  "sk": "cíbik chochlatý",
+  "sv": "tofsvipa",
+  "uk": "чайка чубата"
  },
  "czapla-nadobna": {
   "cs": "volavka stříbřitá",
@@ -364,6 +509,21 @@
   "sv": "rödbena",
   "uk": "коловодник звичайний"
  },
+ "kszyk": {
+  "cs": "bekasina otavní",
+  "da": "Dobbeltbekkasin",
+  "de": "Bekassine",
+  "fi": "taivaanvuohi",
+  "fr": "Bécassine des marais",
+  "hu": "sárszalonka",
+  "nb": "enkeltbekkasin",
+  "nl": "Watersnip",
+  "pt": "Narceja-comum",
+  "ro": "Becațină comună",
+  "sk": "močiarnica mekotavá",
+  "sv": "enkelbeckasin",
+  "uk": "баранець звичайний"
+ },
  "kulik-mniejszy": {
   "cs": "koliha malá",
   "da": "Småspove",
@@ -391,6 +551,21 @@
   "sk": "hvizdák veľký",
   "sv": "storspov",
   "uk": "кульон великий"
+ },
+ "kulon": {
+  "cs": "dytík úhorní",
+  "da": "Triel",
+  "de": "Triel",
+  "fi": "paksujalka",
+  "fr": "Œdicnème criard",
+  "hu": "ugartyúk",
+  "nb": "triel",
+  "nl": "Griel",
+  "pt": "Alcaravão",
+  "ro": "Pasărea ogorului",
+  "sk": "ležiak úhorový",
+  "sv": "tjockfot",
+  "uk": "Лежень"
  },
  "kurhannik": {
   "cs": "káně bělochvostá",
@@ -421,6 +596,21 @@
   "sk": "kalužiak sivý",
   "sv": "gluttsnäppa",
   "uk": "коловодник великий"
+ },
+ "leczak": {
+  "cs": "vodouš bahenní",
+  "da": "Tinksmed",
+  "de": "Bruchwasserläufer",
+  "fi": "liro",
+  "fr": "Chevalier sylvain",
+  "hu": "réti cankó",
+  "nb": "grønnstilk",
+  "nl": "bosruiter",
+  "pt": "Maçarico-bastardo",
+  "ro": "Fluierar de mlaștină",
+  "sk": "kalužiak močiarny",
+  "sv": "grönbena",
+  "uk": "коловодник болотяний"
  },
  "mewa-cienkodzioba": {
   "cs": "racek tenkozobý",
@@ -627,6 +817,20 @@
   "sk": "kolibiarik čipčavý",
   "sv": "gransångare",
   "uk": "вівчарик-ковалик"
+ },
+ "platkonog-szydlodzioby": {
+  "cs": "lyskonoh úzkozobý",
+  "da": "Odinshane",
+  "de": "Odinshühnchen",
+  "fi": "vesipääsky",
+  "fr": "Phalarope à bec étroit",
+  "hu": "vékonycsőrű víztaposó",
+  "nb": "svømmesnipe",
+  "nl": "Grauwe franjepoot",
+  "pt": "Falaropo-de-bico-fino",
+  "sk": "lyskonoh úzkozobý",
+  "sv": "smalnäbbad simsnäppa",
+  "uk": "Плавунець круглодзьобий"
  },
  "pliszka-siwa": {
   "cs": "konipas bílý",
@@ -838,6 +1042,35 @@
   "sv": "fiskgjuse",
   "uk": "скопа"
  },
+ "rycyk": {
+  "cs": "břehouš černoocasý",
+  "da": "Stor kobbersneppe",
+  "de": "Uferschnepfe",
+  "fi": "mustapyrstökuiri",
+  "fr": "Barge à queue noire",
+  "hu": "nagy goda",
+  "nb": "svarthalespove",
+  "nl": "grutto",
+  "pt": "Maçarico-de-bico-direito",
+  "sk": "brehár čiernochvostý",
+  "sv": "rödspov",
+  "uk": "великий грицик"
+ },
+ "samotnik": {
+  "cs": "vodouš kropenatý",
+  "da": "Svaleklire",
+  "de": "Waldwasserläufer",
+  "fi": "metsäviklo",
+  "fr": "Chevalier cul-blanc",
+  "hu": "erdei cankó",
+  "nb": "Skogsnipe",
+  "nl": "witgat",
+  "pt": "Maçarico-bique-bique",
+  "ro": "Fluierar de zăvoi",
+  "sk": "kalužiak perlavý",
+  "sv": "skogssnäppa",
+  "uk": "коловодник лісовий"
+ },
  "scierwnik": {
   "cs": "sup mrchožravý",
   "da": "Ådselgrib",
@@ -927,6 +1160,35 @@
   "sv": "större strandpipare",
   "uk": "пісочник великий"
  },
+ "sieweczka-rzeczna": {
+  "cs": "kulík říční",
+  "da": "lille præstekrave",
+  "de": "Flussregenpfeifer",
+  "fi": "pikkutylli",
+  "fr": "Petit Gravelot",
+  "hu": "kis lile",
+  "nb": "dverglo",
+  "nl": "kleine plevier",
+  "pt": "Borrelho-pequeno-de-coleira",
+  "ro": "Prundăraș gulerat",
+  "sk": "kulík riečny",
+  "sv": "mindre strandpipare",
+  "uk": "пісочник малий"
+ },
+ "siewka-zlota": {
+  "cs": "kulík zlatý",
+  "da": "hjejle",
+  "de": "Goldregenpfeifer",
+  "fi": "kapustarinta",
+  "fr": "Pluvier doré",
+  "hu": "aranylile",
+  "nb": "heilo",
+  "nl": "goudplevier",
+  "pt": "Tarambola-dourada-europeia",
+  "sk": "kulík zlatý",
+  "sv": "ljungpipare",
+  "uk": "сивка звичайна"
+ },
  "siewnica": {
   "cs": "kulík bledý",
   "da": "Strandhjejle",
@@ -940,6 +1202,21 @@
   "sk": "kulík bledý",
   "sv": "kustpipare",
   "uk": "Сивка морська"
+ },
+ "slonka": {
+  "cs": "sluka lesní",
+  "da": "skovsneppe",
+  "de": "Waldschnepfe",
+  "fi": "lehtokurppa",
+  "fr": "Bécasse des bois",
+  "hu": "erdei szalonka",
+  "nb": "rugde",
+  "nl": "houtsnip",
+  "pt": "Galinhola",
+  "ro": "Sitar de pădure",
+  "sk": "sluka hôrna",
+  "sv": "morkulla",
+  "uk": "слуква"
  },
  "sokol-skalny": {
   "cs": "ostříž jižní",
@@ -1177,5 +1454,19 @@
   "sk": "rybárik riečny",
   "sv": "kungsfiskare",
   "uk": "рибалочка блакитний"
+ },
+ "zwirowiec": {
+  "cs": "ouhorlík stepní",
+  "da": "Rødvinget Braksvale",
+  "de": "Rotflügel-Brachschwalbe",
+  "fi": "pääskykahlaaja",
+  "fr": "Glaréole à collier",
+  "hu": "székicsér",
+  "nb": "brakksvale",
+  "nl": "Vorkstaartplevier",
+  "pt": "perdiz-do-mar-comum",
+  "sk": "prieložník stepný",
+  "sv": "rödvingad vadarsvala",
+  "uk": "Дерихвіст лучний"
  }
 }

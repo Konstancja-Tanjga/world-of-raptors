@@ -1803,7 +1803,18 @@
       "oryginal": [2939, 1960],
       "fokus": [45, 30]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Avocet_in_flight_%2851952659736%29.jpg/960px-Avocet_in_flight_%2851952659736%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "caroline legg",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Avocet_in_flight_(51952659736).jpg",
+      "plik": "File:Avocet in flight (51952659736).jpg",
+      "oryginal": [1743, 1162],
+      "fokus": [55, 50]
+    }
   },
   "szczudlak": {
     "siedzacy": {
@@ -1818,7 +1829,18 @@
       "oryginal": [2483, 3725],
       "fokus": [58, 20]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Black-winged_stilt_%28Himantopus_himantopus%29_2025.jpg/960px-Black-winged_stilt_%28Himantopus_himantopus%29_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "TRinaud",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Black-winged_stilt_(Himantopus_himantopus)_2025.jpg",
+      "plik": "File:Black-winged stilt (Himantopus himantopus) 2025.jpg",
+      "oryginal": [3878, 2585],
+      "fokus": [42, 52]
+    }
   },
   "sieweczka-morska": {
     "siedzacy": {
@@ -1833,7 +1855,21 @@
       "oryginal": [1500, 1000],
       "fokus": [33, 23]
     },
-    "lot": null
+    "lot": null,
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Charadrius_alexandrinus_%2833650209244%29.jpg/960px-Charadrius_alexandrinus_%2833650209244%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Jac. Janssen from Baarlo lb, NL",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_alexandrinus_(33650209244).jpg",
+      "plik": "File:Charadrius alexandrinus (33650209244).jpg",
+      "podpis": "Samica, kwiecień",
+      "alt": "Samica sieweczki morskiej idzie po mokrym piasku w Camargue: bez rdzawej czapeczki i czerni na głowie, tylko brązowe plamy po bokach piersi, ciemne nogi.",
+      "oryginal": [2423, 1615],
+      "fokus": [53, 45]
+    }
   },
   "sieweczka-obrozna": {
     "siedzacy": {
@@ -1859,6 +1895,20 @@
       "plik": "File:Charadrius hiaticula Lvk.jpg",
       "oryginal": [872, 1077],
       "fokus": [49, 50]
+    },
+    "cecha": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Charadrius_hiaticula_He.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 960,
+      "height": 686,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_hiaticula_He.jpg",
+      "plik": "File:Charadrius hiaticula He.jpg",
+      "podpis": "Szata godowa",
+      "alt": "Dorosła sieweczka obrożna w szacie godowej stoi na piasku: pomarańczowy dziób z czarnym końcem, czarna obroża i maska, pomarańczowe nogi.",
+      "oryginal": [696, 497],
+      "fokus": [21, 24]
     }
   },
   "siewnica": {
@@ -1885,6 +1935,20 @@
       "plik": "File:Grey Plover - 1192 (11479350056).jpg",
       "oryginal": [1847, 1399],
       "fokus": [46, 50]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Breeding_plumage_Black-bellied_plover_%28Pluvialis_squatarola%29_Great_Bay_Wildlife_Management_Area%2C_New_Jersey%2C_USA.png/960px-Breeding_plumage_Black-bellied_plover_%28Pluvialis_squatarola%29_Great_Bay_Wildlife_Management_Area%2C_New_Jersey%2C_USA.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Chuck Homler, Focus On Wildlife",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Breeding_plumage_Black-bellied_plover_(Pluvialis_squatarola)_Great_Bay_Wildlife_Management_Area,_New_Jersey,_USA.png",
+      "plik": "File:Breeding plumage Black-bellied plover (Pluvialis squatarola) Great Bay Wildlife Management Area, New Jersey, USA.png",
+      "podpis": "Szata godowa",
+      "alt": "Siewnica w szacie godowej stoi na mulisku: czarna twarz, pierś i brzuch, białe obrzeżenie od czoła po boki piersi, srebrzysto-czarny wierzch.",
+      "oryginal": [3908, 2605],
+      "fokus": [56, 30]
     }
   },
   "biegus-zmienny": {
@@ -1900,7 +1964,32 @@
       "oryginal": [2790, 1848],
       "fokus": [50, 26]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Dunlin_M%C3%B8len.jpg/960px-Dunlin_M%C3%B8len.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 687,
+      "autor": "Arnstein Rønning",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Dunlin_M%C3%B8len.jpg",
+      "plik": "File:Dunlin Mølen.jpg",
+      "oryginal": [3263, 2335],
+      "fokus": [52, 50]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Calidris_alpina_alpina%2C_Riga%2C_Latvia_1.jpg/960px-Calidris_alpina_alpina%2C_Riga%2C_Latvia_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Jevgenijs Slihto from Riga, Latvia",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Calidris_alpina_alpina,_Riga,_Latvia_1.jpg",
+      "plik": "File:Calidris alpina alpina, Riga, Latvia 1.jpg",
+      "oryginal": [4000, 3000],
+      "podpis": "Szata godowa, sierpień",
+      "alt": "Biegus zmienny w szacie godowej brodzi po płyciźnie: rdzawy, czarno plamkowany grzbiet i wyraźna czarna plama na brzuchu.",
+      "fokus": [40, 40]
+    }
   },
   "piaskowiec": {
     "siedzacy": {
@@ -1915,7 +2004,32 @@
       "oryginal": [5459, 3639],
       "fokus": [47, 38]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Sanderling_%288591897371%29.jpg/960px-Sanderling_%288591897371%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 540,
+      "autor": "Ian Kirk from Broadstone, Dorset, UK",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Sanderling_(8591897371).jpg",
+      "plik": "File:Sanderling (8591897371).jpg",
+      "oryginal": [1724, 969],
+      "fokus": [50, 45]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Calidris_alba_%28breeding_plumage%29.jpg/960px-Calidris_alba_%28breeding_plumage%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Hans Hillewaert",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Calidris_alba_(breeding_plumage).jpg",
+      "plik": "File:Calidris alba (breeding plumage).jpg",
+      "oryginal": [2880, 2161],
+      "podpis": "Szata godowa",
+      "alt": "Piaskowiec w szacie godowej stoi na białym piasku: głowa, pierś i grzbiet rdzawobrązowe, czarno nakrapiane, brzuch czysto biały.",
+      "fokus": [59, 36]
+    }
   },
   "kamusznik": {
     "siedzacy": {
@@ -1930,7 +2044,32 @@
       "oryginal": [6107, 4071],
       "fokus": [67, 26]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Ruddy_turnstone_%28Arenaria_interpres%29_in_flight_2.jpg/960px-Ruddy_turnstone_%28Arenaria_interpres%29_in_flight_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Ruddy_turnstone_(Arenaria_interpres)_in_flight_2.jpg",
+      "plik": "File:Ruddy turnstone (Arenaria interpres) in flight 2.jpg",
+      "oryginal": [2254, 1503],
+      "fokus": [56, 50]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Steinw%C3%A4lzer_%28Arenaria_interpres%29%2C_Redcar%2C_North_Yorkshire.jpg/960px-Steinw%C3%A4lzer_%28Arenaria_interpres%29%2C_Redcar%2C_North_Yorkshire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 570,
+      "autor": "peterichman",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Steinw%C3%A4lzer_(Arenaria_interpres),_Redcar,_North_Yorkshire.jpg",
+      "plik": "File:Steinwälzer (Arenaria interpres), Redcar, North Yorkshire.jpg",
+      "oryginal": [4087, 2427],
+      "podpis": "Szata godowa",
+      "alt": "Kamusznik w szacie godowej idzie po mokrych skałach: biało-czarna głowa, czarny śliniak na piersi, rudo-czarny grzbiet i pomarańczowe nogi.",
+      "fokus": [34, 33]
+    }
   },
   "krwawodziob": {
     "siedzacy": {
@@ -1971,7 +2110,18 @@
       "oryginal": [2718, 2038],
       "fokus": [42, 23]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Tringa_nebularia_in_flight_a2.JPG/960px-Tringa_nebularia_in_flight_a2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Alpsdake",
+      "licencja": "CC BY-SA 3.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Tringa_nebularia_in_flight_a2.JPG",
+      "plik": "File:Tringa nebularia in flight a2.JPG",
+      "oryginal": [1280, 960],
+      "fokus": [51, 52]
+    }
   },
   "kulik-wielki": {
     "siedzacy": {
@@ -1986,7 +2136,18 @@
       "oryginal": [2568, 2568],
       "fokus": [43, 20]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Eurasian_Curlew_Numenius_arquata_by_Vedant_Raju_Kasambe_DSC_3984_03.jpg/960px-Eurasian_Curlew_Numenius_arquata_by_Vedant_Raju_Kasambe_DSC_3984_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 717,
+      "autor": "Vedant Raju Kasambe",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Curlew_Numenius_arquata_by_Vedant_Raju_Kasambe_DSC_3984_03.jpg",
+      "plik": "File:Eurasian Curlew Numenius arquata by Vedant Raju Kasambe DSC 3984 03.jpg",
+      "oryginal": [2308, 1723],
+      "fokus": [48, 42]
+    }
   },
   "kulik-mniejszy": {
     "siedzacy": {
@@ -2001,7 +2162,18 @@
       "oryginal": [2820, 1875],
       "fokus": [34, 21]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Copy_%281%29_of_Sm%C3%A5spov_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg/960px-Copy_%281%29_of_Sm%C3%A5spov_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 789,
+      "autor": "Ragnhild & Neil Crawford from Sweden",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Copy_(1)_of_Sm%C3%A5spov_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg",
+      "plik": "File:Copy (1) of Småspov - Flickr - Ragnhild & Neil Crawford.jpg",
+      "oryginal": [1160, 953],
+      "fokus": [50, 48]
+    }
   },
   "szlamnik": {
     "siedzacy": {
@@ -2027,6 +2199,20 @@
       "plik": "File:Bar-tailed godwit on Washington coast (53893614179).jpg",
       "oryginal": [4960, 3408],
       "fokus": [48, 55]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Bar-tailed_Godwit.jpg/960px-Bar-tailed_Godwit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Bar-tailed_Godwit.jpg",
+      "plik": "File:Bar-tailed Godwit.jpg",
+      "podpis": "Samiec w szacie godowej",
+      "alt": "Samiec szlamnika w szacie godowej stoi w niskiej roślinności: głowa i cały spód rdzawoczerwone, dziób długi i lekko zadarty.",
+      "oryginal": [2279, 1519],
+      "fokus": [41, 19]
     }
   },
   "ostrygojad": {
@@ -2042,7 +2228,18 @@
       "oryginal": [2632, 3290],
       "fokus": [54, 23]
     },
-    "lot": null
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Haematopus_ostralegus_He2.jpg/960px-Haematopus_ostralegus_He2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Haematopus_ostralegus_He2.jpg",
+      "plik": "File:Haematopus ostralegus He2.jpg",
+      "oryginal": [3042, 2028],
+      "fokus": [55, 50]
+    }
   },
   "mewa-cienkodzioba": {
     "siedzacy": {
@@ -2401,6 +2598,655 @@
       "alt": "Sowa jarzębata na czubku świerka, odwrócona tyłem: długi, stopniowany ogon, plamkowany grzbiet i głowa odwrócona w bok z czarną ramką twarzy.",
       "oryginal": [1200, 876],
       "fokus": [27, 25]
+    }
+  },
+  "sieweczka-rzeczna": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Charadrius_dubius_-_Little_ringed_plover_05.jpg/960px-Charadrius_dubius_-_Little_ringed_plover_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 653,
+      "autor": "Zeynel Cebeci",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Charadrius_dubius_-_Little_ringed_plover_05.jpg",
+      "plik": "File:Charadrius dubius - Little ringed plover 05.jpg",
+      "oryginal": [3250, 2211],
+      "fokus": [33, 24]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Little_ringed_plover_%28Charadrius_dubius%29_in_flight_Malta.jpg/960px-Little_ringed_plover_%28Charadrius_dubius%29_in_flight_Malta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Little_ringed_plover_(Charadrius_dubius)_in_flight_Malta.jpg",
+      "plik": "File:Little ringed plover (Charadrius dubius) in flight Malta.jpg",
+      "oryginal": [2934, 1956],
+      "fokus": [55, 52]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Juvenile_little_ringed_plover_%2851389515334%29.jpg/960px-Juvenile_little_ringed_plover_%2851389515334%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andrey Gulivanov",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Juvenile_little_ringed_plover_(51389515334).jpg",
+      "plik": "File:Juvenile little ringed plover (51389515334).jpg",
+      "podpis": "Młody ptak",
+      "alt": "Młoda sieweczka rzeczna stoi na zielonym brzegu: płowa twarz bez czarnej maski, brązowa, niepełna obroża i słabsza żółta obrączka wokół oka.",
+      "oryginal": [3300, 2200],
+      "fokus": [68, 27]
+    }
+  },
+  "siewka-zlota": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Pluvialis_apricaria_Norfolk_1.jpg/960px-Pluvialis_apricaria_Norfolk_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 655,
+      "autor": "Kev Chapman",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Pluvialis_apricaria_Norfolk_1.jpg",
+      "plik": "File:Pluvialis apricaria Norfolk 1.jpg",
+      "oryginal": [1314, 896],
+      "fokus": [30, 33]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Pluvialis_apricaria_in_flight.jpg/960px-Pluvialis_apricaria_in_flight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Pluvialis_apricaria_in_flight.jpg",
+      "plik": "File:Pluvialis apricaria in flight.jpg",
+      "oryginal": [2196, 1464],
+      "fokus": [50, 50]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/European_golden_plover_%28Pluvialis_apricaria%29_female_breeding_Keflavik.jpg/960px-European_golden_plover_%28Pluvialis_apricaria%29_female_breeding_Keflavik.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:European_golden_plover_(Pluvialis_apricaria)_female_breeding_Keflavik.jpg",
+      "plik": "File:European golden plover (Pluvialis apricaria) female breeding Keflavik.jpg",
+      "podpis": "Szata godowa, samica",
+      "alt": "Samica siewki złotej w szacie godowej stoi na kamieniu wśród mchów: złociście nakrapiany wierzch, czarna plama na piersi i brzuchu, oddzielona białym pasem.",
+      "oryginal": [4065, 2710],
+      "fokus": [46, 20]
+    }
+  },
+  "czajka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Northern-Lapwing-Vanellus-vanellus.jpg/960px-Northern-Lapwing-Vanellus-vanellus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Northern-Lapwing-Vanellus-vanellus.jpg",
+      "plik": "File:Northern-Lapwing-Vanellus-vanellus.jpg",
+      "oryginal": [4104, 2736],
+      "fokus": [35, 32]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Northern_lapwing_%28Vanellus_vanellus%29_in_flight_France.jpg/960px-Northern_lapwing_%28Vanellus_vanellus%29_in_flight_France.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Northern_lapwing_(Vanellus_vanellus)_in_flight_France.jpg",
+      "plik": "File:Northern lapwing (Vanellus vanellus) in flight France.jpg",
+      "oryginal": [2726, 1817],
+      "fokus": [47, 55]
+    }
+  },
+  "biegus-krzywodzioby": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/B%C3%A9casseau_cocorli_Thyna024.jpg/960px-B%C3%A9casseau_cocorli_Thyna024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:B%C3%A9casseau_cocorli_Thyna024.jpg",
+      "plik": "File:Bécasseau cocorli Thyna024.jpg",
+      "oryginal": [5074, 3383],
+      "fokus": [49, 27]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Calidris_ferruginea_in_flight_-_Paolo_Zucca_-_228168944.png/960px-Calidris_ferruginea_in_flight_-_Paolo_Zucca_-_228168944.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 616,
+      "autor": "Paolo Zucca",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Calidris_ferruginea_in_flight_-_Paolo_Zucca_-_228168944.png",
+      "plik": "File:Calidris ferruginea in flight - Paolo Zucca - 228168944.png",
+      "oryginal": [1518, 974],
+      "fokus": [55, 35]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Curlew_sandpiper_David_Raju.jpg/960px-Curlew_sandpiper_David_Raju.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Davidvraju",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Curlew_sandpiper_David_Raju.jpg",
+      "plik": "File:Curlew sandpiper David Raju.jpg",
+      "oryginal": [2400, 1800],
+      "podpis": "Szata godowa",
+      "alt": "Biegus krzywodzioby w szacie godowej stoi na jednej nodze w płytkiej wodzie: głowa i spód ceglastordzawe, długi dziób łukowato wygięty.",
+      "fokus": [53, 33]
+    }
+  },
+  "biegus-malutki": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Little_Stint_%28Calidris_minuta%29_%281%29.jpg/960px-Little_Stint_%28Calidris_minuta%29_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Ken Billington",
+      "licencja": "CC BY-SA 3.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Little_Stint_(Calidris_minuta)_(1).jpg",
+      "plik": "File:Little Stint (Calidris minuta) (1).jpg",
+      "oryginal": [1800, 1350],
+      "fokus": [26, 32]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Little_stint_%28Calidris_minuta%29_flight.jpg/960px-Little_stint_%28Calidris_minuta%29_flight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1390,
+      "autor": "Shino jacob koottanad",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Little_stint_(Calidris_minuta)_flight.jpg",
+      "plik": "File:Little stint (Calidris minuta) flight.jpg",
+      "oryginal": [1253, 1814],
+      "fokus": [55, 50]
+    }
+  },
+  "biegus-maly": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Temminck%27s_Stint_in_Bakkhali_September_2025_by_Tisha_Mukherjee_05.jpg/960px-Temminck%27s_Stint_in_Bakkhali_September_2025_by_Tisha_Mukherjee_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Tisha Mukherjee",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Temminck%27s_Stint_in_Bakkhali_September_2025_by_Tisha_Mukherjee_05.jpg",
+      "plik": "File:Temminck's Stint in Bakkhali September 2025 by Tisha Mukherjee 05.jpg",
+      "oryginal": [3013, 2009],
+      "fokus": [54, 37]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Temminck%27s_Stint_%28Calidris_temminckii%29_%2820279544992%29.jpg/960px-Temminck%27s_Stint_%28Calidris_temminckii%29_%2820279544992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 682,
+      "autor": "Imran Shah from Islamabad, Pakistan",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Temminck%27s_Stint_(Calidris_temminckii)_(20279544992).jpg",
+      "plik": "File:Temminck's Stint (Calidris temminckii) (20279544992).jpg",
+      "oryginal": [2000, 1421],
+      "fokus": [40, 51]
+    }
+  },
+  "biegus-rdzawy": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Red_knot_%28Calidris_canutus%29_in_Morocco.jpg/960px-Red_knot_%28Calidris_canutus%29_in_Morocco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 641,
+      "autor": "opisska",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Red_knot_(Calidris_canutus)_in_Morocco.jpg",
+      "plik": "File:Red knot (Calidris canutus) in Morocco.jpg",
+      "oryginal": [2048, 1367],
+      "fokus": [58, 22]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Red_knot_%28Calidris_canutus%29_juveniles_in_flight.jpg/960px-Red_knot_%28Calidris_canutus%29_juveniles_in_flight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Red_knot_(Calidris_canutus)_juveniles_in_flight.jpg",
+      "plik": "File:Red knot (Calidris canutus) juveniles in flight.jpg",
+      "oryginal": [2062, 1375],
+      "fokus": [48, 47]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Calidris_canutus_no.JPG/960px-Calidris_canutus_no.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 809,
+      "autor": "Arnstein Rønning",
+      "licencja": "CC BY-SA 3.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Calidris_canutus_no.JPG",
+      "plik": "File:Calidris canutus no.JPG",
+      "oryginal": [1139, 960],
+      "podpis": "Szata godowa, wrzesień",
+      "alt": "Biegus rdzawy stoi na wyrzuconych przez morze wodorostach: twarz, pierś i brzuch pomarańczoworude, grzbiet szaro-czarno nakrapiany.",
+      "fokus": [41, 35]
+    }
+  },
+  "batalion": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Philomachus_pugnax_s5.jpg/960px-Philomachus_pugnax_s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 690,
+      "autor": "Alpsdake",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Philomachus_pugnax_s5.jpg",
+      "plik": "File:Philomachus pugnax s5.jpg",
+      "oryginal": [4800, 3450],
+      "fokus": [25, 20]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ruff1%2C_crop.jpg/960px-Ruff1%2C_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 1070,
+      "autor": "Mildeep",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Ruff1,_crop.jpg",
+      "plik": "File:Ruff1, crop.jpg",
+      "oryginal": [1954, 2177],
+      "fokus": [55, 52]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Male_Ruff_%28Calidris_pugnax%29_in_Finnmark.jpg/960px-Male_Ruff_%28Calidris_pugnax%29_in_Finnmark.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Lucwrte",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Male_Ruff_(Calidris_pugnax)_in_Finnmark.jpg",
+      "plik": "File:Male Ruff (Calidris pugnax) in Finnmark.jpg",
+      "oryginal": [4765, 3177],
+      "podpis": "Samiec w szacie godowej",
+      "alt": "Samiec batalionu w szacie godowej stoi na kamieniu: czarna, nastroszona kryza na szyi i piersi, rude pióra na głowie i grzbiecie, różowy dziób i pomarańczowe nogi.",
+      "fokus": [55, 21]
+    }
+  },
+  "brodziec-sniady": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Chevalier_arlequin033_thyna.jpg/960px-Chevalier_arlequin033_thyna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 636,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chevalier_arlequin033_thyna.jpg",
+      "plik": "File:Chevalier arlequin033 thyna.jpg",
+      "oryginal": [3025, 2004],
+      "fokus": [53, 18]
+    },
+    "lot": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/17/Spotted_Redshank_%28Tringa_erythropus%29_-_Flickr_-_Lip_Kee_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 800,
+      "height": 640,
+      "autor": "Lip Kee from Singapore, Republic of Singapore",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Spotted_Redshank_(Tringa_erythropus)_-_Flickr_-_Lip_Kee_(1).jpg",
+      "plik": "File:Spotted Redshank (Tringa erythropus) - Flickr - Lip Kee (1).jpg",
+      "oryginal": [800, 640],
+      "fokus": [42, 45]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Spotted_redshank_breeding_plumage.jpg/960px-Spotted_redshank_breeding_plumage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 665,
+      "autor": "Michele Lamberti",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Spotted_redshank_breeding_plumage.jpg",
+      "plik": "File:Spotted redshank breeding plumage.jpg",
+      "podpis": "Szata godowa",
+      "alt": "Brodziec śniady w szacie godowej brodzi w płytkiej wodzie: jest prawie czarny, drobno nakrapiany bielą na grzbiecie, z czerwoną nasadą żuchwy.",
+      "oryginal": [1802, 1248],
+      "fokus": [25, 12]
+    }
+  },
+  "brodziec-plawny": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Chevalier_stagnatile005_thyna.jpg/960px-Chevalier_stagnatile005_thyna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Chevalier_stagnatile005_thyna.jpg",
+      "plik": "File:Chevalier stagnatile005 thyna.jpg",
+      "oryginal": [2724, 2043],
+      "fokus": [66, 25]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Flying_%285617761642%29.jpg/960px-Flying_%285617761642%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Charles Lam from Hong Kong, China",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Flying_(5617761642).jpg",
+      "plik": "File:Flying (5617761642).jpg",
+      "oryginal": [2088, 1566],
+      "fokus": [50, 45]
+    }
+  },
+  "leczak": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Wood_sandpiper_%28Tringa_glareola%29_Sfax.jpg/960px-Wood_sandpiper_%28Tringa_glareola%29_Sfax.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Wood_sandpiper_(Tringa_glareola)_Sfax.jpg",
+      "plik": "File:Wood sandpiper (Tringa glareola) Sfax.jpg",
+      "oryginal": [3354, 2236],
+      "fokus": [45, 38]
+    },
+    "lot": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/15/Wood_Sandpiper_%28Tringa_glareola%29_%2853879706937%29%2C_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 842,
+      "height": 639,
+      "autor": "Birds of Gilgit-Baltistan from Aliabad, Hunza, Pakistan",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Wood_Sandpiper_(Tringa_glareola)_(53879706937),_crop.jpg",
+      "plik": "File:Wood Sandpiper (Tringa glareola) (53879706937), crop.jpg",
+      "oryginal": [842, 639],
+      "fokus": [52, 52]
+    }
+  },
+  "samotnik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Green_sandpiper_%28Tringa_ochropus%29.jpg/960px-Green_sandpiper_%28Tringa_ochropus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Green_sandpiper_(Tringa_ochropus).jpg",
+      "plik": "File:Green sandpiper (Tringa ochropus).jpg",
+      "oryginal": [2684, 1789],
+      "fokus": [41, 33]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Green_sandpiper_flying.jpg/960px-Green_sandpiper_flying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 600,
+      "autor": "Prasan Shrestha",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Green_sandpiper_flying.jpg",
+      "plik": "File:Green sandpiper flying.jpg",
+      "oryginal": [4257, 2660],
+      "fokus": [33, 48]
+    }
+  },
+  "brodziec-piskliwy": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Common_Sandpiper_%28Actitis_hypoleucos%29%2C_Sfax%2C_Tunisia.jpg/960px-Common_Sandpiper_%28Actitis_hypoleucos%29%2C_Sfax%2C_Tunisia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Common_Sandpiper_(Actitis_hypoleucos),_Sfax,_Tunisia.jpg",
+      "plik": "File:Common Sandpiper (Actitis hypoleucos), Sfax, Tunisia.jpg",
+      "oryginal": [3592, 2396],
+      "fokus": [60, 35]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Andarrios_chico_-_Parque_Lineal_del_Manzanares_-_Section_II_-_Madrid_01.jpg/960px-Andarrios_chico_-_Parque_Lineal_del_Manzanares_-_Section_II_-_Madrid_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Javier Perez Montes",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Andarrios_chico_-_Parque_Lineal_del_Manzanares_-_Section_II_-_Madrid_01.jpg",
+      "plik": "File:Andarrios chico - Parque Lineal del Manzanares - Section II - Madrid 01.jpg",
+      "oryginal": [3900, 2600],
+      "fokus": [38, 28]
+    }
+  },
+  "rycyk": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Barge_%C3%A0_queue_noire_Thyna022.jpg/960px-Barge_%C3%A0_queue_noire_Thyna022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "El Golli Mohamed",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Barge_%C3%A0_queue_noire_Thyna022.jpg",
+      "plik": "File:Barge à queue noire Thyna022.jpg",
+      "oryginal": [4234, 2823],
+      "fokus": [56, 20]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Black-tailed_godwit_%28Limosa_limosa%29_in_flight_2.jpg/960px-Black-tailed_godwit_%28Limosa_limosa%29_in_flight_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Black-tailed_godwit_(Limosa_limosa)_in_flight_2.jpg",
+      "plik": "File:Black-tailed godwit (Limosa limosa) in flight 2.jpg",
+      "oryginal": [2351, 1567],
+      "fokus": [41, 52]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Black-tailed_Godwit_Uferschnepfe.jpg/960px-Black-tailed_Godwit_Uferschnepfe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 960,
+      "autor": "Andreas Trepte",
+      "licencja": "CC BY-SA 2.5",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "strona": "https://commons.wikimedia.org/wiki/File:Black-tailed_Godwit_Uferschnepfe.jpg",
+      "plik": "File:Black-tailed Godwit Uferschnepfe.jpg",
+      "podpis": "Szata godowa",
+      "alt": "Rycyk w szacie godowej stoi na słupku: rdzawa głowa, szyja i pierś, ciemne prążki na bokach, długi prosty dziób z pomarańczową nasadą.",
+      "oryginal": [3080, 3080],
+      "fokus": [39, 25]
+    }
+  },
+  "kszyk": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Bekassine_%28Blick_nach_oben%29.jpg/960px-Bekassine_%28Blick_nach_oben%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 639,
+      "autor": "Hobbyfotowiki",
+      "licencja": "CC0",
+      "licencjaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "strona": "https://commons.wikimedia.org/wiki/File:Bekassine_(Blick_nach_oben).jpg",
+      "plik": "File:Bekassine (Blick nach oben).jpg",
+      "oryginal": [1652, 1100],
+      "fokus": [55, 37]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Common_Snipe_III.jpg/960px-Common_Snipe_III.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 641,
+      "autor": "Kalle Gustafsson",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Common_Snipe_III.jpg",
+      "plik": "File:Common Snipe III.jpg",
+      "oryginal": [1301, 869],
+      "fokus": [44, 42]
+    }
+  },
+  "bekasik": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Lymnocryptes_minimus_au_sol.jpg/960px-Lymnocryptes_minimus_au_sol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 636,
+      "autor": "Burzawa clément PIM'S",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Lymnocryptes_minimus_au_sol.jpg",
+      "plik": "File:Lymnocryptes minimus au sol.jpg",
+      "oryginal": [4928, 3264],
+      "fokus": [34, 58]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Jack-Snipe.jpg/960px-Jack-Snipe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Mildeep",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Jack-Snipe.jpg",
+      "plik": "File:Jack-Snipe.jpg",
+      "oryginal": [6288, 4192],
+      "fokus": [33, 45]
+    }
+  },
+  "slonka": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Eurasian_Woodcock_Scolopax_rusticola%2C_Hiltusentie%2C_Kuusamo%2C_Finland_395929048.jpg/960px-Eurasian_Woodcock_Scolopax_rusticola%2C_Hiltusentie%2C_Kuusamo%2C_Finland_395929048.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 686,
+      "autor": "guy23",
+      "licencja": "CC BY 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Woodcock_Scolopax_rusticola,_Hiltusentie,_Kuusamo,_Finland_395929048.jpg",
+      "plik": "File:Eurasian Woodcock Scolopax rusticola, Hiltusentie, Kuusamo, Finland 395929048.jpg",
+      "oryginal": [2048, 1463],
+      "fokus": [72, 25]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Eurasian_Woodcock_%28Scolopax_rusticola%29_%2853617939667%29.jpg/960px-Eurasian_Woodcock_%28Scolopax_rusticola%29_%2853617939667%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 720,
+      "autor": "Birds of Gilgit-Baltistan from Aliabad, Hunza, Pakistan",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Woodcock_(Scolopax_rusticola)_(53617939667).jpg",
+      "plik": "File:Eurasian Woodcock (Scolopax rusticola) (53617939667).jpg",
+      "oryginal": [2000, 1500],
+      "fokus": [56, 45]
+    }
+  },
+  "platkonog-szydlodzioby": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Red-necked_phalarope_%28Phalaropus_lobatus%29_juvenile_swimming_Flatey.jpg/960px-Red-necked_phalarope_%28Phalaropus_lobatus%29_juvenile_swimming_Flatey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Red-necked_phalarope_(Phalaropus_lobatus)_juvenile_swimming_Flatey.jpg",
+      "plik": "File:Red-necked phalarope (Phalaropus lobatus) juvenile swimming Flatey.jpg",
+      "oryginal": [5521, 3681],
+      "fokus": [47, 36]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Red-necked_phalarope_%2836127346320%29.jpg/960px-Red-necked_phalarope_%2836127346320%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Melissa McMasters from Memphis, TN, United States",
+      "licencja": "CC BY 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Red-necked_phalarope_(36127346320).jpg",
+      "plik": "File:Red-necked phalarope (36127346320).jpg",
+      "oryginal": [4193, 2795],
+      "fokus": [58, 45]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Female_red-necked_phalarope_feeding_%2851102245595%29.jpg/960px-Female_red-necked_phalarope_feeding_%2851102245595%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Peter Pearsall / USFWS",
+      "licencja": "Public domain",
+      "licencjaUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FWS",
+      "strona": "https://commons.wikimedia.org/wiki/File:Female_red-necked_phalarope_feeding_(51102245595).jpg",
+      "plik": "File:Female red-necked phalarope feeding (51102245595).jpg",
+      "oryginal": [6000, 4000],
+      "fokus": [35, 40],
+      "podpis": "Samica w szacie godowej",
+      "alt": "Samica płatkonoga szydłodziobego w szacie godowej pływa po wodzie: ciemnoszara głowa, białe gardło i jaskrawa rdzawa szyja."
+    }
+  },
+  "kulon": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Eurasian_stone-curlew_%28Burhinus_oedicnemus%29_Dobruja.jpg/960px-Eurasian_stone-curlew_%28Burhinus_oedicnemus%29_Dobruja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_stone-curlew_(Burhinus_oedicnemus)_Dobruja.jpg",
+      "plik": "File:Eurasian stone-curlew (Burhinus oedicnemus) Dobruja.jpg",
+      "oryginal": [2397, 1599],
+      "fokus": [38, 36]
+    },
+    "lot": null,
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Eurasian_Thicknee_-_Along_Po_river_-_Italy_FJ0A1074_%2840317894210%29.jpg/960px-Eurasian_Thicknee_-_Along_Po_river_-_Italy_FJ0A1074_%2840317894210%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 640,
+      "autor": "Francesco Veronesi from Italy",
+      "licencja": "CC BY-SA 2.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Eurasian_Thicknee_-_Along_Po_river_-_Italy_FJ0A1074_(40317894210).jpg",
+      "plik": "File:Eurasian Thicknee - Along Po river - Italy FJ0A1074 (40317894210).jpg",
+      "oryginal": [1080, 720],
+      "fokus": [46, 32],
+      "podpis": "Uniesione skrzydła",
+      "alt": "Kulon stoi na kamienistym brzegu z uniesionymi skrzydłami, pokazując czarne lotki z białymi plamami."
+    }
+  },
+  "zwirowiec": {
+    "siedzacy": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Ciovlic%C4%83_ruginie.jpg/960px-Ciovlic%C4%83_ruginie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 960,
+      "autor": "Atelierelealbe",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Ciovlic%C4%83_ruginie.jpg",
+      "plik": "File:Ciovlică ruginie.jpg",
+      "oryginal": [2053, 2053],
+      "fokus": [46, 30]
+    },
+    "lot": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Glar%C3%A9ole_%C3%A0_collier_-_Glareola_pratincola%2C_crop.JPG/960px-Glar%C3%A9ole_%C3%A0_collier_-_Glareola_pratincola%2C_crop.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 777,
+      "autor": "Nouhouhouk",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Glar%C3%A9ole_%C3%A0_collier_-_Glareola_pratincola,_crop.JPG",
+      "plik": "File:Glaréole à collier - Glareola pratincola, crop.JPG",
+      "oryginal": [1888, 1528],
+      "fokus": [52, 45]
+    },
+    "cecha": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Collared_pratincole_%28Glareola_pratincola%29_juvenile_Hasarlic.jpg/960px-Collared_pratincole_%28Glareola_pratincola%29_juvenile_Hasarlic.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 960,
+      "height": 960,
+      "autor": "Charles J. Sharp",
+      "licencja": "CC BY-SA 4.0",
+      "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "strona": "https://commons.wikimedia.org/wiki/File:Collared_pratincole_(Glareola_pratincola)_juvenile_Hasarlic.jpg",
+      "plik": "File:Collared pratincole (Glareola pratincola) juvenile Hasarlic.jpg",
+      "oryginal": [1659, 1659],
+      "fokus": [43, 33],
+      "podpis": "Młody ptak",
+      "alt": "Młody żwirowiec łąkowy stoi na błocie: płowoszary, łuskowany wierzch, bez czarnego obramowania gardła."
     }
   }
 }

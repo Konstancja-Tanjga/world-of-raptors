@@ -13,6 +13,7 @@ import nagraniaJson from '../../content/nagrania.json';
 import budowaJson from '../../content/budowa-ptaka.json';
 import punktJson from '../../content/punkt-obserwacyjny.json';
 import type { PtakPunktu, Sesja } from './punkt';
+import kalendarzJson from '../../content/kalendarz-siewkowcow.json';
 import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
 import { oryginalZAtrybutu, srcSetCommons } from './zdjecia';
 import { nagraniaFiszek, problemyNagrania, sciezkaSonogramu } from './nagrania';
@@ -24,6 +25,7 @@ import { opcjeGatunku, srodek, type Miara } from './cwiczenia';
 import { MIEJSCA_PLANERA } from './planer';
 import { KOLORY, ZACHOWANIA } from './rozpoznawanie';
 import { OKOLICE, WIATRY, type PunktObserwacji } from './punkty';
+import { problemyKalendarza, type KalendarzSiewkowcow } from './kalendarz';
 import { GATUNKI_RYSUNKOW } from './rysunki';
 import { gwiazdy, obrys, POZA_SZYBOWANIE } from './sylwetka';
 import { POZY, STYL_LOTU, SYLWETKI } from './sylwetki';
@@ -546,6 +548,48 @@ export function pytaniaSylwetek(ids: string) {
   });
 }
 
+/**
+ * The waders of B9's timed photo quiz (`<quiz-na-czas data-gatunki="…">`,
+ * or "wszystkie" for every wader taught as a full species), each with all
+ * its photos and its look-alikes among them. An unknown or repeated id, or
+ * fewer than four birds (the quiz offers four names), stops the build.
+ */
+export function gatunkiQuizuNaCzas(ids: string) {
+  const lista = ids.trim() === 'wszystkie' ? siewkowce.map((p) => p.id) : listaId(ids);
+  if (new Set(lista).size !== lista.length) throw new Error(`<quiz-na-czas>: gatunek powtarza się w „${ids}”`);
+  if (lista.length < 4) throw new Error(`<quiz-na-czas>: potrzeba co najmniej czterech siewkowców, a jest ${lista.length}`);
+  return lista.map((id) => {
+    const p = siewkowce.find((x) => x.id === id);
+    if (!p) throw new Error(`<quiz-na-czas>: „${id}” nie jest siewkowcem z „rozpoznawanie”`);
+    // A hand-picked list keeps every look-alike, or the hard pairs the quiz is for would turn easy.
+    const brakujace = p.rozpoznawanie.mylona_z.filter((m) => !lista.includes(m));
+    if (brakujace.length) throw new Error(`<quiz-na-czas>: „${id}” bez swoich sobowtórów w liście: ${brakujace.join(', ')}`);
+    const z = zdjecia[id];
+    return {
+      id,
+      pl: p.pl,
+      lat: p.lat,
+      mylona_z: p.rozpoznawanie.mylona_z,
+      zdjecia: [z?.siedzacy, z?.lot, z?.cecha].filter((x): x is Zdjecie => Boolean(x)),
+    };
+  });
+}
+
+const kalendarz = kalendarzJson as KalendarzSiewkowcow;
+
+/** B9's age and moult calendar (`<kalendarz-siewkowcow>`), each species with its name; the build checks the ids and the data. */
+export function kalendarzSiewkowcow() {
+  return {
+    kroki: kalendarz.kroki,
+    obszar: kalendarz.obszar,
+    gatunki: kalendarz.gatunki.map((g) => {
+      const p = siewkowce.find((x) => x.id === g.id);
+      if (!p) throw new Error(`kalendarz-siewkowcow.json: „${g.id}” nie jest siewkowcem z „rozpoznawanie”`);
+      return { ...g, pl: p.pl };
+    }),
+  };
+}
+
 /** The eight groups as the silhouette guess offers them: the key it checks and the name it shows. */
 export const grupyDoWyboru = () => GRUPY_SYLWETEK.map((klucz) => ({ klucz, nazwa: wielkaLitera(klucz) }));
 
@@ -1011,6 +1055,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   'punkt-obserwacyjny': { gatunek: 'trzmielojad', zdjecie: 'lot' },
   'wiek-orlow': { gatunek: 'bielik', zdjecie: 'siedzacy' },
   'projekt-koncowy': { gatunek: 'orzel-przedni', zdjecie: 'lot' },
+  siewkowce: { gatunek: 'biegus-zmienny', zdjecie: 'lot' },
 };
 
 /** The photo and species that open a module (every ready module has one; the build checks). */
@@ -1214,9 +1259,12 @@ function sprawdzSpojnosc() {
     for (const m of r.mylona_z ?? []) {
       if (m === p.id || !idSiewkowcow.has(m)) bledy.push(`ptaki-mokradel.json: ${p.id}: mylona_z wskazuje „${m}”, a ma wskazywać innego ptaka z „rozpoznawanie”`);
     }
-    // Both photos are flashcards, and the plate shows them.
-    if (!zdjecia[p.id]?.siedzacy || !zdjecia[p.id]?.lot) bledy.push(`zdjecia.json: ${p.id}: ptak z „rozpoznawanie” potrzebuje zdjęć siedzacy i lot`);
+    // The standing photo opens the plate and is a flashcard; a flight photo is one more card, and
+    // Commons has no freely licensed one of a few species (the Kentish Plover, the Stone-curlew).
+    if (!zdjecia[p.id]?.siedzacy) bledy.push(`zdjecia.json: ${p.id}: ptak z „rozpoznawanie” potrzebuje zdjęcia siedzacy`);
   }
+  for (const b of problemyKalendarza(kalendarz)) bledy.push(`kalendarz-siewkowcow.json: ${b}`);
+  for (const g of kalendarz.gatunki ?? []) if (!idSiewkowcow.has(g.id)) bledy.push(`kalendarz-siewkowcow.json: „${g.id}” nie jest siewkowcem z „rozpoznawanie”`);
   for (const s of STRUKTURA_NIEBA.siewkowce) {
     if (!s.lekcje.length) bledy.push(`ptaki-mokradel.json: ${s.id}: żadna gotowa lekcja nie ma jego planszy, więc obrączki „Znam” nie da się zdobyć`);
   }
