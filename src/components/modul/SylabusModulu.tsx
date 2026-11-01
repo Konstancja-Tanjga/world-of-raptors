@@ -11,7 +11,7 @@ export type LekcjaSylabusu = {
   minuty: number;
   progQuizu: number | null;
   lead: ReactNode;
-  obraz: { src: string; srcSet?: string } | null;
+  obraz: { src: string; srcSet?: string; polozenie?: string } | null;
 };
 
 /** Reading time, short: "ok. 12 min". */
@@ -49,7 +49,7 @@ export function SylabusModulu({ modul, lekcje }: { modul: string; lekcje: Lekcja
               </span>
               {l.obraz && (
                 // eslint-disable-next-line @next/next/no-img-element -- Commons and /budowa/ serve their own sizes
-                <img className="sylabus__obraz" src={l.obraz.src} srcSet={l.obraz.srcSet} sizes="10rem" alt="" loading="lazy" decoding="async" />
+                <img className="sylabus__obraz" src={l.obraz.src} srcSet={l.obraz.srcSet} sizes="(max-width: 600px) 5.5rem, 9rem" style={{ objectPosition: l.obraz.polozenie }} alt="" loading="lazy" decoding="async" />
               )}
             </Link>
           </li>

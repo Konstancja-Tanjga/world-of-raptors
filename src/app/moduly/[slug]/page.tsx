@@ -17,6 +17,7 @@ import {
   sylabusModulu,
   znajdzModul,
 } from '@/lib/content';
+import { idNaglowkow } from '@/lib/naglowki';
 import { odmiana } from '@/lib/odmiana';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { NazwaPtaka } from '@/components/NazwaPtaka';
@@ -39,6 +40,8 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
 
   const baseDir = `moduly/${slug}`;
   const { zajawka, md, zwijane, czas } = przygotujOpisModulu(await czytajMarkdown(`${baseDir}/README.md`), `${baseDir}/README.md`);
+  // Accordion ids go into aria-controls/aria-labelledby, which split on spaces, so the titles become slugs.
+  const idySekcji = idNaglowkow(zwijane.map((s) => s.tytul));
   const lekcje = await sylabusModulu(slug);
   const otwarcie = otwarcieModulu(slug);
   const sciezka = sciezki.find((s) => s.id === modul.sciezka);
@@ -145,8 +148,8 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
           {zwijane.length > 0 && (
             <div className="modul-strona__wiecej">
               <Accordion multiple headingLevel={2}>
-                {zwijane.map((s) => (
-                  <AccordionItem key={s.tytul} id={s.tytul} title={s.tytul}>
+                {zwijane.map((s, i) => (
+                  <AccordionItem key={s.tytul} id={`opis-${idySekcji[i]}`} title={s.tytul}>
                     <Markdown source={s.md} baseDir={baseDir} />
                   </AccordionItem>
                 ))}
