@@ -184,13 +184,13 @@
       "wiatr": ["poniente"],
       "miesiace": [2, 3, 4, 5, 8, 9, 10],
       "szczyt": [3, 4, 5],
-      "pora_dnia": "Od ok. 10:00 do wczesnego popołudnia na drapieżniki; ptaki morskie najlepiej z rana.",
+      "pora_dnia": "Od ok. 10:00 do wczesnego popołudnia na drapieżniki. Ptaki morskie przelatują przez cały rok, najwięcej wiosną.",
       "gatunki": ["kania-czarna", "gadozer", "orzelek-wlochaty", "trzmielojad", "rybolow"],
       "inne_ptaki": "ptaki morskie przelatujące przez cieśninę",
       "lekcja": "gibraltar/04-gdzie-i-kiedy",
-      "todo": "potwierdzić, że ptaki morskie najlepiej widać rano",
       "zrodla": [
-        { "nazwa": "Andalucia Bird Society, José Barrera: Migration watching sites", "url": "https://www.andaluciabirdsociety.org/article-library/birding-sites/migration-watching-sites/" }
+        { "nazwa": "Andalucia Bird Society, José Barrera: Migration watching sites", "url": "https://www.andaluciabirdsociety.org/article-library/birding-sites/migration-watching-sites/" },
+        { "nazwa": "Birdingplaces: Punta Secreta", "url": "https://birdingplaces.eu/birdingplaces/spain/punta-secreta" }
       ]
     },
     {
@@ -219,11 +219,11 @@
       "nazwa": "Skała Gibraltarska (Jews' Gate)",
       "okolica": "okolice-algeciras",
       "rodzaj": "przelot",
-      "szer": 36.1236,
-      "dl": -5.3446,
+      "szer": 36.12058,
+      "dl": -5.34584,
       "przyblizone": true,
-      "opis": "Obserwatorium GONHS na południowym stoku Skały. Przy zachodnim wietrze drapieżniki przelatują nisko nad skałą. To już Gibraltar: potrzebny paszport i przejście graniczne w La Línea.",
-      "dojazd": "Z miasta Gibraltar drogą na Upper Rock (rezerwat przyrody, wstęp płatny) do Jews' Gate.",
+      "opis": "Stacja terenowa GONHS przy Jews' Gate, na południowym stoku Skały. Drapieżniki liczy się tu głównie przy zachodnim wietrze, kiedy przelatują nad Skałą do Afryki. Przy wschodnim przelot ucieka na zachód, ku Tarifie, choć orzełki włochate i gadożery często i tak krążą nad Skałą. To już Gibraltar: potrzebny paszport albo dowód i przejście graniczne w La Línea.",
+      "dojazd": "Jews' Gate to jedno z trzech wejść do rezerwatu Upper Rock, z parkingiem w pobliżu. Wjechać autem mogą tylko pojazdy z gibraltarską rejestracją; pieszo potrzebny jest bilet „No Transport” (w 2026 r. 30 £ za osobę dorosłą). Rezerwat jest otwarty ok. 9:00–18:15 zimą i 9:30–19:15 latem. Współrzędne pokazują baterię obok stacji.",
       "wiatr": ["poniente"],
       "miesiace": [2, 3, 4, 5, 8, 9, 10],
       "szczyt": [3, 4, 9],
@@ -231,9 +231,10 @@
       "gatunki": ["kania-czarna", "trzmielojad", "gadozer", "orzelek-wlochaty", "scierwnik", "sokol-wedrowny"],
       "inne_ptaki": "bociany",
       "lekcja": "gibraltar/04-gdzie-i-kiedy",
-      "todo": "sprawdzić współrzędne Jews' Gate i zasady wstępu na Upper Rock",
       "zrodla": [
-        { "nazwa": "GONHS (Gibraltar Ornithological & Natural History Society)", "url": "https://www.gonhs.org/" }
+        { "nazwa": "GONHS: Gibraltar Bird Observatory", "url": "https://www.gonhs.org/wildlife/birds/gibraltar-bird-observatory" },
+        { "nazwa": "Upper Rock Nature Reserve: bilety", "url": "https://naturereserve.gi/tickets/" },
+        { "nazwa": "Upper Rock Nature Reserve: FAQ", "url": "https://naturereserve.gi/faq/" }
       ]
     },
     {
@@ -241,11 +242,10 @@
       "nazwa": "La Janda",
       "okolica": "la-janda-i-barbate",
       "rodzaj": "lokalne",
-      "szer": 36.25,
-      "dl": -5.85,
-      "przyblizone": true,
+      "szer": 36.21933,
+      "dl": -5.7831,
       "opis": "Rozległa równina pól i kanałów między Tarifą, Vejer a Benalup, dawne jezioro osuszone w XX w. Ptaki ogląda się z dróg polnych. Zimą przylatują kanie rude, błotniaki zbożowe i uszatki błotne, wiosną i latem nad polami polują błotniaki łąkowe, a kaniuk siedzi na słupach przez cały rok.",
-      "dojazd": "Polną drogą przez równinę, między N-340 koło Facinas a Benalup-Casas Viejas. Nie zjeżdżaj z dróg na pola: to prywatne uprawy.",
+      "dojazd": "Jadąc N-340 od Tarify, skręć w polną drogę naprzeciw zjazdu A-2227 na Zahara de los Atunes. Droga biegnie wzdłuż kanału do mostu, skąd w prawo dojedziesz do Benalup, a w lewo wrócisz do głównej drogi. Jest gruntowa i dziurawa, ale przejezdna zwykłym autem; zatrzymać się można wszędzie, zjeżdżając na pobocze. Nie wjeżdżaj na pola: to prywatne uprawy. Współrzędne pokazują początek drogi.",
       "wiatr": [],
       "miesiace": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       "szczyt": [12, 1, 2],
@@ -254,19 +254,20 @@
       "inne_ptaki": "bociany, czaple",
       "lekcja": "gibraltar/04-gdzie-i-kiedy",
       "planer": "la-janda",
-      "todo": "sprawdzić, skąd dokładnie zaczyna się polna droga przez La Jandę i czy wjazd jest otwarty",
-      "zrodla": []
+      "zrodla": [
+        { "nazwa": "Birdingplaces: La Janda", "url": "https://birdingplaces.eu/birdingplaces/spain/la-janda" }
+      ]
     },
     {
       "id": "marismas-barbate",
       "nazwa": "Marismas del Barbate",
       "okolica": "la-janda-i-barbate",
       "rodzaj": "lokalne",
-      "szer": 36.2,
-      "dl": -5.925,
+      "szer": 36.17293,
+      "dl": -5.89441,
       "przyblizone": true,
       "opis": "Rozlewiska u ujścia rzeki Barbate, na wybrzeżu atlantyckim. Jesienią przelatują tu ostatnie drapieżniki przelotu, a z północy przylatują na zimę siewkowe, pliszki i świergotki. Mieszka tu też ibis grzywiasty.",
-      "dojazd": "Między Barbate a Vejer de la Frontera, wzdłuż rzeki Barbate.",
+      "dojazd": "Zaparkuj przy drodze A-2231 (Barbate – Zahara de los Atunes) i idź ścieżką w stronę dawnych salin, a wróć drogą gruntową. Nie ma tu czatowni ani platformy. Nie zostawiaj w aucie niczego na widoku: zdarzały się kradzieże. Dłuższa trasa to oficjalny szlak Sendero Marismas del Barbate (ok. 15,5 km).",
       "wiatr": [],
       "miesiace": [1, 2, 3, 4, 9, 10, 11, 12],
       "szczyt": [10, 11],
@@ -275,8 +276,10 @@
       "inne_ptaki": "siewkowe, mewy, rybitwy, czaple",
       "lekcja": "barbate/01-miejsce",
       "planer": "marismas-barbate",
-      "todo": "dopisać, skąd najlepiej patrzeć (lekcja B6 1 ma ten sam TODO)",
-      "zrodla": []
+      "todo": "potwierdzić na miejscu parking przy A-2231 (współrzędne z mapy Birdingplaces)",
+      "zrodla": [
+        { "nazwa": "Birdingplaces: Barbate Estuary", "url": "https://birdingplaces.eu/birdingplaces/spain/barbate-estuary" }
+      ]
     },
     {
       "id": "biebrza",
@@ -287,7 +290,7 @@
       "dl": 22.65,
       "przyblizone": true,
       "opis": "Największe bagna Polski: torfowiska, turzycowiska i podmokłe łąki w dolinie Biebrzy. Jedno z ostatnich miejsc w kraju, gdzie gniazduje orlik grubodzioby; latem nad łąkami polują orliki krzykliwe i błotniaki.",
-      "dojazd": "Dobry punkt wyjścia to Osowiec-Twierdza (siedziba parku, informacja) i Carska Droga przez bagna w stronę Strękowej Góry; w parku obowiązują wyznaczone szlaki i ścieżki.",
+      "dojazd": "Z parkingów przy Carskiej Drodze (Osowiec-Twierdza – Strękowa Góra) prowadzą ścieżki Długa Luka i Grobla Honczarowska; przy drodze stoi też wieża z widokiem na Bagno Ławki. W parku chodzi się tylko wyznaczonymi szlakami.",
       "wiatr": [],
       "miesiace": [4, 5, 6, 7, 8, 9],
       "szczyt": [5, 6, 7],
@@ -295,9 +298,10 @@
       "gatunki": ["orlik-grubodzioby", "orlik-krzykliwy", "bielik", "blotniak-stawowy", "blotniak-lakowy"],
       "inne_ptaki": "bataliony, wodniczka",
       "lekcja": "polska/03-miejsca",
-      "todo": "wybrać konkretny punkt widokowy (np. wieżę) i jego współrzędne",
+      "todo": "potwierdzić współrzędne wieży nad Bagnem Ławki (w OSM jest nienazwana wieża 53.42886, 22.53370)",
       "zrodla": [
-        { "nazwa": "Biebrzański Park Narodowy", "url": "https://www.biebrza.org.pl/" }
+        { "nazwa": "Biebrzański Park Narodowy", "url": "https://www.biebrza.org.pl/" },
+        { "nazwa": "Birdingplaces: Biebrzański Park Narodowy", "url": "https://www.birdingplaces.eu/birdingplaces/poland/biebrzanski-national-park" }
       ]
     },
     {
@@ -305,11 +309,10 @@
       "nazwa": "Stawy Milickie (Dolina Baryczy)",
       "okolica": "polska",
       "rodzaj": "lokalne",
-      "szer": 51.53,
-      "dl": 17.1,
-      "przyblizone": true,
+      "szer": 51.52587,
+      "dl": 17.3882,
       "opis": "Kompleks stawów rybnych wśród lasów w Dolinie Baryczy, jeden z najważniejszych rezerwatów ptaków wodnych w Polsce. Bieliki widać tu przez cały rok, a na przelotach zatrzymują się rybołowy.",
-      "dojazd": "Groble między stawami koło Milicza, np. w okolicy Rudy Sułowskiej; część grobli jest otwarta dla pieszych i rowerów.",
+      "dojazd": "Wieża widokowa w Grabownicy (ok. 15 m) nad stawami, dojazd autem.",
       "wiatr": [],
       "miesiace": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       "szczyt": [4, 5, 6, 9, 10],
@@ -317,9 +320,9 @@
       "gatunki": ["bielik", "blotniak-stawowy", "kania-ruda", "kania-czarna", "rybolow"],
       "inne_ptaki": "czaple, kaczki, perkozy",
       "lekcja": "polska/03-miejsca",
-      "todo": "sprawdzić, które groble i wieże są otwarte i podać współrzędne jednej z nich",
       "zrodla": [
-        { "nazwa": "Wikipedia: Stawy Milickie", "url": "https://pl.wikipedia.org/wiki/Stawy_Milickie" }
+        { "nazwa": "Wikipedia: Stawy Milickie", "url": "https://pl.wikipedia.org/wiki/Stawy_Milickie" },
+        { "nazwa": "Birdingplaces: Grabownica Tower", "url": "https://www.birdingplaces.eu/birdingplaces/poland/grabownica-tower" }
       ]
     },
     {
@@ -327,11 +330,10 @@
       "nazwa": "Park Narodowy „Ujście Warty”",
       "okolica": "polska",
       "rodzaj": "lokalne",
-      "szer": 52.57,
-      "dl": 14.75,
-      "przyblizone": true,
+      "szer": 52.56882,
+      "dl": 14.65117,
       "opis": "Rozlewiska Warty przy ujściu do Odry. Zimą zbiera się tu dużo bielików, a nad łąkami polują błotniaki i myszołowy włochate.",
-      "dojazd": "Okolice Słońska i Kostrzyna nad Odrą; ptaki ogląda się ze ścieżek i punktów widokowych parku.",
+      "dojazd": "Wieża widokowa przy siedzibie parku w Chyrzynie (wstęp płatny, w godzinach pracy parku). Od strony Słońska: platforma „Betonka” na ścieżce „Ptasim Szlakiem”.",
       "wiatr": [],
       "miesiace": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       "szczyt": [12, 1, 2],
@@ -339,9 +341,10 @@
       "gatunki": ["bielik", "blotniak-stawowy", "kania-ruda", "myszolow-wlochaty"],
       "inne_ptaki": "gęsi i łabędzie zimą",
       "lekcja": "polska/03-miejsca",
-      "todo": "wybrać konkretny punkt widokowy i jego współrzędne",
+      "todo": "sprawdzić aktualne godziny i cenę wieży w Chyrzynie (ulotka parku jest stara)",
       "zrodla": [
-        { "nazwa": "Wikipedia: Park Narodowy „Ujście Warty”", "url": "https://pl.wikipedia.org/wiki/Park_Narodowy_%E2%80%9EUj%C5%9Bcie_Warty%E2%80%9D" }
+        { "nazwa": "Wikipedia: Park Narodowy „Ujście Warty”", "url": "https://pl.wikipedia.org/wiki/Park_Narodowy_%E2%80%9EUj%C5%9Bcie_Warty%E2%80%9D" },
+        { "nazwa": "Park Narodowy „Ujście Warty”: ulotka", "url": "https://pnuw.gov.pl/pliki-do-pobrania/otworz/b2b11b2a-5183-4b5d-a38f-4820ea688c68.pdf" }
       ]
     },
     {
@@ -349,19 +352,19 @@
       "nazwa": "Mierzeja Helska",
       "okolica": "polska",
       "rodzaj": "przelot",
-      "szer": 54.61,
-      "dl": 18.8,
+      "szer": 54.60284,
+      "dl": 18.80701,
       "przyblizone": true,
       "opis": "Wąska mierzeja prowadzi ptaki wzdłuż wybrzeża, więc jesienią przelatują nad nią krogulce, myszołowy, pustułki i drzemliki. Na mierzei od lat działa stacja Akcji Bałtyckiej, która bada wędrówki ptaków.",
-      "dojazd": "Okolice Helu na końcu mierzei, droga wojewódzka 216.",
+      "dojazd": "Droga wojewódzka 216 do Helu, na koniec mierzei. Stacja Akcji Bałtyckiej to stanowisko badawcze, nie punkt dla obserwatorów.",
       "wiatr": [],
       "miesiace": [9, 10],
       "szczyt": [9, 10],
-      "pora_dnia": "Zwykle od rana do wczesnego popołudnia.",
+      "pora_dnia": "Pewnych danych o porze dnia przelotu drapieżników na Helu nie ma; zacznij rano i patrz, kiedy ptaki ciągną wzdłuż mierzei.",
       "gatunki": ["krogulec", "myszolow", "pustulka", "drzemlik"],
       "inne_ptaki": "drobne ptaki wróblowe",
       "lekcja": "polska/03-miejsca",
-      "todo": "sprawdzić porę dnia przelotu krogulców i najlepszy punkt obserwacji na mierzei",
+      "todo": "znaleźć źródło o porze dnia i szczycie jesiennego przelotu drapieżników na Helu",
       "zrodla": [
         { "nazwa": "Wikipedia: Akcja Bałtycka", "url": "https://pl.wikipedia.org/wiki/Akcja_Ba%C5%82tycka" }
       ]
