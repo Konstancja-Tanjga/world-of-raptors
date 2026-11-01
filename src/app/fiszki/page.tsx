@@ -13,9 +13,10 @@ export default function FiszkiPage() {
         <p className="eyebrow">Powtórki</p>
         <h1 className="naglowek-strony__tytul">Fiszki</h1>
         <p className="naglowek-strony__lead">
-          Rozpoznaję ptaka ze zdjęcia ({ile(['lot', 'siedzacy'])}), z sylwetki w locie ({ile(['sylwetka'])}) i po nazwie:
-          polskiej, angielskiej albo hiszpańskiej ({ile(['pl-en', 'pl-es', 'en-pl', 'es-pl'])}). Uczę się też budowy ptaka: nazywam
-          część podświetloną na modelu i mówię, gdzie leży i do czego służy część o podanej nazwie ({ile(['czesc-obraz', 'czesc-nazwa'])}). Odsłaniam odpowiedź i oceniam,
+          Rozpoznaję ptaka ze zdjęcia ({ile(['lot', 'siedzacy'])}), z sylwetki w locie ({ile(['sylwetka'])})
+          {ile(['glos']) > 0 && <>, po głosie ({ile(['glos'])})</>} i po nazwie: polskiej, angielskiej albo hiszpańskiej (
+          {ile(['pl-en', 'pl-es', 'en-pl', 'es-pl'])}). Uczę się też budowy ptaka: nazywam część podświetloną na modelu i mówię,
+          gdzie leży i do czego służy część o podanej nazwie ({ile(['czesc-obraz', 'czesc-nazwa'])}). Odsłaniam odpowiedź i oceniam,
           jak mi poszło, a algorytm FSRS (ten sam, który można włączyć w Anki) układa powtórki: trudne fiszki wracają
           szybciej, łatwe coraz rzadziej. Każdego dnia dochodzi do 10 nowych.
         </p>

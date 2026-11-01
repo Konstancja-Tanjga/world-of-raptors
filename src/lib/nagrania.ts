@@ -63,3 +63,15 @@ export function problemyNagrania(
   if (n.sonogram && !istnieje(sciezkaSonogramu(id))) bledy.push(`${gdzie}: nie ma pliku public${sciezkaSonogramu(id)} (python3 scripts/sonogramy.py)`);
   return bledy;
 }
+
+/**
+ * The recording each species' voice flashcard plays: the one marked `fiszka`,
+ * once the owner has approved it. A species without one has no voice card.
+ */
+export function nagraniaFiszek(nagrania: Record<string, NagranieLekcji>): Map<string, { id: string; nagranie: NagranieLekcji }> {
+  const wynik = new Map<string, { id: string; nagranie: NagranieLekcji }>();
+  for (const [id, n] of Object.entries(nagrania)) {
+    if (n.fiszka && n.zatwierdzone && !wynik.has(n.gatunek)) wynik.set(n.gatunek, { id, nagranie: n });
+  }
+  return wynik;
+}

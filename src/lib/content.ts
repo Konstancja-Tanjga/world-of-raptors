@@ -14,11 +14,11 @@ import budowaJson from '../../content/budowa-ptaka.json';
 import punktJson from '../../content/punkt-obserwacyjny.json';
 import type { PtakPunktu, Sesja } from './punkt';
 import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
-import { problemyNagrania } from './nagrania';
+import { nagraniaFiszek, problemyNagrania, sciezkaSonogramu } from './nagrania';
 import { odkoduj, problemyTagow } from './tagi';
 import type { Fiszki, ZapisFiszki } from './fiszki';
 import { GWIAZDOZBIORY, MIEJSCA_NA_MAPIE, type Gwiazdozbior } from './gwiazdozbiory';
-import { NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
+import { kartyGatunku, NASZYWKI, stanNieba, zdobyteWStanie, type StrukturaNieba } from './odznaki';
 import { opcjeGatunku, srodek, type Miara } from './cwiczenia';
 import { MIEJSCA_PLANERA } from './planer';
 import { KOLORY, ZACHOWANIA } from './rozpoznawanie';
@@ -33,6 +33,7 @@ import {
   KIERUNKI_NAZW,
   KLUCZE_DZIENNE,
   KLUCZE_NOCNE,
+  KLUCZE_SIEWKOWE,
   MIEJSCA,
   NAZWY_GRUP_MOKRADEL,
   REGIONY,
@@ -64,6 +65,8 @@ import type {
   Sciezka,
   ZdjeciaGatunku,
   NagranieLekcji,
+  RozpoznawanieMokradel,
+  Zdjecie,
 } from './types';
 import { idNaglowkow } from './naglowki';
 
@@ -103,6 +106,19 @@ for (const g of gatunki) {
   }
 }
 
+/** Birds of marshes taught as full species (B9's waders): flashcards, look-alikes, rings. */
+export const siewkowce = ptakiMokradel.filter((p): p is PtakMokradel & { rozpoznawanie: RozpoznawanieMokradel } => Boolean(p.rozpoznawanie));
+for (const p of siewkowce) {
+  if (p.grupa !== 'siewkowe') throw new Error(`ptaki-mokradel.json: ${p.id}: rozpoznawanie mają na razie tylko siewkowe, a to „${p.grupa}”`);
+  const klucze = Object.keys(p.rozpoznawanie.klucz ?? {});
+  const dozwolone: readonly string[] = KLUCZE_SIEWKOWE;
+  const zle = klucze.filter((k) => !dozwolone.includes(k));
+  const brak = dozwolone.filter((k) => !klucze.includes(k));
+  if (zle.length || brak.length) {
+    throw new Error(`ptaki-mokradel.json: ${p.id} rozpoznawanie.klucz — nieznane: ${zle.join(', ') || '—'}; brak: ${brak.join(', ') || '—'}`);
+  }
+}
+
 const poLacinie = new Map(gatunki.map((g) => [g.lat, g]));
 const poLacinieMokradel = new Map(ptakiMokradel.map((p) => [p.lat, p]));
 const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;
@@ -112,9 +128,10 @@ const LATIN = /(?<!\*)\*([A-Z][a-z]+ [a-z]+)\*(?!\*)/g;
  * plate at the end of its section (before the next heading or rule), so the
  * lesson reads heading → description → plate. Every atlas species named in
  * the text is also listed, in order of first mention, for the media section.
- * A bird of marshes gets its plate the same way, but stays out of both sets:
- * they say which lessons teach a raptor and what a module's gold star asks
- * to be recognised, and birds of marshes have no flashcards.
+ * A bird of marshes gets its plate the same way (`zPlansza`). Only one
+ * taught as a full species (a B9 wader) joins `wNaglowkach` too, which says
+ * which lessons teach it and what a module's gold star asks to be
+ * recognised: the others have no flashcards.
  */
 export function przygotujLekcje(md: string) {
   const wNaglowkach = new Set<string>();
@@ -143,6 +160,7 @@ export function przygotujLekcje(md: string) {
         oczekujacy = g.id;
       } else if (mokradel && !zPlansza.has(mokradel.id)) {
         zPlansza.add(mokradel.id);
+        if (mokradel.rozpoznawanie) wNaglowkach.add(mokradel.id);
         oczekujacy = mokradel.id;
       }
     }
@@ -346,33 +364,69 @@ export function modulyGatunku(g: Gatunek) {
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 
-/** The field modules of these sites (a bird other than a raptor links only to them). */
-export function modulyMiejsc(miejsca: Miejsce[]) {
-  const slugi = new Set(miejsca.map((m) => MODUL_MIEJSCA[m]));
+/** B9, the waders: every wader taught as a full species links to it. */
+export const MODUL_SIEWKOWCOW = 'siewkowce';
+
+/** The modules a bird of marshes links to: its sites' field modules, and B9 for a wader taught as a full species. */
+export function modulyPtakaMokradel(p: PtakMokradel) {
+  const slugi = new Set(p.miejsca.map((m) => MODUL_MIEJSCA[m]));
+  if (p.rozpoznawanie) slugi.add(MODUL_SIEWKOWCOW);
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 
+/** The recording each species' voice card plays (an approved one marked `fiszka`). */
+const NAGRANIA_FISZEK = nagraniaFiszek(nagrania);
+
+/** A species' recording for its page: the one its voice card plays, else its first in the catalogue. */
+export function nagranieGatunku(id: string) {
+  const wpis = NAGRANIA_FISZEK.get(id) ?? Object.entries(nagrania).map(([k, n]) => ({ id: k, nagranie: n })).find((x) => x.nagranie.gatunek === id);
+  if (!wpis) return undefined;
+  const s = wpis.nagranie.sonogram;
+  return { nagranie: wpis.nagranie, sonogram: s && { src: sciezkaSonogramu(wpis.id), khz: s.khz } };
+}
+
 /**
- * The flashcard deck: for every atlas species its reference photos (in flight
- * and perched), its silhouette (every diurnal species; the build checks each
- * has a shape) and its names both ways between Polish and English or Spanish.
- * Photo card ids are the ones stored before the other kinds existed, so
- * schedules carry over.
+ * The flashcard deck: for every atlas species and every wader taught as a
+ * full species its reference photos (in flight and perched), its silhouette
+ * (diurnal raptors only; the build checks each has a shape), its names both
+ * ways between Polish and English or Spanish, and its voice where it has an
+ * approved recording marked for the card. Photo card ids are the ones stored
+ * before the other kinds existed, so schedules carry over.
  */
 export function taliaFiszek(): Fiszka[] {
-  return gatunki.flatMap((g): Fiszka[] => {
-    const z = zdjecia[g.id];
+  const karty = (id: string, dzienny: boolean, ilustracja: Zdjecie | null): Fiszka[] => {
+    const z = zdjecia[id];
     const zdjeciaKart = (['lot', 'siedzacy'] as const).flatMap((rodzaj): Fiszka[] => {
       const zdjecie = z?.[rodzaj];
-      return zdjecie ? [{ id: idFiszki(g.id, rodzaj), rodzaj, gatunek: g.id, zdjecie }] : [];
+      return zdjecie ? [{ id: idFiszki(id, rodzaj), rodzaj, gatunek: id, zdjecie }] : [];
     });
-    // A name card shows the bird with its answer, as it is usually seen: a raptor flying, an owl perched.
-    const ilustracja = (g.aktywnosc === 'nocny' ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy)) ?? null;
-    const sylwetka: Fiszka[] =
-      g.aktywnosc === 'dzienny' ? [{ id: idFiszki(g.id, 'sylwetka'), rodzaj: 'sylwetka', gatunek: g.id, zdjecie: null }] : [];
-    const nazwy = KIERUNKI_NAZW.map((rodzaj): Fiszka => ({ id: idFiszki(g.id, rodzaj), rodzaj, gatunek: g.id, zdjecie: ilustracja }));
-    return [...zdjeciaKart, ...sylwetka, ...nazwy];
-  });
+    const sylwetka: Fiszka[] = dzienny ? [{ id: idFiszki(id, 'sylwetka'), rodzaj: 'sylwetka', gatunek: id, zdjecie: null }] : [];
+    const nazwy = KIERUNKI_NAZW.map((rodzaj): Fiszka => ({ id: idFiszki(id, rodzaj), rodzaj, gatunek: id, zdjecie: ilustracja }));
+    const n = NAGRANIA_FISZEK.get(id);
+    const glos: Fiszka[] = n
+      ? [
+          {
+            id: idFiszki(id, 'glos'),
+            rodzaj: 'glos',
+            gatunek: id,
+            nagranie: n.nagranie,
+            sonogram: n.nagranie.sonogram && { src: sciezkaSonogramu(n.id), khz: n.nagranie.sonogram.khz },
+            zdjecie: ilustracja,
+          },
+        ]
+      : [];
+    return [...zdjeciaKart, ...sylwetka, ...nazwy, ...glos];
+  };
+  return [
+    ...gatunki.flatMap((g) => {
+      const z = zdjecia[g.id];
+      // A name card shows the bird with its answer, as it is usually seen: a raptor flying, an owl perched.
+      const ilustracja = (g.aktywnosc === 'nocny' ? (z?.siedzacy ?? z?.lot) : (z?.lot ?? z?.siedzacy)) ?? null;
+      return karty(g.id, g.aktywnosc === 'dzienny', ilustracja);
+    }),
+    // A wader is usually seen standing.
+    ...siewkowce.flatMap((p) => karty(p.id, false, zdjecia[p.id]?.siedzacy ?? zdjecia[p.id]?.lot ?? null)),
+  ];
 }
 
 /** Activity and cues rebuilt as one union member, so spreading it keeps `aktywnosc` and `sylwetka` matched. */
@@ -381,16 +435,40 @@ const sylwetkaGatunku = (g: SylwetkaGatunku): SylwetkaGatunku =>
 
 /** The species data a flashcard's answer needs, keyed by species id. */
 export function gatunkiFiszek(): Record<string, GatunekFiszki> {
-  return Object.fromEntries(
-    gatunki.map((g) => {
+  return Object.fromEntries([
+    ...gatunki.map((g) => {
       const { id, pl, lat, en, es, grupa, cechy, regiony } = g;
       const podobne = g.mylona_z.flatMap((m) => {
         const x = znajdzGatunek(m);
         return x ? [{ id: x.id, pl: x.pl }] : [];
       });
-      return [id, { id, pl, lat, en, es, grupa, cechy, regiony, ...sylwetkaGatunku(g), podobne }];
+      return [id, { id, pl, lat, en, es, grupa, cechy, regiony, kategoria: 'drapiezne' as const, ...sylwetkaGatunku(g), podobne }];
     }),
-  );
+    ...siewkowce.map((p) => {
+      const { id, lat, en, es, grupa, cechy } = p;
+      const podobne = p.rozpoznawanie.mylona_z.flatMap((m) => {
+        const x = znajdzPtakaMokradel(m);
+        return x ? [{ id: x.id, pl: wielkaLitera(x.pl) }] : [];
+      });
+      return [
+        id,
+        {
+          id,
+          pl: wielkaLitera(p.pl),
+          lat,
+          en,
+          es,
+          grupa,
+          cechy,
+          regiony: p.rozpoznawanie.regiony,
+          kategoria: 'ptaki-mokradel' as const,
+          aktywnosc: null,
+          klucz: p.rozpoznawanie.klucz,
+          podobne,
+        },
+      ];
+    }),
+  ]);
 }
 
 /** A diurnal species for the look-alike slider: its cues in the order of B1. */
@@ -422,8 +500,9 @@ export function ptakiDoMiarki(ptaki: string, miara: string) {
   if (!Object.hasOwn(POLE_MIARY, miara)) throw new Error(`<ptasia-miarka>: data-miara ma być „rozpietosc” albo „dlugosc”, jest „${miara}”`);
   const m = miara as Miara;
   const wynik = listaId(ptaki).map((id) => {
-    const p = znajdzGatunek(id) ?? ptakiMiarki.find((x) => x.id === id);
-    if (!p) throw new Error(`<ptasia-miarka>: „${id}” nie jest gatunkiem z atlasu ani ptakiem z miarka.json`);
+    const s = siewkowce.find((x) => x.id === id);
+    const p = znajdzGatunek(id) ?? ptakiMiarki.find((x) => x.id === id) ?? (s && { pl: wielkaLitera(s.pl), ...s.rozpoznawanie });
+    if (!p) throw new Error(`<ptasia-miarka>: „${id}” nie jest gatunkiem z atlasu, siewkowcem z B9 ani ptakiem z miarka.json`);
     return { id, pl: p.pl, zakres: p[POLE_MIARY[m]], drapieznik: gatunki.some((g) => g.id === id) };
   });
   if (wynik.length < 3) throw new Error('<ptasia-miarka>: potrzeba co najmniej trzech ptaków');
@@ -806,7 +885,16 @@ const STRUKTURA_NIEBA = ((): StrukturaNieba => {
       pl: g.pl,
       dzienny: g.aktywnosc === 'dzienny',
       zdjecia: (['lot', 'siedzacy'] as const).filter((r) => zdjecia[g.id]?.[r]),
+      glos: NAGRANIA_FISZEK.has(g.id),
       lekcje: lekcjeZPlansza.get(g.id) ?? lekcjeZNazwa.get(g.id) ?? [],
+    })),
+    siewkowce: siewkowce.map((p) => ({
+      id: p.id,
+      pl: wielkaLitera(p.pl),
+      dzienny: false,
+      zdjecia: (['lot', 'siedzacy'] as const).filter((r) => zdjecia[p.id]?.[r]),
+      glos: NAGRANIA_FISZEK.has(p.id),
+      lekcje: lekcjeZPlansza.get(p.id) ?? [],
     })),
     osiemGrup,
     marismas: listaMiejsca('marismas-barbate').map(({ id, gatunki }) => ({ id, gatunki })),
@@ -927,7 +1015,9 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
 /** The photo and species that open a module (every ready module has one; the build checks). */
 export function otwarcieModulu(slug: string) {
   const o = OTWARCIA_MODULOW[slug];
-  const g = o && znajdzGatunek(o.gatunek);
+  // A raptor, or (B9) a wader: the page shows only its name.
+  const p = o && !znajdzGatunek(o.gatunek) ? znajdzPtakaMokradel(o.gatunek) : undefined;
+  const g = o && (znajdzGatunek(o.gatunek) ?? (p && { id: p.id, pl: wielkaLitera(p.pl) }));
   const zdjecie = o && zdjecia[o.gatunek]?.[o.zdjecie];
   return g && zdjecie ? { gatunek: g, zdjecie, wLocie: o.zdjecie === 'lot' } : null;
 }
@@ -1027,7 +1117,7 @@ function sprawdzSpojnosc() {
   const idMiarki = new Set<string>();
   const poprawneMiarki = ptakiMiarki.map((p) => {
     if (!ID.test(p.id)) bledy.push(`miarka.json: id „${p.id}” musi być małymi literami z łącznikami`);
-    if (idGatunkow.has(p.id) || idMiarki.has(p.id)) bledy.push(`miarka.json: id „${p.id}” jest już zajęte`);
+    if (idGatunkow.has(p.id) || idMiarki.has(p.id) || ptakiMokradel.some((x) => x.id === p.id)) bledy.push(`miarka.json: id „${p.id}” jest już zajęte`);
     idMiarki.add(p.id);
     if (!p.pl?.trim() || !p.lat?.trim()) bledy.push(`miarka.json: ${p.id}: puste pole pl albo lat`);
     const ok =
@@ -1065,8 +1155,41 @@ function sprawdzSpojnosc() {
     }
     if (!(GRUPY_MOKRADEL as readonly string[]).includes(p.grupa)) bledy.push(`ptaki-mokradel.json: ${p.id}: nieznana grupa „${p.grupa}”`);
     if (!p.cechy?.length || p.cechy.length > 2) bledy.push(`ptaki-mokradel.json: ${p.id}: cechy to jedno albo dwa krótkie zdania`);
-    if (!p.miejsca?.length || !p.miejsca.every((m) => miejsca.has(m))) bledy.push(`ptaki-mokradel.json: ${p.id}: miejsca ${JSON.stringify(p.miejsca)} mają być niepustą listą z ${[...miejsca].join(', ')}`);
+    // A wader taught as a full species may be on no field list; every other bird of marshes is there because a list has it.
+    if (!Array.isArray(p.miejsca) || (!p.miejsca.length && !p.rozpoznawanie) || !p.miejsca.every((m) => miejsca.has(m))) {
+      bledy.push(`ptaki-mokradel.json: ${p.id}: miejsca ${JSON.stringify(p.miejsca)} mają być listą z ${[...miejsca].join(', ')}, pustą tylko u ptaka z „rozpoznawanie”`);
+    }
   }
+  const idSiewkowcow = new Set(siewkowce.map((p) => p.id));
+  for (const p of siewkowce) {
+    const r = p.rozpoznawanie;
+    if (!para(r.rozpietosc_cm, (n) => n > 0) || r.rozpietosc_cm[0] > r.rozpietosc_cm[1]) bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.rozpietosc_cm ma być [od, do] w centymetrach`);
+    if (!para(r.dlugosc_cm, (n) => n > 0) || r.dlugosc_cm[0] > r.dlugosc_cm[1] || r.dlugosc_cm[1] >= r.rozpietosc_cm[0]) {
+      bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.dlugosc_cm ma być [od, do] w centymetrach, mniej niż rozpiętość`);
+    }
+    if (!r.regiony?.length || !r.regiony.every((x) => regiony.has(x))) bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.regiony ma być niepustą listą z ${[...regiony].join(', ')}`);
+    for (const m of r.mylona_z ?? []) {
+      if (m === p.id || !idSiewkowcow.has(m)) bledy.push(`ptaki-mokradel.json: ${p.id}: mylona_z wskazuje „${m}”, a ma wskazywać innego ptaka z „rozpoznawanie”`);
+    }
+    // Both photos are flashcards, and the plate shows them.
+    if (!zdjecia[p.id]?.siedzacy || !zdjecia[p.id]?.lot) bledy.push(`zdjecia.json: ${p.id}: ptak z „rozpoznawanie” potrzebuje zdjęć siedzacy i lot`);
+  }
+  for (const s of STRUKTURA_NIEBA.siewkowce) {
+    if (!s.lekcje.length) bledy.push(`ptaki-mokradel.json: ${s.id}: żadna gotowa lekcja nie ma jego planszy, więc obrączki „Znam” nie da się zdobyć`);
+  }
+  // What Moje niebo counts as a species' cards is the deck itself.
+  const talia = taliaFiszek();
+  const kartyWTalii = new Map<string, string[]>();
+  for (const f of talia) kartyWTalii.set(f.gatunek, [...(kartyWTalii.get(f.gatunek) ?? []), f.id]);
+  for (const g of [...STRUKTURA_NIEBA.gatunki, ...STRUKTURA_NIEBA.siewkowce]) {
+    const wTalii = [...(kartyWTalii.get(g.id) ?? [])].sort().join();
+    if (wTalii !== [...kartyGatunku(g)].sort().join()) bledy.push(`odznaki.ts: karty gatunku ${g.id} według „Mojego nieba” różnią się od talii fiszek`);
+    kartyWTalii.delete(g.id);
+  }
+  if (kartyWTalii.size) bledy.push(`content.ts: fiszki gatunków spoza „Mojego nieba”: ${[...kartyWTalii.keys()].join(', ')}`);
+  // Per-account caps on the server (supabase/migrations/20261010120000_limity.sql): keep a fifth of each free.
+  if (talia.length > 800) bledy.push(`content.ts: ${talia.length} fiszek, a konto mieści 1000 (zostaw zapas)`);
+  if (ptakiNaLiscie.length > 160) bledy.push(`content.ts: ${ptakiNaLiscie.length} ptaków na liście, a konto mieści 200 obserwacji (zostaw zapas)`);
   const katalogi: [string, object, ReadonlySet<string>][] = [
     ['SYLWETKI', SYLWETKI, idGatunkow],
     ['STYL_LOTU', STYL_LOTU, idGatunkow],
@@ -1167,7 +1290,9 @@ function sprawdzSpojnosc() {
   }
   const zNiczego = zdobyteWStanie(stanNieba(STRUKTURA_NIEBA, {}, {}, {}));
   if (zNiczego.length) bledy.push(`odznaki.ts: bez żadnego postępu byłoby już zdobyte: ${zNiczego.join(', ')}`);
-  const lacinaGatunku = new Map(gatunki.map((g) => [g.id, g.lat]));
+  const lacinaGatunku = new Map([...gatunki, ...siewkowce].map((g) => [g.id, g.lat]));
+  const zFiszka = Object.values(nagrania).filter((n) => n.fiszka).map((n) => n.gatunek);
+  for (const id of new Set(zFiszka.filter((id, i) => zFiszka.indexOf(id) !== i))) bledy.push(`nagrania.json: ${id} ma więcej niż jedno nagranie z „fiszka”`);
   const wPublic = (src: string) => existsSync(path.join(process.cwd(), 'public', src));
   for (const [id, n] of Object.entries(nagrania)) bledy.push(...problemyNagrania(id, n, lacinaGatunku.get(n.gatunek), wPublic));
   const idNagran = new Set(Object.keys(nagrania));
@@ -1178,7 +1303,10 @@ function sprawdzSpojnosc() {
     }
   }
   const gotowe = new Map(gotoweModuly.map((m) => [m.slug, m]));
-  for (const slug of [MODUL_SOW, MODUL_SWIATA_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul]) {
+  // B9 is linked to once a wader is taught as a full species.
+  const linkowane = [MODUL_SOW, MODUL_SWIATA_SOW, ...Object.values(MODUL_REGIONU), ...Object.values(MODUL_MIEJSCA), LEKCJA_GRUP.modul];
+  if (siewkowce.length) linkowane.push(MODUL_SIEWKOWCOW);
+  for (const slug of linkowane) {
     if (!gotowe.has(slug)) bledy.push(`content.ts: kod linkuje do modułu „${slug}”, którego nie ma wśród gotowych`);
   }
   if (!gotowe.get(LEKCJA_GRUP.modul)?.lekcje.some((l) => l.slug === LEKCJA_GRUP.lekcja)) {
@@ -1231,6 +1359,8 @@ function sprawdzSpojnosc() {
   if (punktyDoSprawdzenia.length && process.env.NODE_ENV === 'development') console.warn(`punkty-obserwacji.json, do sprawdzenia:\n- ${punktyDoSprawdzenia.join('\n- ')}`);
   const doOdsluchania = Object.entries(nagrania).filter(([, n]) => !n.zatwierdzone).map(([id, n]) => `${id}: ${n.strona}`);
   if (doOdsluchania.length && process.env.NODE_ENV === 'development') console.warn(`nagrania.json, do odsłuchania (zatwierdzone: false):\n- ${doOdsluchania.join('\n- ')}`);
+  const czekaNaFiszke = Object.entries(nagrania).filter(([, n]) => n.fiszka && !n.zatwierdzone).map(([id]) => id);
+  if (czekaNaFiszke.length && process.env.NODE_ENV === 'development') console.warn(`nagrania.json, fiszka głosu czeka na zatwierdzenie: ${czekaNaFiszke.join(', ')}`);
 }
 
 sprawdzSpojnosc();

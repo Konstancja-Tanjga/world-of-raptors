@@ -22,6 +22,7 @@ import {
 } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { Button, Progress, SegmentedControl, StateBlock } from './ds';
+import { Nagranie } from './Nagranie';
 import { ScenaSylwetki } from './ScenaSylwetki';
 import { CECHY_DZIENNE } from './SpeciesCues';
 import { Sylwetka } from './Sylwetka';
@@ -41,7 +42,9 @@ const OCENY: { ocena: Grade; etykieta: string; klawisz: string }[] = [
 ];
 
 type Talia = 'wszystkie' | Region;
-type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy' | 'budowa';
+type Rodzaj = 'wszystkie' | 'zdjecia' | 'sylwetki' | 'nazwy' | 'glosy' | 'budowa';
+/** Raptors or the waders of B9: the two decks mix otherwise (parts of the bird belong to neither). */
+type Ptaki = 'wszystkie' | 'drapiezne' | 'siewkowce';
 
 /** Which filter each kind of card belongs to (a Record, so a new kind cannot be left out). */
 const KATEGORIA: Record<RodzajFiszki | RodzajFiszkiBudowy, Exclude<Rodzaj, 'wszystkie'>> = {
@@ -54,6 +57,7 @@ const KATEGORIA: Record<RodzajFiszki | RodzajFiszkiBudowy, Exclude<Rodzaj, 'wszy
   'pl-es': 'nazwy',
   'en-pl': 'nazwy',
   'es-pl': 'nazwy',
+  glos: 'glosy',
 };
 
 /** The question each kind of card asks. */
@@ -67,6 +71,7 @@ const PYTANIE: Record<RodzajFiszki | RodzajFiszkiBudowy, string> = {
   'pl-es': 'Jak ten gatunek nazywa się po hiszpańsku?',
   'en-pl': 'Jak ten gatunek nazywa się po polsku?',
   'es-pl': 'Jak ten gatunek nazywa się po polsku?',
+  glos: 'Czyj to głos?',
 };
 
 /** "za 10 min", "za 3 dni": when a card comes back. */
@@ -162,10 +167,20 @@ function PodpisZdjecia({ z, zrodlo = true }: { z: Zdjecie; zrodlo?: boolean }) {
 /**
  * The question side gives nothing away: photo and silhouette cards name
  * nothing (alt text included); a name card shows only the name it asks to
- * translate. `powtorka` (how many times the card was answered) makes each
- * review of a silhouette card show the bird at a new heading and spread.
+ * translate; a voice card plays the recording with its sonogram, without
+ * what it is (a place or a sex is a hint), and the recording's sources (whose
+ * titles name the species) wait for the answer. `powtorka` (how many times
+ * the card was answered) makes each review of a silhouette card show the bird
+ * at a new heading and spread.
  */
-function Awers({ karta, g, powtorka }: { karta: Fiszka; g: GatunekFiszki; powtorka: number }) {
+function Awers({ karta, g, powtorka, odkryta }: { karta: Fiszka; g: GatunekFiszki; powtorka: number; odkryta: boolean }) {
+  if (karta.rodzaj === 'glos') {
+    return (
+      <div className="fiszka__scena fiszka__scena--glos">
+        <Nagranie nagranie={karta.nagranie} etykieta="Głos ptaka do rozpoznania" odkryte={odkryta} sonogram={karta.sonogram} />
+      </div>
+    );
+  }
   if (karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') {
     const z = karta.zdjecie;
     return (
@@ -230,6 +245,7 @@ function Rewers({ karta, g }: { karta: Fiszka; g: GatunekFiszki }) {
   return (
     <>
       {cechy && <p className="fiszka__grupa">Grupa: {cechy.grupa}</p>}
+      {karta.rodzaj === 'glos' && <p className="fiszka__grupa">{karta.nagranie.opis}</p>}
       {pytaOObcy ? (
         <p className="fiszka__nazwa" lang={obcy.jezyk}>
           {obcy.nazwa}
@@ -364,8 +380,8 @@ function RewersBudowy({ karta }: { karta: FiszkaBudowy }) {
 }
 
 /**
- * Flashcards from the atlas: photos to name, silhouettes in flight, and names
- * between Polish, English and Spanish. Name the bird, reveal the answer, say
+ * Flashcards from the atlas and B9's waders: photos to name, silhouettes in
+ * flight, voices, and names between Polish, English and Spanish. Name the bird, reveal the answer, say
  * how it went; FSRS decides when each card comes back. Keys: space reveals
  * the answer, 1–4 rate it.
  */
@@ -374,6 +390,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gat
   const sprawdzZapis = useOstrzezenieZapisu();
   const [region, setRegion] = useState<Talia>('wszystkie');
   const [rodzaj, setRodzaj] = useState<Rodzaj>('wszystkie');
+  const [ptaki, setPtaki] = useState<Ptaki>('wszystkie');
   const [odkryta, setOdkryta] = useState(false);
   const [teraz, setTeraz] = useState(() => Date.now());
   const [dodatkowe, setDodatkowe] = useState(0);
@@ -390,7 +407,11 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gat
   // Parts of the bird belong to no region: a region's deck leaves them out.
   const talia = cala.filter(
     (f) =>
-      (jestFiszkaBudowy(f) ? region === 'wszystkie' : gatunki[f.gatunek] !== undefined && (region === 'wszystkie' || gatunki[f.gatunek].regiony.includes(region))) &&
+      (jestFiszkaBudowy(f)
+        ? region === 'wszystkie' && ptaki === 'wszystkie'
+        : gatunki[f.gatunek] !== undefined &&
+          (region === 'wszystkie' || gatunki[f.gatunek].regiony.includes(region)) &&
+          (ptaki === 'wszystkie' || (gatunki[f.gatunek].kategoria === 'drapiezne') === (ptaki === 'drapiezne'))) &&
       (rodzaj === 'wszystkie' || KATEGORIA[f.rodzaj] === rodzaj),
   );
   const stan = fiszki ? nastepna(talia, fiszki, teraz, dodatkowe) : null;
@@ -427,7 +448,8 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gat
       const cel = e.target as HTMLElement | null;
       if (e.metaKey || e.ctrlKey || e.altKey || cel?.closest('input, textarea, select, [contenteditable]')) return;
       if (!karta) return;
-      if (!odkryta && e.key === ' ' && cel?.tagName !== 'BUTTON') {
+      // Space plays a voice card's recording (the player's controls report as <audio>), not the answer.
+      if (!odkryta && e.key === ' ' && !cel?.closest('button, a, audio')) {
         e.preventDefault();
         odkryj();
       } else if (odkryta) {
@@ -454,6 +476,13 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gat
     setOdkryta(false);
     setTeraz(Date.now());
   };
+  const wybierzPtaki = (v: string) => {
+    setPtaki(v as Ptaki);
+    setOdkryta(false);
+    setTeraz(Date.now());
+  };
+  const saSiewkowce = cala.some((f) => gatunki[f.gatunek]?.kategoria === 'ptaki-mokradel');
+  const saGlosy = cala.some((f) => f.rodzaj === 'glos');
 
   return (
     <div className="fiszki">
@@ -469,10 +498,26 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gat
               { value: 'zdjecia', label: 'Zdjęcia' },
               { value: 'sylwetki', label: 'Sylwetki' },
               { value: 'nazwy', label: 'Nazwy' },
+              ...(saGlosy ? [{ value: 'glosy', label: 'Głosy' }] : []),
               { value: 'budowa', label: 'Budowa ptaka' },
             ]}
           />
         </div>
+        {saSiewkowce && (
+          <div className="scroll-x">
+            <SegmentedControl
+              legend="Ptaki"
+              showLegend
+              value={ptaki}
+              onChange={wybierzPtaki}
+              options={[
+                { value: 'wszystkie', label: 'Wszystkie' },
+                { value: 'drapiezne', label: 'Drapieżne' },
+                { value: 'siewkowce', label: 'Siewkowce' },
+              ]}
+            />
+          </div>
+        )}
         <div className="scroll-x">
           <SegmentedControl
             legend="Region"
@@ -513,7 +558,7 @@ export function FiszkiView({ talia: cala, gatunki }: { talia: KartaFiszki[]; gat
             {jestFiszkaBudowy(karta) ? (
               <AwersBudowy key={karta.id} karta={karta} />
             ) : (
-              <Awers key={karta.id} karta={karta} g={g!} powtorka={fiszki[karta.id]?.reps ?? 0} />
+              <Awers key={karta.id} karta={karta} g={g!} powtorka={fiszki[karta.id]?.reps ?? 0} odkryta={odkryta} />
             )}
             {(karta.rodzaj === 'lot' || karta.rodzaj === 'siedzacy') && <PodpisZdjecia z={karta.zdjecie} zrodlo={odkryta} />}
           </div>

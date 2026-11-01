@@ -18,9 +18,12 @@ import { idFiszki, KIERUNKI_NAZW, STAN_KARTY, type GrupaListyMiejsca, type IdFis
 export type GatunekNieba = {
   id: string;
   pl: string;
+  /** A diurnal raptor, so it has a silhouette card (owls and waders have none). */
   dzienny: boolean;
   /** The reference photos it has; each is a flashcard. */
   zdjecia: RodzajZdjecia[];
+  /** It has a voice card: an approved recording marked for its flashcard (nagrania.json). */
+  glos: boolean;
   /** Lessons that teach it ("modul/lekcja"): those with its plate, or, with none, those naming it. */
   lekcje: string[];
 };
@@ -45,7 +48,10 @@ export type ModulNieba = {
 
 export type StrukturaNieba = {
   moduly: ModulNieba[];
+  /** The raptors of the atlas: the life list and most patches count these. */
   gatunki: GatunekNieba[];
+  /** Waders taught as full species (B9): rings of their own, a shelf of their own, no part in the life list. */
+  siewkowce: GatunekNieba[];
   /** The bird that draws each of the eight silhouette groups (B1 lesson 1). */
   osiemGrup: string[];
   /** The Marismas del Barbate field list, group by group (raptors and birds of marshes), for its patches. */
@@ -74,6 +80,7 @@ export const kartyGatunku = (g: GatunekNieba): IdFiszki[] => [
   ...g.zdjecia.map((r) => idFiszki(g.id, r)),
   ...(g.dzienny ? [idFiszki(g.id, 'sylwetka')] : []),
   ...KIERUNKI_NAZW.map((k) => idFiszki(g.id, k)),
+  ...(g.glos ? [idFiszki(g.id, 'glos')] : []),
 ];
 
 /** The three rings a species can earn. */
@@ -220,7 +227,7 @@ export const NASZYWKI: Naszywka[] = [
   {
     id: 'nocna-zmiana',
     nazwa: 'Nocna zmiana',
-    jak: 'Wszystkie sowy rozpoznane: ich fiszki ze zdjęć i z nazwami zapamiętane.',
+    jak: 'Wszystkie sowy rozpoznane: wszystkie ich fiszki (ze zdjęć, nazw i głosów) zapamiętane.',
     ptaki: ['uszatka'],
     kolory: { tlo: '#0a1018', brzeg: '#04070e', nic: '#f5b75b', ptak: '#f2eee6' },
     postep: (s, st) => {
@@ -297,7 +304,10 @@ export const NASZYWKI: Naszywka[] = [
 ];
 
 export type StanNieba = {
+  /** The raptors' rings. */
   gatunki: Record<string, Obraczki>;
+  /** The waders' rings (B9). */
+  siewkowce: Record<string, Obraczki>;
   moduly: Record<string, { zaliczony: boolean; opanowany: boolean }>;
   naszywki: Record<string, { zdobyta: boolean; postep: [ile: number, z: number] }>;
   /** Raptors on the checklist (birds of marshes count only for the Marismas patches). */
@@ -313,14 +323,17 @@ export function stanNieba(struktura: StrukturaNieba, postep: Postep, fiszki: Fis
   const zapamietane = zapamietaneKarty(fiszki);
   const gatunki: Record<string, Obraczki> = {};
   for (const g of struktura.gatunki) gatunki[g.id] = obraczki(g, postep, zapamietane, lista);
+  const siewkowce: Record<string, Obraczki> = {};
+  for (const g of struktura.siewkowce) siewkowce[g.id] = obraczki(g, postep, zapamietane, lista);
   const moduly: StanNieba['moduly'] = {};
   for (const m of struktura.moduly) {
     const z = zaliczony(m.lekcje, postep);
-    moduly[m.slug] = { zaliczony: z, opanowany: z && m.gatunki.length > 0 && m.gatunki.every((id) => gatunki[id]?.rozpoznaje) };
+    const rozpoznaje = (id: string) => (gatunki[id] ?? siewkowce[id])?.rozpoznaje;
+    moduly[m.slug] = { zaliczony: z, opanowany: z && m.gatunki.length > 0 && m.gatunki.every(rozpoznaje) };
   }
   const lifery = struktura.gatunki.filter((g) => gatunki[g.id].widzialam).length;
   const marismas = Object.fromEntries(struktura.marismas.map((g) => [g.id, g.gatunki.filter((id) => jestWidziany(lista, id)).length]));
-  const bezNaszywek = { gatunki, moduly, lifery, marismas, zapamietane };
+  const bezNaszywek = { gatunki, siewkowce, moduly, lifery, marismas, zapamietane };
   const naszywki: StanNieba['naszywki'] = {};
   for (const n of NASZYWKI) {
     const [ma, z] = n.postep(bezNaszywek, struktura);

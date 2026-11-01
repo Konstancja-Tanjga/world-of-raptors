@@ -4,26 +4,39 @@ import { Breadcrumbs } from '@/components/ds';
 import { Photo } from '@/components/Photo';
 import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
+import { Nagranie } from '@/components/Nagranie';
+import { ObraczkiGatunku } from '@/components/niebo/ObraczkiGatunku';
+import { ListaCech, CECHY_SIEWKOWE } from '@/components/SpeciesCues';
 import { linkiGatunku } from '@/lib/media';
-import { MIEJSCA, NAZWY_GRUP_MOKRADEL, type PtakMokradel, type Modul, type ZdjeciaGatunku } from '@/lib/types';
+import type { GatunekNieba } from '@/lib/odznaki';
+import { MIEJSCA, NAZWY_GRUP_MOKRADEL, type NagranieLekcji, type PtakMokradel, type Modul, type ZdjeciaGatunku } from '@/lib/types';
 import { polozenie, srcSetCommons } from '@/lib/zdjecia';
 import { NazwaPtaka } from '../NazwaPtaka';
 
 /**
  * The page of a bird other than a raptor (a site's field list): its photo,
- * names, what to look for, my observation and where to read on. The raptor
- * page's plate, flight, scale and rings are built on silhouettes these birds
- * do not have.
+ * names, what to look for, my observation and where to read on. A wader
+ * taught as a full species (B9) also has its rings, its cues by the B9
+ * method, its sizes, its look-alikes and its voice; the raptor page's flight
+ * and scale are built on silhouettes these birds do not have.
  */
 export function PtakMokradelStrona({
   p,
   z,
   moduly,
+  pierscienie,
+  nagranie,
+  podobne = [],
 }: {
   p: PtakMokradel;
   z: ZdjeciaGatunku | undefined;
   moduly: (Modul & { slug: string })[];
+  /** Its rings, for a wader taught as a full species. */
+  pierscienie?: GatunekNieba;
+  nagranie?: { nagranie: NagranieLekcji; sonogram?: { src: string; khz: number } };
+  podobne?: { id: string; pl: string }[];
 }) {
+  const r = p.rozpoznawanie;
   const glowne = z?.siedzacy ?? z?.lot ?? null;
   const miejsca = MIEJSCA.filter((m) => p.miejsca.includes(m.value));
   return (
@@ -58,6 +71,7 @@ export function PtakMokradelStrona({
             <li>ptaki mokradeł</li>
             <li>{NAZWY_GRUP_MOKRADEL[p.grupa].toLocaleLowerCase('pl')}</li>
           </ul>
+          {pierscienie && <ObraczkiGatunku gatunek={pierscienie} />}
         </div>
         {glowne && (
           <p className="gatunek-hero__podpis">
@@ -94,11 +108,36 @@ export function PtakMokradelStrona({
               </p>
             )}
           </div>
-          <ol className="gatunek__klucz">
-            {p.cechy.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ol>
+          <div className="stack">
+            <ol className="gatunek__klucz">
+              {p.cechy.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ol>
+            {r && (
+              <>
+                <p className="muted">
+                  Długość ok. {r.dlugosc_cm[0]}–{r.dlugosc_cm[1]} cm, rozpiętość skrzydeł ok. {r.rozpietosc_cm[0]}–{r.rozpietosc_cm[1]} cm.
+                </p>
+                <ListaCech cechy={r.klucz} pola={CECHY_SIEWKOWE} />
+                {podobne.length > 0 && (
+                  <p>
+                    Łatwo pomylić z:{' '}
+                    {podobne.map((x, i) => (
+                      <span key={x.id}>
+                        {i > 0 && ', '}
+                        <Link href={`/gatunki/${x.id}`} className="text-link">
+                          <NazwaPtaka id={x.id} pl={x.pl} />
+                        </Link>
+                      </span>
+                    ))}
+                    .
+                  </p>
+                )}
+              </>
+            )}
+            {nagranie && <Nagranie nagranie={nagranie.nagranie} opis={nagranie.nagranie.opis} sonogram={nagranie.sonogram} />}
+          </div>
         </section>
 
         {z?.siedzacy && (z.lot || z.cecha) && (
