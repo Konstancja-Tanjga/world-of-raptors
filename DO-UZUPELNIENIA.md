@@ -31,6 +31,12 @@ Te moduły nie powstały, bo bez zdjęć i nagrań nie da się z nich uczyć roz
 
 - [ ] **B9 Głosy drapieżników dziennych:** nagrania (Commons, mirrory xeno-canto) z sonogramami: myszołów (miauczenie), kania ruda i czarna, pustułka, krogulec i jastrząb (alarm przy gnieździe), bielik, orlik krzykliwy, trzmielojad, błotniak stawowy, sokół wędrowny, kobuz. Każde nagranie trzeba odsłuchać (`zatwierdzone`).
 - [ ] **B10 Wiek i upierzenie dużych orłów:** zdjęcia kolejnych szat orła przedniego, bielika i orła iberyjskiego (młody, 2.–4. rok, dorosły) i lotek w różnym wieku po pierzeniu falami.
-- [ ] **B11 Moduł terenowy (Biebrza albo Monfragüe):** zdjęcia miejsca i gatunków spoza atlasu.
-- [ ] **Krukowate:** zdjęcia i nagrania kruka, wrony siwej, gawrona, kawki, sroki, sójki, orzechówki; sceny z drapieżnikami (przeganianie, gniazda wron zajęte przez pustułki i uszatki).
-- [ ] **Małe ptaki (las, łąka, miasto, ofiary drapieżników):** zdjęcia i nagrania pospolitych wróblowych; trzeba zdecydować, czy dostaną osobny plik danych jak `ptaki-mokradel.json`.
+
+## Moduły napisane bez własnych zdjęć (osobne PR-y)
+
+- [ ] **A11 Lot w praktyce** (`content/moduly/lot/`): pustułka zawisająca pod wiatr, sokół w pikowaniu, kobuz z ważką, rybołów wynurzający się z rybą, ptak drapieżny przy lądowaniu z uniesionym skrzydełkiem.
+- [ ] **A12 Krukowate** (`content/moduly/krukowate/`): zdjęcia kruka, wrony siwej, czarnowrona, gawrona (naga twarz), kawki, sroki, sójki, orzechówki, wieszczka i błękitnej sroki; kobuz albo uszatka w gnieździe wrony; kruki i bielik przy padlinie. Nagrania z sonogramami: kruk, wrona, gawron, kawka, sroka, sójka (także naśladująca myszołowa).
+- [ ] **A13 Małe ptaki** (`content/moduly/male-ptaki/`): zdjęcia i nagrania gatunków z tabel w lekcjach 2–4, krogulec przy karmniku, stado szpaków nad trzcinowiskiem, nagrania alarmów („sii” i terkot kosa).
+- [ ] **B10 Wiek i upierzenie dużych orłów** (`content/moduly/wiek-orlow/`): ptaki w szatach przejściowych (2.–4. rok): bielik z plamistym brzuchem i żółknącym dziobem, orzeł przedni z resztkami bieli, łaciaty orzeł iberyjski, młody sęp płowy z brązową kryzą, skrzydło z postrzępioną tylną krawędzią.
+
+Moduł terenowy (Biebrza albo Monfragüe) odłożony na później.
