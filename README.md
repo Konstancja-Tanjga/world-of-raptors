@@ -33,6 +33,7 @@ Dwie ścieżki i osiemnaście modułów, w każdym pięć lekcji, a w A8 siedem:
 | A8&nbsp;[Wspaniały świat sów](content/moduly/swiat-sow/README.md) | B8&nbsp;[Wirtualny punkt obserwacyjny](content/moduly/punkt-obserwacyjny/README.md) |
 | A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | |
 | A10&nbsp;[Ewolucja ptaków drapieżnych](content/moduly/ewolucja/README.md) | |
+| A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | |
 
 <table>
   <tr>

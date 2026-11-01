@@ -18,6 +18,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'swiat-sow': { gatunek: 'puszczyk', nazwa: 'Puszczyk' },
   'budowa-ptaka': { gatunek: 'jastrzab', nazwa: 'Jastrząb' },
   ewolucja: { gatunek: 'sep-kasztanowaty', nazwa: 'Sęp kasztanowaty' },
+  lot: { gatunek: 'kaniuk', nazwa: 'Kaniuk' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },

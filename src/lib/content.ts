@@ -622,6 +622,18 @@ function problemyBudowy() {
   return bledy;
 }
 
+/** Species for A11's gallery of flight styles (`<style-lotu data-gatunki="…">`): diurnal ones with a style; anything else stops the build. */
+export function ptakiStyluLotu(ids: string) {
+  const lista = ids.split(/[\s,]+/).filter(Boolean);
+  if (lista.length < 2) throw new Error('<style-lotu>: podaj co najmniej dwa gatunki');
+  return lista.map((id) => {
+    const g = znajdzGatunek(id);
+    const styl = STYL_LOTU[id];
+    if (!g || !styl || !SYLWETKI[id]) throw new Error(`<style-lotu>: „${id}” nie jest ptakiem dziennym z sylwetką i stylem lotu`);
+    return { id, pl: g.pl, styl };
+  });
+}
+
 export async function czytajMarkdown(relPath: string) {
   return readFile(path.join(CONTENT_DIR, relPath), 'utf8');
 }
@@ -878,7 +890,8 @@ export async function ideaKursu() {
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
  * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
  * the goshawk its 3D model is built after, A10 with a cinereous vulture
- * perched like a living fossil, B5 with
+ * perched like a living fossil, A11 with a black-winged kite, the hoverer,
+ * B5 with
  * an eagle owl, B7 with the widest
  * wingspan of the atlas, the cinereous vulture's, B8 with a honey buzzard,
  * the bird of the Strait's busiest days.
@@ -894,6 +907,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   'swiat-sow': { gatunek: 'puszczyk-mszarny', zdjecie: 'siedzacy' },
   'budowa-ptaka': { gatunek: 'jastrzab', zdjecie: 'lot' },
   ewolucja: { gatunek: 'sep-kasztanowaty', zdjecie: 'siedzacy' },
+  lot: { gatunek: 'kaniuk', zdjecie: 'lot' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },

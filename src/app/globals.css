@@ -2600,6 +2600,89 @@ html:has(.podglad[open]) {
   color: var(--bh-text-secondary);
 }
 
+/* ---------- A11's flight styles and stoop (<style-lotu>, <pikowanie>) ---------- */
+
+.style-lotu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.style-lotu__ptak {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-snug);
+}
+.style-lotu__niebo,
+.pikowanie__niebo {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--wor-radius-scene);
+  overflow: hidden;
+  background: var(--wor-niebo-dzien);
+}
+.style-lotu__niebo::before,
+.pikowanie__niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, var(--wor-blask) 0, var(--wor-blask-miekki) 26%, transparent 62%);
+}
+.prose .style-lotu__nazwa {
+  margin: 0;
+  font-weight: var(--bh-text-weight-heading);
+}
+.prose .style-lotu__opis {
+  margin: 0;
+  font-size: var(--bh-text-size-caption);
+  line-height: var(--wor-leading-snug);
+}
+.pikowanie {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+@media (min-width: 700px) {
+  .pikowanie {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+}
+.pikowanie__niebo svg {
+  width: 80%;
+  height: auto;
+  max-height: 90%;
+  fill: var(--wor-sylwetka);
+}
+.pikowanie__panel {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+.prose .pikowanie__wyniki {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.pikowanie__wyniki > div {
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.prose .pikowanie__wyniki dt {
+  font-size: var(--bh-text-size-caption);
+  font-weight: normal;
+}
+.prose .pikowanie__wyniki dd {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+}
+
 /* ---------- A9's 3D models (<model-3d>) ---------- */
 
 /* A dark light-table: the model floats over it, its controls sit below. It
