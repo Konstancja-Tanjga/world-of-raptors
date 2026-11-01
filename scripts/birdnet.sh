@@ -1,13 +1,17 @@
 #!/bin/sh
-# Downloads BirdNET Live's model, worker and TensorFlow.js into public/birdnet/,
-# pinned to one commit of BirdNET-Team/real-time-pwa (code MIT, models CC BY-SA 4.0),
-# for "Rozpoznaj po głosie" (/rozpoznaj/glos). Run it again after changing COMMIT.
+# Downloads BirdNET Live's model and worker into public/birdnet/<commit>/, pinned to
+# one commit of BirdNET-Team/real-time-pwa (code MIT, models CC BY-SA 4.0), for
+# "Rozpoznaj po głosie" (/rozpoznaj/glos). TensorFlow.js is pinned on its own (TFJS:
+# BirdNET Live ships 4.14.0 under that name, built from its package.json's ^4.22.0).
+# The files are served as immutable (next.config.ts), so a new COMMIT gets a new
+# folder: change WERSJA in src/components/RozpoznajGlos.tsx to match, then delete
+# the old folder.
 set -eu
 
 COMMIT=6ab67ac09fa64d98858b90f14318229aca9bb7dc
 TFJS=4.22.0
 SRC="https://raw.githubusercontent.com/BirdNET-Team/real-time-pwa/$COMMIT/public"
-OUT="$(dirname "$0")/../public/birdnet"
+OUT="$(dirname "$0")/../public/birdnet/$(echo "$COMMIT" | cut -c1-7)"
 
 mkdir -p "$OUT/models/birdnet/area-model" "$OUT/models/birdnet/labels"
 pobierz() { curl -fsSL "$1" -o "$2"; }

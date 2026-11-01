@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
   // Photos are Wikimedia Commons thumbnails, already sized by Commons.
   // Serving them directly avoids spending Vercel image-optimisation quota.
   images: { unoptimized: true },
-  // BirdNET's model (public/birdnet/, ~58 MB) changes only when scripts/birdnet.sh is run
-  // again, so phones keep it instead of asking for it on every visit to the field.
+  // BirdNET's model (public/birdnet/<commit>/, ~58 MB): a new version gets a new folder
+  // (scripts/birdnet.sh), so phones may keep these files instead of asking on every visit.
   async headers() {
     return [{ source: '/birdnet/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] }];
   },

@@ -40,7 +40,8 @@ export default function RozpoznajGlosPage() {
         <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pl" className="text-link">
           CC BY-SA 4.0
         </a>
-        . Nie zna wszystkich drapieżników: sępy, orłosęp i kilka innych gatunków prawie się nie odzywają.
+        . Kilku drapieżników z atlasu w nim nie ma: ścierwnika, sępa plamistego, orłosępa, kurhannika, orła
+        południowego i sokoła skalnego.
       </p>
     </div>
   );
