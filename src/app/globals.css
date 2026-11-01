@@ -670,13 +670,21 @@ li {
 [data-widziany] > .checklist__sylwetka .sylwetka {
   fill: var(--wor-lifer);
 }
+/* Closed entries sit two abreast on a wide page; an open one takes the whole row. */
 .checklist {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
   gap: var(--bh-gap-snug);
+}
+.checklist > [data-otwarty] {
+  grid-column: 1 / -1;
+}
+/* Two cards side by side share a height. */
+.checklist > li {
+  display: grid;
 }
 .checklist__row {
   display: flex;
@@ -684,9 +692,41 @@ li {
   align-items: center;
   gap: var(--bh-gap-normal) var(--bh-padding-section);
 }
-/* The checkbox and its names take the middle; the link to the species card goes right. */
+/* The checkbox and its names take the middle; the details button and the species card go right. */
 .checklist__row > :nth-child(2) {
-  flex: 1 1 14rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+.checklist__akcje {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-normal);
+  margin-inline-start: auto;
+}
+/* On a phone the actions go under the names instead of on a line of their own at the edge. */
+@media (max-width: 40rem) {
+  .checklist__row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--bh-gap-normal);
+  }
+  .checklist__akcje {
+    grid-column: 2;
+    margin-inline-start: 0;
+  }
+}
+/* A seen species, closed: when and where, then the note on one line. */
+.checklist__notka {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: var(--bh-gap-snug);
+  color: var(--bh-text-secondary);
+}
+.checklist__notatka {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-style: italic;
 }
 .checklist__details {
   display: grid;
