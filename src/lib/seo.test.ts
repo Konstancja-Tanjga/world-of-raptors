@@ -20,6 +20,11 @@ test('a long description is cut at a word, within 160 characters', () => {
   assert.ok(wynik.endsWith('Słowo…'));
 });
 
+test('a cut after a sentence does not end in a full stop and an ellipsis', () => {
+  const wynik = opis(`${'Słowo '.repeat(25)}koniec. ${'Dalej '.repeat(20)}`);
+  assert.ok(wynik.endsWith('koniec…'));
+});
+
 test('structured data cannot close its script tag', () => {
   const tekst = jsonLd({ '@type': 'WebSite', name: '</script><b>' });
   assert.ok(!tekst.includes('<'));

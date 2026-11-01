@@ -28,7 +28,7 @@ export function opis(md: string) {
   const tekst = zwyklyTekst(md);
   if (tekst.length <= DLUGOSC_OPISU) return tekst;
   const ciecie = tekst.lastIndexOf(' ', DLUGOSC_OPISU - 1);
-  return `${tekst.slice(0, ciecie > 0 ? ciecie : DLUGOSC_OPISU - 1).replace(/[\s,;:–—-]+$/, '')}…`;
+  return `${tekst.slice(0, ciecie > 0 ? ciecie : DLUGOSC_OPISU - 1).replace(/[\s.,;:–—-]+$/, '')}…`;
 }
 
 /** Structured data for a `<script type="application/ld+json">`, with `<` escaped so the text cannot close the tag. */

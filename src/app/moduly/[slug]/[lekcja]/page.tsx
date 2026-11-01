@@ -88,7 +88,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
         '@type': 'BreadcrumbList',
         itemListElement: [
           { name: 'Kurs', item: `${ADRES}/plan` },
-          { name: `${modul.id} ${modul.tytul}`, item: `${ADRES}/moduly/${slug}` },
+          { name: `${modul.id}\u00a0${modul.tytul}`, item: `${ADRES}/moduly/${slug}` },
           { name: biezaca.tytul, item: adres },
         ].map((e, i) => ({ '@type': 'ListItem', position: i + 1, ...e })),
       },
