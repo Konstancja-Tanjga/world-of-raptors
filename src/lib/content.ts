@@ -823,7 +823,8 @@ export async function ideaKursu() {
  * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
  * the goshawk its 3D model is built after, B5 with
  * an eagle owl, B7 with the widest
- * wingspan of the atlas, the cinereous vulture's.
+ * wingspan of the atlas, the cinereous vulture's, and the final project
+ * with a golden eagle in flight.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
   'kim-sa-drapiezniki': { gatunek: 'sokol-wedrowny', zdjecie: 'siedzacy' },
@@ -842,6 +843,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   sowy: { gatunek: 'puchacz', zdjecie: 'lot' },
   barbate: { gatunek: 'rybolow', zdjecie: 'lot' },
   'wielkosc-i-ksztalt': { gatunek: 'sep-kasztanowaty', zdjecie: 'lot' },
+  'projekt-koncowy': { gatunek: 'orzel-przedni', zdjecie: 'lot' },
 };
 
 /** The photo and species that open a module (every ready module has one; the build checks). */

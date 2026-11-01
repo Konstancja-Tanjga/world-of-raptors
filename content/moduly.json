@@ -481,6 +481,35 @@
           "tytul": "Sowy, GISS i ćwiczenia"
         }
       ]
+    },
+    {
+      "id": "P",
+      "slug": "projekt-koncowy",
+      "sciezka": "b",
+      "tytul": "Projekt końcowy",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-wybierz-projekt",
+          "tytul": "Wybierz projekt"
+        },
+        {
+          "slug": "02-plan-wyjazdu",
+          "tytul": "Projekt 1: plan wyjazdu obserwacyjnego"
+        },
+        {
+          "slug": "03-karta-gatunku",
+          "tytul": "Projekt 2: własna karta gatunku"
+        },
+        {
+          "slug": "04-raport-z-obserwacji",
+          "tytul": "Projekt 3: raport z trzech wyjść w teren"
+        },
+        {
+          "slug": "05-podsumowanie",
+          "tytul": "Podsumowanie kursu"
+        }
+      ]
     }
   ]
 }

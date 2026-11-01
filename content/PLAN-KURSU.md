@@ -49,6 +49,7 @@ Osobna część aplikacji: lista wszystkich gatunków z atlasu, na której odhac
 ---
 
 ## Projekt końcowy (do wyboru)
+Moduł [P: Projekt końcowy](moduly/projekt-koncowy/README.md) zamyka obie ścieżki: szablony, kryteria i przykłady do trzech projektów, a na koniec powtórka testu startowego.
 - Plan wyjazdu obserwacyjnego (Tarifa albo polskie miejsce, np. Mierzeja Wiślana w czasie przelotu),
 - własna karta gatunku z opisem biologii i rozpoznawania,
 - raport z obserwacji: 3 wyjścia w teren, lista na eBird lub Observation.org.
