@@ -7,6 +7,8 @@ import {
   gatunki,
   grupySylwetek,
   grupyDoWyboru,
+  gatunkiQuizuNaCzas,
+  kalendarzSiewkowcow,
   ptakiDoMiarki,
   ptakiMokradel,
   ptakiStyluLotu,
@@ -25,7 +27,21 @@ import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
-import { Komin, Model3D, MorfGrup, Pikowanie, PtasiaMiarka, PunktObserwacyjny, StyleLotu, SuwakMorfu, ZgadnijSylwetke } from './CwiczeniaLekcji';
+import {
+  KalendarzSiewkowcow,
+  Komin,
+  LiczenieStada,
+  Model3D,
+  MorfGrup,
+  ObraczkiKolorowe,
+  Pikowanie,
+  PtasiaMiarka,
+  PunktObserwacyjny,
+  QuizNaCzas,
+  StyleLotu,
+  SuwakMorfu,
+  ZgadnijSylwetke,
+} from './CwiczeniaLekcji';
 import { ArticleMargin } from './ds';
 import { Miarka } from './Miarka';
 import { Nagranie } from './Nagranie';
@@ -120,6 +136,13 @@ const attr = (props: Attrs, name: string) => {
  *
  *   <punkt-obserwacyjny data-sesja="ciesnina-sierpien">
  *   <komin data-gatunek="sep-plowy" data-ile="120">
+ *
+ * B9's exercises on waders:
+ *
+ *   <quiz-na-czas data-gatunki="wszystkie">          timed photo quiz ("wszystkie" or ids)
+ *   <liczenie-stada>                                  estimating a flock
+ *   <obraczki-kolorowe>                               reading colour rings
+ *   <kalendarz-siewkowcow>                            who passes the Baltic coast when, in which plumage
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -240,6 +263,26 @@ const lessonTags = {
       </div>
     );
   },
+  'quiz-na-czas': (props: Attrs) => (
+    <div className="lekcja-cwiczenie">
+      <QuizNaCzas gatunki={gatunkiQuizuNaCzas(attr(props, 'data-gatunki'))} />
+    </div>
+  ),
+  'liczenie-stada': () => (
+    <div className="lekcja-cwiczenie">
+      <LiczenieStada />
+    </div>
+  ),
+  'kalendarz-siewkowcow': () => (
+    <div className="lekcja-cwiczenie">
+      <KalendarzSiewkowcow {...kalendarzSiewkowcow()} />
+    </div>
+  ),
+  'obraczki-kolorowe': () => (
+    <div className="lekcja-cwiczenie">
+      <ObraczkiKolorowe />
+    </div>
+  ),
   'zgadnij-sylwetke': (props: Attrs) => (
     <div className="lekcja-cwiczenie">
       <ZgadnijSylwetke

@@ -2966,6 +2966,119 @@ html:has(.podglad[open]) {
   height: auto;
   fill: var(--wor-sylwetka);
 }
+/* B9: the timed photo quiz shows the photo whole, on a dark ground like a flashcard's. */
+.snapid__scena {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-scena-tlo);
+}
+.snapid__zdjecie {
+  display: block;
+  width: 100%;
+  max-height: 28rem;
+  height: auto;
+  object-fit: contain;
+}
+.cwiczenie .snapid__zegar {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--bh-text-secondary);
+}
+.snapid__opcje {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--bh-gap-snug);
+}
+/* B9: a resting flock drawn on a shore; the drawing keeps its own colours in both themes. */
+/* A result that takes focus when it appears (so a screen reader reads it) needs no focus ring: it is not a control. */
+.cwiczenie [tabindex='-1']:focus {
+  outline: none;
+}
+.stado__brzeg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--wor-radius-scene);
+}
+.stado__woda {
+  fill: #9fb7bf;
+}
+.stado__mul {
+  fill: #b9a98c;
+}
+.stado__ptak {
+  fill: #4a4038;
+}
+.stado__ptak--blok {
+  fill: var(--wor-zloto);
+  stroke: #4a4038;
+  stroke-width: 1;
+}
+/* B9: legs with colour rings, on paper in both themes, so the plastic colours read as in the field. */
+.obraczki__rysunek {
+  display: block;
+  width: min(100%, 20rem);
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--wor-radius-scene);
+  background: #e9e2d3;
+}
+.cwiczenie .obraczki__legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--bh-text-size-caption);
+}
+.cwiczenie .obraczki__legenda li {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+.obraczki__legenda svg {
+  width: 1rem;
+  height: auto;
+}
+.cwiczenie .kalendarz__lista,
+.cwiczenie .kalendarz__okresy {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cwiczenie .kalendarz__gatunek {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  padding-top: var(--bh-gap-snug);
+  border-top: 1px solid var(--wor-linia);
+}
+.cwiczenie .kalendarz__nazwa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.cwiczenie .kalendarz__okresy li {
+  margin: 0;
+}
+.cwiczenie .kalendarz__brak,
+.kalendarz__uwaga {
+  margin: 0;
+  color: var(--bh-text-secondary);
+}
+.obraczki__pola {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--bh-gap-snug) var(--bh-gap-loose);
+}
 
 /* ---------- The course: two paths of module cards (home and plan) ---------- */
 
