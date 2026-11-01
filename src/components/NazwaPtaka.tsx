@@ -1,5 +1,6 @@
 'use client';
 
+import { ViewTransition } from 'react';
 import { useJezykStrony, useNazwyGatunkow } from '@/lib/jezykStrony';
 
 /**
@@ -24,3 +25,18 @@ export function NazwaPtaka({ id, pl, mala = false }: { id: string; pl: string; m
   );
 }
 
+
+/**
+ * A species' name that flies into the title of its page when it is opened
+ * (globals.css, "morf-nazwy"). A shared transition needs each name once per
+ * page: the atlas shows one view at a time, "Rozpoznaj" each species once.
+ */
+export function NazwaGatunku({ id, klasa, children }: { id: string; klasa: string; children: string }) {
+  return (
+    <ViewTransition name={`nazwa-${id}`} share="morf-nazwy" default="none">
+      <span className={klasa}>
+        <NazwaPtaka id={id} pl={children} />
+      </span>
+    </ViewTransition>
+  );
+}

@@ -1,0 +1,86 @@
+/* "Rozpoznaj": one question at a time, then the species that fit (cards from atlas.css). */
+
+.rozpoznaj__pytanie {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  font-weight: var(--bh-text-weight-heading);
+  line-height: var(--wor-leading-title);
+}
+.rozpoznaj__pytanie:focus {
+  outline: none;
+}
+.rozpoznaj__pytanie:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: 4px;
+}
+.rozpoznaj__postep,
+.rozpoznaj__odpowiedz {
+  max-width: 40rem;
+}
+.rozpoznaj__odpowiedz {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+
+.rozpoznaj__kolory {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: var(--bh-gap-normal);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.rozpoznaj__legenda {
+  grid-column: 1 / -1;
+  margin-bottom: var(--bh-gap-snug);
+  padding: 0;
+  font-size: var(--bh-text-size-label);
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.rozpoznaj__kolor {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+/* The sample of a plumage colour, framed so white shows on the light paper. */
+.rozpoznaj__probka {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--bh-border-strong);
+  border-radius: var(--bh-radius-pill);
+}
+.rozpoznaj__probka--bialy {
+  background: var(--wor-probka-bialy);
+}
+.rozpoznaj__probka--szary {
+  background: var(--wor-probka-szary);
+}
+.rozpoznaj__probka--czarny {
+  background: var(--wor-probka-czarny);
+}
+.rozpoznaj__probka--brazowy {
+  background: var(--wor-probka-brazowy);
+}
+.rozpoznaj__probka--rudy {
+  background: var(--wor-probka-rudy);
+}
+.rozpoznaj__probka--plowy {
+  background: var(--wor-probka-plowy);
+}
+
+.rozpoznaj__licznik {
+  margin: 0;
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}
+.rozpoznaj__przyciski {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+}
+.rozpoznaj__powody {
+  margin-top: var(--bh-gap-tight);
+  color: var(--bh-text-muted);
+  font-size: var(--bh-text-size-caption);
+}

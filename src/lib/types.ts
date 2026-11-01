@@ -1,4 +1,5 @@
 import type { State } from 'ts-fsrs';
+import type { Kolor, Zachowanie } from './rozpoznawanie';
 
 export type Region = 'gibraltar' | 'poludnie-hiszpanii' | 'polska';
 /** A site with its own field list (a field module and its checklist). Not in browser storage, but lesson links name it (`?miejsce=`), so a rename must update them. */
@@ -31,6 +32,10 @@ export type DaneGatunku = {
   dlugosc_cm: [number, number];
   sezon: string;
   cechy: string[];
+  /** Plumage colours seen in the field (both sexes, young and adult, every morph), for "Rozpoznaj". */
+  kolory: Kolor[];
+  /** What it is seen doing, for "Rozpoznaj". */
+  zachowania: Zachowanie[];
   mylona_z: string[];
   gdzie: string;
   regiony: Region[];
