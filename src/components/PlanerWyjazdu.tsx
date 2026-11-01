@@ -24,7 +24,7 @@ function isWybor(v: unknown): v is Wybor {
 /** The site last chosen: a convenience, not in backups (a refused save keeps it for this visit only). */
 const wybor = utworzMagazyn<Wybor>('wor:planer:v1', isWybor);
 
-/** Shows the planner for a site (the observation points' link to it). */
+/** Switches the planner to a site and remembers it as the last choice (the observation points' planner link, which then scrolls to #kiedy). */
 export const wybierzMiejscePlanera = (miejsce: MiejscePlanera) => wybor.zapisz({ miejsce });
 
 /** What went wrong, so the page can say what helps: the connection, Open-Meteo's answer, or missing data. */

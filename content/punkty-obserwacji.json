@@ -1,5 +1,5 @@
 {
-  "uwaga": "Punkty obserwacji na stronie /kiedy-i-gdzie (sekcja „Gdzie stanąć”). okolica: okolice-tarify, okolice-algeciras, la-janda-i-barbate, polska. rodzaj: przelot (punkt liczeń przelotu) albo lokalne (ptaki osiadłe i zimujące). wiatr: przy jakim wietrze punkt jest najlepszy jesienią (lewant, poniente); pusta lista, gdy wiatr nie wybiera punktu. miesiace i szczyt: numery miesięcy 1–12. gatunki: id z gatunki.json albo ptaki-mokradel.json. lekcja: modul/lekcja. przyblizone: współrzędne pokazują okolicę, nie dokładny punkt. todo: do sprawdzenia ręcznie (next dev je wypisuje).",
+  "uwaga": "Punkty obserwacji na stronie /kiedy-i-gdzie (sekcja „Gdzie stanąć”). okolica: okolice-tarify, okolice-algeciras, la-janda-i-barbate, polska. rodzaj: przelot (punkt liczeń przelotu) albo lokalne (ptaki, które tu gniazdują, mieszkają albo zimują; nie punkt liczeń przelotu). wiatr: przy jakim wietrze punkt jest najlepszy jesienią (lewant, poniente); pusta lista, gdy wiatr nie wybiera punktu. miesiace i szczyt: numery miesięcy 1–12. gatunki: id z gatunki.json albo ptaki-mokradel.json. lekcja: modul/lekcja. przyblizone: współrzędne pokazują okolicę, nie dokładny punkt. todo: do sprawdzenia ręcznie (next dev je wypisuje).",
   "punkty": [
     {
       "id": "bolonia",

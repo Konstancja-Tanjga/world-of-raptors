@@ -2,12 +2,13 @@
  * "Punkty obserwacji": where to stand to watch birds (content/punkty-obserwacji.json)
  * and which points lie nearest a place. No directive and no browser APIs, so
  * the rules can be tested; the page finds the place (PunktyObserwacji.tsx),
- * by name through Open-Meteo's geocoding or from the browser's location.
+ * by name through Open-Meteo's geocoding, from typed coordinates
+ * (`wspolrzedneZTekstu`) or from the browser's location.
  *
  * The wind rule follows the course (B3 lesson 1): in autumn a Levante, from
  * the east, drifts the passage west towards Tarifa, a Poniente, from the
  * west, east towards Algeciras and Gibraltar. A point with no wind listed
- * works whatever blows.
+ * is not chosen by the wind, so the wind filter always keeps it.
  */
 import type { MiejscePlanera } from './planer';
 
@@ -28,7 +29,7 @@ export type PunktObserwacji = Wspolrzedne & {
   id: string;
   nazwa: string;
   okolica: Okolica;
-  /** A migration watchpoint, or a site for resident and wintering birds. */
+  /** A migration watchpoint (a passage count), or a site for the birds that breed, live or winter there. */
   rodzaj: 'przelot' | 'lokalne';
   wysokosc_m?: number;
   /** The coordinates mark the area, not the exact spot. */
@@ -138,15 +139,22 @@ export class NiepelnaOdpowiedz extends Error {
 }
 
 /**
- * The places in an Open-Meteo geocoding answer. No match comes back without
- * `results`, which is an empty list here; an answer of another shape throws.
+ * The places in an Open-Meteo geocoding answer. No match comes back as an
+ * answer without `results` (it still carries `generationtime_ms`), which is
+ * an empty list here; an error answer (`error: true`) or one of another shape
+ * throws, so a failure is never shown as "no such place".
  */
 export function miejscaZGeokodowania(odp: unknown): ZnalezioneMiejsce[] {
   if (typeof odp !== 'object' || odp === null) throw new NiepelnaOdpowiedz('geocoding: not an object');
-  const wyniki = (odp as { results?: unknown }).results;
-  if (wyniki === undefined) return [];
+  const { results: wyniki, error, reason, generationtime_ms } = odp as Record<string, unknown>;
+  if (error === true) throw new NiepelnaOdpowiedz(`geocoding: error answer (${String(reason)})`);
+  if (wyniki === undefined) {
+    if (typeof generationtime_ms !== 'number') throw new NiepelnaOdpowiedz('geocoding: neither results nor a geocoding answer');
+    return [];
+  }
   if (!Array.isArray(wyniki)) throw new NiepelnaOdpowiedz('geocoding: results is not a list');
   return wyniki.map((w) => {
+    if (typeof w !== 'object' || w === null) throw new NiepelnaOdpowiedz('geocoding: a result is not an object');
     const { name, latitude, longitude, admin1, country } = w as Record<string, unknown>;
     if (typeof name !== 'string' || typeof latitude !== 'number' || typeof longitude !== 'number') {
       throw new NiepelnaOdpowiedz('geocoding: a result without a name or coordinates');

@@ -88,6 +88,10 @@ test('miejscaZGeokodowania: places with their region and country, none, or a ref
   assert.throws(() => miejscaZGeokodowania(null), NiepelnaOdpowiedz);
   assert.throws(() => miejscaZGeokodowania({ results: 'x' }), NiepelnaOdpowiedz);
   assert.throws(() => miejscaZGeokodowania({ results: [{ name: 'X' }] }), NiepelnaOdpowiedz);
+  assert.throws(() => miejscaZGeokodowania({ results: [null] }), NiepelnaOdpowiedz);
+  // An error, or an answer that is not geocoding's at all (a captive portal), is not "no such place".
+  assert.throws(() => miejscaZGeokodowania({ error: true, reason: 'Parameter name is required' }), NiepelnaOdpowiedz);
+  assert.throws(() => miejscaZGeokodowania({ status: 'ok' }), NiepelnaOdpowiedz);
 });
 
 test('zakresMiesiecy: runs in Roman numerals, across the new year too', () => {
