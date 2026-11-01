@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(ADRES),
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
   description:
-    'Kurs o drapieżnikach dziennych i nocnych: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Pomysł, plan i treść: Konstancja Tanjga. Projekt, ruch i kod: razem z Claude (Anthropic).',
-  authors: [{ name: 'Konstancja Tanjga' }],
-  creator: 'Konstancja Tanjga',
+    'Kurs o drapieżnikach dziennych i nocnych: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Pomysł, plan i treść: Konstancja Tanjga-Nawrot. Projekt, ruch i kod: razem z Claude (Anthropic).',
+  authors: [{ name: 'Konstancja Tanjga-Nawrot' }],
+  creator: 'Konstancja Tanjga-Nawrot',
   openGraph: { type: 'website', locale: 'pl_PL', siteName: 'World of Raptors' },
   twitter: { card: 'summary_large_image' },
 };

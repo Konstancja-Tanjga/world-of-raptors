@@ -20,7 +20,7 @@ Wszystkie są **możliwe, nie pewne**. Część to ptaki zimujące, które na po
 
 <margines>
 
-<zdjecie src="/zdjecia/barbate-warzechy-czapla.jpg" width="960" height="540" alt="Kilkanaście białych warzęch i jedna szara czapla siwa żerują w kanale wśród słonych łąk" podpis="Warzęchy i czapla siwa w jednym kanale, Marismas del Barbate, 10 października 2026: czaplę wyróżniają szary kolor i dziób jak sztylet" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+<zdjecie src="/zdjecia/barbate-warzechy-czapla.jpg" width="960" height="540" alt="Kilkanaście białych warzęch i jedna szara czapla siwa żerują w kanale wśród słonych łąk" podpis="Warzęchy i czapla siwa w jednym kanale, Marismas del Barbate, 10 października 2026: czaplę wyróżniają szary kolor i dziób jak sztylet" autor="Konstancja Tanjga-Nawrot" licencja="zdjęcie własne" licencja-url="" strona="">
 </zdjecie>
 
 </margines>
@@ -61,7 +61,7 @@ Duża, szara czapla z białą głową i czarnym paskiem nad okiem. Leci powoli, 
 
 <margines>
 
-<zdjecie src="/zdjecia/barbate-szablodzioby.jpg" width="960" height="1072" alt="Czarno-białe szablodzioby z cienkimi, wygiętymi w górę dziobami żerują na skraju płytkiej wody i mułu" podpis="Szablodzioby na mule, gdy woda zaczęła wracać (Marismas del Barbate, 10 października 2026, ok. 10:40)" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+<zdjecie src="/zdjecia/barbate-szablodzioby.jpg" width="960" height="1072" alt="Czarno-białe szablodzioby z cienkimi, wygiętymi w górę dziobami żerują na skraju płytkiej wody i mułu" podpis="Szablodzioby na mule, gdy woda zaczęła wracać (Marismas del Barbate, 10 października 2026, ok. 10:40)" autor="Konstancja Tanjga-Nawrot" licencja="zdjęcie własne" licencja-url="" strona="">
 </zdjecie>
 
 </margines>
@@ -174,7 +174,7 @@ Mały, turkusowo-pomarańczowy ptak z długim dziobem. Najczęściej widać nieb
 
 <margines>
 
-<zdjecie src="/zdjecia/barbate-kormoran.jpg" width="960" height="762" alt="Ciemna sylwetka kormorana płynącego w kanale, nisko zanurzonego, z długą szyją i dziobem uniesionym lekko w górę" podpis="Kormoran w kanale Marismas del Barbate, 10 października 2026: pod światło widać tylko sylwetkę, ale ona wystarczy" autor="Konstancja Tanjga" licencja="zdjęcie własne" licencja-url="" strona="">
+<zdjecie src="/zdjecia/barbate-kormoran.jpg" width="960" height="762" alt="Ciemna sylwetka kormorana płynącego w kanale, nisko zanurzonego, z długą szyją i dziobem uniesionym lekko w górę" podpis="Kormoran w kanale Marismas del Barbate, 10 października 2026: pod światło widać tylko sylwetkę, ale ona wystarczy" autor="Konstancja Tanjga-Nawrot" licencja="zdjęcie własne" licencja-url="" strona="">
 </zdjecie>
 
 </margines>
