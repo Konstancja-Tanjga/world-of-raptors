@@ -2514,6 +2514,92 @@ html:has(.podglad[open]) {
   margin-block: var(--wor-space-block);
 }
 
+/* ---------- B8's watch point and kettle (<punkt-obserwacyjny>, <komin>) ---------- */
+
+.punkt {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+/* The sky over the watch point: the day sky the silhouettes are drawn against. */
+.punkt__niebo {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--wor-radius-scene);
+  overflow: hidden;
+  background: var(--wor-niebo-dzien);
+  touch-action: manipulation;
+}
+.punkt__niebo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 70% 20%, var(--wor-blask) 0, var(--wor-blask-miekki) 22%, transparent 60%);
+}
+.punkt__niebo--komin {
+  aspect-ratio: 4 / 3;
+}
+@media (max-width: 600px) {
+  .punkt__niebo {
+    aspect-ratio: 4 / 3;
+  }
+}
+.punkt__plotno {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+.punkt__zaslona {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: grid;
+  gap: var(--bh-gap-snug);
+  padding: var(--bh-padding-section);
+  background: var(--wor-scena-panel);
+  color: var(--wor-scena-tekst);
+}
+.prose .punkt__zaslona p {
+  margin: 0;
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-snug);
+}
+.prose .punkt__zaslona .punkt__miejsce {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+}
+.punkt__start,
+.punkt__panel,
+.punkt__pytanie {
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+.punkt__przyciski,
+.punkt__odpowiedzi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+}
+.prose .punkt__polecenie,
+.prose .punkt__wynik {
+  margin: 0;
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-karta);
+  font-weight: var(--bh-text-weight-heading);
+}
+.prose .punkt__wskazowka,
+.prose .punkt__licznik {
+  margin: 0;
+  font-size: var(--wor-size-reading);
+  line-height: var(--wor-leading-snug);
+}
+.prose .punkt__licznik {
+  color: var(--bh-text-secondary);
+}
+
 /* ---------- A9's 3D models (<model-3d>) ---------- */
 
 /* A dark light-table: the model floats over it, its controls sit below. It
