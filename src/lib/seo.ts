@@ -20,6 +20,7 @@ export const AUTORKA = {
     'https://konstancja-tanjga.github.io/portfolio-site/',
     'https://github.com/Konstancja-Tanjga',
     'https://www.linkedin.com/in/konstancja-tanjga/',
+    'https://x.com/KTanjga',
   ],
 };
 
