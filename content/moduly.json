@@ -280,6 +280,35 @@
       ]
     },
     {
+      "id": "A12",
+      "slug": "krukowate",
+      "sciezka": "a",
+      "tytul": "Krukowate: sąsiedzi drapieżników",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-kim-sa-krukowate",
+          "tytul": "Kim są krukowate"
+        },
+        {
+          "slug": "02-jak-rozpoznawac",
+          "tytul": "Jak rozpoznawać krukowate"
+        },
+        {
+          "slug": "03-krukowate-i-drapiezniki",
+          "tytul": "Krukowate i drapieżniki"
+        },
+        {
+          "slug": "04-zycie-obok-ludzi",
+          "tytul": "Życie obok ludzi"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Ćwiczenia i obserwacje"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

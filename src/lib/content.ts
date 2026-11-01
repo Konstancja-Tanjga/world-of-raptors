@@ -821,7 +821,8 @@ export async function ideaKursu() {
  * (closer to parrots than to hawks), A4 with a pair of white-tailed eagles,
  * A7 with a barn owl landing on a falconer's glove, B4 with an Iberian
  * imperial eagle over the dehesa, A8 with a great grey owl's face, A9 with
- * the goshawk its 3D model is built after, B5 with
+ * the goshawk its 3D model is built after, A12 with a long-eared owl, a
+ * tenant of old crows' nests, B5 with
  * an eagle owl, B7 with the widest
  * wingspan of the atlas, the cinereous vulture's.
  */
@@ -835,6 +836,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', zdjecie: 'lot' },
   'swiat-sow': { gatunek: 'puszczyk-mszarny', zdjecie: 'siedzacy' },
   'budowa-ptaka': { gatunek: 'jastrzab', zdjecie: 'lot' },
+  krukowate: { gatunek: 'uszatka', zdjecie: 'lot' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },

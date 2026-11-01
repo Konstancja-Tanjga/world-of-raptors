@@ -17,6 +17,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'ludzie-i-drapiezniki': { gatunek: 'plomykowka', nazwa: 'Płomykówka' },
   'swiat-sow': { gatunek: 'puszczyk', nazwa: 'Puszczyk' },
   'budowa-ptaka': { gatunek: 'jastrzab', nazwa: 'Jastrząb' },
+  krukowate: { gatunek: 'scierwnik', nazwa: 'Ścierwnik' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },
@@ -40,7 +41,7 @@ export type Polozenie = { x: number; y: number; szer: number; obrot: number };
 
 const KOLUMNY = [0.135, 0.375, 0.625, 0.865];
 /** The most rows the wide map takes; the narrow map has twice as many. */
-const NAJWIECEJ_WIERSZY = 4;
+const NAJWIECEJ_WIERSZY = 6;
 /**
  * Small offsets (dx within ±0.01, dy within ±0.02: ukladNaNiebie relies on
  * those bounds) and tilts, one per place, so a grid of constellations reads
