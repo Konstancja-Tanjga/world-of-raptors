@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Orły, sokoły i sowy patrzą na ciebie z monet, herbów i logotypów częściej, niż myślisz. Najpierw quiz, który zalicza moduł, potem tydzień tropienia takich wizerunków i pierwsza kompletna lista w eBird, a na koniec projekt o jednym ptaku drapieżnym z twojej okolicy, od biologii po plan pomocy.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Autor traktatu *De arte venandi cum avibus*:

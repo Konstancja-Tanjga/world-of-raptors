@@ -1,5 +1,7 @@
 # Lekcja 4: Drapieżniki Europy i Polski, czyli przegląd grup
 
+Orzeł iberyjski nie żyje nigdzie poza Półwyspem Iberyjskim, a sępy do Polski tylko zalatują. Przypiszesz drapieżniki Europy i Polski do grup, zobaczysz, czego w Polsce nie spotkasz, i poznasz trzy pytania, które warto zadać przy każdym nowym gatunku.
+
 ## Europa na tle świata
 
 <margines>

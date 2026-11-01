@@ -1,5 +1,7 @@
 # Lekcja 3: Drapieżniki w polskim języku i kulturze
 
+„Łaknąć jak kania dżdżu” utrwala ludowy mit, że kania pije tylko deszczówkę, choć w rzeczywistości pije wodę jak inne ptaki. Zobaczysz, co o ptakach drapieżnych mówią idiomy, polskie nazwy gatunków, nazwiska i nazwy miejsc, od wsi Sokolniki po Orlą Perć, i jak orzeł oraz sokół zapisali się w historii Polski.
+
 ## Język, który pamięta ptaki
 Nawet jeśli nigdy nie widziałaś sokoła, używasz go w mowie codziennej. Polszczyzna przechowuje dawne obserwacje, wierzenia i sympatie, a czasem też uprzedzenia wobec ptaków drapieżnych.
 

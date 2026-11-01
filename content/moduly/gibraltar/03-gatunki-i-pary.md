@@ -1,8 +1,8 @@
 # Lekcja 3: Gatunki i trudne pary
 
-Lekcja podzielona jest na grupy. Każda grupa ma **karty gatunków** (klucz do rozpoznania) i **porównanie trudnych par**.
+Ścierwnik ma klinowaty ogon, kania wcięty, a orzełek włochaty prosto ścięty: nad cieśniną sam kształt ogona często zawęża wybór. Poznasz kanie, sępy, orły, błotniaki i sokoły regionu oraz trudne pary, od trzmielojada i myszołowa po trzy sępy.
 
-Rozpiętości skrzydeł są orientacyjne.
+Lekcja podzielona jest na grupy. Każda grupa ma **karty gatunków** (klucz do rozpoznania) i **porównanie trudnych par**. Rozpiętości skrzydeł są orientacyjne.
 
 ---
 

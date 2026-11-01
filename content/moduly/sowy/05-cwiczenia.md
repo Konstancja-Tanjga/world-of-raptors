@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Czaszkę ryjówki poznasz po czerwonych końcach zębów, a znajdziesz ją w wypluwce sowy. Najpierw jednak quiz, który zalicza moduł, potem quiz dźwiękowy z nagraniami z xeno-canto, rozbiór wypluwki i projekt „Moja noc z sowami”.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Sowa z pomarańczowymi oczami i długimi „uszami”, zimą w grupie na drzewie w mieście:

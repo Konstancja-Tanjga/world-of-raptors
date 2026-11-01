@@ -1,5 +1,7 @@
 # Lekcja 1: Co czyni drapieżnika drapieżnikiem
 
+Czapla łowi ryby, a kruk je padlinę, a jednak żadnego z nich nie nazywamy ptakiem drapieżnym. Poznasz cztery cechy, które razem czynią ptaka łowcą, i zobaczysz, dlaczego dzierzby, wydrzyki i kariamy zostają za tą granicą, a sępy przed nią.
+
 ## Drapieżnik to nie to samo co „ptak, który je mięso”
 Mięso i inne zwierzęta je mnóstwo ptaków: czaple łowią ryby, bociany zjadają żaby, kowaliki wyjadają owady, a kruk chętnie pożywi się padliną. Mimo to żadnego z nich nie nazywamy ptakiem drapieżnym.
 

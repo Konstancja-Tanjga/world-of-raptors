@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Czapla siwa, gąsiorek, kariama: który z nich jest ptakiem drapieżnym? Najpierw quiz, który zalicza moduł (próg 80%), potem ćwiczenia z takich przypadków granicznych, drzewo rodowe rysowane z pamięci i sortowanie atlasu, a na koniec projekt: jeden gatunek, trzy nazwy i jego miejsce w systematyce.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Który zestaw cech najlepiej opisuje ptaka drapieżnego?

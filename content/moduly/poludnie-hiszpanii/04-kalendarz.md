@@ -1,5 +1,7 @@
 # Lekcja 4: Kalendarz roku
 
+Orły iberyjskie tokują już w styczniu, pierwsze kanie czarne wracają przez cieśninę w lutym, a w lipcu zaczyna się przelot jesienny. Miesiąc po miesiącu zobaczysz, co dzieje się z drapieżnikami Andaluzji i dokąd wtedy jechać, od Andújar po La Jandę.
+
 <margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Black_Kite_AdF.jpg/960px-Black_Kite_AdF.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="640" oryginal="1759x1173" alt="Ciemnobrązowa kania w locie na tle zielonych zarośli, z lekko wciętym ogonem" podpis="Kania czarna nad Monfragüe: w lutym pierwsze wracają przez cieśninę, w lipcu pierwsze odlatują" autor="Arturo de Frias Marques" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Black_Kite_AdF.jpg">

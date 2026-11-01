@@ -1,5 +1,7 @@
 # Lekcja 1: Sokolnictwo: od stepów do lotnisk
 
+Na wielu lotniskach, także w Polsce, pracują sokolnicy, bo regularne loty sokołów i jastrzębi odstraszają mewy i gołębie od pasa startowego. Poznasz historię sokolnictwa od stepów Azji po wpis na listę UNESCO, średniowieczny traktat cesarza Fryderyka II i pytania o dobrostan ptaków na pokazach.
+
 ## Czym jest sokolnictwo
 **Sokolnictwo** to polowanie z ułożonym ptakiem drapieżnym na dziką zwierzynę w jej naturalnym środowisku. Ptak nie jest „zwierzątkiem”, tylko partnerem łowów: poluje tak, jak polowałby na wolności, a sokolnik pomaga mu znaleźć zdobycz i odbiera ją w zamian za pokarm.
 

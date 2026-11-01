@@ -1,5 +1,7 @@
 # Lekcja 1: Zagrożenia dawniej i dziś
 
+W Hiszpanii przez lata główną przyczyną śmierci orła iberyjskiego było porażenie prądem na słupach energetycznych. Zobaczysz, dlaczego ptaki drapieżne są tak wrażliwe na każde zagrożenie, jak tępiono je dawniej jako „szkodniki” i co zagraża im dziś: trucizny, linie energetyczne, farmy wiatrowe i utrata siedlisk.
+
 ## Dlaczego drapieżniki są tak wrażliwe?
 Ptaki drapieżne mają kilka cech, które sprawiają, że każde dodatkowe zagrożenie uderza w nie mocniej niż w np. wróble:
 

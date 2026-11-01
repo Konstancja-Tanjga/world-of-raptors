@@ -1,5 +1,7 @@
 # Lekcja 3: Rodziny i ich różnorodność na świecie
 
+Najmniejsze dzienne drapieżniki świata, sokoliki, są wielkości wróbla, a kondor wielki ma ok. 3 m rozpiętości skrzydeł. Poznasz rodziny ptaków drapieżnych od jastrzębiowatych po sowy, a po drodze rybołowa z odwracalnym palcem i sekretarza, który zabija węże kopnięciami.
+
 ## Ile jest ptaków drapieżnych?
 Na świecie żyje około **11 tysięcy** gatunków ptaków. Drapieżników (dziennych i nocnych razem) jest mniej więcej **550–600**, czyli ok. 5% wszystkich ptaków. Dokładna liczba zależy od listy i zmienia się co roku, bo badania genetyczne dzielą niektóre gatunki na kilka.
 

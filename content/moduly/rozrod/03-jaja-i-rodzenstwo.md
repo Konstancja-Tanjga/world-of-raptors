@@ -1,5 +1,7 @@
 # Lekcja 3: Jaja, wysiadywanie i rodzeństwo
 
+Samica krogulca bywa prawie dwa razy cięższa od samca, a nauka wciąż nie wie na pewno dlaczego. Poznasz hipotezy o odwróconym dymorfizmie, to, ile jaj składają różne gatunki i kto je wysiaduje, oraz powód, dla którego pisklęta w jednym gnieździe różnią się wiekiem o kilka dni.
+
 ## Samica większa od samca
 U większości ptaków samiec jest większy lub oboje są podobni. U ptaków drapieżnych (i u sów) jest odwrotnie: **samica jest większa**. To tzw. **odwrócony dymorfizm płciowy wielkości**.
 

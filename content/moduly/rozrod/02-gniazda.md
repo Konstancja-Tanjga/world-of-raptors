@@ -1,5 +1,7 @@
 # Lekcja 2: Gniazda
 
+Gniazdo bielika rośnie z roku na rok i bywa tak ciężkie (setki kilogramów), że łamie konar, na którym leży, a sokoły nie budują gniazd wcale. Zobaczysz trzy strategie gniazdowania drapieżników: gniazda z gałęzi, półki skalne i cudze gniazda oraz gniazda na ziemi wśród trzcin i zbóż.
+
 ## Trzy strategie
 Ptaki drapieżne gniazdują na trzy główne sposoby:
 1. **Budują gniazdo z gałęzi** (na drzewie albo na skale): orły, myszołowy, jastrzębie, kanie, sęp kasztanowaty.

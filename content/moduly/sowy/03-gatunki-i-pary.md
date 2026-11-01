@@ -1,5 +1,7 @@
 # Lekcja 3: Gatunki i trudne pary
 
+Drżące „hu-hu-huuu” w parku to puszczyk, syczący wrzask przy stodole to płomykówka, a monotonne „tjuu” w andaluzyjskiej wiosce to syczek. Poznasz dziesięć sów Polski i południa Hiszpanii, ich głosy i trudne pary, a na koniec drzewko decyzyjne na nocny nasłuch.
+
 Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia, więc przy każdym gatunku posłuchaj nagrania, a więcej znajdziesz na [xeno-canto](https://xeno-canto.org).
 
 ---

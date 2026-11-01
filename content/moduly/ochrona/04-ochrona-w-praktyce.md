@@ -1,5 +1,7 @@
 # Lekcja 4: Ochrona w praktyce
 
+Lokalizacji stref ochronnych wokół gniazd bielików i orłów celowo się nie publikuje, żeby nie ułatwiać życia fotografom i przestępcom. Poznasz prawo, które chroni ptaki drapieżne w Polsce i w Europie, dowiesz się, co zrobić, gdy znajdziesz martwego lub rannego ptaka, i co możesz dla nich robić na co dzień.
+
 ## Prawo w Polsce
 
 ### Ochrona gatunkowa

@@ -1,5 +1,7 @@
 # Lekcja 3: Szlaki i wąskie gardła
 
+W Batumi, na wąskim pasie lądu między Morzem Czarnym a Małym Kaukazem, jesienny przelot w wielu sezonach przekracza milion ptaków drapieżnych. Poznasz sześć wąskich gardeł Europy i Bliskiego Wschodu, dowiesz się, którędy lecą do Afryki ptaki z Polski i dlaczego wiosną wędrówka wygląda inaczej niż jesienią.
+
 ## Lejki na mapie
 Migranci szybujący z całej Europy lecą na południe szerokim frontem, ale Morze Śródziemne zmusza ich do wyboru. Muszą je obejść **od zachodu** (przez Półwysep Iberyjski i Gibraltar) albo **od wschodu** (przez Bosfor, Turcję i Bliski Wschód). Na końcach tych „lejków” ptaki skupiają się w **wąskich gardłach** (ang. *bottlenecks*), gdzie jednego dnia można zobaczyć ich tysiące.
 

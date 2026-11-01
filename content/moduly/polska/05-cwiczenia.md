@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Dziesięć pytań quizu, od bielika nad jeziorem po drzemlika goniącego skowronka w grudniu, zalicza moduł. Potem czeka cię ćwiczenie z trudnych par, zadanie terenowe „Drapieżniki z samochodu” latem i zimą oraz projekt „Mój rok z drapieżnikami”.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Ogromny ptak nad jeziorem, skrzydła jak drzwi, krótki klinowaty biały ogon:

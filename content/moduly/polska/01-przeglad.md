@@ -1,5 +1,7 @@
 # Lekcja 1: Przegląd, czyli kto, gdzie, kiedy
 
+Najpospolitszym drapieżnikiem Polski jest myszołów, a nasz kraj to jeden z europejskich bastionów bielika i orlika krzykliwego. Poznasz trzy kategorie gatunków, typowe sytuacje z „pierwszym podejrzeniem” i siedliska, od Biebrzy po miejskie wieżowce.
+
 ## Trzy kategorie
 
 <margines>

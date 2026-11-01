@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Etogram, czyli lista zachowań z jednoznacznymi definicjami, to podstawowe narzędzie etologów, a zbudujesz go sama, oglądając kamerę na gnieździe. Najpierw jednak quiz, który zalicza moduł (próg 80%), potem dopasowanie gniazd do gatunków i kalendarz lęgu wybranego ptaka.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Który gatunek zwykle tworzy parę na wiele lat i używa tego samego gniazda przez lata?

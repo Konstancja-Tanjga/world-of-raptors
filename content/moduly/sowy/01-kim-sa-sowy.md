@@ -1,5 +1,7 @@
 # Lekcja 1: Kim są sowy?
 
+Płomykówka potrafi upolować mysz w zupełnej ciemności, wyłącznie słuchem. Zobaczysz, jak działają narzędzia nocnego łowcy: szlara, niesymetryczne otwory uszne, oczy w kształcie rurek i ciche pióra, i czego uczą wypluwki.
+
 ## Dwie rodziny
 - **Płomykówkowate (Tytonidae):** w Europie tylko **płomykówka**. Twarz w kształcie serca, długie nogi.
 - **Puszczykowate (Strigidae):** wszystkie pozostałe europejskie sowy.

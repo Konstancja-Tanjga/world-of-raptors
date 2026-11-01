@@ -1,5 +1,7 @@
 # Lekcja 4: Kalendarz roku
 
+W lutym bieliki zaczynają już lęgi, a trzmielojad i kobuz przylatują dopiero w maju. Miesiąc po miesiącu zobaczysz, kiedy drapieżniki wracają, wychowują młode i odlatują oraz kiedy z północy przylatują zimowi goście, jak myszołów włochaty i drzemlik.
+
 <margines>
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%282%29.jpg/960px-Fighting_white-tailed_eagles_%28Haliaeetus_albicilla%29_%282%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="540" oryginal="4628x2603" alt="Kilka bielików na łące, dwa ptaki z rozpostartymi skrzydłami walczą o pokarm" podpis="Bieliki na żerowisku w rezerwacie Gostynińsko-Włocławskim: poza sezonem lęgowym gromadzą się przy padlinie" autor="Andreas Weith" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:Fighting_white-tailed_eagles_(Haliaeetus_albicilla)_(2).jpg">

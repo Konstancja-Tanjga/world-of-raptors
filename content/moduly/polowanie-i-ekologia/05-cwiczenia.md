@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Ile ataków drapieżnika kończy się zdobyczą? Najlepiej policzyć to samej, w terenie. Najpierw quiz, który zalicza moduł (próg 80%), potem dopasowanie strategii łowieckich do gatunków, rozbiór sowich wypluwek, dziennik polowań z kilku wyjść i notowanie karmień na kamerze przy gnieździe.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Ptak trzepocze skrzydłami w miejscu nad łąką, z nieruchomą głową, a potem opada etapami w trawę. Jaka to strategia i kto tak poluje najczęściej?

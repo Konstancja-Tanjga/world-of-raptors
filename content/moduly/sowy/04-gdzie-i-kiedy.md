@@ -1,5 +1,7 @@
 # Lekcja 4: Gdzie i kiedy słuchać
 
+Nie każda sowa odzywa się w środku nocy: sóweczka woła o zmierzchu i świcie, a uszatkę błotną spotkasz za dnia. Poznasz kalendarz głosów, miejsca w Polsce i na południu Hiszpanii, rzadkie sowy północy i zasady nasłuchu, które nie szkodzą ptakom.
+
 ## Kalendarz głosów
 
 | Gatunek | Najlepsze miesiące | Pora |

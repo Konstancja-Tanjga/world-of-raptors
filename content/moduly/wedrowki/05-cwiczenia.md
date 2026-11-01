@@ -1,5 +1,7 @@
 # Lekcja 5: Ćwiczenia i projekt
 
+Deszcz od rana, bezchmurny upał czy cumulusy przy wietrze z północy: w który z tych dni nad Bosforem przeleci najwięcej ptaków? Najpierw quiz, który zalicza moduł, potem mapa szlaków, prognoza przelotu i zagadka zimowego myszołowa, a na koniec projekt: dzień liczenia przelotu w terenie albo analiza wieloletnich liczeń z domu.
+
 ## 1. Quiz (próg zaliczenia: 80%)
 
 1. Główną przyczyną jesiennej wędrówki ptaków drapieżnych jest:
