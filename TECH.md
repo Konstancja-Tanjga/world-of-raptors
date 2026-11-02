@@ -157,7 +157,7 @@ npm test         # testy migracji zapisu, kopii zapasowej i odznak (node --test,
 
 ## Deploy
 1. Na vercel.com: *Add New → Project → Import* repozytorium `world-of-raptors`. Vercel sam wykryje Next.js.
-2. Każdy push na `main` publikuje wersję produkcyjną, a każda inna gałąź dostaje własny adres podglądu.
+2. Każdy push na `main` publikuje wersję produkcyjną. Inne gałęzie nie są budowane: `ignoreCommand` w `vercel.json` pomija każdy build spoza `main`, bo każde wdrożenie podglądowe zajmuje ok. 100 MB z limitu 10 GB „Deployment Storage” na darmowym planie. Żeby znowu mieć podglądy PR-ów, usuń `ignoreCommand` z `vercel.json`.
 3. Aktualizacja design systemu: zmień hash commita przy `@bighat/ui` w `package.json` i uruchom `npm install`.
 
 ### Wyszukiwarki
