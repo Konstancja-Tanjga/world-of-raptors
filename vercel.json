@@ -1,7 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]",
-  "regions": [
-    "fra1"
+  "regions": ["fra1"],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "world-of-raptors.vercel.app" }],
+      "destination": "https://www.worldofraptors.com/:path*",
+      "permanent": true
+    }
   ]
 }

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { linkDoMiejsca, mailZgloszenia, sprawdzZgloszenie, wynikLicznika, wyslijZgloszenie, type UslugiZgloszen, type Zgloszenie } from './zgloszenie';
 
-const ORIGIN = 'https://world-of-raptors.vercel.app';
+const ORIGIN = 'https://www.worldofraptors.com';
 const KIEDY = new Date('2026-11-01T10:00:00Z');
 
 const poprawne = {

@@ -36,12 +36,12 @@ Fiszki są potrzebne, bo pierścień „rozpoznaję” i złote gwiazdy liczą s
 2. Google Cloud Console:
    - ekran zgody OAuth: typ External, zakresy `openid`, `email`, `profile`, nazwa „World of Raptors”, link do polityki prywatności,
    - klient OAuth typu Web:
-     - Authorized JavaScript origins: `http://localhost`, `http://localhost:3000`, `https://world-of-raptors.vercel.app` (i adres podglądu z Vercela, jeśli logowanie ma tam działać),
+     - Authorized JavaScript origins: `http://localhost`, `http://localhost:3000`, `https://www.worldofraptors.com`, `https://worldofraptors.com` (i adres podglądu z Vercela, jeśli logowanie ma tam działać),
      - Authorized redirect URI: `https://<project-ref>.supabase.co/auth/v1/callback`,
    - po testach ekran zgody na „In production”, bo logować się mogą też inne osoby.
 3. Supabase → Authentication:
    - Sign In / Providers → Google: Client ID i Client Secret,
-   - URL Configuration: Site URL `https://world-of-raptors.vercel.app`; Redirect URLs: produkcja, `http://localhost:3000/**` i wzorzec adresów podglądu z Vercela,
+   - URL Configuration: Site URL `https://www.worldofraptors.com`; Redirect URLs: produkcja, `http://localhost:3000/**` i wzorzec adresów podglądu z Vercela,
    - Sign In / Providers → Email: wyłączyć, żeby konta powstawały tylko przez Google.
 4. Supabase → SQL Editor: uruchomić po kolei migracje z `supabase/migrations/` (albo `npx supabase db push` po `npx supabase link`).
 5. Vercel → zmienne środowiskowe dla Production i Preview: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`, `NEXT_PUBLIC_ACCOUNTS_ENABLED` (na produkcji `false`). `SUPABASE_SECRET_KEY` dopiero w fazie 5.
