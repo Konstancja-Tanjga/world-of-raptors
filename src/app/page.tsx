@@ -182,7 +182,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
         gatunki={gatunki.map((x) => ({
           id: x.id,
           pl: x.pl,
-          sylwetka: <Sylwetka id={x.id} klasa="kolekcja__sylwetka" dokladnosc={0.45} />,
+          sylwetka: <Sylwetka id={x.id} klasa="kolekcja__sylwetka" dokladnosc={1} />,
         }))}
       />
     </div>

@@ -419,10 +419,15 @@ export function gwiazdy(punkty: P[], ile = 12): { gwiazdy: P[]; proporcja: numbe
   return { gwiazdy: najlepsze.map(([px, py]): P => [(px - x) / w, (py - y) / h]), proporcja: h / w };
 }
 
-/** An SVG path for an outline; `tolerancja` > 0 simplifies it first (static drawings). */
+/**
+ * An SVG path for an outline; `tolerancja` > 0 simplifies it first (static
+ * drawings). From a tolerance of one unit up (small icons) the points are
+ * whole units too, which keeps many of them on one page light.
+ */
 export function sciezka(punkty: P[], tolerancja = 0): string {
   const pkt = tolerancja > 0 ? uprosc(punkty, tolerancja) : punkty;
-  const f = (n: number) => (Math.round(n * 10) / 10).toString();
+  const k = tolerancja >= 1 ? 1 : 10;
+  const f = (n: number) => (Math.round(n * k) / k).toString();
   return `M${pkt.map(([x, y]) => `${f(x)} ${f(y)}`).join('L')}Z`;
 }
 
