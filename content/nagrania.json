@@ -83,18 +83,20 @@
   },
   "puszczyk-uralski/samiec": {
     "gatunek": "puszczyk-uralski",
-    "opis": "Samce: głos terytorialny",
-    "src": "https://upload.wikimedia.org/wikipedia/commons/8/89/Strix_uralensis_-_Ural_Owl_XC108372.mp3",
-    "autor": "Alexander Kurthy",
+    "opis": "Samiec: głos terytorialny, Słowacja, marzec 2025",
+    "src": "/nagrania/strix-uralensis-xc1055364.mp3",
+    "autor": "Alexander Kürthy",
     "licencja": "CC BY-SA 4.0",
-    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "strona": "https://commons.wikimedia.org/wiki/File:Strix_uralensis_-_Ural_Owl_XC108372.mp3",
-    "xc": 108372,
-    "sekundy": 11,
-    "zatwierdzone": false,
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/1055364",
+    "xc": 1055364,
+    "ocena": "C",
+    "sekundy": 24,
+    "zatwierdzone": true,
+    "fiszka": true,
     "sonogram": {
       "khz": 2,
-      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/8/89/Strix_uralensis_-_Ural_Owl_XC108372.mp3"
+      "zrodlo": "/nagrania/strix-uralensis-xc1055364.mp3"
     }
   },
   "puszczyk-mszarny/samiec": {
@@ -205,18 +207,19 @@
   },
   "syczek/samiec": {
     "gatunek": "syczek",
-    "opis": "Samiec: głos terytorialny",
-    "src": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Otus_scops_-_Eurasian_Scops_Owl_XC554663.mp3",
-    "autor": "GESHORS Yann",
-    "licencja": "CC BY-SA 4.0",
-    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "strona": "https://commons.wikimedia.org/wiki/File:Otus_scops_-_Eurasian_Scops_Owl_XC554663.mp3",
-    "xc": 554663,
-    "sekundy": 11,
-    "zatwierdzone": false,
+    "opis": "Samiec: głos terytorialny, Ardèche (Francja), sierpień 2025",
+    "src": "/nagrania/otus-scops-xc1059343.mp3",
+    "autor": "Lionel Triboulin",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/1059343",
+    "xc": 1059343,
+    "ocena": "A",
+    "sekundy": 14,
+    "zatwierdzone": true,
     "sonogram": {
       "khz": 4,
-      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Otus_scops_-_Eurasian_Scops_Owl_XC554663.mp3"
+      "zrodlo": "/nagrania/otus-scops-xc1059343.mp3"
     }
   },
   "wlochatka/samiec": {
@@ -444,18 +447,20 @@
   },
   "biegus-rdzawy/lot": {
     "gatunek": "biegus-rdzawy",
-    "opis": "Głos w locie nocą, Olandia (Szwecja), maj 2024",
-    "src": "/nagrania/calidris-canutus-xc903762.mp3",
-    "autor": "Jochem verweij",
-    "licencja": "CC BY-SA 4.0",
-    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "strona": "https://xeno-canto.org/903762",
-    "xc": 903762,
-    "sekundy": 7,
-    "zatwierdzone": false,
+    "opis": "Głos w locie nocą, Normandia (Francja), marzec 2026",
+    "src": "/nagrania/calidris-canutus-xc1088498.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/1088498",
+    "xc": 1088498,
+    "ocena": "B",
+    "sekundy": 13,
+    "zatwierdzone": true,
+    "fiszka": true,
     "sonogram": {
       "khz": 8,
-      "zrodlo": "/nagrania/calidris-canutus-xc903762.mp3"
+      "zrodlo": "/nagrania/calidris-canutus-xc1088498.mp3"
     }
   },
   "piaskowiec/lot": {
@@ -565,19 +570,20 @@
   },
   "leczak/glos": {
     "gatunek": "leczak",
-    "opis": "Głos, Szwajcaria, lipiec 2019",
-    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tringa_glareola_-_Wood_Sandpiper_XC487833.mp3",
-    "autor": "Pascal Christe",
-    "licencja": "CC BY-SA 4.0",
-    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "strona": "https://commons.wikimedia.org/wiki/File:Tringa_glareola_-_Wood_Sandpiper_XC487833.mp3",
-    "xc": 487833,
+    "opis": "Głos, Normandia (Francja), maj 2023",
+    "src": "/nagrania/tringa-glareola-xc816813.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/816813",
+    "xc": 816813,
     "ocena": "B",
-    "sekundy": 13,
-    "zatwierdzone": false,
+    "sekundy": 11,
+    "zatwierdzone": true,
+    "fiszka": true,
     "sonogram": {
       "khz": 8,
-      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tringa_glareola_-_Wood_Sandpiper_XC487833.mp3"
+      "zrodlo": "/nagrania/tringa-glareola-xc816813.mp3"
     }
   },
   "brodziec-piskliwy/lot": {
@@ -618,18 +624,20 @@
   },
   "rycyk/tok": {
     "gatunek": "rycyk",
-    "opis": "Głos tokowy, Terschelling (Holandia), kwiecień 2019",
-    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Limosa_limosa_-_Black-tailed_Godwit_XC466468.mp3",
-    "autor": "Pascal Christe",
+    "opis": "Głos tokowy, Olandia (Szwecja), maj 2024",
+    "src": "/nagrania/limosa-limosa-xc900596.mp3",
+    "autor": "Jochem verweij",
     "licencja": "CC BY-SA 4.0",
-    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "strona": "https://commons.wikimedia.org/wiki/File:Limosa_limosa_-_Black-tailed_Godwit_XC466468.mp3",
-    "xc": 466468,
-    "sekundy": 24,
-    "zatwierdzone": false,
+    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "strona": "https://xeno-canto.org/900596",
+    "xc": 900596,
+    "ocena": "B",
+    "sekundy": 26,
+    "zatwierdzone": true,
+    "fiszka": true,
     "sonogram": {
       "khz": 8,
-      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Limosa_limosa_-_Black-tailed_Godwit_XC466468.mp3"
+      "zrodlo": "/nagrania/limosa-limosa-xc900596.mp3"
     }
   },
   "kulik-wielki/glos": {
@@ -651,18 +659,20 @@
   },
   "kulik-mniejszy/lot": {
     "gatunek": "kulik-mniejszy",
-    "opis": "Głos w locie nocą, Asturia (Hiszpania), kwiecień 2020",
-    "src": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Numenius_phaeopus_-_Whimbrel_XC551246.mp3",
-    "autor": "Luis Alvarez Menendez",
-    "licencja": "CC BY-SA 4.0",
-    "licencjaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "strona": "https://commons.wikimedia.org/wiki/File:Numenius_phaeopus_-_Whimbrel_XC551246.mp3",
-    "xc": 551246,
-    "sekundy": 25,
-    "zatwierdzone": false,
+    "opis": "Głos w locie nocą, Normandia (Francja), kwiecień 2022",
+    "src": "/nagrania/numenius-phaeopus-xc730483.mp3",
+    "autor": "Sonothèque ADVL",
+    "licencja": "CC0 1.0",
+    "licencjaUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "strona": "https://xeno-canto.org/730483",
+    "xc": 730483,
+    "ocena": "B",
+    "sekundy": 5,
+    "zatwierdzone": true,
+    "fiszka": true,
     "sonogram": {
       "khz": 8,
-      "zrodlo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Numenius_phaeopus_-_Whimbrel_XC551246.mp3"
+      "zrodlo": "/nagrania/numenius-phaeopus-xc730483.mp3"
     }
   },
   "kszyk/lot": {
