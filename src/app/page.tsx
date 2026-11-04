@@ -25,7 +25,7 @@ import {
 } from '@/lib/content';
 import { CIASTKO_PORY, jakoPora, poraDnia, type PoraDnia } from '@/lib/niebo';
 import { odmiana } from '@/lib/odmiana';
-import { ADRES, AUTORKA } from '@/lib/seo';
+import { ADRES, AUTORKA, OPEN_GRAPH } from '@/lib/seo';
 
 // Rendered per request: the species of the day must change at midnight, the
 // sky follows the sun (or the time of day I chose, kept in a cookie), and a
@@ -35,10 +35,11 @@ import { ADRES, AUTORKA } from '@/lib/seo';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  // My name in the title too: people who search for it should find the course.
-  title: { absolute: 'World of Raptors, kurs o ptakach drapieżnych. Autorka: Konstancja Tanjga-Nawrot' },
+  // The two names people search for, within the 60 characters a result shows; the subject is in the description.
+  title: { absolute: 'World of Raptors, Konstancja Tanjga-Nawrot' },
   // `?pora=` only changes the sky.
   alternates: { canonical: '/' },
+  openGraph: { ...OPEN_GRAPH, url: '/' },
 };
 
 /** The site's name for search results, which Google reads from the home page only, and its author. */

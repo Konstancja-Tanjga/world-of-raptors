@@ -8,7 +8,7 @@ import { ToastProvider } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
 import { czytajMarkdown, gotoweModuly, progQuizu, strukturaNieba } from '@/lib/content';
 import { ZNAK } from '@/lib/rysunki';
-import { ADRES } from '@/lib/seo';
+import { ADRES, OPEN_GRAPH, X } from '@/lib/seo';
 
 // Titles: an antiqua drawn for Polish, its diacritics designed in from the start.
 const poltawski = Poltawski_Nowy({
@@ -32,11 +32,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(ADRES),
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
   description:
-    'Kurs o drapieżnikach dziennych i nocnych: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Pomysł, plan i treść: Konstancja Tanjga-Nawrot. Projekt, ruch i kod: razem z Claude (Anthropic).',
+    // At most 160 characters, which is what a search result or a link preview shows.
+    'Kurs o ptakach drapieżnych: jak je rozpoznać w terenie, od Polski po Cieśninę Gibraltarską. Pomysł i treść: Konstancja Tanjga-Nawrot; projekt i kod z Claude.',
   authors: [{ name: 'Konstancja Tanjga-Nawrot' }],
   creator: 'Konstancja Tanjga-Nawrot',
-  openGraph: { type: 'website', locale: 'pl_PL', siteName: 'World of Raptors' },
-  twitter: { card: 'summary_large_image' },
+  openGraph: OPEN_GRAPH,
+  twitter: { card: 'summary_large_image', site: X, creator: X },
 };
 
 export const viewport: Viewport = {
