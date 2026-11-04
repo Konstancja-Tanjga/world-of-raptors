@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useToast } from '../ds';
 import { NASZYWKI, rozbierzKlucz, type StrukturaNieba } from '@/lib/odznaki';
 import { useStanNieba, zapiszNowe } from '@/lib/zdobyte';
@@ -29,7 +29,7 @@ function tytul(klucz: string, struktura: StrukturaNieba) {
  * every reload) or warned about (the stores I do change warn on their own).
  * The page keeps it in memory until a reload, which tries again.
  */
-export function StraznikOdznak({ struktura }: { struktura: StrukturaNieba }) {
+function Straznik({ struktura }: { struktura: StrukturaNieba }) {
   const stan = useStanNieba(struktura);
   const { notify } = useToast();
 
@@ -45,4 +45,33 @@ export function StraznikOdznak({ struktura }: { struktura: StrukturaNieba }) {
   }, [stan, struktura, notify]);
 
   return null;
+}
+
+/**
+ * The watcher, once it has what "Moje niebo" counts: the static
+ * /struktura-nieba, fetched after the page rather than carried in every
+ * page's HTML. If it cannot be fetched, the page goes on without the
+ * watcher, as when its chunk cannot load (AppFrame.tsx).
+ */
+export function StraznikOdznak() {
+  const [struktura, setStruktura] = useState<StrukturaNieba | null>(null);
+
+  useEffect(() => {
+    let aktualne = true;
+    fetch('/struktura-nieba')
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json() as Promise<StrukturaNieba>;
+      })
+      .then(
+        (s) => aktualne && setStruktura(s),
+        (err: unknown) =>
+          console.error('[StraznikOdznak] could not fetch /struktura-nieba; nothing newly earned is recorded or announced on this visit', err),
+      );
+    return () => {
+      aktualne = false;
+    };
+  }, []);
+
+  return struktura && <Straznik struktura={struktura} />;
 }

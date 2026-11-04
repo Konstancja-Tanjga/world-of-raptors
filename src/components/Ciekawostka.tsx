@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useId, useState, type ReactNode } from 'react';
+import { ciekawostkiDla, type MiejsceCiekawostki } from '@/lib/ciekawostki';
 import type { CiekawostkaDoPokazania } from '@/lib/types';
 import { Button, StateBlock } from './ds';
 
@@ -66,35 +67,57 @@ function inline(tekst: string): ReactNode[] {
   return czesci;
 }
 
+/** Every curiosity, fetched once per page load and shared by the cards on it. */
+let wszystkie: Promise<CiekawostkaDoPokazania[]> | null = null;
+
+function pobierz() {
+  wszystkie ??= fetch('/ciekawostki').then((r) => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json() as Promise<CiekawostkaDoPokazania[]>;
+  });
+  // A failed fetch is not kept, so the next card (or page) tries again.
+  wszystkie.catch(() => (wszystkie = null));
+  return wszystkie;
+}
+
 /**
  * A rotating "did you know" card. Chosen in the browser after mount: the
  * pages are static, so a server-side pick would be frozen at build time.
+ * The set comes from the static /ciekawostki, so it is not in every page's
+ * HTML; the card ranks it for its place (a species, a module, a lesson).
  *
  * Not a Big Hat Card, so the one-action rule does not apply: a passage set
  * large between two hairlines, with the way to the lesson it comes from and a
  * button for another one.
  */
-export function Ciekawostka({
-  preferowane,
-  pozostale,
-}: {
-  preferowane: CiekawostkaDoPokazania[];
-  pozostale: CiekawostkaDoPokazania[];
-}) {
+export function Ciekawostka({ modul, lekcja, gatunek }: MiejsceCiekawostki) {
+  const [zestaw, setZestaw] = useState<ReturnType<typeof ciekawostkiDla> | null>(null);
   const [biezaca, setBiezaca] = useState<CiekawostkaDoPokazania | null>(null);
+  const [blad, setBlad] = useState(false);
   const tytulId = useId();
 
   useEffect(() => {
-    const c = wybierz(preferowane, pozostale);
-    if (c) zapamietaj(c.id);
-    // Picking needs localStorage and randomness, so it can only happen after mount.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setBiezaca(c);
-  }, [preferowane, pozostale]);
+    let aktualne = true;
+    pobierz().then(
+      (lista) => {
+        if (!aktualne) return;
+        const z = ciekawostkiDla(lista, { modul, lekcja, gatunek });
+        // Picking needs localStorage and randomness, so it can only happen after mount.
+        const c = wybierz(z.preferowane, z.pozostale);
+        if (c) zapamietaj(c.id);
+        setZestaw(z);
+        setBiezaca(c);
+      },
+      () => aktualne && setBlad(true),
+    );
+    return () => {
+      aktualne = false;
+    };
+  }, [modul, lekcja, gatunek]);
 
   const nastepna = () => {
-    if (!biezaca) return;
-    const c = wybierz(preferowane, pozostale, biezaca.id);
+    if (!biezaca || !zestaw) return;
+    const c = wybierz(zestaw.preferowane, zestaw.pozostale, biezaca.id);
     if (c) {
       zapamietaj(c.id);
       setBiezaca(c);
@@ -124,6 +147,8 @@ export function Ciekawostka({
             </Button>
           </div>
         </>
+      ) : blad ? (
+        <StateBlock state="error" title="Nie udało się wczytać ciekawostki" description="Spróbuj odświeżyć stronę." scope="inline" />
       ) : (
         // Chosen after mount (see above); the block keeps its place meanwhile.
         <StateBlock state="loading" title="Wczytywanie ciekawostki" scope="inline" />

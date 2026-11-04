@@ -2,8 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
-import { useEffect, ViewTransition, type ReactNode } from 'react';
-import type { StrukturaNieba } from '@/lib/odznaki';
+import { createContext, use, useEffect, ViewTransition, type ReactNode } from 'react';
 import { useOstatniaLekcja } from '@/lib/ostatnia';
 import { odpornoscNaTlumacza } from '@/lib/odpornoscNaTlumacza';
 import { CichaGranica } from './CichaGranica';
@@ -58,6 +57,13 @@ const ZglosPoprawke = dynamic(
 export type LekcjaNawigacji = { slug: string; tytul: string; progQuizu: number | null };
 export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: LekcjaNawigacji[] };
 
+const Konspekt = createContext<ModulNawigacji[]>([]);
+
+/** The course's ready modules and lessons, which the frame already has, so a page need not send them again. */
+export function useKonspekt() {
+  return use(Konspekt);
+}
+
 /**
  * The frame around every page: the global navigation, the module bar on
  * module and lesson pages (the module's lessons with their state), the
@@ -74,13 +80,10 @@ export type ModulNawigacji = { slug: string; id: string; tytul: string; lekcje: 
 export function AppFrame({
   moduly,
   znak,
-  struktura,
   children,
 }: {
   moduly: ModulNawigacji[];
   znak: ReactNode;
-  /** What "Moje niebo" counts, for the watcher that records and announces what is newly earned. */
-  struktura: StrukturaNieba;
   children: ReactNode;
 }) {
   const pathname = usePathname();
@@ -95,7 +98,7 @@ export function AppFrame({
   }, [biezacy, lekcja, zapamietaj]);
 
   return (
-    <>
+    <Konspekt value={moduly}>
       <SkipLink>Przejdź do treści</SkipLink>
       <Nawigacja moduly={moduly} przyklejona={!biezacy} znak={znak} />
       {biezacy && <PasekModulu modul={biezacy} lekcja={lekcja} />}
@@ -117,13 +120,13 @@ export function AppFrame({
         }
       />
       <CichaGranica nazwa="StraznikOdznak">
-        <StraznikOdznak struktura={struktura} />
+        <StraznikOdznak />
       </CichaGranica>
       {KONTA && (
         <CichaGranica nazwa="Synchronizacja">
           <Synchronizacja />
         </CichaGranica>
       )}
-    </>
+    </Konspekt>
   );
 }

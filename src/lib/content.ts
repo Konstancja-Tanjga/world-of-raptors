@@ -769,8 +769,7 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   const lekcja = modul?.lekcje.find((l) => l.slug === c.lekcja);
   const numer = modul && lekcja ? modul.lekcje.indexOf(lekcja) + 1 : 0;
   return {
-    id: c.id,
-    tekst: c.tekst,
+    ...c,
     href: lekcja ? `/moduly/${c.modul}/${lekcja.slug}` : `/moduly/${c.modul}`,
     zrodlo: modul
       ? lekcja
@@ -780,20 +779,9 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   };
 }
 
-/**
- * Curiosities for a place in the app, the most relevant first: those about
- * the given species, then from the given module (skipping the current
- * lesson, which already shows its own), then everything else.
- */
-export function ciekawostkiDla({ modul, lekcja, gatunek }: { modul?: string; lekcja?: string; gatunek?: string } = {}) {
-  const pasuje = (c: Ciekawostka) =>
-    (gatunek !== undefined && c.gatunki.includes(gatunek)) || (modul !== undefined && c.modul === modul);
-  // Skip the page's own text: a lesson's callouts, or a module's intro on its overview page.
-  const pula = ciekawostki.filter((c) => !(modul && c.modul === modul && (c.lekcja ?? undefined) === lekcja));
-  return {
-    preferowane: pula.filter(pasuje).map(doPokazania),
-    pozostale: pula.filter((c) => !pasuje(c)).map(doPokazania),
-  };
+/** Every curiosity, ready to render; served whole at /ciekawostki and ranked for each page in the browser (lib/ciekawostki.ts). */
+export function ciekawostkiDoPokazania() {
+  return ciekawostki.map(doPokazania);
 }
 
 /** A species that draws each of the eight silhouette groups (typed by GRUPY_SYLWETEK, so none can be missing). */

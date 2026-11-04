@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useKontynuuj, type KonspektKursu } from '@/lib/kontynuuj';
+import { useKontynuuj } from '@/lib/kontynuuj';
+import { useKonspekt } from '../AppFrame';
 
 /**
  * The opening scene's main action: start the course, pick up where I left
@@ -9,7 +10,8 @@ import { useKontynuuj, type KonspektKursu } from '@/lib/kontynuuj';
  * rendered before the browser copy of progress can be read, so until then it
  * offers the first lesson, which is the right answer for a first visit.
  */
-export function StartKursu({ konspekt }: { konspekt: KonspektKursu }) {
+export function StartKursu() {
+  const konspekt = useKonspekt();
   const dokad = useKontynuuj(konspekt);
   const pierwszy = konspekt[0];
   const poczatek = `/moduly/${pierwszy.slug}/${pierwszy.lekcje[0].slug}`;

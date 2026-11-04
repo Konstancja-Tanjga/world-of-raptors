@@ -10,7 +10,6 @@ import { Markdown, MarkdownInline } from '@/components/Markdown';
 import { PodgladZdjec } from '@/components/PodgladZdjec';
 import { QuizKrokowy } from '@/components/QuizKrokowy';
 import {
-  ciekawostkiDla,
   czytajMarkdown,
   gotoweModuly,
   przygotujStroneLekcji,
@@ -136,7 +135,7 @@ export default async function LekcjaPage({ params }: PageProps<'/moduly/[slug]/[
           quiz={strona.quiz && <QuizKrokowy quiz={strona.quiz} modul={slug} lekcja={lekcja} />}
         />
         <LessonMedia ids={strona.wszystkie} juzPokazane={strona.wNaglowkach} />
-        <Ciekawostka {...ciekawostkiDla({ modul: slug, lekcja })} />
+        <Ciekawostka modul={slug} lekcja={lekcja} />
       </Article>
       <PodgladZdjec />
     </div>
