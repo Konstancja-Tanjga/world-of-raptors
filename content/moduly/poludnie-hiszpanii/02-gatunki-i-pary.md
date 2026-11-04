@@ -64,7 +64,7 @@ Pełna karta: [moduł o cieśninie, sekcja F](../gibraltar/03-gatunki-i-pary.md)
 
 Status: osiadły, rzadki.
 
-- **Rozpiętość:** ok. 265–285 cm
+- **Rozpiętość:** ok. 240–285 cm
 - **Sylwetka:** jak **ogromny sokół**: długie, wąskie, spiczaste skrzydła i długi **klinowaty (rombowy) ogon**. Tej sylwetki nie da się pomylić z żadnym innym dużym ptakiem.
 - **Dorosły:** ciemnoszary wierzch, **rdzawopomarańczowy spód**. Ten kolor nie jest wrodzony: ptak kąpie się w błocie bogatym w żelazo. Na twarzy czarna „broda”.
 - **Młody:** ciemnobrązowy, ale z tą samą sylwetką.

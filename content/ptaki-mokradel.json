@@ -267,7 +267,7 @@
         },
         "mylona_z": ["biegus-zmienny", "biegus-malutki"],
         "dlugosc_cm": [20, 21],
-        "rozpietosc_cm": [40, 45],
+        "rozpietosc_cm": [35, 40],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
       }
     },
@@ -352,7 +352,7 @@
         },
         "mylona_z": ["brodziec-plawny", "brodziec-sniady"],
         "dlugosc_cm": [30, 34],
-        "rozpietosc_cm": [55, 62],
+        "rozpietosc_cm": [68, 70],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
       }
     },
@@ -575,8 +575,8 @@
           "glos": "Miękkie, płynne „czirrip”, łagodniejsze od chrapliwego „trrii” biegusa zmiennego."
         },
         "mylona_z": ["biegus-zmienny", "biegus-rdzawy"],
-        "dlugosc_cm": [18, 19],
-        "rozpietosc_cm": [42, 46],
+        "dlugosc_cm": [18, 23],
+        "rozpietosc_cm": [38, 46],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"]
       }
     },
