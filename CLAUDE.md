@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-World of Raptors is a personal online course about birds of prey (biology and field identification, focused on Poland, southern Spain and the Strait of Gibraltar). The owner writes and reads in Polish: all course content and UI copy are Polish; code, comments and commit messages are English; PR descriptions are Polish. Deployed on Vercel from `main` (https://world-of-raptors.vercel.app). Human-facing docs: `README.md`, `TECH.md` (Polish, how to add content), `content/PLAN-KURSU.md` (course plan), `DS-GAPS.md` (design-system gaps).
+World of Raptors is a personal online course about birds of prey (biology and field identification, focused on Poland, southern Spain and the Strait of Gibraltar). The owner writes and reads in Polish: all course content and UI copy are Polish; code, comments and commit messages are English; PR descriptions are Polish. Deployed on Vercel from `main` (https://www.worldofraptors.com; `worldofraptors.com` and the old `world-of-raptors.vercel.app` redirect there). Human-facing docs: `README.md`, `TECH.md` (Polish, how to add content), `content/PLAN-KURSU.md` (course plan), `DS-GAPS.md` (design-system gaps).
 
 ## Commands
 

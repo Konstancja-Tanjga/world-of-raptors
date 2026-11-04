@@ -6,7 +6,7 @@ import { odkoduj } from './tagi';
  */
 
 /** The production origin: `metadataBase`, the sitemap and robots.txt, and structured data all use it. */
-export const ADRES = 'https://world-of-raptors.vercel.app';
+export const ADRES = 'https://www.worldofraptors.com';
 
 /** My handle on X, for the link previews X draws. */
 export const X = '@KTanjga';
