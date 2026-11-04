@@ -209,8 +209,8 @@ export type Ciekawostka = {
   gatunki: string[];
 };
 
-/** A curiosity ready to render: where to read more about it. */
-export type CiekawostkaDoPokazania = { id: string; tekst: string; href: string; zrodlo: string };
+/** A curiosity ready to render: where to read more about it, and what it is about (to rank it for a page). */
+export type CiekawostkaDoPokazania = Ciekawostka & { href: string; zrodlo: string };
 
 /** One quiz question; `poprawna` is the index into `odpowiedzi`. */
 export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: number };

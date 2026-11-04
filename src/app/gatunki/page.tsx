@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './atlas.css';
 import { AtlasView } from '@/components/AtlasView';
 import { Ciekawostka } from '@/components/Ciekawostka';
-import { ciekawostkiDla, gatunki, ptakiMokradel, ptakiNaLiscie, zdjecia } from '@/lib/content';
+import { gatunki, ptakiMokradel, ptakiNaLiscie, zdjecia } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function GatunkiPage() {
         )}
       />
       <div className="atlas__ciekawostka">
-        <Ciekawostka {...ciekawostkiDla()} />
+        <Ciekawostka />
       </div>
     </div>
   );

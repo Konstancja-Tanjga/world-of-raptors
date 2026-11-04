@@ -17,7 +17,6 @@ import { CECHY_DZIENNE, CECHY_NOCNE } from '@/components/SpeciesCues';
 import { ObraczkiGatunku } from '@/components/niebo/ObraczkiGatunku';
 import { SpeciesObservation } from '@/components/SpeciesObservation';
 import {
-  ciekawostkiDla,
   modulyGatunku,
   modulyPtakaMokradel,
   nagranieGatunku,
@@ -276,7 +275,7 @@ export default async function GatunekPage({ params }: PageProps<'/gatunki/[id]'>
         </section>
 
         <div className="gatunek__ciekawostka">
-          <Ciekawostka {...ciekawostkiDla({ gatunek: g.id })} />
+          <Ciekawostka gatunek={g.id} />
         </div>
 
         <section className="gatunek__rozdzial" aria-labelledby="wiecej">

@@ -90,8 +90,8 @@ export function MorfGrup({ grupy, children }: { grupy: GrupaSylwetki[]; children
   return (
     <div className="morf" ref={kontener}>
       <div className="morf__scena">
-        <svg className="morf__rysunek" viewBox="-108 -34 216 150" role="img" aria-labelledby={`${nazwa}-opis`}>
-          <title id={`${nazwa}-opis`}>{`Sylwetka od spodu: ${grupa.nazwa.toLowerCase()}`}</title>
+        {/* aria-label, not an SVG <title>: SEO checkers read every <title> on a page as part of its title. */}
+        <svg className="morf__rysunek" viewBox="-108 -34 216 150" role="img" aria-label={`Sylwetka od spodu: ${grupa.nazwa.toLowerCase()}`}>
           <path ref={sladRef} className="morf__slad" />
           <path ref={sciezkaRef} className="morf__ksztalt" d={pierwsza} />
         </svg>

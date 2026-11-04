@@ -6,7 +6,7 @@ import './globals.css';
 import { AppFrame } from '@/components/AppFrame';
 import { ToastProvider } from '@/components/ds';
 import { Sylwetka } from '@/components/Sylwetka';
-import { czytajMarkdown, gotoweModuly, progQuizu, strukturaNieba } from '@/lib/content';
+import { czytajMarkdown, gotoweModuly, progQuizu } from '@/lib/content';
 import { ZNAK } from '@/lib/rysunki';
 import { ADRES, OPEN_GRAPH, X } from '@/lib/seo';
 
@@ -67,7 +67,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="pl" className={`${poltawski.variable} ${newsreader.variable}`}>
       <body className="bh-root">
         <ToastProvider>
-          <AppFrame moduly={await nawigacja} znak={<Sylwetka id={ZNAK} klasa="znak" />} struktura={strukturaNieba()}>
+          <AppFrame moduly={await nawigacja} znak={<Sylwetka id={ZNAK} klasa="znak" />}>
             {children}
           </AppFrame>
         </ToastProvider>
