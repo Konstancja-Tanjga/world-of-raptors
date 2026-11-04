@@ -5,6 +5,6 @@
     { "id": "golab", "pl": "Gołąb miejski", "lat": "Columba livia", "dlugosc_cm": [31, 34], "rozpietosc_cm": [63, 70] },
     { "id": "wrona", "pl": "Wrona siwa", "lat": "Corvus cornix", "dlugosc_cm": [44, 51], "rozpietosc_cm": [84, 100] },
     { "id": "mewa", "pl": "Mewa srebrzysta", "lat": "Larus argentatus", "dlugosc_cm": [54, 60], "rozpietosc_cm": [123, 148] },
-    { "id": "bocian", "pl": "Bocian biały", "lat": "Ciconia ciconia", "dlugosc_cm": [100, 115], "rozpietosc_cm": [155, 165] }
+    { "id": "bocian", "pl": "Bocian biały", "lat": "Ciconia ciconia", "dlugosc_cm": [100, 115], "rozpietosc_cm": [155, 215] }
   ]
 }

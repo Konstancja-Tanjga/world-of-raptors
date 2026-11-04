@@ -58,7 +58,7 @@ Kiedy masz już miarkę, opisujesz wielkość jednym z pięciu zwrotów. Liczby 
 | Zwrot | Gatunki | Długość |
 |---|---|---|
 | **wyraźnie mniejszy od biegusa zmiennego** | biegus malutki, biegus mały, sieweczka rzeczna, sieweczka morska | ok. 12–17 cm |
-| **jak biegus zmienny** | sieweczka obrożna, biegus krzywodzioby, brodziec piskliwy, łęczak, piaskowiec, płatkonóg, bekasik | ok. 17–21 cm |
+| **jak biegus zmienny** | sieweczka obrożna, biegus krzywodzioby, brodziec piskliwy, łęczak, piaskowiec, płatkonóg, bekasik | ok. 17–23 cm |
 | **między biegusem zmiennym a krwawodziobem** | samotnik, kamusznik, brodziec pławny, biegus rdzawy, samica batalionu | ok. 20–26 cm |
 | **jak krwawodziób** | kszyk, żwirowiec, siewka złota | ok. 24–29 cm |
 | **wyraźnie większy od krwawodzioba** | siewnica, czajka, brodziec śniady, kwokacz, samiec batalionu, szczudłak, słonka, a dalej rycyk, szlamnik, kuliki, ostrygojad, szablodziób, kulon | od ok. 27 cm do 60 cm |

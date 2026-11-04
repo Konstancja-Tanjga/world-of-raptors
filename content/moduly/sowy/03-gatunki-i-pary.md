@@ -12,7 +12,7 @@ Rozpiętości skrzydeł są orientacyjne. Opisy głosów to tylko przybliżenia,
 
 Występowanie: Polska, południe Hiszpanii.
 
-- **Rozpiętość:** ok. 155–190 cm (największa sowa Europy)
+- **Rozpiętość:** ok. 138–170 cm (największa sowa Europy)
 - **Klucz:** ogromny, z **długimi „uszami”**, **pomarańczowe oczy**, rdzawobrązowy.
 - **Głos:** bardzo niskie, dwusylabowe **„uu-hu”**, słyszalne z daleka; tokuje od zimy do wczesnej wiosny.
 - **Gdzie:** skały, wąwozy, kamieniołomy, stare lasy. W Hiszpanii dość częsty w sierras, w Polsce nieliczny.
@@ -24,7 +24,7 @@ Występowanie: Polska, południe Hiszpanii.
 
 Występowanie: Polska.
 
-- **Rozpiętość:** ok. 125–135 cm
+- **Rozpiętość:** ok. 110–134 cm
 - **Klucz:** duży, **jasnoszary**, okrągła głowa bez „uszu”, **małe ciemne oczy** w gładkiej szarej szlarze, **długi ogon**.
 - **Głos:** głębokie **„wuhu… wuhu-wuhu”**.
 - **Uwaga:** przy gnieździe potrafi zaatakować człowieka, więc trzymaj się z daleka.

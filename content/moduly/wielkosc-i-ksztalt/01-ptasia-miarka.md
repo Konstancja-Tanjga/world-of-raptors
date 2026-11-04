@@ -27,7 +27,7 @@ Ptasia miarka to kilka pospolitych gatunków, które widujesz codziennie. Każdy
 | **Gołąb miejski** | ok. 31–34 cm | ok. 63–70 cm | pustułka, kobuz, drzemlik, krogulec (samiec), kaniuk |
 | **Wrona** | ok. 44–51 cm | ok. 84–100 cm | sokół wędrowny, jastrząb (samiec), błotniaki są nieco większe |
 | **Mewa srebrzysta** | ok. 54–60 cm | ok. 123–148 cm | myszołów, trzmielojad, orlik krzykliwy, kanie, rybołów |
-| **Bocian biały** | ok. 100–115 cm | ok. 155–165 cm | gadożer, orlik grubodzioby; bielik, orzeł przedni i sępy są **większe od bociana** |
+| **Bocian biały** | ok. 100–115 cm | ok. 155–215 cm | gadożer, orlik grubodzioby; bielik, orzeł przedni i sępy są **większe od bociana** |
 
 Wrona siwa w Polsce i czarnowron w Hiszpanii to dla miarki ten sam stopień: mają podobne wymiary. Wymiary są orientacyjne, za *Collins Bird Guide*.
 
