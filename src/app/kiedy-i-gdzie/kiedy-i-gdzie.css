@@ -164,3 +164,42 @@
 .kiedy-i-gdzie__sekcja + .kiedy-i-gdzie__sekcja {
   margin-top: var(--wor-space-block);
 }
+
+/* "Co tu zobaczę": the weather's notes, then the birds, one short entry each. */
+.co-tu__warunki {
+  margin: 0;
+  padding-inline-start: var(--bh-gap-loose);
+  display: grid;
+  gap: var(--bh-gap-tight);
+  max-width: 44rem;
+}
+.co-tu__opcje {
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.co-tu__opcje p {
+  margin: 0;
+}
+.co-tu__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--bh-gap-normal) var(--bh-gap-loose);
+}
+.co-tu__ptak {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-gap-tight);
+  padding-block-end: var(--bh-gap-normal);
+  border-bottom: 1px solid var(--wor-linia);
+}
+.co-tu__nazwa,
+.co-tu__ostatnio {
+  margin: 0;
+}
+.co-tu__ostatnio {
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-caption);
+}

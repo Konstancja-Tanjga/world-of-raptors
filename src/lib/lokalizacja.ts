@@ -1,6 +1,8 @@
 /**
- * The phone's position, once, for "Gdzie stanąć", "Moje miejsca" and the
- * checklist's place field. It never leaves the browser.
+ * The phone's position, once, for "Gdzie stanąć", "Moje miejsca", the
+ * checklist's place field and "Co tu zobaczę". Only "Co tu zobaczę" sends it
+ * anywhere: rounded to about a kilometre, to the course's /podpowiedzi route,
+ * eBird and Open-Meteo, as its section says; the others keep it in the browser.
  *
  * The browser's own timeout starts only once access is allowed, and a prompt
  * closed without an answer calls neither callback, so a watchdog gives up
