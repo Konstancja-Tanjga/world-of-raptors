@@ -698,6 +698,35 @@
       ]
     },
     {
+      "id": "B11",
+      "slug": "rewiry",
+      "sciezka": "b",
+      "tytul": "Rewiry, toki i gniazda",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-rewir-zamiast-ptaka",
+          "tytul": "Rewir zamiast ptaka"
+        },
+        {
+          "slug": "02-dzien-na-punkcie",
+          "tytul": "Dzień na punkcie widokowym"
+        },
+        {
+          "slug": "03-gniazda-z-daleka",
+          "tytul": "Gniazda: czytać z daleka, nie płoszyć"
+        },
+        {
+          "slug": "04-sowy-ze-sluchu",
+          "tytul": "Noc ze słuchu: jak liczy się sowy"
+        },
+        {
+          "slug": "05-cwiczenia",
+          "tytul": "Sezon na próbę"
+        }
+      ]
+    },
+    {
       "id": "P",
       "slug": "projekt-koncowy",
       "sciezka": "b",

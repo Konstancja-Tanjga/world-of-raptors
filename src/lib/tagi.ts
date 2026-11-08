@@ -42,7 +42,8 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * several lines would escape these checks); a gallery with anything but one
  * to six photos inside; a `<glos>` not written as a block or naming a
  * recording `idNagran` does not have; a `<model-3d>` not written as a block
- * or naming a scene sceny.ts does not have.
+ * or naming a scene sceny.ts does not have; a `<karta-rewirow>` not written
+ * as a block.
  */
 export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
@@ -96,6 +97,15 @@ export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<st
       bledy.push(`${gdzie(i)}: zapisz model jako <model-3d data-scena="…"> w osobnej linii, a </model-3d> w następnej`);
     } else if (!SCENY[id]) {
       bledy.push(`${gdzie(i)}: sceny „${id}” nie ma w src/lib/budowa/sceny.ts`);
+    }
+  }
+
+  // B11's sheet: the session is checked where it renders (sesjaKarty in content.ts), the block form here.
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    if (!/<karta-rewirow\b/i.test(t)) continue;
+    if (!/^<karta-rewirow data-sesja="[a-z0-9-]+">$/.test(t) || linie[i + 1]?.trim() !== '</karta-rewirow>') {
+      bledy.push(`${gdzie(i)}: zapisz kartę jako <karta-rewirow data-sesja="…"> w osobnej linii, a </karta-rewirow> w następnej`);
     }
   }
 

@@ -1,0 +1,222 @@
+{
+  "uwaga": "Sesje karty rewirów (moduł B11, <karta-rewirow data-sesja=\"…\">). Powierzchnia 10 × 10 km, współrzędne w km od lewego górnego rogu. Notatki są wymyślone, ale zachowania i kategorie opierają się na tabelach 5.7 i 6.20 poradnika GIOŚ (Chylarecki i in. 2015, s. 97, 395). kategoria: kod z tabeli 5.7 (T, B, tB, P, F, ON, ONB, ONtB, ONP, ONi, ONe, ONy) albo X, gdy notatka nie wskazuje rewiru; rewir: identyfikator rewiru w kluczu (null dla X). Gatunki: ptaki dzienne z atlasu z sylwetką.",
+  "sesje": {
+    "pomorze": {
+      "tytul": "Sezon na Pojezierzu Pomorskim",
+      "miejsce": "Powierzchnia 10 × 10 km: jezioro, olsy, lasy liściaste i pola; trzy punkty widokowe na bezleśnych wzniesieniach",
+      "opis": "Cztery kontrole od marca do lipca, jak w tabeli 5.8 poradnika, i jedna kontrola toków orlika pod koniec kwietnia. Trzynaście notatek z punktów, w kolejności dat.",
+      "punkty": [
+        { "x": 2, "y": 7 },
+        { "x": 5, "y": 3.2 },
+        { "x": 8, "y": 6.8 }
+      ],
+      "teren": [
+        { "rodzaj": "woda", "x": 1.1, "y": 8.9, "rx": 1.1, "ry": 0.7, "nazwa": "jezioro" },
+        { "rodzaj": "las", "x": 1.6, "y": 9.6, "rx": 1.4, "ry": 0.4 },
+        { "rodzaj": "las", "x": 3.3, "y": 6.1, "rx": 0.7, "ry": 0.5 },
+        { "rodzaj": "mlodnik", "x": 4.4, "y": 7.9, "rx": 0.8, "ry": 0.5 },
+        { "rodzaj": "ols", "x": 5.9, "y": 1.9, "rx": 1.3, "ry": 0.8 },
+        { "rodzaj": "las", "x": 8.7, "y": 5.4, "rx": 1.3, "ry": 1.1 },
+        { "rodzaj": "las", "x": 7.6, "y": 8.9, "rx": 2.3, "ry": 1.1 },
+        { "rodzaj": "las", "x": 1.5, "y": 2.2, "rx": 1.2, "ry": 1 }
+      ],
+      "notatki": [
+        {
+          "id": "1",
+          "gatunek": "bielik",
+          "punkt": 1,
+          "data": "25 marca",
+          "godzina": "9:40",
+          "opis": "Przez lunetę, z ok. 800 m: duże gniazdo na wierzchołku starej sosny nad jeziorem. Na wierzchu świeże, jasne końce gałęzi. W gnieździe leży ptak; widać tylko jasną głowę i żółty dziób.",
+          "x": 1.3,
+          "y": 9.4,
+          "klucz": {
+            "kategoria": "ONi",
+            "rewir": "bielik-1",
+            "wyjasnienie": "Ptak przesiadujący na gnieździe w pozycji wysiadywania to ONi, gniazdowanie pewne. Bieliki składają jaja już od drugiej dekady lutego, więc pod koniec marca wysiadują. Sprawdziłaś to z daleka, lunetą, i nie podchodziłaś: tak każe poradnik."
+          }
+        },
+        {
+          "id": "2",
+          "gatunek": "myszolow",
+          "punkt": 1,
+          "data": "25 marca",
+          "godzina": "10:50",
+          "opis": "Dwa myszołowy krążą razem nad laskiem na wschód od punktu i miauczą. Jeden raz po raz wznosi się i spada falistym lotem obok drugiego, potem oba siadają na skraju lasku.",
+          "x": 3.3,
+          "y": 6.1,
+          "klucz": {
+            "kategoria": "P",
+            "rewir": "myszolow-1",
+            "wyjasnienie": "Dwa ptaki tokujące razem i razem wracające do lasu to para (P), gniazdowanie pewne. Miejsce, w którym siadają po tokach, zwykle leży blisko gniazda."
+          }
+        },
+        {
+          "id": "3",
+          "gatunek": "myszolow",
+          "punkt": 1,
+          "data": "25 marca",
+          "godzina": "10:55",
+          "opis": "W tym samym czasie, gdy para z poprzedniej notatki siedzi na skraju lasku, trzeci myszołów krąży nad młodnikiem 2 km dalej, wznosi się i pikuje, miaucząc.",
+          "x": 4.4,
+          "y": 7.9,
+          "klucz": {
+            "kategoria": "B",
+            "rewir": "myszolow-2",
+            "wyjasnienie": "Pojedynczy ptak z popisem powietrznym to B, gniazdowanie prawdopodobne. To nowy rewir: widziałaś go w tej samej chwili co parę z lasku, więc nie może być jednym z tych dwóch ptaków. Jednoczesne obserwacje rozdzielają rewiry najpewniej."
+          }
+        },
+        {
+          "id": "4",
+          "gatunek": "orlik-krzykliwy",
+          "punkt": 2,
+          "data": "26 kwietnia",
+          "godzina": "10:15",
+          "opis": "Dwa orliki krążą nad skrajem olsu. Jeden, wyżej, raz po raz spada ku drugiemu głębokim, falistym ślizgiem i zaraz wzlatuje. Drugi krąży spokojnie. Po kilku minutach oba nurkują między drzewa olsu.",
+          "x": 5.9,
+          "y": 1.8,
+          "klucz": {
+            "kategoria": "P",
+            "rewir": "orlik-1",
+            "wyjasnienie": "To klasyczny tok orlika: samiec robi faliste ślizgi ku wyraźnie mniej aktywnej samicy, a na koniec para nurkuje do lasu. W skali dla orlika tokująca para to gniazdowanie pewne (P). Miejsce, w które wpadły, zaznacza się dokładnie na mapie: prawie zawsze jest tam gniazdo."
+          }
+        },
+        {
+          "id": "5",
+          "gatunek": "orlik-krzykliwy",
+          "punkt": 3,
+          "data": "26 kwietnia",
+          "godzina": "12:30",
+          "opis": "Dwa orliki nad lasem na północ od punktu. Oba równie energicznie krążą, robią ślizgi i pozorowane ataki, raz jeden na drugiego, raz odwrotnie. Rozlatują się w dwie strony.",
+          "x": 8.6,
+          "y": 5.3,
+          "klucz": {
+            "kategoria": "tB",
+            "rewir": "orlik-2",
+            "wyjasnienie": "Kiedy dwa ptaki popisują się jednakowo energicznie, to raczej spotkanie dwóch samców na granicy rewirów niż para. Poradnik każe zapisać tB, gniazdowanie prawdopodobne. To nowy rewir: ols z notatki 4 jest ponad 4 km dalej."
+          }
+        },
+        {
+          "id": "6",
+          "gatunek": "orlik-krzykliwy",
+          "punkt": 3,
+          "data": "3 maja",
+          "godzina": "11:05",
+          "opis": "Pojedynczy orlik krąży nad tym samym lasem co w notatce 5, potem zniża lot i znika nad drzewami.",
+          "x": 8.7,
+          "y": 5.5,
+          "klucz": {
+            "kategoria": "B",
+            "rewir": "orlik-2",
+            "wyjasnienie": "Samiec nalatujący nad las i zniżający lot to zachowanie terytorialne (B). To ten sam rewir co w notatce 5, więc rewir ma teraz kategorie tB i B, a liczy się najwyższa: tB, nadal tylko prawdopodobne."
+          }
+        },
+        {
+          "id": "7",
+          "gatunek": "orlik-krzykliwy",
+          "punkt": 1,
+          "data": "12 maja",
+          "godzina": "13:10",
+          "opis": "Orlik w szacie młodocianej, z jasnymi zakończeniami piór na wierzchu skrzydeł, przelatuje wysoko nad punktem i odlatuje prosto na północ, nie krąży i nie zniża lotu.",
+          "x": 2.4,
+          "y": 5.6,
+          "klucz": {
+            "kategoria": "X",
+            "rewir": null,
+            "wyjasnienie": "Nie licz go. Do Polski wracają też niedojrzałe orliki, a poradnik zaznacza, że pojedynczego orlika w sezonie nie wolno z automatu uznać za lęgowego. Ten nie robił nic terytorialnego. Zapisz go w notesie, ale nie jako rewir."
+          }
+        },
+        {
+          "id": "8",
+          "gatunek": "kania-ruda",
+          "punkt": 3,
+          "data": "12 maja",
+          "godzina": "14:00",
+          "opis": "Przez lunetę widać na skraju dużego lasu odnowione gniazdo: świeże, jasne końce gałęzi, ażurowy wierzch. Kania ruda przelatuje nad tym lasem prosto, nie krąży i nie zniża lotu.",
+          "x": 7.1,
+          "y": 8.2,
+          "klucz": {
+            "kategoria": "X",
+            "rewir": null,
+            "wyjasnienie": "To jeszcze nie ONB. Gdy ptak tylko przelatuje nad lasem z gniazdem, poradnik wymaga zachowania terytorialnego, a bez niego zostaje samo odnowione gniazdo. Tu nie wiesz nawet, kto je odnowił, więc kani nic się nie należy. Zanotuj gniazdo i wróć na następną kontrolę."
+          }
+        },
+        {
+          "id": "9",
+          "gatunek": "kania-ruda",
+          "punkt": 3,
+          "data": "20 czerwca",
+          "godzina": "11:00",
+          "opis": "Kania ruda krąży nisko nad lasem z notatki 8, odzywa się przeciągłym gwizdem i siada na krawędzi odnowionego gniazda.",
+          "x": 7.1,
+          "y": 8.2,
+          "klucz": {
+            "kategoria": "ONB",
+            "rewir": "kania-1",
+            "wyjasnienie": "Pojedynczy ptak stojący na odnowionym gnieździe to ONB, gniazdowanie pewne: przy samym gnieździe nie trzeba dodatkowo dowodzić, że ptak jest terytorialny. To nowy rewir, bo notatka 8 żadnego nie założyła."
+          }
+        },
+        {
+          "id": "10",
+          "gatunek": "trzmielojad",
+          "punkt": 3,
+          "data": "20 czerwca",
+          "godzina": "12:20",
+          "opis": "Trzmielojad wysoko nad starym lasem liściastym na południe od punktu unosi skrzydła nad grzbiet i kilka razy nimi potrząsa, po czym szybuje dalej.",
+          "x": 8.9,
+          "y": 9.2,
+          "klucz": {
+            "kategoria": "B",
+            "rewir": "trzmielojad-1",
+            "wyjasnienie": "Lot tokowy z potrząsaniem uniesionymi skrzydłami to popis powietrzny pojedynczego ptaka: B, gniazdowanie prawdopodobne. Trzmielojad gniazduje w dużych, starych lasach i bywa niewidoczny przez wiele godzin, więc jedna taka obserwacja jest cenna."
+          }
+        },
+        {
+          "id": "11",
+          "gatunek": "krogulec",
+          "punkt": 2,
+          "data": "20 czerwca",
+          "godzina": "15:00",
+          "opis": "Krogulec przemyka nisko wzdłuż skraju olsu, kilka szybkich uderzeń i ślizg, i znika za drzewami.",
+          "x": 4.6,
+          "y": 2.5,
+          "klucz": {
+            "kategoria": "X",
+            "rewir": null,
+            "wyjasnienie": "Polujący krogulec nie zdradza rewiru. Poradnik pisze wprost, że krogulca tą metodą trudno policzyć: poluje w lesie, a jego toki są mało widoczne. Zapisz obserwację, ale rewiru z niej nie rób."
+          }
+        },
+        {
+          "id": "12",
+          "gatunek": "orlik-krzykliwy",
+          "punkt": 2,
+          "data": "16 lipca",
+          "godzina": "10:10",
+          "opis": "Orlik spada na łąkę z wysuniętymi nogami, podrywa się z gryzoniem w dziobie, krąży, nabiera wysokości i prostym ślizgiem leci do olsu z notatki 4.",
+          "x": 5.9,
+          "y": 1.9,
+          "klucz": {
+            "kategoria": "B",
+            "rewir": "orlik-1",
+            "wyjasnienie": "Przenoszenie pokarmu to zachowanie terytorialne pojedynczego ptaka (B), a kierunek lotu prowadzi do gniazda. To ten sam rewir co w notatce 4, więc liczy się nadal P: rewir był już pewny."
+          }
+        },
+        {
+          "id": "13",
+          "gatunek": "myszolow",
+          "punkt": 1,
+          "data": "16 lipca",
+          "godzina": "11:30",
+          "opis": "Na skraju lasku z notatki 2 siedzą dwa młode myszołowy i piszczą. Dorosły podlatuje i podaje jednemu z nich pokarm.",
+          "x": 3.3,
+          "y": 6.1,
+          "klucz": {
+            "kategoria": "F",
+            "rewir": "myszolow-1",
+            "wyjasnienie": "Młode wkrótce po wylocie, karmione przez rodzica, to rodzina (F), gniazdowanie pewne. Rewir z notatki 2 był już pewny, a teraz wiesz też, że lęg się udał."
+          }
+        }
+      ]
+    }
+  }
+}

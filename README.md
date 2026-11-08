@@ -6,7 +6,7 @@ Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i s
 
 **Na żywo: [worldofraptors.com](https://www.worldofraptors.com)**
 
-| 45 drapieżników | 55 ptaków mokradeł | 24 moduły | 125 lekcji | 261 pytań w quizach | 502 fiszki | 581 zdjęć |
+| 45 drapieżników | 55 ptaków mokradeł | 25 modułów | 130 lekcji | 273 pytania w quizach | 502 fiszki | 583 zdjęcia |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki, dwadzieścia trzy moduły i projekt końcowy, w każdym pięć lekcji, w A8 siedem, a w B9 osiem:
+Dwie ścieżki, dwadzieścia cztery moduły i projekt końcowy, w każdym pięć lekcji, w A8 siedem, a w B9 osiem:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -33,8 +33,8 @@ Dwie ścieżki, dwadzieścia trzy moduły i projekt końcowy, w każdym pięć l
 | A8&nbsp;[Wspaniały świat sów](content/moduly/swiat-sow/README.md) | B8&nbsp;[Wirtualny punkt obserwacyjny](content/moduly/punkt-obserwacyjny/README.md) |
 | A9&nbsp;[Budowa ptaka](content/moduly/budowa-ptaka/README.md) | B9&nbsp;[Siewkowce](content/moduly/siewkowce/README.md) |
 | A10&nbsp;[Ewolucja ptaków drapieżnych](content/moduly/ewolucja/README.md) | B10&nbsp;[Wiek i upierzenie dużych orłów](content/moduly/wiek-orlow/README.md) |
-| A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | P&nbsp;[Projekt końcowy](content/moduly/projekt-koncowy/README.md) |
-| A12&nbsp;[Krukowate: sąsiedzi drapieżników](content/moduly/krukowate/README.md) | |
+| A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | B11&nbsp;[Rewiry, toki i gniazda](content/moduly/rewiry/README.md) |
+| A12&nbsp;[Krukowate: sąsiedzi drapieżników](content/moduly/krukowate/README.md) | P&nbsp;[Projekt końcowy](content/moduly/projekt-koncowy/README.md) |
 | A13&nbsp;[Małe ptaki: codzienni sąsiedzi i zdobycz](content/moduly/male-ptaki/README.md) | |
 
 <table>

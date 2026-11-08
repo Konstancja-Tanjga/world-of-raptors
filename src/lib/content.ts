@@ -14,6 +14,8 @@ import nagraniaJson from '../../content/nagrania.json';
 import budowaJson from '../../content/budowa-ptaka.json';
 import punktJson from '../../content/punkt-obserwacyjny.json';
 import type { PtakPunktu, Sesja } from './punkt';
+import kartaRewirowJson from '../../content/karta-rewirow.json';
+import { problemySesji, type SesjaKarty } from './rewiry';
 import kalendarzJson from '../../content/kalendarz-siewkowcow.json';
 import { SCENY, wszystkieCzesci, type DaneSceny } from './budowa/sceny';
 import { oryginalZAtrybutu, polozenie, srcSetCommons } from './zdjecia';
@@ -681,6 +683,36 @@ function problemyPunktu() {
   return bledy;
 }
 
+// ---- B11: the territory sheet ----
+
+const sesjeKarty = Object.fromEntries(
+  Object.entries((kartaRewirowJson as unknown as { sesje: Record<string, Omit<SesjaKarty, 'id'>> }).sesje).map(([id, s]) => [id, { id, ...s } as SesjaKarty]),
+);
+
+/** A diurnal species with a silhouette, as the sheet names it. */
+const ptakKarty = (id: string) => {
+  const g = znajdzGatunek(id);
+  return g && g.aktywnosc === 'dzienny' && SYLWETKI[id] ? { id, pl: g.pl } : null;
+};
+
+/** A session of the territory sheet (`<karta-rewirow data-sesja="…">`) with its species' names; an unknown one stops the build. */
+export function sesjaKarty(id: string) {
+  const sesja = sesjeKarty[id];
+  if (!sesja) throw new Error(`<karta-rewirow>: nie ma sesji „${id}” w content/karta-rewirow.json`);
+  const ptaki = Object.fromEntries([...new Set(sesja.notatki.map((n) => n.gatunek))].map((g) => [g, ptakKarty(g)!]));
+  return { sesja, ptaki };
+}
+
+/** What is wrong with the sheet's sessions: their shape (rewiry.ts) and species that are not diurnal raptors with a silhouette. */
+function problemyKarty() {
+  const bledy: string[] = [];
+  for (const s of Object.values(sesjeKarty)) {
+    bledy.push(...problemySesji(s));
+    for (const n of s.notatki) if (!ptakKarty(n.gatunek)) bledy.push(`karta-rewirow.json: ${s.id}, notatka ${n.id}: ${n.gatunek} nie jest ptakiem dziennym z sylwetką`);
+  }
+  return bledy;
+}
+
 // ---- A9: the 3D models of a bird ----
 
 type TekstyBudowy = {
@@ -1048,7 +1080,8 @@ export async function ideaKursu() {
  * sparrowhawk, the hunter of small birds, B5 with an eagle owl, B7 with the
  * widest wingspan of the atlas, the cinereous vulture's, B8 with a honey
  * buzzard, the bird of the Strait's busiest days, B10 with a perched
- * white-tailed eagle, the bird that takes five years to grow up, and the
+ * white-tailed eagle, the bird that takes five years to grow up, B11 with a
+ * lesser spotted eagle in flight, the display its count rests on, and the
  * final project with a golden eagle in flight.
  */
 const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'siedzacy' }> = {
@@ -1076,6 +1109,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   'wiek-orlow': { gatunek: 'bielik', zdjecie: 'siedzacy' },
   'projekt-koncowy': { gatunek: 'orzel-przedni', zdjecie: 'lot' },
   siewkowce: { gatunek: 'biegus-zmienny', zdjecie: 'lot' },
+  rewiry: { gatunek: 'orlik-krzykliwy', zdjecie: 'lot' },
 };
 
 /** The photo and species that open a module (every ready module has one; the build checks). */
@@ -1469,7 +1503,7 @@ function sprawdzSpojnosc() {
     }
     for (const id of c.gatunki) if (!idGatunkow.has(id)) bledy.push(`ciekawostki.json: ${c.id}: gatunku „${id}” nie ma w atlasie`);
   }
-  bledy.push(...problemyBudowy(), ...problemyPunktu());
+  bledy.push(...problemyBudowy(), ...problemyPunktu(), ...problemyKarty());
   const idPtakow = new Set([...idGatunkow, ...ptakiMokradel.map((p) => p.id)]);
   const okolice = new Set<string>(OKOLICE.map((o) => o.value));
   const miesiac = (n: unknown) => Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 12;
