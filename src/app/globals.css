@@ -3195,6 +3195,119 @@ html:has(.podglad[open]) {
   stroke: #4a4038;
   stroke-width: 1;
 }
+/* A14: a plot at night (<ile-ich-jest>): the owls that called glow, the silent ones appear only when the answer is shown. */
+.ile {
+  display: grid;
+  gap: var(--bh-gap-loose);
+}
+.ile__uklad {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  align-items: start;
+}
+@media (min-width: 40rem) {
+  .ile__uklad {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+}
+.ile__plansza {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--wor-radius-scene);
+  background: var(--wor-niebo-noc);
+}
+.ile__siatka {
+  fill: none;
+  stroke: var(--wor-scena-linia);
+  stroke-width: 0.4;
+  stroke-dasharray: 1.5 1.5;
+}
+.ile__samiec--glos {
+  fill: var(--wor-zloto);
+}
+.ile__fala {
+  fill: none;
+  stroke: var(--wor-zloto);
+  stroke-width: 0.6;
+  opacity: 0.6;
+}
+.ile__samiec--cichy {
+  fill: none;
+  stroke: var(--wor-scena-tekst);
+  stroke-width: 0.6;
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* A call fades in, as a hoot comes out of the dark; no travel, so nothing to reduce. */
+  .ile__samiec--glos {
+    animation: ile-glos var(--wor-dur-base) var(--wor-ease-out) both;
+  }
+}
+@keyframes ile-glos {
+  from {
+    opacity: 0;
+  }
+}
+.ile__panel {
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+.prose .ile__tekst,
+.prose .ile__rozklad figcaption {
+  margin: 0;
+}
+.prose .ile__liczba {
+  font-family: var(--wor-font-display);
+  font-size: var(--wor-size-title);
+  line-height: var(--wor-leading-title);
+}
+.ile__przyciski {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+}
+.ile__wynik {
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+.ile__wynik:focus {
+  outline: none;
+}
+.prose .ile__rozklad {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  margin: 0;
+}
+.ile__rozklad svg {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  height: auto;
+}
+.ile__rozklad figcaption {
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-secondary);
+}
+.ile__slupek {
+  fill: var(--wor-akcent-miekki);
+}
+.ile__slupek--twoj {
+  fill: var(--wor-akcent);
+}
+.ile__os {
+  stroke: var(--bh-border-strong);
+  stroke-width: 0.3;
+}
+.ile__prog {
+  stroke: var(--bh-text-primary);
+  stroke-width: 0.4;
+  stroke-dasharray: 1.5 1;
+}
+.ile__etykieta {
+  fill: var(--bh-text-secondary);
+  font-size: 3px;
+  text-anchor: middle;
+}
 /* B9: legs with colour rings, on paper in both themes, so the plastic colours read as in the field. */
 .obraczki__rysunek {
   display: block;

@@ -26,10 +26,12 @@ import { idNaglowkow } from '@/lib/naglowki';
 import { sciezkaSonogramu } from '@/lib/nagrania';
 import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
+import { wariantIleIchJest } from '@/lib/wykrywalnosc';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
 import {
   KalendarzSiewkowcow,
+  IleIchJest,
   Komin,
   LiczenieStada,
   Model3D,
@@ -137,6 +139,11 @@ const attr = (props: Attrs, name: string) => {
  *
  *   <punkt-obserwacyjny data-sesja="ciesnina-sierpien">
  *   <komin data-gatunek="sep-plowy" data-ile="120">
+ *
+ * A14's detectability simulator: visits to a plot of tawny owls ("kontrole",
+ * the default), or how many empty visits rule a species out ("powroty"):
+ *
+ *   <ile-ich-jest data-wariant="kontrole">
  *
  * B9's exercises on waders:
  *
@@ -267,6 +274,11 @@ const lessonTags = {
   'quiz-na-czas': (props: Attrs) => (
     <div className="lekcja-cwiczenie">
       <QuizNaCzas gatunki={gatunkiQuizuNaCzas(attr(props, 'data-gatunki'))} />
+    </div>
+  ),
+  'ile-ich-jest': (props: Attrs) => (
+    <div className="lekcja-cwiczenie">
+      <IleIchJest wariant={wariantIleIchJest(attr(props, 'data-wariant'))} />
     </div>
   ),
   'liczenie-stada': () => (
