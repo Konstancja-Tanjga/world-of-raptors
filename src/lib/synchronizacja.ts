@@ -16,6 +16,7 @@
 
 import { ID_MIEJSCA, isMojeMiejsce, type MojeMiejsca, type MojeMiejsce } from './mojeMiejsca';
 import type { Checklista, Obserwacja } from './obserwacje';
+import { ID_WPISU, isWpis, LIMITY, ZRODLA_PUNKTU, type Dziennik, type WpisDziennika, type ZrodloPunktu } from './dziennik';
 import { isFiszki, type Fiszki, type ZapisFiszki } from './fiszki';
 import type { Postep } from './postep';
 import type { Zdobyte } from './zdobyte';
@@ -36,7 +37,7 @@ const nic: Pomin = () => {};
  * (a row written by a newer or buggy app version must not break a pass).
  */
 export type Tabela<L> = {
-  nazwa: 'lesson_progress' | 'observations' | 'flashcards' | 'user_badges' | 'places';
+  nazwa: 'lesson_progress' | 'observations' | 'sightings' | 'flashcards' | 'user_badges' | 'places';
   /** The key column (with user_id, the table's primary key). */
   klucz: string;
   wiersze(lokalne: L): Wiersz[];
@@ -73,7 +74,7 @@ const nowszy = (zdalny: string, lokalny: string | undefined) => lokalny === unde
 const odciskZmiany = (w: Wiersz) => `${czas(w.updated_at)}|${w.deleted_at ? 'x' : ''}`;
 
 /** The server's limits on text (supabase/migrations/): longer text is cut so the row is not refused. */
-const NAJWIECEJ = { place: 200, note: 2000, name: 80 } as const;
+const NAJWIECEJ = { place: LIMITY.miejsce, note: LIMITY.notatka, name: 80 } as const;
 
 // ---- Lessons ----
 
@@ -160,6 +161,63 @@ export const OBSERWACJE: Tabela<Checklista> = {
   odcisk: odciskZmiany,
 };
 
+// ---- The field log ----
+
+const liczbaLubBrak = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : undefined);
+
+export const DZIENNIK: Tabela<Dziennik> = {
+  nazwa: 'sightings',
+  klucz: 'sighting_id',
+  wiersze(dziennik) {
+    return Object.entries(dziennik).map(([id, w]) => ({
+      sighting_id: id,
+      species_slug: w.gatunek,
+      observed_on: w.data,
+      observed_time: w.godzina ?? null,
+      bird_count: w.liczba ?? null,
+      place: w.miejsce?.slice(0, NAJWIECEJ.place) ?? null,
+      latitude: w.punkt?.szer ?? null,
+      longitude: w.punkt?.dl ?? null,
+      accuracy_m: w.punkt?.dokladnosc ?? null,
+      location_source: w.punkt?.zrodlo ?? null,
+      note: w.notatka?.slice(0, NAJWIECEJ.note) ?? null,
+      updated_at: w.zmieniono,
+      deleted_at: w.usuniety ? w.zmieniono : null,
+    }));
+  },
+  scal(lokalne, zdalne, pomin = nic) {
+    const dziennik = { ...lokalne };
+    for (const w of zdalne) {
+      const id = tekst(w.sighting_id);
+      const t = czas(w.updated_at);
+      // The store's key check too: a key it refuses would set the whole log aside on its next read.
+      if (!id || !ID_WPISU.test(id) || !t) {
+        pomin(String(w.sighting_id), 'no id or time');
+        continue;
+      }
+      if (!nowszy(t, czas(dziennik[id]?.zmieniono) ?? undefined)) continue;
+      const wpis: WpisDziennika = { gatunek: tekst(w.species_slug) ?? '', data: dzien(w.observed_on) ?? '', zmieniono: t };
+      if (tekst(w.observed_time)) wpis.godzina = tekst(w.observed_time);
+      if (liczbaLubBrak(w.bird_count) !== undefined) wpis.liczba = liczbaLubBrak(w.bird_count);
+      if (tekst(w.place)) wpis.miejsce = tekst(w.place);
+      if (tekst(w.note)) wpis.notatka = tekst(w.note);
+      const szer = liczbaLubBrak(w.latitude);
+      const dl = liczbaLubBrak(w.longitude);
+      const zrodlo = tekst(w.location_source) as ZrodloPunktu | undefined;
+      if (szer !== undefined && dl !== undefined && zrodlo && ZRODLA_PUNKTU.includes(zrodlo)) {
+        wpis.punkt = { szer, dl, zrodlo };
+        const dokladnosc = liczbaLubBrak(w.accuracy_m);
+        if (dokladnosc !== undefined) wpis.punkt.dokladnosc = dokladnosc;
+      }
+      if (w.deleted_at) wpis.usuniety = true;
+      // The store's own check: an entry the app cannot read would empty the whole log on its next read.
+      if (!isWpis(wpis)) {
+        pomin(id, 'an entry the app cannot read');
+        continue;
+      }
+      dziennik[id] = wpis;
+    }
+    return dziennik;
 // ---- The owner's places ----
 
 /** A number from the server: Postgres numerics may arrive as strings. */

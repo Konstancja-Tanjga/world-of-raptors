@@ -1,0 +1,4287 @@
+{
+ "zrodla": {
+  "nazwy": "eBird/Clements taxonomy, Polish locale (api.ebird.org/v2/ref/taxonomy/ebird)",
+  "zakres": "GBIF: species with at least 1000 occurrence records in Europe (api.gbif.org)",
+  "pobrano": "2026-11-08"
+ },
+ "kody_kursu": {
+  "batalion": "ruff",
+  "bekasik": "jacsni",
+  "bialorzytka": "norwhe",
+  "biegus-krzywodzioby": "cursan",
+  "biegus-malutki": "litsti",
+  "biegus-maly": "temsti",
+  "biegus-rdzawy": "redkno",
+  "biegus-zmienny": "dunlin",
+  "bielik": "whteag",
+  "blotniak-lakowy": "monhar1",
+  "blotniak-stawowy": "wemhar1",
+  "blotniak-zbozowy": "norhar1",
+  "bogatka": "gretit1",
+  "brodziec-piskliwy": "comsan",
+  "brodziec-plawny": "marsan",
+  "brodziec-sniady": "spored",
+  "chwastowka": "zitcis1",
+  "czajka": "norlap",
+  "czapla-nadobna": "litegr",
+  "czapla-siwa": "graher1",
+  "czapla-zlotawa": "categr1",
+  "czarnowron": "carcro1",
+  "drzemlik": "merlin",
+  "dzierlatka": "crelar1",
+  "flaming-rozowy": "grefla3",
+  "gadozer": "shteag1",
+  "gasiorek": "rebshr1",
+  "gawron": "rook1",
+  "ibis-grzywiasty": "waldra1",
+  "jastrzab": "norgos1",
+  "kamusznik": "rudtur",
+  "kania-czarna": "blakit1",
+  "kania-ruda": "redkit1",
+  "kaniuk": "bkskit1",
+  "kawka": "eurjac",
+  "klaskawka": "stonec4",
+  "kobuz": "eurhob",
+  "kormoran": "grecor",
+  "kos": "eurbla",
+  "kowalik": "eurnut2",
+  "krogulec": "eurspa1",
+  "kruk": "comrav",
+  "krwawodziob": "comred1",
+  "kszyk": "comsni",
+  "kulik-mniejszy": "whimbr5",
+  "kulik-wielki": "eurcur",
+  "kulon": "eutkne1",
+  "kurhannik": "lolbuz1",
+  "kwokacz": "comgre",
+  "leczak": "woosan",
+  "mazurek": "eutspa",
+  "mewa-cienkodzioba": "slbgul1",
+  "mewa-srodziemnomorska": "audgul1",
+  "modraszka": "blutit",
+  "mysikrolik": "goldcr1",
+  "myszolow": "combuz1",
+  "myszolow-wlochaty": "rolhaw",
+  "orlik-grubodzioby": "grseag1",
+  "orlik-krzykliwy": "leseag1",
+  "orlosep": "lammer1",
+  "orzechowka": "eurnut3",
+  "orzel-iberyjski": "spaeag1",
+  "orzel-poludniowy": "boneag2",
+  "orzel-przedni": "goleag",
+  "orzelek-wlochaty": "booeag1",
+  "ostrygojad": "euroys1",
+  "piaskowiec": "sander",
+  "pierwiosnek": "comchi1",
+  "platkonog-szydlodzioby": "renpha",
+  "pliszka-siwa": "whiwag",
+  "plomykowka": "webowl1",
+  "podrozniczek": "blueth",
+  "pojdzka": "litowl1",
+  "poklaskwa": "whinch1",
+  "pokrzewka-aksamitna": "sarwar1",
+  "puchacz": "eueowl1",
+  "pustuleczka": "leskes1",
+  "pustulka": "eurkes",
+  "puszczyk": "tawowl1",
+  "puszczyk-mszarny": "grgowl",
+  "puszczyk-uralski": "uraowl1",
+  "rudzik": "eurrob1",
+  "rybitwa-czubata": "santer1",
+  "rybitwa-wielkodzioba": "caster1",
+  "rybolow": "osprey",
+  "rycyk": "bktgod",
+  "samotnik": "grnsan",
+  "scierwnik": "egyvul1",
+  "sep-kasztanowaty": "cinvul1",
+  "sep-plamisty": "ruegri1",
+  "sep-plowy": "eurgri1",
+  "sieweczka-morska": "kenplo1",
+  "sieweczka-obrozna": "corplo",
+  "sieweczka-rzeczna": "lirplo",
+  "siewka-zlota": "eugplo",
+  "siewnica": "bkbplo",
+  "skowronek": "skylar",
+  "slonka": "eurwoo",
+  "sojka": "eurjay1",
+  "sokol-skalny": "elefal1",
+  "sokol-wedrowny": "perfal",
+  "sowa-jarzebata": "nohowl",
+  "sowa-sniezna": "snoowl1",
+  "soweczka": "eupowl1",
+  "sroka": "eurmag1",
+  "sroka-blekitna": "azwmag3",
+  "swiergotek-lakowy": "meapip1",
+  "syczek": "eursco1",
+  "szablodziob": "pieavo1",
+  "szczudlak": "bkwsti",
+  "szlamnik": "batgod",
+  "szpak": "eursta",
+  "trzmielojad": "euhbuz1",
+  "trznadel": "yellow2",
+  "uszatka": "loeowl",
+  "uszatka-blotna": "sheowl",
+  "warzecha": "eurspo1",
+  "wieszczek": "rebcho1",
+  "wlochatka": "borowl",
+  "wrobel-domowy": "houspa",
+  "wrona-siwa": "hoocro1",
+  "zieba": "comcha",
+  "zimorodek": "comkin1",
+  "zwirowiec": "colpra"
+ },
+ "gatunki": [
+  {
+   "id": "nandu-szare",
+   "pl": "nandu szare",
+   "lat": "Rhea americana",
+   "en": "Greater Rhea",
+   "es": "Ñandú común",
+   "ebird": "grerhe1"
+  },
+  {
+   "id": "drzewica-dwubarwna",
+   "pl": "drzewica dwubarwna",
+   "lat": "Dendrocygna bicolor",
+   "en": "Fulvous Whistling-Duck",
+   "es": "Suirirí bicolor",
+   "ebird": "fuwduc"
+  },
+  {
+   "id": "ges-tybetanska",
+   "pl": "gęś tybetańska",
+   "lat": "Anser indicus",
+   "en": "Bar-headed Goose",
+   "es": "Ánsar indio",
+   "ebird": "bahgoo"
+  },
+  {
+   "id": "sniezyca-cesarska",
+   "pl": "śnieżyca cesarska",
+   "lat": "Anser canagicus",
+   "en": "Emperor Goose",
+   "es": "Ánsar emperador",
+   "ebird": "empgoo"
+  },
+  {
+   "id": "sniezyca-duza",
+   "pl": "śnieżyca duża",
+   "lat": "Anser caerulescens",
+   "en": "Snow Goose",
+   "es": "Ánsar nival",
+   "ebird": "snogoo"
+  },
+  {
+   "id": "sniezyca-mala",
+   "pl": "śnieżyca mała",
+   "lat": "Anser rossii",
+   "en": "Ross's Goose",
+   "es": "Ánsar de Ross",
+   "ebird": "rosgoo"
+  },
+  {
+   "id": "gegawa",
+   "pl": "gęgawa",
+   "lat": "Anser anser",
+   "en": "Graylag Goose",
+   "es": "Ánsar común",
+   "ebird": "gragoo"
+  },
+  {
+   "id": "ges-labedzionosa",
+   "pl": "gęś łabędzionosa",
+   "lat": "Anser cygnoides",
+   "en": "Swan Goose",
+   "es": "Ánsar cisnal",
+   "ebird": "swagoo1"
+  },
+  {
+   "id": "ges-bialoczelna",
+   "pl": "gęś białoczelna",
+   "lat": "Anser albifrons",
+   "en": "Greater White-fronted Goose",
+   "es": "Ánsar careto",
+   "ebird": "gwfgoo"
+  },
+  {
+   "id": "ges-mala",
+   "pl": "gęś mała",
+   "lat": "Anser erythropus",
+   "en": "Lesser White-fronted Goose",
+   "es": "Ánsar chico",
+   "ebird": "lwfgoo"
+  },
+  {
+   "id": "ges-zbozowa",
+   "pl": "gęś zbożowa",
+   "lat": "Anser fabalis",
+   "en": "Taiga Bean-Goose",
+   "es": "Ánsar campestre de la taiga",
+   "ebird": "taibeg1"
+  },
+  {
+   "id": "ges-tundrowa",
+   "pl": "gęś tundrowa",
+   "lat": "Anser serrirostris",
+   "en": "Tundra Bean-Goose",
+   "es": "Ánsar campestre de la tundra",
+   "ebird": "tunbeg1"
+  },
+  {
+   "id": "ges-krotkodzioba",
+   "pl": "gęś krótkodzioba",
+   "lat": "Anser brachyrhynchus",
+   "en": "Pink-footed Goose",
+   "es": "Ánsar piquicorto",
+   "ebird": "pifgoo"
+  },
+  {
+   "id": "bernikla-obrozna",
+   "pl": "bernikla obrożna",
+   "lat": "Branta bernicla",
+   "en": "Brant",
+   "es": "Barnacla carinegra",
+   "ebird": "brant"
+  },
+  {
+   "id": "bernikla-bialolica",
+   "pl": "bernikla białolica",
+   "lat": "Branta leucopsis",
+   "en": "Barnacle Goose",
+   "es": "Barnacla cariblanca",
+   "ebird": "bargoo"
+  },
+  {
+   "id": "bernikla-polnocna",
+   "pl": "bernikla północna",
+   "lat": "Branta hutchinsii",
+   "en": "Cackling Goose",
+   "es": "Barnacla canadiense chica",
+   "ebird": "cacgoo1"
+  },
+  {
+   "id": "bernikla-kanadyjska",
+   "pl": "bernikla kanadyjska",
+   "lat": "Branta canadensis",
+   "en": "Canada Goose",
+   "es": "Barnacla canadiense grande",
+   "ebird": "cangoo"
+  },
+  {
+   "id": "bernikla-rdzawoszyja",
+   "pl": "bernikla rdzawoszyja",
+   "lat": "Branta ruficollis",
+   "en": "Red-breasted Goose",
+   "es": "Barnacla cuellirroja",
+   "ebird": "rebgoo1"
+  },
+  {
+   "id": "labedz-niemy",
+   "pl": "łabędź niemy",
+   "lat": "Cygnus olor",
+   "en": "Mute Swan",
+   "es": "Cisne vulgar",
+   "ebird": "mutswa"
+  },
+  {
+   "id": "labedz-czarny",
+   "pl": "łabędź czarny",
+   "lat": "Cygnus atratus",
+   "en": "Black Swan",
+   "es": "Cisne negro",
+   "ebird": "blkswa"
+  },
+  {
+   "id": "labedz-czarnoszyi",
+   "pl": "łabędź czarnoszyi",
+   "lat": "Cygnus melancoryphus",
+   "en": "Black-necked Swan",
+   "es": "Cisne cuellinegro",
+   "ebird": "blnswa2"
+  },
+  {
+   "id": "labedz-czarnodzioby",
+   "pl": "łabędź czarnodzioby",
+   "lat": "Cygnus columbianus",
+   "en": "Tundra Swan",
+   "es": "Cisne chico",
+   "ebird": "tunswa"
+  },
+  {
+   "id": "labedz-krzykliwy",
+   "pl": "łabędź krzykliwy",
+   "lat": "Cygnus cygnus",
+   "en": "Whooper Swan",
+   "es": "Cisne cantor",
+   "ebird": "whoswa"
+  },
+  {
+   "id": "magelanka-zmienna",
+   "pl": "magelanka zmienna",
+   "lat": "Chloephaga picta",
+   "en": "Upland Goose",
+   "es": "Cauquén común",
+   "ebird": "uplgoo1"
+  },
+  {
+   "id": "gesiowka-egipska",
+   "pl": "gęsiówka egipska",
+   "lat": "Alopochen aegyptiaca",
+   "en": "Egyptian Goose",
+   "es": "Ganso del Nilo",
+   "ebird": "egygoo"
+  },
+  {
+   "id": "kazarka-rdzawa",
+   "pl": "kazarka rdzawa",
+   "lat": "Tadorna ferruginea",
+   "en": "Ruddy Shelduck",
+   "es": "Tarro canelo",
+   "ebird": "rudshe"
+  },
+  {
+   "id": "kazarka-szaroglowa",
+   "pl": "kazarka szarogłowa",
+   "lat": "Tadorna cana",
+   "en": "South African Shelduck",
+   "es": "Tarro sudafricano",
+   "ebird": "soashe1"
+  },
+  {
+   "id": "ohar",
+   "pl": "ohar",
+   "lat": "Tadorna tadorna",
+   "en": "Common Shelduck",
+   "es": "Tarro blanco",
+   "ebird": "comshe"
+  },
+  {
+   "id": "pizmowka",
+   "pl": "piżmówka",
+   "lat": "Cairina moschata",
+   "en": "Muscovy Duck",
+   "es": "Pato criollo",
+   "ebird": "musduc"
+  },
+  {
+   "id": "cudokaczka",
+   "pl": "cudokaczka",
+   "lat": "Callonetta leucophrys",
+   "en": "Ringed Teal",
+   "es": "Pato acollarado",
+   "ebird": "rintea1"
+  },
+  {
+   "id": "karolinka",
+   "pl": "karolinka",
+   "lat": "Aix sponsa",
+   "en": "Wood Duck",
+   "es": "Pato joyuyo",
+   "ebird": "wooduc"
+  },
+  {
+   "id": "mandarynka",
+   "pl": "mandarynka",
+   "lat": "Aix galericulata",
+   "en": "Mandarin Duck",
+   "es": "Pato mandarín",
+   "ebird": "manduc"
+  },
+  {
+   "id": "grzywienka-zwyczajna",
+   "pl": "grzywienka (zwyczajna)",
+   "lat": "Chenonetta jubata",
+   "en": "Maned Duck",
+   "es": "Pato de crin",
+   "ebird": "manduc1"
+  },
+  {
+   "id": "bajkalowka",
+   "pl": "bajkałówka",
+   "lat": "Sibirionetta formosa",
+   "en": "Baikal Teal",
+   "es": "Cerceta del Baikal",
+   "ebird": "baitea"
+  },
+  {
+   "id": "cyranka",
+   "pl": "cyranka",
+   "lat": "Spatula querquedula",
+   "en": "Garganey",
+   "es": "Cerceta carretona",
+   "ebird": "gargan"
+  },
+  {
+   "id": "cyranka-modroskrzydla",
+   "pl": "cyranka modroskrzydła",
+   "lat": "Spatula discors",
+   "en": "Blue-winged Teal",
+   "es": "Cerceta aliazul",
+   "ebird": "buwtea"
+  },
+  {
+   "id": "cynamonka",
+   "pl": "cynamonka",
+   "lat": "Spatula cyanoptera",
+   "en": "Cinnamon Teal",
+   "es": "Cerceta colorada",
+   "ebird": "cintea"
+  },
+  {
+   "id": "plaskonos",
+   "pl": "płaskonos",
+   "lat": "Spatula clypeata",
+   "en": "Northern Shoveler",
+   "es": "Cuchara común",
+   "ebird": "norsho"
+  },
+  {
+   "id": "krakwa",
+   "pl": "krakwa",
+   "lat": "Mareca strepera",
+   "en": "Gadwall",
+   "es": "Ánade friso",
+   "ebird": "gadwal"
+  },
+  {
+   "id": "czuprynka",
+   "pl": "czuprynka",
+   "lat": "Mareca falcata",
+   "en": "Falcated Duck",
+   "es": "Cerceta de alfanjes",
+   "ebird": "falduc"
+  },
+  {
+   "id": "swistun",
+   "pl": "świstun",
+   "lat": "Mareca penelope",
+   "en": "Eurasian Wigeon",
+   "es": "Silbón europeo",
+   "ebird": "eurwig"
+  },
+  {
+   "id": "swistun-amerykanski",
+   "pl": "świstun amerykański",
+   "lat": "Mareca americana",
+   "en": "American Wigeon",
+   "es": "Silbón americano",
+   "ebird": "amewig"
+  },
+  {
+   "id": "swistun-chilijski",
+   "pl": "świstun chilijski",
+   "lat": "Mareca sibilatrix",
+   "en": "Chiloe Wigeon",
+   "es": "Silbón overo",
+   "ebird": "chiwig1"
+  },
+  {
+   "id": "krzyzowka",
+   "pl": "krzyżówka",
+   "lat": "Anas platyrhynchos",
+   "en": "Mallard",
+   "es": "Ánade azulón",
+   "ebird": "mallar3"
+  },
+  {
+   "id": "brazowka",
+   "pl": "brązówka",
+   "lat": "Anas rubripes",
+   "en": "American Black Duck",
+   "es": "Ánade sombrío",
+   "ebird": "ambduc"
+  },
+  {
+   "id": "rozeniec-bialolicy",
+   "pl": "rożeniec białolicy",
+   "lat": "Anas bahamensis",
+   "en": "White-cheeked Pintail",
+   "es": "Ánade gargantillo",
+   "ebird": "whcpin"
+  },
+  {
+   "id": "rozeniec",
+   "pl": "rożeniec",
+   "lat": "Anas acuta",
+   "en": "Northern Pintail",
+   "es": "Ánade rabudo",
+   "ebird": "norpin"
+  },
+  {
+   "id": "cyraneczka",
+   "pl": "cyraneczka",
+   "lat": "Anas crecca",
+   "en": "Green-winged Teal",
+   "es": "Cerceta común",
+   "ebird": "gnwtea"
+  },
+  {
+   "id": "marmurka",
+   "pl": "marmurka",
+   "lat": "Marmaronetta angustirostris",
+   "en": "Marbled Duck",
+   "es": "Cerceta pardilla",
+   "ebird": "martea1"
+  },
+  {
+   "id": "helmiatka",
+   "pl": "hełmiatka",
+   "lat": "Netta rufina",
+   "en": "Red-crested Pochard",
+   "es": "Pato colorado",
+   "ebird": "recpoc"
+  },
+  {
+   "id": "glowienka-dlugodzioba",
+   "pl": "głowienka długodzioba",
+   "lat": "Aythya valisineria",
+   "en": "Canvasback",
+   "es": "Porrón coacoxtle",
+   "ebird": "canvas"
+  },
+  {
+   "id": "glowienka",
+   "pl": "głowienka",
+   "lat": "Aythya ferina",
+   "en": "Common Pochard",
+   "es": "Porrón europeo",
+   "ebird": "compoc"
+  },
+  {
+   "id": "czerniczka",
+   "pl": "czerniczka",
+   "lat": "Aythya collaris",
+   "en": "Ring-necked Duck",
+   "es": "Porrón acollarado",
+   "ebird": "rinduc"
+  },
+  {
+   "id": "podgorzalka",
+   "pl": "podgorzałka",
+   "lat": "Aythya nyroca",
+   "en": "Ferruginous Duck",
+   "es": "Porrón pardo",
+   "ebird": "ferduc"
+  },
+  {
+   "id": "czernica",
+   "pl": "czernica",
+   "lat": "Aythya fuligula",
+   "en": "Tufted Duck",
+   "es": "Porrón moñudo",
+   "ebird": "tufduc"
+  },
+  {
+   "id": "ogorzalka",
+   "pl": "ogorzałka",
+   "lat": "Aythya marila",
+   "en": "Greater Scaup",
+   "es": "Porrón bastardo",
+   "ebird": "gresca"
+  },
+  {
+   "id": "ogorzalka-mala",
+   "pl": "ogorzałka mała",
+   "lat": "Aythya affinis",
+   "en": "Lesser Scaup",
+   "es": "Porrón bola",
+   "ebird": "lessca"
+  },
+  {
+   "id": "birginiak",
+   "pl": "birginiak",
+   "lat": "Polysticta stelleri",
+   "en": "Steller's Eider",
+   "es": "Éider menor",
+   "ebird": "steeid"
+  },
+  {
+   "id": "edredon-okularowy",
+   "pl": "edredon okularowy",
+   "lat": "Somateria fischeri",
+   "en": "Spectacled Eider",
+   "es": "Éider de anteojos",
+   "ebird": "speeid"
+  },
+  {
+   "id": "turkan",
+   "pl": "turkan",
+   "lat": "Somateria spectabilis",
+   "en": "King Eider",
+   "es": "Éider real",
+   "ebird": "kineid"
+  },
+  {
+   "id": "edredon",
+   "pl": "edredon",
+   "lat": "Somateria mollissima",
+   "en": "Common Eider",
+   "es": "Éider común",
+   "ebird": "comeid"
+  },
+  {
+   "id": "kamieniuszka",
+   "pl": "kamieniuszka",
+   "lat": "Histrionicus histrionicus",
+   "en": "Harlequin Duck",
+   "es": "Pato arlequín",
+   "ebird": "harduc"
+  },
+  {
+   "id": "uhla-pstrodzioba",
+   "pl": "uhla pstrodzioba",
+   "lat": "Melanitta perspicillata",
+   "en": "Surf Scoter",
+   "es": "Negrón careto",
+   "ebird": "sursco"
+  },
+  {
+   "id": "uhla",
+   "pl": "uhla",
+   "lat": "Melanitta fusca",
+   "en": "Velvet Scoter",
+   "es": "Negrón especulado",
+   "ebird": "whwsco3"
+  },
+  {
+   "id": "uhla-garbonosa",
+   "pl": "uhla garbonosa",
+   "lat": "Melanitta deglandi",
+   "en": "White-winged Scoter",
+   "es": "Negrón aliblanco",
+   "ebird": "whwsco2"
+  },
+  {
+   "id": "uhla-azjatycka",
+   "pl": "uhla azjatycka",
+   "lat": "Melanitta stejnegeri",
+   "en": "Stejneger's Scoter",
+   "es": "Negrón siberiano",
+   "ebird": "whwsco1"
+  },
+  {
+   "id": "markaczka",
+   "pl": "markaczka",
+   "lat": "Melanitta nigra",
+   "en": "Common Scoter",
+   "es": "Negrón común",
+   "ebird": "blksco1"
+  },
+  {
+   "id": "markaczka-amerykanska",
+   "pl": "markaczka amerykańska",
+   "lat": "Melanitta americana",
+   "en": "Black Scoter",
+   "es": "Negrón americano",
+   "ebird": "blksco2"
+  },
+  {
+   "id": "lodowka",
+   "pl": "lodówka",
+   "lat": "Clangula hyemalis",
+   "en": "Long-tailed Duck",
+   "es": "Pato havelda",
+   "ebird": "lotduc"
+  },
+  {
+   "id": "gagolek",
+   "pl": "gągołek",
+   "lat": "Bucephala albeola",
+   "en": "Bufflehead",
+   "es": "Porrón albeola",
+   "ebird": "buffle"
+  },
+  {
+   "id": "gagol",
+   "pl": "gągoł",
+   "lat": "Bucephala clangula",
+   "en": "Common Goldeneye",
+   "es": "Porrón osculado",
+   "ebird": "comgol"
+  },
+  {
+   "id": "sierpiec",
+   "pl": "sierpiec",
+   "lat": "Bucephala islandica",
+   "en": "Barrow's Goldeneye",
+   "es": "Porrón islándico",
+   "ebird": "bargol"
+  },
+  {
+   "id": "bielaczek",
+   "pl": "bielaczek",
+   "lat": "Mergellus albellus",
+   "en": "Smew",
+   "es": "Serreta chica",
+   "ebird": "smew"
+  },
+  {
+   "id": "kapturnik",
+   "pl": "kapturnik",
+   "lat": "Lophodytes cucullatus",
+   "en": "Hooded Merganser",
+   "es": "Serreta capuchona",
+   "ebird": "hoomer"
+  },
+  {
+   "id": "nuroges",
+   "pl": "nurogęś",
+   "lat": "Mergus merganser",
+   "en": "Common Merganser",
+   "es": "Serreta grande",
+   "ebird": "commer"
+  },
+  {
+   "id": "szlachar",
+   "pl": "szlachar",
+   "lat": "Mergus serrator",
+   "en": "Red-breasted Merganser",
+   "es": "Serreta mediana",
+   "ebird": "rebmer"
+  },
+  {
+   "id": "sterniczka-jamajska",
+   "pl": "sterniczka jamajska",
+   "lat": "Oxyura jamaicensis",
+   "en": "Ruddy Duck",
+   "es": "Malvasía canela",
+   "ebird": "rudduc"
+  },
+  {
+   "id": "sterniczka",
+   "pl": "sterniczka",
+   "lat": "Oxyura leucocephala",
+   "en": "White-headed Duck",
+   "es": "Malvasía cabeciblanca",
+   "ebird": "whhduc1"
+  },
+  {
+   "id": "perlica-zwyczajna",
+   "pl": "perlica (zwyczajna)",
+   "lat": "Numida meleagris",
+   "en": "Helmeted Guineafowl",
+   "es": "Pintada común",
+   "ebird": "helgui"
+  },
+  {
+   "id": "przepior-wirginijski",
+   "pl": "przepiór wirginijski",
+   "lat": "Colinus virginianus",
+   "en": "Northern Bobwhite",
+   "es": "Colín de Virginia",
+   "ebird": "norbob"
+  },
+  {
+   "id": "jarzabek",
+   "pl": "jarząbek",
+   "lat": "Tetrastes bonasia",
+   "en": "Hazel Grouse",
+   "es": "Grévol común",
+   "ebird": "hazgro1"
+  },
+  {
+   "id": "pardwa-mszarna",
+   "pl": "pardwa mszarna",
+   "lat": "Lagopus lagopus",
+   "en": "Willow Ptarmigan",
+   "es": "Lagópodo común",
+   "ebird": "wilpta"
+  },
+  {
+   "id": "pardwa-gorska",
+   "pl": "pardwa górska",
+   "lat": "Lagopus muta",
+   "en": "Rock Ptarmigan",
+   "es": "Lagópodo alpino",
+   "ebird": "rocpta1"
+  },
+  {
+   "id": "gluszec",
+   "pl": "głuszec",
+   "lat": "Tetrao urogallus",
+   "en": "Western Capercaillie",
+   "es": "Urogallo común",
+   "ebird": "wescap1"
+  },
+  {
+   "id": "cietrzew",
+   "pl": "cietrzew",
+   "lat": "Lyrurus tetrix",
+   "en": "Black Grouse",
+   "es": "Gallo lira común",
+   "ebird": "blagro1"
+  },
+  {
+   "id": "cietrzew-kaukaski",
+   "pl": "cietrzew kaukaski",
+   "lat": "Lyrurus mlokosiewiczi",
+   "en": "Caucasian Grouse",
+   "es": "Gallo lira caucasiano",
+   "ebird": "caugro1"
+  },
+  {
+   "id": "kuropatwa",
+   "pl": "kuropatwa",
+   "lat": "Perdix perdix",
+   "en": "Gray Partridge",
+   "es": "Perdiz pardilla",
+   "ebird": "grypar"
+  },
+  {
+   "id": "bazant-krolewski",
+   "pl": "bażant królewski",
+   "lat": "Syrmaticus reevesii",
+   "en": "Reeves's Pheasant",
+   "es": "Faisán venerado",
+   "ebird": "reephe1"
+  },
+  {
+   "id": "bazant-zlocisty",
+   "pl": "bażant złocisty",
+   "lat": "Chrysolophus pictus",
+   "en": "Golden Pheasant",
+   "es": "Faisán dorado",
+   "ebird": "golphe"
+  },
+  {
+   "id": "bazant",
+   "pl": "bażant",
+   "lat": "Phasianus colchicus",
+   "en": "Ring-necked Pheasant",
+   "es": "Faisán vulgar",
+   "ebird": "rinphe1"
+  },
+  {
+   "id": "paw-indyjski",
+   "pl": "paw indyjski",
+   "lat": "Pavo cristatus",
+   "en": "Indian Peafowl",
+   "es": "Pavo real común",
+   "ebird": "compea"
+  },
+  {
+   "id": "kur-bankiwa",
+   "pl": "kur bankiwa",
+   "lat": "Gallus gallus",
+   "en": "Red Junglefowl",
+   "es": "Gallo bankiva",
+   "ebird": "redjun"
+  },
+  {
+   "id": "frankolin-obrozny",
+   "pl": "frankolin obrożny",
+   "lat": "Francolinus francolinus",
+   "en": "Black Francolin",
+   "es": "Francolín ventrinegro",
+   "ebird": "blkfra"
+  },
+  {
+   "id": "ular-kaukaski",
+   "pl": "ułar kaukaski",
+   "lat": "Tetraogallus caucasicus",
+   "en": "Caucasian Snowcock",
+   "es": "Perdigallo caucasiano",
+   "ebird": "causno1"
+  },
+  {
+   "id": "przepiorka",
+   "pl": "przepiórka",
+   "lat": "Coturnix coturnix",
+   "en": "Common Quail",
+   "es": "Codorniz común",
+   "ebird": "comqua1"
+  },
+  {
+   "id": "goropatwa-berberyjska",
+   "pl": "góropatwa berberyjska",
+   "lat": "Alectoris barbara",
+   "en": "Barbary Partridge",
+   "es": "Perdiz moruna",
+   "ebird": "barpar2"
+  },
+  {
+   "id": "goropatwa-czerwona",
+   "pl": "góropatwa czerwona",
+   "lat": "Alectoris rufa",
+   "en": "Red-legged Partridge",
+   "es": "Perdiz roja",
+   "ebird": "relpar1"
+  },
+  {
+   "id": "goropatwa-azjatycka",
+   "pl": "góropatwa azjatycka",
+   "lat": "Alectoris chukar",
+   "en": "Chukar",
+   "es": "Perdiz chúcar",
+   "ebird": "chukar"
+  },
+  {
+   "id": "goropatwa-skalna",
+   "pl": "góropatwa skalna",
+   "lat": "Alectoris graeca",
+   "en": "Rock Partridge",
+   "es": "Perdiz griega",
+   "ebird": "rocpar2"
+  },
+  {
+   "id": "golab-skalny",
+   "pl": "gołąb skalny",
+   "lat": "Columba livia",
+   "en": "Rock Pigeon",
+   "es": "Paloma bravía",
+   "ebird": "rocpig"
+  },
+  {
+   "id": "siniak",
+   "pl": "siniak",
+   "lat": "Columba oenas",
+   "en": "Stock Dove",
+   "es": "Paloma zurita",
+   "ebird": "stodov1"
+  },
+  {
+   "id": "grzywacz",
+   "pl": "grzywacz",
+   "lat": "Columba palumbus",
+   "en": "Common Wood-Pigeon",
+   "es": "Paloma torcaz",
+   "ebird": "cowpig1"
+  },
+  {
+   "id": "golab-maderski",
+   "pl": "gołąb maderski",
+   "lat": "Columba trocaz",
+   "en": "Trocaz Pigeon",
+   "es": "Paloma de Madeira",
+   "ebird": "tropig1"
+  },
+  {
+   "id": "golab-kanaryjski",
+   "pl": "gołąb kanaryjski",
+   "lat": "Columba bollii",
+   "en": "Bolle's Pigeon",
+   "es": "Paloma turqué",
+   "ebird": "bolpig1"
+  },
+  {
+   "id": "golab-laurowy",
+   "pl": "gołąb laurowy",
+   "lat": "Columba junoniae",
+   "en": "Laurel Pigeon",
+   "es": "Paloma rabiche",
+   "ebird": "laupig1"
+  },
+  {
+   "id": "turkawka",
+   "pl": "turkawka",
+   "lat": "Streptopelia turtur",
+   "en": "European Turtle-Dove",
+   "es": "Tórtola europea",
+   "ebird": "eutdov"
+  },
+  {
+   "id": "turkawka-wschodnia",
+   "pl": "turkawka wschodnia",
+   "lat": "Streptopelia orientalis",
+   "en": "Oriental Turtle-Dove",
+   "es": "Tórtola oriental",
+   "ebird": "ortdov"
+  },
+  {
+   "id": "sierpowka",
+   "pl": "sierpówka",
+   "lat": "Streptopelia decaocto",
+   "en": "Eurasian Collared-Dove",
+   "es": "Tórtola turca",
+   "ebird": "eucdov"
+  },
+  {
+   "id": "cukrowka",
+   "pl": "cukrówka",
+   "lat": "Streptopelia roseogrisea",
+   "en": "African Collared-Dove",
+   "es": "Tórtola rosigrís",
+   "ebird": "afcdov1"
+  },
+  {
+   "id": "synogarlica-senegalska",
+   "pl": "synogarlica senegalska",
+   "lat": "Spilopelia senegalensis",
+   "en": "Laughing Dove",
+   "es": "Tórtola senegalesa",
+   "ebird": "laudov1"
+  },
+  {
+   "id": "stepowka-bialobrzucha",
+   "pl": "stepówka białobrzucha",
+   "lat": "Pterocles alchata",
+   "en": "Pin-tailed Sandgrouse",
+   "es": "Ganga ibérica",
+   "ebird": "pitsan1"
+  },
+  {
+   "id": "stepowka-czarnobrzucha",
+   "pl": "stepówka czarnobrzucha",
+   "lat": "Pterocles orientalis",
+   "en": "Black-bellied Sandgrouse",
+   "es": "Ganga ortega",
+   "ebird": "blbsan1"
+  },
+  {
+   "id": "drop",
+   "pl": "drop",
+   "lat": "Otis tarda",
+   "en": "Great Bustard",
+   "es": "Avutarda euroasiática",
+   "ebird": "grebus1"
+  },
+  {
+   "id": "hubara-saharyjska",
+   "pl": "hubara saharyjska",
+   "lat": "Chlamydotis undulata",
+   "en": "African Houbara",
+   "es": "Avutarda hubara africana",
+   "ebird": "houbus1"
+  },
+  {
+   "id": "strepet",
+   "pl": "strepet",
+   "lat": "Tetrax tetrax",
+   "en": "Little Bustard",
+   "es": "Sisón común",
+   "ebird": "litbus1"
+  },
+  {
+   "id": "kukulka-czubata",
+   "pl": "kukułka czubata",
+   "lat": "Clamator glandarius",
+   "en": "Great Spotted Cuckoo",
+   "es": "Críalo europeo",
+   "ebird": "grscuc1"
+  },
+  {
+   "id": "kukulka",
+   "pl": "kukułka",
+   "lat": "Cuculus canorus",
+   "en": "Common Cuckoo",
+   "es": "Cuco común",
+   "ebird": "comcuc"
+  },
+  {
+   "id": "lelek-rdzawoszyi",
+   "pl": "lelek rdzawoszyi",
+   "lat": "Caprimulgus ruficollis",
+   "en": "Red-necked Nightjar",
+   "es": "Chotacabras cuellirrojo",
+   "ebird": "rennig1"
+  },
+  {
+   "id": "lelek",
+   "pl": "lelek",
+   "lat": "Caprimulgus europaeus",
+   "en": "Eurasian Nightjar",
+   "es": "Chotacabras europeo",
+   "ebird": "eurnig1"
+  },
+  {
+   "id": "jerzyk-alpejski",
+   "pl": "jerzyk alpejski",
+   "lat": "Tachymarptis melba",
+   "en": "Alpine Swift",
+   "es": "Vencejo real",
+   "ebird": "alpswi1"
+  },
+  {
+   "id": "jerzyk",
+   "pl": "jerzyk",
+   "lat": "Apus apus",
+   "en": "Common Swift",
+   "es": "Vencejo común",
+   "ebird": "comswi"
+  },
+  {
+   "id": "jerzyk-jednobarwny",
+   "pl": "jerzyk jednobarwny",
+   "lat": "Apus unicolor",
+   "en": "Plain Swift",
+   "es": "Vencejo unicolor",
+   "ebird": "plaswi1"
+  },
+  {
+   "id": "jerzyk-blady",
+   "pl": "jerzyk blady",
+   "lat": "Apus pallidus",
+   "en": "Pallid Swift",
+   "es": "Vencejo pálido",
+   "ebird": "palswi3"
+  },
+  {
+   "id": "jerzyk-maly",
+   "pl": "jerzyk mały",
+   "lat": "Apus affinis",
+   "en": "Little Swift",
+   "es": "Vencejo moro",
+   "ebird": "y00960"
+  },
+  {
+   "id": "jerzyk-widlosterny",
+   "pl": "jerzyk widłosterny",
+   "lat": "Apus caffer",
+   "en": "White-rumped Swift",
+   "es": "Vencejo cafre",
+   "ebird": "whrswi1"
+  },
+  {
+   "id": "wodnik",
+   "pl": "wodnik",
+   "lat": "Rallus aquaticus",
+   "en": "Water Rail",
+   "es": "Rascón europeo",
+   "ebird": "watrai1"
+  },
+  {
+   "id": "derkacz",
+   "pl": "derkacz",
+   "lat": "Crex crex",
+   "en": "Corn Crake",
+   "es": "Guión de codornices",
+   "ebird": "corcra"
+  },
+  {
+   "id": "kropiatka",
+   "pl": "kropiatka",
+   "lat": "Porzana porzana",
+   "en": "Spotted Crake",
+   "es": "Polluela pintoja",
+   "ebird": "spocra1"
+  },
+  {
+   "id": "kokoszka",
+   "pl": "kokoszka",
+   "lat": "Gallinula chloropus",
+   "en": "Eurasian Moorhen",
+   "es": "Gallineta común",
+   "ebird": "commoo3"
+  },
+  {
+   "id": "lyska",
+   "pl": "łyska",
+   "lat": "Fulica atra",
+   "en": "Eurasian Coot",
+   "es": "Focha común",
+   "ebird": "eurcoo"
+  },
+  {
+   "id": "lyska-czubata",
+   "pl": "łyska czubata",
+   "lat": "Fulica cristata",
+   "en": "Red-knobbed Coot",
+   "es": "Focha moruna",
+   "ebird": "rekcoo1"
+  },
+  {
+   "id": "modrzyk-zwyczajny",
+   "pl": "modrzyk (zwyczajny)",
+   "lat": "Porphyrio porphyrio",
+   "en": "Western Swamphen",
+   "es": "Calamón común",
+   "ebird": "purswa1"
+  },
+  {
+   "id": "zielonka",
+   "pl": "zielonka",
+   "lat": "Zapornia parva",
+   "en": "Little Crake",
+   "es": "Polluela bastarda",
+   "ebird": "litcra1"
+  },
+  {
+   "id": "karliczka",
+   "pl": "karliczka",
+   "lat": "Zapornia pusilla",
+   "en": "Baillon's Crake",
+   "es": "Polluela chica",
+   "ebird": "baicra1"
+  },
+  {
+   "id": "zuraw-kanadyjski",
+   "pl": "żuraw kanadyjski",
+   "lat": "Antigone canadensis",
+   "en": "Sandhill Crane",
+   "es": "Grulla canadiense",
+   "ebird": "sancra"
+  },
+  {
+   "id": "zuraw-stepowy",
+   "pl": "żuraw stepowy",
+   "lat": "Grus virgo",
+   "en": "Demoiselle Crane",
+   "es": "Grulla damisela",
+   "ebird": "demcra1"
+  },
+  {
+   "id": "zuraw",
+   "pl": "żuraw",
+   "lat": "Grus grus",
+   "en": "Common Crane",
+   "es": "Grulla común",
+   "ebird": "comcra"
+  },
+  {
+   "id": "szczudlak-bialobrewy",
+   "pl": "szczudłak białobrewy",
+   "lat": "Himantopus mexicanus",
+   "en": "Black-necked Stilt",
+   "es": "Cigüeñuela cuellinegra",
+   "ebird": "bknsti"
+  },
+  {
+   "id": "siewka-szara",
+   "pl": "siewka szara",
+   "lat": "Pluvialis dominica",
+   "en": "American Golden-Plover",
+   "es": "Chorlito dorado americano",
+   "ebird": "amgplo"
+  },
+  {
+   "id": "siewka-zlotawa",
+   "pl": "siewka złotawa",
+   "lat": "Pluvialis fulva",
+   "en": "Pacific Golden-Plover",
+   "es": "Chorlito dorado siberiano",
+   "ebird": "pagplo"
+  },
+  {
+   "id": "mornel",
+   "pl": "mornel",
+   "lat": "Eudromias morinellus",
+   "en": "Eurasian Dotterel",
+   "es": "Chorlito carambolo",
+   "ebird": "eurdot"
+  },
+  {
+   "id": "sieweczka-skapopletwa",
+   "pl": "sieweczka skąpopłetwa",
+   "lat": "Charadrius semipalmatus",
+   "en": "Semipalmated Plover",
+   "es": "Chorlitejo semipalmeado",
+   "ebird": "semplo"
+  },
+  {
+   "id": "czajka-szponiasta",
+   "pl": "czajka szponiasta",
+   "lat": "Vanellus spinosus",
+   "en": "Spur-winged Lapwing",
+   "es": "Avefría espinosa",
+   "ebird": "spwlap1"
+  },
+  {
+   "id": "czajka-szaroglowa",
+   "pl": "czajka szarogłowa",
+   "lat": "Vanellus cinereus",
+   "en": "Gray-headed Lapwing",
+   "es": "Avefría ceniza",
+   "ebird": "gyhlap1"
+  },
+  {
+   "id": "czajka-towarzyska",
+   "pl": "czajka towarzyska",
+   "lat": "Vanellus gregarius",
+   "en": "Sociable Lapwing",
+   "es": "Avefría sociable",
+   "ebird": "soclap1"
+  },
+  {
+   "id": "czajka-stepowa",
+   "pl": "czajka stepowa",
+   "lat": "Vanellus leucurus",
+   "en": "White-tailed Lapwing",
+   "es": "Avefría coliblanca",
+   "ebird": "whtlap1"
+  },
+  {
+   "id": "sieweczka-dlugonoga",
+   "pl": "sieweczka długonoga",
+   "lat": "Anarhynchus asiaticus",
+   "en": "Caspian Plover",
+   "es": "Chorlitejo asiático chico",
+   "ebird": "casplo1"
+  },
+  {
+   "id": "sieweczka-pustynna",
+   "pl": "sieweczka pustynna",
+   "lat": "Anarhynchus leschenaultii",
+   "en": "Greater Sand-Plover",
+   "es": "Chorlitejo mongol",
+   "ebird": "grsplo"
+  },
+  {
+   "id": "preriowiec",
+   "pl": "preriowiec",
+   "lat": "Bartramia longicauda",
+   "en": "Upland Sandpiper",
+   "es": "Correlimos batitú",
+   "ebird": "uplsan"
+  },
+  {
+   "id": "kulik-krotkodzioby",
+   "pl": "kulik krótkodzioby",
+   "lat": "Numenius minutus",
+   "en": "Little Curlew",
+   "es": "Zarapito chico",
+   "ebird": "litcur"
+  },
+  {
+   "id": "szlamiec-dlugodzioby",
+   "pl": "szlamiec długodzioby",
+   "lat": "Limnodromus scolopaceus",
+   "en": "Long-billed Dowitcher",
+   "es": "Agujeta escolopácea",
+   "ebird": "lobdow"
+  },
+  {
+   "id": "dubelt",
+   "pl": "dubelt",
+   "lat": "Gallinago media",
+   "en": "Great Snipe",
+   "es": "Agachadiza real",
+   "ebird": "gresni1"
+  },
+  {
+   "id": "bekas-amerykanski",
+   "pl": "bekas amerykański",
+   "lat": "Gallinago delicata",
+   "en": "Wilson's Snipe",
+   "es": "Agachadiza de Wilson",
+   "ebird": "wilsni1"
+  },
+  {
+   "id": "platkonog-trojbarwny",
+   "pl": "płatkonóg trójbarwny",
+   "lat": "Phalaropus tricolor",
+   "en": "Wilson's Phalarope",
+   "es": "Falaropo tricolor",
+   "ebird": "wilpha"
+  },
+  {
+   "id": "platkonog-plaskodzioby",
+   "pl": "płatkonóg płaskodzioby",
+   "lat": "Phalaropus fulicarius",
+   "en": "Red Phalarope",
+   "es": "Falaropo picogrueso",
+   "ebird": "redpha1"
+  },
+  {
+   "id": "terekia",
+   "pl": "terekia",
+   "lat": "Xenus cinereus",
+   "en": "Terek Sandpiper",
+   "es": "Andarríos del Terek",
+   "ebird": "tersan"
+  },
+  {
+   "id": "brodziec-plamisty",
+   "pl": "brodziec plamisty",
+   "lat": "Actitis macularius",
+   "en": "Spotted Sandpiper",
+   "es": "Andarríos maculado",
+   "ebird": "sposan"
+  },
+  {
+   "id": "brodziec-zoltonogi",
+   "pl": "brodziec żółtonogi",
+   "lat": "Tringa flavipes",
+   "en": "Lesser Yellowlegs",
+   "es": "Archibebe patigualdo chico",
+   "ebird": "lesyel"
+  },
+  {
+   "id": "brodziec-piegowaty",
+   "pl": "brodziec piegowaty",
+   "lat": "Tringa melanoleuca",
+   "en": "Greater Yellowlegs",
+   "es": "Archibebe patigualdo grande",
+   "ebird": "greyel"
+  },
+  {
+   "id": "biegus-wielki",
+   "pl": "biegus wielki",
+   "lat": "Calidris tenuirostris",
+   "en": "Great Knot",
+   "es": "Correlimos grande",
+   "ebird": "grekno"
+  },
+  {
+   "id": "biegus-plaskodzioby",
+   "pl": "biegus płaskodzioby",
+   "lat": "Calidris falcinellus",
+   "en": "Broad-billed Sandpiper",
+   "es": "Correlimos falcinelo",
+   "ebird": "brbsan"
+  },
+  {
+   "id": "biegus-ostrosterny",
+   "pl": "biegus ostrosterny",
+   "lat": "Calidris acuminata",
+   "en": "Sharp-tailed Sandpiper",
+   "es": "Correlimos acuminado",
+   "ebird": "shtsan"
+  },
+  {
+   "id": "biegus-brodzcowaty",
+   "pl": "biegus brodźcowaty",
+   "lat": "Calidris himantopus",
+   "en": "Stilt Sandpiper",
+   "es": "Correlimos zancolín",
+   "ebird": "stisan"
+  },
+  {
+   "id": "biegus-rdzawoszyi",
+   "pl": "biegus rdzawoszyi",
+   "lat": "Calidris ruficollis",
+   "en": "Red-necked Stint",
+   "es": "Correlimos cuellirrojo",
+   "ebird": "rensti"
+  },
+  {
+   "id": "biegus-plowy",
+   "pl": "biegus płowy",
+   "lat": "Calidris subruficollis",
+   "en": "Buff-breasted Sandpiper",
+   "es": "Correlimos canelo",
+   "ebird": "bubsan"
+  },
+  {
+   "id": "biegus-morski",
+   "pl": "biegus morski",
+   "lat": "Calidris maritima",
+   "en": "Purple Sandpiper",
+   "es": "Correlimos oscuro",
+   "ebird": "pursan"
+  },
+  {
+   "id": "biegus-dlugoskrzydly",
+   "pl": "biegus długoskrzydły",
+   "lat": "Calidris bairdii",
+   "en": "Baird's Sandpiper",
+   "es": "Correlimos de Baird",
+   "ebird": "baisan"
+  },
+  {
+   "id": "biegus-bialorzytny",
+   "pl": "biegus białorzytny",
+   "lat": "Calidris fuscicollis",
+   "en": "White-rumped Sandpiper",
+   "es": "Correlimos culiblanco",
+   "ebird": "whrsan"
+  },
+  {
+   "id": "biegus-karlowaty",
+   "pl": "biegus karłowaty",
+   "lat": "Calidris minutilla",
+   "en": "Least Sandpiper",
+   "es": "Correlimos menudillo",
+   "ebird": "leasan"
+  },
+  {
+   "id": "biegus-arktyczny",
+   "pl": "biegus arktyczny",
+   "lat": "Calidris melanotos",
+   "en": "Pectoral Sandpiper",
+   "es": "Correlimos pectoral",
+   "ebird": "pecsan"
+  },
+  {
+   "id": "biegus-alaskanski",
+   "pl": "biegus alaskański",
+   "lat": "Calidris mauri",
+   "en": "Western Sandpiper",
+   "es": "Correlimos de Alaska",
+   "ebird": "wessan"
+  },
+  {
+   "id": "biegus-tundrowy",
+   "pl": "biegus tundrowy",
+   "lat": "Calidris pusilla",
+   "en": "Semipalmated Sandpiper",
+   "es": "Correlimos semipalmeado",
+   "ebird": "semsan"
+  },
+  {
+   "id": "raczak",
+   "pl": "rączak",
+   "lat": "Cursorius cursor",
+   "en": "Cream-colored Courser",
+   "es": "Corredor sahariano",
+   "ebird": "crccou1"
+  },
+  {
+   "id": "zwirowiec-stepowy",
+   "pl": "żwirowiec stepowy",
+   "lat": "Glareola nordmanni",
+   "en": "Black-winged Pratincole",
+   "es": "Canastera alinegra",
+   "ebird": "blwpra1"
+  },
+  {
+   "id": "zwirowiec-orientalny",
+   "pl": "żwirowiec orientalny",
+   "lat": "Glareola maldivarum",
+   "en": "Oriental Pratincole",
+   "es": "Canastera oriental",
+   "ebird": "oripra"
+  },
+  {
+   "id": "wydrzyk-dlugosterny",
+   "pl": "wydrzyk długosterny",
+   "lat": "Stercorarius longicaudus",
+   "en": "Long-tailed Jaeger",
+   "es": "Págalo rabero",
+   "ebird": "lotjae"
+  },
+  {
+   "id": "wydrzyk-ostrosterny",
+   "pl": "wydrzyk ostrosterny",
+   "lat": "Stercorarius parasiticus",
+   "en": "Parasitic Jaeger",
+   "es": "Págalo parásito",
+   "ebird": "parjae"
+  },
+  {
+   "id": "wydrzyk-teposterny",
+   "pl": "wydrzyk tęposterny",
+   "lat": "Stercorarius pomarinus",
+   "en": "Pomarine Jaeger",
+   "es": "Págalo pomarino",
+   "ebird": "pomjae"
+  },
+  {
+   "id": "wydrzyk-wielki",
+   "pl": "wydrzyk wielki",
+   "lat": "Stercorarius skua",
+   "en": "Great Skua",
+   "es": "Págalo grande",
+   "ebird": "gresku1"
+  },
+  {
+   "id": "maskonur",
+   "pl": "maskonur",
+   "lat": "Fratercula arctica",
+   "en": "Atlantic Puffin",
+   "es": "Frailecillo atlántico",
+   "ebird": "atlpuf"
+  },
+  {
+   "id": "nurnik",
+   "pl": "nurnik",
+   "lat": "Cepphus grylle",
+   "en": "Black Guillemot",
+   "es": "Arao aliblanco",
+   "ebird": "blkgui"
+  },
+  {
+   "id": "alka",
+   "pl": "alka",
+   "lat": "Alca torda",
+   "en": "Razorbill",
+   "es": "Alca común",
+   "ebird": "razorb"
+  },
+  {
+   "id": "alczyk",
+   "pl": "alczyk",
+   "lat": "Alle alle",
+   "en": "Dovekie",
+   "es": "Mérgulo atlántico",
+   "ebird": "doveki"
+  },
+  {
+   "id": "nurzyk-polarny",
+   "pl": "nurzyk polarny",
+   "lat": "Uria lomvia",
+   "en": "Thick-billed Murre",
+   "es": "Arao de Brünnich",
+   "ebird": "thbmur"
+  },
+  {
+   "id": "nurzyk",
+   "pl": "nurzyk",
+   "lat": "Uria aalge",
+   "en": "Common Murre",
+   "es": "Arao común",
+   "ebird": "commur"
+  },
+  {
+   "id": "mewa-mala",
+   "pl": "mewa mała",
+   "lat": "Hydrocoloeus minutus",
+   "en": "Little Gull",
+   "es": "Gaviota enana",
+   "ebird": "litgul"
+  },
+  {
+   "id": "mewa-rozowa",
+   "pl": "mewa różowa",
+   "lat": "Rhodostethia rosea",
+   "en": "Ross's Gull",
+   "es": "Gaviota rosada",
+   "ebird": "rosgul"
+  },
+  {
+   "id": "mewa-trojpalczasta",
+   "pl": "mewa trójpalczasta",
+   "lat": "Rissa tridactyla",
+   "en": "Black-legged Kittiwake",
+   "es": "Gaviota tridáctila",
+   "ebird": "bklkit"
+  },
+  {
+   "id": "mewa-modrodzioba",
+   "pl": "mewa modrodzioba",
+   "lat": "Pagophila eburnea",
+   "en": "Ivory Gull",
+   "es": "Gaviota marfileña",
+   "ebird": "ivogul"
+  },
+  {
+   "id": "mewa-obrozna",
+   "pl": "mewa obrożna",
+   "lat": "Xema sabini",
+   "en": "Sabine's Gull",
+   "es": "Gaviota de Sabine",
+   "ebird": "sabgul"
+  },
+  {
+   "id": "mewa-kanadyjska",
+   "pl": "mewa kanadyjska",
+   "lat": "Chroicocephalus philadelphia",
+   "en": "Bonaparte's Gull",
+   "es": "Gaviota de Bonaparte",
+   "ebird": "bongul"
+  },
+  {
+   "id": "smieszka",
+   "pl": "śmieszka",
+   "lat": "Chroicocephalus ridibundus",
+   "en": "Black-headed Gull",
+   "es": "Gaviota reidora",
+   "ebird": "bkhgul"
+  },
+  {
+   "id": "mewa-karaibska",
+   "pl": "mewa karaibska",
+   "lat": "Leucophaeus atricilla",
+   "en": "Laughing Gull",
+   "es": "Gaviota guanaguanare",
+   "ebird": "laugul"
+  },
+  {
+   "id": "mewa-preriowa",
+   "pl": "mewa preriowa",
+   "lat": "Leucophaeus pipixcan",
+   "en": "Franklin's Gull",
+   "es": "Gaviota pipizcan",
+   "ebird": "fragul"
+  },
+  {
+   "id": "orlica",
+   "pl": "orlica",
+   "lat": "Ichthyaetus ichthyaetus",
+   "en": "Pallas's Gull",
+   "es": "Gavión cabecinegro",
+   "ebird": "gbhgul2"
+  },
+  {
+   "id": "mewa-czarnoglowa",
+   "pl": "mewa czarnogłowa",
+   "lat": "Ichthyaetus melanocephalus",
+   "en": "Mediterranean Gull",
+   "es": "Gaviota cabecinegra",
+   "ebird": "medgul1"
+  },
+  {
+   "id": "mewa-siwa",
+   "pl": "mewa siwa",
+   "lat": "Larus canus",
+   "en": "Common Gull",
+   "es": "Gaviota cana",
+   "ebird": "mewgul"
+  },
+  {
+   "id": "mewa-delawarska",
+   "pl": "mewa delawarska",
+   "lat": "Larus delawarensis",
+   "en": "Ring-billed Gull",
+   "es": "Gaviota de Delaware",
+   "ebird": "ribgul"
+  },
+  {
+   "id": "mewa-bialoglowa",
+   "pl": "mewa białogłowa",
+   "lat": "Larus cachinnans",
+   "en": "Caspian Gull",
+   "es": "Gaviota del Caspio",
+   "ebird": "casgul2"
+  },
+  {
+   "id": "mewa-popielata",
+   "pl": "mewa popielata",
+   "lat": "Larus smithsonianus",
+   "en": "American Herring Gull",
+   "es": "Gaviota argéntea americana",
+   "ebird": "amhgul1"
+  },
+  {
+   "id": "mewa-srebrzysta",
+   "pl": "mewa srebrzysta",
+   "lat": "Larus argentatus",
+   "en": "European Herring Gull",
+   "es": "Gaviota argéntea europea",
+   "ebird": "euhgul1"
+  },
+  {
+   "id": "mewa-romanska",
+   "pl": "mewa romańska",
+   "lat": "Larus michahellis",
+   "en": "Yellow-legged Gull",
+   "es": "Gaviota patiamarilla",
+   "ebird": "yelgul1"
+  },
+  {
+   "id": "mewa-armenska",
+   "pl": "mewa armeńska",
+   "lat": "Larus armenicus",
+   "en": "Armenian Gull",
+   "es": "Gaviota armenia",
+   "ebird": "armgul1"
+  },
+  {
+   "id": "mewa-siodlata",
+   "pl": "mewa siodłata",
+   "lat": "Larus marinus",
+   "en": "Great Black-backed Gull",
+   "es": "Gavión atlántico",
+   "ebird": "gbbgul"
+  },
+  {
+   "id": "mewa-blada",
+   "pl": "mewa blada",
+   "lat": "Larus hyperboreus",
+   "en": "Glaucous Gull",
+   "es": "Gavión hiperbóreo",
+   "ebird": "glagul"
+  },
+  {
+   "id": "mewa-zoltonoga",
+   "pl": "mewa żółtonoga",
+   "lat": "Larus fuscus",
+   "en": "Lesser Black-backed Gull",
+   "es": "Gaviota sombría",
+   "ebird": "lbbgul"
+  },
+  {
+   "id": "mewa-polarna",
+   "pl": "mewa polarna",
+   "lat": "Larus glaucoides",
+   "en": "Iceland Gull",
+   "es": "Gaviota groenlandesa",
+   "ebird": "y00478"
+  },
+  {
+   "id": "rybitwa-bialoczelna",
+   "pl": "rybitwa białoczelna",
+   "lat": "Sternula albifrons",
+   "en": "Little Tern",
+   "es": "Charrancito común",
+   "ebird": "litter1"
+  },
+  {
+   "id": "rybitwa-krotkodzioba",
+   "pl": "rybitwa krótkodzioba",
+   "lat": "Gelochelidon nilotica",
+   "en": "Gull-billed Tern",
+   "es": "Pagaza piconegra",
+   "ebird": "gubter2"
+  },
+  {
+   "id": "rybitwa-bialowasa",
+   "pl": "rybitwa białowąsa",
+   "lat": "Chlidonias hybrida",
+   "en": "Whiskered Tern",
+   "es": "Fumarel cariblanco",
+   "ebird": "whiter2"
+  },
+  {
+   "id": "rybitwa-czarna",
+   "pl": "rybitwa czarna",
+   "lat": "Chlidonias niger",
+   "en": "Black Tern",
+   "es": "Fumarel común",
+   "ebird": "blkter"
+  },
+  {
+   "id": "rybitwa-bialoskrzydla",
+   "pl": "rybitwa białoskrzydła",
+   "lat": "Chlidonias leucopterus",
+   "en": "White-winged Tern",
+   "es": "Fumarel aliblanco",
+   "ebird": "whwter"
+  },
+  {
+   "id": "rybitwa-czarnoucha",
+   "pl": "rybitwa czarnoucha",
+   "lat": "Sterna forsteri",
+   "en": "Forster's Tern",
+   "es": "Charrán de Forster",
+   "ebird": "forter"
+  },
+  {
+   "id": "rybitwa-popielata",
+   "pl": "rybitwa popielata",
+   "lat": "Sterna paradisaea",
+   "en": "Arctic Tern",
+   "es": "Charrán ártico",
+   "ebird": "arcter"
+  },
+  {
+   "id": "rybitwa-rzeczna",
+   "pl": "rybitwa rzeczna",
+   "lat": "Sterna hirundo",
+   "en": "Common Tern",
+   "es": "Charrán común",
+   "ebird": "comter"
+  },
+  {
+   "id": "rybitwa-rozowa",
+   "pl": "rybitwa różowa",
+   "lat": "Sterna dougallii",
+   "en": "Roseate Tern",
+   "es": "Charrán rosado",
+   "ebird": "roster"
+  },
+  {
+   "id": "rybitwa-kalifornijska",
+   "pl": "rybitwa kalifornijska",
+   "lat": "Thalasseus elegans",
+   "en": "Elegant Tern",
+   "es": "Charrán elegante",
+   "ebird": "eleter1"
+  },
+  {
+   "id": "rybitwa-bengalska",
+   "pl": "rybitwa bengalska",
+   "lat": "Thalasseus bengalensis",
+   "en": "Lesser Crested Tern",
+   "es": "Charrán bengalí",
+   "ebird": "lecter2"
+  },
+  {
+   "id": "flaming-chilijski",
+   "pl": "flaming chilijski",
+   "lat": "Phoenicopterus chilensis",
+   "en": "Chilean Flamingo",
+   "es": "Flamenco chileno",
+   "ebird": "chifla1"
+  },
+  {
+   "id": "flaming-karmazynowy",
+   "pl": "flaming karmazynowy",
+   "lat": "Phoenicopterus ruber",
+   "en": "American Flamingo",
+   "es": "Flamenco rojo",
+   "ebird": "grefla2"
+  },
+  {
+   "id": "flaming-maly",
+   "pl": "flaming mały",
+   "lat": "Phoeniconaias minor",
+   "en": "Lesser Flamingo",
+   "es": "Flamenco enano",
+   "ebird": "lesfla1"
+  },
+  {
+   "id": "perkozek",
+   "pl": "perkozek",
+   "lat": "Tachybaptus ruficollis",
+   "en": "Little Grebe",
+   "es": "Zampullín común",
+   "ebird": "litgre1"
+  },
+  {
+   "id": "perkoz-grubodzioby",
+   "pl": "perkoz grubodzioby",
+   "lat": "Podilymbus podiceps",
+   "en": "Pied-billed Grebe",
+   "es": "Zampullín picogrueso",
+   "ebird": "pibgre"
+  },
+  {
+   "id": "perkoz-rogaty",
+   "pl": "perkoz rogaty",
+   "lat": "Podiceps auritus",
+   "en": "Horned Grebe",
+   "es": "Zampullín cuellirrojo",
+   "ebird": "horgre"
+  },
+  {
+   "id": "perkoz-rdzawoszyi",
+   "pl": "perkoz rdzawoszyi",
+   "lat": "Podiceps grisegena",
+   "en": "Red-necked Grebe",
+   "es": "Somormujo cuellirrojo",
+   "ebird": "rengre"
+  },
+  {
+   "id": "perkoz-dwuczuby",
+   "pl": "perkoz dwuczuby",
+   "lat": "Podiceps cristatus",
+   "en": "Great Crested Grebe",
+   "es": "Somormujo lavanco",
+   "ebird": "grcgre1"
+  },
+  {
+   "id": "zausznik",
+   "pl": "zausznik",
+   "lat": "Podiceps nigricollis",
+   "en": "Eared Grebe",
+   "es": "Zampullín cuellinegro",
+   "ebird": "eargre"
+  },
+  {
+   "id": "nur-rdzawoszyi",
+   "pl": "nur rdzawoszyi",
+   "lat": "Gavia stellata",
+   "en": "Red-throated Loon",
+   "es": "Colimbo chico",
+   "ebird": "retloo"
+  },
+  {
+   "id": "nur-czarnoszyi",
+   "pl": "nur czarnoszyi",
+   "lat": "Gavia arctica",
+   "en": "Arctic Loon",
+   "es": "Colimbo ártico",
+   "ebird": "arcloo"
+  },
+  {
+   "id": "nur-pacyficzny",
+   "pl": "nur pacyficzny",
+   "lat": "Gavia pacifica",
+   "en": "Pacific Loon",
+   "es": "Colimbo del Pacífico",
+   "ebird": "pacloo"
+  },
+  {
+   "id": "lodowiec",
+   "pl": "lodowiec",
+   "lat": "Gavia immer",
+   "en": "Common Loon",
+   "es": "Colimbo grande",
+   "ebird": "comloo"
+  },
+  {
+   "id": "nur-bialodzioby",
+   "pl": "nur białodzioby",
+   "lat": "Gavia adamsii",
+   "en": "Yellow-billed Loon",
+   "es": "Colimbo de Adams",
+   "ebird": "yebloo"
+  },
+  {
+   "id": "albatros-czarnobrewy",
+   "pl": "albatros czarnobrewy",
+   "lat": "Thalassarche melanophris",
+   "en": "Black-browed Albatross",
+   "es": "Albatros ojeroso",
+   "ebird": "bkbalb"
+  },
+  {
+   "id": "oceannik-zoltopletwy",
+   "pl": "oceannik żółtopłetwy",
+   "lat": "Oceanites oceanicus",
+   "en": "Wilson's Storm-Petrel",
+   "es": "Paíño de Wilson",
+   "ebird": "wispet"
+  },
+  {
+   "id": "oceannik-bialobrewy",
+   "pl": "oceannik białobrewy",
+   "lat": "Pelagodroma marina",
+   "en": "White-faced Storm-Petrel",
+   "es": "Paíño pechialbo",
+   "ebird": "wfspet"
+  },
+  {
+   "id": "nawalnik-burzowy",
+   "pl": "nawałnik burzowy",
+   "lat": "Hydrobates pelagicus",
+   "en": "European Storm-Petrel",
+   "es": "Paíño europeo",
+   "ebird": "bripet"
+  },
+  {
+   "id": "nawalnik-duzy",
+   "pl": "nawałnik duży",
+   "lat": "Hydrobates leucorhous",
+   "en": "Leach's Storm-Petrel",
+   "es": "Paíño boreal",
+   "ebird": "lcspet"
+  },
+  {
+   "id": "nawalnik-bialorzytny",
+   "pl": "nawałnik białorzytny",
+   "lat": "Hydrobates castro",
+   "en": "Band-rumped Storm-Petrel",
+   "es": "Paíño de Madeira",
+   "ebird": "barpet"
+  },
+  {
+   "id": "fulmar",
+   "pl": "fulmar",
+   "lat": "Fulmarus glacialis",
+   "en": "Northern Fulmar",
+   "es": "Fulmar boreal",
+   "ebird": "norful"
+  },
+  {
+   "id": "tajfunnik-cienkodzioby",
+   "pl": "tajfunnik cienkodzioby",
+   "lat": "Bulweria bulwerii",
+   "en": "Bulwer's Petrel",
+   "es": "Petrel de Bulwer",
+   "ebird": "bulpet"
+  },
+  {
+   "id": "burzyk-zoltodzioby",
+   "pl": "burzyk żółtodzioby",
+   "lat": "Calonectris diomedea",
+   "en": "Scopoli's Shearwater",
+   "es": "Pardela cenicienta mediterránea",
+   "ebird": "scoshe1"
+  },
+  {
+   "id": "burzyk-wielki",
+   "pl": "burzyk wielki",
+   "lat": "Ardenna gravis",
+   "en": "Great Shearwater",
+   "es": "Pardela capirotada",
+   "ebird": "greshe"
+  },
+  {
+   "id": "burzyk-szary",
+   "pl": "burzyk szary",
+   "lat": "Ardenna grisea",
+   "en": "Sooty Shearwater",
+   "es": "Pardela sombría",
+   "ebird": "sooshe"
+  },
+  {
+   "id": "burzyk-polnocny",
+   "pl": "burzyk północny",
+   "lat": "Puffinus puffinus",
+   "en": "Manx Shearwater",
+   "es": "Pardela pichoneta",
+   "ebird": "manshe"
+  },
+  {
+   "id": "burzyk-srodziemnomorski",
+   "pl": "burzyk śródziemnomorski",
+   "lat": "Puffinus yelkouan",
+   "en": "Yelkouan Shearwater",
+   "es": "Pardela mediterránea",
+   "ebird": "levshe1"
+  },
+  {
+   "id": "burzyk-balearski",
+   "pl": "burzyk balearski",
+   "lat": "Puffinus mauretanicus",
+   "en": "Balearic Shearwater",
+   "es": "Pardela balear",
+   "ebird": "balshe1"
+  },
+  {
+   "id": "burzyk-malutki",
+   "pl": "burzyk malutki",
+   "lat": "Puffinus baroli",
+   "en": "Barolo Shearwater",
+   "es": "Pardela chica macaronésica",
+   "ebird": "litshe1"
+  },
+  {
+   "id": "bocian-czarny",
+   "pl": "bocian czarny",
+   "lat": "Ciconia nigra",
+   "en": "Black Stork",
+   "es": "Cigüeña negra",
+   "ebird": "blasto1"
+  },
+  {
+   "id": "bocian-bialy",
+   "pl": "bocian biały",
+   "lat": "Ciconia ciconia",
+   "en": "White Stork",
+   "es": "Cigüeña blanca",
+   "ebird": "whisto1"
+  },
+  {
+   "id": "gluptak",
+   "pl": "głuptak",
+   "lat": "Morus bassanus",
+   "en": "Northern Gannet",
+   "es": "Alcatraz atlántico",
+   "ebird": "norgan"
+  },
+  {
+   "id": "gluptak-bialobrzuchy",
+   "pl": "głuptak białobrzuchy",
+   "lat": "Sula leucogaster",
+   "en": "Brown Booby",
+   "es": "Piquero pardo",
+   "ebird": "brnboo"
+  },
+  {
+   "id": "kormoran-maly",
+   "pl": "kormoran mały",
+   "lat": "Microcarbo pygmaeus",
+   "en": "Pygmy Cormorant",
+   "es": "Cormorán pigmeo",
+   "ebird": "pygcor2"
+  },
+  {
+   "id": "kormoran-czubaty",
+   "pl": "kormoran czubaty",
+   "lat": "Gulosus aristotelis",
+   "en": "European Shag",
+   "es": "Cormorán moñudo",
+   "ebird": "eursha1"
+  },
+  {
+   "id": "ibis-szkarlatny",
+   "pl": "ibis szkarłatny",
+   "lat": "Eudocimus ruber",
+   "en": "Scarlet Ibis",
+   "es": "Corocoro rojo",
+   "ebird": "scaibi"
+  },
+  {
+   "id": "ibis-kasztanowaty",
+   "pl": "ibis kasztanowaty",
+   "lat": "Plegadis falcinellus",
+   "en": "Glossy Ibis",
+   "es": "Morito común",
+   "ebird": "gloibi"
+  },
+  {
+   "id": "ibis-czczony",
+   "pl": "ibis czczony",
+   "lat": "Threskiornis aethiopicus",
+   "en": "African Sacred Ibis",
+   "es": "Ibis sagrado",
+   "ebird": "sacibi2"
+  },
+  {
+   "id": "bak",
+   "pl": "bąk",
+   "lat": "Botaurus stellaris",
+   "en": "Eurasian Bittern",
+   "es": "Avetoro común",
+   "ebird": "grebit1"
+  },
+  {
+   "id": "baczek",
+   "pl": "bączek",
+   "lat": "Botaurus minutus",
+   "en": "Little Bittern",
+   "es": "Avetorillo común",
+   "ebird": "litbit1"
+  },
+  {
+   "id": "slepowron",
+   "pl": "ślepowron",
+   "lat": "Nycticorax nycticorax",
+   "en": "Black-crowned Night Heron",
+   "es": "Martinete común",
+   "ebird": "bcnher"
+  },
+  {
+   "id": "czapla-rafowa",
+   "pl": "czapla rafowa",
+   "lat": "Egretta gularis",
+   "en": "Western Reef-Heron",
+   "es": "Garceta dimorfa",
+   "ebird": "werher"
+  },
+  {
+   "id": "czapla-zielona",
+   "pl": "czapla zielona",
+   "lat": "Butorides virescens",
+   "en": "Green Heron",
+   "es": "Garcilla verde",
+   "ebird": "grnher"
+  },
+  {
+   "id": "czapla-modronosa",
+   "pl": "czapla modronosa",
+   "lat": "Ardeola ralloides",
+   "en": "Squacco Heron",
+   "es": "Garcilla cangrejera",
+   "ebird": "squher1"
+  },
+  {
+   "id": "czapla-biala",
+   "pl": "czapla biała",
+   "lat": "Ardea alba",
+   "en": "Great Egret",
+   "es": "Garceta grande",
+   "ebird": "greegr"
+  },
+  {
+   "id": "czapla-purpurowa",
+   "pl": "czapla purpurowa",
+   "lat": "Ardea purpurea",
+   "en": "Purple Heron",
+   "es": "Garza imperial",
+   "ebird": "purher1"
+  },
+  {
+   "id": "pelikan-rozowy",
+   "pl": "pelikan różowy",
+   "lat": "Pelecanus onocrotalus",
+   "en": "Great White Pelican",
+   "es": "Pelícano común",
+   "ebird": "grwpel1"
+  },
+  {
+   "id": "pelikan-maly",
+   "pl": "pelikan mały",
+   "lat": "Pelecanus rufescens",
+   "en": "Pink-backed Pelican",
+   "es": "Pelícano rosado",
+   "ebird": "pibpel1"
+  },
+  {
+   "id": "pelikan-kedzierzawy",
+   "pl": "pelikan kędzierzawy",
+   "lat": "Pelecanus crispus",
+   "en": "Dalmatian Pelican",
+   "es": "Pelícano ceñudo",
+   "ebird": "dalpel1"
+  },
+  {
+   "id": "orzel-stepowy",
+   "pl": "orzeł stepowy",
+   "lat": "Aquila nipalensis",
+   "en": "Steppe Eagle",
+   "es": "Águila esteparia",
+   "ebird": "steeag1"
+  },
+  {
+   "id": "orzel-cesarski",
+   "pl": "orzeł cesarski",
+   "lat": "Aquila heliaca",
+   "en": "Eastern Imperial Eagle",
+   "es": "Águila imperial oriental",
+   "ebird": "impeag1"
+  },
+  {
+   "id": "krogulec-krotkonogi",
+   "pl": "krogulec krótkonogi",
+   "lat": "Tachyspiza brevipes",
+   "en": "Levant Sparrowhawk",
+   "es": "Gavilán griego",
+   "ebird": "levspa1"
+  },
+  {
+   "id": "blotniak-stepowy",
+   "pl": "błotniak stepowy",
+   "lat": "Circus macrourus",
+   "en": "Pallid Harrier",
+   "es": "Aguilucho papialbo",
+   "ebird": "palhar1"
+  },
+  {
+   "id": "myszolowiec-towarzyski",
+   "pl": "myszołowiec towarzyski",
+   "lat": "Parabuteo unicinctus",
+   "en": "Harris's Hawk",
+   "es": "Busardo mixto",
+   "ebird": "hrshaw"
+  },
+  {
+   "id": "dudek",
+   "pl": "dudek",
+   "lat": "Upupa epops",
+   "en": "Common Hoopoe",
+   "es": "Abubilla común",
+   "ebird": "hoopoe"
+  },
+  {
+   "id": "zolna-modrolica",
+   "pl": "żołna modrolica",
+   "lat": "Merops persicus",
+   "en": "Blue-cheeked Bee-eater",
+   "es": "Abejaruco persa",
+   "ebird": "bcbeat1"
+  },
+  {
+   "id": "zolna",
+   "pl": "żołna",
+   "lat": "Merops apiaster",
+   "en": "European Bee-eater",
+   "es": "Abejaruco europeo",
+   "ebird": "eubeat1"
+  },
+  {
+   "id": "kraska",
+   "pl": "kraska",
+   "lat": "Coracias garrulus",
+   "en": "European Roller",
+   "es": "Carraca europea",
+   "ebird": "eurrol1"
+  },
+  {
+   "id": "kretoglow",
+   "pl": "krętogłów",
+   "lat": "Jynx torquilla",
+   "en": "Eurasian Wryneck",
+   "es": "Torcecuello euroasiático",
+   "ebird": "eurwry"
+  },
+  {
+   "id": "dzieciol-trojpalczasty",
+   "pl": "dzięcioł trójpalczasty",
+   "lat": "Picoides tridactylus",
+   "en": "Eurasian Three-toed Woodpecker",
+   "es": "Pico tridáctilo euroasiático",
+   "ebird": "ettwoo1"
+  },
+  {
+   "id": "dzieciol-sredni",
+   "pl": "dzięcioł średni",
+   "lat": "Dendrocoptes medius",
+   "en": "Middle Spotted Woodpecker",
+   "es": "Pico mediano",
+   "ebird": "miswoo1"
+  },
+  {
+   "id": "dzieciol-bialogrzbiety",
+   "pl": "dzięcioł białogrzbiety",
+   "lat": "Dendrocopos leucotos",
+   "en": "White-backed Woodpecker",
+   "es": "Pico dorsiblanco",
+   "ebird": "whbwoo1"
+  },
+  {
+   "id": "dzieciol-duzy",
+   "pl": "dzięcioł duży",
+   "lat": "Dendrocopos major",
+   "en": "Great Spotted Woodpecker",
+   "es": "Pico picapinos",
+   "ebird": "grswoo"
+  },
+  {
+   "id": "dzieciol-bialoszyi",
+   "pl": "dzięcioł białoszyi",
+   "lat": "Dendrocopos syriacus",
+   "en": "Syrian Woodpecker",
+   "es": "Pico sirio",
+   "ebird": "syrwoo1"
+  },
+  {
+   "id": "dzieciolek",
+   "pl": "dzięciołek",
+   "lat": "Dryobates minor",
+   "en": "Lesser Spotted Woodpecker",
+   "es": "Pico menor",
+   "ebird": "leswoo1"
+  },
+  {
+   "id": "dzieciol-zielonosiwy",
+   "pl": "dzięcioł zielonosiwy",
+   "lat": "Picus canus",
+   "en": "Gray-headed Woodpecker",
+   "es": "Pito cano",
+   "ebird": "gyfwoo1"
+  },
+  {
+   "id": "dzieciol-zielony",
+   "pl": "dzięcioł zielony",
+   "lat": "Picus viridis",
+   "en": "Eurasian Green Woodpecker",
+   "es": "Pito euroasiático",
+   "ebird": "eugwoo2"
+  },
+  {
+   "id": "dzieciol-iberyjski",
+   "pl": "dzięcioł iberyjski",
+   "lat": "Picus sharpei",
+   "en": "Iberian Green Woodpecker",
+   "es": "Pito ibérico",
+   "ebird": "grnwoo3"
+  },
+  {
+   "id": "dzieciol-czarny",
+   "pl": "dzięcioł czarny",
+   "lat": "Dryocopus martius",
+   "en": "Black Woodpecker",
+   "es": "Picamaderos negro",
+   "ebird": "blawoo1"
+  },
+  {
+   "id": "kobczyk",
+   "pl": "kobczyk",
+   "lat": "Falco vespertinus",
+   "en": "Red-footed Falcon",
+   "es": "Cernícalo patirrojo",
+   "ebird": "reffal1"
+  },
+  {
+   "id": "rarog",
+   "pl": "raróg",
+   "lat": "Falco cherrug",
+   "en": "Saker Falcon",
+   "es": "Halcón sacre",
+   "ebird": "sakfal1"
+  },
+  {
+   "id": "bialozor",
+   "pl": "białozór",
+   "lat": "Falco rusticolus",
+   "en": "Gyrfalcon",
+   "es": "Halcón gerifalte",
+   "ebird": "gyrfal"
+  },
+  {
+   "id": "nimfa",
+   "pl": "nimfa",
+   "lat": "Nymphicus hollandicus",
+   "en": "Cockatiel",
+   "es": "Cacatúa ninfa",
+   "ebird": "cockat"
+  },
+  {
+   "id": "aleksandretta-wieksza",
+   "pl": "aleksandretta większa",
+   "lat": "Psittacula eupatria",
+   "en": "Alexandrine Parakeet",
+   "es": "Cotorra alejandrina",
+   "ebird": "alepar2"
+  },
+  {
+   "id": "aleksandretta-obrozna",
+   "pl": "aleksandretta obrożna",
+   "lat": "Psittacula krameri",
+   "en": "Rose-ringed Parakeet",
+   "es": "Cotorra de Kramer",
+   "ebird": "rorpar"
+  },
+  {
+   "id": "papuzka-falista",
+   "pl": "papużka falista",
+   "lat": "Melopsittacus undulatus",
+   "en": "Budgerigar",
+   "es": "Periquito común",
+   "ebird": "budger"
+  },
+  {
+   "id": "mnicha",
+   "pl": "mnicha",
+   "lat": "Myiopsitta monachus",
+   "en": "Monk Parakeet",
+   "es": "Cotorra argentina",
+   "ebird": "monpar"
+  },
+  {
+   "id": "szmaragdzianka",
+   "pl": "szmaragdzianka",
+   "lat": "Thectocercus acuticaudatus",
+   "en": "Blue-crowned Parakeet",
+   "es": "Aratinga cabeciazul",
+   "ebird": "bucpar"
+  },
+  {
+   "id": "szmaragdolotka-maskowa",
+   "pl": "szmaragdolotka maskowa",
+   "lat": "Psittacara mitratus",
+   "en": "Mitred Parakeet",
+   "es": "Aratinga mitrada",
+   "ebird": "mitpar"
+  },
+  {
+   "id": "szmaragdolotka-krasnolica",
+   "pl": "szmaragdolotka krasnolica",
+   "lat": "Psittacara erythrogenys",
+   "en": "Red-masked Parakeet",
+   "es": "Aratinga de Guayaquil",
+   "ebird": "rempar"
+  },
+  {
+   "id": "wireonek-czerwonooki",
+   "pl": "wireonek czerwonooki",
+   "lat": "Vireo olivaceus",
+   "en": "Red-eyed Vireo",
+   "es": "Vireo ojirrojo",
+   "ebird": "reevir1"
+  },
+  {
+   "id": "wilga",
+   "pl": "wilga",
+   "lat": "Oriolus oriolus",
+   "en": "Eurasian Golden Oriole",
+   "es": "Oropéndola europea",
+   "ebird": "eugori2"
+  },
+  {
+   "id": "dzierzba-rdzawosterna",
+   "pl": "dzierzba rdzawosterna",
+   "lat": "Lanius phoenicuroides",
+   "en": "Red-tailed Shrike",
+   "es": "Alcaudón colirrojo",
+   "ebird": "rutshr2"
+  },
+  {
+   "id": "dzierzba-pustynna",
+   "pl": "dzierzba pustynna",
+   "lat": "Lanius isabellinus",
+   "en": "Isabelline Shrike",
+   "es": "Alcaudón isabel",
+   "ebird": "isashr1"
+  },
+  {
+   "id": "dzierzba-brazowa",
+   "pl": "dzierzba brązowa",
+   "lat": "Lanius cristatus",
+   "en": "Brown Shrike",
+   "es": "Alcaudón pardo",
+   "ebird": "brnshr"
+  },
+  {
+   "id": "dzierzba-srodziemnomorska",
+   "pl": "dzierzba śródziemnomorska",
+   "lat": "Lanius meridionalis",
+   "en": "Iberian Gray Shrike",
+   "es": "Alcaudón real",
+   "ebird": "ibgshr1"
+  },
+  {
+   "id": "srokosz",
+   "pl": "srokosz",
+   "lat": "Lanius excubitor",
+   "en": "Great Gray Shrike",
+   "es": "Alcaudón norteño",
+   "ebird": "norshr1"
+  },
+  {
+   "id": "dzierzba-czarnoczelna",
+   "pl": "dzierzba czarnoczelna",
+   "lat": "Lanius minor",
+   "en": "Lesser Gray Shrike",
+   "es": "Alcaudón chico",
+   "ebird": "legshr2"
+  },
+  {
+   "id": "dzierzba-bialoczelna",
+   "pl": "dzierzba białoczelna",
+   "lat": "Lanius nubicus",
+   "en": "Masked Shrike",
+   "es": "Alcaudón núbico",
+   "ebird": "masshr1"
+  },
+  {
+   "id": "dzierzba-rudoglowa",
+   "pl": "dzierzba rudogłowa",
+   "lat": "Lanius senator",
+   "en": "Woodchat Shrike",
+   "es": "Alcaudón común",
+   "ebird": "wooshr1"
+  },
+  {
+   "id": "sojka-syberyjska",
+   "pl": "sójka syberyjska",
+   "lat": "Perisoreus infaustus",
+   "en": "Siberian Jay",
+   "es": "Arrendajo siberiano",
+   "ebird": "sibjay1"
+  },
+  {
+   "id": "sojka-blekitna",
+   "pl": "sójka błękitna",
+   "lat": "Cyanopica cyanus",
+   "en": "Azure-winged Magpie",
+   "es": "Rabilargo asiático",
+   "ebird": "azwmag2"
+  },
+  {
+   "id": "wieszczek-graculus",
+   "pl": "wieszczek",
+   "lat": "Pyrrhocorax graculus",
+   "en": "Yellow-billed Chough",
+   "es": "Chova piquigualda",
+   "ebird": "yebcho1"
+  },
+  {
+   "id": "wrona-orientalna",
+   "pl": "wrona orientalna",
+   "lat": "Corvus splendens",
+   "en": "House Crow",
+   "es": "Cuervo indio",
+   "ebird": "houcro1"
+  },
+  {
+   "id": "kruk-srokaty",
+   "pl": "kruk srokaty",
+   "lat": "Corvus albus",
+   "en": "Pied Crow",
+   "es": "Cuervo pío",
+   "ebird": "piecro1"
+  },
+  {
+   "id": "sosnowka",
+   "pl": "sosnówka",
+   "lat": "Periparus ater",
+   "en": "Coal Tit",
+   "es": "Carbonero garrapinos",
+   "ebird": "coatit2"
+  },
+  {
+   "id": "czubatka",
+   "pl": "czubatka",
+   "lat": "Lophophanes cristatus",
+   "en": "Crested Tit",
+   "es": "Herrerillo capuchino",
+   "ebird": "cretit2"
+  },
+  {
+   "id": "sikora-zalobna",
+   "pl": "sikora żałobna",
+   "lat": "Poecile lugubris",
+   "en": "Sombre Tit",
+   "es": "Carbonero lúgubre",
+   "ebird": "somtit3"
+  },
+  {
+   "id": "sikora-uboga",
+   "pl": "sikora uboga",
+   "lat": "Poecile palustris",
+   "en": "Marsh Tit",
+   "es": "Carbonero palustre",
+   "ebird": "martit2"
+  },
+  {
+   "id": "czarnoglowka",
+   "pl": "czarnogłówka",
+   "lat": "Poecile montanus",
+   "en": "Willow Tit",
+   "es": "Carbonero montano",
+   "ebird": "wiltit1"
+  },
+  {
+   "id": "sikora-polnocna",
+   "pl": "sikora północna",
+   "lat": "Poecile cinctus",
+   "en": "Gray-headed Chickadee",
+   "es": "Carbonero lapón",
+   "ebird": "gyhchi"
+  },
+  {
+   "id": "modraszka-kanaryjska",
+   "pl": "modraszka kanaryjska",
+   "lat": "Cyanistes teneriffae",
+   "en": "African Blue Tit",
+   "es": "Herrerillo canario",
+   "ebird": "afbtit2"
+  },
+  {
+   "id": "sikora-lazurowa",
+   "pl": "sikora lazurowa",
+   "lat": "Cyanistes cyanus",
+   "en": "Azure Tit",
+   "es": "Herrerillo azul",
+   "ebird": "azutit2"
+  },
+  {
+   "id": "remiz",
+   "pl": "remiz",
+   "lat": "Remiz pendulinus",
+   "en": "Eurasian Penduline-Tit",
+   "es": "Pájaro moscón europeo",
+   "ebird": "euptit1"
+  },
+  {
+   "id": "lerka",
+   "pl": "lerka",
+   "lat": "Lullula arborea",
+   "en": "Wood Lark",
+   "es": "Alondra totovía",
+   "ebird": "woolar1"
+  },
+  {
+   "id": "dzierlatka-iberyjska",
+   "pl": "dzierlatka iberyjska",
+   "lat": "Galerida theklae",
+   "en": "Thekla's Lark",
+   "es": "Cogujada montesina",
+   "ebird": "thelar1"
+  },
+  {
+   "id": "gorniczek",
+   "pl": "górniczek",
+   "lat": "Eremophila alpestris",
+   "en": "Horned Lark",
+   "es": "Alondra cornuda",
+   "ebird": "horlar"
+  },
+  {
+   "id": "skowronczyk-krotkopalcowy",
+   "pl": "skowrończyk krótkopalcowy",
+   "lat": "Calandrella brachydactyla",
+   "en": "Greater Short-toed Lark",
+   "es": "Terrera común",
+   "ebird": "gstlar1"
+  },
+  {
+   "id": "kalandra-szara",
+   "pl": "kalandra szara",
+   "lat": "Melanocorypha calandra",
+   "en": "Calandra Lark",
+   "es": "Calandria común",
+   "ebird": "callar1"
+  },
+  {
+   "id": "skowronczyk-sierpodzioby",
+   "pl": "skowrończyk sierpodzioby",
+   "lat": "Chersophilus duponti",
+   "en": "Dupont's Lark",
+   "es": "Alondra ricotí",
+   "ebird": "duplar1"
+  },
+  {
+   "id": "skowronczyk-maly",
+   "pl": "skowrończyk mały",
+   "lat": "Alaudala rufescens",
+   "en": "Mediterranean Short-toed Lark",
+   "es": "Terrera marismeña",
+   "ebird": "mstlar1"
+  },
+  {
+   "id": "wasatka",
+   "pl": "wąsatka",
+   "lat": "Panurus biarmicus",
+   "en": "Bearded Reedling",
+   "es": "Bigotudo",
+   "ebird": "bearee1"
+  },
+  {
+   "id": "zaganiacz-maly",
+   "pl": "zaganiacz mały",
+   "lat": "Iduna caligata",
+   "en": "Booted Warbler",
+   "es": "Zarcero escita",
+   "ebird": "boowar1"
+  },
+  {
+   "id": "zaganiacz-blady",
+   "pl": "zaganiacz blady",
+   "lat": "Iduna pallida",
+   "en": "Eastern Olivaceous Warbler",
+   "es": "Zarcero pálido",
+   "ebird": "eaowar1"
+  },
+  {
+   "id": "zaganiacz-plowy",
+   "pl": "zaganiacz płowy",
+   "lat": "Iduna opaca",
+   "en": "Western Olivaceous Warbler",
+   "es": "Zarcero bereber",
+   "ebird": "weowar1"
+  },
+  {
+   "id": "zaganiacz-oliwny",
+   "pl": "zaganiacz oliwny",
+   "lat": "Hippolais olivetorum",
+   "en": "Olive-tree Warbler",
+   "es": "Zarcero grande",
+   "ebird": "oltwar1"
+  },
+  {
+   "id": "zaganiacz-szczebiotliwy",
+   "pl": "zaganiacz szczebiotliwy",
+   "lat": "Hippolais polyglotta",
+   "en": "Melodious Warbler",
+   "es": "Zarcero políglota",
+   "ebird": "melwar1"
+  },
+  {
+   "id": "zaganiacz",
+   "pl": "zaganiacz",
+   "lat": "Hippolais icterina",
+   "en": "Icterine Warbler",
+   "es": "Zarcero icterino",
+   "ebird": "ictwar1"
+  },
+  {
+   "id": "wodniczka",
+   "pl": "wodniczka",
+   "lat": "Acrocephalus paludicola",
+   "en": "Aquatic Warbler",
+   "es": "Carricerín cejudo",
+   "ebird": "aquwar1"
+  },
+  {
+   "id": "tamaryszka",
+   "pl": "tamaryszka",
+   "lat": "Acrocephalus melanopogon",
+   "en": "Moustached Warbler",
+   "es": "Carricerín real",
+   "ebird": "mouwar1"
+  },
+  {
+   "id": "rokitniczka",
+   "pl": "rokitniczka",
+   "lat": "Acrocephalus schoenobaenus",
+   "en": "Sedge Warbler",
+   "es": "Carricerín común",
+   "ebird": "sedwar1"
+  },
+  {
+   "id": "trzcinniczek-kaspijski",
+   "pl": "trzcinniczek kaspijski",
+   "lat": "Acrocephalus agricola",
+   "en": "Paddyfield Warbler",
+   "es": "Carricero agrícola",
+   "ebird": "padwar1"
+  },
+  {
+   "id": "zaroslowka",
+   "pl": "zaroślówka",
+   "lat": "Acrocephalus dumetorum",
+   "en": "Blyth's Reed Warbler",
+   "es": "Carricero de Blyth",
+   "ebird": "blrwar1"
+  },
+  {
+   "id": "lozowka",
+   "pl": "łozówka",
+   "lat": "Acrocephalus palustris",
+   "en": "Marsh Warbler",
+   "es": "Carricero políglota",
+   "ebird": "marwar3"
+  },
+  {
+   "id": "trzcinniczek",
+   "pl": "trzcinniczek",
+   "lat": "Acrocephalus scirpaceus",
+   "en": "Common Reed Warbler",
+   "es": "Carricero común",
+   "ebird": "eurwar1"
+  },
+  {
+   "id": "trzciniak",
+   "pl": "trzciniak",
+   "lat": "Acrocephalus arundinaceus",
+   "en": "Great Reed Warbler",
+   "es": "Carricero tordal",
+   "ebird": "grrwar1"
+  },
+  {
+   "id": "swierszczak-nakrapiany",
+   "pl": "świerszczak nakrapiany",
+   "lat": "Locustella lanceolata",
+   "en": "Lanceolated Warbler",
+   "es": "Buscarla lanceolada",
+   "ebird": "lanwar"
+  },
+  {
+   "id": "strumieniowka",
+   "pl": "strumieniówka",
+   "lat": "Locustella fluviatilis",
+   "en": "River Warbler",
+   "es": "Buscarla fluvial",
+   "ebird": "eurwar2"
+  },
+  {
+   "id": "brzeczka",
+   "pl": "brzęczka",
+   "lat": "Locustella luscinioides",
+   "en": "Savi's Warbler",
+   "es": "Buscarla unicolor",
+   "ebird": "savwar1"
+  },
+  {
+   "id": "swierszczak",
+   "pl": "świerszczak",
+   "lat": "Locustella naevia",
+   "en": "Common Grasshopper Warbler",
+   "es": "Buscarla pintoja",
+   "ebird": "cogwar1"
+  },
+  {
+   "id": "brzegowka",
+   "pl": "brzegówka",
+   "lat": "Riparia riparia",
+   "en": "Bank Swallow",
+   "es": "Avión zapador",
+   "ebird": "banswa"
+  },
+  {
+   "id": "jaskolka-skalna",
+   "pl": "jaskółka skalna",
+   "lat": "Ptyonoprogne rupestris",
+   "en": "Eurasian Crag-Martin",
+   "es": "Avión roquero",
+   "ebird": "eurcrm1"
+  },
+  {
+   "id": "dymowka",
+   "pl": "dymówka",
+   "lat": "Hirundo rustica",
+   "en": "Barn Swallow",
+   "es": "Golondrina común",
+   "ebird": "barswa"
+  },
+  {
+   "id": "oknowka",
+   "pl": "oknówka",
+   "lat": "Delichon urbicum",
+   "en": "Western House-Martin",
+   "es": "Avión común occidental",
+   "ebird": "comhom1"
+  },
+  {
+   "id": "jaskolka-rudawa",
+   "pl": "jaskółka rudawa",
+   "lat": "Cecropis daurica",
+   "en": "Eastern Red-rumped Swallow",
+   "es": "Golondrina dáurica oriental",
+   "ebird": "y00621"
+  },
+  {
+   "id": "bilbil-ogrodowy",
+   "pl": "bilbil ogrodowy",
+   "lat": "Pycnonotus barbatus",
+   "en": "Common Bulbul",
+   "es": "Bulbul naranjero",
+   "ebird": "combul2"
+  },
+  {
+   "id": "bilbil-zbroczony",
+   "pl": "bilbil zbroczony",
+   "lat": "Pycnonotus jocosus",
+   "en": "Red-whiskered Bulbul",
+   "es": "Bulbul orfeo",
+   "ebird": "rewbul"
+  },
+  {
+   "id": "swistunka-lesna",
+   "pl": "świstunka leśna",
+   "lat": "Phylloscopus sibilatrix",
+   "en": "Wood Warbler",
+   "es": "Mosquitero silbador",
+   "ebird": "woowar"
+  },
+  {
+   "id": "swistunka-gorska",
+   "pl": "świstunka górska",
+   "lat": "Phylloscopus bonelli",
+   "en": "Western Bonelli's Warbler",
+   "es": "Mosquitero papialbo",
+   "ebird": "webwar1"
+  },
+  {
+   "id": "swistunka-zlotorzytna",
+   "pl": "świstunka złotorzytna",
+   "lat": "Phylloscopus orientalis",
+   "en": "Eastern Bonelli's Warbler",
+   "es": "Mosquitero oriental",
+   "ebird": "eabwar1"
+  },
+  {
+   "id": "swistunka-zoltawa",
+   "pl": "świstunka żółtawa",
+   "lat": "Phylloscopus inornatus",
+   "en": "Yellow-browed Warbler",
+   "es": "Mosquitero bilistado",
+   "ebird": "yebwar3"
+  },
+  {
+   "id": "swistunka-altajska",
+   "pl": "świstunka ałtajska",
+   "lat": "Phylloscopus humei",
+   "en": "Hume's Leaf Warbler",
+   "es": "Mosquitero de Hume",
+   "ebird": "humwar1"
+  },
+  {
+   "id": "swistunka-zlotawa",
+   "pl": "świstunka złotawa",
+   "lat": "Phylloscopus proregulus",
+   "en": "Pallas's Leaf Warbler",
+   "es": "Mosquitero de Pallas",
+   "ebird": "palwar5"
+  },
+  {
+   "id": "swistunka-grubodzioba",
+   "pl": "świstunka grubodzioba",
+   "lat": "Phylloscopus schwarzi",
+   "en": "Radde's Warbler",
+   "es": "Mosquitero de Schwarz",
+   "ebird": "radwar1"
+  },
+  {
+   "id": "swistunka-brunatna",
+   "pl": "świstunka brunatna",
+   "lat": "Phylloscopus fuscatus",
+   "en": "Dusky Warbler",
+   "es": "Mosquitero sombrío",
+   "ebird": "duswar"
+  },
+  {
+   "id": "piecuszek",
+   "pl": "piecuszek",
+   "lat": "Phylloscopus trochilus",
+   "en": "Willow Warbler",
+   "es": "Mosquitero musical",
+   "ebird": "wlwwar"
+  },
+  {
+   "id": "swistunka-szarawa",
+   "pl": "świstunka szarawa",
+   "lat": "Phylloscopus sindianus",
+   "en": "Mountain Chiffchaff",
+   "es": "Mosquitero montano",
+   "ebird": "mouchi2"
+  },
+  {
+   "id": "swistunka-kanaryjska",
+   "pl": "świstunka kanaryjska",
+   "lat": "Phylloscopus canariensis",
+   "en": "Canary Islands Chiffchaff",
+   "es": "Mosquitero canario",
+   "ebird": "caichi1"
+  },
+  {
+   "id": "swistunka-iberyjska",
+   "pl": "świstunka iberyjska",
+   "lat": "Phylloscopus ibericus",
+   "en": "Iberian Chiffchaff",
+   "es": "Mosquitero ibérico",
+   "ebird": "ibechi2"
+  },
+  {
+   "id": "swistunka-kaukaska",
+   "pl": "świstunka kaukaska",
+   "lat": "Phylloscopus nitidus",
+   "en": "Green Warbler",
+   "es": "Mosquitero del Cáucaso",
+   "ebird": "grnwar1"
+  },
+  {
+   "id": "wojcik",
+   "pl": "wójcik",
+   "lat": "Phylloscopus trochiloides",
+   "en": "Greenish Warbler",
+   "es": "Mosquitero verdoso",
+   "ebird": "grewar3"
+  },
+  {
+   "id": "swistunka-amurska",
+   "pl": "świstunka amurska",
+   "lat": "Phylloscopus plumbeitarsus",
+   "en": "Two-barred Warbler",
+   "es": "Mosquitero patigrís",
+   "ebird": "grewar2"
+  },
+  {
+   "id": "swistunka-polnocna",
+   "pl": "świstunka północna",
+   "lat": "Phylloscopus borealis",
+   "en": "Arctic Warbler",
+   "es": "Mosquitero boreal",
+   "ebird": "arcwar1"
+  },
+  {
+   "id": "wierzbowka",
+   "pl": "wierzbówka",
+   "lat": "Cettia cetti",
+   "en": "Cetti's Warbler",
+   "es": "Cetia ruiseñor",
+   "ebird": "cetwar1"
+  },
+  {
+   "id": "raniuszek",
+   "pl": "raniuszek",
+   "lat": "Aegithalos caudatus",
+   "en": "Long-tailed Tit",
+   "es": "Mito común",
+   "ebird": "lottit1"
+  },
+  {
+   "id": "kapturka",
+   "pl": "kapturka",
+   "lat": "Sylvia atricapilla",
+   "en": "Eurasian Blackcap",
+   "es": "Curruca capirotada",
+   "ebird": "blackc1"
+  },
+  {
+   "id": "gajowka",
+   "pl": "gajówka",
+   "lat": "Sylvia borin",
+   "en": "Garden Warbler",
+   "es": "Curruca mosquitera",
+   "ebird": "garwar1"
+  },
+  {
+   "id": "jarzebatka",
+   "pl": "jarzębatka",
+   "lat": "Curruca nisoria",
+   "en": "Barred Warbler",
+   "es": "Curruca gavilana",
+   "ebird": "barwar1"
+  },
+  {
+   "id": "piegza",
+   "pl": "piegża",
+   "lat": "Curruca curruca",
+   "en": "Lesser Whitethroat",
+   "es": "Curruca zarcerilla",
+   "ebird": "leswhi4"
+  },
+  {
+   "id": "lutniczka-zachodnia",
+   "pl": "lutniczka zachodnia",
+   "lat": "Curruca hortensis",
+   "en": "Western Orphean Warbler",
+   "es": "Curruca mirlona occidental",
+   "ebird": "weowar2"
+  },
+  {
+   "id": "lutniczka-wschodnia",
+   "pl": "lutniczka wschodnia",
+   "lat": "Curruca crassirostris",
+   "en": "Eastern Orphean Warbler",
+   "es": "Curruca mirlona oriental",
+   "ebird": "eaowar2"
+  },
+  {
+   "id": "pokrzewka-pustynna",
+   "pl": "pokrzewka pustynna",
+   "lat": "Curruca nana",
+   "en": "Asian Desert Warbler",
+   "es": "Curruca enana",
+   "ebird": "asdwar1"
+  },
+  {
+   "id": "pokrzewka-czarnogardla",
+   "pl": "pokrzewka czarnogardła",
+   "lat": "Curruca ruppeli",
+   "en": "Rüppell's Warbler",
+   "es": "Curruca de Rüppell",
+   "ebird": "ruewar1"
+  },
+  {
+   "id": "pokrzewka-rozowobrzucha",
+   "pl": "pokrzewka różowobrzucha",
+   "lat": "Curruca subalpina",
+   "en": "Moltoni's Warbler",
+   "es": "Curruca tirrénica",
+   "ebird": "subwar8"
+  },
+  {
+   "id": "pokrzewka-iberyjska",
+   "pl": "pokrzewka iberyjska",
+   "lat": "Curruca iberiae",
+   "en": "Western Subalpine Warbler",
+   "es": "Curruca carrasqueña occidental",
+   "ebird": "subwar6"
+  },
+  {
+   "id": "pokrzewka-wasata",
+   "pl": "pokrzewka wąsata",
+   "lat": "Curruca cantillans",
+   "en": "Eastern Subalpine Warbler",
+   "es": "Curruca carrasqueña oriental",
+   "ebird": "easwar1"
+  },
+  {
+   "id": "cierniowka",
+   "pl": "cierniówka",
+   "lat": "Curruca communis",
+   "en": "Greater Whitethroat",
+   "es": "Curruca zarcera",
+   "ebird": "grewhi1"
+  },
+  {
+   "id": "pokrzewka-okularowa",
+   "pl": "pokrzewka okularowa",
+   "lat": "Curruca conspicillata",
+   "en": "Spectacled Warbler",
+   "es": "Curruca tomillera",
+   "ebird": "spewar2"
+  },
+  {
+   "id": "pokrzewka-czarniawa",
+   "pl": "pokrzewka czarniawa",
+   "lat": "Curruca sarda",
+   "en": "Marmora's Warbler",
+   "es": "Curruca sarda",
+   "ebird": "marwar1"
+  },
+  {
+   "id": "pokrzewka-kasztanowata",
+   "pl": "pokrzewka kasztanowata",
+   "lat": "Curruca undata",
+   "en": "Dartford Warbler",
+   "es": "Curruca rabilarga",
+   "ebird": "darwar1"
+  },
+  {
+   "id": "pokrzewka-balearska",
+   "pl": "pokrzewka balearska",
+   "lat": "Curruca balearica",
+   "en": "Balearic Warbler",
+   "es": "Curruca balear",
+   "ebird": "balwar1"
+  },
+  {
+   "id": "ogoniatka-czubata",
+   "pl": "ogoniatka czubata",
+   "lat": "Suthora webbiana",
+   "en": "Vinous-throated Parrotbill",
+   "es": "Picoloro de Webb",
+   "ebird": "vitpar1"
+  },
+  {
+   "id": "pekinczyk-czerwonodzioby",
+   "pl": "pekińczyk czerwonodzioby",
+   "lat": "Leiothrix lutea",
+   "en": "Red-billed Leiothrix",
+   "es": "Leiótrix piquirrojo",
+   "ebird": "reblei"
+  },
+  {
+   "id": "zniczek-maderski",
+   "pl": "zniczek maderski",
+   "lat": "Regulus madeirensis",
+   "en": "Madeira Firecrest",
+   "es": "Reyezuelo de Madeira",
+   "ebird": "firecr3"
+  },
+  {
+   "id": "zniczek",
+   "pl": "zniczek",
+   "lat": "Regulus ignicapilla",
+   "en": "Common Firecrest",
+   "es": "Reyezuelo listado",
+   "ebird": "firecr1"
+  },
+  {
+   "id": "pomurnik",
+   "pl": "pomurnik",
+   "lat": "Tichodroma muraria",
+   "en": "Wallcreeper",
+   "es": "Treparriscos",
+   "ebird": "wallcr1"
+  },
+  {
+   "id": "kowalik-turecki",
+   "pl": "kowalik turecki",
+   "lat": "Sitta krueperi",
+   "en": "Krüper's Nuthatch",
+   "es": "Trepador de Krüper",
+   "ebird": "krunut1"
+  },
+  {
+   "id": "kowalik-korsykanski",
+   "pl": "kowalik korsykański",
+   "lat": "Sitta whiteheadi",
+   "en": "Corsican Nuthatch",
+   "es": "Trepador corso",
+   "ebird": "cornut1"
+  },
+  {
+   "id": "kowalik-skalny",
+   "pl": "kowalik skalny",
+   "lat": "Sitta neumayer",
+   "en": "Western Rock Nuthatch",
+   "es": "Trepador rupestre occidental",
+   "ebird": "rocnut1"
+  },
+  {
+   "id": "pelzacz-lesny",
+   "pl": "pełzacz leśny",
+   "lat": "Certhia familiaris",
+   "en": "Eurasian Treecreeper",
+   "es": "Agateador euroasiático",
+   "ebird": "eurtre1"
+  },
+  {
+   "id": "pelzacz-ogrodowy",
+   "pl": "pełzacz ogrodowy",
+   "lat": "Certhia brachydactyla",
+   "en": "Short-toed Treecreeper",
+   "es": "Agateador europeo",
+   "ebird": "shttre1"
+  },
+  {
+   "id": "strzyzyk",
+   "pl": "strzyżyk",
+   "lat": "Nannus troglodytes",
+   "en": "Eurasian Wren",
+   "es": "Chochín paleártico",
+   "ebird": "winwre4"
+  },
+  {
+   "id": "pluszcz",
+   "pl": "pluszcz",
+   "lat": "Cinclus cinclus",
+   "en": "White-throated Dipper",
+   "es": "Mirlo acuático europeo",
+   "ebird": "whtdip1"
+  },
+  {
+   "id": "szpak-jednobarwny",
+   "pl": "szpak jednobarwny",
+   "lat": "Sturnus unicolor",
+   "en": "Spotless Starling",
+   "es": "Estornino negro",
+   "ebird": "sposta1"
+  },
+  {
+   "id": "pasterz",
+   "pl": "pasterz",
+   "lat": "Pastor roseus",
+   "en": "Rosy Starling",
+   "es": "Estornino rosado",
+   "ebird": "rossta2"
+  },
+  {
+   "id": "majna-brunatna",
+   "pl": "majna brunatna",
+   "lat": "Acridotheres tristis",
+   "en": "Common Myna",
+   "es": "Miná común",
+   "ebird": "commyn"
+  },
+  {
+   "id": "majna-czubata",
+   "pl": "majna czubata",
+   "lat": "Acridotheres cristatellus",
+   "en": "Crested Myna",
+   "es": "Miná crestado",
+   "ebird": "cremyn"
+  },
+  {
+   "id": "drozdon-tajgowy",
+   "pl": "drozdoń tajgowy",
+   "lat": "Zoothera aurea",
+   "en": "White's Thrush",
+   "es": "Zorzal dorado",
+   "ebird": "scathr2"
+  },
+  {
+   "id": "paszkot",
+   "pl": "paszkot",
+   "lat": "Turdus viscivorus",
+   "en": "Mistle Thrush",
+   "es": "Zorzal charlo",
+   "ebird": "misthr1"
+  },
+  {
+   "id": "spiewak",
+   "pl": "śpiewak",
+   "lat": "Turdus philomelos",
+   "en": "Song Thrush",
+   "es": "Zorzal común",
+   "ebird": "sonthr1"
+  },
+  {
+   "id": "drozdzik",
+   "pl": "droździk",
+   "lat": "Turdus iliacus",
+   "en": "Redwing",
+   "es": "Zorzal alirrojo",
+   "ebird": "redwin"
+  },
+  {
+   "id": "drozd-oliwkowy",
+   "pl": "drozd oliwkowy",
+   "lat": "Turdus obscurus",
+   "en": "Eyebrowed Thrush",
+   "es": "Zorzal rojigrís",
+   "ebird": "eyethr"
+  },
+  {
+   "id": "kwiczol",
+   "pl": "kwiczoł",
+   "lat": "Turdus pilaris",
+   "en": "Fieldfare",
+   "es": "Zorzal real",
+   "ebird": "fieldf"
+  },
+  {
+   "id": "drozd-obrozny",
+   "pl": "drozd obrożny",
+   "lat": "Turdus torquatus",
+   "en": "Ring Ouzel",
+   "es": "Mirlo capiblanco",
+   "ebird": "rinouz1"
+  },
+  {
+   "id": "drozd-czarnogardly",
+   "pl": "drozd czarnogardły",
+   "lat": "Turdus atrogularis",
+   "en": "Black-throated Thrush",
+   "es": "Zorzal papinegro",
+   "ebird": "datthr1"
+  },
+  {
+   "id": "drozd-rdzawoskrzydly",
+   "pl": "drozd rdzawoskrzydły",
+   "lat": "Turdus eunomus",
+   "en": "Dusky Thrush",
+   "es": "Zorzal eunomo",
+   "ebird": "dusthr2"
+  },
+  {
+   "id": "mucholowka-szara",
+   "pl": "muchołówka szara",
+   "lat": "Muscicapa striata",
+   "en": "Spotted Flycatcher",
+   "es": "Papamoscas gris",
+   "ebird": "spofly2"
+  },
+  {
+   "id": "mucholowka-srodziemnomorska",
+   "pl": "muchołówka śródziemnomorska",
+   "lat": "Muscicapa tyrrhenica",
+   "en": "Mediterranean Flycatcher",
+   "es": "Papamoscas mediterráneo",
+   "ebird": "spofly3"
+  },
+  {
+   "id": "drozdowka-rdzawa",
+   "pl": "drozdówka rdzawa",
+   "lat": "Cercotrichas galactotes",
+   "en": "Rufous-tailed Scrub-Robin",
+   "es": "Alzacola rojizo",
+   "ebird": "rutscr1"
+  },
+  {
+   "id": "rudzik-kanaryjski",
+   "pl": "rudzik kanaryjski",
+   "lat": "Erithacus superbus",
+   "en": "Canary Islands Robin",
+   "es": "Petirrojo canario",
+   "ebird": "cairob1"
+  },
+  {
+   "id": "slowik-szary",
+   "pl": "słowik szary",
+   "lat": "Luscinia luscinia",
+   "en": "Thrush Nightingale",
+   "es": "Ruiseñor ruso",
+   "ebird": "thrnig1"
+  },
+  {
+   "id": "slowik-rdzawy",
+   "pl": "słowik rdzawy",
+   "lat": "Luscinia megarhynchos",
+   "en": "Common Nightingale",
+   "es": "Ruiseñor común",
+   "ebird": "comnig1"
+  },
+  {
+   "id": "slowiczek-rubinowy",
+   "pl": "słowiczek rubinowy",
+   "lat": "Calliope calliope",
+   "en": "Siberian Rubythroat",
+   "es": "Ruiseñor calíope",
+   "ebird": "sibrub"
+  },
+  {
+   "id": "modraczek",
+   "pl": "modraczek",
+   "lat": "Tarsiger cyanurus",
+   "en": "Red-flanked Bluetail",
+   "es": "Ruiseñor coliazul",
+   "ebird": "refblu1"
+  },
+  {
+   "id": "mucholowka-mala",
+   "pl": "muchołówka mała",
+   "lat": "Ficedula parva",
+   "en": "Red-breasted Flycatcher",
+   "es": "Papamoscas papirrojo",
+   "ebird": "rebfly"
+  },
+  {
+   "id": "mucholowka-polobrozna",
+   "pl": "muchołówka półobrożna",
+   "lat": "Ficedula semitorquata",
+   "en": "Semicollared Flycatcher",
+   "es": "Papamoscas semiacollarado",
+   "ebird": "semfly1"
+  },
+  {
+   "id": "mucholowka-zalobna",
+   "pl": "muchołówka żałobna",
+   "lat": "Ficedula hypoleuca",
+   "en": "European Pied Flycatcher",
+   "es": "Papamoscas cerrojillo",
+   "ebird": "eupfly1"
+  },
+  {
+   "id": "mucholowka-bialoszyja",
+   "pl": "muchołówka białoszyja",
+   "lat": "Ficedula albicollis",
+   "en": "Collared Flycatcher",
+   "es": "Papamoscas acollarado",
+   "ebird": "colfly1"
+  },
+  {
+   "id": "pleszka",
+   "pl": "pleszka",
+   "lat": "Phoenicurus phoenicurus",
+   "en": "Common Redstart",
+   "es": "Colirrojo real",
+   "ebird": "comred2"
+  },
+  {
+   "id": "kopciuszek",
+   "pl": "kopciuszek",
+   "lat": "Phoenicurus ochruros",
+   "en": "Black Redstart",
+   "es": "Colirrojo tizón",
+   "ebird": "blared1"
+  },
+  {
+   "id": "nagornik",
+   "pl": "nagórnik",
+   "lat": "Monticola saxatilis",
+   "en": "Rufous-tailed Rock-Thrush",
+   "es": "Roquero rojo",
+   "ebird": "rtrthr1"
+  },
+  {
+   "id": "modrak-srodziemnomorski",
+   "pl": "modrak śródziemnomorski",
+   "lat": "Monticola solitarius",
+   "en": "Blue Rock-Thrush",
+   "es": "Roquero solitario",
+   "ebird": "burthr"
+  },
+  {
+   "id": "klaskawka-kanaryjska",
+   "pl": "kląskawka kanaryjska",
+   "lat": "Saxicola dacotiae",
+   "en": "Fuerteventura Stonechat",
+   "es": "Tarabilla canaria",
+   "ebird": "caisto1"
+  },
+  {
+   "id": "klaskawka-syberyjska",
+   "pl": "kląskawka syberyjska",
+   "lat": "Saxicola maurus",
+   "en": "Siberian Stonechat",
+   "es": "Tarabilla siberiana",
+   "ebird": "sibsto1"
+  },
+  {
+   "id": "klaskawka-afrykanska",
+   "pl": "kląskawka afrykańska",
+   "lat": "Saxicola torquatus",
+   "en": "African Stonechat",
+   "es": "Tarabilla africana",
+   "ebird": "afrsto1"
+  },
+  {
+   "id": "bialorzytka-plowa",
+   "pl": "białorzytka płowa",
+   "lat": "Oenanthe isabellina",
+   "en": "Isabelline Wheatear",
+   "es": "Collalba isabel",
+   "ebird": "isawhe1"
+  },
+  {
+   "id": "bialorzytka-pustynna",
+   "pl": "białorzytka pustynna",
+   "lat": "Oenanthe deserti",
+   "en": "Desert Wheatear",
+   "es": "Collalba desértica",
+   "ebird": "deswhe1"
+  },
+  {
+   "id": "bialorzytka-rdzawa",
+   "pl": "białorzytka rdzawa",
+   "lat": "Oenanthe hispanica",
+   "en": "Western Black-eared Wheatear",
+   "es": "Collalba rubia occidental",
+   "ebird": "bkewhe1"
+  },
+  {
+   "id": "bialorzytka-cypryjska",
+   "pl": "białorzytka cypryjska",
+   "lat": "Oenanthe cypriaca",
+   "en": "Cyprus Wheatear",
+   "es": "Collalba chipriota",
+   "ebird": "cypwhe1"
+  },
+  {
+   "id": "bialorzytka-pstra",
+   "pl": "białorzytka pstra",
+   "lat": "Oenanthe pleschanka",
+   "en": "Pied Wheatear",
+   "es": "Collalba pía",
+   "ebird": "piewhe1"
+  },
+  {
+   "id": "bialorzytka-zalobna",
+   "pl": "białorzytka żałobna",
+   "lat": "Oenanthe leucura",
+   "en": "Black Wheatear",
+   "es": "Collalba negra",
+   "ebird": "blawhe1"
+  },
+  {
+   "id": "bialorzytka-saharyjska",
+   "pl": "białorzytka saharyjska",
+   "lat": "Oenanthe leucopyga",
+   "en": "White-crowned Wheatear",
+   "es": "Collalba yebélica",
+   "ebird": "whtwhe1"
+  },
+  {
+   "id": "jemioluszka",
+   "pl": "jemiołuszka",
+   "lat": "Bombycilla garrulus",
+   "en": "Bohemian Waxwing",
+   "es": "Ampelis europeo",
+   "ebird": "bohwax"
+  },
+  {
+   "id": "wiklacz-czarnoglowy",
+   "pl": "wikłacz czarnogłowy",
+   "lat": "Ploceus melanocephalus",
+   "en": "Black-headed Weaver",
+   "es": "Tejedor cabecinegro",
+   "ebird": "blhwea1"
+  },
+  {
+   "id": "wiklacz-sloneczny",
+   "pl": "wikłacz słoneczny",
+   "lat": "Euplectes afer",
+   "en": "Yellow-crowned Bishop",
+   "es": "Obispo coronigualdo",
+   "ebird": "yecbis"
+  },
+  {
+   "id": "srebrnodziobek-indyjski",
+   "pl": "srebrnodziobek indyjski",
+   "lat": "Euodice malabarica",
+   "en": "Indian Silverbill",
+   "es": "Capuchino picoplata indio",
+   "ebird": "indsil"
+  },
+  {
+   "id": "mniszka-muszkatowa",
+   "pl": "mniszka muszkatowa",
+   "lat": "Lonchura punctulata",
+   "en": "Scaly-breasted Munia",
+   "es": "Capuchino punteado",
+   "ebird": "nutman"
+  },
+  {
+   "id": "astryld-falisty",
+   "pl": "astryld falisty",
+   "lat": "Estrilda astrild",
+   "en": "Common Waxbill",
+   "es": "Estrilda común",
+   "ebird": "comwax"
+  },
+  {
+   "id": "astryld-czarnorzytny",
+   "pl": "astryld czarnorzytny",
+   "lat": "Estrilda troglodytes",
+   "en": "Black-rumped Waxbill",
+   "es": "Estrilda culinegra",
+   "ebird": "bkrwax"
+  },
+  {
+   "id": "bengalik-czerwony",
+   "pl": "bengalik czerwony",
+   "lat": "Amandava amandava",
+   "en": "Red Avadavat",
+   "es": "Bengalí rojo",
+   "ebird": "redava"
+  },
+  {
+   "id": "wdowka-bialobrzucha",
+   "pl": "wdówka białobrzucha",
+   "lat": "Vidua macroura",
+   "en": "Pin-tailed Whydah",
+   "es": "Viuda colicinta",
+   "ebird": "pitwhy"
+  },
+  {
+   "id": "plochacz-halny",
+   "pl": "płochacz halny",
+   "lat": "Prunella collaris",
+   "en": "Alpine Accentor",
+   "es": "Acentor alpino",
+   "ebird": "alpacc1"
+  },
+  {
+   "id": "plochacz-syberyjski",
+   "pl": "płochacz syberyjski",
+   "lat": "Prunella montanella",
+   "en": "Siberian Accentor",
+   "es": "Acentor siberiano",
+   "ebird": "sibacc"
+  },
+  {
+   "id": "plochacz-czarnogardly",
+   "pl": "płochacz czarnogardły",
+   "lat": "Prunella atrogularis",
+   "en": "Black-throated Accentor",
+   "es": "Acentor gorjinegro",
+   "ebird": "bltacc1"
+  },
+  {
+   "id": "pokrzywnica",
+   "pl": "pokrzywnica",
+   "lat": "Prunella modularis",
+   "en": "Dunnock",
+   "es": "Acentor común",
+   "ebird": "dunnoc1"
+  },
+  {
+   "id": "wrobel-apeninski",
+   "pl": "wróbel apeniński",
+   "lat": "Passer italiae",
+   "en": "Italian Sparrow",
+   "es": "Gorrión italiano",
+   "ebird": "itaspa1"
+  },
+  {
+   "id": "wrobel-srodziemnomorski",
+   "pl": "wróbel śródziemnomorski",
+   "lat": "Passer hispaniolensis",
+   "en": "Spanish Sparrow",
+   "es": "Gorrión moruno",
+   "ebird": "spaspa1"
+  },
+  {
+   "id": "wrobel-skalny",
+   "pl": "wróbel skalny",
+   "lat": "Petronia petronia",
+   "en": "Rock Sparrow",
+   "es": "Gorrión chillón",
+   "ebird": "rocpet1"
+  },
+  {
+   "id": "sniezka",
+   "pl": "śnieżka",
+   "lat": "Montifringilla nivalis",
+   "en": "White-winged Snowfinch",
+   "es": "Gorrión alpino",
+   "ebird": "whwsno1"
+  },
+  {
+   "id": "pliszka-gorska",
+   "pl": "pliszka górska",
+   "lat": "Motacilla cinerea",
+   "en": "Gray Wagtail",
+   "es": "Lavandera cascadeña",
+   "ebird": "grywag"
+  },
+  {
+   "id": "pliszka-zolta",
+   "pl": "pliszka żółta",
+   "lat": "Motacilla flava",
+   "en": "Western Yellow Wagtail",
+   "es": "Lavandera boyera",
+   "ebird": "eaywag1"
+  },
+  {
+   "id": "pliszka-syberyjska",
+   "pl": "pliszka syberyjska",
+   "lat": "Motacilla tschutschensis",
+   "en": "Eastern Yellow Wagtail",
+   "es": "Lavandera de Chukotka",
+   "ebird": "eaywag"
+  },
+  {
+   "id": "pliszka-cytrynowa",
+   "pl": "pliszka cytrynowa",
+   "lat": "Motacilla citreola",
+   "en": "Citrine Wagtail",
+   "es": "Lavandera cetrina",
+   "ebird": "citwag"
+  },
+  {
+   "id": "swiergotek-szponiasty",
+   "pl": "świergotek szponiasty",
+   "lat": "Anthus richardi",
+   "en": "Richard's Pipit",
+   "es": "Bisbita de Richard",
+   "ebird": "ricpip1"
+  },
+  {
+   "id": "swiergotek-stepowy",
+   "pl": "świergotek stepowy",
+   "lat": "Anthus godlewskii",
+   "en": "Blyth's Pipit",
+   "es": "Bisbita estepario",
+   "ebird": "blypip1"
+  },
+  {
+   "id": "swiergotek-polny",
+   "pl": "świergotek polny",
+   "lat": "Anthus campestris",
+   "en": "Tawny Pipit",
+   "es": "Bisbita campestre",
+   "ebird": "tawpip1"
+  },
+  {
+   "id": "swiergotek-kanaryjski",
+   "pl": "świergotek kanaryjski",
+   "lat": "Anthus berthelotii",
+   "en": "Berthelot's Pipit",
+   "es": "Bisbita caminero",
+   "ebird": "berpip1"
+  },
+  {
+   "id": "swiergotek-drzewny",
+   "pl": "świergotek drzewny",
+   "lat": "Anthus trivialis",
+   "en": "Tree Pipit",
+   "es": "Bisbita arbóreo",
+   "ebird": "trepip"
+  },
+  {
+   "id": "swiergotek-tajgowy",
+   "pl": "świergotek tajgowy",
+   "lat": "Anthus hodgsoni",
+   "en": "Olive-backed Pipit",
+   "es": "Bisbita de Hodgson",
+   "ebird": "olbpip"
+  },
+  {
+   "id": "swiergotek-rdzawogardly",
+   "pl": "świergotek rdzawogardły",
+   "lat": "Anthus cervinus",
+   "en": "Red-throated Pipit",
+   "es": "Bisbita gorjirrojo",
+   "ebird": "retpip"
+  },
+  {
+   "id": "siwerniak",
+   "pl": "siwerniak",
+   "lat": "Anthus spinoletta",
+   "en": "Water Pipit",
+   "es": "Bisbita alpino",
+   "ebird": "watpip1"
+  },
+  {
+   "id": "swiergotek-nadmorski",
+   "pl": "świergotek nadmorski",
+   "lat": "Anthus petrosus",
+   "en": "Rock Pipit",
+   "es": "Bisbita costero",
+   "ebird": "rocpip1"
+  },
+  {
+   "id": "swiergotek-bagienny",
+   "pl": "świergotek bagienny",
+   "lat": "Anthus rubescens",
+   "en": "American Pipit",
+   "es": "Bisbita norteamericano",
+   "ebird": "amepip"
+  },
+  {
+   "id": "zieba-atlantycka",
+   "pl": "zięba atlantycka",
+   "lat": "Fringilla moreletti",
+   "en": "Azores Chaffinch",
+   "es": "Pinzón de Azores",
+   "ebird": "comcha16"
+  },
+  {
+   "id": "zieba-maderska",
+   "pl": "zięba maderska",
+   "lat": "Fringilla maderensis",
+   "en": "Madeira Chaffinch",
+   "es": "Pinzón de Madeira",
+   "ebird": "comcha17"
+  },
+  {
+   "id": "zieba-modrogrzbieta",
+   "pl": "zięba modrogrzbieta",
+   "lat": "Fringilla canariensis",
+   "en": "Canary Islands Chaffinch",
+   "es": "Pinzón de Canarias",
+   "ebird": "caicha1"
+  },
+  {
+   "id": "zieba-modra",
+   "pl": "zięba modra",
+   "lat": "Fringilla teydea",
+   "en": "Tenerife Blue Chaffinch",
+   "es": "Pinzón azul de Tenerife",
+   "ebird": "blucha2"
+  },
+  {
+   "id": "jer",
+   "pl": "jer",
+   "lat": "Fringilla montifringilla",
+   "en": "Brambling",
+   "es": "Pinzón real",
+   "ebird": "brambl"
+  },
+  {
+   "id": "grubodziob",
+   "pl": "grubodziób",
+   "lat": "Coccothraustes coccothraustes",
+   "en": "Hawfinch",
+   "es": "Picogordo común",
+   "ebird": "hawfin"
+  },
+  {
+   "id": "dziwonia",
+   "pl": "dziwonia",
+   "lat": "Carpodacus erythrinus",
+   "en": "Common Rosefinch",
+   "es": "Camachuelo carminoso",
+   "ebird": "comros"
+  },
+  {
+   "id": "giluszek",
+   "pl": "giluszek",
+   "lat": "Carpodacus sibiricus",
+   "en": "Long-tailed Rosefinch",
+   "es": "Camachuelo colilargo",
+   "ebird": "lotros1"
+  },
+  {
+   "id": "luskowiec",
+   "pl": "łuskowiec",
+   "lat": "Pinicola enucleator",
+   "en": "Pine Grosbeak",
+   "es": "Camachuelo picogrueso",
+   "ebird": "pingro"
+  },
+  {
+   "id": "gil-azorski",
+   "pl": "gil azorski",
+   "lat": "Pyrrhula murina",
+   "en": "Azores Bullfinch",
+   "es": "Camachuelo de Azores",
+   "ebird": "eurbul1"
+  },
+  {
+   "id": "gil",
+   "pl": "gil",
+   "lat": "Pyrrhula pyrrhula",
+   "en": "Eurasian Bullfinch",
+   "es": "Camachuelo común",
+   "ebird": "eurbul"
+  },
+  {
+   "id": "gilak-pustynny",
+   "pl": "gilak pustynny",
+   "lat": "Bucanetes githagineus",
+   "en": "Trumpeter Finch",
+   "es": "Camachuelo trompetero",
+   "ebird": "trufin2"
+  },
+  {
+   "id": "dziwuszka-ogrodowa",
+   "pl": "dziwuszka ogrodowa",
+   "lat": "Haemorhous mexicanus",
+   "en": "House Finch",
+   "es": "Camachuelo mexicano",
+   "ebird": "houfin"
+  },
+  {
+   "id": "dzwoniec",
+   "pl": "dzwoniec",
+   "lat": "Chloris chloris",
+   "en": "European Greenfinch",
+   "es": "Verderón común",
+   "ebird": "eurgre1"
+  },
+  {
+   "id": "rzepoluch",
+   "pl": "rzepołuch",
+   "lat": "Linaria flavirostris",
+   "en": "Twite",
+   "es": "Pardillo piquigualdo",
+   "ebird": "twite1"
+  },
+  {
+   "id": "makolagwa",
+   "pl": "makolągwa",
+   "lat": "Linaria cannabina",
+   "en": "Eurasian Linnet",
+   "es": "Pardillo común",
+   "ebird": "eurlin1"
+  },
+  {
+   "id": "czeczotka",
+   "pl": "czeczotka",
+   "lat": "Acanthis flammea",
+   "en": "Redpoll",
+   "es": "Pardillo sizerín",
+   "ebird": "redpol1"
+  },
+  {
+   "id": "krzyzodziob-sosnowy",
+   "pl": "krzyżodziób sosnowy",
+   "lat": "Loxia pytyopsittacus",
+   "en": "Parrot Crossbill",
+   "es": "Piquituerto lorito",
+   "ebird": "parcro2"
+  },
+  {
+   "id": "krzyzodziob-szkocki",
+   "pl": "krzyżodziób szkocki",
+   "lat": "Loxia scotica",
+   "en": "Scottish Crossbill",
+   "es": "Piquituerto escocés",
+   "ebird": "scocro1"
+  },
+  {
+   "id": "krzyzodziob-swierkowy",
+   "pl": "krzyżodziób świerkowy",
+   "lat": "Loxia curvirostra",
+   "en": "Red Crossbill",
+   "es": "Piquituerto común",
+   "ebird": "redcro"
+  },
+  {
+   "id": "krzyzodziob-modrzewiowy",
+   "pl": "krzyżodziób modrzewiowy",
+   "lat": "Loxia leucoptera",
+   "en": "White-winged Crossbill",
+   "es": "Piquituerto aliblanco",
+   "ebird": "whwcro"
+  },
+  {
+   "id": "szczygiel",
+   "pl": "szczygieł",
+   "lat": "Carduelis carduelis",
+   "en": "European Goldfinch",
+   "es": "Jilguero europeo",
+   "ebird": "eurgol"
+  },
+  {
+   "id": "osetnik",
+   "pl": "osetnik",
+   "lat": "Carduelis citrinella",
+   "en": "Citril Finch",
+   "es": "Verderón serrano",
+   "ebird": "citfin1"
+  },
+  {
+   "id": "osetnik-korsykanski",
+   "pl": "osetnik korsykański",
+   "lat": "Carduelis corsicana",
+   "en": "Corsican Finch",
+   "es": "Verderón corso",
+   "ebird": "corfin1"
+  },
+  {
+   "id": "kulczyk",
+   "pl": "kulczyk",
+   "lat": "Serinus serinus",
+   "en": "European Serin",
+   "es": "Serín verdecillo",
+   "ebird": "eurser1"
+  },
+  {
+   "id": "kanarek",
+   "pl": "kanarek",
+   "lat": "Serinus canaria",
+   "en": "Island Canary",
+   "es": "Serín canario",
+   "ebird": "comcan"
+  },
+  {
+   "id": "kulczyk-krolewski",
+   "pl": "kulczyk królewski",
+   "lat": "Serinus pusillus",
+   "en": "Fire-fronted Serin",
+   "es": "Serín frentirrojo",
+   "ebird": "fifser1"
+  },
+  {
+   "id": "czyz",
+   "pl": "czyż",
+   "lat": "Spinus spinus",
+   "en": "Eurasian Siskin",
+   "es": "Jilguero lúgano",
+   "ebird": "eursis"
+  },
+  {
+   "id": "poswierka",
+   "pl": "poświerka",
+   "lat": "Calcarius lapponicus",
+   "en": "Lapland Longspur",
+   "es": "Escribano lapón",
+   "ebird": "laplon"
+  },
+  {
+   "id": "sniegula",
+   "pl": "śnieguła",
+   "lat": "Plectrophenax nivalis",
+   "en": "Snow Bunting",
+   "es": "Escribano nival",
+   "ebird": "snobun"
+  },
+  {
+   "id": "trznadel-czarnoglowy",
+   "pl": "trznadel czarnogłowy",
+   "lat": "Melophus melanocephalus",
+   "en": "Black-headed Bunting",
+   "es": "Escribano cabecinegro",
+   "ebird": "blhbun1"
+  },
+  {
+   "id": "potrzeszcz",
+   "pl": "potrzeszcz",
+   "lat": "Emberiza calandra",
+   "en": "Corn Bunting",
+   "es": "Escribano triguero",
+   "ebird": "corbun1"
+  },
+  {
+   "id": "gluszek",
+   "pl": "głuszek",
+   "lat": "Emberiza cia",
+   "en": "Rock Bunting",
+   "es": "Escribano montesino",
+   "ebird": "rocbun1"
+  },
+  {
+   "id": "cierlik",
+   "pl": "cierlik",
+   "lat": "Emberiza cirlus",
+   "en": "Cirl Bunting",
+   "es": "Escribano soteño",
+   "ebird": "cirbun1"
+  },
+  {
+   "id": "trznadel-bialoglowy",
+   "pl": "trznadel białogłowy",
+   "lat": "Emberiza leucocephalos",
+   "en": "Pine Bunting",
+   "es": "Escribano cabeciblanco",
+   "ebird": "pinbun"
+  },
+  {
+   "id": "trznadel-popielaty",
+   "pl": "trznadel popielaty",
+   "lat": "Emberiza cineracea",
+   "en": "Cinereous Bunting",
+   "es": "Escribano cinéreo",
+   "ebird": "cinbun1"
+  },
+  {
+   "id": "ortolan",
+   "pl": "ortolan",
+   "lat": "Emberiza hortulana",
+   "en": "Ortolan Bunting",
+   "es": "Escribano hortelano",
+   "ebird": "ortbun1"
+  },
+  {
+   "id": "trznadel-modroglowy",
+   "pl": "trznadel modrogłowy",
+   "lat": "Emberiza caesia",
+   "en": "Cretzschmar's Bunting",
+   "es": "Escribano ceniciento",
+   "ebird": "crebun2"
+  },
+  {
+   "id": "potrzos",
+   "pl": "potrzos",
+   "lat": "Schoeniclus schoeniclus",
+   "en": "Reed Bunting",
+   "es": "Escribano palustre",
+   "ebird": "reebun"
+  },
+  {
+   "id": "trznadel-zlotawy",
+   "pl": "trznadel złotawy",
+   "lat": "Schoeniclus aureolus",
+   "en": "Yellow-breasted Bunting",
+   "es": "Escribano aureolado",
+   "ebird": "yebbun"
+  },
+  {
+   "id": "trznadelek",
+   "pl": "trznadelek",
+   "lat": "Schoeniclus pusillus",
+   "en": "Little Bunting",
+   "es": "Escribano pigmeo",
+   "ebird": "litbun"
+  },
+  {
+   "id": "trznadel-czubaty",
+   "pl": "trznadel czubaty",
+   "lat": "Schoeniclus rusticus",
+   "en": "Rustic Bunting",
+   "es": "Escribano rústico",
+   "ebird": "rusbun"
+  },
+  {
+   "id": "trznadel-szaroglowy",
+   "pl": "trznadel szarogłowy",
+   "lat": "Schoeniclus spodocephalus",
+   "en": "Black-faced Bunting",
+   "es": "Escribano carinegro",
+   "ebird": "bkfbun1"
+  },
+  {
+   "id": "trznadel-zlotobrewy",
+   "pl": "trznadel złotobrewy",
+   "lat": "Schoeniclus chrysophrys",
+   "en": "Yellow-browed Bunting",
+   "es": "Escribano cejigualdo",
+   "ebird": "yebbun1"
+  },
+  {
+   "id": "junko",
+   "pl": "junko",
+   "lat": "Junco hyemalis",
+   "en": "Dark-eyed Junco",
+   "es": "Junco ojioscuro",
+   "ebird": "daejun"
+  },
+  {
+   "id": "pasowka-bialogardla",
+   "pl": "pasówka białogardła",
+   "lat": "Zonotrichia albicollis",
+   "en": "White-throated Sparrow",
+   "es": "Chingolo gorjiblanco",
+   "ebird": "whtspa"
+  },
+  {
+   "id": "szarobrewka-spiewna",
+   "pl": "szarobrewka śpiewna",
+   "lat": "Melospiza melodia",
+   "en": "Song Sparrow",
+   "es": "Chingolo cantor",
+   "ebird": "sonspa"
+  },
+  {
+   "id": "kacyk-polnocny",
+   "pl": "kacyk północny",
+   "lat": "Icterus galbula",
+   "en": "Baltimore Oriole",
+   "es": "Turpial de Baltimore",
+   "ebird": "balori"
+  }
+ ]
+}

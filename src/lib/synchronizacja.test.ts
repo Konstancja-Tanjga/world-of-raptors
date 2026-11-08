@@ -10,8 +10,10 @@ import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { before, test } from 'node:test';
 import type { Fiszki, ZapisFiszki } from './fiszki';
+import type { Dziennik } from './dziennik';
 import type { Checklista } from './obserwacje';
 import {
+  DZIENNIK,
   FISZKI,
   LEKCJE,
   MIEJSCA,
@@ -65,6 +67,7 @@ function serwer(kto: string): Zdalne {
 type Urzadzenie = {
   postep: PostepZeSladami;
   checklista: Checklista;
+  dziennik: Dziennik;
   fiszki: Fiszki;
   odznaki: Zdobyte;
   miejsca: MojeMiejsca;
@@ -74,6 +77,7 @@ type Urzadzenie = {
 const urzadzenie = (zmiany: Partial<Urzadzenie> = {}): Urzadzenie => ({
   postep: { postep: {}, slady: {} },
   checklista: {},
+  dziennik: {},
   fiszki: {},
   odznaki: {},
   miejsca: {},
@@ -82,7 +86,7 @@ const urzadzenie = (zmiany: Partial<Urzadzenie> = {}): Urzadzenie => ({
 });
 
 function polaczenia(u: Urzadzenie) {
-  const pol = <K extends 'postep' | 'checklista' | 'fiszki' | 'odznaki' | 'miejsca'>(k: K, tabela: Polaczenie<Urzadzenie[K]>['tabela']) => ({
+  const pol = <K extends 'postep' | 'checklista' | 'dziennik' | 'fiszki' | 'odznaki' | 'miejsca'>(k: K, tabela: Polaczenie<Urzadzenie[K]>['tabela']) => ({
     tabela,
     czytaj: () => u[k],
     zapisz: (l: Urzadzenie[K]) => {
@@ -90,7 +94,7 @@ function polaczenia(u: Urzadzenie) {
       return true;
     },
   });
-  return [pol('postep', LEKCJE), pol('checklista', OBSERWACJE), pol('fiszki', FISZKI), pol('odznaki', ODZNAKI), pol('miejsca', MIEJSCA)];
+  return [pol('postep', LEKCJE), pol('checklista', OBSERWACJE), pol('dziennik', DZIENNIK), pol('fiszki', FISZKI), pol('odznaki', ODZNAKI), pol('miejsca', MIEJSCA)];
 }
 
 async function synchronizujUrzadzenie(u: Urzadzenie, kto = JA) {
@@ -149,7 +153,7 @@ const telefon = urzadzenie();
 test('the first sign-in on a device adds what it holds to the account', async () => {
   const wynik = await synchronizujUrzadzenie(laptop);
   assert.equal(wynik.pierwsza, true);
-  assert.deepEqual(wynik.wyslane, { lesson_progress: 2, observations: 2, flashcards: 1, user_badges: 2, places: 1 });
+  assert.deepEqual(wynik.wyslane, { lesson_progress: 2, observations: 2, sightings: 0, flashcards: 1, user_badges: 2, places: 1 });
 });
 
 test('a second device with nothing on it receives everything, unticked species included', async () => {
@@ -159,12 +163,12 @@ test('a second device with nothing on it receives everything, unticked species i
   assert.deepEqual(telefon.fiszki, laptop.fiszki);
   assert.deepEqual(telefon.odznaki, laptop.odznaki);
   assert.deepEqual(telefon.miejsca, laptop.miejsca, 'a place comes back as it went: numbers, date, note');
-  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, flashcards: 0, user_badges: 0, places: 0 });
+  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, sightings: 0, flashcards: 0, user_badges: 0, places: 0 });
 });
 
 test('a pass with nothing new sends nothing and changes nothing', async () => {
   const wynik = await synchronizujUrzadzenie(laptop);
-  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, flashcards: 0, user_badges: 0, places: 0 });
+  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, sightings: 0, flashcards: 0, user_badges: 0, places: 0 });
   assert.equal(Object.values(wynik.pobrane).reduce((a, b) => a + b, 0), 0);
 });
 
@@ -222,6 +226,52 @@ test('a newer change made offline wins when it arrives later', async () => {
   await synchronizujUrzadzenie(laptop);
   await synchronizujUrzadzenie(telefon);
   assert.equal(telefon.checklista.kaniuk.notatka, 'laptop, później');
+});
+
+const WPIS = '0b6c1f2e-3a4d-4e5f-8a9b-0c1d2e3f4a5b';
+
+test('a sighting with its point reaches the other device; removing it there removes it here', async () => {
+  telefon.dziennik[WPIS] = {
+    gatunek: 'czajka',
+    data: '2026-11-08',
+    godzina: '07:40',
+    liczba: 12,
+    miejsce: 'Łąki pod Kampinosem',
+    punkt: { szer: 52.312345, dl: 20.654321, zrodlo: 'gps', dokladnosc: 9 },
+    notatka: 'stado na zaoranym polu',
+    zmieniono: '2026-11-08T07:41:00.000Z',
+  };
+  const wynik = await synchronizujUrzadzenie(telefon);
+  assert.equal(wynik.wyslane.sightings, 1);
+  await synchronizujUrzadzenie(laptop);
+  assert.deepEqual(laptop.dziennik[WPIS], telefon.dziennik[WPIS]);
+
+  laptop.dziennik[WPIS] = { ...laptop.dziennik[WPIS], usuniety: true, zmieniono: '2026-11-08T20:00:00.000Z' };
+  await synchronizujUrzadzenie(laptop);
+  await synchronizujUrzadzenie(telefon);
+  assert.equal(telefon.dziennik[WPIS].usuniety, true);
+  assert.equal(telefon.dziennik[WPIS].miejsce, 'Łąki pod Kampinosem', 'a removed sighting keeps its fields');
+});
+
+test('a sighting written on the server by another device arrives without disturbing the rest of the log', async () => {
+  await jako(
+    JA,
+    `insert into public.sightings (sighting_id, species_slug, observed_on, bird_count, updated_at)
+     values ('1b6c1f2e-3a4d-4e5f-8a9b-0c1d2e3f4a5b', 'zuraw', '2026-11-08', 40, '2026-11-08T08:00:00Z')`,
+  );
+  await synchronizujUrzadzenie(telefon);
+  assert.deepEqual(telefon.dziennik['1b6c1f2e-3a4d-4e5f-8a9b-0c1d2e3f4a5b'], {
+    gatunek: 'zuraw',
+    data: '2026-11-08',
+    liczba: 40,
+    zmieniono: '2026-11-08T08:00:00.000Z',
+  });
+  assert.equal(telefon.dziennik[WPIS].usuniety, true);
+});
+
+test('a sighting row whose key the store would refuse is skipped, so the log is not set aside', () => {
+  const po = DZIENNIK.scal({}, [{ sighting_id: 'nie-uuid', species_slug: 'czajka', observed_on: '2026-11-08', updated_at: '2026-11-08T08:00:00Z' }]);
+  assert.deepEqual(po, {});
 });
 
 test('an achievement keeps its earliest date and, once shown anywhere, is not shown again', async () => {

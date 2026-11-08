@@ -47,7 +47,25 @@ test('a v2-shaped checklist in an older file keeps its unticked species', async 
 });
 
 test('a file from a newer version of the course says so', async () => {
-  await assert.rejects(odczytajKopie(JSON.stringify({ wersja: 4, checklista: {} })), /nowszej wersji/);
+  await assert.rejects(odczytajKopie(JSON.stringify({ wersja: 5, checklista: {} })), /nowszej wersji/);
+});
+
+test('a v4 file carries the field log; a damaged log refuses the whole file', async () => {
+  const dziennik = {
+    '0b6c1f2e-3a4d-4e5f-8a9b-0c1d2e3f4a5b': {
+      gatunek: 'czajka',
+      data: '2026-11-08',
+      punkt: { szer: 52.3, dl: 20.6, zrodlo: 'mapa' },
+      zmieniono: T,
+    },
+  };
+  const kopia = await odczytajKopie(JSON.stringify({ wersja: 4, checklista: {}, postep: {}, dziennik }));
+  assert.deepEqual(kopia.dziennik, dziennik);
+  assert.equal((await odczytajKopie(JSON.stringify({ wersja: 4, checklista: {}, postep: {} }))).dziennik, undefined);
+  await assert.rejects(
+    odczytajKopie(JSON.stringify({ wersja: 4, checklista: {}, postep: {}, dziennik: { x: { gatunek: 'czajka' } } })),
+    /dziennik obserwacji/,
+  );
 });
 
 test('places: kept when well formed, a damaged set refuses the whole file', async () => {

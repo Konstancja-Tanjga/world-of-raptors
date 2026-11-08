@@ -10,7 +10,7 @@ import { MAKS_FRAGMENTU, przytnij, type Fragment, type Sekcja, type TypFragmentu
 
 const KANDYDACI = 'h1, h2, h3, h4, p, li, blockquote, tr, dt, dd, .quiz__pytanie, img';
 const PRYWATNE = '.checklist__row, .own-photos, [data-prywatne]';
-const PRYWATNE_STRONY = ['/checklista', '/moje-miejsca', '/moje-niebo', '/konto'];
+const PRYWATNE_STRONY = ['/checklista', '/dziennik', '/moje-miejsca', '/moje-niebo', '/konto'];
 
 export type Miejsce = { sekcja?: Sekcja; fragment?: Fragment };
 
