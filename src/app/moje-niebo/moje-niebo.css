@@ -3,6 +3,10 @@
 .moje-niebo {
   gap: var(--wor-space-section);
 }
+/* The sections stand far apart; the page's lead stays as close to the first one as on any other page. */
+.moje-niebo > .naglowek-strony + * {
+  margin-top: calc(var(--bh-gap-loose) - var(--wor-space-section));
+}
 .moje-niebo__czekanie {
   min-height: 100svh;
 }
