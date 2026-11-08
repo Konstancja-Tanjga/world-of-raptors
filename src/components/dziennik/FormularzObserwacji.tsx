@@ -13,6 +13,8 @@ import { ButtonLink } from '../ButtonLink';
 import { Button, Combobox, DatePicker, Dialog, Input, StateBlock, Textarea, useToast } from '../ds';
 import { doSzukania } from '../SpeciesFilters';
 import { MapaWGranicy } from './MapaWGranicy';
+import { OwnPhotos } from '../OwnPhotos';
+import { useZdjeciaWlasne } from '@/lib/zdjeciaWlasne';
 
 /** How long to wait for the browser to answer at all (a permission prompt left open calls back never). */
 const CZEKANIE_NA_LOKALIZACJE_MS = 30_000;
@@ -92,6 +94,10 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   useEffect(() => () => {
     if (czuwanie.current) clearTimeout(czuwanie.current);
   }, []);
+
+  // A sighting's photos are filed under its species: while it has some, the species stays as it is.
+  const { zdjecia: zdjeciaWpisu } = useZdjeciaWlasne(gatunek ?? '', id ?? undefined);
+  const zdjeciaBlokuja = Boolean(gatunek && id && zdjeciaWpisu?.length);
 
   const opcje = useMemo(() => ptaki.map((p) => ({ value: p.id, label: p.pl, hint: p.lat })), [ptaki]);
   const poId = useMemo(() => new Map(ptaki.map((p) => [p.id, p])), [ptaki]);
@@ -238,7 +244,12 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     >
       <Combobox
         label="Gatunek"
-        description="Wpisz kilka liter nazwy polskiej, łacińskiej, angielskiej albo hiszpańskiej."
+        description={
+          zdjeciaBlokuja
+            ? 'Obserwacja ma zdjęcia tego gatunku. Żeby go zmienić, usuń je najpierw.'
+            : 'Wpisz kilka liter nazwy polskiej, łacińskiej, angielskiej albo hiszpańskiej.'
+        }
+        disabled={zdjeciaBlokuja}
         options={opcje}
         value={gatunek}
         onChange={(v) => {
@@ -347,6 +358,12 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
       </datalist>
 
       <Textarea label="Notatka" rows={3} maxLength={2000} value={notatka} onChange={(e) => setNotatka(e.target.value)} />
+
+      {gatunek ? (
+        <OwnPhotos gatunek={gatunek} nazwa={poId.get(gatunek)?.pl ?? gatunek} wpis={id} edycja tytul="Zdjęcia z tej obserwacji" />
+      ) : (
+        <p className="muted">Zdjęcia dodam po wybraniu gatunku.</p>
+      )}
 
       {bladZapisu && <StateBlock state="error" title="Nie zapisano" description={bladZapisu} scope="section" />}
       <div className="row">

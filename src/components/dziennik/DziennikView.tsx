@@ -9,6 +9,7 @@ import { adresMapy } from '@/lib/punkty';
 import { ButtonLink } from '../ButtonLink';
 import { Button, StateBlock } from '../ds';
 import { NazwaPtaka } from '../NazwaPtaka';
+import { OwnPhotos } from '../OwnPhotos';
 import type { PtakDoWyboru } from '@/lib/types';
 import { MapaWGranicy } from './MapaWGranicy';
 
@@ -123,6 +124,7 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
                       </p>
                     )}
                     {w.notatka && <p className="dziennik__notatka">{w.notatka}</p>}
+                    <OwnPhotos gatunek={w.gatunek} nazwa={ptak?.pl ?? w.gatunek} wpis={id} tytul="Zdjęcia z obserwacji" />
                     <p>
                       <Link href={`/dziennik/obserwacja?id=${id}`} className="text-link">
                         Edytuj<span className="visually-hidden">: {ptak?.pl ?? w.gatunek}, {w.data}</span>

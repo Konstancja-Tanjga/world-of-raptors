@@ -21,8 +21,21 @@ function powodBledu(err: unknown) {
  * My own photos of one species. `edycja` shows the dropzone and delete
  * buttons (checklist); without it the photos are read-only (species page).
  */
-export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string; nazwa: string; edycja?: boolean }) {
-  const { zdjecia, blad } = useZdjeciaWlasne(gatunek);
+export function OwnPhotos({
+  gatunek,
+  nazwa,
+  edycja = false,
+  wpis,
+  tytul = 'Moje zdjęcia',
+}: {
+  gatunek: string;
+  nazwa: string;
+  edycja?: boolean;
+  /** A field log sighting: only its photos, and new ones are added to it. */
+  wpis?: string;
+  tytul?: string;
+}) {
+  const { zdjecia, blad } = useZdjeciaWlasne(gatunek, wpis);
   const [dodaje, setDodaje] = useState(false);
   const [bladPliku, setBladPliku] = useState<string | undefined>();
   // FileDropzone leaves announcing results to the form around it.
@@ -49,7 +62,7 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
     const nieudane: string[] = [];
     for (const p of doDodania) {
       try {
-        await dodajZdjecie(gatunek, p, dzisiaj());
+        await dodajZdjecie(gatunek, p, dzisiaj(), wpis);
       } catch (err) {
         console.error('[wor-zdjecia] could not add photo', p.name, err);
         nieudane.push(`${p.name}: ${powodBledu(err)}`);
@@ -98,13 +111,13 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
 
   return (
     <div className="own-photos" ref={kontener}>
-      <p className="plate__label">Moje zdjęcia</p>
+      <p className="plate__label">{tytul}</p>
       <p className="visually-hidden" aria-live="polite">
         {komunikat}
       </p>
       {blad && <StateBlock state="error" title="Nie udało się wczytać zdjęć" description={blad} scope="inline" />}
       {zdjecia.length > 0 && (
-        <ul className="own-photos__grid" aria-label={`Moje zdjęcia: ${nazwa}`}>
+        <ul className="own-photos__grid" aria-label={`${tytul}: ${nazwa}`}>
           {zdjecia.map((z, i) => (
             <li key={z.id} className="own-photos__item">
               {/* Blob URLs from IndexedDB: next/image cannot optimise or size-check them. */}
@@ -130,7 +143,7 @@ export function OwnPhotos({ gatunek, nazwa, edycja = false }: { gatunek: string;
       )}
       {edycja && (
         <FileDropzone
-          label={`Moje zdjęcia: ${nazwa}`}
+          label={`${tytul}: ${nazwa}`}
           description={`JPG lub PNG, do ${MAKS_MB} MB. HEIC działa tylko w Safari.`}
           prompt={dodaje ? 'Dodawanie…' : 'Upuść zdjęcie tutaj albo wybierz z urządzenia'}
           accept="image/*,.heic,.heif"
