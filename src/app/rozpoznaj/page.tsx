@@ -28,11 +28,11 @@ export default function RozpoznajPage() {
         <p className="eyebrow">W teren</p>
         <h1 className="naglowek-strony__tytul">Rozpoznaj</h1>
         <p className="naglowek-strony__lead">
-          Widzisz ptaka, ale nie wiesz, co to? Odpowiedz na cztery pytania, a pokażę drapieżniki i sowy z{' '}
+          Odpowiedz na cztery pytania, a pokażę drapieżniki i sowy z{' '}
           <Link href="/gatunki" className="text-link">
             atlasu
           </Link>
-          , które pasują najbardziej. Każde pytanie możesz pominąć. Słyszysz go, a nie widzisz? Na telefonie spróbuj{' '}
+          , które pasują najbardziej. Słyszysz, a nie widzisz? Na telefonie spróbuj{' '}
           <Link href="/rozpoznaj/glos" className="text-link">
             rozpoznawania po głosie
           </Link>
