@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useId, useMemo, useState } from 'react';
+import { useCallback, useEffect, useId, useMemo, useState, type ReactNode } from 'react';
 import { MIEJSCA, REGIONY, type Aktywnosc, type Kategoria, type Miejsce, type PtakNaLiscie, type Region } from '@/lib/types';
 import { Button, FilterChip, Input, SegmentedControl } from './ds';
 
@@ -115,11 +115,20 @@ export function useFiltry(ptaki: PtakNaLiscie[], { szukajWszedzie = false }: { s
 
 /**
  * The filters, compact: the search, the kind of bird and a "Więcej filtrów"
- * button on one row; the site, region and activity chips fold under it, so
+ * button on one row (with `obok`, a page's own control such as the atlas's
+ * view, before the button); the site, region and activity chips fold under it, so
  * the results start right below. The button says how many folded filters
  * are on, so a narrowed list never hides why.
  */
-export function SpeciesFilters({ filtry, onChange }: { filtry: Filtry; onChange: (next: Filtry) => void }) {
+export function SpeciesFilters({
+  filtry,
+  onChange,
+  obok,
+}: {
+  filtry: Filtry;
+  onChange: (next: Filtry) => void;
+  obok?: ReactNode;
+}) {
   const [otwarte, setOtwarte] = useState(false);
   const wlaczone = filtry.miejsca.length + filtry.regiony.length + filtry.aktywnosc.length;
   const id = useId();
@@ -144,6 +153,7 @@ export function SpeciesFilters({ filtry, onChange }: { filtry: Filtry; onChange:
             options={ZAKRESY}
           />
         </div>
+        {obok}
         <Button variant="secondary" size="sm" aria-expanded={otwarte} aria-controls={id} onClick={() => setOtwarte(!otwarte)}>
           {otwarte ? 'Ukryj filtry' : 'Więcej filtrów'}
           {wlaczone > 0 && ` (włączone: ${wlaczone})`}
