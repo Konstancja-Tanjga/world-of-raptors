@@ -36,8 +36,7 @@ export default function KiedyIGdziePage() {
         <p className="eyebrow">W teren</p>
         <h1 className="naglowek-strony__tytul">Kiedy i gdzie</h1>
         <p className="naglowek-strony__lead">
-          Kiedy jechać, gdzie stanąć i co tam zobaczysz. Planer liczy najlepsze godziny na La Jandę i Marismas del Barbate,
-          a punkty obserwacji układają się od miejsca, z którego ruszasz.
+          Najlepsze godziny na La Jandę i Marismas del Barbate oraz punkty obserwacji najbliżej miejsca, z którego ruszasz.
         </p>
         <ul className="kiedy-i-gdzie__spis" aria-label="Na tej stronie">
           <li>

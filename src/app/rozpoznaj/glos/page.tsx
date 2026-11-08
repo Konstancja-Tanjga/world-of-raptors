@@ -17,8 +17,7 @@ export default function RozpoznajGlosPage() {
         <p className="eyebrow">W teren</p>
         <h1 className="naglowek-strony__tytul">Rozpoznaj po głosie</h1>
         <p className="naglowek-strony__lead">
-          Słyszę ptaka, ale go nie widzę? BirdNET słucha przez mikrofon telefonu i podpowiada, kto to. Ptaki z kursu
-          prowadzą do swojej karty. To podpowiedź, nie wyrok: sprawdzam ją wzrokiem albo w{' '}
+          BirdNET słucha przez mikrofon telefonu i podpowiada, kto to, a podpowiedź sprawdzam wzrokiem albo w{' '}
           <Link href="/rozpoznaj" className="text-link">
             rozpoznawaniu krok po kroku
           </Link>

@@ -13,9 +13,7 @@ export default function ChecklistaPage() {
         <p className="eyebrow">Moja lista</p>
         <h1 className="naglowek-strony__tytul">Moja checklista</h1>
         <p className="naglowek-strony__lead">
-          Odhaczam gatunki, które zaobserwowałam. Przy każdym mogę zapisać datę, miejsce, notatkę i
-          własne zdjęcia. Filtr „Region” pokazuje ptaki z wybranej okolicy, a „Miejsce” listę terenową, na przykład
-          Marismas del Barbate.
+          Odhaczam gatunki, które zaobserwowałam, z datą, miejscem, notatką i własnymi zdjęciami.
         </p>
       </header>
       <ChecklistView

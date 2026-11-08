@@ -17,9 +17,7 @@ export default function MojeNieboPage() {
         <p className="eyebrow">Moja kolekcja</p>
         <h1 className="naglowek-strony__tytul">Moje niebo</h1>
         <p className="naglowek-strony__lead">
-          Niebo, które zapełnia się tym, czego się nauczyłam. Każdy zaliczony moduł zapala swój gwiazdozbiór, każdy gatunek
-          zbiera trzy obrączki, a za prawdziwe umiejętności są naszywki. Nic tu się nie blokuje: kolejne moduły są zawsze
-          otwarte, a to, co zdobyłam, zostaje.
+          Moduły zapalają tu gwiazdozbiory, gatunki zbierają obrączki, a umiejętności naszywki, i nic z tego nie przepada.
         </p>
       </header>
       <MojeNiebo

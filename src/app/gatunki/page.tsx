@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import './atlas.css';
 import { AtlasView } from '@/components/AtlasView';
 import { Ciekawostka } from '@/components/Ciekawostka';
-import { ciekawostkiDla, gatunki, ptakiMokradel, ptakiNaLiscie, zdjecia } from '@/lib/content';
+import { ciekawostkiDla, gatunki, ptakiNaLiscie, zdjecia } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 
 export const metadata: Metadata = {
@@ -23,16 +22,9 @@ export default function GatunkiPage() {
         <p className="eyebrow">Atlas</p>
         <h1 className="naglowek-strony__tytul">Atlas gatunków</h1>
         <p className="naglowek-strony__lead">
-          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} z modułów kursu: {dzienne}{' '}
+          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} z kursu: {dzienne}{' '}
           {odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])} i {sowy}{' '}
-          {odmiana(sowy, ['sowa', 'sowy', 'sów'])} z Polski, południa Hiszpanii i Cieśniny Gibraltarskiej. Zobacz je na
-          zdjęciach, jako sylwetki na tle nieba albo wszystkie w jednej skali. Filtr „Inne ptaki” pokazuje jeszcze{' '}
-          {ptakiMokradel.length} {odmiana(ptakiMokradel.length, ['gatunek', 'gatunki', 'gatunków'])} z list terenowych (np. z
-          Marismas del Barbate) i z modułów o siewkowcach, krukowatych i małych ptakach. Nie wiesz, co widzisz?{' '}
-          <Link href="/rozpoznaj" className="text-link">
-            Rozpoznaj krok po kroku
-          </Link>
-          .
+          {odmiana(sowy, ['sowa', 'sowy', 'sów'])}, na zdjęciach, jako sylwetki na tle nieba albo w jednej skali.
         </p>
       </header>
       <AtlasView
