@@ -36,7 +36,7 @@ export default function KiedyIGdziePage() {
         <p className="eyebrow">W teren</p>
         <h1 className="naglowek-strony__tytul">Kiedy i gdzie</h1>
         <p className="naglowek-strony__lead">
-          Najlepsze godziny na La Jandę i Marismas del Barbate oraz punkty obserwacji najbliżej miejsca, z którego ruszasz.
+          Najlepsze godziny na La Jandę i Marismas del Barbate oraz punkty obserwacji ułożone od miejsca, z którego ruszasz.
         </p>
         <ul className="kiedy-i-gdzie__spis" aria-label="Na tej stronie">
           <li>

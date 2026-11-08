@@ -17,7 +17,7 @@ export default function MojeNieboPage() {
         <p className="eyebrow">Moja kolekcja</p>
         <h1 className="naglowek-strony__tytul">Moje niebo</h1>
         <p className="naglowek-strony__lead">
-          Moduły zapalają tu gwiazdozbiory, gatunki zbierają obrączki, a umiejętności naszywki, i nic z tego nie przepada.
+          Zaliczone moduły zapalają gwiazdozbiory, gatunki zbierają obrączki, a za umiejętności dostaję naszywki. Nic się nie blokuje i nic z tego nie przepada.
         </p>
       </header>
       <MojeNiebo

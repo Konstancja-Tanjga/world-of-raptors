@@ -24,7 +24,7 @@ export default function GatunkiPage() {
         <p className="naglowek-strony__lead">
           {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} z kursu: {dzienne}{' '}
           {odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])} i {sowy}{' '}
-          {odmiana(sowy, ['sowa', 'sowy', 'sów'])}, na zdjęciach, jako sylwetki na tle nieba albo w jednej skali.
+          {odmiana(sowy, ['sowa', 'sowy', 'sów'])}. Zobacz je na zdjęciach, jako sylwetki na tle nieba albo w jednej skali.
         </p>
       </header>
       <AtlasView
