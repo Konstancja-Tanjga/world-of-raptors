@@ -305,7 +305,7 @@ export function ChecklistView({
       <div className="row">
         <ButtonLink href="/dziennik/obserwacja">Dodaj obserwację</ButtonLink>
         <ButtonLink href="/dziennik" variant="secondary">
-          Dziennik obserwacji
+          Mój dziennik
         </ButtonLink>
       </div>
       {/* The place field's suggestions: my places, by name. */}

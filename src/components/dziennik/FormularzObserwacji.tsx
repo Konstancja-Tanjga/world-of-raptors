@@ -257,7 +257,6 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
       <div className="formularz-obserwacji__pola">
         <DatePicker
           label="Data"
-          description="Dzisiaj albo wcześniej."
           max={dzisiaj()}
           value={data}
           onChange={(e) => setData(e.target.value)}
