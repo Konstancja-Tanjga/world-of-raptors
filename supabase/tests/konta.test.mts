@@ -3,8 +3,8 @@
  * with a stub of the parts of Supabase it relies on: auth.users, auth.uid()
  * read from the request's JWT claim, and the anon and authenticated roles.
  * Covers the merge rules the triggers enforce, the data limits, row level
- * security between two people, the feedback log's daily limit, and deleting
- * an account.
+ * security between two people, the feedback log's daily limit, the owner's
+ * places, and deleting an account.
  */
 import { PGlite } from '@electric-sql/pglite';
 import assert from 'node:assert/strict';
@@ -193,6 +193,43 @@ describe('feedback log', () => {
   });
 });
 
+describe('places', () => {
+  const miejsce = (kto: string, id: string, nazwa: string, kiedy: string, usuniete: string | null = null) =>
+    jako(
+      kto,
+      `insert into public.places (place_id, name, latitude, longitude, accuracy_m, first_visit, note, updated_at, deleted_at)
+       values ($1, $2, 36.2193, -5.7831, 12, '2026-11-08', null, $3, $4)
+       on conflict (user_id, place_id) do update
+         set name = excluded.name, updated_at = excluded.updated_at, deleted_at = excluded.deleted_at`,
+      [id, nazwa, kiedy, usuniete],
+    );
+
+  it('keeps the newer change, so an offline rename does not undo a later removal', async () => {
+    await miejsce(A, 'la-janda-1', 'La Janda', '2026-11-08T10:00:00Z');
+    await miejsce(A, 'la-janda-1', 'La Janda', '2026-11-08T12:00:00Z', '2026-11-08T12:00:00Z');
+    await miejsce(A, 'la-janda-1', 'Laguna de la Janda', '2026-11-08T11:00:00Z');
+    const [w] = await jako<{ name: string; deleted_at: string | null }>(A, `select name, deleted_at from public.places where place_id = 'la-janda-1'`);
+    assert.equal(w.name, 'La Janda');
+    assert.notEqual(w.deleted_at, null);
+  });
+
+  it("shows a person only her own places, and a signed-out visitor none", async () => {
+    await miejsce(B, 'biebrza-1', 'Biebrza', '2026-11-08T10:00:00Z');
+    assert.deepEqual((await jako<{ place_id: string }>(B, `select place_id from public.places`)).map((w) => w.place_id), ['biebrza-1']);
+    assert.equal((await jako(null, `select * from public.places`)).length, 0);
+    assert.equal((await jako(A, `update public.places set name = 'cudze' where place_id = 'biebrza-1' returning 1`)).length, 0);
+  });
+
+  it('refuses an empty or long name, a position off the globe and a bad id', async () => {
+    await assert.rejects(miejsce(A, 'pusta', '', '2026-11-08T10:00:00Z'));
+    await assert.rejects(miejsce(A, 'dluga', 'x'.repeat(81), '2026-11-08T10:00:00Z'));
+    await assert.rejects(miejsce(A, 'Zle ID', 'Nazwa', '2026-11-08T10:00:00Z'));
+    await assert.rejects(
+      jako(A, `insert into public.places (place_id, name, latitude, longitude, first_visit, updated_at) values ('x', 'X', 91, 0, '2026-11-08', now())`),
+    );
+  });
+});
+
 describe('deleting an account', () => {
   it('deletes every row of it', async () => {
     await db.exec(`delete from auth.users where id = '${A}'`);
@@ -201,7 +238,7 @@ describe('deleting an account', () => {
       await db.query<{ n: number }>(
         `select ((select count(*) from public.lesson_progress) + (select count(*) from public.observations)
                + (select count(*) from public.flashcards) + (select count(*) from public.user_badges)
-               + (select count(*) from public.feedback_log))::int as n`,
+               + (select count(*) from public.feedback_log) + (select count(*) from public.places))::int as n`,
       )
     ).rows;
     assert.equal(w.n, 0);

@@ -5,6 +5,9 @@ import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { dzisiaj, jestWidziany, useChecklista, widziane } from '@/lib/checklist';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
+import { opisBleduLokalizacji, pobierzPozycje, type Pozycja } from '@/lib/lokalizacja';
+import { aktywne, najblizszeMoje, zgodzZMiejscami } from '@/lib/mojeMiejsca';
+import { useMojeMiejsca, wczytajMiejscaZKopii } from '@/lib/mojeMiejscaMagazyn';
 import { usePostep } from '@/lib/postep';
 import { useZdobyte, wczytajZKopii } from '@/lib/zdobyte';
 import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
@@ -47,6 +50,8 @@ export function ChecklistView({
   listyMiejsc: Record<Miejsce, GrupaListy[]>;
 }) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
+  const { miejsca } = useMojeMiejsca();
+  const [szukamMiejsca, setSzukamMiejsca] = useState<string | null>(null);
   const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
   const [widok, setWidok] = useState<Widok>('wszystkie');
   // Species whose date, place, note and photos are open; a species opens when ticked.
@@ -104,9 +109,45 @@ export function ChecklistView({
   const wZakresie = new Set(zakres.map((p) => p.id));
   const grupyMiejsca = listaMiejsca?.filter((g) => g.gatunki.some((id) => wZakresie.has(id)));
 
+  /** Fills an observation's place with my place nearest to where I am, if one is within 1 km. */
+  const tuGdzieJestem = async (id: string, nazwa: string) => {
+    if (!miejsca) return;
+    if (aktywne(miejsca).length === 0) {
+      // No place to find: no reason to ask the browser for the location.
+      notify({
+        tone: 'info',
+        title: 'Nie mam jeszcze zapisanych miejsc',
+        description: 'Dodam je w „Moich miejscach”, stojąc w terenie. Na razie mogę wpisać nazwę miejsca.',
+      });
+      return;
+    }
+    setSzukamMiejsca(id);
+    let pos: Pozycja;
+    try {
+      pos = await pobierzPozycje();
+    } catch (err) {
+      notify({ tone: 'warning', title: 'Nie udało się ustalić lokalizacji', description: `${opisBleduLokalizacji(err)} Mogę wpisać miejsce ręcznie.` });
+      return;
+    } finally {
+      setSzukamMiejsca(null);
+    }
+    const blisko = najblizszeMoje(miejsca, pos, 1);
+    if (!blisko) {
+      notify({
+        tone: 'info',
+        title: 'Brak mojego miejsca w pobliżu',
+        description: 'W promieniu 1 km nie ma żadnego z moich miejsc. Dodam to miejsce w „Moich miejscach” albo wpiszę nazwę.',
+      });
+      return;
+    }
+    const ok = aktualizuj(id, { miejsce: blisko.miejsce.nazwa });
+    sprawdzZapis(ok);
+    if (ok) notify({ tone: 'success', title: `Miejsce: ${blisko.miejsce.nazwa}`, description: `Wpisane przy obserwacji: ${nazwa}.` });
+  };
+
   const eksportuj = async () => {
     try {
-      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte);
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte, miejsca);
       const url = URL.createObjectURL(plik);
       const a = document.createElement('a');
       a.href = url;
@@ -138,7 +179,7 @@ export function ChecklistView({
 
   // Order matters: validate everything, then write photos (most likely to
   // fail, and aborted atomically), then progress and flashcards, then what
-  // "Moje niebo" recorded, then the checklist.
+  // "Moje niebo" recorded, then my places (merged, never replaced), then the checklist.
   const importuj = async (file: File) => {
     let kopia: OdczytanaKopia;
     try {
@@ -175,11 +216,17 @@ export function ChecklistView({
     const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
     const fiszkiOk = kopia.fiszki ? zastapFiszki(kopia.fiszki) : true;
     const odznakiOk = wczytajZKopii(kopia.odznaki);
-    const checklistaOk = zastap(kopia.checklista);
+    const miejscaZKopii = kopia.miejsca ? wczytajMiejscaZKopii(kopia.miejsca) : null;
+    const miejscaOk = miejscaZKopii ? miejscaZKopii.zapisane : true;
+    // A place renamed here since the backup keeps its newer name: the file's observations follow it.
+    const checklistaOk = zastap(
+      kopia.miejsca && miejscaZKopii ? zgodzZMiejscami(kopia.checklista, kopia.miejsca, miejscaZKopii.po, new Date().toISOString()) : kopia.checklista,
+    );
     const nieZapisane = [
       !checklistaOk && 'checklisty',
       !postepOk && 'postępu nauki',
       !fiszkiOk && 'fiszek',
+      !miejscaOk && 'moich miejsc',
       // A file without dates changes only a mark of mine, nothing I would miss.
       !odznakiOk && kopia.odznaki && 'gwiazdozbiorów i naszywek',
     ].filter(Boolean);
@@ -189,6 +236,7 @@ export function ChecklistView({
       kopia.postep ? 'postęp nauki' : null,
       kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
       kopia.odznaki ? 'daty gwiazdozbiorów i naszywek' : null,
+      kopia.miejsca ? `moje miejsca (${aktywne(kopia.miejsca).length} w pliku; nowsze zmiany z tego urządzenia zostały)` : null,
     ].filter(Boolean);
     const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)', !kopia.fiszki && 'fiszek (dotychczasowe zostały)'].filter(
       Boolean,
@@ -211,6 +259,10 @@ export function ChecklistView({
 
   return (
     <div className="stack">
+      {/* The place field's suggestions: my places, by name. */}
+      <datalist id="moje-miejsca-lista">
+        {miejsca && aktywne(miejsca).map(([id, m]) => <option key={id} value={m.nazwa} />)}
+      </datalist>
       <Progress
         label={etykietaPostepu}
         value={liczba}
@@ -360,11 +412,26 @@ export function ChecklistView({
                                   value={obs.data ?? ''}
                                   onChange={(e) => sprawdzZapis(aktualizuj(g.id, { data: e.target.value }))}
                                 />
-                                <Input
-                                  label="Miejsce"
-                                  value={obs.miejsce ?? ''}
-                                  onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
-                                />
+                                <div className="checklist__miejsce">
+                                  <Input
+                                    label="Miejsce"
+                                    description="Wpisz albo wybierz jedno z moich miejsc."
+                                    list="moje-miejsca-lista"
+                                    value={obs.miejsce ?? ''}
+                                    onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
+                                  />
+                                  <Button
+                                    size="sm"
+                                    variant="secondary"
+                                    loading={szukamMiejsca === g.id}
+                                    loadingLabel="Ustalam lokalizację"
+                                    disabled={szukamMiejsca !== null || miejsca === null}
+                                    onClick={() => void tuGdzieJestem(g.id, g.pl)}
+                                  >
+                                    Tu, gdzie jestem
+                                    <span className="visually-hidden">: miejsce obserwacji {g.pl}</span>
+                                  </Button>
+                                </div>
                                 <Textarea
                                   label="Notatka"
                                   rows={2}
@@ -391,7 +458,7 @@ export function ChecklistView({
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia, postęp nauki, fiszki i „Moje niebo” są zapisane tylko w tej przeglądarce. Co jakiś
+          Checklista, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane w tej przeglądarce (z kontem także na serwerze, oprócz zdjęć). Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>

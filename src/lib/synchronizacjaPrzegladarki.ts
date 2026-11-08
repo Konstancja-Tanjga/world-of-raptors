@@ -5,11 +5,13 @@ import { useSyncExternalStore } from 'react';
 import { checklistaDoSynchronizacji } from './checklist';
 import { fiszkiDoSynchronizacji } from './fiszki';
 import { utworzMagazyn } from './magazyn';
+import { mojeMiejscaDoSynchronizacji } from './mojeMiejscaMagazyn';
 import { postepDoSynchronizacji } from './postep';
 import {
   FISZKI,
   isStanSynchronizacji,
   LEKCJE,
+  MIEJSCA,
   OBSERWACJE,
   ODZNAKI,
   PUSTY_STAN,
@@ -49,6 +51,7 @@ const POLACZENIA = [
   { tabela: LEKCJE, ...postepDoSynchronizacji, zapisz: zapisWlasny(postepDoSynchronizacji.zapisz) },
   { tabela: OBSERWACJE, ...checklistaDoSynchronizacji, zapisz: zapisWlasny(checklistaDoSynchronizacji.zapisz) },
   { tabela: FISZKI, ...fiszkiDoSynchronizacji, zapisz: zapisWlasny(fiszkiDoSynchronizacji.zapisz) },
+  { tabela: MIEJSCA, ...mojeMiejscaDoSynchronizacji, zapisz: zapisWlasny(mojeMiejscaDoSynchronizacji.zapisz) },
 ];
 
 /**

@@ -2,7 +2,10 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { BladLokalizacji, OPIS_BLEDU_LOKALIZACJI, pobierzPozycje } from '@/lib/lokalizacja';
 import { utworzMagazyn } from '@/lib/magazyn';
+import { aktywne, type MojeMiejsce } from '@/lib/mojeMiejsca';
+import { useMojeMiejsca } from '@/lib/mojeMiejscaMagazyn';
 import {
   adresGeokodowania,
   adresMapy,
@@ -53,9 +56,6 @@ function isZapis(v: unknown): v is Zapis {
 const zapamietane = utworzMagazyn<Zapis>('wor:punkty:v1', isZapis);
 
 const BLAD_WYSZUKIWANIA = 'Nie udało się wyszukać miejsca';
-
-/** How long to wait for the browser to answer a location request, prompt included. */
-const CZEKANIE_NA_LOKALIZACJE_MS = 30_000;
 
 /** Past this, the nearest point is far enough to say the list does not cover the area yet. */
 const DALEKO_KM = 150;
@@ -207,6 +207,57 @@ function Punkt({ p, od, dane }: { p: PunktObserwacji; od?: PunktOdMiejsca; dane:
   );
 }
 
+const DZIEN = new Intl.DateTimeFormat('pl', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const dzien = (data: string) => {
+  const [r, m, d] = data.split('-').map(Number);
+  return DZIEN.format(new Date(Date.UTC(r, m - 1, d)));
+};
+
+/** One of my places among the points: its name, first visit, note, and the way there. */
+function MojPunkt({ id, m, od }: { id: string; m: MojeMiejsce; od?: { km: number; kierunek: string } }) {
+  return (
+    // data-prywatne: my place and note are mine, not the course's, so "Zgłoś poprawkę" cannot point at them.
+    <article className="punkt" aria-labelledby={`moje-${id}`} data-prywatne>
+      <header className="punkt__naglowek">
+        <h4 id={`moje-${id}`} className="punkt__nazwa">
+          {m.nazwa}
+        </h4>
+        {od && (
+          <p className="punkt__odleglosc">
+            {odlegloscSlownie(od.km)} {od.kierunek}
+          </p>
+        )}
+        <div className="punkt__znaczniki">
+          <Badge tone="success">Moje miejsce</Badge>
+        </div>
+      </header>
+      <p className="punkt__kiedy">
+        <span className="punkt__etykieta">Pierwsza wizyta:</span> {dzien(m.data)}
+      </p>
+      {m.notatka && <p className="punkt__opis">{m.notatka}</p>}
+      <ul className="punkt__linki">
+        <li>
+          <a href={adresMapy(m)} target="_blank" rel="noreferrer" className="text-link">
+            Mapa
+            {NOWA_KARTA}
+          </a>
+        </li>
+        <li>
+          <a href={adresTrasy(m)} target="_blank" rel="noreferrer" className="text-link">
+            Trasa dojazdu
+            {NOWA_KARTA}
+          </a>
+        </li>
+        <li>
+          <Link href="/moje-miejsca" className="text-link">
+            Ptaki, notatka i zmiany w Moich miejscach
+          </Link>
+        </li>
+      </ul>
+    </article>
+  );
+}
+
 /**
  * "Gdzie stanąć" on "Kiedy i gdzie": every point from content/punkty-obserwacji.json, by
  * area, or, once a place is given, from the nearest to the farthest. A place
@@ -214,10 +265,12 @@ function Punkt({ p, od, dane }: { p: PunktObserwacji; od?: PunktOdMiejsca; dane:
  * coordinates, or read from the browser's location (which stays in the
  * browser: distances are counted here). The wind filter keeps the points a
  * Levante or a Poniente makes the place to be, and those the wind does not
- * choose.
+ * choose. My own places (mojeMiejsca) head the area view and join the
+ * nearest-first list whatever the wind.
  */
 export function PunktyObserwacji(dane: DanePunktow) {
   const zapis = zapamietane.useMagazyn();
+  const { miejsca: mojeMiejsca } = useMojeMiejsca();
   const skad = zapis?.skad ?? null;
   const [tekst, setTekst] = useState('');
   const [szukanie, setSzukanie] = useState<Szukanie>({ stan: 'spokoj' });
@@ -227,12 +280,9 @@ export function PunktyObserwacji(dane: DanePunktow) {
   // Each search or location request gets a number; a newer request, or going back to areas, makes older answers stale.
   const zadanie = useRef(0);
   const przerwij = useRef<AbortController | null>(null);
-  const czuwanie = useRef<ReturnType<typeof setTimeout> | null>(null);
   const nowe = () => {
     przerwij.current?.abort();
     przerwij.current = null;
-    if (czuwanie.current) clearTimeout(czuwanie.current);
-    czuwanie.current = null;
     return ++zadanie.current;
   };
   useEffect(() => () => void nowe(), []);
@@ -298,49 +348,36 @@ export function PunktyObserwacji(dane: DanePunktow) {
 
   function lokalizuj() {
     const numer = nowe();
-    if (!('geolocation' in navigator)) {
-      setSzukanie({ stan: 'blad', tytul: 'Ta przeglądarka nie podaje lokalizacji', opis: 'Wpisz miejscowość albo współrzędne.' });
-      return;
-    }
     setSzukanie({ stan: 'lokalizuje' });
-    // The browser's own timeout starts only once access is allowed; a prompt closed without an answer calls neither callback.
-    czuwanie.current = setTimeout(() => {
-      if (numer !== zadanie.current) return;
-      nowe();
-      setSzukanie({
-        stan: 'blad',
-        tytul: 'Nie udało się ustalić lokalizacji',
-        opis: 'Przeglądarka nie odpowiedziała na prośbę o lokalizację. Spróbuj jeszcze raz albo wpisz miejscowość.',
-      });
-    }, CZEKANIE_NA_LOKALIZACJE_MS);
-    navigator.geolocation.getCurrentPosition(
+    pobierzPozycje().then(
       (pos) => {
         if (numer !== zadanie.current) return;
-        nowe();
-        ustaw({ nazwa: 'Twoja lokalizacja', opis: '', szer: pos.coords.latitude, dl: pos.coords.longitude, zrodlo: 'lokalizacja' });
+        ustaw({ nazwa: 'Twoja lokalizacja', opis: '', szer: pos.szer, dl: pos.dl, zrodlo: 'lokalizacja' });
         setSzukanie({ stan: 'spokoj' });
       },
-      (err) => {
+      (err: unknown) => {
         if (numer !== zadanie.current) return;
-        nowe();
-        console.error('[punkty] geolocation failed', err.code, err.message);
+        const powod = err instanceof BladLokalizacji ? err.powod : 'czas';
         setSzukanie({
           stan: 'blad',
-          tytul: 'Nie udało się ustalić lokalizacji',
-          opis:
-            err.code === err.PERMISSION_DENIED
-              ? 'Przeglądarka nie dała dostępu do lokalizacji. Możesz na to pozwolić w ustawieniach strony albo wpisać miejscowość.'
-              : err.code === err.POSITION_UNAVAILABLE
-                ? 'Przeglądarka nie zna teraz Twojej lokalizacji (sprawdź, czy usługi lokalizacji są włączone). Wpisz miejscowość.'
-                : 'Przeglądarka nie zdążyła ustalić, gdzie jesteś. Spróbuj jeszcze raz albo wpisz miejscowość.',
+          tytul: powod === 'brak' ? 'Ta przeglądarka nie podaje lokalizacji' : 'Nie udało się ustalić lokalizacji',
+          opis: `${OPIS_BLEDU_LOKALIZACJI[powod]} Możesz też wpisać miejscowość.`,
         });
       },
-      { enableHighAccuracy: false, timeout: 15000, maximumAge: 10 * 60 * 1000 },
     );
   }
 
   const widoczne = dane.punkty.filter((p) => naWiatr(p, wiatr));
-  const wOdleglosci = skad ? najblizsze(widoczne, skad) : null;
+  const moje = mojeMiejsca ? aktywne(mojeMiejsca).map(([id, m]) => ({ ...m, id })) : [];
+  // My places and the course's points in one list, nearest first; my places whatever the wind.
+  // The far-away note is about the course's points, not about my places.
+  const najblizszyKursu = skad ? najblizsze(widoczne, skad)[0] : undefined;
+  const wOdleglosci = skad
+    ? [
+        ...najblizsze(widoczne, skad).map((o) => ({ ...o, moje: null })),
+        ...najblizsze(moje, skad).map((o) => ({ ...o, moje: o.punkt })),
+      ].sort((a, b) => a.km - b.km)
+    : null;
   const zajety = szukanie.stan === 'szukam' || szukanie.stan === 'lokalizuje';
 
   return (
@@ -424,46 +461,76 @@ export function PunktyObserwacji(dane: DanePunktow) {
         />
       </div>
 
-      {zapis === null ? (
+      {zapis === null || mojeMiejsca === null ? (
         <StateBlock state="loading" title="Wczytywanie punktów" scope="section" />
       ) : wOdleglosci ? (
         <section className="stack" aria-labelledby="punkty-najblizsze">
           <h3 id="punkty-najblizsze" className="checklist__naglowek">
             Od najbliższego
           </h3>
-          {wOdleglosci[0] && wOdleglosci[0].km > DALEKO_KM && (
+          {najblizszyKursu && najblizszyKursu.km > DALEKO_KM && (
             <p className="muted">
-              Najbliższy punkt jest {odlegloscSlownie(wOdleglosci[0].km)} stąd. Na razie są tu punkty z okolic Cieśniny
+              Najbliższy punkt z kursu jest {odlegloscSlownie(najblizszyKursu.km)} stąd. Na razie są tu punkty z okolic Cieśniny
               Gibraltarskiej, La Jandy i Barbate oraz kilka miejsc w Polsce.
             </p>
           )}
           <ol className="punkty__lista">
-            {wOdleglosci.map((o) => (
-              <li key={o.punkt.id}>
-                <Punkt p={o.punkt} od={o} dane={dane} />
-              </li>
-            ))}
+            {wOdleglosci.map((o) =>
+              o.moje ? (
+                <li key={`moje-${o.moje.id}`}>
+                  <MojPunkt id={o.moje.id} m={o.moje} od={o} />
+                </li>
+              ) : (
+                <li key={o.punkt.id}>
+                  <Punkt p={o.punkt as PunktObserwacji} od={o as PunktOdMiejsca} dane={dane} />
+                </li>
+              ),
+            )}
           </ol>
         </section>
       ) : (
-        OKOLICE.map((o) => {
-          const wOkolicy = widoczne.filter((p) => p.okolica === o.value);
-          if (!wOkolicy.length) return null;
-          return (
-            <section key={o.value} className="stack" aria-labelledby={`okolica-${o.value}`}>
-              <h3 id={`okolica-${o.value}`} className="checklist__naglowek">
-                {o.label}
-              </h3>
+        <>
+          <section className="stack" aria-labelledby="okolica-moje">
+            <h3 id="okolica-moje" className="checklist__naglowek">
+              Moje miejsca
+            </h3>
+            {moje.length === 0 ? (
+              <p className="muted">
+                Tu pojawią się miejsca, które dodam w terenie:{' '}
+                <Link href="/moje-miejsca" className="text-link">
+                  Dodaj miejsce, w którym jestem
+                </Link>
+                .
+              </p>
+            ) : (
               <ul className="punkty__lista">
-                {wOkolicy.map((p) => (
-                  <li key={p.id}>
-                    <Punkt p={p} dane={dane} />
+                {moje.map((m) => (
+                  <li key={m.id}>
+                    <MojPunkt id={m.id} m={m} />
                   </li>
                 ))}
               </ul>
-            </section>
-          );
-        })
+            )}
+          </section>
+          {OKOLICE.map((o) => {
+            const wOkolicy = widoczne.filter((p) => p.okolica === o.value);
+            if (!wOkolicy.length) return null;
+            return (
+              <section key={o.value} className="stack" aria-labelledby={`okolica-${o.value}`}>
+                <h3 id={`okolica-${o.value}`} className="checklist__naglowek">
+                  {o.label}
+                </h3>
+                <ul className="punkty__lista">
+                  {wOkolicy.map((p) => (
+                    <li key={p.id}>
+                      <Punkt p={p} dane={dane} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </>
       )}
 
       <p className="muted planer__uwaga">

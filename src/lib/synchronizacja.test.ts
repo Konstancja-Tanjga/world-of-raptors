@@ -14,6 +14,7 @@ import type { Checklista } from './obserwacje';
 import {
   FISZKI,
   LEKCJE,
+  MIEJSCA,
   OBSERWACJE,
   ODZNAKI,
   PUSTY_STAN,
@@ -23,6 +24,7 @@ import {
   type StanSynchronizacji,
   type Zdalne,
 } from './synchronizacja';
+import type { MojeMiejsca } from './mojeMiejsca';
 import type { Zdobyte } from './zdobyte';
 
 const JA = '00000000-0000-0000-0000-0000000000a1';
@@ -65,6 +67,7 @@ type Urzadzenie = {
   checklista: Checklista;
   fiszki: Fiszki;
   odznaki: Zdobyte;
+  miejsca: MojeMiejsca;
   stan: StanSynchronizacji;
 };
 
@@ -73,12 +76,13 @@ const urzadzenie = (zmiany: Partial<Urzadzenie> = {}): Urzadzenie => ({
   checklista: {},
   fiszki: {},
   odznaki: {},
+  miejsca: {},
   stan: PUSTY_STAN,
   ...zmiany,
 });
 
 function polaczenia(u: Urzadzenie) {
-  const pol = <K extends 'postep' | 'checklista' | 'fiszki' | 'odznaki'>(k: K, tabela: Polaczenie<Urzadzenie[K]>['tabela']) => ({
+  const pol = <K extends 'postep' | 'checklista' | 'fiszki' | 'odznaki' | 'miejsca'>(k: K, tabela: Polaczenie<Urzadzenie[K]>['tabela']) => ({
     tabela,
     czytaj: () => u[k],
     zapisz: (l: Urzadzenie[K]) => {
@@ -86,7 +90,7 @@ function polaczenia(u: Urzadzenie) {
       return true;
     },
   });
-  return [pol('postep', LEKCJE), pol('checklista', OBSERWACJE), pol('fiszki', FISZKI), pol('odznaki', ODZNAKI)];
+  return [pol('postep', LEKCJE), pol('checklista', OBSERWACJE), pol('fiszki', FISZKI), pol('odznaki', ODZNAKI), pol('miejsca', MIEJSCA)];
 }
 
 async function synchronizujUrzadzenie(u: Urzadzenie, kto = JA) {
@@ -136,13 +140,16 @@ const laptop = urzadzenie({
   },
   fiszki: { 'kaniuk/lot': karta('2026-10-01T09:00:00.000Z') },
   odznaki: { start: { data: '2026-09-01', pokazana: true }, 'gwiazdozbior:metoda': { data: '2026-09-20', pokazana: true } },
+  miejsca: {
+    'la-janda': { nazwa: 'La Janda', szer: 36.21933, dl: -5.7831, dokladnosc: 12, data: '2026-09-10', notatka: 'przy kanale', zmieniono: '2026-09-10T18:00:00.000Z' },
+  },
 });
 const telefon = urzadzenie();
 
 test('the first sign-in on a device adds what it holds to the account', async () => {
   const wynik = await synchronizujUrzadzenie(laptop);
   assert.equal(wynik.pierwsza, true);
-  assert.deepEqual(wynik.wyslane, { lesson_progress: 2, observations: 2, flashcards: 1, user_badges: 2 });
+  assert.deepEqual(wynik.wyslane, { lesson_progress: 2, observations: 2, flashcards: 1, user_badges: 2, places: 1 });
 });
 
 test('a second device with nothing on it receives everything, unticked species included', async () => {
@@ -151,12 +158,13 @@ test('a second device with nothing on it receives everything, unticked species i
   assert.deepEqual(telefon.checklista, laptop.checklista);
   assert.deepEqual(telefon.fiszki, laptop.fiszki);
   assert.deepEqual(telefon.odznaki, laptop.odznaki);
-  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, flashcards: 0, user_badges: 0 });
+  assert.deepEqual(telefon.miejsca, laptop.miejsca, 'a place comes back as it went: numbers, date, note');
+  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, flashcards: 0, user_badges: 0, places: 0 });
 });
 
 test('a pass with nothing new sends nothing and changes nothing', async () => {
   const wynik = await synchronizujUrzadzenie(laptop);
-  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, flashcards: 0, user_badges: 0 });
+  assert.deepEqual(wynik.wyslane, { lesson_progress: 0, observations: 0, flashcards: 0, user_badges: 0, places: 0 });
   assert.equal(Object.values(wynik.pobrane).reduce((a, b) => a + b, 0), 0);
 });
 
@@ -169,6 +177,33 @@ test('unticking a lesson and a species on one device unticks them on the other',
   assert.equal(laptop.postep.postep['metoda/02-lot'], undefined);
   assert.equal(laptop.checklista.kaniuk.widziany, false);
   assert.equal(laptop.checklista.kaniuk.miejsce, 'La Janda', 'an untick keeps the place, so ticking again restores it');
+});
+
+test('a place renamed on one device and removed on another ends removed, its name kept', async () => {
+  telefon.miejsca['la-janda'] = { ...telefon.miejsca['la-janda'], nazwa: 'Laguna de la Janda', zmieniono: '2026-10-06T10:00:00.000Z' };
+  laptop.miejsca['la-janda'] = { ...laptop.miejsca['la-janda'], usuniete: true, zmieniono: '2026-10-06T11:00:00.000Z' };
+  await synchronizujUrzadzenie(telefon);
+  await synchronizujUrzadzenie(laptop);
+  await synchronizujUrzadzenie(telefon);
+  for (const u of [telefon, laptop]) {
+    assert.equal(u.miejsca['la-janda'].usuniete, true);
+    assert.equal(u.miejsca['la-janda'].nazwa, 'La Janda', 'the newer change, the removal, carries the name it had');
+  }
+});
+
+test('places from the server: numbers as text are read, a row the app cannot show is skipped', () => {
+  const pominiete: string[] = [];
+  const wynik = MIEJSCA.scal(
+    {},
+    [
+      { place_id: 'a', name: 'Bolonia', latitude: '36.1', longitude: '-5.73', accuracy_m: null, first_visit: '2026-11-08', note: null, updated_at: '2026-11-08T10:00:00Z', deleted_at: null },
+      { place_id: 'b', name: '', latitude: 36, longitude: -5, first_visit: '2026-11-08', updated_at: '2026-11-08T10:00:00Z' },
+      { place_id: 'c', name: 'Bez daty', latitude: 36, longitude: -5, first_visit: null, updated_at: '2026-11-08T10:00:00Z' },
+    ],
+    (k) => pominiete.push(k),
+  );
+  assert.deepEqual(wynik, { a: { nazwa: 'Bolonia', szer: 36.1, dl: -5.73, data: '2026-11-08', zmieniono: '2026-11-08T10:00:00.000Z' } });
+  assert.deepEqual(pominiete, ['b', 'c']);
 });
 
 test('an older change made offline loses to a newer one, on both devices and the server', async () => {
