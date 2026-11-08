@@ -24,4 +24,4 @@ Kurs się kończy, ale nauka rozpoznawania ptaków drapieżnych nie kończy się
 
 ### Orzeł przedni — *Aquila chrysaetos*
 
-Na koniec ptak, który otwiera ten moduł. Orzeł przedni *Aquila chrysaetos* (ang. Golden Eagle) jest jednym z najszerzej rozprzestrzenionych orłów świata: od Hiszpanii i Szkocji przez Karpaty po Japonię i Amerykę Północną. W Polsce gniazduje tylko w górach, nielicznie, a w Hiszpanii można go zobaczyć w każdym większym paśmie górskim. Jeśli jeszcze go nie widziałaś, niech będzie celem następnego wyjazdu.
+Na koniec ptak, który otwiera ten moduł. Orzeł przedni *Aquila chrysaetos* (ang. Golden Eagle) jest jednym z najszerzej rozprzestrzenionych orłów świata: od Hiszpanii i Szkocji przez Karpaty po Japonię i Amerykę Północną. W Polsce gniazduje nielicznie, prawie wyłącznie w Karpatach (wyjątkowo także na Pomorzu), a w Hiszpanii można go zobaczyć w każdym większym paśmie górskim. Jeśli jeszcze go nie widziałaś, niech będzie celem następnego wyjazdu.

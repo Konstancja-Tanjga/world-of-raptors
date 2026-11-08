@@ -46,7 +46,7 @@ Najprostszy pierwszy krok w nocy to pytanie: **nisko czy wysoko?** Wartości pon
 
 | Sowa | Głos | Wysokość (ok.) | Rytm |
 |---|---|---|---|
-| Puchacz | głębokie, dwusylabowe „uu-hu” | bardzo nisko | pojedyncze, co kilka sekund; słychać do ok. 1 km |
+| Puchacz | głębokie, dwusylabowe „uu-hu” | bardzo nisko | pojedyncze, co ok. 8–12 s; w ciche noce słychać z ok. 2 km, wyjątkowo dalej |
 | Uszatka (samiec) | miękkie, głuche „hu” | ok. 400 Hz | co 2–8 s, nawet kwadrans bez przerwy |
 | Włochatka | seria 4–10 czystych „u-u-u-u”, wznosząca się | ok. 700–850 Hz | seria, przerwa kilku sekund, seria |
 | Puszczyk (samiec) | „huuu… hu… hu-hu-huuu” z drżącą końcówką | ok. 800 Hz | pieśń co kilkadziesiąt sekund |
@@ -173,6 +173,7 @@ Złóż dłonie w miseczkę, kciuki obok siebie, i dmuchnij w szczelinę między
 - [YouTube: jak czytać sonogram ptaka](https://www.youtube.com/results?search_query=how+to+read+bird+spectrogram)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 
 - [D. Anderwald, Metody lokalizacji i ochrony puchacza oraz innych sów leśnych, Studia i Materiały CEPL 8, 2006](https://cepl.sggw.edu.pl/wp-content/uploads/sites/75/2021/08/met_lokalizacji.pdf): sezony głosowe, pora nocy, reakcje na wabienie
 - [K. Śnigórska, A. Subel, Monitoring wybranych gatunków sów w Ojcowskim PN, Prądnik 25, 2015](https://opn.gov.pl/pliki-do-pobrania/otworz/bf85092c-f2a4-4d01-ac68-22bb7fe97a5b.pdf): terminy nasłuchów według instrukcji monitoringu sów leśnych

@@ -22,7 +22,7 @@ W lutym bieliki zaczynają już lęgi, a trzmielojad i kobuz przylatują dopiero
 | **Styczeń** | Zima: goście z północy | bieliki przy niezamarzniętej wodzie, myszołów włochaty, drzemlik, błotniak zbożowy, krogulec przy karmnikach |
 | **Luty** | Bieliki tokują i wcześnie zaczynają lęgi | pary bielików nad gniazdami; sokoły wędrowne na budynkach |
 | **Marzec** | Pierwsze powroty | kania ruda, błotniak stawowy, myszołowy na przelocie; pustułki zajmują gniazda |
-| **Kwiecień** | Powroty trwają | orlik krzykliwy (koniec miesiąca), rybołów, błotniak łąkowy; toki myszołowów |
+| **Kwiecień** | Powroty trwają | orlik krzykliwy (początek miesiąca, toki w połowie), rybołów, błotniak łąkowy; toki myszołowów |
 | **Maj** | Przylatują ostatni | **trzmielojad** i **kobuz**; pełnia sezonu lęgowego |
 | **Czerwiec** | Pisklęta w gniazdach | ptaki dorosłe polują intensywnie; dobre warunki na kamery |
 | **Lipiec** | Młode opuszczają gniazda | młode pustułki i myszołowy, których rozpoznanie jest trudniejsze |
@@ -38,6 +38,7 @@ W lutym bieliki zaczynają już lęgi, a trzmielojad i kobuz przylatują dopiero
 - [YouTube: jesienny przelot ptaków drapieżnych](https://www.youtube.com/results?search_query=autumn+raptor+migration+Europe)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Wikipedia: Wędrówki ptaków](https://pl.wikipedia.org/wiki/W%C4%99dr%C3%B3wki_ptak%C3%B3w) i [Bird migration](https://en.wikipedia.org/wiki/Bird_migration)
 - [eBird: Polska](https://ebird.org/region/PL): wykresy obecności gatunków w kolejnych miesiącach
 - [Trektellen](https://www.trektellen.org): wyniki liczeń przelotu, także z polskich punktów

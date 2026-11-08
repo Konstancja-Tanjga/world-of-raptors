@@ -138,7 +138,7 @@ Jest też dobra wiadomość. Puchaczy w Polsce przybyło: ze 130–150 par w lat
 
 Podstawy etyki nocnego nasłuchu są w lekcji [B5: Gdzie i kiedy słuchać](../sowy/04-gdzie-i-kiedy.md). Tutaj chodzi o to, dlaczego u sów jest to ważniejsze niż u innych ptaków.
 
-- **Nagrania.** Sowa bierze nagranie za intruza na swoim terytorium. Kodeks etyki amerykańskiego stowarzyszenia ABA prosi, by ograniczać wabienie, zwłaszcza w miejscach chętnie odwiedzanych przez obserwatorów i u gatunków rzadkich lub zagrożonych, i by szczególnie uważać przy gniazdach i noclegowiskach. Nawet polski monitoring sów leśnych używa stymulacji głosowej oszczędnie: na punktach, na których bierny nasłuch nic nie dał.
+- **Nagrania.** Sowa bierze nagranie za intruza na swoim terytorium. Kodeks etyki amerykańskiego stowarzyszenia ABA prosi, by ograniczać wabienie, zwłaszcza w miejscach chętnie odwiedzanych przez obserwatorów i u gatunków rzadkich lub zagrożonych, i by szczególnie uważać przy gniazdach i noclegowiskach. Polski monitoring sów używa stymulacji głosowej według ścisłych reguł: najpierw kilka minut biernego nasłuchu, wabienie tylko wtedy, gdy ptaki są mało aktywne, i tylko do pierwszej odpowiedzi ptaka.
 - **Światło.** Latarka i flesz w oczy sowy na noclegowisku to właśnie ten rodzaj niepokojenia, którego zakazuje prawo (niżej).
 - **Lokalizacje.** W Ameryce Północnej fotografowie dokarmiali puszczyki mszarne myszami ze sklepu zoologicznego. Krytycy zwracają uwagę, że sowy uczyły się przez to polować przy drogach, gdzie giną pod samochodami. Klub przyrodników z Ottawy przestał publikować miejsca pobytu sów. eBird ukrywa dokładne lokalizacje kilku sów na całym świecie, m.in. puszczyka mszarnego, sowy jarzębatej i puchacza japońskiego. Uzasadnia to tym, że tłumy podążające zimą za sowami przeszkadzają im polować, przyzwyczajają je do ludzi i narażają na zderzenia z samochodami. Polskie raporty o puszczyku mszarnym podają tylko kompleks leśny, nie konkretne miejsce.
 
@@ -150,6 +150,7 @@ Podstawy etyki nocnego nasłuchu są w lekcji [B5: Gdzie i kiedy słuchać](../s
 - [YouTube: jak działa budka dla płomykówki](https://www.youtube.com/results?search_query=barn+owl+nest+box+camera)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [IOC World Bird List](https://www.worldbirdnames.org/new/ioc-lists) i [Wikipedia: List of owl species](https://en.wikipedia.org/wiki/List_of_owl_species): liczba gatunków
 - [Guinness World Records: najmniejsza sowa](https://www.guinnessworldrecords.com/world-records/76263-smallest-owl) i [Walters, *North American Bird Bander* 6(3)](https://sora.unm.edu/sites/default/files/journals/nabb/v006n03/p0104-p0105.pdf): masa kaktusówki
 - [Wikipedia: Kaktusówka](https://pl.wikipedia.org/wiki/Micrathene_whitneyi), [Puchacz japoński](https://pl.wikipedia.org/wiki/Bubo_blakistoni), [Blakiston's fish owl](https://en.wikipedia.org/wiki/Blakiston%27s_fish_owl), [Owl](https://en.wikipedia.org/wiki/Owl)
