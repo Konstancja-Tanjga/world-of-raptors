@@ -12,12 +12,6 @@ export default function ChecklistaPage() {
       <header className="naglowek-strony">
         <p className="eyebrow">Moja lista</p>
         <h1 className="naglowek-strony__tytul">Moja checklista</h1>
-        <p className="naglowek-strony__lead">
-          Odhaczam gatunki, które zaobserwowałam. Przy każdym mogę zapisać datę, miejsce, notatkę i
-          własne zdjęcia, a każdą kolejną obserwację z punktem na mapie dodać do dziennika. Wyszukiwarka przeszukuje
-          wszystkie ptaki, także te spoza kursu, na przykład dzięcioła dużego. Filtr „Region” pokazuje ptaki z wybranej okolicy,
-          a „Miejsce” listę terenową, na przykład Marismas del Barbate.
-        </p>
       </header>
       <ChecklistView
         ptaki={ptakiNaLiscie}

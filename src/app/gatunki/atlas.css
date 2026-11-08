@@ -9,7 +9,7 @@
 }
 .atlas__narzedzia {
   display: grid;
-  gap: var(--bh-gap-loose);
+  gap: var(--bh-gap-normal);
   padding-bottom: var(--bh-gap-loose);
   border-bottom: 1px solid var(--wor-linia);
 }

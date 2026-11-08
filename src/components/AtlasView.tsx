@@ -51,7 +51,7 @@ export function AtlasView({
   gatunki: Gatunek[];
   miniatury: Record<string, Zdjecie | null>;
 }) {
-  const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
+  const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki, { szukajWszedzie: true });
   const { lista } = useChecklista();
   const [widok, setWidok] = useState<Widok>('zdjecia');
   const maks = Math.max(...gatunki.map((g) => g.rozpietosc_cm[1]));

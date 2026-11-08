@@ -116,8 +116,32 @@
   display: grid;
   gap: var(--bh-gap-tight);
 }
-.punkty__wiatr {
-  max-width: 40rem;
+/* The search panel's second row: the start place, and the wind and the season. */
+.punkty__start {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  justify-items: start;
+}
+.punkty__opcje {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  align-items: end;
+  gap: var(--bh-gap-normal);
+}
+
+/* A point, short: the birds in one line, the way there, and the rest folded. */
+.punkt__ptaki {
+  margin: 0;
+  font-size: var(--bh-text-size-caption);
+}
+.punkt__akcje {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+}
+.punkt__szczegoly {
+  margin-inline: calc(-1 * var(--bh-gap-snug));
 }
 
 /* The page: the planner, then the points, each a section of its own. */

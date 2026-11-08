@@ -8,6 +8,10 @@ import {
   naWiatr,
   NiepelnaOdpowiedz,
   odleglosc,
+  pasujeDoZapytania,
+  poraPunktu,
+  propozycje,
+  type PunktObserwacji,
   wspolrzedneZTekstu,
   zakresMiesiecy,
 } from './punkty';
@@ -100,4 +104,50 @@ test('zakresMiesiecy: runs in Roman numerals, across the new year too', () => {
   assert.equal(zakresMiesiecy([9]), 'IX');
   assert.equal(zakresMiesiecy([3, 4, 9]), 'III–IV, IX');
   assert.equal(zakresMiesiecy([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]), 'cały rok');
+});
+
+const punkt = (id: string, w: { szer: number; dl: number }, miesiace: number[], szczyt: number[], zmiany: Partial<PunktObserwacji> = {}): PunktObserwacji => ({
+  id,
+  nazwa: `Punkt ${id}`,
+  okolica: 'okolice-tarify',
+  rodzaj: 'przelot',
+  opis: '',
+  dojazd: '',
+  wiatr: [],
+  miesiace,
+  szczyt,
+  pora_dnia: '',
+  gatunki: [],
+  lekcja: 'gibraltar/04-gdzie-i-kiedy',
+  zrodla: [],
+  ...w,
+  ...zmiany,
+});
+
+test('a month is a point’s peak, in season, or out of it', () => {
+  const p = punkt('a', TARIFA, [2, 3, 8, 9, 10], [9]);
+  assert.deepEqual([9, 3, 6].map((m) => poraPunktu(p, m)), ['szczyt', 'sezon', 'poza']);
+});
+
+test('the search finds every typed word in name, area, description or birds, without diacritics', () => {
+  const p = punkt('bolonia', TARIFA, [9], [9], { nazwa: 'Obserwatorium Puerto de Bolonia', opis: 'Przełęcz nad zatoką.', inne_ptaki: 'bociany' });
+  const ptaki = ['sęp płowy', 'kania czarna'];
+  assert.ok(pasujeDoZapytania(p, 'bolonia', ptaki));
+  assert.ok(pasujeDoZapytania(p, 'sep plowy', ptaki), 'a bird, typed without Polish letters');
+  assert.ok(pasujeDoZapytania(p, 'tarify kania', ptaki), 'an area and a bird, in any order');
+  assert.ok(pasujeDoZapytania(p, 'przelecz', ptaki), 'a word of the description');
+  assert.ok(pasujeDoZapytania(p, '  ', ptaki), 'an empty search keeps every point');
+  assert.ok(!pasujeDoZapytania(p, 'bolonia orlik', ptaki), 'every word must be found');
+});
+
+test('suggestions skip points out of season and favour a peak a little farther away', () => {
+  const blisko = punkt('blisko', CAZALLA, [3, 4, 9], [3]); // about 3 km, in season in September
+  const szczyt = punkt('szczyt', { szer: 36.04, dl: -5.6 }, [9], [9]); // about 3 km too, at its peak
+  const poza = punkt('poza', TARIFA, [3, 4], [3]);
+  const daleko = punkt('daleko', ALGARROBO, [9], [9]);
+  const wynik = propozycje([blisko, szczyt, poza, daleko], TARIFA, 9);
+  assert.deepEqual(wynik.map((o) => o.punkt.id), ['szczyt', 'blisko', 'daleko']);
+  assert.deepEqual(wynik.map((o) => o.pora), ['szczyt', 'sezon', 'szczyt']);
+  assert.deepEqual(propozycje([blisko, poza], TARIFA, 6), [], 'nothing in season, nothing suggested');
+  assert.equal(propozycje([blisko, szczyt, daleko], TARIFA, 9, 2).length, 2);
 });
