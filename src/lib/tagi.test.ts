@@ -80,3 +80,9 @@ test('a territory sheet is written as a block', () => {
   assert.match(problemyTagow('<karta-rewirow data-sesja="pomorze"></karta-rewirow>', 'l.md')[0], /osobnej linii/);
   assert.match(problemyTagow('Karta: <karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md')[0], /osobnej linii/);
 });
+
+test('an exercise tag must be a block of its own', () => {
+  assert.deepEqual(problemyTagow('Tekst\n\n<czy-to-trend>\n</czy-to-trend>\n', 'a.md'), []);
+  assert.equal(problemyTagow('Tekst <czy-to-trend></czy-to-trend>\n', 'a.md').length, 1);
+  assert.equal(problemyTagow('<czy-to-trend>\n\n</czy-to-trend>\n', 'a.md').length, 1);
+});

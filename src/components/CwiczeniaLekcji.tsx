@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 /**
- * The client components of B7's, A9's, A11's, A14's, B8's, B9's and B11's lesson tags, each in its own chunk. Markdown
+ * The client components of B7's, A9's, A11's, A14's, A15's, B8's, B9's and B11's lesson tags, each in its own chunk. Markdown
  * renders every lesson and is imported by most pages, so importing them
  * there directly would ship them (and the silhouette generator the morphs
  * need) everywhere; a server component's dynamic import does not split code,
@@ -21,6 +21,7 @@ export const Pikowanie = dynamic(() => import('./lot/Pikowanie').then((m) => m.P
 export const QuizNaCzas = dynamic(() => import('./QuizNaCzas').then((m) => m.QuizNaCzas));
 export const LiczenieStada = dynamic(() => import('./LiczenieStada').then((m) => m.LiczenieStada));
 export const ObraczkiKolorowe = dynamic(() => import('./ObraczkiKolorowe').then((m) => m.ObraczkiKolorowe));
+export const CzyToTrend = dynamic(() => import('./CzyToTrend').then((m) => m.CzyToTrend));
 export const KalendarzSiewkowcow = dynamic(() => import('./KalendarzSiewkowcow').then((m) => m.KalendarzSiewkowcow));
 export const IleIchJest = dynamic(() => import('./IleIchJest').then((m) => m.IleIchJest));
 export const KartaRewirow = dynamic(() => import('./KartaRewirow').then((m) => m.KartaRewirow));

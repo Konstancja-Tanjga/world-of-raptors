@@ -429,6 +429,39 @@
       ]
     },
     {
+      "id": "A15",
+      "slug": "trendy",
+      "sciezka": "a",
+      "tytul": "Trendy: jak czytać liczby o populacjach",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-pamiec-krotsza-niz-populacja",
+          "tytul": "Pamięć krótsza niż populacja"
+        },
+        {
+          "slug": "02-indeks",
+          "tytul": "Indeks, czyli wszystko względem pierwszego roku"
+        },
+        {
+          "slug": "03-wahanie-czy-trend",
+          "tytul": "Wahanie czy trend?"
+        },
+        {
+          "slug": "04-monitoring-a-inwestycje",
+          "tytul": "Monitoring to nie wszystko, co się mierzy"
+        },
+        {
+          "slug": "05-drapiezniki-w-liczbach",
+          "tytul": "Drapieżniki Polski i Hiszpanii w liczbach"
+        },
+        {
+          "slug": "06-cwiczenia",
+          "tytul": "Ćwiczenia i quiz"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

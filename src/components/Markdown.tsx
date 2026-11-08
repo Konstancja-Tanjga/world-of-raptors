@@ -31,6 +31,7 @@ import { wariantIleIchJest } from '@/lib/wykrywalnosc';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
 import {
+  CzyToTrend,
   KalendarzSiewkowcow,
   IleIchJest,
   KartaRewirow,
@@ -158,6 +159,10 @@ const attr = (props: Attrs, name: string) => {
  * (content/karta-rewirow.json) to sort into territories and categories:
  *
  *   <karta-rewirow data-sesja="pomorze">
+ *
+ * A15's exercise on trends: series of counts to class as PECBMS would:
+ *
+ *   <czy-to-trend>
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -296,6 +301,11 @@ const lessonTags = {
   'kalendarz-siewkowcow': () => (
     <div className="lekcja-cwiczenie">
       <KalendarzSiewkowcow {...kalendarzSiewkowcow()} />
+    </div>
+  ),
+  'czy-to-trend': () => (
+    <div className="lekcja-cwiczenie">
+      <CzyToTrend />
     </div>
   ),
   'obraczki-kolorowe': () => (

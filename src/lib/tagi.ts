@@ -28,6 +28,8 @@ const MINIATURA = /^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/thumb\
 const STRONA = /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/;
 const WLASNE = /^\/zdjecia\/[a-z0-9-]+\.(jpg|jpeg|png|webp)$/;
 const NAJWIECEJ_W_GALERII = 6;
+/** Lesson exercises written as a bare block tag (A15's trend series). */
+const CWICZENIA_BEZ_ATRYBUTOW = ['czy-to-trend'] as const;
 
 /** Commons thumbnails also come from thumb.wikimedia.org, the same files under another host. */
 const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//, 'https://upload.wikimedia.org/');
@@ -44,7 +46,7 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * recording `idNagran` does not have; a `<model-3d>` not written as a block
  * or naming a scene sceny.ts does not have; an `<ile-ich-jest>` not written
  * as a block or with an unknown variant; a `<karta-rewirow>` not written as a
- * block.
+ * block; an exercise tag such as `<czy-to-trend>` not written as a block.
  */
 export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
@@ -118,6 +120,17 @@ export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<st
     if (!/<karta-rewirow\b/i.test(t)) continue;
     if (!/^<karta-rewirow data-sesja="[a-z0-9-]+">$/.test(t) || linie[i + 1]?.trim() !== '</karta-rewirow>') {
       bledy.push(`${gdzie(i)}: zapisz kartę jako <karta-rewirow data-sesja="…"> w osobnej linii, a </karta-rewirow> w następnej`);
+    }
+  }
+
+  // Exercise tags without attributes: a block each, or Markdown wraps them in a paragraph.
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    for (const nazwa of CWICZENIA_BEZ_ATRYBUTOW) {
+      if (!new RegExp(`<${nazwa}\\b`, 'i').test(t)) continue;
+      if (t !== `<${nazwa}>` || linie[i + 1]?.trim() !== `</${nazwa}>`) {
+        bledy.push(`${gdzie(i)}: zapisz ćwiczenie jako <${nazwa}> w osobnej linii, a </${nazwa}> w następnej`);
+      }
     }
   }
 
