@@ -8,6 +8,7 @@ import { useDziennik, wpisy } from '@/lib/dziennikMagazyn';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
 import { opisBleduLokalizacji, pobierzPozycje, type Pozycja } from '@/lib/lokalizacja';
+import { ptakiMojegoMiejsca } from '@/lib/filtrMiejsca';
 import { aktywne, najblizszeMoje, zgodzZMiejscami } from '@/lib/mojeMiejsca';
 import { useMojeMiejsca, wczytajMiejscaZKopii } from '@/lib/mojeMiejscaMagazyn';
 import { usePostep } from '@/lib/postep';
@@ -74,11 +75,15 @@ export function ChecklistView({
       else nowe.delete(id);
       return nowe;
     });
-  const filtryAktywne = czyFiltryAktywne(filtry);
+  // One of my places as a filter: kept apart from `filtry`, which links and lessons set by address.
+  const [mojeWybrane, setMojeWybrane] = useState<string | null>(null);
+  const mojeMiejsce = mojeWybrane && miejsca?.[mojeWybrane] && !miejsca[mojeWybrane].usuniete ? miejsca[mojeWybrane] : null;
+  const filtryAktywne = czyFiltryAktywne(filtry) || Boolean(mojeMiejsce);
   const miejsce = filtry.miejsca.length === 1 ? MIEJSCA.find((m) => m.value === filtry.miejsca[0]) : undefined;
   const listaMiejsca = miejsce ? listyMiejsc[miejsce.value] : null;
   const wyczyscFiltry = () => {
     setFiltry(PUSTE_FILTRY);
+    setMojeWybrane(null);
     // The button disappears with the empty state; keep keyboard focus on the page.
     requestAnimationFrame(() => document.querySelector<HTMLInputElement>('input[type=search]')?.focus());
   };
@@ -93,11 +98,17 @@ export function ChecklistView({
   const wszystkiePtaki =
     filtry.ptaki === 'wszystkie' && !filtry.miejsca.length && !filtry.regiony.length && !filtry.aktywnosc.length;
   const pasujacePozostale = useMemo(() => (q ? pozostale.filter((p) => pasujeDoSzukania(p, q)) : []), [pozostale, q]);
+  const ptakiMoje = useMemo(
+    () => (mojeMiejsce && lista ? ptakiMojegoMiejsca(mojeMiejsce, lista, dziennik ?? {}) : null),
+    [mojeMiejsce, lista, dziennik],
+  );
   const wynik = useMemo(() => {
     if (!lista) return wynikKursu;
+    // My place: every bird seen there, whatever its kind, the search still narrowing it.
+    if (ptakiMoje) return [...ptaki, ...pozostale].filter((p) => ptakiMoje.has(p.id) && (!q || pasujeDoSzukania(p, q)));
     const dodatkowe = q ? pasujacePozostale.slice(0, NAJWIECEJ_POZOSTALYCH) : wszystkiePtaki ? pozostale.filter((p) => jestWidziany(lista, p.id)) : [];
     return [...wynikKursu, ...dodatkowe];
-  }, [wynikKursu, lista, q, pasujacePozostale, wszystkiePtaki, pozostale]);
+  }, [wynikKursu, lista, q, pasujacePozostale, wszystkiePtaki, pozostale, ptakiMoje, ptaki]);
   const ileWDzienniku = useMemo(() => {
     const ile = new Map<string, number>();
     for (const [, w] of wpisy(dziennik ?? {})) ile.set(w.gatunek, (ile.get(w.gatunek) ?? 0) + 1);
@@ -129,7 +140,9 @@ export function ChecklistView({
   const liczba = zakres.filter((p) => jestWidziany(lista, p.id)).length;
   const wFiltrze = wynik.filter((g) => jestWidziany(lista, g.id)).length;
   const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'inne ptaki', pozostale: null, wszystkie: null }[filtry.ptaki];
-  const etykietaPostepu = miejsce
+  const etykietaPostepu = mojeMiejsce
+    ? `Zaobserwowane w miejscu „${mojeMiejsce.nazwa}”`
+    : miejsce
     ? `Zaobserwowane w ${miejsce.label}${rodzaj ? `: ${rodzaj}` : ''}`
     : `Zaobserwowane ${rodzaj ?? 'gatunki'}`;
   // A site's groups as far as the chosen kind of bird reaches (its raptors, its birds of marshes, or all).
@@ -301,10 +314,10 @@ export function ChecklistView({
       </datalist>
       <Progress
         label={etykietaPostepu}
-        value={liczba}
-        max={zakres.length}
-        valueText={`${liczba} z ${zakres.length}`}
-        tone={zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
+        value={ptakiMoje ? ptakiMoje.size : liczba}
+        max={ptakiMoje ? widziane(lista).length : zakres.length}
+        valueText={ptakiMoje ? `${ptakiMoje.size} z ${widziane(lista).length} moich gatunków` : `${liczba} z ${zakres.length}`}
+        tone={!ptakiMoje && zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
       />
       <div className="scroll-x">
         <SegmentedControl
@@ -338,7 +351,22 @@ export function ChecklistView({
         </ul>
       )}
 
-      <SpeciesFilters filtry={filtry} onChange={setFiltry} />
+      <SpeciesFilters
+        filtry={filtry}
+        onChange={(f) => {
+          // A field list from the course and one of my places would intersect: choosing one lets go of the other.
+          if (f.miejsca.length) setMojeWybrane(null);
+          setFiltry(f);
+        }}
+        moje={{
+          miejsca: miejsca ? aktywne(miejsca).map(([id, m]) => ({ id, nazwa: m.nazwa })) : [],
+          wybrane: mojeMiejsce ? mojeWybrane : null,
+          wybierz: (id) => {
+            setMojeWybrane(id);
+            if (id && filtry.miejsca.length) setFiltry({ ...filtry, miejsca: [] });
+          },
+        }}
+      />
       {pasujacePozostale.length > NAJWIECEJ_POZOSTALYCH && (
         <p className="muted" role="status">
           Spoza kursu pasuje {pasujacePozostale.length} ptaków, pokazuję pierwsze {NAJWIECEJ_POZOSTALYCH}. Wpisz dłuższą nazwę.

@@ -120,17 +120,22 @@ export function useFiltry(ptaki: PtakNaLiscie[], { szukajWszedzie = false }: { s
  * the results start right below. The button says how many folded filters
  * are on, so a narrowed list never hides why.
  */
+/** My places as filter chips (the checklist's): the chosen one, and what choosing one does. */
+export type MojeMiejscaFiltra = { miejsca: { id: string; nazwa: string }[]; wybrane: string | null; wybierz: (id: string | null) => void };
+
 export function SpeciesFilters({
   filtry,
   onChange,
   obok,
+  moje,
 }: {
   filtry: Filtry;
   onChange: (next: Filtry) => void;
   obok?: ReactNode;
+  moje?: MojeMiejscaFiltra;
 }) {
   const [otwarte, setOtwarte] = useState(false);
-  const wlaczone = filtry.miejsca.length + filtry.regiony.length + filtry.aktywnosc.length;
+  const wlaczone = filtry.miejsca.length + filtry.regiony.length + filtry.aktywnosc.length + (moje?.wybrane ? 1 : 0);
   const id = useId();
   return (
     <div className="filters">
@@ -169,6 +174,14 @@ export function SpeciesFilters({
                 label={m.label}
                 pressed={filtry.miejsca.includes(m.value)}
                 onClick={() => onChange(zMiejscem(filtry, m.value))}
+              />
+            ))}
+            {moje?.miejsca.map((m) => (
+              <FilterChip
+                key={m.id}
+                label={m.nazwa}
+                pressed={moje.wybrane === m.id}
+                onClick={() => moje.wybierz(moje.wybrane === m.id ? null : m.id)}
               />
             ))}
           </div>
