@@ -33,6 +33,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'wiek-orlow': { gatunek: 'orlik-krzykliwy', nazwa: 'Orlik' },
   'projekt-koncowy': { gatunek: 'orzelek-wlochaty', nazwa: 'Orzełek' },
   siewkowce: { gatunek: 'drzemlik', nazwa: 'Drzemlik' },
+  rewiry: { gatunek: 'wlochatka', nazwa: 'Włochatka' },
 };
 
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */

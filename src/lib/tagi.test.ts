@@ -74,3 +74,9 @@ test('the detectability exercise is a block with a known variant', () => {
   assert.match(problemyTagow('<ile-ich-jest data-wariant="trend">\n</ile-ich-jest>', 'l.md')[0], /nieznany wariant/);
   assert.match(problemyTagow('Spróbuj: <ile-ich-jest></ile-ich-jest>', 'l.md')[0], /osobnej linii/);
 });
+
+test('a territory sheet is written as a block', () => {
+  assert.deepEqual(problemyTagow('<karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md'), []);
+  assert.match(problemyTagow('<karta-rewirow data-sesja="pomorze"></karta-rewirow>', 'l.md')[0], /osobnej linii/);
+  assert.match(problemyTagow('Karta: <karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md')[0], /osobnej linii/);
+});

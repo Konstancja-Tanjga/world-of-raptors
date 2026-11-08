@@ -3372,6 +3372,116 @@ html:has(.podglad[open]) {
   gap: var(--bh-gap-snug) var(--bh-gap-loose);
 }
 
+/* B11: the territory sheet's map, a topographic sheet on paper in both themes, like the ring drawing above. */
+.karta__uklad {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--bh-gap-loose);
+  align-items: start;
+}
+@media (min-width: 40rem) {
+  .karta__uklad {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+}
+.karta__mapa {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  border-radius: var(--wor-radius-scene);
+}
+.karta__pole {
+  fill: #ece4d2;
+}
+.karta__siatka line {
+  stroke: rgba(60, 50, 40, 0.18);
+  stroke-width: 0.2;
+}
+.karta__teren--las {
+  fill: #a9bf8e;
+}
+.karta__teren--ols {
+  fill: #8fae8a;
+}
+.karta__teren--mlodnik {
+  fill: #c5d3a6;
+}
+.karta__teren--woda {
+  fill: #9fb7bf;
+}
+.karta__zasieg {
+  fill: none;
+  stroke: #5b4b3a;
+  stroke-width: 0.3;
+  stroke-dasharray: 1.2 1.2;
+}
+.karta__punkt {
+  fill: #3b3128;
+}
+.karta__etykieta {
+  font-size: 3.2px;
+  fill: #2b231c;
+}
+.karta__etykieta--rewir {
+  paint-order: stroke;
+  stroke: #ece4d2;
+  stroke-width: 1.6px;
+  stroke-linejoin: round;
+}
+.cwiczenie .karta__legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-secondary);
+}
+.cwiczenie .karta__legenda li {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+.karta__legenda svg {
+  width: 1rem;
+  height: auto;
+}
+.karta__rewir {
+  fill: none;
+  stroke: #8a3b12;
+  stroke-width: 0.6;
+}
+.karta__notatka circle {
+  fill: #fdfaf4;
+  stroke: #3b3128;
+  stroke-width: 0.35;
+}
+.karta__notatka text {
+  font-size: 2.6px;
+  fill: #2b231c;
+}
+.karta__notatka--biezaca circle {
+  fill: #e0a526;
+  stroke-width: 0.6;
+}
+.karta__notatka-tekst {
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.karta__ptak {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-snug);
+}
+.karta__sylwetka {
+  width: 4.5rem;
+  height: auto;
+  fill: currentColor;
+}
+
 /* ---------- The course: two paths of module cards (home and plan) ---------- */
 
 .kurs {

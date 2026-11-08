@@ -16,6 +16,7 @@ import {
   pytaniaSylwetek,
   kominPunktu,
   scenaBudowy,
+  sesjaKarty,
   sesjaPunktu,
   stronaMorfuLekcji,
   znajdzGatunek,
@@ -32,6 +33,7 @@ import { Anatomia } from './Anatomia';
 import {
   KalendarzSiewkowcow,
   IleIchJest,
+  KartaRewirow,
   Komin,
   LiczenieStada,
   Model3D,
@@ -151,6 +153,11 @@ const attr = (props: Attrs, name: string) => {
  *   <liczenie-stada>                                  estimating a flock
  *   <obraczki-kolorowe>                               reading colour rings
  *   <kalendarz-siewkowcow>                            who passes the Baltic coast when, in which plumage
+ *
+ * B11's territory sheet: a season of notes from watch points
+ * (content/karta-rewirow.json) to sort into territories and categories:
+ *
+ *   <karta-rewirow data-sesja="pomorze">
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -296,6 +303,17 @@ const lessonTags = {
       <ObraczkiKolorowe />
     </div>
   ),
+  'karta-rewirow': (props: Attrs) => {
+    const { sesja, ptaki } = sesjaKarty(attr(props, 'data-sesja'));
+    return (
+      <div className="lekcja-cwiczenie">
+        <KartaRewirow
+          sesja={sesja}
+          ptaki={Object.fromEntries(Object.values(ptaki).map((p) => [p.id, { ...p, rysunek: <Sylwetka id={p.id} klasa="karta__sylwetka" /> }]))}
+        />
+      </div>
+    );
+  },
   'zgadnij-sylwetke': (props: Attrs) => (
     <div className="lekcja-cwiczenie">
       <ZgadnijSylwetke
