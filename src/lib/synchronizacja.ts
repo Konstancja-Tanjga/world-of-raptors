@@ -14,7 +14,7 @@
  * pass, and an entry that only arrived from the server is not sent back.
  */
 
-import { isMojeMiejsce, type MojeMiejsca, type MojeMiejsce } from './mojeMiejsca';
+import { ID_MIEJSCA, isMojeMiejsce, type MojeMiejsca, type MojeMiejsce } from './mojeMiejsca';
 import type { Checklista, Obserwacja } from './obserwacje';
 import { isFiszki, type Fiszki, type ZapisFiszki } from './fiszki';
 import type { Postep } from './postep';
@@ -187,7 +187,8 @@ export const MIEJSCA: Tabela<MojeMiejsca> = {
     for (const w of zdalne) {
       const id = tekst(w.place_id);
       const t = czas(w.updated_at);
-      if (!id || !t) {
+      // A malformed id would make the whole store unreadable on its next read.
+      if (!id || !ID_MIEJSCA.test(id) || !t) {
         pomin(String(w.place_id), 'no id or time');
         continue;
       }

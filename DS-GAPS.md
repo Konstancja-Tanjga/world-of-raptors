@@ -37,6 +37,13 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co zrobiłam:** każde pole daty z `max` dostaje własny polski opis (`ChecklistView.tsx`, `MojeMiejscaView.tsx`), który zastępuje podpowiedź.
 - **Pytanie do design systemu:** czy podpowiedź zakresu powinna brać teksty z ustawień języka (jak inne komunikaty), albo być wyłączana, skoro `max` i tak blokuje późniejsze daty w kalendarzu?
 
+## Pole tekstowe z podpowiedziami
+
+- **Po co sięgnęłam:** pole „Miejsce” przy obserwacji w checkliście podpowiada moje miejsca, ale można też wpisać dowolną nazwę.
+- **Co jest w systemie:** `Combobox` przyjmuje tylko wartości z listy (kontrakt `notFor`: „Free text — the value must come from the list”), a `Input` wyklucza kontrolki z własną obsługą klawiatury.
+- **Co zrobiłam:** `Input` z atrybutem `list` i natywnym `<datalist>` (`ChecklistView.tsx`). Przeglądarka sama obsługuje podpowiedzi i klawiaturę, ale ich wygląd nie pochodzi z Big Hat i różni się między przeglądarkami.
+- **Pytanie do design systemu:** czy `Combobox` mógłby mieć tryb „wolny tekst z podpowiedziami”, albo `Input` prop `suggestions`?
+
 ## Brak rozmiaru tekstu dla nagłówka „hero”
 
 - **Po co sięgnęłam:** tytuły, które otwierają stronę („Naucz się czytać niebo”, otwarcie modułu, nazwa na karcie gatunku), muszą być najmocniejszym tekstem na stronie, mocniejszym niż nagłówki sekcji.

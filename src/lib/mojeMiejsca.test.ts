@@ -11,6 +11,7 @@ import {
   scalMiejsca,
   usunMiejsce,
   zapiszMiejsce,
+  zgodzZMiejscami,
   type DaneMiejsca,
   type MojeMiejsca,
 } from './mojeMiejsca';
@@ -31,6 +32,11 @@ test('zapiszMiejsce: tidies the name and note, rounds the accuracy', () => {
 
 test('isMojeMiejsca: refuses bad ids, positions, dates and tombstones', () => {
   const dobre = zapiszMiejsce({}, 'a1', LA_JANDA, T1).a1;
+  // The server's rules: a name, integer metres, a real date.
+  assert.equal(isMojeMiejsca({ a1: { ...dobre, nazwa: '' } }), false);
+  assert.equal(isMojeMiejsca({ a1: { ...dobre, nazwa: ' La Janda' } }), false);
+  assert.equal(isMojeMiejsca({ a1: { ...dobre, dokladnosc: 12.5 } }), false);
+  assert.equal(isMojeMiejsca({ a1: { ...dobre, data: '2026-13-40' } }), false);
   assert.equal(isMojeMiejsca({ 'Zła nazwa': dobre }), false);
   assert.equal(isMojeMiejsca({ a1: { ...dobre, szer: 91 } }), false);
   assert.equal(isMojeMiejsca({ a1: { ...dobre, data: '8.11.2026' } }), false);
@@ -40,14 +46,24 @@ test('isMojeMiejsca: refuses bad ids, positions, dates and tombstones', () => {
 
 test('bladMiejsca: a name is needed, once among the places not removed', () => {
   const miejsca = zapiszMiejsce({}, 'a1', LA_JANDA, T1);
-  assert.equal(bladMiejsca(miejsca, { ...LA_JANDA, nazwa: '   ' }), 'Wpisz nazwę miejsca.');
-  assert.equal(bladMiejsca(miejsca, { ...LA_JANDA, nazwa: 'la janda' }), 'Masz już miejsce o tej nazwie.');
+  assert.equal(bladMiejsca(miejsca, { ...LA_JANDA, nazwa: '   ' }, 'b1'), 'Wpisz nazwę miejsca.');
+  assert.equal(bladMiejsca(miejsca, { ...LA_JANDA, nazwa: 'la janda' }, 'b1'), 'Masz już miejsce o tej nazwie.');
   // Editing the place itself keeps its name.
   assert.equal(bladMiejsca(miejsca, LA_JANDA, 'a1'), null);
   // A removed place frees its name.
-  assert.equal(bladMiejsca(usunMiejsce(miejsca, 'a1', T2), LA_JANDA), null);
-  assert.match(bladMiejsca({}, { ...LA_JANDA, nazwa: 'x'.repeat(81) }) ?? '', /80 znaków/);
-  assert.equal(bladMiejsca({}, { ...LA_JANDA, data: '' }), 'Wpisz datę pierwszej wizyty.');
+  assert.equal(bladMiejsca(usunMiejsce(miejsca, 'a1', T2), LA_JANDA, 'b1'), null);
+  assert.match(bladMiejsca({}, { ...LA_JANDA, nazwa: 'x'.repeat(81) }, 'b1') ?? '', /80 znaków/);
+  assert.equal(bladMiejsca({}, { ...LA_JANDA, data: '' }, 'b1'), 'Wpisz datę pierwszej wizyty.');
+  assert.equal(bladMiejsca({}, { ...LA_JANDA, data: '2026-02-30' }, 'b1'), 'Wpisz datę pierwszej wizyty.');
+});
+
+test('bladMiejsca: two places with one name (from two devices) both stay editable', () => {
+  let m = zapiszMiejsce({}, 'telefon', LA_JANDA, T1);
+  m = zapiszMiejsce(m, 'laptop', LA_JANDA, T1);
+  assert.equal(bladMiejsca(m, { ...LA_JANDA, notatka: 'nowa notatka' }, 'laptop'), null);
+  assert.equal(bladMiejsca(m, { ...LA_JANDA, nazwa: 'La Janda, kanał' }, 'laptop'), null);
+  // A retried save of a new place under its own id is not a duplicate of itself.
+  assert.equal(bladMiejsca(m, LA_JANDA, 'telefon'), null);
 });
 
 test('usunMiejsce: a tombstone that keeps its fields, left out of aktywne', () => {
@@ -102,7 +118,23 @@ test('przemianujWChecklisci: renames every observation of the place, unticked on
   assert.equal(po.pustulka, LISTA.pustulka);
   // Nothing to rename: the same object, so nothing is saved.
   assert.equal(przemianujWChecklisci(LISTA, 'Biebrza', 'Biebrza Dolna', T2), LISTA);
-  assert.equal(przemianujWChecklisci(LISTA, 'La Janda', 'La Janda', T2), LISTA);
+  // A retried rename finds the observations already renamed.
+  assert.equal(przemianujWChecklisci(po, 'La Janda', 'Laguna de la Janda', T2), po);
+  // Doubled spaces in the new name are not a rename.
+  const jedna: Checklista = { kaniuk: { widziany: true, miejsce: 'La Janda', zmieniono: T1 } };
+  assert.equal(przemianujWChecklisci(jedna, 'La Janda', ' La  Janda ', T2), jedna);
+});
+
+test("zgodzZMiejscami: an older backup's observations follow a place renamed here since", () => {
+  const zPliku = zapiszMiejsce({}, 'a1', LA_JANDA, T1);
+  const tutaj = zapiszMiejsce({}, 'a1', { ...LA_JANDA, nazwa: 'Laguna de la Janda' }, T2);
+  const lista: Checklista = { kaniuk: { widziany: true, miejsce: 'La Janda', zmieniono: T1 } };
+  const po = zgodzZMiejscami(lista, zPliku, scalMiejsca(tutaj, zPliku), T2);
+  assert.equal(po.kaniuk.miejsce, 'Laguna de la Janda');
+  // The file's name won (it was newer): the file's observations already say it, and stay as they are.
+  const listaZPliku: Checklista = { kaniuk: { widziany: true, miejsce: 'Laguna de la Janda', zmieniono: T2 } };
+  assert.equal(zgodzZMiejscami(listaZPliku, tutaj, scalMiejsca(zPliku, tutaj), T2), listaZPliku);
+  assert.equal(zgodzZMiejscami(lista, zPliku, scalMiejsca(zPliku, zPliku), T2), lista);
 });
 
 test('najblizszeMoje: the nearest place not removed, within the distance', () => {

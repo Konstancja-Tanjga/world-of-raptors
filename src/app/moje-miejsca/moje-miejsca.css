@@ -21,3 +21,8 @@
 .miejsca__ptaki p {
   margin: 0;
 }
+.miejsca__blad {
+  margin: 0;
+  color: var(--bh-status-critical-fg);
+  font-size: var(--bh-text-size-caption);
+}

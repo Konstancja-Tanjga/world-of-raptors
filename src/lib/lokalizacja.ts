@@ -4,7 +4,7 @@
  *
  * The browser's own timeout starts only once access is allowed, and a prompt
  * closed without an answer calls neither callback, so a watchdog gives up
- * after `CZEKANIE_MS` with its own reason.
+ * once the browser's time and `NA_ZGODE_MS` for the prompt have passed.
  */
 import type { Wspolrzedne } from './punkty';
 
@@ -30,8 +30,10 @@ export const OPIS_BLEDU_LOKALIZACJI: Record<PowodBledu, string> = {
   cisza: 'Przeglądarka nie odpowiedziała na prośbę o lokalizację. Spróbuj jeszcze raz.',
 };
 
-/** How long to wait for the browser, the permission prompt included. */
-export const CZEKANIE_MS = 30_000;
+/** How long the permission prompt may take before the watchdog gives up. */
+export const NA_ZGODE_MS = 30_000;
+const PRECYZYJNIE = { enableHighAccuracy: true, timeout: 20_000, maximumAge: 0 };
+const ZGRUBNIE = { enableHighAccuracy: false, timeout: 15_000, maximumAge: 10 * 60 * 1000 };
 
 /**
  * The current position. `dokladnie` asks for GPS (a place to save), which takes
@@ -51,18 +53,33 @@ export function pobierzPozycje({ dokladnie = false }: { dokladnie?: boolean } = 
       clearTimeout(czuwanie);
       f();
     };
-    const czuwanie = setTimeout(() => koniec(() => reject(new BladLokalizacji('cisza'))), CZEKANIE_MS);
-    navigator.geolocation.getCurrentPosition(
-      (p) => koniec(() => resolve({ szer: p.coords.latitude, dl: p.coords.longitude, dokladnosc: p.coords.accuracy })),
-      (err) => {
-        console.error('[lokalizacja] failed', err.code, err.message);
-        const powod: PowodBledu =
-          err.code === err.PERMISSION_DENIED ? 'odmowa' : err.code === err.POSITION_UNAVAILABLE ? 'niedostepna' : 'czas';
-        koniec(() => reject(new BladLokalizacji(powod, err.message)));
-      },
-      dokladnie
-        ? { enableHighAccuracy: true, timeout: 20_000, maximumAge: 0 }
-        : { enableHighAccuracy: false, timeout: 15_000, maximumAge: 10 * 60 * 1000 },
-    );
+    const opcje = dokladnie ? PRECYZYJNIE : ZGRUBNIE;
+    const czuwanie = setTimeout(() => {
+      console.warn('[lokalizacja] no answer from the browser');
+      koniec(() => reject(new BladLokalizacji('cisza')));
+    }, opcje.timeout + NA_ZGODE_MS);
+    try {
+      navigator.geolocation.getCurrentPosition(
+        (p) => koniec(() => resolve({ szer: p.coords.latitude, dl: p.coords.longitude, dokladnosc: p.coords.accuracy })),
+        (err) => {
+          console.error('[lokalizacja] failed', err.code, err.message);
+          const powod: PowodBledu =
+            err.code === err.PERMISSION_DENIED ? 'odmowa' : err.code === err.POSITION_UNAVAILABLE ? 'niedostepna' : 'czas';
+          koniec(() => reject(new BladLokalizacji(powod, err.message)));
+        },
+        opcje,
+      );
+    } catch (err) {
+      // Some browsers throw at once (e.g. outside a secure context) instead of calling back.
+      console.error('[lokalizacja] the browser refused the request', err);
+      koniec(() => reject(new BladLokalizacji('niedostepna', String(err))));
+    }
   });
+}
+
+/** What to tell the owner when `pobierzPozycje` failed; an error that is not about the location is logged, not passed off as one. */
+export function opisBleduLokalizacji(err: unknown) {
+  if (err instanceof BladLokalizacji) return OPIS_BLEDU_LOKALIZACJI[err.powod];
+  console.error('[lokalizacja] unexpected error', err);
+  return 'Nie udało się ustalić lokalizacji.';
 }

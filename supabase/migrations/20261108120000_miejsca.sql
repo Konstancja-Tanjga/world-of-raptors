@@ -22,7 +22,8 @@ create table public.places (
 create trigger ostatni_zapis_wygrywa before insert or update on public.places
   for each row execute function private.ostatni_zapis_wygrywa();
 
--- The app allows 500 places; the cap leaves room for removed ones, which stay as rows.
+-- The app allows 500 places not removed; removed ones stay as rows and count
+-- too, so this leaves room for about 500 removals on top of a full set.
 create trigger limit_wierszy before insert on public.places
   for each row execute function private.limit_wierszy('1000', 'place_id');
 

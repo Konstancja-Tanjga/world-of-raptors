@@ -62,7 +62,7 @@ Zrobione: projekt `tvfiymrlvmjpgrkxoums` (Frankfurt), projekt Google Cloud `worl
 
 ### Faza 2: model danych
 
-Gotowe: `supabase/migrations/20261009120000_konta.sql` i `20261010120000_limity.sql`. Druga migracja ustawia limit wierszy na konto w każdej tabeli (200 lekcji, 200 obserwacji, 1000 fiszek, 300 odznak), z zapasem względem tego, co kurs ma. Bez limitu jedno konto mogłoby zapełnić bazę i zepsuć synchronizację wszystkim. Każdy wiersz ma `updated_at` (czas zmiany na urządzeniu, rozstrzyga konflikty) i `synced_at` (czas zapisu na serwerze, według niego urządzenia pobierają zmiany). Usunięcia są miękkie (`deleted_at`). Sprawdzone testem w PGlite: scalanie, ograniczenia danych, RLS (osoba B nie czyta, nie zmienia i nie dopisuje danych osoby A; niezalogowani nie widzą nic) i kasowanie danych razem z kontem.
+Gotowe: `supabase/migrations/20261009120000_konta.sql` i `20261010120000_limity.sql`. Druga migracja ustawia limit wierszy na konto w każdej tabeli (200 lekcji, 200 obserwacji, 1000 fiszek, 300 odznak; od migracji `20261108120000_miejsca.sql` także 1000 miejsc, usunięte też się liczą), z zapasem względem tego, co kurs ma. Bez limitu jedno konto mogłoby zapełnić bazę i zepsuć synchronizację wszystkim. Każdy wiersz ma `updated_at` (czas zmiany na urządzeniu, rozstrzyga konflikty) i `synced_at` (czas zapisu na serwerze, według niego urządzenia pobierają zmiany). Usunięcia są miękkie (`deleted_at`). Sprawdzone testem w PGlite: scalanie, ograniczenia danych, RLS (osoba B nie czyta, nie zmienia i nie dopisuje danych osoby A; niezalogowani nie widzą nic) i kasowanie danych razem z kontem.
 
 ### Faza 3: synchronizacja
 

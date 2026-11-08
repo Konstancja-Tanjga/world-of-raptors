@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { dzisiaj, useChecklista } from '@/lib/checklist';
-import { BladLokalizacji, OPIS_BLEDU_LOKALIZACJI, pobierzPozycje, type Pozycja } from '@/lib/lokalizacja';
+import { opisBleduLokalizacji, pobierzPozycje, type Pozycja } from '@/lib/lokalizacja';
 import { aktywne, bladMiejsca, ptakiWMiejscu, type DaneMiejsca, type MojeMiejsce } from '@/lib/mojeMiejsca';
 import { noweIdMiejsca, useMojeMiejsca } from '@/lib/mojeMiejscaMagazyn';
 import { adresMapy, adresTrasy, najblizsze, type Wspolrzedne } from '@/lib/punkty';
@@ -40,6 +40,7 @@ function Formularz({
   szkic,
   setSzkic,
   blad,
+  bladPozycji,
   onZapisz,
   onAnuluj,
   onNowaPozycja,
@@ -49,6 +50,7 @@ function Formularz({
   szkic: Szkic;
   setSzkic: (s: Szkic) => void;
   blad: string | null;
+  bladPozycji?: string | null;
   onZapisz: () => void;
   onAnuluj: () => void;
   onNowaPozycja?: () => void;
@@ -91,6 +93,11 @@ function Formularz({
           {NOWA_KARTA}
         </a>
       </p>
+      {bladPozycji && (
+        <p className="miejsca__blad" role="alert">
+          Nie udało się ustalić położenia. {bladPozycji}
+        </p>
+      )}
       <div className="miejsca__przyciski">
         <Button type="submit">Zapisz miejsce</Button>
         {onNowaPozycja && (
@@ -149,11 +156,11 @@ function Miejsce({
           </p>
         ) : (
           <p className="muted">
-            Na razie żadne. Przy obserwacji w{' '}
+            Na razie żadne. Gdy przy zaznaczonej obserwacji w{' '}
             <Link href="/checklista" className="text-link">
               checkliście
             </Link>{' '}
-            wybierz to miejsce albo kliknij „Tu, gdzie jestem”, a ptak pojawi się tutaj.
+            wybiorę to miejsce (albo „Tu, gdzie jestem” w promieniu 1 km), ptak pojawi się tutaj.
           </p>
         )}
       </div>
@@ -183,7 +190,10 @@ function Miejsce({
   );
 }
 
-type Dodawanie = { stan: 'nic' } | { stan: 'lokalizuje' } | { stan: 'blad'; opis: string } | { stan: 'formularz'; szkic: Szkic };
+/** A new place's id is fixed when its draft starts, so a retried save updates the same place instead of adding a second. */
+type Dodawanie = { stan: 'nic' } | { stan: 'lokalizuje' } | { stan: 'blad'; opis: string } | { stan: 'formularz'; id: string; szkic: Szkic };
+/** `staraNazwa`: the place's name when its edit began, for renaming its observations (see useMojeMiejsca). */
+type Edycja = { id: string; staraNazwa: string; szkic: Szkic };
 
 /**
  * "Moje miejsca": the places where I watch birds, added where I stand (the
@@ -197,8 +207,15 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
   const sprawdzZapis = useOstrzezenieZapisu();
   const [dodawanie, setDodawanie] = useState<Dodawanie>({ stan: 'nic' });
   const [blad, setBlad] = useState<string | null>(null);
-  const [edycja, setEdycja] = useState<{ id: string; szkic: Szkic } | null>(null);
-  const [nowaPozycja, setNowaPozycja] = useState(false);
+  const [edycja, setEdycja] = useState<Edycja | null>(null);
+  const [bladPozycji, setBladPozycji] = useState<string | null>(null);
+  /** The place whose position is being asked for (one at a time). */
+  const [nowaPozycja, setNowaPozycja] = useState<string | null>(null);
+  /** The place being edited now, for answers that arrive after the edit changed. */
+  const edytowane = useRef<string | null>(null);
+  useEffect(() => {
+    edytowane.current = edycja?.id ?? null;
+  }, [edycja]);
   const [doUsuniecia, setDoUsuniecia] = useState<string | null>(null);
 
   /** A name to start from: the course point I am standing at, if one is near. */
@@ -212,9 +229,9 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
     setDodawanie({ stan: 'lokalizuje' });
     try {
       const p = await pobierzPozycje({ dokladnie: true });
-      setDodawanie({ stan: 'formularz', szkic: { nazwa: podpowiedz(p), data: dzisiaj(), notatka: '', pozycja: p } });
+      setDodawanie({ stan: 'formularz', id: noweIdMiejsca(), szkic: { nazwa: podpowiedz(p), data: dzisiaj(), notatka: '', pozycja: p } });
     } catch (err) {
-      setDodawanie({ stan: 'blad', opis: OPIS_BLEDU_LOKALIZACJI[err instanceof BladLokalizacji ? err.powod : 'czas'] });
+      setDodawanie({ stan: 'blad', opis: opisBleduLokalizacji(err) });
     }
   };
 
@@ -227,11 +244,12 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
     dokladnosc: s.pozycja.dokladnosc,
   });
 
-  const zapiszNowe = (s: Szkic) => {
+  const zapiszNowe = (id: string, s: Szkic) => {
     if (!miejsca) return;
-    const b = bladMiejsca(miejsca, dane(s));
-    if (b) return setBlad(b);
-    const ok = zapisz(noweIdMiejsca(), dane(s));
+    const b = bladMiejsca(miejsca, dane(s), id);
+    setBlad(b);
+    if (b) return;
+    const ok = zapisz(id, dane(s));
     sprawdzZapis(ok);
     if (ok) setDodawanie({ stan: 'nic' });
   };
@@ -239,31 +257,41 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
   const zapiszZmiane = () => {
     if (!miejsca || !edycja) return;
     const b = bladMiejsca(miejsca, dane(edycja.szkic), edycja.id);
-    if (b) return setBlad(b);
-    const ok = zapisz(edycja.id, dane(edycja.szkic));
+    setBlad(b);
+    if (b) return;
+    const ok = zapisz(edycja.id, dane(edycja.szkic), edycja.staraNazwa);
     sprawdzZapis(ok);
     if (ok) setEdycja(null);
   };
 
-  const ustawPozycjeTutaj = async () => {
-    if (!edycja) return;
-    setNowaPozycja(true);
+  const ustawPozycjeTutaj = async (id: string) => {
+    setNowaPozycja(id);
+    setBladPozycji(null);
     try {
       const p = await pobierzPozycje({ dokladnie: true });
-      setEdycja((e) => (e ? { ...e, szkic: { ...e.szkic, pozycja: p } } : e));
+      // Only into the place it was asked for: the edit may have been closed, or another opened, meanwhile.
+      setEdycja((e) => (e?.id === id ? { ...e, szkic: { ...e.szkic, pozycja: p } } : e));
     } catch (err) {
-      setBlad(OPIS_BLEDU_LOKALIZACJI[err instanceof BladLokalizacji ? err.powod : 'czas']);
+      const opis = opisBleduLokalizacji(err);
+      if (edytowane.current === id) setBladPozycji(opis);
     } finally {
-      setNowaPozycja(false);
+      setNowaPozycja((n) => (n === id ? null : n));
     }
+  };
+
+  const zamknijEdycje = () => {
+    setBlad(null);
+    setBladPozycji(null);
+    setEdycja(null);
   };
 
   if (miejsca === null) return <StateBlock state="loading" title="Wczytywanie moich miejsc" scope="section" />;
   const wszystkie = aktywne(miejsca);
   const usuwane = doUsuniecia ? miejsca[doUsuniecia] : null;
 
+  // data-prywatne: my places are mine, not the course's, so "Zgłoś poprawkę" cannot point at them.
   return (
-    <div className="stack">
+    <div className="stack" data-prywatne>
       <section className="stack" aria-labelledby="miejsca-dodaj">
         <h2 id="miejsca-dodaj" className="checklist__naglowek">
           Dodaj miejsce
@@ -272,9 +300,9 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
           <Formularz
             tytul="Nowe miejsce"
             szkic={dodawanie.szkic}
-            setSzkic={(szkic) => setDodawanie({ stan: 'formularz', szkic })}
+            setSzkic={(szkic) => setDodawanie({ ...dodawanie, szkic })}
             blad={blad}
-            onZapisz={() => zapiszNowe(dodawanie.szkic)}
+            onZapisz={() => zapiszNowe(dodawanie.id, dodawanie.szkic)}
             onAnuluj={() => {
               setBlad(null);
               setDodawanie({ stan: 'nic' });
@@ -282,7 +310,10 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
           />
         ) : (
           <>
-            <p className="muted">Stań w miejscu obserwacji: zapiszę jego położenie z telefonu, a Ty dopiszesz nazwę i notatkę.</p>
+            <p className="muted">
+              Staję w miejscu obserwacji: aplikacja zapisze jego położenie z telefonu, a ja dopiszę nazwę, datę pierwszej wizyty i
+              notatkę.
+            </p>
             <div>
               <Button onClick={() => void dodaj()} loading={dodawanie.stan === 'lokalizuje'} loadingLabel="Ustalam lokalizację">
                 Dodaj miejsce, w którym jestem
@@ -313,7 +344,7 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
           <StateBlock
             state="empty"
             title="Nie masz jeszcze żadnego miejsca"
-            description="Dodaj pierwsze, kiedy będziesz w terenie. Pojawi się też w „Gdzie stanąć” i w podpowiedziach przy obserwacjach."
+            description="Dodam pierwsze, kiedy będę w terenie. Pojawi się też w „Gdzie stanąć” i w podpowiedziach przy obserwacjach."
             scope="section"
           />
         ) : (
@@ -325,15 +356,13 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
                     <Formularz
                       tytul={`Zmiana: ${m.nazwa}`}
                       szkic={edycja.szkic}
-                      setSzkic={(szkic) => setEdycja({ id, szkic })}
+                      setSzkic={(szkic) => setEdycja({ ...edycja, szkic })}
                       blad={blad}
+                      bladPozycji={bladPozycji}
                       onZapisz={zapiszZmiane}
-                      onAnuluj={() => {
-                        setBlad(null);
-                        setEdycja(null);
-                      }}
-                      onNowaPozycja={() => void ustawPozycjeTutaj()}
-                      pozycjaWToku={nowaPozycja}
+                      onAnuluj={zamknijEdycje}
+                      onNowaPozycja={() => void ustawPozycjeTutaj(id)}
+                      pozycjaWToku={nowaPozycja === id}
                     />
                   </div>
                 ) : (
@@ -344,8 +373,10 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
                     wszystkiePtaki={ptaki}
                     onEdytuj={() => {
                       setBlad(null);
+                      setBladPozycji(null);
                       setEdycja({
                         id,
+                        staraNazwa: m.nazwa,
                         szkic: { nazwa: m.nazwa, data: m.data, notatka: m.notatka ?? '', pozycja: { szer: m.szer, dl: m.dl, dokladnosc: m.dokladnosc } },
                       });
                     }}

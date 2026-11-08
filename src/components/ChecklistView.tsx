@@ -5,8 +5,8 @@ import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { dzisiaj, jestWidziany, useChecklista, widziane } from '@/lib/checklist';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
-import { BladLokalizacji, OPIS_BLEDU_LOKALIZACJI, pobierzPozycje } from '@/lib/lokalizacja';
-import { aktywne, najblizszeMoje } from '@/lib/mojeMiejsca';
+import { opisBleduLokalizacji, pobierzPozycje, type Pozycja } from '@/lib/lokalizacja';
+import { aktywne, najblizszeMoje, zgodzZMiejscami } from '@/lib/mojeMiejsca';
 import { useMojeMiejsca, wczytajMiejscaZKopii } from '@/lib/mojeMiejscaMagazyn';
 import { usePostep } from '@/lib/postep';
 import { useZdobyte, wczytajZKopii } from '@/lib/zdobyte';
@@ -111,29 +111,38 @@ export function ChecklistView({
 
   /** Fills an observation's place with my place nearest to where I am, if one is within 1 km. */
   const tuGdzieJestem = async (id: string, nazwa: string) => {
-    setSzukamMiejsca(id);
-    try {
-      const pos = await pobierzPozycje();
-      const blisko = miejsca ? najblizszeMoje(miejsca, pos, 1) : null;
-      if (blisko) {
-        sprawdzZapis(aktualizuj(id, { miejsce: blisko.miejsce.nazwa }));
-        notify({ tone: 'success', title: `Miejsce: ${blisko.miejsce.nazwa}`, description: `Wpisane przy obserwacji: ${nazwa}.` });
-      } else {
-        notify({
-          tone: 'info',
-          title: 'Nie masz zapisanego miejsca w pobliżu',
-          description: 'W promieniu 1 km nie ma żadnego z moich miejsc. Dodaj to miejsce w „Moich miejscach” albo wpisz nazwę.',
-        });
-      }
-    } catch (err) {
+    if (!miejsca) return;
+    if (aktywne(miejsca).length === 0) {
+      // No place to find: no reason to ask the browser for the location.
       notify({
-        tone: 'warning',
-        title: 'Nie udało się ustalić lokalizacji',
-        description: `${OPIS_BLEDU_LOKALIZACJI[err instanceof BladLokalizacji ? err.powod : 'czas']} Możesz wpisać miejsce ręcznie.`,
+        tone: 'info',
+        title: 'Nie mam jeszcze zapisanych miejsc',
+        description: 'Dodam je w „Moich miejscach”, stojąc w terenie. Na razie mogę wpisać nazwę miejsca.',
       });
+      return;
+    }
+    setSzukamMiejsca(id);
+    let pos: Pozycja;
+    try {
+      pos = await pobierzPozycje();
+    } catch (err) {
+      notify({ tone: 'warning', title: 'Nie udało się ustalić lokalizacji', description: `${opisBleduLokalizacji(err)} Mogę wpisać miejsce ręcznie.` });
+      return;
     } finally {
       setSzukamMiejsca(null);
     }
+    const blisko = najblizszeMoje(miejsca, pos, 1);
+    if (!blisko) {
+      notify({
+        tone: 'info',
+        title: 'Brak mojego miejsca w pobliżu',
+        description: 'W promieniu 1 km nie ma żadnego z moich miejsc. Dodam to miejsce w „Moich miejscach” albo wpiszę nazwę.',
+      });
+      return;
+    }
+    const ok = aktualizuj(id, { miejsce: blisko.miejsce.nazwa });
+    sprawdzZapis(ok);
+    if (ok) notify({ tone: 'success', title: `Miejsce: ${blisko.miejsce.nazwa}`, description: `Wpisane przy obserwacji: ${nazwa}.` });
   };
 
   const eksportuj = async () => {
@@ -207,8 +216,12 @@ export function ChecklistView({
     const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
     const fiszkiOk = kopia.fiszki ? zastapFiszki(kopia.fiszki) : true;
     const odznakiOk = wczytajZKopii(kopia.odznaki);
-    const miejscaOk = kopia.miejsca ? wczytajMiejscaZKopii(kopia.miejsca) : true;
-    const checklistaOk = zastap(kopia.checklista);
+    const miejscaZKopii = kopia.miejsca ? wczytajMiejscaZKopii(kopia.miejsca) : null;
+    const miejscaOk = miejscaZKopii ? miejscaZKopii.zapisane : true;
+    // A place renamed here since the backup keeps its newer name: the file's observations follow it.
+    const checklistaOk = zastap(
+      kopia.miejsca && miejscaZKopii ? zgodzZMiejscami(kopia.checklista, kopia.miejsca, miejscaZKopii.po, new Date().toISOString()) : kopia.checklista,
+    );
     const nieZapisane = [
       !checklistaOk && 'checklisty',
       !postepOk && 'postępu nauki',
@@ -223,7 +236,7 @@ export function ChecklistView({
       kopia.postep ? 'postęp nauki' : null,
       kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
       kopia.odznaki ? 'daty gwiazdozbiorów i naszywek' : null,
-      kopia.miejsca ? `${aktywne(kopia.miejsca).length} moich miejsc` : null,
+      kopia.miejsca ? `moje miejsca (${aktywne(kopia.miejsca).length} w pliku; nowsze zmiany z tego urządzenia zostały)` : null,
     ].filter(Boolean);
     const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)', !kopia.fiszki && 'fiszek (dotychczasowe zostały)'].filter(
       Boolean,
@@ -412,7 +425,7 @@ export function ChecklistView({
                                     variant="secondary"
                                     loading={szukamMiejsca === g.id}
                                     loadingLabel="Ustalam lokalizację"
-                                    disabled={szukamMiejsca !== null}
+                                    disabled={szukamMiejsca !== null || miejsca === null}
                                     onClick={() => void tuGdzieJestem(g.id, g.pl)}
                                   >
                                     Tu, gdzie jestem
@@ -445,7 +458,7 @@ export function ChecklistView({
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane tylko w tej przeglądarce. Co jakiś
+          Checklista, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane w tej przeglądarce (z kontem także na serwerze, oprócz zdjęć). Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>

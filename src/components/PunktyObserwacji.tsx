@@ -216,7 +216,8 @@ const dzien = (data: string) => {
 /** One of my places among the points: its name, first visit, note, and the way there. */
 function MojPunkt({ id, m, od }: { id: string; m: MojeMiejsce; od?: { km: number; kierunek: string } }) {
   return (
-    <article className="punkt" aria-labelledby={`moje-${id}`}>
+    // data-prywatne: my place and note are mine, not the course's, so "Zgłoś poprawkę" cannot point at them.
+    <article className="punkt" aria-labelledby={`moje-${id}`} data-prywatne>
       <header className="punkt__naglowek">
         <h4 id={`moje-${id}`} className="punkt__nazwa">
           {m.nazwa}
@@ -264,7 +265,8 @@ function MojPunkt({ id, m, od }: { id: string; m: MojeMiejsce; od?: { km: number
  * coordinates, or read from the browser's location (which stays in the
  * browser: distances are counted here). The wind filter keeps the points a
  * Levante or a Poniente makes the place to be, and those the wind does not
- * choose.
+ * choose. My own places (mojeMiejsca) head the area view and join the
+ * nearest-first list whatever the wind.
  */
 export function PunktyObserwacji(dane: DanePunktow) {
   const zapis = zapamietane.useMagazyn();
@@ -368,6 +370,8 @@ export function PunktyObserwacji(dane: DanePunktow) {
   const widoczne = dane.punkty.filter((p) => naWiatr(p, wiatr));
   const moje = mojeMiejsca ? aktywne(mojeMiejsca).map(([id, m]) => ({ ...m, id })) : [];
   // My places and the course's points in one list, nearest first; my places whatever the wind.
+  // The far-away note is about the course's points, not about my places.
+  const najblizszyKursu = skad ? najblizsze(widoczne, skad)[0] : undefined;
   const wOdleglosci = skad
     ? [
         ...najblizsze(widoczne, skad).map((o) => ({ ...o, moje: null })),
@@ -457,16 +461,16 @@ export function PunktyObserwacji(dane: DanePunktow) {
         />
       </div>
 
-      {zapis === null ? (
+      {zapis === null || mojeMiejsca === null ? (
         <StateBlock state="loading" title="Wczytywanie punktów" scope="section" />
       ) : wOdleglosci ? (
         <section className="stack" aria-labelledby="punkty-najblizsze">
           <h3 id="punkty-najblizsze" className="checklist__naglowek">
             Od najbliższego
           </h3>
-          {wOdleglosci[0] && wOdleglosci[0].km > DALEKO_KM && (
+          {najblizszyKursu && najblizszyKursu.km > DALEKO_KM && (
             <p className="muted">
-              Najbliższy punkt jest {odlegloscSlownie(wOdleglosci[0].km)} stąd. Na razie są tu punkty z okolic Cieśniny
+              Najbliższy punkt z kursu jest {odlegloscSlownie(najblizszyKursu.km)} stąd. Na razie są tu punkty z okolic Cieśniny
               Gibraltarskiej, La Jandy i Barbate oraz kilka miejsc w Polsce.
             </p>
           )}
@@ -492,9 +496,9 @@ export function PunktyObserwacji(dane: DanePunktow) {
             </h3>
             {moje.length === 0 ? (
               <p className="muted">
-                Tu pojawią się miejsca, które dodam w terenie.{' '}
+                Tu pojawią się miejsca, które dodam w terenie:{' '}
                 <Link href="/moje-miejsca" className="text-link">
-                  Dodaj miejsce, w którym jesteś
+                  Dodaj miejsce, w którym jestem
                 </Link>
                 .
               </p>
