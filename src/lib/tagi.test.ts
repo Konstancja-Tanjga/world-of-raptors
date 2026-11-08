@@ -67,3 +67,9 @@ test('a recording tag names a recording in the catalogue, as a block', () => {
   assert.match(problemyTagow('<glos data-id="puszczyk/samica">\n</glos>', 'l.md', ids)[0], /nie ma w content\/nagrania.json/);
   assert.match(problemyTagow('Słuchaj: <glos data-id="puszczyk/samiec"></glos>', 'l.md', ids)[0], /osobnej linii/);
 });
+
+test('a territory sheet is written as a block', () => {
+  assert.deepEqual(problemyTagow('<karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md'), []);
+  assert.match(problemyTagow('<karta-rewirow data-sesja="pomorze"></karta-rewirow>', 'l.md')[0], /osobnej linii/);
+  assert.match(problemyTagow('Karta: <karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md')[0], /osobnej linii/);
+});
