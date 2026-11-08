@@ -86,26 +86,30 @@ export function AtlasView({
   return (
     <div className="atlas">
       <div className="atlas__narzedzia">
-        <SpeciesFilters filtry={filtry} onChange={setFiltry} />
-        <div className="atlas__widok">
-          <div className="scroll-x">
-            <SegmentedControl
-              legend="Widok"
-              showLegend
-              value={widok}
-              onChange={(v) => setWidok(v as Widok)}
-              options={[
-                { value: 'zdjecia', label: 'Zdjęcia' },
-                { value: 'sylwetki', label: 'Sylwetki' },
-                { value: 'skala', label: 'W skali' },
-              ]}
-            />
-          </div>
-          <p className="atlas__licznik" aria-live="polite">
-            {/* A typed name searches every bird, so it counts against all of them, not the chosen kind. */}
-            Gatunki: {wynik.length} z {filtry.szukaj.trim() ? ptaki.length : zakres.length}
-          </p>
-        </div>
+        <SpeciesFilters
+          filtry={filtry}
+          onChange={setFiltry}
+          obok={
+            <div className="scroll-x">
+              <SegmentedControl
+                legend="Widok"
+                showLegend
+                size="sm"
+                value={widok}
+                onChange={(v) => setWidok(v as Widok)}
+                options={[
+                  { value: 'zdjecia', label: 'Zdjęcia' },
+                  { value: 'sylwetki', label: 'Sylwetki' },
+                  { value: 'skala', label: 'W skali' },
+                ]}
+              />
+            </div>
+          }
+        />
+        <p className="atlas__licznik" aria-live="polite">
+          {/* A typed name searches every bird, so it counts against all of them, not the chosen kind. */}
+          Gatunki: {wynik.length} z {filtry.szukaj.trim() ? ptaki.length : zakres.length}
+        </p>
       </div>
 
       {wynik.length === 0 ? (
