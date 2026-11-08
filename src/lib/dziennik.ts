@@ -205,3 +205,19 @@ export function odmiana(n: number, [jeden, kilka, wiele]: readonly [string, stri
   const nascie = n % 100 >= 12 && n % 100 <= 14;
   return reszta >= 2 && reszta <= 4 && !nascie ? kilka : wiele;
 }
+
+/**
+ * A day's sightings by outing: the entries one save wrote together share
+ * their time, place, point and note (the form's species list), so they show
+ * as one visit. In order of first appearance; an entry alone is a visit of one.
+ */
+export function wizyty(wpisyDnia: [string, WpisDziennika][]): [string, WpisDziennika][][] {
+  const klucz = (w: WpisDziennika) =>
+    [w.data, w.godzina ?? '', w.miejsce ?? '', w.punkt ? `${w.punkt.szer.toFixed(5)},${w.punkt.dl.toFixed(5)}` : '', w.notatka ?? ''].join('|');
+  const grupy = new Map<string, [string, WpisDziennika][]>();
+  for (const wpis of wpisyDnia) {
+    const k = klucz(wpis[1]);
+    grupy.set(k, [...(grupy.get(k) ?? []), wpis]);
+  }
+  return [...grupy.values()];
+}

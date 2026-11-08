@@ -3,7 +3,7 @@
 import { KIEDY_I_GDZIE } from '@/lib/publikacja';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import { odmiana, punktSlownie } from '@/lib/dziennik';
+import { odmiana, punktSlownie, wizyty } from '@/lib/dziennik';
 import { useDziennik, wpisy, type WpisDziennika } from '@/lib/dziennikMagazyn';
 import { adresMapy } from '@/lib/punkty';
 import { ButtonLink } from '../ButtonLink';
@@ -94,42 +94,77 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
               {dzienSlownie(data)}
             </h2>
             <ul className="dziennik__wpisy">
-              {wpisyDnia.map(([id, w]) => {
-                const ptak = poId.get(w.gatunek);
-                return (
-                  <li key={id} id={`wpis-${id}`} className="dziennik__wpis">
-                    <p className="dziennik__gatunek">
-                      {w.godzina && <span className="dziennik__godzina">{w.godzina}</span>}{' '}
-                      <strong>{ptak ? <NazwaPtaka id={ptak.id} pl={ptak.pl} /> : w.gatunek}</strong>
-                      {w.liczba && <span>, {w.liczba} {odmiana(w.liczba, ['ptak', 'ptaki', 'ptaków'])}</span>}
-                      {ptak && (
-                        <>
-                          {' '}
-                          <span className="muted" translate="no" lang="la">
-                            {ptak.lat}
-                          </span>
-                        </>
-                      )}
-                    </p>
-                    {(w.miejsce || w.punkt) && (
-                      <p className="muted">
-                        {w.miejsce}
-                        {w.miejsce && w.punkt && ', '}
-                        {w.punkt && (
-                          <a href={adresMapy(w.punkt)} className="text-link" target="_blank" rel="noreferrer">
-                            {punktSlownie(w.punkt)}
-                            <span className="visually-hidden"> (mapa OpenStreetMap, otwiera się w nowej karcie)</span>
-                          </a>
-                        )}
-                      </p>
+              {wizyty(wpisyDnia).map((wizyta) => {
+                const [, pierwszy] = wizyta[0];
+                const gdzie = (pierwszy.miejsce || pierwszy.punkt) && (
+                  <p className="muted">
+                    {pierwszy.miejsce}
+                    {pierwszy.miejsce && pierwszy.punkt && ', '}
+                    {pierwszy.punkt && (
+                      <a href={adresMapy(pierwszy.punkt)} className="text-link" target="_blank" rel="noreferrer">
+                        {punktSlownie(pierwszy.punkt)}
+                        <span className="visually-hidden"> (mapa OpenStreetMap, otwiera się w nowej karcie)</span>
+                      </a>
                     )}
-                    {w.notatka && <p className="dziennik__notatka">{w.notatka}</p>}
-                    <OwnPhotos gatunek={w.gatunek} nazwa={ptak?.pl ?? w.gatunek} wpis={id} tytul="Zdjęcia z obserwacji" />
-                    <p>
-                      <Link href={`/dziennik/obserwacja?id=${id}`} className="text-link">
-                        Edytuj<span className="visually-hidden">: {ptak?.pl ?? w.gatunek}, {w.data}</span>
-                      </Link>
+                  </p>
+                );
+                const gatunek = ([id, w]: [string, WpisDziennika], wWizycie: boolean) => {
+                  const ptak = poId.get(w.gatunek);
+                  return (
+                    <>
+                      <p className="dziennik__gatunek">
+                        {!wWizycie && w.godzina && <span className="dziennik__godzina">{w.godzina}</span>}{' '}
+                        <strong>{ptak ? <NazwaPtaka id={ptak.id} pl={ptak.pl} /> : w.gatunek}</strong>
+                        {w.liczba && <span>, {w.liczba} {odmiana(w.liczba, ['ptak', 'ptaki', 'ptaków'])}</span>}
+                        {ptak && (
+                          <>
+                            {' '}
+                            <span className="muted" translate="no" lang="la">
+                              {ptak.lat}
+                            </span>
+                          </>
+                        )}{' '}
+                        <Link href={`/dziennik/obserwacja?id=${id}`} className="text-link dziennik__edytuj">
+                          Edytuj<span className="visually-hidden">: {ptak?.pl ?? w.gatunek}, {w.data}</span>
+                        </Link>
+                      </p>
+                      <OwnPhotos gatunek={w.gatunek} nazwa={ptak?.pl ?? w.gatunek} wpis={id} tytul="Zdjęcia z obserwacji" />
+                    </>
+                  );
+                };
+                if (wizyta.length === 1) {
+                  return (
+                    <li key={wizyta[0][0]} id={`wpis-${wizyta[0][0]}`} className="dziennik__wpis">
+                      {gatunek(wizyta[0], false)}
+                      {gdzie}
+                      {pierwszy.notatka && <p className="dziennik__notatka">{pierwszy.notatka}</p>}
+                    </li>
+                  );
+                }
+                return (
+                  <li key={wizyta[0][0]} className="dziennik__wpis dziennik__wizyta">
+                    <p className="dziennik__naglowek-wizyty">
+                      {pierwszy.godzina && <span className="dziennik__godzina">{pierwszy.godzina}</span>}{' '}
+                      <strong>
+                        {pierwszy.miejsce || 'Wyjście'}: {wizyta.length} {odmiana(wizyta.length, ['gatunek', 'gatunki', 'gatunków'])}
+                      </strong>
                     </p>
+                    {pierwszy.punkt && !pierwszy.miejsce ? gdzie : pierwszy.punkt ? (
+                      <p className="muted">
+                        <a href={adresMapy(pierwszy.punkt)} className="text-link" target="_blank" rel="noreferrer">
+                          {punktSlownie(pierwszy.punkt)}
+                          <span className="visually-hidden"> (mapa OpenStreetMap, otwiera się w nowej karcie)</span>
+                        </a>
+                      </p>
+                    ) : null}
+                    {pierwszy.notatka && <p className="dziennik__notatka">{pierwszy.notatka}</p>}
+                    <ul className="dziennik__gatunki-wizyty">
+                      {wizyta.map((wpis) => (
+                        <li key={wpis[0]} id={`wpis-${wpis[0]}`}>
+                          {gatunek(wpis, true)}
+                        </li>
+                      ))}
+                    </ul>
                   </li>
                 );
               })}
