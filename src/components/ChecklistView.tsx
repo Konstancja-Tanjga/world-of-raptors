@@ -319,19 +319,6 @@ export function ChecklistView({
         valueText={ptakiMoje ? `${ptakiMoje.size} z ${widziane(lista).length} moich gatunków` : `${liczba} z ${zakres.length}`}
         tone={!ptakiMoje && zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
       />
-      <div className="scroll-x">
-        <SegmentedControl
-          legend="Pokaż"
-          showLegend
-          value={widok}
-          onChange={(v) => setWidok(v as Widok)}
-          options={[
-            { value: 'wszystkie', label: <EtykietaWidoku nazwa="Wszystkie" liczba={wynik.length} /> },
-            { value: 'widziane', label: <EtykietaWidoku nazwa="Już widziane" liczba={wFiltrze} /> },
-            { value: 'do-zobaczenia', label: <EtykietaWidoku nazwa="Jeszcze do zobaczenia" liczba={wynik.length - wFiltrze} /> },
-          ]}
-        />
-      </div>
       <p className="visually-hidden" aria-live="polite">
         W tym filtrze: {wFiltrze} z {wynik.length} zaobserwowanych
       </p>
@@ -353,6 +340,22 @@ export function ChecklistView({
 
       <SpeciesFilters
         filtry={filtry}
+        obok={
+          <div className="scroll-x">
+            <SegmentedControl
+              legend="Pokaż"
+              showLegend
+              size="sm"
+              value={widok}
+              onChange={(v) => setWidok(v as Widok)}
+              options={[
+                { value: 'wszystkie', label: <EtykietaWidoku nazwa="Wszystkie" liczba={wynik.length} /> },
+                { value: 'widziane', label: <EtykietaWidoku nazwa="Już widziane" liczba={wFiltrze} /> },
+                { value: 'do-zobaczenia', label: <EtykietaWidoku nazwa="Jeszcze do zobaczenia" liczba={wynik.length - wFiltrze} /> },
+              ]}
+            />
+          </div>
+        }
         onChange={(f) => {
           // A field list from the course and one of my places would intersect: choosing one lets go of the other.
           if (f.miejsca.length) setMojeWybrane(null);
