@@ -10,7 +10,7 @@ import { wspolrzedneZTekstu, type Wspolrzedne } from '@/lib/punkty';
 import { Badge, Button, Checkbox, Input, StateBlock } from './ds';
 import { NazwaPtaka } from './NazwaPtaka';
 
-type Odpowiedz = { punkt: Wspolrzedne; dzis: string; warunki: Warunki | null; ptaki: Podpowiedz[] };
+type Odpowiedz = { punkt: Wspolrzedne; dzis: string; warunki: Warunki | null; ptaki: Podpowiedz[]; braki?: ('pogoda' | 'rzadkie')[] };
 type Stan =
   | { stan: 'spokoj' }
   | { stan: 'lokalizuje' }
@@ -54,6 +54,7 @@ export function CoTuZobacze() {
     if (numer !== zadanie.current) return;
     if (!r.ok) {
       const blad = await r.json().catch(() => null);
+      if (numer !== zadanie.current) return;
       setStan({
         stan: 'blad',
         tytul: 'Nie udało się pobrać podpowiedzi',
@@ -131,11 +132,21 @@ export function CoTuZobacze() {
         </form>
       )}
 
+      <p className="visually-hidden" aria-live="polite">
+        {dane ? `${dane.ptaki.length} ${odmiana(dane.ptaki.length, ['gatunek', 'gatunki', 'gatunków'])} w podpowiedziach` : ''}
+      </p>
       {stan.stan === 'blad' && <StateBlock state="error" title={stan.tytul} description={stan.opis} scope="section" />}
       {stan.stan === 'laduje' && <StateBlock state="loading" title="Pobieram obserwacje z okolicy" scope="section" />}
 
       {dane && (
         <>
+          {dane.braki?.length ? (
+            <p className="muted">
+              {dane.braki.includes('pogoda') && 'Pogoda się nie wczytała, więc kolejność nie uwzględnia warunków. '}
+              {dane.braki.includes('rzadkie') && 'Oznaczenia rzadkości się nie wczytały. '}
+              Spróbuj za kilka minut.
+            </p>
+          ) : null}
           {dane.warunki?.uwagi.length ? (
             <ul className="co-tu__warunki" aria-label="Warunki teraz">
               {dane.warunki.uwagi.map((u) => (

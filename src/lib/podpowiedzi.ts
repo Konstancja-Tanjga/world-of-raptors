@@ -59,7 +59,7 @@ export function dniOd(obsDt: string, dzis: string) {
 
 /** The weather at the point now, as Open-Meteo's `current` gives it. */
 export type Pogoda = {
-  /** mm in the last hour. */
+  /** mm in the last 15 minutes (Open-Meteo's `current` comes from 15-minute data). */
   opad: number;
   /** km/h at 10 m. */
   wiatr: number;
@@ -86,6 +86,9 @@ export function pogodaZOpenMeteo(odp: unknown): Pogoda {
 const TARIFA: Wspolrzedne = { szer: 36.0129, dl: -5.6058 };
 const CIESNINA_KM = 40;
 
+/** Rain worth a note, in mm per 15 minutes. */
+const PADA = 0.1;
+
 export type Warunki = {
   /** How the weather moves the soaring raptors (1: not at all). */
   mnoznik: number;
@@ -97,7 +100,8 @@ export type Warunki = {
 export function warunki(p: Pogoda, z: Wspolrzedne): Warunki {
   let mnoznik = 1;
   const uwagi: string[] = [];
-  if (p.opad >= 0.5) {
+  // 0.1 mm in a quarter of an hour: light rain, about 0.4 mm an hour.
+  if (p.opad >= PADA) {
     mnoznik *= 0.6;
     uwagi.push('Pada: drapieżniki rzadko krążą, więcej ich siedzi. Ptaki wodne i siewkowce widać jak zwykle.');
   }
@@ -105,7 +109,7 @@ export function warunki(p: Pogoda, z: Wspolrzedne): Warunki {
     mnoznik *= 0.8;
     uwagi.push('Silny wiatr: ptaki trzymają się zacisza, a szybujące latają nisko.');
   }
-  if (p.opad < 0.5 && p.wiatr < 30 && p.godzina >= 10 && p.godzina <= 16) {
+  if (p.opad < PADA && p.wiatr < 30 && p.godzina >= 10 && p.godzina <= 16) {
     mnoznik *= 1.2;
     uwagi.push('Sucho i spokojnie w środku dnia: dobre termiki, czas na krążące drapieżniki.');
   } else if (p.godzina < 9 || p.godzina > 17) {
@@ -186,6 +190,12 @@ export function podpowiedzi(
     })
     .sort((a, b) => b.wynik - a.wynik || a.pl.localeCompare(b.pl, 'pl'));
 }
+
+/** Whether a point is already rounded as `zaokraglij` rounds it: the route takes only such points, so one place is one cache entry. */
+export const jestZaokraglony = (p: Wspolrzedne) => {
+  const z = zaokraglij(p);
+  return z.szer === p.szer && z.dl === p.dl;
+};
 
 /** A point rounded to about a kilometre: what leaves the phone, and what the answers are cached by. */
 export const zaokraglij = (p: Wspolrzedne): Wspolrzedne => ({ szer: Math.round(p.szer * 100) / 100, dl: Math.round(p.dl * 100) / 100 });

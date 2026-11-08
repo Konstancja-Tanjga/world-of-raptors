@@ -7,6 +7,7 @@ import {
   podpowiedzi,
   pogodaZOpenMeteo,
   warunki,
+  jestZaokraglony,
   zaokraglij,
   type PtakKursu,
 } from './podpowiedzi';
@@ -79,6 +80,7 @@ test('rain lowers the soaring raptors below a bird seen a day earlier; a calm dr
     { speciesCode: 'combuz', comName: 'myszołów', sciName: 'Buteo buteo', locName: 'X', obsDt: '2026-11-08' },
     { speciesCode: 'norlap', comName: 'czajka', sciName: 'Vanellus vanellus', locName: 'X', obsDt: '2026-11-07' },
   ];
+  assert.match(warunki({ opad: 0.1, wiatr: 10, kierunek: 0, godzina: 12 }, KAMPINOS).uwagi.join(' '), /Pada/, 'light rain over a quarter hour counts');
   const deszcz = warunki({ opad: 2, wiatr: 10, kierunek: 0, godzina: 12 }, KAMPINOS);
   assert.ok(deszcz.mnoznik < 1);
   assert.deepEqual(podpowiedzi(obserwacjeZEbird(rowno), new Set(), '2026-11-08', ptaki, deszcz.mnoznik).map((p) => p.kod), ['norlap', 'combuz']);
@@ -102,4 +104,6 @@ test('Open-Meteo’s current weather is read with its local hour; a gap throws',
 
 test('a point leaves the phone rounded to two decimals, about a kilometre', () => {
   assert.deepEqual(zaokraglij({ szer: 52.312345, dl: -5.606789 }), { szer: 52.31, dl: -5.61 });
+  assert.ok(jestZaokraglony({ szer: 52.31, dl: -5.6 }));
+  assert.ok(!jestZaokraglony({ szer: 52.311, dl: -5.6 }), 'a finer point would be a cache entry of its own');
 });
