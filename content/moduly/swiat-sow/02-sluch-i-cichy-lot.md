@@ -96,7 +96,7 @@ Najbardziej widowiskowy pokaz sowiego słuchu daje puszczyk mszarny. Ma najwięk
 
 Clark, Duncan i Dougherty (2022) zakopali w śniegu głośnik na różnych głębokościach i zmierzyli, co przechodzi na powierzchnię. Śnieg tłumi wysokie dźwięki dużo mocniej niż niskie, więc spod śniegu docierają głównie te niskie, a do nich pasuje wielka szlara puszczyka mszarnego. Śnieg dodatkowo załamuje dźwięk, tak że z boku źródło wydaje się przesunięte (badacze nazywają to akustycznym mirażem); zawis tuż nad ofiarą pozwala ustawić się tam, gdzie ten błąd jest najmniejszy. Zmierzone dziury po uderzeniach miały średnio ok. pół metra głębokości. Często czyta się, że sowa słyszy nornika ze stu metrów; tego nie udało się potwierdzić.
 
-W Polsce puszczyk mszarny to nasz najmłodszy gatunek lęgowy wśród sów. Pierwszy lęg stwierdzono w **2010 r. w Lasach Sobiborskich** na Polesiu Lubelskim; w 2020 r. naliczono tam 16 terytoriów i 10 par lęgowych. Gnieździ się w starych gniazdach ptaków szponiastych i na sztucznych platformach. Jest pod ścisłą ochroną i na Czerwonej liście ma status zagrożonego (EN). Jego głos jest niski i niesie się tylko na kilkaset metrów, więc łatwo go przegapić. Posłuchaj:
+W Polsce puszczyk mszarny to nasz najmłodszy gatunek lęgowy wśród sów. Pierwszy lęg stwierdzono w **2010 r. w Lasach Sobiborskich** na Polesiu Lubelskim; w 2020 r. naliczono tam 16 terytoriów i 10 par lęgowych, a w latach 2021–2023 po 10–12 par. Gnieździ się w starych gniazdach ptaków szponiastych i na sztucznych platformach. Jest pod ścisłą ochroną i na Czerwonej liście ma status zagrożonego (EN). Jego głos jest niski i niesie się tylko na kilkaset metrów, więc łatwo go przegapić. Posłuchaj:
 
 <glos data-id="puszczyk-mszarny/samiec">
 </glos>
@@ -176,6 +176,7 @@ Dziś ząbkowane krawędzie na wzór sowich piór bada się i stosuje w **łopat
 - [YouTube: cichy lot sowy w porównaniu z gołębiem i sokołem](https://www.youtube.com/results?search_query=owl+silent+flight+vs+pigeon+falcon+microphones)
 
 ## Źródła
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (puszczyk mszarny: s. 53–54)
 - Payne R.S. 1971, [Acoustic location of prey by barn owls (*Tyto alba*)](https://cob.silverchair.com/jeb/article/54/3/535/21635/Acoustic-Location-of-Prey-by-Barn-Owls-Tyto-Alba), Journal of Experimental Biology 54: 535–573
 - Konishi M. 1973, [How the owl tracks its prey](https://www.americanscientist.org/node/2084), American Scientist
 - Norberg R.Å. 1977, [Occurrence and independent evolution of bilateral ear asymmetry in owls](https://biodiversity.org.au/afd/publication/064a16d6-aa22-4a1e-96a3-8023ede1f80c), Philosophical Transactions of the Royal Society B 280: 375–408

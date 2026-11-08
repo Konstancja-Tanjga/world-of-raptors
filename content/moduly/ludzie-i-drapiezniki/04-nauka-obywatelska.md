@@ -29,7 +29,7 @@ Warunek jest jeden: dane muszą być **rzetelne**. Lepiej zapisać „myszołów
 
 </margines>
 
-MPP to państwowy program monitoringu, w którym część liczeń prowadzą wolontariusze. Najbardziej dostępny dla początkujących jest monitoring **pospolitych ptaków lęgowych**, ale wymaga on rozpoznawania ptaków również po głosie. Szczegóły i zapisy znajdziesz na stronie programu, a to, jak wygląda kontrola i jak się zgłosić (także do programów SEO/BirdLife w Hiszpanii), opisuje [A14](../liczenie-ptakow/05-jak-dolaczyc.md). Dobrym celem na pierwszy rok nauki jest regularne wysyłanie list do eBird, a potem dołączenie do MPP.
+MPP to państwowy program monitoringu, w którym część liczeń prowadzą wolontariusze. Najbardziej dostępny dla początkujących był monitoring **pospolitych ptaków lęgowych** (MPPL), który wymagał rozpoznawania ptaków również po głosie; w 2027 roku ten program nie działa. Jak wyglądała kontrola, które programy warto sprawdzić dziś i jak się zgłosić (także do programów SEO/BirdLife w Hiszpanii), opisuje [A14](../liczenie-ptakow/05-jak-dolaczyc.md). Dobrym celem na pierwszy rok nauki jest regularne wysyłanie list do eBird, a potem dołączenie do programu, który akurat przyjmuje obserwatorów.
 
 ## Obrączki i nadajniki
 Wiele ptaków drapieżnych nosi **obrączki**, a np. bieliki czy rybołowy często także **obrączki barwne** z kodem czytelnym przez lornetkę lub na zdjęciu.

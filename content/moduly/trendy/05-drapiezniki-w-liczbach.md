@@ -76,8 +76,24 @@ W Hiszpanii kania ruda (hiszp. *milano real*) figuruje w krajowym katalogu jako 
 
 Myszołów (*Buteo buteo*, ang. Common Buzzard) jest tu dla porównania: to najliczniejszy polski drapieżnik, ponad dziesięć razy liczniejszy od kani rudej.
 
+## Drugi pomiar: Monitoring Ptaków Drapieżnych
+
+Raport z art. 12 to jedno spojrzenie. Drugie daje krajowy **Monitoring Ptaków Drapieżnych**, który od 2007 roku liczy pary na tych samych 49 powierzchniach 10 × 10 km. Raport za lata 2021–2024 podaje dla niego roczne tempo zmian λ (1 to brak zmian) z błędem standardowym i kategorię według tych samych kryteriów, które znasz z [lekcji 3](03-wahanie-czy-trend.md):
+
+| Gatunek | λ (2007–2023) | Błąd standardowy | Kategoria |
+|---|---|---|---|
+| bielik | 1,0642 | 0,0070 | umiarkowany wzrost |
+| kania ruda | 1,0562 | 0,0074 | umiarkowany wzrost |
+| pustułka | 1,0156 | 0,0048 | umiarkowany wzrost |
+| orlik krzykliwy | 1,0037 | 0,0056 | stabilny |
+| myszołów | 0,9975 | 0,0020 | stabilny |
+| błotniak łąkowy | 0,9856 | 0,0082 | stabilny |
+
+Kategorie zgadzają się z raportem z art. 12 przy wszystkich sześciu gatunkach. Przyjrzyj się błotniakowi łąkowemu: λ jest mniejsze od 1, a jednak to trend stabilny. Przedział ufności to ok. 0,9856 ± 1,96 × 0,0082, czyli 0,970–1,002. Obejmuje 1 i mieści się między 0,95 a 1,05, więc spadku nie da się odróżnić od wahań. Ten sam raport mówi zresztą, że przez pierwsze lata programu błotniaków łąkowych ubywało i ich liczebność ustabilizowała się dopiero w latach 2022–2023; w tym czasie prowadzono w kraju kilka projektów czynnej ochrony tego gatunku.
+
 ## Źródła
 
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa: Monitoring Ptaków Drapieżnych (s. 34) i tabela D.1 (s. 73).
 - [Dyrektywa 2009/147/WE](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009L0147-20190626), art. 12 (raport co sześć lat).
 - Raporty z art. 12 w przeglądarce EEA (okres 2019–2024, dane Polski i Hiszpanii; okres 2013–2018 pod adresem z `period=3`): [bielik](https://nature-art12.eionet.europa.eu/article12/summary?period=4&subject=Haliaeetus+albicilla), [orlik krzykliwy](https://nature-art12.eionet.europa.eu/article12/summary?period=4&subject=Clanga+pomarina), [błotniak łąkowy](https://nature-art12.eionet.europa.eu/article12/summary?period=4&subject=Circus+pygargus) (i [2013–2018](https://nature-art12.eionet.europa.eu/article12/summary?period=3&subject=Circus+pygargus)), [pustułka](https://nature-art12.eionet.europa.eu/article12/summary?period=4&subject=Falco+tinnunculus), [kania ruda](https://nature-art12.eionet.europa.eu/article12/summary?period=4&subject=Milvus+milvus), [myszołów](https://nature-art12.eionet.europa.eu/article12/summary?period=4&subject=Buteo+buteo).
 - Komisja Europejska 2020. [The state of nature in the European Union](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52020DC0635), COM(2020) 635 (30% gatunków lęgowych z trendem spadkowym w latach 2007–2018).

@@ -29,7 +29,7 @@ Sieweczki żerują inaczej niż biegusy: biegną kilka kroków, zatrzymują się
 
 ### Sieweczka obrożna — *Charadrius hiaticula* (ang. Common Ringed Plover)
 
-Największa i najkrępsza z trzech, mniej więcej wielkości biegusa zmiennego. Ma pełną, szeroką obrożę, a dorosła latem pomarańczowe nogi i pomarańczowy dziób z czarnym końcem. To głównie sieweczka wybrzeży: plaż, piaszczystych łach i mulisk przy morzu. W Polsce gniazduje jednak najliczniej na piaszczystych wyspach i łachach środkowej Wisły, a także nad dolnym Bugiem; nad Bałtykiem tylko część krajowej populacji. Na przelotach bywa nad jeziorami. W locie pokazuje szeroką białą wstęgę przez całe skrzydło.
+Największa i najkrępsza z trzech, mniej więcej wielkości biegusa zmiennego. Ma pełną, szeroką obrożę, a dorosła latem pomarańczowe nogi i pomarańczowy dziób z czarnym końcem. To głównie sieweczka wybrzeży: plaż, piaszczystych łach i mulisk przy morzu. W Polsce gniazduje jednak najliczniej na piaszczystych wyspach i łachach środkowej Wisły, a także nad dolnym Bugiem; nad Bałtykiem tylko część krajowej populacji. W latach 2021–2023 w całym kraju było jej 179–292 pary: 94–153 na Wiśle, gdzie liczebność skacze z poziomem wody, i 73–129 na wybrzeżu, gdzie stopniowo jej przybywa. Na przelotach bywa nad jeziorami. W locie pokazuje szeroką białą wstęgę przez całe skrzydło.
 
 ### Sieweczka rzeczna — *Charadrius dubius* (ang. Little Ringed Plover)
 
@@ -219,6 +219,7 @@ Najwięcej daje cierpliwość. Ptak, który teraz śpi z dziobem pod skrzydłem,
 - [BTO Bird ID: Knot and Dunlin, Sanderling and Curlew Sandpiper](https://www.youtube.com/results?search_query=BTO+Bird+ID+Knot+Dunlin+Curlew+Sandpiper)
 
 ## Źródła
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (sieweczka obrożna: s. 37–38)
 - Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 
 - [BTO BirdFacts: Little Ringed Plover](https://www.bto.org/understanding-birds/birdfacts/little-ringed-plover): żółta obwódka oka jako cecha rozstrzygająca, brak wstęgi na skrzydle, żwirowiska

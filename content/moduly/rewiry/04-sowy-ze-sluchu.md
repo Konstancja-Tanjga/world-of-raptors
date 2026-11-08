@@ -93,12 +93,19 @@ W monitoringu sów badacze używają czasem **stymulacji głosowej**: odtwarzaj�
 
 ## Jak to wygląda dziś
 
-Według raportu za lata 2018–2021 sowy leśne liczy w Polsce **Monitoring Lęgowych Sów Leśnych** (MLSL), prowadzony od 2010 roku na powierzchniach próbnych 5 × 5 km wpisanych w kwadraty 10 × 10 km, a od 2020 roku płomykówkę i pójdźkę także **Monitoring Sów Krajobrazu Rolniczego** (MSKR). W latach 2010–2020 liczebność puszczyka umiarkowanie rosła, a włochatki, drugiej najliczniej stwierdzanej sowy w MLSL, była stabilna; dla sóweczki, puszczyka uralskiego, uszatki i puchacza trend pozostawał nieokreślony (Wardecki i in. 2021, s. 22–24). Że trend puchacza jest nieokreślony, nie dziwi po tym, co wiesz o jego latach bez lęgów.
+Sowy leśne liczy w Polsce **Monitoring Lęgowych Sów Leśnych** (MLSL), prowadzony od 2010 roku na 45 powierzchniach próbnych 5 × 5 km wpisanych w kwadraty 10 × 10 km, a od 2020 roku uszatkę, pójdźkę i płomykówkę także **Monitoring Sów Krajobrazu Rolniczego** (MSKR), na 60 powierzchniach 5 × 5 km. Według raportu za lata 2021–2024 (Beuch i in. 2024, s. 35–37):
+
+- w lasach najpospolitszy jest **puszczyk** (80–84% powierzchni), dalej włochatka (44–53%), sóweczka (42–49%), uszatka (29–33%) i puszczyk uralski (22–24%); puchacza stwierdzano na 4–9% powierzchni,
+- w latach 2009–2023 **puszczyka, puszczyka uralskiego i uszatki** umiarkowanie przybywało, a **włochatka** była stabilna, choć z roku na rok jej liczebność mocno się waha,
+- trend **sóweczki** na powierzchniach programu jest nieokreślony, bo przedział ufności jest za szeroki; dane spoza programu pokazują jednak jej silny wzrost i poszerzanie areału,
+- w krajobrazie rolniczym najczęstsza była uszatka (118–140 terytoriów na ok. 80% powierzchni), rzadsza pójdźka (93–120 terytoriów, ok. 60%), a najrzadsza płomykówka: 33–46 par w latach 2021–2023, choć w obfitującym w gryzonie 2020 roku było ich 77.
+
+Najtrudniejszy jest **puchacz**. Na wszystkich powierzchniach MLSL w latach 2010–2023 stwierdzono razem 18 jego terytoriów, ale w żadnym roku ptaki nie odezwały się na więcej niż pięciu. Przy tak niskiej wykrywalności trend musi wyjść nieokreślony, a nie dziwi to po tym, co wiesz o jego latach bez lęgów. Dane zebrane poza programem wskazują tymczasem na silny spadek populacji puchacza w ostatnich latach. To dobry przykład z [A15](../trendy/03-wahanie-czy-trend.md): „nieokreślony” nie znaczy „stabilny”.
 
 ## Źródła
 
 - P. Chylarecki i in. (red.), *Monitoring ptaków lęgowych. Poradnik metodyczny*, wyd. 2, GIOŚ 2015: sowy (R. Mikusek, s. 101–106), sóweczka (s. 449–454), włochatka (s. 455–460), puchacz (R. Mikusek, s. 474–479)
-- Ł. Wardecki i in., *Monitoring Ptaków Polski w latach 2018–2021*, Biuletyn Monitoringu Przyrody 22, GIOŚ 2021 ([PDF w serwisie OTOP](https://otop.org.pl/wp-content/uploads/2022/03/Biuletyn22_2021_www.pdf))
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa
 - [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): MLSL i MSKR
 - [xeno-canto](https://xeno-canto.org): głosy sów do osłuchania się w domu
 

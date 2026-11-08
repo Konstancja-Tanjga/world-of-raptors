@@ -1,6 +1,6 @@
 # Lekcja 5: Jak dołączyć do monitoringu
 
-Trendy, o których czytasz w kursie, w dużej części policzyli wolontariusze: ludzie, którzy co wiosnę wstają przed świtem i idą tą samą trasą co rok wcześniej. W tej lekcji sprawdzasz, które programy w Polsce i w Hiszpanii przyjmują wolontariuszy, czego od nich wymagają i od czego zacząć, zanim się zgłosisz.
+Trendy, o których czytasz w kursie, w dużej części policzyli wolontariusze: ludzie, którzy co wiosnę wstają przed świtem i idą tą samą trasą co rok wcześniej. W tej lekcji sprawdzasz, jak wyglądały i wyglądają programy dla wolontariuszy w Polsce i w Hiszpanii, czego od nich wymagają i od czego zacząć, zanim się zgłosisz.
 
 ## Zanim się zgłosisz
 
@@ -21,18 +21,20 @@ Dobra rozgrzewka to regularne **kompletne listy w eBird** z czasem i trasą, o k
 
 </margines>
 
-Monitoring Ptaków Polski (MPP) działa od 2007 roku na zlecenie Głównego Inspektoratu Ochrony Środowiska. Według strony OTOP składa się z 33 programów, prowadzonych przez pięciu partnerów: Ogólnopolskie Towarzystwo Ochrony Ptaków (OTOP), Muzeum i Instytut Zoologii PAN, Komitet Ochrony Orłów, Stowarzyszenie Ochrony Sów i PTOP „Salamandra”. Obejmuje 164 gatunki ptaków lęgowych i 33 gatunki zimujące.
+Monitoring Ptaków Polski (MPP) działa od 2006 roku na zlecenie Głównego Inspektoratu Ochrony Środowiska. Według raportu za lata 2021–2024 składał się z 34 programów, prowadzonych przez konsorcjum Ogólnopolskiego Towarzystwa Ochrony Ptaków (OTOP) i Muzeum i Instytutu Zoologii PAN, we współpracy z Komitetem Ochrony Orłów, Stowarzyszeniem Ochrony Sów i PTOP „Salamandra”. Dawał dane o 204 gatunkach: 182 lęgowych i 38 zimujących lub przelotnych, czyli o 78% gatunków regularnie gniazdujących w Polsce. Co roku liczyło w nim co najmniej 1400 osób, na ok. 4300 powierzchniach (Beuch i in. 2024).
 
-Większość tych programów prowadzą wysoko wykwalifikowani obserwatorzy. Dwa są zorganizowane z myślą o wolontariuszach: obok koordynatora krajowego działają w nich koordynatorzy regionalni, a liczy ok. 600 osób. To:
+Większość tych programów prowadzą wysoko wykwalifikowani obserwatorzy. Dwa były zorganizowane z myślą o wolontariuszach: obok koordynatora krajowego działali w nich koordynatorzy regionalni, a liczyło ok. 600 osób. To:
 
 - **Monitoring Pospolitych Ptaków Lęgowych (MPPL)**, wiosną,
 - **Monitoring Zimujących Ptaków Wodnych**, zimą.
 
 ### MPPL: dwie poranne kontrole w roku
 
-MPPL prowadzi OTOP od 2000 roku. Niedawno ukazało się podsumowanie jego 25 lat (Chodkiewicz i in. 2025): ponad 2,3 mln obserwacji z 29 tysięcy kontroli, zebranych przez 1034 obserwatorów na losowych kwadratach 1 × 1 km. Wyniki programu są podstawą raportów Polski dla Komisji Europejskiej, krajowej czerwonej listy i wskaźników ptaków krajobrazu rolniczego i lasów.
+**W 2027 roku MPPL nie działa.** Strona programu [mppl.pl](https://www.mppl.pl/) opisuje go w czasie przeszłym, jako realizowany w latach 2007–2025 w ramach Państwowego Monitoringu Środowiska. Opisuję go tu, bo to wzór, na którym warto się uczyć, a jego wyniki są w całym kursie; gdyby program wrócił w nowej formie, ogłosi to OTOP.
 
-Jak to wyglądało w ostatnich sezonach (według instrukcji z 2020 roku i strony OTOP):
+MPPL prowadził OTOP od 2000 roku. Niedawno ukazało się podsumowanie jego 25 lat (Chodkiewicz i in. 2025): ponad 2,3 mln obserwacji z 29 tysięcy kontroli, zebranych przez 1034 obserwatorów na losowych kwadratach 1 × 1 km. Wyniki programu były podstawą raportów Polski dla Komisji Europejskiej, krajowej czerwonej listy i wskaźników ptaków krajobrazu rolniczego i lasów.
+
+Tak wyglądały ostatnie sezony (według instrukcji z 2020 roku i strony OTOP):
 
 | Krok | Co i kiedy |
 |---|---|
@@ -44,7 +46,7 @@ Jak to wyglądało w ostatnich sezonach (według instrukcji z 2020 roku i strony
 
 Szczegóły metody są w [lekcji 4](04-jak-liczyc.md).
 
-Ważne zastrzeżenie: w listopadzie 2026 roku strona programu [mppl.pl](https://www.mppl.pl/) opisuje go w czasie przeszłym, jako realizowany w latach 2007–2025 w ramach Państwowego Monitoringu Środowiska. Nie znalazłam informacji, jak będzie wyglądał sezon 2027. Jeśli chcesz dołączyć, napisz do koordynatorów programu: kontakty są na [stronie kontaktowej MPPL](https://www.mppl.pl/kontakt).
+Czy i w jakiej formie będą działać inne programy MPP po sezonie 2025, trzeba sprawdzić na stronie [Monitoringu Ptaków Polski](https://monitoringptakow.gios.gov.pl) albo zapytać w OTOP. W Hiszpanii programy SEO/BirdLife opisane niżej przyjmują nowe osoby.
 
 ### Drapieżniki i sowy
 
@@ -88,11 +90,12 @@ Gdybym zaczynała dziś, zrobiłabym to w tej kolejności:
 
 1. przez jeden sezon wysyłam kompletne listy do eBird z tej samej trasy co tydzień i uczę się głosów,
 2. sprawdzam, czy umiem rozpoznać po głosie najpospolitsze ptaki okolicy (dobry test: poranek w maju),
-3. piszę do koordynatora programu i pytam, czy przyjmuje nowe osoby i czy w pobliżu jest wolny kwadrat,
+3. sprawdzam, który program działa w danym roku, piszę do jego koordynatora i pytam, czy przyjmuje nowe osoby i czy w pobliżu jest wolny kwadrat albo trasa,
 4. pierwszy sezon traktuję jako naukę: notuję dokładnie trasę, godziny i pogodę, żeby za rok powtórzyć wszystko tak samo.
 
 ## Źródła i dalsza nauka
-- [OTOP: Monitoring Ptaków Polski](https://otop.org.pl/naszeprojekty/liczymy/monitoring-ptakow-polski/): struktura programu, partnerzy, liczba gatunków, rola wolontariuszy
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa: struktura programu, partnerzy, liczba gatunków i obserwatorów (s. 7–21)
+- [OTOP: Monitoring Ptaków Polski](https://otop.org.pl/naszeprojekty/liczymy/monitoring-ptakow-polski/): rola wolontariuszy
 - [OTOP: Monitoring Pospolitych Ptaków Lęgowych](https://otop.org.pl/naszeprojekty/liczymy/monitoring-ptakow-polski/mppl/) i [mppl.pl](https://www.mppl.pl/): opis programu i kontakt z koordynatorami
 - [OTOP: Zostań obserwatorem](https://otop.org.pl/2021/03/17/zostan-obserwatorem-juz-dzisiaj-monitoring-pospolitych-ptakow-legowych/) (2021): wymagania i terminy kontroli
 - [OTOP: podsumowanie 25 lat MPPL](https://otop.org.pl/2026/05/13/co-mowia-nam-ptaki-o-stanie-polskiej-przyrody-nowa-publikacja-z-podsumowaniem-danych-mppl/) (2026) oraz Chodkiewicz T., Wardecki Ł., Chylarecki P. 2025. Long-term trends of common breeding birds in Poland. *Acta Ornithologica* 60: 139–176
@@ -102,7 +105,7 @@ Gdybym zaczynała dziś, zrobiłabym to w tej kolejności:
 - SEO/BirdLife 2023. *Programas de seguimiento de avifauna y grupos de trabajo* ([PDF](https://seo.org/boletin/seguimiento/boletin/2023/SEO-Seguimiento-2023.pdf)): metody i trendy SACRE, SACIN i NOCTUA
 
 ## Mini-quiz
-1. Które dwa programy Monitoringu Ptaków Polski są zorganizowane z myślą o wolontariuszach?
+1. Które dwa programy Monitoringu Ptaków Polski były zorganizowane z myślą o wolontariuszach?
 2. Ile wieczorów w roku trwa udział w programie NOCTUA i ile punktów się kontroluje?
 3. Dlaczego nie należy rezygnować z wylosowanego kwadratu, który wydaje się „nudny”?
 

@@ -181,7 +181,7 @@ Wrócił do Polski dzięki programowi restytucji. Dziś gniazduje m.in. na wysok
 ---
 
 ## F. Rybołów
-Pełna karta: [moduł o cieśninie, sekcja C](../gibraltar/03-gatunki-i-pary.md). W Polsce skrajnie nieliczny: według poradnika GIOŚ z 2015 r. poniżej 50 par, z tendencją spadkową, głównie na Pojezierzu Mazurskim i na pograniczu Wielkopolski i Pomorza. Na przelotach nad jeziorami i stawami w całym kraju.
+Pełna karta: [moduł o cieśninie, sekcja C](../gibraltar/03-gatunki-i-pary.md). W Polsce skrajnie nieliczny: Monitoring Ptaków Polski naliczył w 2020 r. zaledwie 25 par, w 2021 r. 30, a w latach 2022–2023 po 40, czyli prawie tyle, ile w najlepszych latach od 2000 r. Formalnie trend od 2000 r. jest stabilny, choć wykres lekko opada. Gniazduje głównie na Pojezierzu Mazurskim i na pograniczu Wielkopolski i Pomorza. Na przelotach nad jeziorami i stawami w całym kraju.
 
 ### Rybołów czy młody bielik nad jeziorem?
 
@@ -215,6 +215,7 @@ Rybołów jest dużo mniejszy, ma **biały spód**, skrzydła w „M” i ciemne
 - [YouTube: pustułka, kobuz i drzemlik, porównanie](https://www.youtube.com/results?search_query=kestrel+hobby+merlin+identification)
 
 ## Źródła
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (rybołów: s. 50–51)
 - Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Wikipedia: Bielik](https://pl.wikipedia.org/wiki/Bielik), [Orlik krzykliwy](https://pl.wikipedia.org/wiki/Orlik_krzykliwy), [Myszołów włochaty](https://pl.wikipedia.org/wiki/Myszo%C5%82%C3%B3w_w%C5%82ochaty)
 - [Wikipedia: Lesser spotted eagle](https://en.wikipedia.org/wiki/Lesser_spotted_eagle) i [Rough-legged buzzard](https://en.wikipedia.org/wiki/Rough-legged_buzzard)
