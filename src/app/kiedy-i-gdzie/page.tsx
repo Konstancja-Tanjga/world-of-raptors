@@ -76,12 +76,7 @@ export default function KiedyIGdziePage() {
             Gdzie stanąć
           </h2>
           <p className="sekcja__lead">
-            Punkty obserwacji z porą roku i dnia, wiatrem, ptakami i dojazdem. Wpisz, skąd ruszasz, a ułożą się od
-            najbliższego. Jak wiatr przesuwa przelot nad cieśniną, wyjaśnia lekcja{' '}
-            <Link href="/moduly/gibraltar/01-ciesnina" className="text-link">
-              Cieśnina, wiatry i kalendarz przelotu
-            </Link>
-            .
+            Punkty z porą roku, ptakami i dojazdem. Szukaj po nazwie, okolicy albo ptaku albo pokaż najbliższe.
           </p>
         </header>
         <PunktyObserwacji {...danePunktow()} />

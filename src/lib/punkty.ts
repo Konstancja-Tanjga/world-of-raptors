@@ -189,3 +189,51 @@ export function zakresMiesiecy(miesiace: number[]) {
   }
   return zakresy.join(', ');
 }
+
+/** Where a month falls for a point: its best months, worth going, or out of season. */
+export type PoraPunktu = 'szczyt' | 'sezon' | 'poza';
+
+export const poraPunktu = (p: Pick<PunktObserwacji, 'miesiace' | 'szczyt'>, miesiac: number): PoraPunktu =>
+  p.szczyt.includes(miesiac) ? 'szczyt' : p.miesiace.includes(miesiac) ? 'sezon' : 'poza';
+
+/** Text as searched: lower case, without diacritics ("zuraw" finds "żuraw", "bolonia" "Bolonia"). */
+export const doSzukania = (tekst: string) =>
+  tekst
+    .trim()
+    .toLocaleLowerCase('pl')
+    .replace(/ł/g, 'l')
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '');
+
+/**
+ * Whether a point matches a search: every word typed is found in its name,
+ * its area, its description or the names of its birds (`nazwyPtakow`, the
+ * Polish names of `gatunki`, plus `inne_ptaki`), in any order.
+ */
+export function pasujeDoZapytania(p: PunktObserwacji, zapytanie: string, nazwyPtakow: readonly string[]) {
+  const slowa = doSzukania(zapytanie).split(/\s+/).filter(Boolean);
+  if (!slowa.length) return true;
+  const okolica = OKOLICE.find((o) => o.value === p.okolica)?.label ?? '';
+  const tekst = doSzukania([p.nazwa, okolica, p.opis, ...nazwyPtakow, p.inne_ptaki ?? ''].join(' '));
+  return slowa.every((s) => tekst.includes(s));
+}
+
+/** A point suggested from where I am, with why. */
+export type Propozycja<P extends PunktObserwacji = PunktObserwacji> = PunktOdMiejsca<P> & { pora: PoraPunktu };
+
+/** How much nearer a point in its best months counts than one merely in season. */
+const PREMIA_SZCZYTU = 1.5;
+
+/**
+ * The points to suggest from `z` in `miesiac`: those worth going to now,
+ * ranked by distance, a point in its best months counting as if it were
+ * PREMIA_SZCZYTU times nearer; at most `ile`. Out of season, none: an empty
+ * list says there is nothing to go for this month, not that no point exists.
+ */
+export function propozycje<P extends PunktObserwacji>(punkty: P[], z: Wspolrzedne, miesiac: number, ile = 3): Propozycja<P>[] {
+  return najblizsze(punkty, z)
+    .map((o) => ({ ...o, pora: poraPunktu(o.punkt, miesiac) }))
+    .filter((o) => o.pora !== 'poza')
+    .sort((a, b) => a.km / (a.pora === 'szczyt' ? PREMIA_SZCZYTU : 1) - b.km / (b.pora === 'szczyt' ? PREMIA_SZCZYTU : 1))
+    .slice(0, ile);
+}
