@@ -28,6 +28,8 @@ const MINIATURA = /^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/thumb\
 const STRONA = /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/;
 const WLASNE = /^\/zdjecia\/[a-z0-9-]+\.(jpg|jpeg|png|webp)$/;
 const NAJWIECEJ_W_GALERII = 6;
+/** Lesson exercises written as a bare block tag (A15's trend series). */
+const CWICZENIA_BEZ_ATRYBUTOW = ['czy-to-trend'] as const;
 
 /** Commons thumbnails also come from thumb.wikimedia.org, the same files under another host. */
 const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//, 'https://upload.wikimedia.org/');
@@ -42,7 +44,8 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * several lines would escape these checks); a gallery with anything but one
  * to six photos inside; a `<glos>` not written as a block or naming a
  * recording `idNagran` does not have; a `<model-3d>` not written as a block
- * or naming a scene sceny.ts does not have.
+ * or naming a scene sceny.ts does not have; an exercise tag such as
+ * `<czy-to-trend>` not written as a block.
  */
 export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
@@ -96,6 +99,17 @@ export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<st
       bledy.push(`${gdzie(i)}: zapisz model jako <model-3d data-scena="…"> w osobnej linii, a </model-3d> w następnej`);
     } else if (!SCENY[id]) {
       bledy.push(`${gdzie(i)}: sceny „${id}” nie ma w src/lib/budowa/sceny.ts`);
+    }
+  }
+
+  // Exercise tags without attributes: a block each, or Markdown wraps them in a paragraph.
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    for (const nazwa of CWICZENIA_BEZ_ATRYBUTOW) {
+      if (!new RegExp(`<${nazwa}\\b`, 'i').test(t)) continue;
+      if (t !== `<${nazwa}>` || linie[i + 1]?.trim() !== `</${nazwa}>`) {
+        bledy.push(`${gdzie(i)}: zapisz ćwiczenie jako <${nazwa}> w osobnej linii, a </${nazwa}> w następnej`);
+      }
     }
   }
 

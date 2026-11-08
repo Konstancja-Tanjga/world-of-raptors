@@ -67,3 +67,9 @@ test('a recording tag names a recording in the catalogue, as a block', () => {
   assert.match(problemyTagow('<glos data-id="puszczyk/samica">\n</glos>', 'l.md', ids)[0], /nie ma w content\/nagrania.json/);
   assert.match(problemyTagow('Słuchaj: <glos data-id="puszczyk/samiec"></glos>', 'l.md', ids)[0], /osobnej linii/);
 });
+
+test('an exercise tag must be a block of its own', () => {
+  assert.deepEqual(problemyTagow('Tekst\n\n<czy-to-trend>\n</czy-to-trend>\n', 'a.md'), []);
+  assert.equal(problemyTagow('Tekst <czy-to-trend></czy-to-trend>\n', 'a.md').length, 1);
+  assert.equal(problemyTagow('<czy-to-trend>\n\n</czy-to-trend>\n', 'a.md').length, 1);
+});

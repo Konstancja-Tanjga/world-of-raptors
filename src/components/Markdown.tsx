@@ -28,6 +28,7 @@ import type { Zdjecie } from '@/lib/types';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
 import {
+  CzyToTrend,
   KalendarzSiewkowcow,
   Komin,
   LiczenieStada,
@@ -143,6 +144,10 @@ const attr = (props: Attrs, name: string) => {
  *   <liczenie-stada>                                  estimating a flock
  *   <obraczki-kolorowe>                               reading colour rings
  *   <kalendarz-siewkowcow>                            who passes the Baltic coast when, in which plumage
+ *
+ * A15's exercise on trends: series of counts to class as PECBMS would:
+ *
+ *   <czy-to-trend>
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -276,6 +281,11 @@ const lessonTags = {
   'kalendarz-siewkowcow': () => (
     <div className="lekcja-cwiczenie">
       <KalendarzSiewkowcow {...kalendarzSiewkowcow()} />
+    </div>
+  ),
+  'czy-to-trend': () => (
+    <div className="lekcja-cwiczenie">
+      <CzyToTrend />
     </div>
   ),
   'obraczki-kolorowe': () => (
