@@ -12,7 +12,7 @@ gdzie **C** to wynik liczenia, **N** to liczba ptaków naprawdę obecnych, a **p
 
 <margines>
 
-> Poradnik podaje przykład pięciohektarowego płatu lasu: nawet tam nie da się w jednej kontroli wykryć wszystkich terytorialnych samców zięby. Usłyszy się głównie te, które akurat intensywnie śpiewają.
+> Poradnik podaje przykład pięciohektarowego płatu lasu: nawet tam nie da się w jednej kontroli wykryć wszystkich terytorialnych samców zięby (*Fringilla coelebs*, ang. Common Chaffinch). Usłyszy się głównie te, które akurat intensywnie śpiewają.
 
 </margines>
 

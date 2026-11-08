@@ -28,7 +28,7 @@ Z błędu standardowego liczy się **95-procentowy przedział ufności**: nachyl
 
 <margines>
 
-> Istotny nie znaczy duży. W raporcie Polski za lata 2013–2018 trend myszołowa z MPPL wynosił 0,9917 rocznie, z przedziałem 0,9841–0,9993. Cały przedział leżał poniżej 1, więc spadek był istotny, choć wynosił mniej niż 1% rocznie. W następnym raporcie, za lata 2013–2024 i z danych innego programu (Monitoringu Ptaków Drapieżnych), trend myszołowa wyszedł stabilny: +0,2% rocznie, z przedziałem od −0,4% do +0,9%.
+> Istotny nie znaczy duży. W raporcie Polski za lata 2013–2018 trend myszołowa (*Buteo buteo*, ang. Common Buzzard) z MPPL wynosił 0,9917 rocznie, z przedziałem 0,9841–0,9993. Cały przedział leżał poniżej 1, więc spadek był istotny, choć wynosił mniej niż 1% rocznie. W następnym raporcie, za lata 2019–2024, trend krótkoterminowy liczony dla lat 2013–2024 z danych innego programu (Monitoringu Ptaków Drapieżnych), wyszedł stabilny: +0,2% rocznie, z przedziałem od −0,4% do +0,9%.
 
 </margines>
 
@@ -52,7 +52,7 @@ Dwie rzeczy warto zapamiętać:
 
 ## Trend lokalny na tle krajowego
 
-Poradnik GIOŚ opisuje sytuację, która zdarza się zarządcom obszarów Natura 2000: w ostoi X liczba orlików krzykliwych gwałtownie spada. Co to znaczy? To zależy od tego, co dzieje się w całym kraju.
+Poradnik GIOŚ opisuje sytuację, która zdarza się zarządcom obszarów Natura 2000: w ostoi X liczba orlików krzykliwych (*Clanga pomarina*, ang. Lesser Spotted Eagle) gwałtownie spada. Co to znaczy? To zależy od tego, co dzieje się w całym kraju.
 
 - Jeśli krajowe wskaźniki spadają w podobnym tempie, przyczyna działa prawdopodobnie w szerszej skali (np. na zimowiskach albo na trasie wędrówki), a ostoja jest tylko jej świadkiem.
 - Jeśli krajowa populacja jest w tym czasie stabilna, przyczyna jest prawdopodobnie **lokalna** i wymaga reakcji tych, którzy zarządzają tym terenem.
@@ -67,12 +67,12 @@ Dlatego potrzebny jest monitoring ogólnokrajowy (w Polsce: Monitoring Ptaków P
 
 ## Ćwiczenie: czy to trend?
 
-Poniżej dostaniesz pięć serii liczeń z jednej powierzchni, od długiej i spokojnej do krótkiej i rozchwianej. W każdym sezonie liczący robi trzy kontrole i widzi tylko część ptaków, a populacja waha się z roku na rok wokół swojego prawdziwego trendu. Oceń każdą serię tak, jak zrobiłby to PECBMS. Po odpowiedzi zobaczysz linię trendu z przedziałem ufności, kategorię, na którą pozwalają dane, i to, jak populacja zmieniała się naprawdę. Możesz też przeliczyć serię z największego z trzech liczeń zamiast ze średniej.
+Poniżej dostaniesz pięć serii liczeń z jednej powierzchni, od długiej i spokojnej do krótkiej i rozchwianej. W każdym sezonie liczący robi trzy kontrole i widzi tylko część ptaków, a populacja waha się z roku na rok wokół swojego prawdziwego trendu. Oceń każdą serię tak, jak zrobiłby to PECBMS. Po odpowiedzi zobaczysz linię trendu, jego tempo z przedziałem ufności w liczbach, kategorię, na którą pozwalają dane, i to, jak populacja zmieniała się naprawdę. Możesz też przeliczyć serię z największego z trzech liczeń zamiast ze średniej.
 
 <czy-to-trend>
 </czy-to-trend>
 
-Kategorię ocenia się według danych, nie według prawdy: tylko dane ma do dyspozycji monitoring. Zwróć uwagę, jak często krótka seria pozwala uczciwie powiedzieć tylko „niepewny”, choć populacja naprawdę się zmienia, i jak rzadko, ale jednak, długa seria populacji bez trendu wychodzi „istotnie” rosnąca albo malejąca. Przy 95-procentowym przedziale ufności zdarza się to mniej więcej raz na dwadzieścia razy.
+Kategorię ocenia się według danych, nie według prawdy: tylko dane ma do dyspozycji monitoring. Zwróć uwagę, jak często krótka seria pozwala uczciwie powiedzieć tylko „niepewny”, choć populacja naprawdę się zmienia, i jak rzadko, ale jednak, długa seria populacji bez trendu wychodzi „istotnie” rosnąca albo malejąca. Przy 95-procentowym przedziale ufności powinno się to zdarzać mniej więcej raz na dwadzieścia razy. Ćwiczenie liczy przedział tak jak PECBMS, z mnożnikiem 1,96, który jest dokładny dla długich serii. Dla serii z ośmiu czy dziesięciu lat przedział powinien być szerszy (statystyk użyłby rozkładu t, dla ośmiu punktów mnożnika ok. 2,45), więc w krótkich seriach ćwiczenie częściej, niż raz na dwadzieścia, ogłasza zmianę, której nie ma. To jeszcze jeden powód, żeby krótkim seriom nie ufać.
 
 ## Źródła
 

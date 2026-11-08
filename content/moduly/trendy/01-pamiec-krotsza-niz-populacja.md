@@ -4,7 +4,7 @@ Kiedy babcia mówi, że „kiedyś na polach było pełno kuropatw”, trudno to
 
 ## Przesunięcie punktu odniesienia
 
-Każda z nas ocenia przyrodę według tego, co pamięta z dzieciństwa albo z pierwszych lat obserwacji. To, co zastałyśmy, wydaje się normą. Jeśli przez trzydzieści lat ubywa po trochu skowronków, każde kolejne pokolenie obserwatorów zaczyna od niższego poziomu i nie czuje straty, bo nie wie, jak było wcześniej.
+Każda z nas ocenia przyrodę według tego, co pamięta z dzieciństwa albo z pierwszych lat obserwacji. To, co zastałyśmy, wydaje się normą. Jeśli przez trzydzieści lat ubywa po trochu skowronków (*Alauda arvensis*, ang. Eurasian Skylark), każde kolejne pokolenie obserwatorów zaczyna od niższego poziomu i nie czuje straty, bo nie wie, jak było wcześniej.
 
 Zjawisko to nazywa się **przesunięciem punktu odniesienia** (ang. *shifting baselines*). Poradnik GIOŚ o monitoringu ptaków zwraca uwagę, że nawet osoby, które dostrzegają zmiany w środowisku, są skłonne je bagatelizować, bo nieświadomie dopasowują swoje wyczucie normy do tego, co widzą teraz.
 
@@ -27,7 +27,7 @@ W 2015 r. zespół Richarda Ingera opublikował w piśmie *Ecology Letters* pier
 
 </margines>
 
-Wynik: w ciągu ok. 30 lat od 1980 r. w Europie ubyło ok. **421 milionów ptaków**. Według komunikatu Uniwersytetu w Exeter ok. 90% tej straty przypada na 36 najpospolitszych i najszerzej rozprzestrzenionych gatunków, m.in. wróbla, skowronka, kuropatwę (*Perdix perdix*, ang. Grey Partridge) i szpaka. Jednocześnie gatunki mniej liczne jako grupa przybywały.
+Wynik: w ciągu ok. 30 lat od 1980 r. w Europie ubyło ok. **421 milionów ptaków**. Według komunikatu Uniwersytetu w Exeter ok. 90% tej straty przypada na 36 najpospolitszych i najszerzej rozprzestrzenionych gatunków, m.in. wróbla (*Passer domesticus*, ang. House Sparrow), skowronka, kuropatwę (*Perdix perdix*, ang. Grey Partridge) i szpaka (*Sturnus vulgaris*, ang. Common Starling). Jednocześnie gatunki mniej liczne jako grupa przybywały.
 
 To ważne i trochę zaskakujące: ochrona przyrody długo skupiała się na gatunkach rzadkich, a największa strata dotyczy ptaków, które wszyscy uważają za zwyczajne. Późniejsze badanie (Burns i in. 2021) objęło kraje Unii Europejskiej i oszacowało stratę od 1980 r. na **560–620 milionów** ptaków lęgowych, czyli ok. 17–19% ich liczebności, również głównie wśród gatunków licznych.
 
@@ -55,11 +55,11 @@ Najwyraźniej widać to na wskaźnikach PECBMS, czyli europejskiego programu, kt
 
 </margines>
 
-Ptaki drapieżne są w tych zestawieniach w mniejszości, bo większość z nich jest za rzadka, żeby liczyć je metodami dla ptaków pospolitych. Ale los drapieżnika pól, takiego jak błotniak łąkowy czy pustułka, zależy od tego samego krajobrazu, w którym ubywa skowronków i kuropatw. O ich liczbach jest [lekcja 5](05-drapiezniki-w-liczbach.md).
+Ptaki drapieżne są w tych zestawieniach w mniejszości, bo większość z nich jest za rzadka, żeby liczyć je metodami dla ptaków pospolitych. Ale los drapieżnika pól, takiego jak błotniak łąkowy (*Circus pygargus*, ang. Montagu's Harrier) czy pustułka (*Falco tinnunculus*, ang. Common Kestrel), zależy od tego samego krajobrazu, w którym ubywa skowronków i kuropatw. O ich liczbach jest [lekcja 5](05-drapiezniki-w-liczbach.md).
 
 ## Dlaczego to dotyczy drapieżników
 
-[Moduł o ochronie](../ochrona/README.md) opowiada historię bielika, który z kilkudziesięciu par wrócił do ponad tysiąca. Skąd wiemy, że to tysiąc, a nie pięćset? I skąd wiemy, że wraca, a nie tylko lepiej go szukamy? Odpowiedzi dają te same metody, które pokazały spadek ptaków pól: standardowe liczenia powtarzane co roku i rachunek, który z nich robi trend. Następne lekcje pokazują, jak ten rachunek działa.
+[Moduł o ochronie](../ochrona/README.md) opowiada historię bielika (*Haliaeetus albicilla*, ang. White-tailed Eagle), który z kilkudziesięciu par wrócił do ponad tysiąca. Skąd wiemy, że to tysiąc, a nie pięćset? I skąd wiemy, że wraca, a nie tylko lepiej go szukamy? Odpowiedzi dają te same metody, które pokazały spadek ptaków pól: standardowe liczenia powtarzane co roku i rachunek, który z nich robi trend. Następne lekcje pokazują, jak ten rachunek działa.
 
 ## Źródła
 

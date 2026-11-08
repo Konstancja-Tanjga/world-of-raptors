@@ -19,6 +19,7 @@ import {
   type SposobWyniku,
   type Trend,
 } from '@/lib/trend';
+import { odmiana } from '@/lib/odmiana';
 import { Accordion, AccordionItem, Badge, Button, Card, Checkbox, RadioGroup, SegmentedControl, StateBlock, Table } from './ds';
 
 /** The drawing's width before the page is measured; afterwards it is the box's own width in pixels, so labels keep their size on a phone. */
@@ -105,7 +106,7 @@ function Wykres({ lata, indeks, trend, prawda, log, opis }: Rysunek) {
         ))}
         {lata.map((rok, t) =>
           t === 0 || t === lata.length - 1 || (t % co === 0 && lata.length - 1 - t >= co * 0.6) ? (
-            <text key={rok} className="trend__opis-osi" x={x(t)} y={wys - MARGINES.dol + 18} textAnchor="middle">
+            <text key={rok} className="trend__opis-osi" x={x(t)} y={wys - MARGINES.dol + 18} textAnchor={t === 0 ? 'start' : t === lata.length - 1 ? 'end' : 'middle'}>
               {rok}
             </text>
           ) : null,
@@ -228,8 +229,8 @@ export function CzyToTrend() {
     <Card actions={odpowiedziano ? <Button onClick={dalej}>{ostatnia ? 'Zobacz wynik' : 'Następna seria'}</Button> : <Button onClick={sprawdz}>Sprawdź</Button>}>
       <div className="cwiczenie trend" ref={fokus}>
         <p className="cwiczenie__polecenie">
-          Seria {runda + 1} z {RUNDY_TRENDU.length}. Jedna powierzchnia, {s.lata.length} lat, w każdym sezonie trzy kontrole. Każda kropka to średnia z trzech liczeń jako
-          wielokrotność wyniku z {s.lata[0]} roku. Jak PECBMS sklasyfikowałby ten trend?
+          Seria {runda + 1} z {RUNDY_TRENDU.length}. Jedna powierzchnia, {s.lata.length} lat, w każdym sezonie trzy kontrole. Każda kropka to {pokazany === 'srednia' ? 'średnia z trzech liczeń' : 'największe z trzech liczeń'}{' '}
+          jako wielokrotność wyniku z {s.lata[0]} roku. Jak PECBMS sklasyfikowałby ten trend?
         </p>
         <Wykres lata={s.lata} indeks={indeks} trend={odpowiedziano ? trendLogLiniowy(indeks) : undefined} prawda={odpowiedziano ? prawda : undefined} log={log} opis={opisWykresu} />
         <ul className="trend__legenda">
@@ -276,7 +277,8 @@ export function CzyToTrend() {
             <span>
               Trend ze średnich: {procent(zmianaRoczna(trendSredniej.mnoznik))} rocznie, przedział 95% od {procent(zmianaRoczna(trendSredniej.dolna))} do{' '}
               {procent(zmianaRoczna(trendSredniej.gorna))}, czyli kategoria „{nazwaKlasy(poprawna).toLowerCase()}”.{' '}
-              {p.tempo === 0 ? 'Prawdziwa populacja nie miała trendu: wahała się wokół stałej średniej i liczyła' : `Prawdziwa populacja zmieniała się średnio o ${procent(zmianaPrawdziwa)} rocznie i liczyła`} {s.prawdziwe[0]} ptaków na początku, a {s.prawdziwe.at(-1)} na końcu. Liczący widział przy jednej kontroli
+              {p.tempo === 0 ? 'Prawdziwa populacja nie miała trendu: wahała się wokół stałej średniej i liczyła' : `Prawdziwa populacja zmieniała się średnio o ${procent(zmianaPrawdziwa)} rocznie i liczyła`} {s.prawdziwe[0]} {odmiana(s.prawdziwe[0], ['ptaka', 'ptaki', 'ptaków'])} na początku, a {s.prawdziwe.at(-1)}{' '}
+              {odmiana(s.prawdziwe.at(-1)!, ['ptaka', 'ptaki', 'ptaków'])} na końcu. Liczący widział przy jednej kontroli
               średnio ok. {Math.round(p.wykrywalnosc * 100)}% z nich.
             </span>
           </div>
@@ -297,8 +299,10 @@ export function CzyToTrend() {
             {sposob === 'najwiekszy' && (
               <p className="cwiczenie__wynik">
                 Z największego liczenia: {procent(zmianaRoczna(trend.mnoznik))} rocznie, przedział od {procent(zmianaRoczna(trend.dolna))} do{' '}
-                {procent(zmianaRoczna(trend.gorna))}, kategoria „{nazwaKlasy(klasa(trend)).toLowerCase()}”. Wyniki są wyższe, ale to dwa z trzech liczeń wyrzucone do kosza; tu
-                wahania między latami są dużo większe niż różnice między kontrolami, więc trend prawie się nie zmienia.
+                {procent(zmianaRoczna(trend.gorna))}, kategoria „{nazwaKlasy(klasa(trend)).toLowerCase()}”. Wyniki są wyższe, ale to dwa z trzech liczeń wyrzucone do kosza.{' '}
+                {klasa(trend) === poprawna
+                  ? 'Tu wahania między latami są dużo większe niż różnice między kontrolami, więc kategoria się nie zmienia.'
+                  : `Tym razem kategoria jest inna niż ze średnich („${nazwaKlasy(poprawna).toLowerCase()}”): z mniejszej części danych wychodzi inny wniosek.`}
               </p>
             )}
             <p className="cwiczenie__wynik">
