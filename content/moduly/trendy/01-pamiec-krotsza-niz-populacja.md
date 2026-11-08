@@ -41,7 +41,7 @@ Zmiany nie polegają tylko na tym, że ptaków jest mniej. Zmienia się skład. 
 | gatunki większe | ptaki krajobrazu rolniczego |
 | ptaki zimujące blisko lęgowisk | specjaliści o wąskich wymaganiach siedliskowych |
 
-Najwyraźniej widać to na wskaźnikach PECBMS, czyli europejskiego programu, który łączy wyniki krajowych liczeń ptaków pospolitych (w Polsce to Monitoring Pospolitych Ptaków Lęgowych, MPPL). Według aktualizacji z 2025 r., dla lat 1980–2024:
+Najwyraźniej widać to na wskaźnikach PECBMS, czyli europejskiego programu, który łączy wyniki krajowych liczeń ptaków pospolitych (w Polsce do 2025 r. był to Monitoring Pospolitych Ptaków Lęgowych, MPPL). Według aktualizacji z 2025 r., dla lat 1980–2024:
 
 | Wskaźnik | Liczba gatunków | Zmiana 1980–2024 |
 |---|---|---|

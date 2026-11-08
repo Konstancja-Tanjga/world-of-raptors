@@ -66,14 +66,22 @@ Nie każdy drapieżnik daje się tak policzyć. Poradnik wymienia krogulca: polu
 
 ## Jak to wygląda dziś
 
-W Polsce drapieżniki liczy się w ramach Monitoringu Ptaków Polski, prowadzonego na zlecenie GIOŚ w Państwowym Monitoringu Środowiska. Według raportu za lata 2018–2021 **Monitoring Ptaków Drapieżnych** (MPD) działa od 2007 roku jako cenzus na powierzchniach próbnych 10 × 10 km i obejmuje 11 gatunków dziennych drapieżników oraz bociana czarnego, którego liczy się tą samą metodą; orzeł przedni, orlik grubodzioby i puszczyk mszarny mają osobne programy obejmujące cały ich areał (Wardecki i in. 2021, s. 12, 22–23). W latach 2008–2020 liczebność orlika krzykliwego była stabilna, bielika i kani rudej wzrosła mniej więcej dwukrotnie, a błotniaka łąkowego i jastrzębia spadała (s. 24). Nowsze wyniki, za lata 2021–2024, GIOŚ opublikował pod koniec 2024 roku na stronie programu.
+W Polsce drapieżniki liczy się w ramach Monitoringu Ptaków Polski, prowadzonego na zlecenie GIOŚ w Państwowym Monitoringu Środowiska. **Monitoring Ptaków Drapieżnych** (MPD) działa od 2007 roku jako cenzus na 49 powierzchniach próbnych 10 × 10 km. Według raportu za lata 2021–2024 obejmuje 14 gatunków: 12 dziennych drapieżników, bociana czarnego i kruka. Orzeł przedni, orlik grubodzioby, rybołów i produktywność bielika na wybrzeżu mają osobne programy, liczące cały areał (Beuch i in. 2024, s. 14, 20).
+
+Co pokazał ten sam pomiar powtarzany od 2008 do 2023 roku (s. 34):
+
+- **myszołów** był w latach 2021–2023 na wszystkich powierzchniach, a jastrząb, krogulec, błotniak stawowy i kruk na ponad 80% z nich; najrzadsza była **kania czarna**, na ok. 20% kwadratów,
+- **bielik** w ciągu dekady podwoił liczebność, a powierzchni z bielikiem przybyło z 42% do 55%; **kania ruda** rosła równie szybko (z 24% do 47% powierzchni),
+- umiarkowanie ubywało **jastrzębia**, **bociana czarnego** i **trzmielojada**,
+- siedem gatunków, w tym **orlik krzykliwy** i **błotniak łąkowy**, uznano za stabilne; błotniaka łąkowego przez pierwsze lata ubywało i dopiero w latach 2022–2023 jego liczebność się ustabilizowała.
+
+Najrzadszych liczy się co do pary: rybołowów było w 2020 roku 25 par, a w latach 2022–2023 po 40; orłów przednich 30–32 terytoria, prawie wszystkie w Karpatach; orlików grubodziobych 18–19 par, z czego 13 terytoriów w Kotlinie Biebrzańskiej (s. 50–51).
 
 ## Źródła
 
 - P. Chylarecki i in. (red.), *Monitoring ptaków lęgowych. Poradnik metodyczny*, wyd. 2, GIOŚ 2015: ptaki szponiaste (s. 92–100), orlik krzykliwy (Z. Cenian, P. Mirski, s. 389–396)
-- Ł. Wardecki i in., *Monitoring Ptaków Polski w latach 2018–2021*, Biuletyn Monitoringu Przyrody 22, GIOŚ 2021 ([PDF w serwisie OTOP](https://otop.org.pl/wp-content/uploads/2022/03/Biuletyn22_2021_www.pdf))
 - [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): programy, instrukcje i najnowsze raporty
-- [GIOŚ: Monitoring ptaków kluczem do ochrony przyrody w Polsce](https://www.gov.pl/web/gios/monitoring-ptakow-kluczem-do-ochrony-przyrody-w-polsce) (o raporcie za lata 2021–2024)
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa ([GIOŚ: o raporcie](https://www.gov.pl/web/gios/monitoring-ptakow-kluczem-do-ochrony-przyrody-w-polsce))
 
 ## Mini-quiz
 1. Dlaczego punkt obserwacyjny nie powinien stać na samym szczycie góry?

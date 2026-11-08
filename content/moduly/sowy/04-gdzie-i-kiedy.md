@@ -44,7 +44,7 @@ Nie każda sowa odzywa się w środku nocy: sóweczka woła o zmierzchu i świci
 
 Trzy sowy z tajgi i tundry widuje się w Polsce rzadko, ale warto je znać:
 
-- **Puszczyk mszarny** — *Strix nebulosa* (ang. Great Grey Owl): od 2010 r. gniazduje w Lasach Sobiborskich na Polesiu Lubelskim, często na sztucznych platformach. W 2020 r. było tam 16 terytoriów, z czego 10 par lęgowych. Ogromna szara głowa w koncentrycznych kręgach, małe żółte oczy, biała „muszka” pod dziobem. Głos niski i cichy, niesie się tylko na kilkaset metrów, więc łatwo go przeoczyć. Na polskiej czerwonej liście ma status zagrożonego (EN).
+- **Puszczyk mszarny** — *Strix nebulosa* (ang. Great Grey Owl): od 2010 r. gniazduje w Lasach Sobiborskich na Polesiu Lubelskim, często na sztucznych platformach. W 2020 r. było tam 16 terytoriów, z czego 10 par lęgowych, a w latach 2021–2023 po 10–12 par, z których do lęgów przystępowało 6–8. Ogromna szara głowa w koncentrycznych kręgach, małe żółte oczy, biała „muszka” pod dziobem. Głos niski i cichy, niesie się tylko na kilkaset metrów, więc łatwo go przeoczyć. Na polskiej czerwonej liście ma status zagrożonego (EN).
 - **Sowa śnieżna** — *Bubo scandiacus* (ang. Snowy Owl): rzadki gość zimowy (X–III), głównie na wybrzeżu i na północy. Siedzi na ziemi w otwartym terenie i poluje za dnia. Samce z wiekiem są prawie białe, samice i młode białe w ciemne prążki. Zimą zwykle milczy.
 - **Sowa jarzębata** — *Surnia ulula* (ang. Northern Hawk-Owl): do końca 2023 r. Komisja Faunistyczna uznała ok. 51 jej stwierdzeń w Polsce, głównie zimą (np. Puszcza Białowieska, Biebrza, ujście Wisły). Wygląda i lata jak krogulec: długi ogon, spiczaste skrzydła. Siedzi wysoko na czubkach drzew i poluje za dnia.
 
@@ -92,6 +92,7 @@ Obserwację sowy jarzębatej albo sowy śnieżnej zgłoś do [Komisji Faunistycz
 - [YouTube: puszczyk uralski w Karpatach](https://www.youtube.com/results?search_query=Ural+owl+Carpathians)
 
 ## Źródła
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (puszczyk mszarny: s. 53–54)
 - Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [xeno-canto](https://xeno-canto.org): nagrania do porównania
 - [Merlin Bird ID (Cornell Lab)](https://merlin.allaboutbirds.org)

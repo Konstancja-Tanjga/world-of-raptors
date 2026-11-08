@@ -111,9 +111,9 @@ Odstrzał i prześladowanie wciąż się zdarzają, ale wiele sów ginie przez l
 | Płomykówka (*lechuza*) | ok. −35%, zasięg mniejszy o 43% | NOCTUA 2006–2018 |
 | Syczek (*autillo*) | ok. −32% | NOCTUA 2006–2018 |
 
-W Polsce *Czerwona lista ptaków* z 2020 r. uznaje za zagrożone (EN) **uszatkę błotną** *Asio flammeus* (ang. Short-eared Owl, 0–35 par) i **puszczyka mszarnego** *Strix nebulosa* (ang. Great Grey Owl, 0–9 par po 2010 r., w 2020 r. 10 par lęgowych na Polesiu Lubelskim). Jako bliskie zagrożenia (NT) wymienia **puchacza** (270–380 par) i **włochatkę** *Aegolius funereus* (ang. Boreal Owl). Płomykówek było do 1990 r. ok. 4000 par, a w latach 2013–2018 już tylko 1000–1500.
+W Polsce *Czerwona lista ptaków* z 2020 r. uznaje za zagrożone (EN) **uszatkę błotną** *Asio flammeus* (ang. Short-eared Owl, 0–35 par) i **puszczyka mszarnego** *Strix nebulosa* (ang. Great Grey Owl, 0–9 par po 2010 r., w 2020 r. 10 par lęgowych na Polesiu Lubelskim, w latach 2021–2023 po 10–12 par). Jako bliskie zagrożenia (NT) wymienia **puchacza** (270–380 par) i **włochatkę** *Aegolius funereus* (ang. Boreal Owl). Płomykówek było do 1990 r. ok. 4000 par, a w latach 2013–2018 już tylko 1000–1500.
 
-Jest też dobra wiadomość. Puchaczy w Polsce przybyło: ze 130–150 par w latach 80. do ok. 270–380 dziś, m.in. dzięki ochronie. Najbardziej szkodzi mu teraz niepokojenie: spłoszona wysiadująca samica może porzucić gniazdo.
+Puchacza długo podawano jako dobrą wiadomość: ze 130–150 par w latach 80. przybyło go do 270–380 według czerwonej listy z 2020 r., m.in. dzięki ochronie. Raport Monitoringu Ptaków Polski za lata 2021–2024 ostrzega jednak, że dane z ostatnich lat wskazują na silny spadek jego populacji. Bardzo szkodzi mu niepokojenie: spłoszona wysiadująca samica może porzucić gniazdo.
 
 ## Co pomaga
 
@@ -150,6 +150,7 @@ Podstawy etyki nocnego nasłuchu są w lekcji [B5: Gdzie i kiedy słuchać](../s
 - [YouTube: jak działa budka dla płomykówki](https://www.youtube.com/results?search_query=barn+owl+nest+box+camera)
 
 ## Źródła
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (puchacz i puszczyk mszarny: s. 35, 53–54)
 - Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [IOC World Bird List](https://www.worldbirdnames.org/new/ioc-lists) i [Wikipedia: List of owl species](https://en.wikipedia.org/wiki/List_of_owl_species): liczba gatunków
 - [Guinness World Records: najmniejsza sowa](https://www.guinnessworldrecords.com/world-records/76263-smallest-owl) i [Walters, *North American Bird Bander* 6(3)](https://sora.unm.edu/sites/default/files/journals/nabb/v006n03/p0104-p0105.pdf): masa kaktusówki

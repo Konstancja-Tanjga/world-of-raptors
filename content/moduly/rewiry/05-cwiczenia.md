@@ -10,6 +10,8 @@ Przy każdej notatce:
 2. **Wybierz rewir:** nowy albo któryś z już zapisanych dla tego gatunku. Pomagają mapa, godzina i punkt: ptaki widziane w tej samej chwili w dwóch miejscach to dwa rewiry.
 3. **Zapisz** i przeczytaj, co mówi klucz i dlaczego.
 
+Powierzchnia i notatki są wymyślone, ale każde zachowanie i każda kategoria pochodzą z tabel poradnika GIOŚ, a gatunki i ich proporcje z prawdziwego monitoringu (o tym pod wynikiem).
+
 Rewir dostaje najwyższą kategorię z sezonu. Na mapie trójkąty to punkty widokowe, przerywane koła pokazują ok. 2 km wokół nich, a numerowane kółka to miejsca notatek.
 
 <karta-rewirow data-sesja="pomorze">
@@ -20,6 +22,20 @@ Rewir dostaje najwyższą kategorię z sezonu. Na mapie trójkąty to punkty wid
 Bielik 1 rewir (pewny), myszołów 1–2, orlik krzykliwy 1–2, kania ruda 1 (pewny), trzmielojad 0–1. Razem **4–7 rewirów**: cztery pewne (bielik, para myszołowów, para orlików, kania przy gnieździe) i trzy prawdopodobne (drugi myszołów, dwa orliki na granicy, trzmielojad). Trzy notatki (młody orlik, przelatująca kania, polujący krogulec) nie wskazują rewiru.
 
 </details>
+
+### Czy taka powierzchnia jest prawdopodobna?
+
+Porównaj swój wymyślony kwadrat z prawdziwymi. Monitoring Ptaków Drapieżnych liczy pary tą samą metodą na 49 powierzchniach 10 × 10 km. W latach 2021–2023:
+
+| Gatunek | Na ilu powierzchniach go stwierdzono | Trend 2008–2023 |
+|---|---|---|
+| myszołów | na wszystkich | stabilny |
+| jastrząb, krogulec | na ponad 80% | jastrząb: umiarkowany spadek; krogulec: stabilny |
+| bielik | na 55% (w 2008 r. na 42%) | wzrost, w dekadę liczebność się podwoiła |
+| kania ruda | na 47% (w 2008 r. na 24%) | wzrost |
+| kania czarna | na ok. 20% | stabilny |
+
+Kwadrat z myszołowem i bielikiem to więc zwykła powierzchnia, a kania ruda trafia się dziś mniej więcej na co drugiej. Krogulec, którego na karcie nie policzyłaś, najpewniej tam był: stwierdzano go na większości powierzchni, tylko trudno go przypisać do rewiru. Jeśli kiedyś trafisz na taki kwadrat w terenie, notatka o trzmielojadzie będzie cenna podwójnie: według tego samego raportu trzmielojada w Polsce umiarkowanie ubywa.
 
 ## 2. Quiz (próg zaliczenia: 80%)
 
@@ -63,4 +79,5 @@ Jeśli chcesz liczyć naprawdę, zajrzyj na stronę [Monitoringu Ptaków Polski]
 ## Źródła
 
 - Źródła do każdej odpowiedzi są w lekcjach 1–4 tego modułu.
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (Monitoring Ptaków Drapieżnych, s. 34).
 - Notatki karty rewirów są wymyślone, a kategorie i zachowania opierają się na tabelach 5.7 i 6.20 poradnika GIOŚ (P. Chylarecki i in. (red.), *Monitoring ptaków lęgowych. Poradnik metodyczny*, wyd. 2, 2015, s. 97 i 395).

@@ -121,7 +121,7 @@ Krępy, ciemny brodziec, z wierzchu oliwkowobrązowy z drobnymi jasnymi kropkami
 
 ## Rycyk i szlamnik
 
-Dwa duże siewkowce z długimi, prawie prostymi dziobami. Rycyk to ptak słodkich wód, wilgotnych łąk i pól ryżowych, w Polsce bardzo nieliczny i szybko ubywający ptak lęgowy (według poradnika GIOŚ z 2015 r. ok. 1500–2000 par, głównie w dolinach rzek wschodniej i centralnej Polski). Szlamnik jest ptakiem wybrzeża: przelatuje wzdłuż Bałtyku i zimuje na równiach pływowych, także w Zatoce Kadyksu i w Marismas del Barbate.
+Dwa duże siewkowce z długimi, prawie prostymi dziobami. Rycyk to ptak słodkich wód, wilgotnych łąk i pól ryżowych, w Polsce bardzo nieliczny i szybko ubywający ptak lęgowy, głównie w dolinach rzek wschodniej i centralnej Polski. Jeszcze poradnik GIOŚ z 2015 r. podawał ok. 1500–2000 par, a w 2021 r. populację oceniono na zaledwie 380–420 par; na powierzchniach Monitoringu Ptaków Mokradeł rycyk jest dziś kilka razy rzadszy niż w 2010 r.. Szlamnik jest ptakiem wybrzeża: przelatuje wzdłuż Bałtyku i zimuje na równiach pływowych, także w Zatoce Kadyksu i w Marismas del Barbate.
 
 ### Rycyk — *Limosa limosa* (ang. Black-tailed Godwit)
 
@@ -161,7 +161,7 @@ Nieco krępszy od rycyka, z krótszą szyją i zwykle krótszymi nogami. Dziób 
 
 ## Kulik wielki i kulik mniejszy
 
-Największe siewkowce z dziobami wygiętymi w dół. Kulik wielki jest w Polsce bardzo nielicznym i zagrożonym ptakiem lęgowym łąk (w latach 2013–2018 oceniano go na 120–250 par) i zimuje m.in. na wybrzeżach Atlantyku. Kulik mniejszy gniazduje na północy i przelatuje przez Polskę, zwłaszcza wiosną. W Marismas del Barbate spotkasz oba.
+Największe siewkowce z dziobami wygiętymi w dół. Kulik wielki jest w Polsce bardzo nielicznym i zagrożonym ptakiem lęgowym łąk (w 2021 r. oceniono go na 195–200 par; po spadku w pierwszych latach monitoringu, od 2019 r. populacja się odbudowuje, m.in. dzięki zabezpieczaniu gniazd pastuchami elektrycznymi) i zimuje m.in. na wybrzeżach Atlantyku. Kulik mniejszy gniazduje na północy i przelatuje przez Polskę, zwłaszcza wiosną. W Marismas del Barbate spotkasz oba.
 
 ### Kulik wielki — *Numenius arquata* (ang. Eurasian Curlew)
 
@@ -240,6 +240,7 @@ Ptak lasu, nie błota. Dużo większa i krępsza od kszyka, mniej więcej wielko
 - [BTO Bird ID: Common and Jack Snipe (kszyk i bekasik)](https://www.youtube.com/results?search_query=BTO+Bird+ID+Common+and+Jack+Snipe)
 
 ## Źródła
+- Beuch S., Chodkiewicz T., Przymencki M., Wardecki Ł., Sikora A., Neubauer G., Smyk B., Marchowski D., Ławicki Ł., Meissner W., Chylarecki P. 2024. *Monitoring Ptaków Polski w latach 2021–2024*. Biuletyn Monitoringu Przyrody 28: 1–108. GIOŚ, Warszawa (rycyk: s. 13, 32–33; kulik wielki: s. 41)
 - Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 
 - [Tim Melling o brodźcu śniadym (Mark Avery)](https://markavery.info/2021/04/03/tim-melling-spotted-redshank/): dziób, brak białego brzegu skrzydła, wznoszące „czu-it” i opadające „tju”
