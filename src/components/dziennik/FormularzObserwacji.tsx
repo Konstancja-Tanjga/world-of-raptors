@@ -15,7 +15,7 @@ import { doSzukania } from '../SpeciesFilters';
 import { MapaWGranicy } from './MapaWGranicy';
 import { WierszGatunku, type WierszListy } from './WierszGatunku';
 import { OwnPhotos } from '../OwnPhotos';
-import { useZdjeciaWlasne } from '@/lib/zdjeciaWlasne';
+import { usunZdjecia, useZdjeciaWlasne, zdjeciaWpisow, type ZdjecieWlasne } from '@/lib/zdjeciaWlasne';
 import { odmiana } from '@/lib/odmiana';
 
 /** How long to wait for the browser to answer at all (a permission prompt left open calls back never). */
@@ -72,6 +72,8 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   const [lista, setLista] = useState<WierszListy[]>([]);
   const [bladUlubionego, setBladUlubionego] = useState<string | null>(null);
   const [usunUlubione, setUsunUlubione] = useState<string | null>(null);
+  // Leaving a new, unsaved sighting whose rows already have photos: they would stay on their species.
+  const [porzucone, setPorzucone] = useState<ZdjecieWlasne[] | null>(null);
   const zadanie = useRef(0);
   const czuwanie = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -300,6 +302,29 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     else zapiszListe();
   };
 
+  /** "Anuluj": a new sighting whose rows have photos asks first what to do with them. */
+  const anuluj = async () => {
+    if (edycja || !lista.length) return router.push('/dziennik');
+    try {
+      const zdjecia = await zdjeciaWpisow(lista.map((w) => w.id));
+      if (!zdjecia.length) return router.push('/dziennik');
+      setPorzucone(zdjecia);
+    } catch (err) {
+      console.error('[dziennik] could not read the new sighting’s photos', err);
+      router.push('/dziennik');
+    }
+  };
+  const usunPorzuconeIWyjdz = async () => {
+    try {
+      if (porzucone) await usunZdjecia(porzucone);
+      router.push('/dziennik');
+    } catch (err) {
+      console.error('[dziennik] could not delete the new sighting’s photos', err);
+      setPorzucone(null);
+      setBladZapisu('Nie udało się usunąć zdjęć. Zostają przy gatunkach; mogę je usunąć na checkliście.');
+    }
+  };
+
   const usunObserwacje = () => {
     setPotwierdzUsuniecie(false);
     if (usun(id)) {
@@ -513,9 +538,15 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         <Button type="submit">
           {edycja ? 'Zapisz zmiany' : lista.length > 1 ? `Zapisz ${lista.length} ${odmiana(lista.length, ['gatunek', 'gatunki', 'gatunków'])}` : 'Zapisz obserwację'}
         </Button>
-        <ButtonLink href="/dziennik" variant="secondary">
-          Anuluj
-        </ButtonLink>
+        {edycja ? (
+          <ButtonLink href="/dziennik" variant="secondary">
+            Anuluj
+          </ButtonLink>
+        ) : (
+          <Button type="button" variant="secondary" onClick={() => void anuluj()}>
+            Anuluj
+          </Button>
+        )}
         {edycja && (
           <Button type="button" variant="ghost" tone="critical" onClick={() => setPotwierdzUsuniecie(true)}>
             Usuń obserwację
@@ -564,6 +595,28 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         }
       >
         Zniknie też ze strony „Moje miejsca”. Obserwacje z tą nazwą miejsca zostaną bez zmian.
+      </Dialog>
+      <Dialog
+        open={porzucone !== null}
+        onClose={() => setPorzucone(null)}
+        title="Wyjść bez zapisu?"
+        size="sm"
+        footer={
+          <>
+            <Button type="button" variant="secondary" onClick={() => setPorzucone(null)}>
+              Anuluj
+            </Button>
+            <Button type="button" variant="secondary" onClick={() => router.push('/dziennik')}>
+              Zostaw zdjęcia
+            </Button>
+            <Button type="button" tone="critical" onClick={() => void usunPorzuconeIWyjdz()}>
+              Usuń zdjęcia
+            </Button>
+          </>
+        }
+      >
+        {porzucone &&
+          `Do tej niezapisanej obserwacji dodałam ${porzucone.length} ${odmiana(porzucone.length, ['zdjęcie', 'zdjęcia', 'zdjęć'])}. Jeśli je zostawię, będą przy gatunkach na checkliście, ale nie w dzienniku.`}
       </Dialog>
     </form>
   );

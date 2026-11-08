@@ -129,6 +129,26 @@ export async function usunZdjecie(id: string, gatunek: string) {
   powiadom(gatunek);
 }
 
+/** The photos added to these field log sightings (by `wpis`), e.g. of a new sighting about to be dropped. */
+export async function zdjeciaWpisow(wpisy: string[]) {
+  const ids = new Set(wpisy);
+  return (await wszystkieZdjecia()).filter((z) => z.wpis !== undefined && ids.has(z.wpis));
+}
+
+/** Deletes these photos in one transaction; listeners hear of every species touched. */
+export async function usunZdjecia(zdjecia: Pick<ZdjecieWlasne, 'id' | 'gatunek'>[]) {
+  const db = await otworz();
+  await new Promise<void>((resolve, reject) => {
+    const tx = db.transaction(STORE, 'readwrite');
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error);
+    const s = tx.objectStore(STORE);
+    zdjecia.forEach((z) => s.delete(z.id));
+  });
+  new Set(zdjecia.map((z) => z.gatunek)).forEach(powiadom);
+}
+
 export function wszystkieZdjecia() {
   return transakcja<ZdjecieWlasne[]>('readonly', (s) => s.getAll());
 }
