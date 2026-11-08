@@ -337,16 +337,16 @@ export function PunktyObserwacji(dane: DanePunktow) {
     await szukajMiejsca(tekst);
   }
 
-  /** Finds a place to count from: typed coordinates, or a name through Open-Meteo. */
-  async function szukajMiejsca(wpisane: string) {
+  /** Finds a place to count from: typed coordinates, or a name through Open-Meteo. True once a place is set. */
+  async function szukajMiejsca(wpisane: string): Promise<boolean> {
     const zapytanie = wpisane.trim();
-    if (!zapytanie) return;
+    if (!zapytanie) return false;
     const numer = nowe();
     const wsp = wspolrzedneZTekstu(zapytanie);
     if (wsp) {
       ustaw({ ...wsp, nazwa: zapytanie, opis: '', zrodlo: 'wpisane' });
       setSzukanie({ stan: 'spokoj' });
-      return;
+      return true;
     }
     setSzukanie({ stan: 'szukam' });
     const kontroler = new AbortController();
@@ -355,46 +355,48 @@ export function PunktyObserwacji(dane: DanePunktow) {
     try {
       r = await fetch(adresGeokodowania(zapytanie), { signal: kontroler.signal });
     } catch (err) {
-      if (numer !== zadanie.current) return;
+      if (numer !== zadanie.current) return false;
       console.error('[punkty] geocoding request failed', err);
       setSzukanie({
         stan: 'blad',
         tytul: BLAD_WYSZUKIWANIA,
         opis: 'Wyszukiwanie po nazwie potrzebuje internetu. Sprawdź połączenie albo wpisz współrzędne, np. 36.01, -5.60.',
       });
-      return;
+      return false;
     }
-    if (numer !== zadanie.current) return;
+    if (numer !== zadanie.current) return false;
     if (!r.ok) {
       setSzukanie({
         stan: 'blad',
         tytul: BLAD_WYSZUKIWANIA,
         opis: `Open-Meteo odpowiedziało błędem (HTTP ${r.status}). Zwykle to chwilowe: spróbuj za kilka minut albo wpisz współrzędne.`,
       });
-      return;
+      return false;
     }
     let miejsca: ZnalezioneMiejsce[];
     try {
       miejsca = miejscaZGeokodowania(await r.json());
     } catch (err) {
-      if (numer !== zadanie.current) return;
+      if (numer !== zadanie.current) return false;
       console.error('[punkty] geocoding answer unreadable', err);
       setSzukanie({
         stan: 'blad',
         tytul: BLAD_WYSZUKIWANIA,
         opis: 'Wyszukiwarka odpowiedziała czymś, czego nie da się odczytać. Spróbuj później albo wpisz współrzędne.',
       });
-      return;
+      return false;
     }
-    if (numer !== zadanie.current) return;
+    if (numer !== zadanie.current) return false;
     przerwij.current = null;
     if (!miejsca.length) {
       setSzukanie({ stan: 'brak', zapytanie });
-      return;
+      return false;
     }
     ustaw({ ...miejsca[0], zrodlo: 'wpisane' });
     setSzukanie(miejsca.length > 1 ? { stan: 'wybor', miejsca } : { stan: 'spokoj' });
+    return true;
   }
+
 
   function lokalizuj() {
     const numer = nowe();
@@ -543,12 +545,42 @@ export function PunktyObserwacji(dane: DanePunktow) {
           description="Szukam w nazwach, okolicach i ptakach punktów. Jeśli to miejscowość, mogę ułożyć punkty od niej."
           action={
             <div className="punkty__przyciski">
-              <Button size="sm" onClick={() => void szukajMiejsca(zapytanie)} disabled={zajety}>
+              <Button size="sm" onClick={() =>
+                  // The town was the search's text: once it is the start, the text must stop filtering the points out.
+                  void szukajMiejsca(zapytanie).then((ok) => ok && setZapytanie(''))
+                }
+                disabled={zajety}
+              >
                 Punkty najbliżej: {zapytanie.trim()}
               </Button>
               <Button size="sm" variant="secondary" onClick={() => setZapytanie('')}>
                 Wyczyść wyszukiwanie
               </Button>
+            </div>
+          }
+          scope="section"
+        />
+      ) : widoczne.length === 0 && proponowane.length === 0 ? (
+        <StateBlock
+          state="empty"
+          title="Żaden punkt nie pasuje do tych filtrów"
+          description={
+            tylkoSezon && miesiac
+              ? `W tym miesiącu sezon ma niewiele punktów${wiatr ? ', a wybrany wiatr zawęża je jeszcze bardziej' : ''}.`
+              : 'Wybrany wiatr nie wskazuje żadnego z tych punktów.'
+          }
+          action={
+            <div className="punkty__przyciski">
+              {tylkoSezon && (
+                <Button size="sm" variant="secondary" onClick={() => setTylkoSezon(false)}>
+                  Pokaż też poza sezonem
+                </Button>
+              )}
+              {wiatr && (
+                <Button size="sm" variant="secondary" onClick={() => setWiatr(null)}>
+                  Bez wyboru wiatru
+                </Button>
+              )}
             </div>
           }
           scope="section"

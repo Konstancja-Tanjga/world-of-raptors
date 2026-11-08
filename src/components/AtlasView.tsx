@@ -102,7 +102,8 @@ export function AtlasView({
             />
           </div>
           <p className="atlas__licznik" aria-live="polite">
-            Gatunki: {wynik.length} z {zakres.length}
+            {/* A typed name searches every bird, so it counts against all of them, not the chosen kind. */}
+            Gatunki: {wynik.length} z {filtry.szukaj.trim() ? ptaki.length : zakres.length}
           </p>
         </div>
       </div>
