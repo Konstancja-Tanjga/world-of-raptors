@@ -42,7 +42,8 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * several lines would escape these checks); a gallery with anything but one
  * to six photos inside; a `<glos>` not written as a block or naming a
  * recording `idNagran` does not have; a `<model-3d>` not written as a block
- * or naming a scene sceny.ts does not have.
+ * or naming a scene sceny.ts does not have; an `<ile-ich-jest>` not written
+ * as a block or with an unknown variant.
  */
 export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
@@ -96,6 +97,17 @@ export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<st
       bledy.push(`${gdzie(i)}: zapisz model jako <model-3d data-scena="…"> w osobnej linii, a </model-3d> w następnej`);
     } else if (!SCENY[id]) {
       bledy.push(`${gdzie(i)}: sceny „${id}” nie ma w src/lib/budowa/sceny.ts`);
+    }
+  }
+
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    if (!/<ile-ich-jest\b/i.test(t)) continue;
+    const m = /^<ile-ich-jest(?: data-wariant="([^"]+)")?>$/.exec(t);
+    if (!m || linie[i + 1]?.trim() !== '</ile-ich-jest>') {
+      bledy.push(`${gdzie(i)}: zapisz ćwiczenie jako <ile-ich-jest> albo <ile-ich-jest data-wariant="powroty"> w osobnej linii, a </ile-ich-jest> w następnej`);
+    } else if (m[1] && m[1] !== 'kontrole' && m[1] !== 'powroty') {
+      bledy.push(`${gdzie(i)}: <ile-ich-jest>: nieznany wariant „${m[1]}” (kontrole albo powroty)`);
     }
   }
 

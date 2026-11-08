@@ -1045,7 +1045,8 @@ export async function ideaKursu() {
  * the goshawk its 3D model is built after, A10 with a cinereous vulture
  * perched like a living fossil, A11 with a black-winged kite, the hoverer,
  * A12 with a long-eared owl, a tenant of old crows' nests, A13 with a
- * sparrowhawk, the hunter of small birds, B5 with an eagle owl, B7 with the
+ * sparrowhawk, the hunter of small birds, A14 with a tawny owl, the bird
+ * counted by ear and heard only when it calls, B5 with an eagle owl, B7 with the
  * widest wingspan of the atlas, the cinereous vulture's, B8 with a honey
  * buzzard, the bird of the Strait's busiest days, B10 with a perched
  * white-tailed eagle, the bird that takes five years to grow up, and the
@@ -1065,6 +1066,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   lot: { gatunek: 'kaniuk', zdjecie: 'lot' },
   krukowate: { gatunek: 'uszatka', zdjecie: 'lot' },
   'male-ptaki': { gatunek: 'krogulec', zdjecie: 'siedzacy' },
+  'liczenie-ptakow': { gatunek: 'puszczyk', zdjecie: 'siedzacy' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },

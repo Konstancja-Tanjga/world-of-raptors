@@ -396,6 +396,39 @@
       ]
     },
     {
+      "id": "A14",
+      "slug": "liczenie-ptakow",
+      "sciezka": "a",
+      "tytul": "Policzyć niewidzialne: jak liczy się ptaki lęgowe",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-cenzus-i-monitoring",
+          "tytul": "Cenzus, inwentaryzacja, monitoring"
+        },
+        {
+          "slug": "02-wykrywalnosc",
+          "tytul": "Wykrywalność: ptaki, których nie słychać"
+        },
+        {
+          "slug": "03-gdzie-liczyc",
+          "tytul": "Gdzie liczyć: powierzchnie próbne i losowanie"
+        },
+        {
+          "slug": "04-jak-liczyc",
+          "tytul": "Jak liczyć: transekt, punkt i standaryzacja"
+        },
+        {
+          "slug": "05-jak-dolaczyc",
+          "tytul": "Jak dołączyć do monitoringu"
+        },
+        {
+          "slug": "06-cwiczenia",
+          "tytul": "Ćwiczenia i quiz"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

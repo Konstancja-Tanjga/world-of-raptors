@@ -67,3 +67,10 @@ test('a recording tag names a recording in the catalogue, as a block', () => {
   assert.match(problemyTagow('<glos data-id="puszczyk/samica">\n</glos>', 'l.md', ids)[0], /nie ma w content\/nagrania.json/);
   assert.match(problemyTagow('Słuchaj: <glos data-id="puszczyk/samiec"></glos>', 'l.md', ids)[0], /osobnej linii/);
 });
+
+test('the detectability exercise is a block with a known variant', () => {
+  assert.deepEqual(problemyTagow('<ile-ich-jest>\n</ile-ich-jest>', 'l.md'), []);
+  assert.deepEqual(problemyTagow('<ile-ich-jest data-wariant="powroty">\n</ile-ich-jest>', 'l.md'), []);
+  assert.match(problemyTagow('<ile-ich-jest data-wariant="trend">\n</ile-ich-jest>', 'l.md')[0], /nieznany wariant/);
+  assert.match(problemyTagow('Spróbuj: <ile-ich-jest></ile-ich-jest>', 'l.md')[0], /osobnej linii/);
+});
