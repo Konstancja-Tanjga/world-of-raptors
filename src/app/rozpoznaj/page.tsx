@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Rozpoznaj, type GatunekRozpoznania } from '@/components/Rozpoznaj';
 import { gatunki, ptakiMiarki, zdjecia } from '@/lib/content';
 import '../gatunki/atlas.css';
 import './rozpoznaj.css';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
+import { ButtonLink } from '@/components/ButtonLink';
 
 export const metadata: Metadata = {
   title: 'Rozpoznaj',
@@ -24,16 +25,15 @@ export default function RozpoznajPage() {
   const odniesienia = ptakiMiarki.map(({ id, pl, dlugosc_cm }) => ({ id, pl, dlugosc_cm }));
   return (
     <div className="page">
-      <header className="naglowek-strony">
-        <p className="eyebrow">W teren</p>
-        <h1 className="naglowek-strony__tytul">Rozpoznaj</h1>
-        <p className="naglowek-strony__lead">
-          Cztery pytania i pasujące gatunki.{' '}
-          <Link href="/rozpoznaj/glos" className="text-link">
-            Rozpoznaj po głosie
-          </Link>
-        </p>
-      </header>
+      <NaglowekStrony
+        tytul="Rozpoznaj"
+        lead="Cztery pytania i pasujące gatunki."
+        akcje={
+          <ButtonLink href="/rozpoznaj/glos" variant="secondary" size="sm">
+            Po głosie
+          </ButtonLink>
+        }
+      />
       <Rozpoznaj gatunki={dane} odniesienia={odniesienia} />
     </div>
   );

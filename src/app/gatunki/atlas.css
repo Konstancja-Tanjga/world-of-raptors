@@ -18,6 +18,16 @@
   margin: 0;
   color: var(--bh-text-muted);
 }
+/* On a wide screen the count sits at the end of the filters' row, so the pinned bar stays one row tall. */
+@media (min-width: 48rem) {
+  .atlas__narzedzia {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+  .atlas__licznik {
+    padding-bottom: var(--bh-gap-snug);
+  }
+}
 .atlas__ciekawostka {
   max-width: 60rem;
   margin-top: var(--wor-space-block);

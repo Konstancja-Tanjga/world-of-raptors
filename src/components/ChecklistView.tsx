@@ -339,6 +339,7 @@ export function ChecklistView({
       )}
 
       <SpeciesFilters
+        przyklejone
         filtry={filtry}
         obok={
           <div className="scroll-x">

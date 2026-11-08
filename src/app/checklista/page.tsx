@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ChecklistView } from '@/components/ChecklistView';
 import { Sylwetka } from '@/components/Sylwetka';
 import { gatunki, listaMiejsca, ptakiEuropy, ptakiNaLiscie } from '@/lib/content';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
 
 // Personal: what I saw, learned and earned, kept in this browser; nothing for a search engine.
 export const metadata: Metadata = { title: 'Moja checklista', robots: { index: false } };
@@ -9,10 +10,7 @@ export const metadata: Metadata = { title: 'Moja checklista', robots: { index: f
 export default function ChecklistaPage() {
   return (
     <div className="page">
-      <header className="naglowek-strony">
-        <p className="eyebrow">Moja lista</p>
-        <h1 className="naglowek-strony__tytul">Moja checklista</h1>
-      </header>
+      <NaglowekStrony tytul="Checklista" />
       <ChecklistView
         ptaki={ptakiNaLiscie}
         pozostale={ptakiEuropy}

@@ -85,7 +85,7 @@ export function AtlasView({
 
   return (
     <div className="atlas">
-      <div className="atlas__narzedzia">
+      <div className="atlas__narzedzia pasek-filtrow">
         <SpeciesFilters
           filtry={filtry}
           onChange={setFiltry}

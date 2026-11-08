@@ -713,6 +713,24 @@ li {
   color: var(--bh-text-secondary);
 }
 
+/* The filters stay under the navigation while the list scrolls, on screens tall and wide enough to spare the
+   room. Opened, the extra filters are too tall to pin: the bar then scrolls away with the page. */
+@media (min-width: 48rem) and (min-height: 36rem) {
+  .pasek-filtrow {
+    position: sticky;
+    top: var(--wor-nav-height);
+    z-index: var(--bh-layer-raised);
+    margin-inline: calc(-1 * var(--wor-gutter));
+    padding: var(--bh-gap-snug) var(--wor-gutter);
+    background: var(--bh-material-chrome-bg);
+    -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+    backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+  }
+  .pasek-filtrow:has(.filters__wiecej:not([hidden])) {
+    position: static;
+  }
+}
+
 /* Checklist */
 .checklist__grupa {
   display: flex;
@@ -1367,6 +1385,33 @@ li {
   font-family: var(--wor-font-text);
   font-size: var(--wor-size-lead);
   line-height: var(--bh-text-leading-normal);
+}
+
+/* A tool page's header (NaglowekStrony): title, count and actions on one row, the lead one line under it. */
+.naglowek-strony--narzedzie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--bh-gap-normal) var(--bh-gap-loose);
+  max-width: none;
+  padding-bottom: var(--bh-gap-loose);
+}
+.naglowek-strony__tekst {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  min-width: 0;
+}
+.naglowek-strony--narzedzie .naglowek-strony__tytul {
+  font-size: var(--wor-size-title);
+}
+.naglowek-strony--narzedzie .naglowek-strony__lead {
+  font-size: var(--bh-text-size-body);
+}
+.naglowek-strony__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
 }
 
 /* Flashcards */

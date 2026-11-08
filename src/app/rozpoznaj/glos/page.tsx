@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { RozpoznajGlos } from '@/components/RozpoznajGlos';
 import { gatunki, ptakiMokradel } from '@/lib/content';
 import './glos.css';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
 
 export const metadata: Metadata = {
   title: 'Rozpoznaj po głosie',
@@ -12,13 +13,7 @@ export default function RozpoznajGlosPage() {
   const poLacinie = Object.fromEntries([...gatunki, ...ptakiMokradel].map((p) => [p.lat, p.id]));
   return (
     <div className="page">
-      <header className="naglowek-strony">
-        <p className="eyebrow">W teren</p>
-        <h1 className="naglowek-strony__tytul">Rozpoznaj po głosie</h1>
-        <p className="naglowek-strony__lead">
-          BirdNET słucha przez mikrofon telefonu i podpowiada, kto to.
-        </p>
-      </header>
+      <NaglowekStrony tytul="Rozpoznaj po głosie" lead="BirdNET słucha przez mikrofon telefonu i podpowiada, kto to." />
       <RozpoznajGlos poLacinie={poLacinie} />
       <p className="glos__zrodlo muted">
         Rozpoznawanie:{' '}

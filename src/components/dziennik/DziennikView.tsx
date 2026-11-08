@@ -52,12 +52,16 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   );
 
   if (!dziennik) return <StateBlock state="loading" title="Wczytywanie dziennika" scope="section" />;
+  const nowa = gatunek ? `/dziennik/obserwacja?gatunek=${gatunek}` : '/dziennik/obserwacja';
   const nazwaGatunku = gatunek ? (poId.get(gatunek)?.pl ?? gatunek) : null;
 
   return (
     <div className="stack">
       <div className="row">
-        <ButtonLink href={gatunek ? `/dziennik/obserwacja?gatunek=${gatunek}` : '/dziennik/obserwacja'}>Dodaj obserwację</ButtonLink>
+        {/* An empty log offers the same button in its empty state: one is enough. */}
+        {lista.length > 0 && (
+          <ButtonLink href={nowa}>Dodaj obserwację</ButtonLink>
+        )}
         {KIEDY_I_GDZIE && (
           <ButtonLink href="/kiedy-i-gdzie#co-tu" variant="secondary">
             Co tu zobaczę?
@@ -84,7 +88,7 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
           state="empty"
           title={nazwaGatunku ? 'Brak obserwacji tego gatunku' : 'Dziennik jest jeszcze pusty'}
           description="Pierwsza obserwacja gatunku odhacza go też na checkliście."
-          action={<ButtonLink href="/dziennik/obserwacja" size="sm">Dodaj pierwszą obserwację</ButtonLink>}
+          action={<ButtonLink href={nowa} size="sm">Dodaj pierwszą obserwację</ButtonLink>}
           scope="section"
         />
       ) : (

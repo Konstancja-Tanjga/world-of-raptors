@@ -5,6 +5,7 @@ import { rysunek } from '@/components/niebo/rysunek';
 import { Sylwetka } from '@/components/Sylwetka';
 import { gwiazdozbioryKursu, strukturaNieba } from '@/lib/content';
 import { NASZYWKI } from '@/lib/odznaki';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
 
 // Personal: what I saw, learned and earned, kept in this browser; nothing for a search engine.
 export const metadata: Metadata = { title: 'Moje niebo', robots: { index: false } };
@@ -13,10 +14,7 @@ export default function MojeNieboPage() {
   const struktura = strukturaNieba();
   return (
     <div className="page moje-niebo">
-      <header className="naglowek-strony">
-        <p className="eyebrow">Moja kolekcja</p>
-        <h1 className="naglowek-strony__tytul">Moje niebo</h1>
-      </header>
+      <NaglowekStrony tytul="Moje niebo" />
       <MojeNiebo
         struktura={struktura}
         gwiazdozbiory={gwiazdozbioryKursu()}

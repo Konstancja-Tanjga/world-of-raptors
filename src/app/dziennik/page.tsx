@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { DziennikView } from '@/components/dziennik/DziennikView';
 import { ptakiDziennika } from './ptaki';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
 
 // Personal: my sightings, kept in this browser; nothing for a search engine.
 export const metadata: Metadata = { title: 'Dziennik obserwacji', robots: { index: false } };
@@ -8,10 +9,7 @@ export const metadata: Metadata = { title: 'Dziennik obserwacji', robots: { inde
 export default function DziennikPage() {
   return (
     <div className="page">
-      <header className="naglowek-strony">
-        <p className="eyebrow">Moja lista</p>
-        <h1 className="naglowek-strony__tytul">Dziennik obserwacji</h1>
-      </header>
+      <NaglowekStrony tytul="Dziennik obserwacji" />
       <DziennikView ptaki={ptakiDziennika} />
     </div>
   );
