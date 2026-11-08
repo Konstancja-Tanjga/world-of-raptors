@@ -8,10 +8,10 @@ Nie każda sowa odzywa się w środku nocy: sóweczka woła o zmierzchu i świci
 |---|---|---|
 | Puchacz | I–III (także X–XI) | zmierzch, pierwsza połowa nocy |
 | Puszczyk | X–XI i II–III | cała noc, zwłaszcza po zmroku |
-| Puszczyk uralski | II–IV | noc |
+| Puszczyk uralski | III–V (także IX–XI) | od zmroku do północy, słabiej ok. 2–3 w nocy |
 | Płomykówka | III–VIII | noc |
 | Uszatka | II–IV (samce), VI–VII (młode) | noc |
-| Uszatka błotna | zimą i w czasie przelotów | **dzień**, zwłaszcza popołudnie |
+| Uszatka błotna | głos i loty godowe z klaskaniem: III–VI (w Polsce rzadko); zimą i na przelotach zwykle milczy | wieczór i noc; widywana za dnia, zwłaszcza po południu |
 | Pójdźka | II–V | zmierzch, noc, także dzień |
 | Włochatka | III–IV | noc, najlepiej bezwietrzna |
 | Sóweczka | III–IV i IX–X | **zmierzch i świt** |
@@ -80,8 +80,8 @@ Obserwację sowy jarzębatej albo sowy śnieżnej zgłoś do [Komisji Faunistycz
 4. Porównaj nagranie z xeno-canto albo użyj aplikacji Merlin (rozpoznaje głosy, ale sprawdzaj jej wyniki).
 
 ## Etyka: szczególnie ważna u sów
-- **Nie odtwarzaj głosów (wabienie) w sezonie lęgowym.** Sowa traktuje nagranie jak intruza, traci czas i energię, a może nawet porzucić gniazdo.
-- Nie świeć latarką prosto w sowę dłużej niż kilka sekund.
+- **Nie odtwarzaj głosów (wabienie) w sezonie lęgowym.** Sowa traktuje nagranie jak intruza: traci czas i energię na szukanie rywala, a jej lęg zostaje w tym czasie bez opieki. Małą sowę wabienie może też wystawić na atak większej.
+- Nie kieruj światła latarki bezpośrednio na sowę. Świeć pod nogi albo obok.
 - Nie podchodź do dziupli ani gniazd. Puszczyk uralski i puszczyk bronią ich atakiem.
 - Nie publikuj lokalizacji gniazd gatunków rzadkich (puchacz, puszczyk mszarny, sóweczka, włochatka).
 - Wokół znanych gniazd czterech sów regionalny dyrektor ochrony środowiska (RDOŚ) może wyznaczyć strefy ochronne: u puchacza i puszczyka mszarnego do 200 m przez cały rok i do 500 m od 1 stycznia do 31 lipca, u sóweczki i włochatki do 50 m.
@@ -92,6 +92,7 @@ Obserwację sowy jarzębatej albo sowy śnieżnej zgłoś do [Komisji Faunistycz
 - [YouTube: puszczyk uralski w Karpatach](https://www.youtube.com/results?search_query=Ural+owl+Carpathians)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [xeno-canto](https://xeno-canto.org): nagrania do porównania
 - [Merlin Bird ID (Cornell Lab)](https://merlin.allaboutbirds.org)
 - [eBird: Polska](https://ebird.org/region/PL) i [eBird: Andaluzja](https://ebird.org/region/ES-AN): gdzie i kiedy notowano sowy

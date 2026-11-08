@@ -23,7 +23,7 @@ Co zadziałało:
 Bielik wrócił też sam do krajów, z których zniknął, np. do Danii i Holandii. W Szkocji i Irlandii przywrócono go przez reintrodukcję (ptaki sprowadzone m.in. z Norwegii).
 
 ## Sokół wędrowny w Polsce: powrót na drzewa
-**Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) gniazdował w Polsce głównie **na drzewach**, w starych gniazdach innych ptaków w borach sosnowych. To nietypowe, bo w większości Europy sokoły gniazdują na skałach. W wyniku DDT i prześladowania populacja drzewna **wymarła** w Polsce w drugiej połowie XX wieku (ostatnie lęgi w latach 60.–70., według różnych źródeł).
+**Sokół wędrowny** (*Falco peregrinus*, ang. Peregrine Falcon) gniazdował w Polsce głównie **na drzewach**, w starych gniazdach innych ptaków w borach sosnowych. To nietypowe, bo w większości Europy sokoły gniazdują na skałach. W wyniku DDT i prześladowania populacja drzewna **wymarła** w Polsce w drugiej połowie XX wieku (ostatni lęg stwierdzono w 1964 r.).
 
 ### Program restytucji
 
@@ -127,6 +127,7 @@ Ważna lekcja: **reintrodukcja działa tylko wtedy, gdy wcześniej usunie się p
 - [YouTube: orzeł iberyjski, historia ratowania](https://www.youtube.com/results?search_query=spanish+imperial+eagle+conservation)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Stowarzyszenie na rzecz Dzikich Zwierząt „Sokół”](https://www.sokoly.pl)
 - [Komitet Ochrony Orłów](https://koo.org.pl)
 - [Vulture Conservation Foundation](https://www.4vultures.org)

@@ -20,8 +20,9 @@ Najważniejsza cecha. Zwróć uwagę na:
 | Siedlisko | Gatunki |
 |---|---|
 | stary las liściasty, parki | puszczyk |
-| stary las iglasty, góry | sóweczka, włochatka, puszczyk uralski |
-| skały, kamieniołomy, wąwozy | puchacz |
+| stary las iglasty, świerczyny, góry | sóweczka, włochatka |
+| stare buczyny i lasy mieszane, góry | puszczyk uralski, włochatka |
+| skały, kamieniołomy, wąwozy, duże stare lasy na nizinach | puchacz |
 | wieś, stodoły, kościoły | płomykówka, pójdźka |
 | zadrzewienia wśród pól | uszatka |
 | łąki, mokradła (zimą) | uszatka błotna |
@@ -65,6 +66,7 @@ Najważniejsza cecha. Zwróć uwagę na:
 - [YouTube: małe ptaki atakują sowę (mobbing)](https://www.youtube.com/results?search_query=small+birds+mobbing+owl)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [xeno-canto](https://xeno-canto.org): nagrania głosów wszystkich gatunków
 - [Merlin Bird ID (Cornell Lab)](https://merlin.allaboutbirds.org): rozpoznawanie głosów w aplikacji
 - [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków (część treści płatna)

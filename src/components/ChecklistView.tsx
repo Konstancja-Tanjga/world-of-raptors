@@ -370,6 +370,10 @@ export function ChecklistView({
           },
         }}
       />
+      {!q && (
+        // The rest of Europe's birds stay out of the list until a name finds them; say so, or they seem missing.
+        <p className="muted">Pozostałe ptaki Europy ({pozostale.length} gatunków) pokażą się po wpisaniu nazwy w wyszukiwarce.</p>
+      )}
       {pasujacePozostale.length > NAJWIECEJ_POZOSTALYCH && (
         <p className="muted" role="status">
           Spoza kursu pasuje {pasujacePozostale.length} ptaków, pokazuję pierwsze {NAJWIECEJ_POZOSTALYCH}. Wpisz dłuższą nazwę.

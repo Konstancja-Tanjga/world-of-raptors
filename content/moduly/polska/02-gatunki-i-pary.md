@@ -51,14 +51,14 @@ Status: lęgowy.
 - **Sylwetka:** mały orzeł, wielkości dużego myszołowa, ale z **dłuższymi, bardziej prostokątnymi skrzydłami**, 7 „palcami” i **krótkim ogonem**. Szybuje z **lekko opuszczoną „ręką”**.
 - **Wzór (spód):** pokrywy podskrzydłowe **jaśniejsze albo tak samo jasne jak lotki**; u dorosłego mały jasny klin u nasady lotek I-rzędowych.
 - **Wzór (wierzch):** jaśniejsze pokrywy, często **jasna plamka u nasady ogona** (na kuprze), jasne „okna” na nasadzie lotek I-rzędowych.
-- **Gdzie:** wschodnia i północno-wschodnia Polska, Karpaty: podmokłe łąki na skraju lasów. Przylatuje pod koniec kwietnia, odlatuje we wrześniu.
+- **Gdzie:** wschodnia i północno-wschodnia Polska, Karpaty: podmokłe łąki na skraju lasów. Przylatuje na początku kwietnia (pojedyncze ptaki już pod koniec marca), a w połowie miesiąca większość par zajmuje rewiry i krótko, intensywnie tokuje. Odlatuje we wrześniu.
 
 ### Orlik grubodzioby — *Clanga clanga* (ang. Greater Spotted Eagle)
 
 Status: lęgowy, rzadki.
 
 - **Rozpiętość:** ok. 155–180 cm
-- **Klucz:** większy i masywniejszy od orlika krzykliwego, **ciemniejszy**. Pokrywy podskrzydłowe **ciemniejsze od lotek** (odwrotnie niż u krzykliwego). Młode mają białe kropkowanie na wierzchu skrzydeł.
+- **Klucz:** większy i masywniejszy od orlika krzykliwego, **ciemniejszy**. Pokrywy podskrzydłowe **ciemniejsze od lotek** (odwrotnie niż u krzykliwego). Młode często mają rzędy dużych jasnych plam na wierzchu skrzydeł, ale bywa tak też u młodych orlików krzykliwych i mieszańców, więc ta cecha nie rozstrzyga. Sprawdź potylicę: u młodego grubodziobego jest jednolicie ciemna, u krzykliwego zwykle z jasną plamą.
 - **Gdzie:** skrajnie rzadki, pojedyncze pary, głównie w Dolinie Biebrzy. Występują też mieszańce z orlikiem krzykliwym, co jeszcze utrudnia rozpoznanie.
 
 ### Orlik krzykliwy czy myszołów?
@@ -110,7 +110,7 @@ Status: zimuje.
 
 Status: lęgowy, przelotny.
 
-Pełna karta i porównanie z myszołowem: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md). W Polsce od maja do sierpnia, lasy z polanami.
+Pełna karta i porównanie z myszołowem: [moduł o cieśninie, sekcja B](../gibraltar/03-gatunki-i-pary.md). W Polsce od maja do sierpnia. Gniazduje w dużych, starych lasach liściastych i mieszanych, a żeruje też na polanach i w mozaice pól.
 
 ---
 
@@ -181,7 +181,7 @@ Wrócił do Polski dzięki programowi restytucji. Dziś gniazduje m.in. na wysok
 ---
 
 ## F. Rybołów
-Pełna karta: [moduł o cieśninie, sekcja C](../gibraltar/03-gatunki-i-pary.md). W Polsce nieliczny, głównie na Pomorzu i Mazurach. Na przelotach nad jeziorami i stawami w całym kraju.
+Pełna karta: [moduł o cieśninie, sekcja C](../gibraltar/03-gatunki-i-pary.md). W Polsce skrajnie nieliczny: według poradnika GIOŚ z 2015 r. poniżej 50 par, z tendencją spadkową, głównie na Pojezierzu Mazurskim i na pograniczu Wielkopolski i Pomorza. Na przelotach nad jeziorami i stawami w całym kraju.
 
 ### Rybołów czy młody bielik nad jeziorem?
 
@@ -215,6 +215,7 @@ Rybołów jest dużo mniejszy, ma **biały spód**, skrzydła w „M” i ciemne
 - [YouTube: pustułka, kobuz i drzemlik, porównanie](https://www.youtube.com/results?search_query=kestrel+hobby+merlin+identification)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Wikipedia: Bielik](https://pl.wikipedia.org/wiki/Bielik), [Orlik krzykliwy](https://pl.wikipedia.org/wiki/Orlik_krzykliwy), [Myszołów włochaty](https://pl.wikipedia.org/wiki/Myszo%C5%82%C3%B3w_w%C5%82ochaty)
 - [Wikipedia: Lesser spotted eagle](https://en.wikipedia.org/wiki/Lesser_spotted_eagle) i [Rough-legged buzzard](https://en.wikipedia.org/wiki/Rough-legged_buzzard)
 - [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków

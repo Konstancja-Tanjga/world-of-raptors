@@ -29,7 +29,7 @@ Sieweczki żerują inaczej niż biegusy: biegną kilka kroków, zatrzymują się
 
 ### Sieweczka obrożna — *Charadrius hiaticula* (ang. Common Ringed Plover)
 
-Największa i najkrępsza z trzech, mniej więcej wielkości biegusa zmiennego. Ma pełną, szeroką obrożę, a dorosła latem pomarańczowe nogi i pomarańczowy dziób z czarnym końcem. To sieweczka wybrzeży: plaż, piaszczystych łach i mulisk przy morzu, a na przelotach także brzegów jezior. W locie pokazuje szeroką białą wstęgę przez całe skrzydło.
+Największa i najkrępsza z trzech, mniej więcej wielkości biegusa zmiennego. Ma pełną, szeroką obrożę, a dorosła latem pomarańczowe nogi i pomarańczowy dziób z czarnym końcem. To głównie sieweczka wybrzeży: plaż, piaszczystych łach i mulisk przy morzu. W Polsce gniazduje jednak najliczniej na piaszczystych wyspach i łachach środkowej Wisły, a także nad dolnym Bugiem; nad Bałtykiem tylko część krajowej populacji. Na przelotach bywa nad jeziorami. W locie pokazuje szeroką białą wstęgę przez całe skrzydło.
 
 ### Sieweczka rzeczna — *Charadrius dubius* (ang. Little Ringed Plover)
 
@@ -41,7 +41,7 @@ Najjaśniejsza z trzech, piaskowa z wierzchu, jakby wyblakła od słońca. Obro�
 
 ### Jak je rozdzielić
 
-1. **Miejsce i sylwetka.** Żwirowisko w głębi lądu w maju podpowiada sieweczkę rzeczną, plaża nad Bałtykiem w sierpniu obrożną, solnisko pod Kadyksem morską. To tylko podpowiedź: na przelotach obrożna bywa nad jeziorami, a rzeczna na brzegu morza. Rzeczna jest wyraźnie drobniejsza i dłuższa z tyłu, obrożna krępa i okrągłogłowa.
+1. **Miejsce i sylwetka.** Żwirowisko albo wyrobisko w głębi lądu w maju podpowiada sieweczkę rzeczną (choć na piaszczystych łachach Wisły gniazduje też obrożna), plaża nad Bałtykiem w sierpniu obrożną, solnisko pod Kadyksem morską. To tylko podpowiedź: na przelotach obrożna bywa nad jeziorami, a rzeczna na brzegu morza. Rzeczna jest wyraźnie drobniejsza i dłuższa z tyłu, obrożna krępa i okrągłogłowa.
 2. **Nogi.** Pomarańczowe: obrożna. Matowe, cieliste: rzeczna. Ciemne: morska. Nogi widać nawet wtedy, gdy wzór na głowie ginie w drganiu powietrza.
 3. **Oko i obroża.** Żółta obwódka wokół oka to rzeczna. Obroża rozerwana na dwie plamy to morska.
 4. **Lot.** Spłoszona obrożna i morska pokażą białą wstęgę na skrzydle, rzeczna odleci z jednolitym wierzchem skrzydła.
@@ -219,6 +219,7 @@ Najwięcej daje cierpliwość. Ptak, który teraz śpi z dziobem pod skrzydłem,
 - [BTO Bird ID: Knot and Dunlin, Sanderling and Curlew Sandpiper](https://www.youtube.com/results?search_query=BTO+Bird+ID+Knot+Dunlin+Curlew+Sandpiper)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 
 - [BTO BirdFacts: Little Ringed Plover](https://www.bto.org/understanding-birds/birdfacts/little-ringed-plover): żółta obwódka oka jako cecha rozstrzygająca, brak wstęgi na skrzydle, żwirowiska
 - [BirdGuides: Focus on spring Ringed Plovers](https://www.birdguides.com/articles/general-birding/species-profiles/focus-on-spring-ringed-plovers/)

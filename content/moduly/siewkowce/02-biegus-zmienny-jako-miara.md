@@ -139,7 +139,7 @@ Wiosną samce zakładają kryzy i pióra na głowie, a każdy wygląda inaczej: 
 
 </margines>
 
-W Polsce batalion gnieździł się kiedyś licznie na Bagnach Biebrzańskich, a dziś gniazduje tam tylko sporadycznie. Biebrza jest za to ważnym wiosennym przystankiem w drodze z Afryki do tundry, a tańce samców na łąkach przyciągają tam wiosną nie tylko ornitologów. Park kosi zarastające łąki, żeby bataliony znów miały gdzie gniazdować. Liczebność batalionu w Polsce, podobnie jak w Finlandii, Estonii, na Łotwie i w Holandii, spadła o ponad połowę. Poza lęgami batalion korzysta z różnych płytkich mokradeł: zalanych pól, brzegów jezior, rozlewisk, a zimą chętnie z pól ryżowych.
+W Polsce do połowy lat 90. batalion gniazdował regularnie, głównie na północy kraju, także na Bagnach Biebrzańskich; po 2000 r. notowano już tylko pojedyncze lęgi i według poradnika GIOŚ z 2015 r. jest u nas na krawędzi wymarcia. Biebrza jest za to ważnym wiosennym przystankiem w drodze z Afryki do tundry, a tańce samców na łąkach przyciągają tam wiosną nie tylko ornitologów. Park kosi zarastające łąki, żeby bataliony znów miały gdzie gniazdować. W Finlandii, Estonii, na Łotwie i w Holandii jego liczebność spadła o ponad połowę. Poza lęgami batalion korzysta z różnych płytkich mokradeł: zalanych pól, brzegów jezior, rozlewisk, a zimą chętnie z pól ryżowych.
 
 ## Posłuchaj miarki
 
@@ -161,6 +161,7 @@ Batalion prawie zawsze milczy. Jeśli z nadlatującego stada średnich siewkowc�
 - [YouTube: tokowisko batalionów (ruff lek)](https://www.youtube.com/results?search_query=ruff+lek+display)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Cornell Lab, All About Birds: Shorebird ID Tips (kartka do kursu, PDF)](https://www.sawmillriveraudubon.org/docs/ShorebirdIDCard-AllAboutBirds.pdf)
 - [BTO Bird ID: Sanderling and Curlew Sandpiper](https://www.bto.org/learn/skills/bird-identification/videos/sanderling-curlew-sandpiper)
 - [Wikipedia: Dunlin](https://en.wikipedia.org/wiki/Dunlin)
