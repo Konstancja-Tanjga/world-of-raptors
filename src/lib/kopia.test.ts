@@ -67,3 +67,16 @@ test('a v4 file carries the field log; a damaged log refuses the whole file', as
     /dziennik obserwacji/,
   );
 });
+
+test('places: kept when well formed, a damaged set refuses the whole file', async () => {
+  const miejsca = {
+    'a1b2': { nazwa: 'La Janda', szer: 36.2193, dl: -5.7831, data: '2026-11-08', zmieniono: '2026-11-08T10:00:00.000Z' },
+  };
+  const kopia = await odczytajKopie(JSON.stringify({ wersja: 3, checklista: {}, postep: {}, miejsca }));
+  assert.deepEqual(kopia.miejsca, miejsca);
+  assert.equal((await odczytajKopie(JSON.stringify({ wersja: 3, checklista: {}, postep: {} }))).miejsca, undefined);
+  await assert.rejects(
+    odczytajKopie(JSON.stringify({ wersja: 3, checklista: {}, postep: {}, miejsca: { a1b2: { nazwa: 'La Janda' } } })),
+    /moje miejsca/,
+  );
+});

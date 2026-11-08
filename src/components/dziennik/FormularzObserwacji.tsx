@@ -5,6 +5,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { dzisiaj } from '@/lib/checklist';
 import { jestDniem, LIMITY, nazwaWPoblizu, punktSlownie, type Punkt } from '@/lib/dziennik';
 import { noweIdWpisu, useDziennik } from '@/lib/dziennikMagazyn';
+import { aktywne, najblizszeMoje } from '@/lib/mojeMiejsca';
+import { useMojeMiejsca } from '@/lib/mojeMiejscaMagazyn';
 import { wspolrzedneZTekstu, type Wspolrzedne } from '@/lib/punkty';
 import type { PtakDoWyboru } from '@/lib/types';
 import { ButtonLink } from '../ButtonLink';
@@ -33,6 +35,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   const router = useRouter();
   const { notify } = useToast();
   const { dziennik, zapisz, usun } = useDziennik();
+  const { miejsca } = useMojeMiejsca();
 
   // The address is read after mount: the page is prerendered without its query.
   const [adres, setAdres] = useState<{ id: string | null; gatunek: string | null } | null>(null);
@@ -96,7 +99,8 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   /** A new point: the place's name is offered from an earlier sighting nearby, if none is typed yet. */
   const ustawPunkt = (p: Punkt | null) => {
     setPunkt(p);
-    const nazwa = p && dziennik ? nazwaWPoblizu(dziennik, p) : undefined;
+    // An earlier sighting's name within 500 m, else my saved place within 1 km ("Moje miejsca").
+    const nazwa = p ? ((dziennik && nazwaWPoblizu(dziennik, p)) || (miejsca && najblizszeMoje(miejsca, p, 1)?.miejsce.nazwa)) : undefined;
     // A functional update: a GPS fix can take 20 s, and a name typed meanwhile must stay.
     if (nazwa) setMiejsce((m) => (m.trim() ? m : nazwa));
   };
@@ -331,12 +335,17 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         )}
         <Input
           label="Nazwa miejsca"
-          description="Jak je nazywam, np. „Łąki pod Kampinosem”. Podpowiadam nazwę, której użyłam w promieniu 500 m."
+          description="Jak je nazywam, np. „Łąki pod Kampinosem”. Podpowiadam nazwę obserwacji w promieniu 500 m albo moje miejsce w promieniu 1 km."
+          list="dziennik-moje-miejsca"
           value={miejsce}
           maxLength={200}
           onChange={(e) => setMiejsce(e.target.value)}
         />
       </fieldset>
+
+      <datalist id="dziennik-moje-miejsca">
+        {miejsca && aktywne(miejsca).map(([id, m]) => <option key={id} value={m.nazwa} />)}
+      </datalist>
 
       <Textarea label="Notatka" rows={3} maxLength={2000} value={notatka} onChange={(e) => setNotatka(e.target.value)} />
 

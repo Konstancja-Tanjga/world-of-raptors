@@ -14,6 +14,7 @@
  * pass, and an entry that only arrived from the server is not sent back.
  */
 
+import { ID_MIEJSCA, isMojeMiejsce, type MojeMiejsca, type MojeMiejsce } from './mojeMiejsca';
 import type { Checklista, Obserwacja } from './obserwacje';
 import { ID_WPISU, isWpis, LIMITY, ZRODLA_PUNKTU, type Dziennik, type WpisDziennika, type ZrodloPunktu } from './dziennik';
 import { isFiszki, type Fiszki, type ZapisFiszki } from './fiszki';
@@ -36,7 +37,7 @@ const nic: Pomin = () => {};
  * (a row written by a newer or buggy app version must not break a pass).
  */
 export type Tabela<L> = {
-  nazwa: 'lesson_progress' | 'observations' | 'sightings' | 'flashcards' | 'user_badges';
+  nazwa: 'lesson_progress' | 'observations' | 'sightings' | 'flashcards' | 'user_badges' | 'places';
   /** The key column (with user_id, the table's primary key). */
   klucz: string;
   wiersze(lokalne: L): Wiersz[];
@@ -73,7 +74,7 @@ const nowszy = (zdalny: string, lokalny: string | undefined) => lokalny === unde
 const odciskZmiany = (w: Wiersz) => `${czas(w.updated_at)}|${w.deleted_at ? 'x' : ''}`;
 
 /** The server's limits on text (supabase/migrations/): longer text is cut so the row is not refused. */
-const NAJWIECEJ = { place: LIMITY.miejsce, note: LIMITY.notatka } as const;
+const NAJWIECEJ = { place: LIMITY.miejsce, note: LIMITY.notatka, name: 80 } as const;
 
 // ---- Lessons ----
 
@@ -217,6 +218,58 @@ export const DZIENNIK: Tabela<Dziennik> = {
       dziennik[id] = wpis;
     }
     return dziennik;
+// ---- The owner's places ----
+
+/** A number from the server: Postgres numerics may arrive as strings. */
+const liczba = (v: unknown) => (typeof v === 'number' ? v : typeof v === 'string' && v.trim() !== '' ? Number(v) : NaN);
+
+export const MIEJSCA: Tabela<MojeMiejsca> = {
+  nazwa: 'places',
+  klucz: 'place_id',
+  wiersze(miejsca) {
+    return Object.entries(miejsca).map(([id, m]) => ({
+      place_id: id,
+      name: m.nazwa.slice(0, NAJWIECEJ.name),
+      latitude: m.szer,
+      longitude: m.dl,
+      accuracy_m: m.dokladnosc ?? null,
+      first_visit: m.data,
+      note: m.notatka?.slice(0, NAJWIECEJ.note) ?? null,
+      updated_at: m.zmieniono,
+      // A removed place keeps its fields, as an unticked species does.
+      deleted_at: m.usuniete ? m.zmieniono : null,
+    }));
+  },
+  scal(lokalne, zdalne, pomin = nic) {
+    const miejsca = { ...lokalne };
+    for (const w of zdalne) {
+      const id = tekst(w.place_id);
+      const t = czas(w.updated_at);
+      // A malformed id would make the whole store unreadable on its next read.
+      if (!id || !ID_MIEJSCA.test(id) || !t) {
+        pomin(String(w.place_id), 'no id or time');
+        continue;
+      }
+      if (!nowszy(t, czas(miejsca[id]?.zmieniono) ?? undefined)) continue;
+      const m: MojeMiejsce = {
+        nazwa: tekst(w.name) ?? '',
+        szer: liczba(w.latitude),
+        dl: liczba(w.longitude),
+        data: dzien(w.first_visit) ?? '',
+        zmieniono: t,
+      };
+      const dokladnosc = liczba(w.accuracy_m);
+      if (w.accuracy_m !== null && w.accuracy_m !== undefined && !Number.isNaN(dokladnosc)) m.dokladnosc = dokladnosc;
+      if (tekst(w.note)) m.notatka = tekst(w.note);
+      if (w.deleted_at) m.usuniete = true;
+      // The store's own check: a place the app cannot show would break the pages that list places.
+      if (!m.nazwa || !isMojeMiejsce(m)) {
+        pomin(id, 'a place the app cannot read');
+        continue;
+      }
+      miejsca[id] = m;
+    }
+    return miejsca;
   },
   bez: bezKlucza,
   odcisk: odciskZmiany,

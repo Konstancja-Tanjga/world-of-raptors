@@ -806,6 +806,15 @@ li {
   gap: var(--bh-gap-normal);
   padding-block-start: var(--bh-gap-normal);
 }
+/* The place field with "Tu, gdzie jestem" under it, left-aligned. */
+.checklist__miejsce {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  justify-items: start;
+}
+.checklist__miejsce > :first-child {
+  justify-self: stretch;
+}
 
 /* Field log (dziennik) */
 .formularz-obserwacji {

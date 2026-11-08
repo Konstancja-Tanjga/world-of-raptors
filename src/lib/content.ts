@@ -1317,7 +1317,7 @@ function sprawdzSpojnosc() {
   if (kartyWTalii.size) bledy.push(`content.ts: fiszki gatunków spoza „Mojego nieba”: ${[...kartyWTalii.keys()].join(', ')}`);
   // Per-account caps on the server (supabase/migrations/20261010120000_limity.sql): keep a fifth of each free.
   if (talia.length > 800) bledy.push(`content.ts: ${talia.length} fiszek, a konto mieści 1000 (zostaw zapas)`);
-  // The checklist takes the course's birds and the rest of Europe's (20261108120000_dziennik.sql: 1000 a person).
+  // The checklist takes the course's birds and the rest of Europe's (20261108130000_dziennik.sql: 1000 a person).
   const naChecklisce = ptakiNaLiscie.length + ptakiEuropy.length;
   if (naChecklisce > 800) bledy.push(`content.ts: ${naChecklisce} ptaków na checkliście, a konto mieści 1000 obserwacji (zostaw zapas)`);
   const idKursu = new Set(ptakiNaLiscie.map((p) => p.id));

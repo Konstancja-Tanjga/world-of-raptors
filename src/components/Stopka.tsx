@@ -38,6 +38,9 @@ export function Stopka({ zglos }: { zglos?: ReactNode }) {
               <Link href="/checklista">Moja checklista</Link>
             </li>
             <li>
+              <Link href="/moje-miejsca">Moje miejsca</Link>
+            </li>
+            <li>
               <Link href="/checklista#kopia">Kopia zapasowa</Link>
             </li>
             <li>

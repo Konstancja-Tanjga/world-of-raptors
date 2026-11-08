@@ -6,12 +6,14 @@ import { checklistaDoSynchronizacji } from './checklist';
 import { dziennikDoSynchronizacji } from './dziennikMagazyn';
 import { fiszkiDoSynchronizacji } from './fiszki';
 import { utworzMagazyn } from './magazyn';
+import { mojeMiejscaDoSynchronizacji } from './mojeMiejscaMagazyn';
 import { postepDoSynchronizacji } from './postep';
 import {
   DZIENNIK,
   FISZKI,
   isStanSynchronizacji,
   LEKCJE,
+  MIEJSCA,
   OBSERWACJE,
   ODZNAKI,
   PUSTY_STAN,
@@ -52,6 +54,7 @@ const POLACZENIA = [
   { tabela: OBSERWACJE, ...checklistaDoSynchronizacji, zapisz: zapisWlasny(checklistaDoSynchronizacji.zapisz) },
   { tabela: DZIENNIK, ...dziennikDoSynchronizacji, zapisz: zapisWlasny(dziennikDoSynchronizacji.zapisz) },
   { tabela: FISZKI, ...fiszkiDoSynchronizacji, zapisz: zapisWlasny(fiszkiDoSynchronizacji.zapisz) },
+  { tabela: MIEJSCA, ...mojeMiejscaDoSynchronizacji, zapisz: zapisWlasny(mojeMiejscaDoSynchronizacji.zapisz) },
 ];
 
 /**
