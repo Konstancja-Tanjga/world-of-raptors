@@ -18,11 +18,11 @@ Ile widać z jednego punktu? Doświadczony ornitolog w szczycie aktywności ptak
 
 ### Pora dnia
 
-Najlepsze są godziny przedpołudniowe. Gatunki, które szybują w kominach termicznych, przed 8.00–9.00 słabo widać, bo jeszcze nie ma prądów wznoszących; z tego samego powodu nie liczy się po 17.00–18.00. Dla całego zespołu drapieżników poradnik zaleca godziny **8.00–16.00** (s. 98). Ptaki polujące lotem aktywnym, jak krogulec czy kobuz, mniej zależą od pogody i latem bywają aktywne rano i wczesnym popołudniem.
+Najlepsze są godziny przedpołudniowe. Gatunki, które szybują w kominach termicznych, przed 8.00–9.00 słabo widać, bo jeszcze nie ma prądów wznoszących; z tego samego powodu nie liczy się po 17.00–18.00. Dla całego zespołu drapieżników poradnik zaleca godziny **8.00–16.00** (s. 98). Ptaki polujące lotem aktywnym, jak krogulec *Accipiter nisus* (ang. Eurasian Sparrowhawk) czy kobuz *Falco subbuteo* (ang. Eurasian Hobby), mniej zależą od pogody i latem bywają aktywne rano i wczesnym popołudniem.
 
 ### Pora roku
 
-Drapieżniki są najbardziej widoczne dwa razy w sezonie: w czasie **wiosennych toków** i w czasie **wylotu młodych** (s. 93). Kłopot w tym, że każdy gatunek ma swój kalendarz: bielik wysiaduje już pod koniec lutego, a trzmielojad i kobuz zaczynają lęgi w maju albo czerwcu. Dlatego liczenie wszystkich gatunków naraz wymaga kilku kontroli. Poradnik podaje dwa warianty (tabela 5.8, s. 98):
+Drapieżniki są najbardziej widoczne dwa razy w sezonie: w czasie **wiosennych toków** i w czasie **wylotu młodych** (s. 93). Kłopot w tym, że każdy gatunek ma swój kalendarz: bielik *Haliaeetus albicilla* (ang. White-tailed Eagle) wysiaduje już pod koniec lutego, a trzmielojad *Pernis apivorus* (ang. European Honey Buzzard) i kobuz zaczynają lęgi w maju albo czerwcu. Dlatego liczenie wszystkich gatunków naraz wymaga kilku kontroli. Poradnik podaje dwa warianty (tabela 5.8, s. 98):
 
 | Wariant | Kontrole | Terminy | Czas na punkcie |
 |---|---|---|---|
@@ -62,7 +62,7 @@ Dlatego terminy liczenia orlika są wąskie: **20 kwietnia – 5 maja** (toki) i
 
 ## Gatunek prawie nie do policzenia
 
-Nie każdy drapieżnik daje się tak policzyć. Poradnik wymienia krogulca *Accipiter nisus* (ang. Eurasian Sparrowhawk): poluje w lesie, a jego toki są mało widoczne, więc z punktu wykrywa się niewiele jego rewirów (s. 98). Trzmielojad *Pernis apivorus* (ang. European Honey Buzzard) bywa nad lasem niewidoczny przez wiele godzin, choć jego tok, uniesione nad grzbietem skrzydła, którymi potrząsa wysoko nad lasem, łatwo rozpoznać (s. 379). Przy takich gatunkach wynik z punktów jest wskaźnikiem, a nie liczbą par.
+Nie każdy drapieżnik daje się tak policzyć. Poradnik wymienia krogulca: poluje w lesie, a jego toki są mało widoczne, więc z punktu wykrywa się niewiele jego rewirów (s. 98). Trzmielojad bywa nad lasem niewidoczny przez wiele godzin, choć jego tok, uniesione nad grzbietem skrzydła, którymi potrząsa wysoko nad lasem, łatwo rozpoznać (s. 379). Przy takich gatunkach wynik z punktów jest wskaźnikiem, a nie liczbą par.
 
 ## Jak to wygląda dziś
 

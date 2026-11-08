@@ -13,7 +13,7 @@ Sowy najmniej się odzywają przy pogodzie niżowej (s. 101):
 - przy silnym wietrze, zwykle powyżej ok. 15 m/s,
 - we mgle.
 
-Mróz działa różnie: puchacz woła dość intensywnie przy temperaturze od −10 do 0°C, a uszatka i sóweczka raczej, gdy jest około zera albo trochę cieplej. Sprzyjają za to **jasne noce bliskie pełni**. Jeśli pogoda jest zła, poradnik radzi kontrolę przełożyć: nawet jeśli coś usłyszysz, będzie to mały ułamek tego, co w dobrą noc. Zaleca się co najmniej dwie kontrole całej powierzchni (s. 101–102).
+Mróz działa różnie: puchacz *Bubo bubo* (ang. Eurasian Eagle-Owl) woła dość intensywnie przy temperaturze od −10 do 0°C, a uszatka *Asio otus* (ang. Long-eared Owl) i sóweczka *Glaucidium passerinum* (ang. Eurasian Pygmy Owl) raczej, gdy jest około zera albo trochę cieplej. Sprzyjają za to **jasne noce bliskie pełni**. Jeśli pogoda jest zła, poradnik radzi kontrolę przełożyć: nawet jeśli coś usłyszysz, będzie to mały ułamek tego, co w dobrą noc. Zaleca się co najmniej dwie kontrole całej powierzchni (s. 101–102).
 
 <margines>
 
@@ -31,9 +31,9 @@ Powierzchnię dobiera się do gatunku: im większe terytorium, tym większa powi
 |---|---|---|
 | puchacz | 1000 ha | 50–400 km² |
 | sóweczka | 150 ha | 25–50 km² |
-| puszczyk uralski | 100 ha | 25–50 km² |
-| włochatka | 100 ha | 25–50 km² |
-| puszczyk mszarny, uszatka błotna | 250 i 60 ha | cała powierzchnia ich występowania |
+| puszczyk uralski *Strix uralensis* (ang. Ural Owl) | 100 ha | 25–50 km² |
+| włochatka *Aegolius funereus* (ang. Boreal Owl) | 100 ha | 25–50 km² |
+| puszczyk mszarny *Strix nebulosa* (ang. Great Grey Owl), uszatka błotna *Asio flammeus* (ang. Short-eared Owl) | 250 i 60 ha | cała powierzchnia ich występowania |
 
 ## Skąd dobiega głos
 
@@ -54,7 +54,7 @@ Puchacza liczy się nasłuchem **od końca lutego do końca marca**, najlepiej w
 <glos data-id="puchacz/samiec">
 </glos>
 
-Głos puchacza niesie się na ok. 2 km, a wyjątkowo nawet na 4 km, więc trudno ustalić, gdzie siedzi ptak; namiar krzyżowy wymaga tu dużych przejść, a ptak może w tym czasie zamilknąć. Z daleka często słychać tylko pierwszą, wyższą sylabę i łatwo pomylić puchacza z uszatką *Asio otus* (ang. Long-eared Owl). Rozstrzyga **rytm**: przerwy między zawołaniami puchacza trwają 8–12 sekund, a u uszatki są o połowę krótsze (s. 478).
+Głos puchacza niesie się na ok. 2 km, a wyjątkowo nawet na 4 km, więc trudno ustalić, gdzie siedzi ptak; namiar krzyżowy wymaga tu dużych przejść, a ptak może w tym czasie zamilknąć. Z daleka często słychać tylko pierwszą, wyższą sylabę i łatwo pomylić puchacza z uszatką. Rozstrzyga **rytm**: przerwy między zawołaniami puchacza trwają 8–12 sekund, a u uszatki są o połowę krótsze (s. 478).
 
 Trzy ostrożności przy interpretacji (s. 477–478):
 
@@ -73,17 +73,17 @@ Liczy się ją w dwóch kontrolach: **25 marca – 10 kwietnia** i **15–30 kwi
 <glos data-id="wlochatka/samiec">
 </glos>
 
-Pieśń samca to zwykle 5–7 sylab „po”, lekko wznoszących się, trwająca 2–3 sekundy, z przerwami 5–10 sekund; przypomina głos dudka. Samiec bez partnerki potrafi odezwać się w ciągu nocy nawet ok. 4000 razy. Długie, prawie nieprzerwane pogwizdywanie oznacza samca, który pokazuje samicy dziuplę: takie miejsce zaznacza się możliwie dokładnie jako **środek terytorium** (s. 459). Samca wołającego wcześnie, np. na początku marca, warto sprawdzić później, bo może to być ptak jeszcze w wędrówce (s. 106).
+Pieśń samca to zwykle 5–7 sylab „po”, lekko wznoszących się, trwająca 2–3 sekundy, z przerwami 5–10 sekund; przypomina głos dudka. Samiec potrafi odezwać się w ciągu nocy nawet ok. 4000 razy; tak aktywny samiec prawdopodobnie nie ma partnerki. Długie, prawie nieprzerwane pogwizdywanie oznacza samca, który pokazuje samicy dziuplę: takie miejsce zaznacza się możliwie dokładnie jako **środek terytorium** (s. 459). Samca wołającego wcześnie, np. na początku marca, warto sprawdzić później, bo może to być ptak jeszcze w wędrówce (s. 106).
 
 ## Stymulacja głosowa: narzędzie badaczy
 
 W monitoringu sów badacze używają czasem **stymulacji głosowej**: odtwarzają głos sowy, a terytorialny samiec odpowiada, broniąc terytorium. Poradnik opisuje ją dokładnie, ale też otacza ostrymi warunkami (s. 104–106). Warto je znać, żeby rozumieć, skąd biorą się dane, i dlaczego obserwatorka tego nie robi.
 
-**Jak robią to badacze.** Stymulację stosuje się tylko w noce małej aktywności sów; gdy sowy wołają same, nie stosuje się jej wcale. Na punkcie najpierw przez 1–3 minuty słucha się w ciszy. Dopiero potem odtwarza się głos w trzech coraz dłuższych seriach, np. 10, 30 i 60 sekund, z przerwami na nasłuch, i przerywa **przy pierwszej odpowiedzi ptaka, nigdy później**. Po ok. 15 minutach skuteczność już nie rośnie. Kolejność ma znaczenie: małe sowy milkną, gdy usłyszą większą, więc zaczyna się od najmniejszej, w lesie np. od sóweczki, przez włochatkę i uszatkę, po puszczyka i puszczyka uralskiego (s. 105–106). U niektórych gatunków, np. sóweczki, stymulacja jest podstawową metodą wykrywania (s. 452), a u włochatki poradnik nazywa ją ostatecznością (s. 458).
+**Jak robią to badacze.** Stymulację stosuje się tylko w noce małej aktywności sów; gdy sowy wołają same, nie stosuje się jej wcale. Na punkcie najpierw długo słucha się w ciszy; dopiero potem odtwarza się głos, krótko, z przerwami na nasłuch, i przerywa **przy pierwszej odpowiedzi ptaka, nigdy później**. Kolejność gatunków też ma znaczenie, bo małe sowy milkną, gdy usłyszą większą (s. 104–106). U niektórych gatunków, np. sóweczki, stymulacja jest podstawową metodą wykrywania (s. 452), a u włochatki poradnik nazywa ją ostatecznością (s. 458).
 
 **Dlaczego to psuje dane.** Zwabiona sowa często podlatuje w milczeniu albo przenosi się na granicę terytorium; idąca za głośnikiem może zostać zapisana w innym miejscu albo jako drugi ptak, co zawyża liczbę terytoriów (s. 104–105, 460). Duże sowy przylatują też na głosy małych, więc sowa, którą słychać, nie musi być gatunkiem z nagrania (s. 106). Spontanicznie wołające ptaki odzywają się bliżej gniazda, więc noc bez wabienia daje lepszą mapę.
 
-**Dlaczego to szkodzi ptakom.** Wabienie odciąga sowy od polowania i karmienia, może sprowokować walki z sąsiadami albo atak drapieżnika na sowę, a ptaki szukające rywala zostawiają lęg bez opieki (s. 104). Dlatego poradnik każe ograniczać je do niezbędnego minimum, a w programach monitoringu jest częścią metody, prowadzonej według instrukcji. U gatunków, przy których rozporządzenie zakazuje płoszenia i niepokojenia w okresie lęgowym, a obserwacji mogących je płoszyć nawet poza nim, jak u puchacza czy włochatki (zob. [lekcja 3](03-gniazda-z-daleka.md)), wabienie z telefonu łatwo przekracza tę granicę.
+**Dlaczego to szkodzi ptakom.** Wabienie odciąga sowy od polowania i karmienia, może sprowokować walki z sąsiadami albo atak drapieżnika na sowę, a ptaki szukające rywala zostawiają lęg bez opieki (s. 104). Dlatego poradnik każe ograniczać je do niezbędnego minimum, a w programach monitoringu jest częścią metody, prowadzonej według instrukcji. Puchacza i włochatkę rozporządzenie chroni przed umyślnym płoszeniem i niepokojeniem w okresie lęgowym w miejscach rozrodu, a do tego zakazuje obserwacji, które mogą je płoszyć lub niepokoić (zob. [lekcja 3](03-gniazda-z-daleka.md)); wabienie z telefonu łatwo przekracza tę granicę.
 
 <margines>
 

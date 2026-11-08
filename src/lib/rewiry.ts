@@ -171,7 +171,7 @@ export function ocena(notatki: readonly Notatka[], odpowiedzi: readonly Odpowied
 }
 
 /** A session of the sheet, as content/karta-rewirow.json holds it. */
-export type TerenKarty = { rodzaj: 'las' | 'ols' | 'mlodnik' | 'woda'; x: number; y: number; rx: number; ry: number; nazwa?: string };
+export type TerenKarty = { rodzaj: 'las' | 'ols' | 'mlodnik' | 'woda'; x: number; y: number; rx: number; ry: number };
 export type SesjaKarty = {
   id: string;
   tytul: string;
@@ -184,6 +184,8 @@ export type SesjaKarty = {
 };
 
 export const BOK_POWIERZCHNI_KM = 10;
+/** What a watch point covers in practice, 0.5–2 km by the guide (p. 97): every note lies within it. */
+export const ZASIEG_PUNKTU_KM = 2;
 
 /**
  * What is wrong with a session, apart from its species (content.ts checks

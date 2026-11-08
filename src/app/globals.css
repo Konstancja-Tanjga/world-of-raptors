@@ -3310,6 +3310,32 @@ html:has(.podglad[open]) {
   font-size: 3.2px;
   fill: #2b231c;
 }
+.karta__etykieta--rewir {
+  paint-order: stroke;
+  stroke: #ece4d2;
+  stroke-width: 1.6px;
+  stroke-linejoin: round;
+}
+.cwiczenie .karta__legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--bh-text-size-caption);
+  color: var(--bh-text-secondary);
+}
+.cwiczenie .karta__legenda li {
+  display: flex;
+  align-items: center;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+}
+.karta__legenda svg {
+  width: 1rem;
+  height: auto;
+}
 .karta__rewir {
   fill: none;
   stroke: #8a3b12;

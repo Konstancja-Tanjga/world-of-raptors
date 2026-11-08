@@ -4,7 +4,7 @@ Gniazdo daje najwyższe kategorie lęgowości, od odnowionego gniazda po gniazdo
 
 ## Najpierw ptaki, potem gniazdo
 
-Poradnik GIOŚ powtarza to kilka razy: szukanie gniazd zawsze poprzedzają obserwacje z punktów (Chylarecki i in. 2015, s. 96). Bez nich trudno nawet ustalić, do kogo gniazdo należy, bo wiele drapieżników różnej wielkości buduje bardzo podobne gniazda; gniazdo orlika krzykliwego łatwo pomylić z gniazdem myszołowa albo jastrzębia (s. 94, 392).
+Poradnik GIOŚ powtarza to kilka razy: szukanie gniazd zawsze poprzedzają obserwacje z punktów (Chylarecki i in. 2015, s. 96). Bez nich trudno nawet ustalić, do kogo gniazdo należy, bo wiele drapieżników różnej wielkości buduje bardzo podobne gniazda; gniazdo orlika krzykliwego łatwo pomylić z gniazdem myszołowa *Buteo buteo* (ang. Common Buzzard) albo jastrzębia *Accipiter gentilis* (ang. Northern Goshawk) (s. 94, 392).
 
 Jest i drugi powód. Kto obchodzi tylko gniazda znane z zeszłych lat, przeoczy pary, które przeniosły się gdzie indziej, więc kontrola samych znanych gniazd może **zaniżyć** wynik. Podstawą oceny liczebności jest co najmniej jedno liczenie z punktów, które wychwyci nowe stanowiska (s. 97–98).
 
@@ -66,7 +66,9 @@ Niektóre gatunki mają własne terminy. Do gniazd orlika krzykliwego nie należ
 
 Wszystkie dziko żyjące ptaki drapieżne i sowy są w Polsce pod ochroną (zob. [A6 · Ochrona w praktyce](../ochrona/04-ochrona-w-praktyce.md)). Rozporządzenie w sprawie ochrony gatunkowej zwierząt (tekst jednolity Dz.U. 2022 poz. 2380) zakazuje u wielu z nich umyślnego płoszenia i niepokojenia w okresie lęgowym w miejscach rozrodu. U części gatunków, m.in. orlika krzykliwego, puchacza i włochatki, zakazane jest też fotografowanie, filmowanie i obserwacja, które mogą je płoszyć lub niepokoić (§ 6 ust. 3–4 i załącznik nr 1).
 
-Wokół gniazd wybranych gatunków regionalny dyrektor ochrony środowiska (RDOŚ) może wyznaczyć **strefę ochrony**. Dla orlika krzykliwego rozporządzenie podaje strefę całoroczną do 100 m od gniazda i okresową do 500 m, od 1 marca do 31 sierpnia; dla puchacza odpowiednio do 200 m i do 500 m, od 1 stycznia do 31 lipca (załącznik nr 4). W strefie bez zezwolenia RDOŚ mogą przebywać tylko właściciel terenu, osoby, które nim zarządzają lub go nadzorują, i ci, którzy wykonują tam prace na podstawie umowy z nimi (ustawa o ochronie przyrody, art. 60 ust. 6, tekst jednolity Dz.U. 2026 poz. 1315). Badacz, który kontroluje gniazda w strefie, potrzebuje więc zezwolenia, a obserwatorka zostaje na zewnątrz.
+Wokół gniazd wybranych gatunków regionalny dyrektor ochrony środowiska (RDOŚ) może wyznaczyć **strefę ochrony**. Dla orlika krzykliwego rozporządzenie podaje strefę całoroczną do 100 m od gniazda i okresową do 500 m, od 1 marca do 31 sierpnia; dla puchacza odpowiednio do 200 m i do 500 m, od 1 stycznia do 31 lipca (załącznik nr 4). W strefie bez zezwolenia RDOŚ mogą przebywać tylko właściciel terenu, osoby, które nim zarządzają lub go nadzorują, i ci, którzy wykonują tam prace na podstawie umowy z nimi (ustawa o ochronie przyrody, art. 60 ust. 6, tekst jednolity Dz.U. 2026 poz. 1315). Badacz, który kontroluje gniazda w strefie, potrzebuje więc zezwolenia.
+
+W terenie nie da się jednak polegać na tym, że wiesz, gdzie jest strefa. RDOŚ wyznacza je tylko przy części gniazd, a ich położenia się nie publikuje; ustawa każe oznaczać granice tablicami „ostoja zwierząt” (art. 60 ust. 4), ale strefa okresowa obowiązuje tylko w swoich miesiącach, a gniazdo bez strefy chroni i tak zakaz płoszenia. Praktyczna zasada jest więc prostsza niż przepisy: **w sezonie lęgowym nie podchodzisz do żadnego gniazda ptaka drapieżnego ani sowy**, a gdy zobaczysz tablicę, zawracasz.
 
 ## Źródła
 
@@ -87,6 +89,6 @@ Wokół gniazd wybranych gatunków regionalny dyrektor ochrony środowiska (RDO�
 1. Po świeżych, jaśniejszych końcach gałęzi, regularnym kształcie, ażurowym wierzchu i zielonych gałązkach na obrzeżu.
 2. Że w tym sezonie gniazdo nie jest zajęte.
 3. Bo ptak zaskoczony tuż pod drzewem zrywa się w panice; lepiej, żeby zauważył człowieka z daleka.
-4. Od 10 maja do 10 czerwca, w czasie wysiadywania i pierwszych tygodni piskląt.
+4. Od 10 maja do 10 czerwca.
 5. Tylko właściciel terenu, osoby nim zarządzające lub nadzorujące i ci, którzy pracują tam na podstawie umowy; pozostali potrzebują zezwolenia RDOŚ.
 </details>

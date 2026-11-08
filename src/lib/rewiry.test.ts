@@ -10,6 +10,7 @@ import {
   odpowiedziKlucza,
   poziom,
   problemySesji,
+  ZASIEG_PUNKTU_KM,
   rewiry,
   zgodnoscRewiru,
   type Kategoria,
@@ -151,7 +152,14 @@ test('a malformed session is caught', () => {
 
 test('the course’s own sessions are well formed and add up to what the lesson says', () => {
   const plik = JSON.parse(readFileSync(new URL('../../content/karta-rewirow.json', import.meta.url), 'utf8')) as { sesje: Record<string, Omit<SesjaKarty, 'id'>> };
-  for (const [id, s] of Object.entries(plik.sesje)) assert.deepEqual(problemySesji({ id, ...s }), [], id);
+  for (const [id, s] of Object.entries(plik.sesje)) {
+    assert.deepEqual(problemySesji({ id, ...s }), [], id);
+    // Every note was seen from its watch point, so it lies within the point's reach.
+    for (const n of s.notatki) {
+      const p = s.punkty[n.punkt - 1];
+      assert.ok(Math.hypot(n.x - p.x, n.y - p.y) <= ZASIEG_PUNKTU_KM, `${id}, notatka ${n.id}`);
+    }
+  }
   const s = plik.sesje.pomorze;
   const r = rewiry(s.notatki, odpowiedziKlucza(s.notatki));
   // 05-cwiczenia.md gives this total in its answers.

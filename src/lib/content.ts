@@ -394,10 +394,16 @@ export const LEKCJA_GRUP = { modul: 'metoda', lekcja: '01-sylwetka' } as const;
 /** The field module a site's species link to. */
 const MODUL_MIEJSCA: Record<Miejsce, string> = { 'marismas-barbate': 'barbate' };
 
-/** Modules whose content covers a raptor: from its activity (owls), its regions and its sites. */
+/** Modules that are about no region or site but give these species a plate, so their pages link back (B11: the species its counts are told through). */
+const MODULY_PLANSZ: Record<string, readonly string[]> = {
+  rewiry: ['orlik-krzykliwy', 'puchacz', 'wlochatka'],
+};
+
+/** Modules whose content covers a raptor: from its activity (owls), its regions and its sites, and the modules of MODULY_PLANSZ. */
 export function modulyGatunku(g: Gatunek) {
   const slugi = new Set<string>(g.aktywnosc === 'nocny' ? [MODUL_SOW, MODUL_SWIATA_SOW] : g.regiony.map((r) => MODUL_REGIONU[r]));
   for (const m of g.miejsca ?? []) slugi.add(MODUL_MIEJSCA[m]);
+  for (const [modul, ids] of Object.entries(MODULY_PLANSZ)) if (ids.includes(g.id)) slugi.add(modul);
   return gotoweModuly.filter((m) => slugi.has(m.slug));
 }
 

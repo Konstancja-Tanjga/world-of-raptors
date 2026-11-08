@@ -1,6 +1,6 @@
 # Lekcja 1: Rewir zamiast ptaka
 
-Nad lasem krąży myszołów, chwilę później drugi, potem znowu jeden. Ile ich było: dwa, trzy, a może to wciąż ten sam ptak? Liczący drapieżniki w sezonie lęgowym nie próbuje na to odpowiadać. Zamiast ptaków liczy rewiry, czyli miejsca zajęte przez pary, a każdą obserwację ocenia według tego, jak pewnie świadczy o lęgu. W tej lekcji poznajesz tę jednostkę, skalę kategorii i to, dlaczego wynik zawsze jest przedziałem.
+Nad lasem krąży myszołów *Buteo buteo* (ang. Common Buzzard), chwilę później drugi, potem znowu jeden. Ile ich było: dwa, trzy, a może to wciąż ten sam ptak? Liczący drapieżniki w sezonie lęgowym nie próbuje na to odpowiadać. Zamiast ptaków liczy rewiry, czyli miejsca zajęte przez pary, a każdą obserwację ocenia według tego, jak pewnie świadczy o lęgu. W tej lekcji poznajesz tę jednostkę, skalę kategorii i to, dlaczego wynik zawsze jest przedziałem.
 
 ## Dlaczego nie liczy się ptaków
 
@@ -10,7 +10,7 @@ Dlatego poradnik GIOŚ pisze wprost, że we wszystkich wariantach monitoringu pt
 
 <margines>
 
-> Terytorium gniazdowe to część rewiru broniona przed innymi ptakami tego samego gatunku. Rewir łowiecki jest większy: u orła przedniego czy bielika może mieć kilkaset kilometrów kwadratowych, a u ptaków polujących na gryzonie, jak orlik krzykliwy czy myszołów, kilkanaście albo nawet kilka (s. 93).
+> Terytorium gniazdowe to część rewiru broniona przed innymi ptakami tego samego gatunku. Rewir łowiecki jest większy: u orła przedniego *Aquila chrysaetos* (ang. Golden Eagle) czy bielika *Haliaeetus albicilla* (ang. White-tailed Eagle) może mieć kilkaset kilometrów kwadratowych, a u ptaków polujących na gryzonie, jak orlik krzykliwy *Clanga pomarina* (ang. Lesser Spotted Eagle) czy myszołów, kilkanaście albo nawet kilka (s. 93).
 
 </margines>
 
@@ -20,7 +20,7 @@ Pomaga w tym to, że drapieżniki są zwykle ściśle terytorialne i same pokazu
 
 Poradnik rozróżnia dwa rodzaje wyniku (s. 20–21, 96):
 
-- **Cenzus** to policzenie wszystkich rewirów na danym terenie. U ptaków lęgowych udaje się rzadko: przy dużych, łatwych do zauważenia gniazdach, jak u bociana białego, albo przy dużych, terytorialnych ptakach w otwartym terenie.
+- **Cenzus** to policzenie wszystkich rewirów na danym terenie. U ptaków lęgowych udaje się rzadko: przy dużych, łatwych do zauważenia gniazdach, jak u bociana białego *Ciconia ciconia* (ang. White Stork), albo przy dużych, terytorialnych ptakach w otwartym terenie.
 - **Indeks** (wskaźnik liczebności) to liczba, o której z góry wiadomo, że obejmuje tylko część rewirów, na przykład wynik godzinnej obserwacji z jednego punktu. Nie mówi, ile jest par, ale powtarzany co roku tą samą metodą mówi, czy ich przybywa, czy ubywa.
 
 Indeks wystarcza do monitoringu, bo monitoring pyta o zmiany, nie o liczbę bezwzględną. Wynik może być nawet zaniżony, byle zaniżony co roku tak samo: te same punkty, te same terminy, ten sam czas obserwacji. Dlatego poradnik zastrzega, że punktów obserwacyjnych raz wybranych nie wolno zmieniać (s. 21, 96).
@@ -29,7 +29,7 @@ Indeks wystarcza do monitoringu, bo monitoring pyta o zmiany, nie o liczbę bezw
 
 U większości naszych drapieżników na 100 km² przypada od 0,1 do 10 par. To bardzo mało: na losowo wybranym kwadracie 5 × 5 km może nie być ani jednej pary orlika, a na sąsiednim trzy. Przy tak rozproszonych gatunkach poradnik zaleca liczyć **cały badany teren** do kilkuset km², na przykład cały park narodowy albo cały obszar Natura 2000, bo przeliczanie wyników z małych powierzchni na całość daje duże błędy (s. 95–96).
 
-Wyjątkiem jest myszołów *Buteo buteo* (ang. Common Buzzard), który lokalnie osiąga ponad 50–60 par na 100 km². Na terenach większych niż ok. 500 km² liczy się go na mniejszych powierzchniach próbnych, np. kwadratach 5 × 5 km, i przelicza na całość (s. 96).
+Wyjątkiem jest myszołów, który lokalnie osiąga ponad 50–60 par na 100 km². Na terenach większych niż ok. 500 km² liczy się go na mniejszych powierzchniach próbnych, np. kwadratach 5 × 5 km, i przelicza na całość (s. 96).
 
 ## Kategorie lęgowości
 
@@ -66,7 +66,7 @@ Skala wygląda prosto, ale poradnik ostrzega przed błędami, które popełniaj�
 2. **Jeden akrobata to jeszcze nie lęg.** Toki w powietrzu robią też młode, niedojrzałe ptaki. O lęgu świadczy tokująca **para**; pojedynczy ptak, nawet najbardziej efektowny, daje najwyżej kategorię prawdopodobną (s. 94).
 3. **Przelot nad lasem z gniazdem to nie ONB.** Jeśli ptak stoi na odnowionym gnieździe, jest terytorialny bez dalszych dowodów. Jeśli tylko przelatuje nad lasem, w którym jest gniazdo, trzeba zobaczyć zachowanie z kategorii B; inaczej zapisuje się samo ON (s. 97).
 
-U orlika krzykliwego *Clanga pomarina* (ang. Lesser Spotted Eagle) dochodzi jeszcze jedna ostrożność: do Polski wracają też niedojrzałe orliki, więc pojedynczego orlika widzianego w sezonie nie uznaje się automatycznie za lęgowego. Dopiero ptak widywany w tym samym miejscu regularnie, przez cały sezon albo w kolejnych latach, wskazuje rewir (s. 392).
+U orlika krzykliwego dochodzi jeszcze jedna ostrożność: do Polski wracają też niedojrzałe orliki, więc pojedynczego orlika widzianego w sezonie nie uznaje się automatycznie za lęgowego. Dopiero ptak widywany w tym samym miejscu regularnie, przez cały sezon albo w kolejnych latach, wskazuje rewir (s. 392).
 
 ## Wynik jako przedział
 
