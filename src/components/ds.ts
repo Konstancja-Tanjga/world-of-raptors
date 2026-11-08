@@ -18,6 +18,7 @@ export {
   Button,
   Card,
   Checkbox,
+  Combobox,
   DatePicker,
   DescriptionList,
   Dialog,

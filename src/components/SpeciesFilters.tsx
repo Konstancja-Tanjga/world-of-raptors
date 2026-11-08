@@ -67,7 +67,25 @@ function filtryZAdresu(search: string): Filtry | null {
 export const wZakresie = (p: PtakNaLiscie, f: Pick<Filtry, 'ptaki' | 'miejsca'>) =>
   (f.ptaki === 'wszystkie' || p.kategoria === f.ptaki) && (f.miejsca.length === 0 || f.miejsca.some((m) => p.miejsca.includes(m)));
 
-export function useFiltry(ptaki: PtakNaLiscie[]) {
+/** Text as searched: lower case, without Polish or Spanish diacritics ("zuraw" finds "żuraw", "avefria" "avefría"). */
+export const doSzukania = (tekst: string) =>
+  tekst
+    .trim()
+    .toLocaleLowerCase('pl')
+    .replace(/ł/g, 'l')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
+/** Whether a bird's Polish, Latin, English or Spanish name contains the searched text (already through doSzukania). */
+export const pasujeDoSzukania = (p: Pick<PtakNaLiscie, 'pl' | 'lat' | 'en' | 'es'>, q: string) =>
+  [p.pl, p.lat, p.en, p.es].some((nazwa) => doSzukania(nazwa).includes(q));
+
+/**
+ * `szukajWszedzie`: a typed name searches every bird, whatever kind, site,
+ * region or activity is chosen (the checklist: in the field I type the bird
+ * I saw, and it must not hide behind the "Drapieżniki" default).
+ */
+export function useFiltry(ptaki: PtakNaLiscie[], { szukajWszedzie = false }: { szukajWszedzie?: boolean } = {}) {
   const [filtry, ustawFiltry] = useState<Filtry>(PUSTE_FILTRY);
   const setFiltry = useCallback((f: Filtry) => ustawFiltry(znormalizuj(f)), []);
 
@@ -81,15 +99,16 @@ export function useFiltry(ptaki: PtakNaLiscie[]) {
   const zakres = useMemo(() => ptaki.filter((p) => wZakresie(p, filtry)), [ptaki, filtry]);
 
   const wynik = useMemo(() => {
-    const q = filtry.szukaj.trim().toLowerCase();
+    const q = doSzukania(filtry.szukaj);
+    if (q && szukajWszedzie) return ptaki.filter((p) => pasujeDoSzukania(p, q));
     return zakres.filter(
       (p) =>
         // Birds of marshes have no region or activity in the atlas, so those filters leave only raptors.
         (filtry.regiony.length === 0 || filtry.regiony.some((r) => p.regiony.includes(r))) &&
         (filtry.aktywnosc.length === 0 || (p.aktywnosc !== null && filtry.aktywnosc.includes(p.aktywnosc))) &&
-        (q === '' || [p.pl, p.lat, p.en, p.es].some((name) => name.toLowerCase().includes(q))),
+        (q === '' || pasujeDoSzukania(p, q)),
     );
-  }, [zakres, filtry]);
+  }, [ptaki, zakres, filtry, szukajWszedzie]);
 
   return { filtry, setFiltry, zakres, wynik };
 }

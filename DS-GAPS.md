@@ -120,3 +120,12 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co zbudowałam lokalnie:** `src/components/zgloszenie/ZglosPoprawke.tsx`. Pasek z instrukcją u góry ekranu (`.wskazywanie`), obramowanie wskazanego fragmentu (`.wskazywanie__ramka`) i tymczasowe `tabindex="0"` na fragmentach, żeby dało się do nich przejść Tabem. Formularz jest w `Dialog`, a nie obok fragmentu; fragment widać w formularzu jako cytat.
 - **Co robi gorzej:** własna obsługa klawiatury i fokusu w trybie wskazywania, bez testów kontraktowych Big Hat. Okno dialogowe zasłania stronę, więc wskazanego miejsca nie widać obok formularza.
 - **Pytanie do design systemu:** czy popover przypięty do elementu (z fokusem i Escape jak w `Dialog`, ale bez zasłaniania strony) to komponent systemu?
+
+## Mapa
+
+- **Po co sięgnęłam:** dziennik obserwacji (`/dziennik`) potrzebuje mapy: do wybrania punktu obserwacji dotknięciem i do pokazania wszystkich moich punktów.
+- **Co zbudowałam lokalnie:** `src/components/dziennik/MapaPunktow.tsx`, czyli Leaflet z kafelkami OpenStreetMap, ładowany dopiero po otwarciu mapy. Punkty to kółka w kolorze `--wor-akcent`; `.mapa-punktow` w `globals.css` izoluje warstwy Leafleta (`isolation: isolate`), żeby ich `z-index` nie przykrywał przyklejonych pasków.
+- **Co robi gorzej:**
+  - Kontrolki Leafleta (przybliżanie, atrybucja, dymki) mają jego własny wygląd i focus, nie Big Hat.
+  - Wybór punktu wymaga wskaźnika. Obok mapy jest więc zawsze „Użyj mojej lokalizacji” i pole współrzędnych (WCAG 2.5.7); samą mapę da się przesuwać i przybliżać klawiaturą.
+- **Pytanie do design systemu:** czy mapa to komponent systemu (kontener z tokenami, kontrolkami i alternatywą bez wskaźnika), czy zawsze biblioteka z zewnątrz?

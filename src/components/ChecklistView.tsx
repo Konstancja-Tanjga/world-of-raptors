@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { dzisiaj, jestWidziany, useChecklista, widziane } from '@/lib/checklist';
+import { odmiana } from '@/lib/dziennik';
+import { useDziennik, wpisy } from '@/lib/dziennikMagazyn';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
 import { usePostep } from '@/lib/postep';
@@ -22,11 +24,15 @@ import {
   Textarea,
   useToast,
 } from './ds';
-import { filtryAktywne as czyFiltryAktywne, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { ButtonLink } from './ButtonLink';
+import { doSzukania, filtryAktywne as czyFiltryAktywne, pasujeDoSzukania, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 import { NazwaPtaka } from './NazwaPtaka';
 
 type Widok = 'wszystkie' | 'widziane' | 'do-zobaczenia';
+
+/** How many of the rest of Europe's birds a search shows at most: a short text matches hundreds. */
+const NAJWIECEJ_POZOSTALYCH = 30;
 
 /** One group of a site's field list (content.ts, listaMiejsca). */
 export type GrupaListy = { id: string; nazwa: string; gatunki: string[] };
@@ -35,19 +41,24 @@ export type GrupaListy = { id: string; nazwa: string; gatunki: string[] };
  * `sylwetki`: each raptor's silhouette, drawn on the server so the generator
  * stays out of this bundle (birds of marshes have none). `listyMiejsc`: each
  * site's field list by group; with one site chosen, the list is grouped and
- * counted that way ("Siewkowe: 3 z 14").
+ * counted that way ("Siewkowe: 3 z 14"). `pozostale`: the rest of Europe's
+ * birds, shown only when a typed name finds them or, with every bird shown
+ * and nothing else filtered, once seen.
  */
 export function ChecklistView({
   ptaki,
+  pozostale,
   sylwetki,
   listyMiejsc,
 }: {
   ptaki: PtakNaLiscie[];
+  pozostale: PtakNaLiscie[];
   sylwetki: Record<string, ReactNode>;
   listyMiejsc: Record<Miejsce, GrupaListy[]>;
 }) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
-  const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
+  const { filtry, setFiltry, zakres, wynik: wynikKursu } = useFiltry(ptaki, { szukajWszedzie: true });
+  const { dziennik, zastap: zastapDziennik } = useDziennik();
   const [widok, setWidok] = useState<Widok>('wszystkie');
   // Species whose date, place, note and photos are open; a species opens when ticked.
   const [otwarte, setOtwarte] = useState<ReadonlySet<string>>(new Set());
@@ -73,6 +84,21 @@ export function ChecklistView({
   const { fiszki, zastapFiszki } = useFiszki();
   const zdobyte = useZdobyte();
 
+  const q = doSzukania(filtry.szukaj);
+  const wszystkiePtaki =
+    filtry.ptaki === 'wszystkie' && !filtry.miejsca.length && !filtry.regiony.length && !filtry.aktywnosc.length;
+  const pasujacePozostale = useMemo(() => (q ? pozostale.filter((p) => pasujeDoSzukania(p, q)) : []), [pozostale, q]);
+  const wynik = useMemo(() => {
+    if (!lista) return wynikKursu;
+    const dodatkowe = q ? pasujacePozostale.slice(0, NAJWIECEJ_POZOSTALYCH) : wszystkiePtaki ? pozostale.filter((p) => jestWidziany(lista, p.id)) : [];
+    return [...wynikKursu, ...dodatkowe];
+  }, [wynikKursu, lista, q, pasujacePozostale, wszystkiePtaki, pozostale]);
+  const ileWDzienniku = useMemo(() => {
+    const ile = new Map<string, number>();
+    for (const [, w] of wpisy(dziennik ?? {})) ile.set(w.gatunek, (ile.get(w.gatunek) ?? 0) + 1);
+    return ile;
+  }, [dziennik]);
+
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
     return wynik.filter((g) => (widok === 'widziane') === jestWidziany(lista, g.id));
@@ -96,7 +122,7 @@ export function ChecklistView({
 
   const liczba = zakres.filter((p) => jestWidziany(lista, p.id)).length;
   const wFiltrze = wynik.filter((g) => jestWidziany(lista, g.id)).length;
-  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'inne ptaki', wszystkie: null }[filtry.ptaki];
+  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'inne ptaki', pozostale: null, wszystkie: null }[filtry.ptaki];
   const etykietaPostepu = miejsce
     ? `Zaobserwowane w ${miejsce.label}${rodzaj ? `: ${rodzaj}` : ''}`
     : `Zaobserwowane ${rodzaj ?? 'gatunki'}`;
@@ -106,7 +132,7 @@ export function ChecklistView({
 
   const eksportuj = async () => {
     try {
-      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte);
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte, dziennik);
       const url = URL.createObjectURL(plik);
       const a = document.createElement('a');
       a.href = url;
@@ -175,16 +201,19 @@ export function ChecklistView({
     const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
     const fiszkiOk = kopia.fiszki ? zastapFiszki(kopia.fiszki) : true;
     const odznakiOk = wczytajZKopii(kopia.odznaki);
+    const dziennikOk = kopia.dziennik ? zastapDziennik(kopia.dziennik) : true;
     const checklistaOk = zastap(kopia.checklista);
     const nieZapisane = [
       !checklistaOk && 'checklisty',
+      !dziennikOk && 'dziennika obserwacji',
       !postepOk && 'postępu nauki',
       !fiszkiOk && 'fiszek',
       // A file without dates changes only a mark of mine, nothing I would miss.
       !odznakiOk && kopia.odznaki && 'gwiazdozbiorów i naszywek',
     ].filter(Boolean);
     const wczytano = [
-      `${widziane(kopia.checklista).length} obserwacji`,
+      `${widziane(kopia.checklista).length} gatunków`,
+      kopia.dziennik ? `${wpisy(kopia.dziennik).length} wpisów dziennika` : null,
       kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
       kopia.postep ? 'postęp nauki' : null,
       kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
@@ -211,6 +240,12 @@ export function ChecklistView({
 
   return (
     <div className="stack">
+      <div className="row">
+        <ButtonLink href="/dziennik/obserwacja">Dodaj obserwację</ButtonLink>
+        <ButtonLink href="/dziennik" variant="secondary">
+          Dziennik obserwacji
+        </ButtonLink>
+      </div>
       <Progress
         label={etykietaPostepu}
         value={liczba}
@@ -251,6 +286,11 @@ export function ChecklistView({
       )}
 
       <SpeciesFilters filtry={filtry} onChange={setFiltry} />
+      {pasujacePozostale.length > NAJWIECEJ_POZOSTALYCH && (
+        <p className="muted" role="status">
+          Spoza kursu pasuje {pasujacePozostale.length} ptaków, pokazuję pierwsze {NAJWIECEJ_POZOSTALYCH}. Wpisz dłuższą nazwę.
+        </p>
+      )}
 
       {grupy.length === 0 ? (
         filtryAktywne ? (
@@ -343,9 +383,11 @@ export function ChecklistView({
                               <span className="visually-hidden">: {g.pl}</span>
                             </Button>
                           )}
-                          <Link href={`/gatunki/${g.id}`} className="text-link">
-                            Karta gatunku<span className="visually-hidden">: {g.pl}</span>
-                          </Link>
+                          {g.kategoria !== 'pozostale' && (
+                            <Link href={`/gatunki/${g.id}`} className="text-link">
+                              Karta gatunku<span className="visually-hidden">: {g.pl}</span>
+                            </Link>
+                          )}
                         </div>
                       </div>
                       {obs && (
@@ -372,6 +414,17 @@ export function ChecklistView({
                                   onChange={(e) => sprawdzZapis(aktualizuj(g.id, { notatka: e.target.value }))}
                                 />
                               </div>
+                              <p className="row">
+                                <Link href={`/dziennik/obserwacja?gatunek=${g.id}`} className="text-link">
+                                  Dodaj obserwację z miejscem<span className="visually-hidden">: {g.pl}</span>
+                                </Link>
+                                {(ileWDzienniku.get(g.id) ?? 0) > 0 && (
+                                  <Link href={`/dziennik?gatunek=${g.id}`} className="text-link">
+                                    {ileWDzienniku.get(g.id)} {odmiana(ileWDzienniku.get(g.id)!, ['obserwacja', 'obserwacje', 'obserwacji'])} w dzienniku
+                                    <span className="visually-hidden">: {g.pl}</span>
+                                  </Link>
+                                )}
+                              </p>
                               <OwnPhotos gatunek={g.id} nazwa={g.pl} edycja />
                             </>
                           )}

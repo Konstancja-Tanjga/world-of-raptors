@@ -17,6 +17,7 @@ Plan wdrożenia Supabase w World of Raptors. Kurs działa dalej bez logowania. K
 |---|---|---|
 | Ukończone lekcje (`wor:postep:v1`) | `lesson_progress` | `modul/lekcja`, np. `anatomia/01-wzrok` |
 | Checklista (`wor:checklista:v2`) | `observations` | gatunek, np. `kania-ruda` albo ptak mokradeł (jedna obserwacja na gatunek, jak w aplikacji). `zmieniono` to `updated_at`, a odznaczony gatunek (`widziany: false`) to `deleted_at`, z zachowaną datą, miejscem i notatką |
+| Dziennik obserwacji (`wor:dziennik:v1`) | `sightings` | UUID wpisu z urządzenia. Wiele obserwacji na gatunek: data, godzina, liczba, nazwa miejsca, punkt (szerokość, długość, dokładność, źródło `gps` albo `mapa`), notatka; usunięcie to `deleted_at`. Migracja `20261108120000_dziennik.sql` dodaje tę tabelę (limit 20 000 wpisów na konto) i podnosi limit `observations` z 200 do 1000, bo checklista przyjmuje teraz każdy ptak Europy. **Uruchomić ją w Supabase przed wdrożeniem aplikacji.** |
 | Fiszki (`wor:fiszki:v1`) | `flashcards` | karta, np. `kania-ruda/lot` |
 | Zdobyte odznaki „Moje niebo” (`wor:odznaki:v1`) | `user_badges` | `gwiazdozbior:…`, `mistrz:…`, `naszywka:…`, `start` |
 

@@ -3,10 +3,12 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { useSyncExternalStore } from 'react';
 import { checklistaDoSynchronizacji } from './checklist';
+import { dziennikDoSynchronizacji } from './dziennikMagazyn';
 import { fiszkiDoSynchronizacji } from './fiszki';
 import { utworzMagazyn } from './magazyn';
 import { postepDoSynchronizacji } from './postep';
 import {
+  DZIENNIK,
   FISZKI,
   isStanSynchronizacji,
   LEKCJE,
@@ -48,6 +50,7 @@ const POLACZENIA = [
   { tabela: ODZNAKI, ...zdobyteDoSynchronizacji, zapisz: zapisWlasny(zdobyteDoSynchronizacji.zapisz) },
   { tabela: LEKCJE, ...postepDoSynchronizacji, zapisz: zapisWlasny(postepDoSynchronizacji.zapisz) },
   { tabela: OBSERWACJE, ...checklistaDoSynchronizacji, zapisz: zapisWlasny(checklistaDoSynchronizacji.zapisz) },
+  { tabela: DZIENNIK, ...dziennikDoSynchronizacji, zapisz: zapisWlasny(dziennikDoSynchronizacji.zapisz) },
   { tabela: FISZKI, ...fiszkiDoSynchronizacji, zapisz: zapisWlasny(fiszkiDoSynchronizacji.zapisz) },
 ];
 
@@ -249,6 +252,7 @@ function maDane() {
   return (
     Object.keys(postep).length > 0 ||
     Object.keys(checklistaDoSynchronizacji.czytaj()).length > 0 ||
+    Object.keys(dziennikDoSynchronizacji.czytaj()).length > 0 ||
     Object.keys(fiszkiDoSynchronizacji.czytaj()).length > 0
   );
 }
@@ -268,6 +272,7 @@ export function rozstrzygnij(wybor: 'dolacz' | 'zastap') {
       ['odznaki', () => zdobyteDoSynchronizacji.zapisz({})],
       ['lekcje', () => postepDoSynchronizacji.zapisz({ postep: {}, slady: {} })],
       ['checklista', () => checklistaDoSynchronizacji.zapisz({})],
+      ['dziennik', () => dziennikDoSynchronizacji.zapisz({})],
       ['fiszki', () => fiszkiDoSynchronizacji.zapisz({})],
     ];
     wlasnyZapis = true;
