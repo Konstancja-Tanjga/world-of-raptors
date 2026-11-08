@@ -1,0 +1,23 @@
+/* "Moje miejsca": the form to add or change a place; the cards are the points' (kiedy-i-gdzie.css). */
+
+.miejsca__formularz {
+  display: grid;
+  gap: var(--bh-gap-normal);
+  max-width: 40rem;
+}
+.miejsca__pozycja {
+  margin: 0;
+  font-size: var(--bh-text-size-caption);
+}
+.miejsca__przyciski {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-snug);
+}
+.miejsca__ptaki {
+  display: grid;
+  gap: var(--bh-gap-tight);
+}
+.miejsca__ptaki p {
+  margin: 0;
+}

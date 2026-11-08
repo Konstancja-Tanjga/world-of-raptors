@@ -49,3 +49,16 @@ test('a v2-shaped checklist in an older file keeps its unticked species', async 
 test('a file from a newer version of the course says so', async () => {
   await assert.rejects(odczytajKopie(JSON.stringify({ wersja: 4, checklista: {} })), /nowszej wersji/);
 });
+
+test('places: kept when well formed, a damaged set refuses the whole file', async () => {
+  const miejsca = {
+    'a1b2': { nazwa: 'La Janda', szer: 36.2193, dl: -5.7831, data: '2026-11-08', zmieniono: '2026-11-08T10:00:00.000Z' },
+  };
+  const kopia = await odczytajKopie(JSON.stringify({ wersja: 3, checklista: {}, postep: {}, miejsca }));
+  assert.deepEqual(kopia.miejsca, miejsca);
+  assert.equal((await odczytajKopie(JSON.stringify({ wersja: 3, checklista: {}, postep: {} }))).miejsca, undefined);
+  await assert.rejects(
+    odczytajKopie(JSON.stringify({ wersja: 3, checklista: {}, postep: {}, miejsca: { a1b2: { nazwa: 'La Janda' } } })),
+    /moje miejsca/,
+  );
+});

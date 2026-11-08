@@ -2,6 +2,7 @@
 
 import { useCallback } from 'react';
 import { dzisiaj, utworzMagazyn } from './magazyn';
+import { przemianujWChecklisci } from './mojeMiejsca';
 import {
   checklistaZDowolnej,
   isChecklista,
@@ -26,6 +27,13 @@ export const checklistaDoSynchronizacji = {
   zapisz: (l: Checklista) => magazyn.zapisz(l),
   subskrybuj: magazyn.subskrybuj,
 };
+
+/** Renames a place in every observation that names it (when one of "Moje miejsca" is renamed); true when saved or nothing to change. */
+export function przemianujMiejsceWChecklisci(stara: string, nowa: string, zmieniono: string) {
+  const przed = magazyn.odczytaj();
+  const po = przemianujWChecklisci(przed, stara, nowa, zmieniono);
+  return po === przed || magazyn.zapisz(po);
+}
 
 /**
  * The checklist store (schema and rules: obserwacje.ts). `lista` is `null`

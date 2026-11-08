@@ -18,6 +18,7 @@ Plan wdrożenia Supabase w World of Raptors. Kurs działa dalej bez logowania. K
 | Ukończone lekcje (`wor:postep:v1`) | `lesson_progress` | `modul/lekcja`, np. `anatomia/01-wzrok` |
 | Checklista (`wor:checklista:v2`) | `observations` | gatunek, np. `kania-ruda` albo ptak mokradeł (jedna obserwacja na gatunek, jak w aplikacji). `zmieniono` to `updated_at`, a odznaczony gatunek (`widziany: false`) to `deleted_at`, z zachowaną datą, miejscem i notatką |
 | Fiszki (`wor:fiszki:v1`) | `flashcards` | karta, np. `kania-ruda/lot` |
+| Moje miejsca (`wor:miejsca:v1`) | `places` | losowy identyfikator miejsca (UUID). Nazwa, położenie, dokładność, data pierwszej wizyty i notatka; `zmieniono` to `updated_at`, a usunięte miejsce (`usuniete`) to `deleted_at`, z zachowanymi polami |
 | Zdobyte odznaki „Moje niebo” (`wor:odznaki:v1`) | `user_badges` | `gwiazdozbior:…`, `mistrz:…`, `naszywka:…`, `start` |
 
 Fiszki są potrzebne, bo pierścień „rozpoznaję” i złote gwiazdy liczą się z harmonogramów fiszek. Bez nich „Moje niebo” nie zapaliłoby się na nowym urządzeniu.

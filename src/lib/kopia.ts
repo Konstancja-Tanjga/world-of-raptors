@@ -1,6 +1,7 @@
 'use client';
 
 import { isFiszki, type Fiszki } from './fiszki';
+import { isMojeMiejsca, type MojeMiejsca } from './mojeMiejsca';
 import { isPostep, type Postep } from './postep';
 import { checklistaZDowolnej, isChecklista, type Checklista } from './obserwacje';
 import { isZdobyte, type Zdobyte } from './zdobyte';
@@ -25,7 +26,10 @@ import {
  * a file keeps the target device's flashcards. `odznaki` ("Moje niebo": when
  * each constellation, gold star and patch was earned) came later still and is
  * left out the same way; a file without it loses only the dates, since the
- * progress earns them again. `zdjecia` is left out (not `[]`) when the photos could
+ * progress earns them again. `miejsca` ("Moje miejsca", removed ones kept as
+ * tombstones) came later still, left out when there are none; older app
+ * versions ignore it, and loading it merges by `zmieniono` rather than
+ * replacing, so a file never takes back a place added since. `zdjecia` is left out (not `[]`) when the photos could
  * not be read, so importing such a file keeps the photos already on the
  * target device instead of erasing them.
  * v1: a bare checklist object.
@@ -36,10 +40,17 @@ type KopiaV3 = {
   postep: Postep;
   fiszki?: Fiszki;
   odznaki?: Zdobyte;
+  miejsca?: MojeMiejsca;
   zdjecia?: ZdjecieKopii[];
 };
 
-export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki: Fiszki | null, odznaki: Zdobyte | null) {
+export async function utworzKopie(
+  checklista: Checklista,
+  postep: Postep,
+  fiszki: Fiszki | null,
+  odznaki: Zdobyte | null,
+  miejsca: MojeMiejsca | null,
+) {
   let zdjecia: ZdjecieKopii[] | undefined;
   try {
     zdjecia = await Promise.all(
@@ -55,6 +66,7 @@ export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki
     postep,
     ...(fiszki && Object.keys(fiszki).length ? { fiszki } : {}),
     ...(odznaki && Object.keys(odznaki).length ? { odznaki } : {}),
+    ...(miejsca && Object.keys(miejsca).length ? { miejsca } : {}),
     ...(zdjecia ? { zdjecia } : {}),
   };
   return { plik: new Blob([JSON.stringify(kopia)], { type: 'application/json' }), bezZdjec: !zdjecia };
@@ -69,6 +81,8 @@ export type OdczytanaKopia = {
   fiszki?: Fiszki;
   /** undefined: the file has no earned dates (v1, or an older v2). */
   odznaki?: Zdobyte;
+  /** undefined: the file has no places — leave current ones alone. */
+  miejsca?: MojeMiejsca;
   /** undefined: the file has no photos — leave current photos alone. */
   zdjecia?: ZdjecieWlasne[];
 };
@@ -111,6 +125,9 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   if (obiekt.odznaki !== undefined && !isZdobyte(obiekt.odznaki)) {
     throw new NiepoprawnaKopia('uszkodzone gwiazdozbiory i naszywki w pliku');
   }
+  if (obiekt.miejsca !== undefined && !isMojeMiejsca(obiekt.miejsca)) {
+    throw new NiepoprawnaKopia('uszkodzone moje miejsca w pliku');
+  }
   let zdjecia: ZdjecieWlasne[] | undefined;
   if (obiekt.zdjecia !== undefined) {
     if (!Array.isArray(obiekt.zdjecia) || !obiekt.zdjecia.every(isZdjecieKopii)) {
@@ -129,6 +146,7 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
     postep: obiekt.postep as Postep | undefined,
     fiszki: obiekt.fiszki as Fiszki | undefined,
     odznaki: obiekt.odznaki as Zdobyte | undefined,
+    miejsca: obiekt.miejsca as MojeMiejsca | undefined,
     zdjecia,
   };
 }
