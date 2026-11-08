@@ -68,8 +68,21 @@ test('a recording tag names a recording in the catalogue, as a block', () => {
   assert.match(problemyTagow('Słuchaj: <glos data-id="puszczyk/samiec"></glos>', 'l.md', ids)[0], /osobnej linii/);
 });
 
+test('the detectability exercise is a block with a known variant', () => {
+  assert.deepEqual(problemyTagow('<ile-ich-jest>\n</ile-ich-jest>', 'l.md'), []);
+  assert.deepEqual(problemyTagow('<ile-ich-jest data-wariant="powroty">\n</ile-ich-jest>', 'l.md'), []);
+  assert.match(problemyTagow('<ile-ich-jest data-wariant="trend">\n</ile-ich-jest>', 'l.md')[0], /nieznany wariant/);
+  assert.match(problemyTagow('Spróbuj: <ile-ich-jest></ile-ich-jest>', 'l.md')[0], /osobnej linii/);
+});
+
 test('a territory sheet is written as a block', () => {
   assert.deepEqual(problemyTagow('<karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md'), []);
   assert.match(problemyTagow('<karta-rewirow data-sesja="pomorze"></karta-rewirow>', 'l.md')[0], /osobnej linii/);
   assert.match(problemyTagow('Karta: <karta-rewirow data-sesja="pomorze">\n</karta-rewirow>', 'l.md')[0], /osobnej linii/);
+});
+
+test('an exercise tag must be a block of its own', () => {
+  assert.deepEqual(problemyTagow('Tekst\n\n<czy-to-trend>\n</czy-to-trend>\n', 'a.md'), []);
+  assert.equal(problemyTagow('Tekst <czy-to-trend></czy-to-trend>\n', 'a.md').length, 1);
+  assert.equal(problemyTagow('<czy-to-trend>\n\n</czy-to-trend>\n', 'a.md').length, 1);
 });

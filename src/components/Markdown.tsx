@@ -27,10 +27,13 @@ import { idNaglowkow } from '@/lib/naglowki';
 import { sciezkaSonogramu } from '@/lib/nagrania';
 import { rozmiaryZdjecia } from '@/lib/podglad';
 import type { Zdjecie } from '@/lib/types';
+import { wariantIleIchJest } from '@/lib/wykrywalnosc';
 import { oryginalZAtrybutu } from '@/lib/zdjecia';
 import { Anatomia } from './Anatomia';
 import {
+  CzyToTrend,
   KalendarzSiewkowcow,
+  IleIchJest,
   KartaRewirow,
   Komin,
   LiczenieStada,
@@ -140,6 +143,11 @@ const attr = (props: Attrs, name: string) => {
  *   <punkt-obserwacyjny data-sesja="ciesnina-sierpien">
  *   <komin data-gatunek="sep-plowy" data-ile="120">
  *
+ * A14's detectability simulator: visits to a plot of tawny owls ("kontrole",
+ * the default), or how many empty visits rule a species out ("powroty"):
+ *
+ *   <ile-ich-jest data-wariant="kontrole">
+ *
  * B9's exercises on waders:
  *
  *   <quiz-na-czas data-gatunki="wszystkie">          timed photo quiz ("wszystkie" or ids)
@@ -151,6 +159,10 @@ const attr = (props: Attrs, name: string) => {
  * (content/karta-rewirow.json) to sort into territories and categories:
  *
  *   <karta-rewirow data-sesja="pomorze">
+ *
+ * A15's exercise on trends: series of counts to class as PECBMS would:
+ *
+ *   <czy-to-trend>
  */
 const lessonTags = {
   // A species name the browser must not translate word by word (see rehypeNazwy).
@@ -276,6 +288,11 @@ const lessonTags = {
       <QuizNaCzas gatunki={gatunkiQuizuNaCzas(attr(props, 'data-gatunki'))} />
     </div>
   ),
+  'ile-ich-jest': (props: Attrs) => (
+    <div className="lekcja-cwiczenie">
+      <IleIchJest wariant={wariantIleIchJest(attr(props, 'data-wariant'))} />
+    </div>
+  ),
   'liczenie-stada': () => (
     <div className="lekcja-cwiczenie">
       <LiczenieStada />
@@ -284,6 +301,11 @@ const lessonTags = {
   'kalendarz-siewkowcow': () => (
     <div className="lekcja-cwiczenie">
       <KalendarzSiewkowcow {...kalendarzSiewkowcow()} />
+    </div>
+  ),
+  'czy-to-trend': () => (
+    <div className="lekcja-cwiczenie">
+      <CzyToTrend />
     </div>
   ),
   'obraczki-kolorowe': () => (
