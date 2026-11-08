@@ -1,5 +1,6 @@
 'use client';
 
+import { KIEDY_I_GDZIE } from '@/lib/publikacja';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { odmiana, punktSlownie } from '@/lib/dziennik';
@@ -56,9 +57,11 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     <div className="stack">
       <div className="row">
         <ButtonLink href={gatunek ? `/dziennik/obserwacja?gatunek=${gatunek}` : '/dziennik/obserwacja'}>Dodaj obserwację</ButtonLink>
-        <ButtonLink href="/kiedy-i-gdzie#co-tu" variant="secondary">
-          Co tu zobaczę?
-        </ButtonLink>
+        {KIEDY_I_GDZIE && (
+          <ButtonLink href="/kiedy-i-gdzie#co-tu" variant="secondary">
+            Co tu zobaczę?
+          </ButtonLink>
+        )}
         {punkty.length > 0 && (
           <Button variant="secondary" aria-expanded={mapa} onClick={() => setMapa(!mapa)}>
             {mapa ? 'Ukryj mapę' : 'Pokaż na mapie'}
