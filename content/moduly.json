@@ -413,6 +413,7 @@
       "slug": "liczenie-ptakow",
       "sciezka": "a",
       "tytul": "Policzyć niewidzialne: jak liczy się ptaki lęgowe",
+      "krotko": "Jak liczy się ptaki lęgowe, których nie widać.",
       "gotowy": true,
       "lekcje": [
         {
@@ -446,6 +447,7 @@
       "slug": "trendy",
       "sciezka": "a",
       "tytul": "Trendy: jak czytać liczby o populacjach",
+      "krotko": "Indeksy, trendy i wahania liczebności.",
       "gotowy": true,
       "lekcje": [
         {
