@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { prowadziDoUkrytej } from '@/lib/publikacja';
 import { Children, cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -398,6 +399,8 @@ function nazwaTabeli(tabela: HastNode | undefined) {
 const link = (baseDir: string): Components['a'] =>
   function MarkdownLink({ href = '', children }) {
     const target = resolveContentHref(href, baseDir);
+    // A page taken off the site for now: the sentence stays, the link does not lead to a 404.
+    if (prowadziDoUkrytej(target)) return <>{children}</>;
     if (/^https?:/.test(target)) {
       return (
         <a href={target} target="_blank" rel="noreferrer">

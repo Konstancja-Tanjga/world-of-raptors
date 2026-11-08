@@ -1,5 +1,6 @@
 'use client';
 
+import { KIEDY_I_GDZIE } from '@/lib/publikacja';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
@@ -12,7 +13,7 @@ const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }
   { href: '/fiszki', etykieta: 'Fiszki', aktywny: (p) => p === '/fiszki' },
   { href: '/checklista', etykieta: 'Checklista', aktywny: (p) => p === '/checklista' },
   { href: '/rozpoznaj', etykieta: 'Rozpoznaj', aktywny: (p) => p === '/rozpoznaj' },
-  { href: '/kiedy-i-gdzie', etykieta: 'Kiedy i gdzie', aktywny: (p) => p === '/kiedy-i-gdzie' },
+  ...(KIEDY_I_GDZIE ? [{ href: '/kiedy-i-gdzie', etykieta: 'Kiedy i gdzie', aktywny: (p: string) => p === '/kiedy-i-gdzie' }] : []),
   { href: '/moje-niebo', etykieta: 'Moje niebo', aktywny: (p) => p === '/moje-niebo' },
   // Accounts ship behind a flag (KONTA.md). Read inline, not from konto.ts, which would bring Supabase into every page.
   ...(process.env.NEXT_PUBLIC_ACCOUNTS_ENABLED === 'true'
