@@ -372,7 +372,7 @@ export function ChecklistView({
       />
       {!q && (
         // The rest of Europe's birds stay out of the list until a name finds them; say so, or they seem missing.
-        <p className="muted">Pozostałe ptaki Europy ({pozostale.length} gatunków) pokażą się po wpisaniu nazwy w wyszukiwarce.</p>
+        <p className="muted">Pozostałe ptaki Europy ({pozostale.length}) pokażą się po wpisaniu nazwy.</p>
       )}
       {pasujacePozostale.length > NAJWIECEJ_POZOSTALYCH && (
         <p className="muted" role="status">
@@ -385,7 +385,6 @@ export function ChecklistView({
           <StateBlock
             state="empty"
             title="Brak gatunków w tym filtrze"
-            description="Zmień rodzaj ptaków, miejsce, region, aktywność albo wpisaną nazwę."
             action={
               <Button size="sm" variant="secondary" onClick={wyczyscFiltry}>
                 Wyczyść filtry
@@ -493,7 +492,6 @@ export function ChecklistView({
                                 <div className="checklist__miejsce">
                                   <Input
                                     label="Miejsce"
-                                    description="Wpisz albo wybierz jedno z moich miejsc."
                                     list="moje-miejsca-lista"
                                     value={obs.miejsce ?? ''}
                                     onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
@@ -547,9 +545,7 @@ export function ChecklistView({
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, dziennik obserwacji, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane w tej przeglądarce (z kontem także na serwerze, oprócz zdjęć). Co jakiś
-          czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
-          też je mieć.
+          Wszystko jest w tej przeglądarce (z kontem także na serwerze, bez zdjęć). Co jakiś czas zapisz kopię.
         </p>
         <div className="row">
           <Button variant="secondary" onClick={() => void eksportuj()}>

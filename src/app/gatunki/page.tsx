@@ -21,12 +21,10 @@ export default function GatunkiPage() {
         <p className="eyebrow">Atlas</p>
         <h1 className="naglowek-strony__tytul">Atlas gatunków</h1>
         <p className="naglowek-strony__lead">
-          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} drapieżników i sów z kursu: na zdjęciach,
-          jako sylwetki albo w jednej skali. Nie wiesz, co widzisz?{' '}
+          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} drapieżników i sów.{' '}
           <Link href="/rozpoznaj" className="text-link">
-            Rozpoznaj krok po kroku
+            Rozpoznaj ptaka
           </Link>
-          .
         </p>
       </header>
       <AtlasView

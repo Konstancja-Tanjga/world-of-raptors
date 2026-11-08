@@ -26,7 +26,7 @@ export default async function PlanPage() {
         <h1 className="naglowek-strony__tytul">Plan kursu</h1>
         <p className="naglowek-strony__lead">
           Dwie ścieżki, {gotoweModuly.length} {odmiana(gotoweModuly.length, ['moduł', 'moduły', 'modułów'])} i {lekcji}{' '}
-          {odmiana(lekcji, ['lekcja', 'lekcje', 'lekcji'])}: od biologii drapieżników do rozpoznawania ich w terenie.
+          {odmiana(lekcji, ['lekcja', 'lekcje', 'lekcji'])}.
         </p>
       </header>
       <Kurs naglowek={false} />

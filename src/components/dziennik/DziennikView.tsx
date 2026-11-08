@@ -83,7 +83,7 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         <StateBlock
           state="empty"
           title={nazwaGatunku ? 'Brak obserwacji tego gatunku' : 'Dziennik jest jeszcze pusty'}
-          description="Każda obserwacja zapisuje dzień, godzinę, liczbę ptaków i miejsce, z punktem z telefonu albo z mapy."
+          description="Pierwsza obserwacja gatunku odhacza go też na checkliście."
           action={<ButtonLink href="/dziennik/obserwacja" size="sm">Dodaj pierwszą obserwację</ButtonLink>}
           scope="section"
         />

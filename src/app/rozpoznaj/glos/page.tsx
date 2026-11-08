@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { RozpoznajGlos } from '@/components/RozpoznajGlos';
 import { gatunki, ptakiMokradel } from '@/lib/content';
 import './glos.css';
@@ -17,11 +16,7 @@ export default function RozpoznajGlosPage() {
         <p className="eyebrow">W teren</p>
         <h1 className="naglowek-strony__tytul">Rozpoznaj po głosie</h1>
         <p className="naglowek-strony__lead">
-          BirdNET słucha przez mikrofon telefonu i podpowiada, kto to, a podpowiedź sprawdzam wzrokiem albo w{' '}
-          <Link href="/rozpoznaj" className="text-link">
-            rozpoznawaniu krok po kroku
-          </Link>
-          .
+          BirdNET słucha przez mikrofon telefonu i podpowiada, kto to.
         </p>
       </header>
       <RozpoznajGlos poLacinie={poLacinie} />

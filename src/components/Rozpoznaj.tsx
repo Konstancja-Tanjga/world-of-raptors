@@ -144,7 +144,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
           <StateBlock
             state="empty"
             title="Żaden gatunek z atlasu nie pasuje"
-            description="Może to nie drapieżnik ani sowa, albo coś łatwo było ocenić inaczej, na przykład wielkość pod niebem. Zmień albo pomiń któreś odpowiedzi."
+            description="Zmień albo pomiń któreś odpowiedzi."
             action={
               <Button size="sm" variant="secondary" onClick={wstecz}>
                 Wróć do pytań
@@ -154,10 +154,6 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
           />
         ) : (
           <>
-            <p className="muted">
-              Sprawdź na karcie gatunku sylwetkę i podobne gatunki. Wielkość i kolory pod niebem łatwo ocenić inaczej, więc
-              gatunki z sąsiednią wielkością albo częścią kolorów zostają na liście.
-            </p>
             <ul className="atlas__karty">
               {n.map((d) => (
                 <Karta key={d.gatunek.id} d={d} wLocie={wLocie} />
@@ -224,7 +220,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
         {krok === 'wielkosc' && (
           <RadioGroup
             legend="Wielkość w porównaniu ze znanym ptakiem"
-            description="Długość od dzioba do końca ogona. Na tle nieba wielkość łatwo ocenić źle: porównaj ptaka z tym, którego wielkość znasz."
+            description="Od dzioba do końca ogona."
             value={odp.wielkosc ?? ''}
             onChange={(v) => setOdp({ ...odp, wielkosc: v })}
             options={skala.map((w, i) => ({

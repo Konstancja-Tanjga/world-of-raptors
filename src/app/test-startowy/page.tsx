@@ -22,7 +22,7 @@ export default function TestStartowyPage() {
         <p className="eyebrow">Moduł 0</p>
         <h1 className="naglowek-strony__tytul">Test startowy</h1>
         <p className="naglowek-strony__lead">
-          Wynik podpowiada, od czego zacząć, a ten sam test na końcu kursu pokaże, ile się nauczyłam.
+          Wynik podpowie, od czego zacząć.
         </p>
       </header>
       <TestStartowyView pytania={pytania} sylwetki={sylwetki} moduly={moduly} />

@@ -31,10 +31,6 @@ export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
           <h2 id="kurs-tytul" className="sekcja__tytul">
             Dwie ścieżki, {ileModulow} {odmiana(ileModulow, ['moduł', 'moduły', 'modułów'])}
           </h2>
-          <p className="sekcja__lead">
-            Biologia tłumaczy, dlaczego drapieżnik wygląda i lata tak, a nie inaczej. Rozpoznawanie uczy, jak wykorzystać to
-            w terenie. Można iść po kolei albo zacząć od jednej ze ścieżek.
-          </p>
         </header>
       )}
       {sciezki.map((s) => (

@@ -109,7 +109,7 @@ export function MojeNiebo({
             Gwiazdozbiory
           </h2>
           <p className="sekcja__lead">
-            Zaliczony moduł zapala gwiazdozbiór swojego ptaka, a złotą gwiazdę dostaje, kiedy rozpoznaję ptaki, których uczy.
+            Ukończony moduł zapala gwiazdozbiór, rozpoznane ptaki dają mu złotą gwiazdę.
           </p>
         </header>
         <MapaGwiazdozbiorow moduly={struktura.moduly} gwiazdozbiory={gwiazdozbiory} stany={stanyMapy} pokazane={oznaczPokazane} />
@@ -123,9 +123,8 @@ export function MojeNiebo({
               Lista życiowa
             </h2>
             <p className="sekcja__lead">
-              Każdy gatunek zbiera trzy obrączki: <strong>Znam</strong> (ukończona lekcja, która go uczy),{' '}
-              <strong>Rozpoznaję</strong> (wszystkie jego fiszki zapamiętane) i <strong>Widziałam</strong> (jest na mojej
-              checkliście). Gatunki, które widziałam, są złote.
+              <strong>Znam</strong> za lekcję, <strong>Rozpoznaję</strong> za fiszki, <strong>Widziałam</strong> za
+              checklistę.
             </p>
           </div>
           <dl className="moje-niebo__liczby">
@@ -154,9 +153,6 @@ export function MojeNiebo({
               <h2 id="siewkowce" className="sekcja__tytul">
                 Siewkowce
               </h2>
-              <p className="sekcja__lead">
-                Te same trzy obrączki co u drapieżników. Siewkowce nie wchodzą do listy życiowej drapieżników, mają swoją półkę.
-              </p>
             </div>
             <dl className="moje-niebo__liczby">
               <div>
@@ -184,10 +180,6 @@ export function MojeNiebo({
             <h2 id="naszywki" className="sekcja__tytul">
               Naszywki
             </h2>
-            <p className="sekcja__lead">
-              Za to, co naprawdę umiem. Brakujące mają swoje miejsca na ścianie, z opisem, co trzeba zrobić, i z tym, ile już
-              mam.
-            </p>
           </div>
           <p className="moje-niebo__licznik">
             <span className="moje-niebo__liczba">{naszywkiZdobyte}</span> z {NASZYWKI.length}

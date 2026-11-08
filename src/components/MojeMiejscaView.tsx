@@ -73,14 +73,13 @@ function Formularz({
       />
       <DatePicker
         label="Pierwsza wizyta"
-        description="Dzień, w którym byłam tu pierwszy raz."
         max={dzisiaj()}
         value={szkic.data}
         onChange={(e) => setSzkic({ ...szkic, data: e.target.value })}
       />
       <Textarea
         label="Notatka"
-        description="Np. skąd najlepiej patrzeć, gdzie zaparkować."
+        description="np. skąd patrzeć, gdzie zaparkować"
         rows={3}
         maxLength={2000}
         value={szkic.notatka}
@@ -156,11 +155,7 @@ function Miejsce({
           </p>
         ) : (
           <p className="muted">
-            Na razie żadne. Gdy przy zaznaczonej obserwacji w{' '}
-            <Link href="/checklista" className="text-link">
-              checkliście
-            </Link>{' '}
-            wybiorę to miejsce (albo „Tu, gdzie jestem” w promieniu 1 km), ptak pojawi się tutaj.
+            Na razie żadne.
           </p>
         )}
       </div>
@@ -310,10 +305,6 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
           />
         ) : (
           <>
-            <p className="muted">
-              Staję w miejscu obserwacji: aplikacja zapisze jego położenie z telefonu, a ja dopiszę nazwę, datę pierwszej wizyty i
-              notatkę.
-            </p>
             <div>
               <Button onClick={() => void dodaj()} loading={dodawanie.stan === 'lokalizuje'} loadingLabel="Ustalam lokalizację">
                 Dodaj miejsce, w którym jestem
@@ -344,7 +335,7 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
           <StateBlock
             state="empty"
             title="Nie masz jeszcze żadnego miejsca"
-            description="Dodam pierwsze, kiedy będę w terenie. Pojawi się też w „Gdzie stanąć” i w podpowiedziach przy obserwacjach."
+            description="Stań w miejscu obserwacji i dodaj je z telefonu."
             scope="section"
           />
         ) : (
@@ -393,7 +384,7 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
         open={Boolean(usuwane)}
         onClose={() => setDoUsuniecia(null)}
         title={usuwane ? `Usunąć „${usuwane.nazwa}”?` : 'Usunąć miejsce?'}
-        description="Obserwacje w checkliście zachowają wpisaną nazwę miejsca. Z kontem miejsce zniknie też z innych urządzeń."
+        description="Obserwacje zachowają nazwę miejsca."
         footer={
           <>
             <Button variant="ghost" onClick={() => setDoUsuniecia(null)}>

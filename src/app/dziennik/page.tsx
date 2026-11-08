@@ -11,10 +11,6 @@ export default function DziennikPage() {
       <header className="naglowek-strony">
         <p className="eyebrow">Moja lista</p>
         <h1 className="naglowek-strony__tytul">Dziennik obserwacji</h1>
-        <p className="naglowek-strony__lead">
-          Każda moja obserwacja z dniem, godziną, liczbą ptaków i miejscem, także z punktem z telefonu albo z mapy.
-          Pierwsza obserwacja gatunku odhacza go na checkliście.
-        </p>
       </header>
       <DziennikView ptaki={ptakiDziennika} />
     </div>

@@ -16,9 +16,6 @@ export default function MojeNieboPage() {
       <header className="naglowek-strony">
         <p className="eyebrow">Moja kolekcja</p>
         <h1 className="naglowek-strony__tytul">Moje niebo</h1>
-        <p className="naglowek-strony__lead">
-          Zaliczone moduły zapalają gwiazdozbiory, gatunki zbierają obrączki, a za umiejętności dostaję naszywki.
-        </p>
       </header>
       <MojeNiebo
         struktura={struktura}

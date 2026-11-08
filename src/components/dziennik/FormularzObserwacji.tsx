@@ -367,7 +367,6 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         <div className="stack lista-gatunkow">
           <Combobox
             label="Dodaj gatunek"
-            description="Wpisz kilka liter nazwy i wybierz ptaka; dodaj tak każdy gatunek z tego wyjścia."
             options={opcje.filter((o) => !lista.some((w) => w.gatunek === o.value))}
             value={null}
             onChange={(v) => {
@@ -464,7 +463,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         {mapa && (
           <>
             <p className="muted">
-              Dotknij mapy w miejscu obserwacji. Mapa pobiera kafelki z OpenStreetMap; mój punkt zostaje w przeglądarce.
+              Dotknij mapy w miejscu obserwacji.
             </p>
             <MapaWGranicy
               opisBledu="Pewnie nie ma zasięgu. Wpisz współrzędne poniżej albo użyj lokalizacji telefonu."
@@ -476,7 +475,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
             <div className="row formularz-obserwacji__wspolrzedne">
               <Input
                 label="Albo wpisz współrzędne"
-                description="Szerokość i długość w stopniach, np. 52.2297, 21.0122."
+                description="np. 52.2297, 21.0122"
                 inputMode="decimal"
                 value={wspolrzedne}
                 onChange={(e) => setWspolrzedne(e.target.value)}
@@ -496,7 +495,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         )}
         <Input
           label="Nazwa miejsca"
-          description="Jak je nazywam, np. „Łąki pod Kampinosem”. Podpowiadam nazwę obserwacji w promieniu 500 m albo moje miejsce w promieniu 1 km."
+          description="np. Łąki pod Kampinosem"
           list="dziennik-moje-miejsca"
           value={miejsce}
           maxLength={200}

@@ -20,11 +20,8 @@ export default function KontoPage() {
   return (
     <div className="page">
       <header className="naglowek-strony">
-        <p className="eyebrow">Konto</p>
-        <h1 className="naglowek-strony__tytul">Mój postęp na każdym urządzeniu</h1>
-        <p className="naglowek-strony__lead">
-          Kurs działa bez logowania, a konto Google przenosi postęp między telefonem a komputerem.
-        </p>
+        <h1 className="naglowek-strony__tytul">Konto</h1>
+        <p className="naglowek-strony__lead">Postęp na telefonie i komputerze. Bez konta kurs też działa.</p>
       </header>
       <KontoView />
     </div>

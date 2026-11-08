@@ -7,18 +7,11 @@ export const metadata: Metadata = { title: 'Fiszki', robots: { index: false } };
 
 export default function FiszkiPage() {
   const talia = [...taliaFiszek(), ...taliaBudowy()];
-  const ile = (rodzaje: string[]) => talia.filter((f) => rodzaje.includes(f.rodzaj)).length;
   return (
     <div className="page page--fiszki">
       <header className="naglowek-strony">
         <p className="eyebrow">Powtórki</p>
         <h1 className="naglowek-strony__tytul">Fiszki</h1>
-        <p className="naglowek-strony__lead">
-          Rozpoznaję ptaka ze zdjęcia ({ile(['lot', 'siedzacy'])}), z sylwetki w locie ({ile(['sylwetka'])})
-          {ile(['glos']) > 0 && <>, po głosie ({ile(['glos'])})</>} i po nazwie w trzech językach (
-          {ile(['pl-en', 'pl-es', 'en-pl', 'es-pl'])}), a do tego uczę się budowy ptaka (
-          {ile(['czesc-obraz', 'czesc-nazwa'])}).
-        </p>
       </header>
       <FiszkiView talia={talia} gatunki={gatunkiFiszek()} />
     </div>
