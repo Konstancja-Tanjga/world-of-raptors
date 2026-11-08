@@ -109,9 +109,7 @@ export function MojeNiebo({
             Gwiazdozbiory
           </h2>
           <p className="sekcja__lead">
-            Zaliczony moduł zapala swój gwiazdozbiór: ptaka z modułu, narysowanego gwiazdami w punktach jego sylwetki. Złota
-            gwiazda przychodzi, kiedy rozpoznaję ptaki, których moduł uczy. Te gwiazdozbiory świecą też na starcie, na nocnym
-            niebie.
+            Zaliczony moduł zapala gwiazdozbiór swojego ptaka, a złotą gwiazdę dostaje, kiedy rozpoznaję ptaki, których uczy.
           </p>
         </header>
         <MapaGwiazdozbiorow moduly={struktura.moduly} gwiazdozbiory={gwiazdozbiory} stany={stanyMapy} pokazane={oznaczPokazane} />
