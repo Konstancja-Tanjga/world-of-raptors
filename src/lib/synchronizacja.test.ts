@@ -234,6 +234,11 @@ test('a sighting written on the server by another device arrives without disturb
   assert.equal(telefon.dziennik[WPIS].usuniety, true);
 });
 
+test('a sighting row whose key the store would refuse is skipped, so the log is not set aside', () => {
+  const po = DZIENNIK.scal({}, [{ sighting_id: 'nie-uuid', species_slug: 'czajka', observed_on: '2026-11-08', updated_at: '2026-11-08T08:00:00Z' }]);
+  assert.deepEqual(po, {});
+});
+
 test('an achievement keeps its earliest date and, once shown anywhere, is not shown again', async () => {
   telefon.odznaki['naszywka:sowy'] = { data: '2026-10-07' };
   laptop.odznaki['naszywka:sowy'] = { data: '2026-10-03', pokazana: true };

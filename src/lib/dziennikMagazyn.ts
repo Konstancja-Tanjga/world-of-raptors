@@ -11,6 +11,13 @@ const magazyn = utworzMagazyn<Dziennik>('wor:dziennik:v1', isDziennik);
 
 const teraz = () => new Date().toISOString();
 
+/**
+ * What saving a sighting did: `wpis` is the log's own save (`niepoprawny`: an
+ * entry the store's check refuses, never saved; `odmowa`: the browser refused
+ * it), `checklista` whether the species' tick, if it needed one, was saved.
+ */
+export type WynikZapisu = { wpis: 'zapisany' | 'niepoprawny' | 'odmowa'; checklista: boolean };
+
 /** The field log, read and saved by the sync (synchronizacjaPrzegladarki.ts) and by backups. */
 export const dziennikDoSynchronizacji = {
   czytaj: () => magazyn.odczytajAktualne(),
@@ -24,18 +31,24 @@ export const noweIdWpisu = () => crypto.randomUUID();
 /**
  * The field log store (rules: dziennik.ts). `dziennik` is `null` until the
  * browser copy has been read. Saving a sighting also ticks its species on the
- * checklist (or moves its first date back); both saves are reported together,
- * so the caller can warn when either was refused.
+ * checklist (or moves its first date back). The two saves are reported
+ * apart: a sighting kept in the log is not lost when only the checklist's
+ * tick was refused, and the caller says which.
  */
 export function useDziennik() {
   const dziennik = magazyn.useMagazyn();
 
-  const zapisz = useCallback((id: string, dane: DaneWpisu) => {
+  const zapisz = useCallback((id: string, dane: DaneWpisu): WynikZapisu => {
     const t = teraz();
-    if (!magazyn.zapisz(zapiszWpis(magazyn.odczytajAktualne(), id, dane, t))) return false;
+    const nowy = zapiszWpis(magazyn.odczytajAktualne(), id, dane, t);
+    if (!nowy) {
+      console.error('[dziennik] refused an entry the store could not read back', id, dane);
+      return { wpis: 'niepoprawny', checklista: false };
+    }
+    if (!magazyn.zapisz(nowy)) return { wpis: 'odmowa', checklista: false };
     const lista = checklistaDoSynchronizacji.czytaj();
     const po = checklistaPoWpisie(lista, dane, t);
-    return po === lista || checklistaDoSynchronizacji.zapisz({ ...po });
+    return { wpis: 'zapisany', checklista: po === lista || checklistaDoSynchronizacji.zapisz({ ...po }) };
   }, []);
 
   const usun = useCallback((id: string) => magazyn.zapisz(usunWpis(magazyn.odczytajAktualne(), id, teraz())), []);

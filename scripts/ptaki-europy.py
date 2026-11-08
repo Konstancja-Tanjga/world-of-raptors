@@ -162,6 +162,14 @@ def main() -> None:
         g['en'] = nazwy_w['en'].get(g['ebird'], '')
         g['es'] = nazwy_w['es'].get(g['ebird'], '')
 
+    # eBird falls back to English where it has no Polish name: such a name would become a stored id.
+    bez_polskiej = [g['lat'] for g in gatunki if g['pl'] == g['en']]
+    if bez_polskiej:
+        print(f'Polish name same as the English one (check by hand): {", ".join(bez_polskiej)}')
+    puste = [g['lat'] for g in gatunki if not g['en'] or not g['es']]
+    if puste:
+        sys.exit(f'No English or Spanish name in eBird for: {", ".join(puste)} (the build refuses empty names)')
+
     gatunki.sort(key=lambda g: g['kolejnosc'])
     for g in gatunki:
         del g['kolejnosc']

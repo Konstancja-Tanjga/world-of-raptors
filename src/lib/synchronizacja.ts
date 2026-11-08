@@ -15,7 +15,7 @@
  */
 
 import type { Checklista, Obserwacja } from './obserwacje';
-import { isWpis, ZRODLA_PUNKTU, type Dziennik, type WpisDziennika, type ZrodloPunktu } from './dziennik';
+import { ID_WPISU, isWpis, LIMITY, ZRODLA_PUNKTU, type Dziennik, type WpisDziennika, type ZrodloPunktu } from './dziennik';
 import { isFiszki, type Fiszki, type ZapisFiszki } from './fiszki';
 import type { Postep } from './postep';
 import type { Zdobyte } from './zdobyte';
@@ -73,7 +73,7 @@ const nowszy = (zdalny: string, lokalny: string | undefined) => lokalny === unde
 const odciskZmiany = (w: Wiersz) => `${czas(w.updated_at)}|${w.deleted_at ? 'x' : ''}`;
 
 /** The server's limits on text (supabase/migrations/): longer text is cut so the row is not refused. */
-const NAJWIECEJ = { place: 200, note: 2000 } as const;
+const NAJWIECEJ = { place: LIMITY.miejsce, note: LIMITY.notatka } as const;
 
 // ---- Lessons ----
 
@@ -189,7 +189,8 @@ export const DZIENNIK: Tabela<Dziennik> = {
     for (const w of zdalne) {
       const id = tekst(w.sighting_id);
       const t = czas(w.updated_at);
-      if (!id || !t) {
+      // The store's key check too: a key it refuses would set the whole log aside on its next read.
+      if (!id || !ID_WPISU.test(id) || !t) {
         pomin(String(w.sighting_id), 'no id or time');
         continue;
       }

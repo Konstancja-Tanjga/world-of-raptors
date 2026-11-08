@@ -1,6 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { odmiana, punktSlownie } from '@/lib/dziennik';
@@ -9,12 +8,9 @@ import { adresMapy } from '@/lib/punkty';
 import { ButtonLink } from '../ButtonLink';
 import { Button, StateBlock } from '../ds';
 import { NazwaPtaka } from '../NazwaPtaka';
-import type { PtakDoWyboru } from './FormularzObserwacji';
+import type { PtakDoWyboru } from '@/lib/types';
+import { MapaWGranicy } from './MapaWGranicy';
 
-const MapaPunktow = dynamic(() => import('./MapaPunktow'), {
-  ssr: false,
-  loading: () => <StateBlock state="loading" title="Wczytywanie mapy" scope="section" />,
-});
 
 /** "2026-11-08" as "sobota, 8 listopada 2026". */
 function dzienSlownie(data: string) {
@@ -74,7 +70,7 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
           </Link>
         </p>
       )}
-      {mapa && punkty.length > 0 && <MapaPunktow etykieta="Mapa moich obserwacji" punkty={punkty} />}
+      {mapa && punkty.length > 0 && <MapaWGranicy etykieta="Mapa moich obserwacji" punkty={punkty} opisBledu="Pewnie nie ma zasięgu. Lista obserwacji poniżej działa bez mapy." />}
 
       {lista.length === 0 ? (
         <StateBlock

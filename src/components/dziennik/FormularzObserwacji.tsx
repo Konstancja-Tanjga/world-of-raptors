@@ -1,24 +1,16 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { dzisiaj } from '@/lib/checklist';
-import { nazwaWPoblizu, punktSlownie, type Punkt } from '@/lib/dziennik';
+import { jestDniem, LIMITY, nazwaWPoblizu, punktSlownie, type Punkt } from '@/lib/dziennik';
 import { noweIdWpisu, useDziennik } from '@/lib/dziennikMagazyn';
 import { wspolrzedneZTekstu, type Wspolrzedne } from '@/lib/punkty';
+import type { PtakDoWyboru } from '@/lib/types';
 import { ButtonLink } from '../ButtonLink';
 import { Button, Combobox, DatePicker, Dialog, Input, StateBlock, Textarea, useToast } from '../ds';
 import { doSzukania } from '../SpeciesFilters';
-import { useOstrzezenieZapisu } from '../useOstrzezenieZapisu';
-
-const MapaPunktow = dynamic(() => import('./MapaPunktow'), {
-  ssr: false,
-  loading: () => <StateBlock state="loading" title="Wczytywanie mapy" scope="section" />,
-});
-
-/** A bird the form can log: the course's and the rest of Europe's. */
-export type PtakDoWyboru = { id: string; pl: string; lat: string; en: string; es: string };
+import { MapaWGranicy } from './MapaWGranicy';
 
 /** How long to wait for the browser to answer at all (a permission prompt left open calls back never). */
 const CZEKANIE_NA_LOKALIZACJE_MS = 30_000;
@@ -40,7 +32,6 @@ const godzinaTeraz = () => {
 export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   const router = useRouter();
   const { notify } = useToast();
-  const sprawdzZapis = useOstrzezenieZapisu();
   const { dziennik, zapisz, usun } = useDziennik();
 
   // The address is read after mount: the page is prerendered without its query.
@@ -63,6 +54,9 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   const [mapa, setMapa] = useState(false);
   const [lokalizowanie, setLokalizowanie] = useState<Lokalizowanie>({ stan: 'spokoj' });
   const [bladGatunku, setBladGatunku] = useState<string | undefined>();
+  const [pokazBledy, setPokazBledy] = useState(false);
+  // Shown on every refused save, not once a visit: the form must not look as if the button did nothing.
+  const [bladZapisu, setBladZapisu] = useState<string | null>(null);
   const [potwierdzUsuniecie, setPotwierdzUsuniecie] = useState(false);
   const zadanie = useRef(0);
   const czuwanie = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -102,10 +96,9 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   /** A new point: the place's name is offered from an earlier sighting nearby, if none is typed yet. */
   const ustawPunkt = (p: Punkt | null) => {
     setPunkt(p);
-    if (p && !miejsce.trim() && dziennik) {
-      const nazwa = nazwaWPoblizu(dziennik, p);
-      if (nazwa) setMiejsce(nazwa);
-    }
+    const nazwa = p && dziennik ? nazwaWPoblizu(dziennik, p) : undefined;
+    // A functional update: a GPS fix can take 20 s, and a name typed meanwhile must stay.
+    if (nazwa) setMiejsce((m) => (m.trim() ? m : nazwa));
   };
 
   const zlokalizuj = () => {
@@ -169,40 +162,65 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     );
   }
   const edycja = Boolean(dziennik[id] && !dziennik[id].usuniety);
+  const n = Number(liczba);
+  const bladLiczby =
+    liczba.trim() && !(Number.isInteger(n) && n >= 1 && n <= LIMITY.liczba)
+      ? `Wpisz liczbę całkowitą od 1 do ${LIMITY.liczba.toLocaleString('pl-PL')} albo zostaw puste.`
+      : undefined;
+  const bladDaty = !jestDniem(data) ? 'Wybierz dzień obserwacji.' : data > dzisiaj() ? 'Ten dzień jeszcze nie nadszedł.' : undefined;
 
   const zapiszObserwacje = () => {
-    if (!gatunek) {
-      setBladGatunku('Wybierz gatunek z listy: wpisz kilka liter nazwy.');
-      document.querySelector<HTMLInputElement>('.formularz-obserwacji [role=combobox]')?.focus();
+    setPokazBledy(true);
+    if (!gatunek) setBladGatunku('Wybierz gatunek z listy: wpisz kilka liter nazwy.');
+    if (!gatunek || bladDaty || bladLiczby) {
+      const pierwsze = !gatunek ? '[role=combobox]' : bladDaty ? 'input[type=date]' : 'input[inputmode=numeric]';
+      document.querySelector<HTMLInputElement>(`.formularz-obserwacji ${pierwsze}`)?.focus();
       return;
     }
-    const n = Number(liczba);
     const nowyGatunek = !Object.values(dziennik).some((w) => !w.usuniety && w.gatunek === gatunek);
-    const ok = zapisz(id, {
+    const wynik = zapisz(id, {
       gatunek,
-      data: data || dzisiaj(),
+      data,
       godzina: godzina || undefined,
-      liczba: liczba && Number.isFinite(n) && n >= 1 ? n : undefined,
+      liczba: liczba.trim() ? n : undefined,
       miejsce,
       notatka,
       punkt: punkt ?? undefined,
     });
-    sprawdzZapis(ok);
-    if (!ok) return;
+    if (wynik.wpis !== 'zapisany') {
+      setBladZapisu(
+        wynik.wpis === 'odmowa'
+          ? 'Przeglądarka nie zapisała obserwacji (tryb prywatny albo brak miejsca). Formularz zostaje wypełniony: spróbuj jeszcze raz albo przepisz ją w notatkach.'
+          : 'Tej obserwacji nie da się zapisać: któreś pole ma niepoprawną wartość. Sprawdź punkt i godzinę.',
+      );
+      return;
+    }
     const nazwa = poId.get(gatunek)?.pl ?? gatunek;
-    notify({
-      tone: 'success',
-      title: edycja ? 'Obserwacja zmieniona' : 'Obserwacja zapisana',
-      description: edycja || !nowyGatunek ? nazwa[0].toLocaleUpperCase('pl') + nazwa.slice(1) + '.' : `${nazwa[0].toLocaleUpperCase('pl') + nazwa.slice(1)}: jest też na mojej checkliście.`,
-    });
+    const Nazwa = nazwa[0].toLocaleUpperCase('pl') + nazwa.slice(1);
+    if (!wynik.checklista) {
+      notify({
+        tone: 'warning',
+        title: 'Obserwacja zapisana, checklista bez zmian',
+        description: `${Nazwa} jest w dzienniku, ale przeglądarka nie zapisała jej na checkliście. Odhacz ją tam ręcznie.`,
+        duration: null,
+      });
+    } else {
+      notify({
+        tone: 'success',
+        title: edycja ? 'Obserwacja zmieniona' : 'Obserwacja zapisana',
+        description: edycja || !nowyGatunek ? `${Nazwa}.` : `${Nazwa}: jest też na mojej checkliście.`,
+      });
+    }
     router.push(`/dziennik#wpis-${id}`);
   };
 
   const usunObserwacje = () => {
     setPotwierdzUsuniecie(false);
-    const ok = usun(id);
-    sprawdzZapis(ok);
-    if (ok) router.push('/dziennik');
+    if (usun(id)) {
+      router.push('/dziennik');
+      return;
+    }
+    setBladZapisu('Przeglądarka nie zapisała usunięcia (tryb prywatny albo brak miejsca). Obserwacja zostaje w dzienniku.');
   };
 
   return (
@@ -222,6 +240,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         onChange={(v) => {
           setGatunek(v);
           setBladGatunku(undefined);
+          setBladZapisu(null);
         }}
         filter={(o, q) => {
           const p = poId.get(o.value);
@@ -232,7 +251,14 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         error={bladGatunku}
       />
       <div className="formularz-obserwacji__pola">
-        <DatePicker label="Data" description="Dzisiaj albo wcześniej." max={dzisiaj()} value={data} onChange={(e) => setData(e.target.value)} />
+        <DatePicker
+          label="Data"
+          description="Dzisiaj albo wcześniej."
+          max={dzisiaj()}
+          value={data}
+          onChange={(e) => setData(e.target.value)}
+          error={pokazBledy ? bladDaty : undefined}
+        />
         <Input label="Godzina" type="time" value={godzina} onChange={(e) => setGodzina(e.target.value)} />
         <Input
           label="Liczba ptaków"
@@ -243,6 +269,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
           step={1}
           value={liczba}
           onChange={(e) => setLiczba(e.target.value)}
+          error={bladLiczby}
         />
       </div>
 
@@ -274,7 +301,8 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
             <p className="muted">
               Dotknij mapy w miejscu obserwacji. Mapa pobiera kafelki z OpenStreetMap; mój punkt zostaje w przeglądarce.
             </p>
-            <MapaPunktow
+            <MapaWGranicy
+              opisBledu="Pewnie nie ma zasięgu. Wpisz współrzędne poniżej albo użyj lokalizacji telefonu."
               etykieta="Mapa: wybór miejsca obserwacji"
               wybrany={punkt}
               dokladnosc={punkt?.zrodlo === 'gps' ? punkt.dokladnosc : undefined}
@@ -312,6 +340,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
 
       <Textarea label="Notatka" rows={3} maxLength={2000} value={notatka} onChange={(e) => setNotatka(e.target.value)} />
 
+      {bladZapisu && <StateBlock state="error" title="Nie zapisano" description={bladZapisu} scope="section" />}
       <div className="row">
         <Button type="submit">{edycja ? 'Zapisz zmiany' : 'Zapisz obserwację'}</Button>
         <ButtonLink href="/dziennik" variant="secondary">

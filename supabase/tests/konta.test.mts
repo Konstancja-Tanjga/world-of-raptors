@@ -141,6 +141,18 @@ describe('row level security', () => {
     assert.notEqual((await jako(A, `select * from public.lesson_progress`)).length, 0);
   });
 
+  it('keeps my sightings, with their points, to me', async () => {
+    assert.notEqual((await jako(A, `select * from public.sightings`)).length, 0);
+    assert.equal((await jako(B, `select * from public.sightings`)).length, 0);
+    assert.equal((await jako(B, `update public.sightings set deleted_at = now() returning 1`)).length, 0);
+    await assert.rejects(
+      jako(B, `insert into public.sightings (user_id, sighting_id, species_slug, observed_on, updated_at)
+               values ('${A}', '2b6c1f2e-3a4d-4e5f-8a9b-0c1d2e3f4a5b', 'czajka', '2026-11-08', now())`),
+    );
+    assert.equal((await jako(B, `delete from public.sightings returning 1`)).length, 0);
+    assert.equal((await jako(null, `select * from public.sightings`)).length, 0);
+  });
+
   it('gives a signed-out visitor nothing', async () => {
     assert.equal((await jako(null, `select * from public.lesson_progress`)).length, 0);
     await assert.rejects(jako(null, `insert into public.observations (species_slug, updated_at) values ('kaniuk', now())`));
@@ -148,6 +160,18 @@ describe('row level security', () => {
 });
 
 describe('per-account limits', () => {
+  it('lets the checklist hold every bird of Europe: 1000 species, not the first 200', async () => {
+    await jako(
+      B,
+      `insert into public.observations (species_slug, updated_at)
+       select 'ptak-' || i, now() from generate_series(1, 1000) i`,
+    );
+    await assert.rejects(
+      jako(B, `insert into public.observations (species_slug, updated_at) values ('jeszcze-jeden', now())`),
+      /account limit/,
+    );
+  });
+
   it('stops new rows at the cap but still lets the account change its own', async () => {
     await jako(
       B,

@@ -2,7 +2,7 @@
 
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Wspolrzedne } from '@/lib/punkty';
 
 /** Where the map opens with nothing to show: Poland, whole. */
@@ -39,20 +39,35 @@ export default function MapaPunktow({
   const mapa = useRef<L.Map | null>(null);
   const warstwa = useRef<L.LayerGroup | null>(null);
   const wybierz = useRef(onWybierz);
+  const [kafelkiNieDochodza, setKafelkiNieDochodza] = useState(false);
+  const bladKafelkow = useRef<(() => void) | null>(null);
   useEffect(() => {
     wybierz.current = onWybierz;
+    bladKafelkow.current = () => setKafelkiNieDochodza(true);
   }, [onWybierz]);
 
   // The map, once.
   useEffect(() => {
     if (!kontener.current) return;
     const m = L.map(kontener.current, { zoomControl: true, attributionControl: true });
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const kafelki = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(m);
     m.setView([POLSKA.szer, POLSKA.dl], 6);
-    m.on('click', (e: L.LeafletMouseEvent) => wybierz.current?.({ szer: e.latlng.lat, dl: e.latlng.lng }));
+    // wrap(): zoomed out, the world repeats sideways, and a tap on a copy would give a longitude past ±180.
+    m.on('click', (e: L.LeafletMouseEvent) => {
+      const p = e.latlng.wrap();
+      wybierz.current?.({ szer: p.lat, dl: p.lng });
+    });
+    // Tiles that do not arrive (no signal in the field) leave a blank grid that still takes taps: say so.
+    let bledyKafelkow = 0;
+    kafelki.on('tileerror', () => {
+      if (++bledyKafelkow === 3) bladKafelkow.current?.();
+    });
+    kafelki.on('tileload', () => {
+      bledyKafelkow = 0;
+    });
     warstwa.current = L.layerGroup().addTo(m);
     mapa.current = m;
     // The container may have been sized after Leaflet measured it (a section opened, fonts loaded).
@@ -87,5 +102,14 @@ export default function MapaPunktow({
     }
   }, [punkty, wybrany, dokladnosc]);
 
-  return <div ref={kontener} className="mapa-punktow" role="region" aria-label={etykieta} />;
+  return (
+    <>
+      <div ref={kontener} className="mapa-punktow" role="region" aria-label={etykieta} />
+      {kafelkiNieDochodza && (
+        <p role="status" className="muted">
+          Mapa nie wczytuje się (słaby zasięg?). {onWybierz ? 'Wpisz współrzędne albo użyj lokalizacji telefonu.' : ''}
+        </p>
+      )}
+    </>
+  );
 }

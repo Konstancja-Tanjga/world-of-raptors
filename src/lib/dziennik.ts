@@ -52,7 +52,13 @@ export const LIMITY = { miejsce: 200, notatka: 2000, liczba: 100_000, dokladnosc
 
 export const ID_WPISU = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 export const ID_GATUNKU = /^[a-z0-9-]{1,60}$/;
-const DATA = /^\d{4}-\d{2}-\d{2}$/;
+/** A real calendar day as YYYY-MM-DD (the server's `date` refuses 2026-02-30). */
+export function jestDniem(v: unknown): v is string {
+  if (typeof v !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return false;
+  const [r, m, d] = v.split('-').map(Number);
+  const dzien = new Date(Date.UTC(r, m - 1, d));
+  return dzien.getUTCFullYear() === r && dzien.getUTCMonth() === m - 1 && dzien.getUTCDate() === d;
+}
 const GODZINA = /^([01]\d|2[0-3]):[0-5]\d$/;
 
 const jestSlownikiem = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
@@ -67,7 +73,8 @@ export function isPunkt(v: unknown): v is Punkt {
     Math.abs(szer) <= 90 &&
     Math.abs(dl) <= 180 &&
     ZRODLA_PUNKTU.includes(zrodlo as ZrodloPunktu) &&
-    (dokladnosc === undefined || (typeof dokladnosc === 'number' && dokladnosc >= 0 && dokladnosc <= LIMITY.dokladnosc))
+    // Whole metres, as the server's integer column takes them.
+    (dokladnosc === undefined || (Number.isInteger(dokladnosc) && (dokladnosc as number) >= 0 && (dokladnosc as number) <= LIMITY.dokladnosc))
   );
 }
 
@@ -76,8 +83,7 @@ export function isWpis(v: unknown): v is WpisDziennika {
   return (
     typeof v.gatunek === 'string' &&
     ID_GATUNKU.test(v.gatunek) &&
-    typeof v.data === 'string' &&
-    DATA.test(v.data) &&
+    jestDniem(v.data) &&
     (v.godzina === undefined || (typeof v.godzina === 'string' && GODZINA.test(v.godzina))) &&
     (v.liczba === undefined || (Number.isInteger(v.liczba) && (v.liczba as number) >= 1 && (v.liczba as number) <= LIMITY.liczba)) &&
     tekstLubBrak(v.miejsce, LIMITY.miejsce) &&
@@ -106,14 +112,21 @@ export function oczyscWpis(dane: DaneWpisu): DaneWpisu {
   if (dane.punkt) {
     const { szer, dl, zrodlo, dokladnosc } = dane.punkt;
     wpis.punkt = { szer, dl, zrodlo };
-    if (dokladnosc !== undefined) wpis.punkt.dokladnosc = Math.min(LIMITY.dokladnosc, Math.round(dokladnosc));
+    if (dokladnosc !== undefined && Number.isFinite(dokladnosc)) wpis.punkt.dokladnosc = Math.min(LIMITY.dokladnosc, Math.round(dokladnosc));
   }
   return wpis;
 }
 
-/** Adds an entry, or replaces the one under `id` (a removed one comes back). */
-export function zapiszWpis(dziennik: Readonly<Dziennik>, id: string, dane: DaneWpisu, teraz: string): Dziennik {
-  return { ...dziennik, [id]: { ...oczyscWpis(dane), zmieniono: teraz } };
+/**
+ * Adds an entry, or replaces the one under `id` (a removed one comes back).
+ * Null when the id or the entry is not one the store's check accepts: the
+ * store is read all or nothing, so one bad entry saved would set the whole
+ * log aside as unreadable.
+ */
+export function zapiszWpis(dziennik: Readonly<Dziennik>, id: string, dane: DaneWpisu, teraz: string): Dziennik | null {
+  const wpis: WpisDziennika = { ...oczyscWpis(dane), zmieniono: teraz };
+  if (!ID_WPISU.test(id) || !isWpis(wpis)) return null;
+  return { ...dziennik, [id]: wpis };
 }
 
 /** Removes an entry, keeping it as a tombstone. */

@@ -105,7 +105,8 @@ export function ChecklistView({
   }, [wynik, lista, widok]);
 
   const grupy = useMemo((): [string, PtakNaLiscie[]][] => {
-    if (listaMiejsca) {
+    // A typed name searches every bird, so it is not grouped by the site's list, which would hide the others.
+    if (listaMiejsca && !q) {
       const poId = new Map(widoczne.map((p) => [p.id, p]));
       return listaMiejsca
         .map((g): [string, PtakNaLiscie[]] => [g.nazwa, g.gatunki.flatMap((id) => poId.get(id) ?? [])])
@@ -114,7 +115,7 @@ export function ChecklistView({
     const map = new Map<string, PtakNaLiscie[]>();
     for (const g of widoczne) map.set(g.grupa, [...(map.get(g.grupa) ?? []), g]);
     return [...map.entries()];
-  }, [widoczne, listaMiejsca]);
+  }, [widoczne, listaMiejsca, q]);
 
   if (!lista) {
     return <StateBlock state="loading" title="Wczytywanie checklisty" scope="section" />;

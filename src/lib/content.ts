@@ -1330,11 +1330,15 @@ function sprawdzSpojnosc() {
     if (!p.pl.trim() || !p.lat.trim()) bledy.push(`ptaki-europy.json: ${p.id}: brak nazwy polskiej albo łacińskiej`);
     const zrodlo = (europyJson.gatunki as Record<string, unknown>[]).find((g) => g.id === p.id);
     for (const pole of ['en', 'es', 'ebird'] as const) {
-      if (typeof zrodlo?.[pole] !== 'string') bledy.push(`ptaki-europy.json: ${p.id}: brak pola ${pole}; uruchom scripts/ptaki-europy.py ponownie`);
+      const v = zrodlo?.[pole];
+      if (typeof v !== 'string' || !v.trim()) bledy.push(`ptaki-europy.json: ${p.id}: puste pole ${pole}; uruchom scripts/ptaki-europy.py ponownie`);
     }
     idEuropy.add(p.id);
   }
-  for (const id of Object.keys(europyJson.kody_kursu)) if (!idKursu.has(id)) bledy.push(`ptaki-europy.json: kody_kursu: „${id}” nie jest ptakiem kursu`);
+  for (const [id, kod] of Object.entries(europyJson.kody_kursu as Record<string, unknown>)) {
+    if (!idKursu.has(id)) bledy.push(`ptaki-europy.json: kody_kursu: „${id}” nie jest ptakiem kursu`);
+    if (typeof kod !== 'string' || !kod.trim()) bledy.push(`ptaki-europy.json: kody_kursu: ${id} bez kodu eBird`);
+  }
   const katalogi: [string, object, ReadonlySet<string>][] = [
     ['SYLWETKI', SYLWETKI, idGatunkow],
     ['STYL_LOTU', STYL_LOTU, idGatunkow],

@@ -142,6 +142,9 @@ export type RozpoznawanieMokradel = {
 /** Raptors, birds of marshes, and the rest of Europe's birds (content/ptaki-europy.json: checklist and field log only). */
 export type Kategoria = 'drapiezne' | 'ptaki-mokradel' | 'pozostale';
 
+/** A bird the field log can take, with the names it is searched by. */
+export type PtakDoWyboru = Pick<PtakNaLiscie, 'id' | 'pl' | 'lat' | 'en' | 'es'>;
+
 /** A bird of Europe outside the course (content/ptaki-europy.json): names and its eBird code, nothing taught. */
 export type PtakEuropy = { id: string; pl: string; lat: string; en: string; es: string; ebird: string };
 
