@@ -9,7 +9,7 @@ import { zapomnijKonto } from './synchronizacjaPrzegladarki';
  * server, as a file, and deleting the account with all of it.
  */
 
-const TABELE = { lekcje: 'lesson_progress', obserwacje: 'observations', fiszki: 'flashcards', odznaki: 'user_badges', miejsca: 'places' } as const;
+const TABELE = { lekcje: 'lesson_progress', obserwacje: 'observations', fiszki: 'flashcards', odznaki: 'user_badges', miejsca: 'places', dziennik: 'sightings' } as const;
 const STRONA = 1000;
 
 /** Everything the account holds on the server, as a JSON file to save. */

@@ -33,8 +33,7 @@ import {
  * left out the same way; a file without it loses only the dates, since the
  * progress earns them again. `miejsca` ("Moje miejsca", removed ones kept as
  * tombstones) came later still, left out when the store is empty (a file may
- * carry only removed places); older app
- * versions ignore it, and loading it merges by `zmieniono` rather than
+ * carry only removed places); loading it merges by `zmieniono` rather than
  * replacing, so a file never takes back a place added since. `zdjecia` is left out (not `[]`) when the photos could
  * not be read, so importing such a file keeps the photos already on the
  * target device instead of erasing them.

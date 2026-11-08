@@ -18,6 +18,7 @@ const CZESCI: Record<string, string> = {
   flashcards: 'fiszki',
   user_badges: 'odznaki',
   places: 'moje miejsca',
+  sightings: 'dziennik obserwacji',
   stan: 'stan synchronizacji',
   wszystkie: 'całość',
 };
@@ -25,7 +26,7 @@ const CZESCI: Record<string, string> = {
 /** Why some parts did not sync, in words: the browser, the connection, or the server. */
 function opisBledow(bledy: BladTabeli[]) {
   const czesci = bledy.map((b) => CZESCI[b.tabela] ?? b.tabela).join(', ');
-  const tabele = ['lesson_progress', 'observations', 'flashcards', 'user_badges', 'places'];
+  const tabele = ['lesson_progress', 'observations', 'flashcards', 'user_badges', 'places', 'sightings'];
   const resztaDzialala = !bledy.some((b) => b.tabela === 'wszystkie') && tabele.some((t) => !bledy.some((b) => b.tabela === t));
   const zdania = [
     resztaDzialala ? `Nie zsynchronizowały się: ${czesci}. Reszta jest zsynchronizowana.` : 'Nic się nie zsynchronizowało.',
