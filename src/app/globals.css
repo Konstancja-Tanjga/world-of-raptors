@@ -839,9 +839,13 @@ li {
 .formularz-obserwacji {
   max-width: 44rem;
 }
+/* Date, time and count side by side where each gets room: Safari's native date field does not
+   shrink, so narrower columns let it run into the next field. Inputs line up at the bottom,
+   whether or not a field has a description. */
 .formularz-obserwacji__pola {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  align-items: end;
   gap: var(--bh-gap-normal);
 }
 .formularz-obserwacji__miejsce {
