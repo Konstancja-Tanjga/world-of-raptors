@@ -12,8 +12,9 @@ Najpospolitszym drapieżnikiem Polski jest myszołów, a nasz kraj to jeden z eu
 
 | Kategoria | Gatunki |
 |---|---|
-| **Lęgowe, pospolite** | myszołów, pustułka, krogulec, jastrząb, błotniak stawowy, trzmielojad, kania ruda (coraz liczniejsza), bielik (liczny jak na orła), kobuz |
-| **Lęgowe, nieliczne lub rzadkie** | orlik krzykliwy, kania czarna, błotniak łąkowy, sokół wędrowny, rybołów, orzeł przedni, orlik grubodzioby, gadożer, błotniak zbożowy (lęgowy bardzo rzadko) |
+| **Lęgowe, pospolite** | myszołów, pustułka, krogulec, jastrząb |
+| **Lęgowe, szeroko rozmieszczone, ale nieliczne** | błotniak stawowy, trzmielojad (skryty), bielik (liczny jak na orła), kobuz, kania ruda (głównie zachód kraju, coraz liczniejsza) |
+| **Lęgowe, bardzo nieliczne lub rzadkie** | orlik krzykliwy, kania czarna, błotniak łąkowy, sokół wędrowny, rybołów, orzeł przedni, orlik grubodzioby, gadożer, błotniak zbożowy (lęgowy bardzo rzadko) |
 | **Zimujące i przelotne** | myszołów włochaty, drzemlik, błotniak zbożowy; na przelotach dodatkowo m.in. błotniak stepowy i orzeł przedni z północy |
 
 ## Typowe sytuacje i „pierwsze podejrzenie”
@@ -43,7 +44,7 @@ Najpospolitszym drapieżnikiem Polski jest myszołów, a nasz kraj to jeden z eu
 
 </margines>
 
-- **Mozaika pól i lasów:** myszołów, jastrząb, krogulec, trzmielojad, kania ruda.
+- **Mozaika pól i lasów:** myszołów, jastrząb, krogulec, kania ruda; trzmielojad tu żeruje, ale gniazduje w dużych, starych lasach.
 - **Doliny rzek i mokradła:** błotniaki, orlik krzykliwy, orlik grubodzioby (Biebrza), bielik.
 - **Jeziora i duże kompleksy stawów:** bielik, rybołów, błotniak stawowy.
 - **Góry:** orzeł przedni, orlik krzykliwy, jastrząb, sokół wędrowny.
@@ -56,6 +57,7 @@ Najpospolitszym drapieżnikiem Polski jest myszołów, a nasz kraj to jeden z eu
 - [YouTube: sokół wędrowny w mieście](https://www.youtube.com/results?search_query=peregrine+falcon+city+building+nest)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Wikipedia: Ptaki Polski](https://pl.wikipedia.org/wiki/Ptaki_Polski): lista gatunków i ich status
 - [Monitoring Ptaków Polski (GIOŚ)](https://monitoringptakow.gios.gov.pl): liczebności i trendy gatunków lęgowych
 - [OTOP](https://otop.org.pl): Ogólnopolskie Towarzystwo Ochrony Ptaków

@@ -131,7 +131,7 @@ Trzy ptaki, które na liście siewkowców wyglądają jak goście z innej bajki.
 
 </galeria>
 
-Czajka to siewka, która przeniosła się na pola. Gniazduje na terenach uprawnych i innych miejscach z niską roślinnością, a zimą żeruje na polach i mułach, często w mieszanych stadach z siewkami złotymi *Pluvialis apricaria* (ang. European Golden Plover) i śmieszkami *Chroicocephalus ridibundus* (ang. Black-headed Gull). Na wiosnę samce wykonują szalony, koziołkujący lot tokowy i przez cały czas wołają. Jej płaczliwe „ki-wit” dało jej nazwy w wielu językach; angielskie *peewit* to po prostu zapis tego głosu.
+Czajka to siewka, która nie potrzebuje błota. Najchętniej gniazduje na wilgotnych łąkach i pastwiskach w dolinach rzek, przy płytkich rozlewiskach; zakłada gniazda także na polach uprawnych, zwłaszcza przy zastoiskach wody, choć tam rzadziej. Zimą żeruje na polach i mułach, często w mieszanych stadach z siewkami złotymi *Pluvialis apricaria* (ang. European Golden Plover) i śmieszkami *Chroicocephalus ridibundus* (ang. Black-headed Gull). Na wiosnę samce wykonują szalony, koziołkujący lot tokowy i przez cały czas wołają. Jej płaczliwe „ki-wit” dało jej nazwy w wielu językach; angielskie *peewit* to po prostu zapis tego głosu.
 
 Czajka ma swój sposób na dżdżownice: stoi i uderza nogą w ziemię, aż zdobycz wyjdzie na powierzchnię. To ten sam rytm co u sieweczek, tylko na trawie zamiast na piasku: patrzy, biegnie, staje, dziobie.
 
@@ -173,6 +173,7 @@ Nie mam dla ciebie nagrania żwirowca na wolnej licencji: na xeno-canto wszystki
 - [YouTube: lot tokowy czajki (lapwing display flight)](https://www.youtube.com/results?search_query=lapwing+display+flight)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Cornell Lab, All About Birds: Shorebird ID Tips (kartka do kursu, PDF)](https://www.sawmillriveraudubon.org/docs/ShorebirdIDCard-AllAboutBirds.pdf)
 - [Cornell Bird Academy: Be a Better Birder: Shorebird Identification](https://academy.allaboutbirds.org/product/be-a-better-birder-shorebird-identification/)
 - [BirdGuides: recenzja „The Shorebird Guide”](https://www.birdguides.com/reviews/books/the-shorebird-guide/) i [Ontario Birds 2006, recenzja (PDF)](https://sora.unm.edu/sites/default/files/98-100%20OB%20Vol%2024%232%20Aug%202006.pdf)

@@ -21,7 +21,7 @@ Czaszkę ryjówki poznasz po czerwonych końcach zębów, a znajdziesz ją w wyp
 8. Duża, jasnoszara sowa z długim ogonem i małymi ciemnymi oczami, w Karpatach:
    a) puszczyk b) **puszczyk uralski** c) puchacz d) uszatka
 9. Dlaczego nie wolno wabić sów głosem w sezonie lęgowym?
-   a) to nielegalne w każdym kraju b) **sowa traci energię i może porzucić gniazdo** c) sowy nie reagują d) nagrania są za głośne
+   a) to nielegalne w każdym kraju b) **sowa traci czas i energię, a jej lęg zostaje bez opieki** c) sowy nie reagują d) nagrania są za głośne
 10. Piszczenie jak nienaoliwione drzwi w czerwcowy wieczór w zadrzewieniu:
     a) **młode uszatki** b) płomykówka c) pójdźka d) puchacz
 

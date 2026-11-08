@@ -1,5 +1,7 @@
 import { CoTuZobacze } from '@/components/CoTuZobacze';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { KIEDY_I_GDZIE } from '@/lib/publikacja';
 import Link from 'next/link';
 import { PlanerWyjazdu } from '@/components/PlanerWyjazdu';
 import { PunktyObserwacji, type DanePunktow } from '@/components/PunktyObserwacji';
@@ -31,6 +33,8 @@ function danePunktow(): DanePunktow {
 
 /** "Kiedy i gdzie": the trip planner (when) above the observation points (where). */
 export default function KiedyIGdziePage() {
+  // Taken off the site for now (src/lib/publikacja.ts).
+  if (!KIEDY_I_GDZIE) notFound();
   return (
     <div className="page">
       <header className="naglowek-strony">

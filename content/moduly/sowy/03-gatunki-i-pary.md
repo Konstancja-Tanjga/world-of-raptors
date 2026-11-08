@@ -15,7 +15,7 @@ Występowanie: Polska, południe Hiszpanii.
 - **Rozpiętość:** ok. 138–170 cm (największa sowa Europy)
 - **Klucz:** ogromny, z **długimi „uszami”**, **pomarańczowe oczy**, rdzawobrązowy.
 - **Głos:** bardzo niskie, dwusylabowe **„uu-hu”**, słyszalne z daleka; tokuje od zimy do wczesnej wiosny.
-- **Gdzie:** skały, wąwozy, kamieniołomy, stare lasy. W Hiszpanii dość częsty w sierras, w Polsce nieliczny.
+- **Gdzie:** skały, wąwozy, kamieniołomy, stare lasy. W Hiszpanii dość częsty w sierras. W Polsce nieliczny, a największe populacje żyją na nizinach (Lubelszczyzna, Biebrza, Pomorze): gniazduje tam w starych gniazdach ptaków szponiastych i bociana czarnego, a nawet na ziemi w olsach.
 
 <glos data-id="puchacz/samiec">
 </glos>
@@ -154,7 +154,7 @@ Występowanie: Polska.
 - **Rozpiętość:** ok. 50–60 cm
 - **Klucz:** **duża kwadratowa głowa**, **żółte oczy**, wyraźna jasna szlara z ciemnym obramowaniem, więc mina „wiecznie zdziwiona”; nogi pokryte gęstym pierzem.
 - **Głos:** szybka seria **„pu-pu-pu-pu-pu”** (5–8 dźwięków), zwykle w marcu i kwietniu, w nocy.
-- **Gdzie:** stare lasy iglaste w górach i na północnym wschodzie. Gniazduje w dziuplach dzięcioła czarnego.
+- **Gdzie:** stare lasy (buczyny, stare bory sosnowe i świerczyny) w górach, na Pomorzu i na północnym wschodzie. Gniazduje w dziuplach dzięcioła czarnego, w Polsce głównie w bukach i sosnach.
 
 <glos data-id="wlochatka/samiec">
 </glos>
@@ -193,7 +193,7 @@ Występowanie: południe Hiszpanii (w Polsce rzadko). Wędrowny.
 | Głowa | płaska, szeroka | **duża, kwadratowa** | **mała** |
 | Szlara | słabo zaznaczona | wyraźna, ciemna obwódka | słabo zaznaczona |
 | Ogon | krótki | krótki | **długi, ruchliwy** |
-| Siedlisko | pola, wieś | stary las iglasty | stary las iglasty |
+| Siedlisko | pola, wieś | stare buczyny i bory | stary las iglasty |
 | Aktywność | zmierzch i dzień | noc | zmierzch i świt |
 
 ### Syczek czy pójdźka (latem na południu Hiszpanii)?
@@ -210,13 +210,13 @@ Syczek ma „uszka” i wzór kory, jest aktywny tylko w nocy i odzywa się mono
 ---
 
 ## Drzewko decyzyjne: słyszysz sowę w nocy
-1. **Bardzo niskie, dwusylabowe „uu-hu” ze skał?** → puchacz
+1. **Bardzo niskie, dwusylabowe „uu-hu” co 8–12 s, ze skał albo z dużego lasu?** → puchacz (z daleka słychać tylko pierwszą sylabę; uszatka woła mniej więcej dwa razy częściej)
 2. **Drżące „hu-hu-huuu” w parku lub lesie?** → puszczyk
 3. **Syczący wrzask przy kościele lub stodole?** → płomykówka
 4. **Pojedyncze „tjuu” co 2–3 s, lato, południe?** → syczek
 5. **Pojedyncze niskie „huu” co 2–3 s, zadrzewienia?** → uszatka
 6. **Piszczenie jak skrzypiące drzwi w czerwcu?** → młode uszatki
-7. **Szybka seria „pu-pu-pu-pu” w starym lesie iglastym?** → włochatka
+7. **Szybka seria „pu-pu-pu-pu” w starej buczynie albo starym borze?** → włochatka
 8. **Gwizdy o zmierzchu w górskim świerczynie?** → sóweczka
 
 ## Filmy
@@ -226,6 +226,7 @@ Syczek ma „uszka” i wzór kory, jest aktywny tylko w nocy i odzywa się mono
 - [YouTube: sóweczka, najmniejsza sowa Europy](https://www.youtube.com/results?search_query=Eurasian+pygmy+owl)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [xeno-canto](https://xeno-canto.org): nagrania głosów
 - [Birds of the World (Cornell Lab)](https://birdsoftheworld.org): monografie gatunków (część treści płatna)
 - [Wikipedia: Płomykówka](https://pl.wikipedia.org/wiki/P%C5%82omyk%C3%B3wka) i [Uszatka](https://pl.wikipedia.org/wiki/Uszatka_(ptak))

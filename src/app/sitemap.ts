@@ -1,3 +1,4 @@
+import { KIEDY_I_GDZIE } from '@/lib/publikacja';
 import type { MetadataRoute } from 'next';
 import { gotoweModuly, ptakiNaLiscie } from '@/lib/content';
 import { ADRES } from '@/lib/seo';
@@ -14,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/gatunki',
     '/rozpoznaj',
     '/rozpoznaj/glos',
-    '/kiedy-i-gdzie',
+    ...(KIEDY_I_GDZIE ? ['/kiedy-i-gdzie'] : []),
     '/test-startowy',
     '/o-projekcie',
     ...gotoweModuly.flatMap((m) => [`/moduly/${m.slug}`, ...m.lekcje.map((l) => `/moduly/${m.slug}/${l.slug}`)]),

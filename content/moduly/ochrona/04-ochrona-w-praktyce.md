@@ -26,7 +26,7 @@ To jedno z najskuteczniejszych polskich narzędzi ochrony. Wokół gniazd wybran
 | **bielik** | duże gniazdo na starym drzewie, wrażliwy na wycinkę i niepokojenie |
 | **orzeł przedni** | nieliczny (kilkadziesiąt par, głównie w Karpatach), bardzo wrażliwy |
 | **orlik krzykliwy** i **orlik grubodzioby** | gniazda w lasach, orlik grubodzioby skrajnie nieliczny |
-| **rybołów** | nieliczny, gniazdo na wierzchołku sosny |
+| **rybołów** | skrajnie nieliczny, gniazdo na wierzchołku sosny |
 | **kania ruda**, **kania czarna**, **gadożer**, **sokół wędrowny**, **puchacz** | nieliczne gatunki gniazdujące w lasach lub na skałach |
 
 Strefa ma zwykle dwie części:
@@ -105,6 +105,7 @@ Odczytaną obrączkę (także martwego ptaka) zgłoś do **Stacji Ornitologiczne
 - [YouTube: miejsca dokarmiania sępów](https://www.youtube.com/results?search_query=vulture+feeding+station+Spain)
 
 ## Źródła i dalsza nauka
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Stowarzyszenie na rzecz Dzikich Zwierząt „Sokół”](https://www.sokoly.pl): restytucja sokoła wędrownego, kamery na gniazdach
 - [Komitet Ochrony Orłów](https://koo.org.pl): bieliki, orliki, orzeł przedni, strefy ochronne
 - [OTOP](https://otop.org.pl): polski partner BirdLife International
