@@ -24,6 +24,7 @@ import { odmiana } from '@/lib/odmiana';
 import { polozenie } from '@/lib/zdjecia';
 import { Button, Checkbox, Progress, RadioGroup, StateBlock } from './ds';
 import { NazwaGatunku } from './NazwaPtaka';
+import { RegionZPunktu } from './RegionZPunktu';
 
 /** A species as the wizard shows it: what the steps compare, its names and a thumbnail. */
 export type GatunekRozpoznania = CechyRozpoznania & {
@@ -218,6 +219,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
             options={REGIONY.map((r) => ({ value: r.value, label: r.label }))}
           />
         )}
+        {krok === 'gdzie' && <RegionZPunktu onRegion={(region) => setOdp((o) => ({ ...o, region }))} />}
 
         {krok === 'wielkosc' && (
           <RadioGroup

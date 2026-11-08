@@ -43,7 +43,8 @@ const zrodlo = (src: string) => src.replace(/^https:\/\/thumb\.wikimedia\.org\//
  * to six photos inside; a `<glos>` not written as a block or naming a
  * recording `idNagran` does not have; a `<model-3d>` not written as a block
  * or naming a scene sceny.ts does not have; an `<ile-ich-jest>` not written
- * as a block or with an unknown variant.
+ * as a block or with an unknown variant; a `<karta-rewirow>` not written
+ * as a block.
  */
 export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<string> = new Set()): string[] {
   const bledy: string[] = [];
@@ -108,6 +109,15 @@ export function problemyTagow(md: string, plik: string, idNagran: ReadonlySet<st
       bledy.push(`${gdzie(i)}: zapisz ćwiczenie jako <ile-ich-jest> albo <ile-ich-jest data-wariant="powroty"> w osobnej linii, a </ile-ich-jest> w następnej`);
     } else if (m[1] && m[1] !== 'kontrole' && m[1] !== 'powroty') {
       bledy.push(`${gdzie(i)}: <ile-ich-jest>: nieznany wariant „${m[1]}” (kontrole albo powroty)`);
+    }
+  }
+
+  // B11's sheet: the session is checked where it renders (sesjaKarty in content.ts), the block form here.
+  for (let i = 0; i < linie.length; i++) {
+    const t = linie[i].trim();
+    if (!/<karta-rewirow\b/i.test(t)) continue;
+    if (!/^<karta-rewirow data-sesja="[a-z0-9-]+">$/.test(t) || linie[i + 1]?.trim() !== '</karta-rewirow>') {
+      bledy.push(`${gdzie(i)}: zapisz kartę jako <karta-rewirow data-sesja="…"> w osobnej linii, a </karta-rewirow> w następnej`);
     }
   }
 

@@ -5,14 +5,18 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { dzisiaj } from '@/lib/checklist';
 import { jestDniem, LIMITY, nazwaWPoblizu, punktSlownie, type Punkt } from '@/lib/dziennik';
 import { noweIdWpisu, useDziennik } from '@/lib/dziennikMagazyn';
-import { aktywne, najblizszeMoje } from '@/lib/mojeMiejsca';
-import { useMojeMiejsca } from '@/lib/mojeMiejscaMagazyn';
+import { aktywne, bladMiejsca, kluczNazwy, najblizszeMoje } from '@/lib/mojeMiejsca';
+import { noweIdMiejsca, useMojeMiejsca } from '@/lib/mojeMiejscaMagazyn';
 import { wspolrzedneZTekstu, type Wspolrzedne } from '@/lib/punkty';
 import type { PtakDoWyboru } from '@/lib/types';
 import { ButtonLink } from '../ButtonLink';
-import { Button, Combobox, DatePicker, Dialog, Input, StateBlock, Textarea, useToast } from '../ds';
+import { Button, Combobox, DatePicker, Dialog, FilterChip, Input, StateBlock, Textarea, useToast } from '../ds';
 import { doSzukania } from '../SpeciesFilters';
 import { MapaWGranicy } from './MapaWGranicy';
+import { WierszGatunku, type WierszListy } from './WierszGatunku';
+import { OwnPhotos } from '../OwnPhotos';
+import { usunZdjecia, useZdjeciaWlasne, zdjeciaWpisow, type ZdjecieWlasne } from '@/lib/zdjeciaWlasne';
+import { odmiana } from '@/lib/odmiana';
 
 /** How long to wait for the browser to answer at all (a permission prompt left open calls back never). */
 const CZEKANIE_NA_LOKALIZACJE_MS = 30_000;
@@ -25,17 +29,20 @@ const godzinaTeraz = () => {
 };
 
 /**
- * Adding or editing one sighting of the field log (`/dziennik/obserwacja`,
+ * Adding sightings to the field log, or editing one (`/dziennik/obserwacja`,
  * `?gatunek=` to start from a species, `?id=` to edit). Made for a phone in
- * the field: the species by typing a few letters, the date and time filled
- * in, the point from the phone's location in one tap, a map for a point
- * picked by hand, and the name of a place used before within 500 m offered.
+ * the field. A new sighting is a list: every species seen on one outing (16
+ * at La Janda), each with its count and photos, sharing the day, time, place,
+ * point and note; saving it writes one entry per species, which the log shows
+ * together. Editing changes one entry. The point comes from the phone in one
+ * tap, a map, typed coordinates or a favourite place ("Moje miejsca"); a name
+ * used before within 500 m, or a place of mine within 1 km, is offered.
  */
 export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   const router = useRouter();
   const { notify } = useToast();
   const { dziennik, zapisz, usun } = useDziennik();
-  const { miejsca } = useMojeMiejsca();
+  const { miejsca, zapisz: zapiszMiejsce, usun: usunMiejsce } = useMojeMiejsca();
 
   // The address is read after mount: the page is prerendered without its query.
   const [adres, setAdres] = useState<{ id: string | null; gatunek: string | null } | null>(null);
@@ -61,6 +68,12 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
   // Shown on every refused save, not once a visit: the form must not look as if the button did nothing.
   const [bladZapisu, setBladZapisu] = useState<string | null>(null);
   const [potwierdzUsuniecie, setPotwierdzUsuniecie] = useState(false);
+  // A new sighting: every species of the outing, one row each.
+  const [lista, setLista] = useState<WierszListy[]>([]);
+  const [bladUlubionego, setBladUlubionego] = useState<string | null>(null);
+  const [usunUlubione, setUsunUlubione] = useState<string | null>(null);
+  // Leaving a new, unsaved sighting whose rows already have photos: they would stay on their species.
+  const [porzucone, setPorzucone] = useState<ZdjecieWlasne[] | null>(null);
   const zadanie = useRef(0);
   const czuwanie = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -83,7 +96,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
       return;
     }
     setId(adres.id ? null : noweIdWpisu());
-    setGatunek(adres.gatunek && ptaki.some((p) => p.id === adres.gatunek) ? adres.gatunek : null);
+    if (adres.gatunek && ptaki.some((p) => p.id === adres.gatunek)) setLista([{ id: noweIdWpisu(), gatunek: adres.gatunek, liczba: '' }]);
     setData(dzisiaj());
     setGodzina(godzinaTeraz());
     /* eslint-enable react-hooks/set-state-in-effect */
@@ -93,8 +106,17 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     if (czuwanie.current) clearTimeout(czuwanie.current);
   }, []);
 
+  // A sighting's photos are filed under its species: while it has some, the species stays as it is.
+  const { zdjecia: zdjeciaWpisu } = useZdjeciaWlasne(gatunek ?? '', id ?? undefined);
+  const zdjeciaBlokuja = Boolean(gatunek && id && zdjeciaWpisu?.length);
+
   const opcje = useMemo(() => ptaki.map((p) => ({ value: p.id, label: p.pl, hint: p.lat })), [ptaki]);
   const poId = useMemo(() => new Map(ptaki.map((p) => [p.id, p])), [ptaki]);
+  const filtrGatunku = (o: { value: string; label: string }, q: string) => {
+    const p = poId.get(o.value);
+    const t = doSzukania(q);
+    return !t || (p ? [p.pl, p.lat, p.en, p.es] : [o.label]).some((x) => doSzukania(x).includes(t));
+  };
 
   /** A new point: the place's name is offered from an earlier sighting nearby, if none is typed yet. */
   const ustawPunkt = (p: Punkt | null) => {
@@ -147,6 +169,22 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     );
   };
 
+  const ulubione = miejsca ? aktywne(miejsca) : [];
+  const wybraneUlubione = miejsce.trim() ? ulubione.find(([, m]) => kluczNazwy(m.nazwa) === kluczNazwy(miejsce)) : undefined;
+  const wybierzUlubione = (m: { nazwa: string; szer: number; dl: number }) => {
+    setMiejsce(m.nazwa);
+    setPunkt({ szer: m.szer, dl: m.dl, zrodlo: 'mapa' });
+    setBladUlubionego(null);
+  };
+  const dodajDoUlubionych = () => {
+    if (!miejsca || !punkt) return;
+    const idMiejsca = noweIdMiejsca();
+    const dane = { nazwa: miejsce, szer: punkt.szer, dl: punkt.dl, dokladnosc: punkt.dokladnosc, data: data || dzisiaj() };
+    const blad = bladMiejsca(miejsca, dane, idMiejsca);
+    if (blad) return setBladUlubionego(blad);
+    setBladUlubionego(zapiszMiejsce(idMiejsca, dane) ? null : 'Przeglądarka nie zapisała miejsca (tryb prywatny albo brak miejsca).');
+  };
+
   const wpiszWspolrzedne = () => {
     const p = wspolrzedneZTekstu(wspolrzedne);
     if (p) ustawPunkt({ ...p, zrodlo: 'mapa' });
@@ -173,49 +211,118 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
       : undefined;
   const bladDaty = !jestDniem(data) ? 'Wybierz dzień obserwacji.' : data > dzisiaj() ? 'Ten dzień jeszcze nie nadszedł.' : undefined;
 
-  const zapiszObserwacje = () => {
-    setPokazBledy(true);
+  const bladLiczbyZ = (tekst: string) => {
+    const x = Number(tekst);
+    return tekst.trim() && !(Number.isInteger(x) && x >= 1 && x <= LIMITY.liczba)
+      ? `Liczba całkowita od 1 do ${LIMITY.liczba.toLocaleString('pl-PL')} albo puste pole.`
+      : undefined;
+  };
+  const wspolne = { data, godzina: godzina || undefined, miejsce, notatka, punkt: punkt ?? undefined };
+  const nazwaGatunku = (g: string) => poId.get(g)?.pl ?? g;
+  const zDuzej = (t: string) => t[0].toLocaleUpperCase('pl') + t.slice(1);
+  const bladZapisuWpisu = (w: 'niepoprawny' | 'odmowa') =>
+    w === 'odmowa'
+      ? 'Przeglądarka nie zapisała obserwacji (tryb prywatny albo brak miejsca). Formularz zostaje wypełniony: spróbuj jeszcze raz.'
+      : 'Tej obserwacji nie da się zapisać: któreś pole ma niepoprawną wartość. Sprawdź punkt i godzinę.';
+
+  /** Editing one entry. */
+  const zapiszJedna = () => {
     if (!gatunek) setBladGatunku('Wybierz gatunek z listy: wpisz kilka liter nazwy.');
     if (!gatunek || bladDaty || bladLiczby) {
       const pierwsze = !gatunek ? '[role=combobox]' : bladDaty ? 'input[type=date]' : 'input[inputmode=numeric]';
       document.querySelector<HTMLInputElement>(`.formularz-obserwacji ${pierwsze}`)?.focus();
       return;
     }
-    const nowyGatunek = !Object.values(dziennik).some((w) => !w.usuniety && w.gatunek === gatunek);
-    const wynik = zapisz(id, {
-      gatunek,
-      data,
-      godzina: godzina || undefined,
-      liczba: liczba.trim() ? n : undefined,
-      miejsce,
-      notatka,
-      punkt: punkt ?? undefined,
-    });
-    if (wynik.wpis !== 'zapisany') {
-      setBladZapisu(
-        wynik.wpis === 'odmowa'
-          ? 'Przeglądarka nie zapisała obserwacji (tryb prywatny albo brak miejsca). Formularz zostaje wypełniony: spróbuj jeszcze raz albo przepisz ją w notatkach.'
-          : 'Tej obserwacji nie da się zapisać: któreś pole ma niepoprawną wartość. Sprawdź punkt i godzinę.',
-      );
+    const wynik = zapisz(id, { ...wspolne, gatunek, liczba: liczba.trim() ? n : undefined });
+    if (wynik.wpis !== 'zapisany') return setBladZapisu(bladZapisuWpisu(wynik.wpis));
+    const Nazwa = zDuzej(nazwaGatunku(gatunek));
+    notify(
+      wynik.checklista
+        ? { tone: 'success', title: 'Obserwacja zmieniona', description: `${Nazwa}.` }
+        : {
+            tone: 'warning',
+            title: 'Obserwacja zapisana, checklista bez zmian',
+            description: `${Nazwa} jest w dzienniku, ale przeglądarka nie zapisała jej na checkliście. Odhacz ją tam ręcznie.`,
+            duration: null,
+          },
+    );
+    router.push(`/dziennik#wpis-${id}`);
+  };
+
+  /** A new sighting: one entry per species on the list, sharing everything else. */
+  const zapiszListe = () => {
+    if (!lista.length) setBladGatunku('Dodaj co najmniej jeden gatunek: wpisz kilka liter nazwy.');
+    const zlaLiczba = lista.find((w) => bladLiczbyZ(w.liczba));
+    if (!lista.length || bladDaty || zlaLiczba) {
+      const pierwsze = !lista.length ? '[role=combobox]' : bladDaty ? 'input[type=date]' : 'input[inputmode=numeric]';
+      document.querySelector<HTMLInputElement>(`.formularz-obserwacji ${pierwsze}`)?.focus();
       return;
     }
-    const nazwa = poId.get(gatunek)?.pl ?? gatunek;
-    const Nazwa = nazwa[0].toLocaleUpperCase('pl') + nazwa.slice(1);
-    if (!wynik.checklista) {
-      notify({
-        tone: 'warning',
-        title: 'Obserwacja zapisana, checklista bez zmian',
-        description: `${Nazwa} jest w dzienniku, ale przeglądarka nie zapisała jej na checkliście. Odhacz ją tam ręcznie.`,
-        duration: null,
-      });
-    } else {
-      notify({
-        tone: 'success',
-        title: edycja ? 'Obserwacja zmieniona' : 'Obserwacja zapisana',
-        description: edycja || !nowyGatunek ? `${Nazwa}.` : `${Nazwa}: jest też na mojej checkliście.`,
-      });
+    const widziane = new Set(Object.values(dziennik).filter((w) => !w.usuniety).map((w) => w.gatunek));
+    const nieZapisane: string[] = [];
+    const bezChecklisty: string[] = [];
+    let blad: 'niepoprawny' | 'odmowa' = 'odmowa';
+    for (const w of lista) {
+      // A retry writes the same ids again: entries saved the first time are overwritten, not doubled.
+      const wynik = zapisz(w.id, { ...wspolne, gatunek: w.gatunek, liczba: w.liczba.trim() ? Number(w.liczba) : undefined });
+      if (wynik.wpis !== 'zapisany') {
+        nieZapisane.push(nazwaGatunku(w.gatunek));
+        blad = wynik.wpis;
+      } else if (!wynik.checklista) bezChecklisty.push(nazwaGatunku(w.gatunek));
     }
-    router.push(`/dziennik#wpis-${id}`);
+    if (nieZapisane.length) {
+      return setBladZapisu(`Nie zapisano: ${nieZapisane.join(', ')}. ${bladZapisuWpisu(blad)}`);
+    }
+    const nowe = lista.filter((w) => !widziane.has(w.gatunek)).length;
+    notify(
+      bezChecklisty.length
+        ? {
+            tone: 'warning',
+            title: 'Obserwacje zapisane, checklista nie cała',
+            description: `Przeglądarka nie odhaczyła na checkliście: ${bezChecklisty.join(', ')}. Odhacz je tam ręcznie.`,
+            duration: null,
+          }
+        : {
+            tone: 'success',
+            title: lista.length === 1 ? 'Obserwacja zapisana' : `Zapisano ${lista.length} ${odmiana(lista.length, ['gatunek', 'gatunki', 'gatunków'])}`,
+            description:
+              lista.length === 1
+                ? `${zDuzej(nazwaGatunku(lista[0].gatunek))}${nowe ? ': jest też na mojej checkliście.' : '.'}`
+                : nowe
+                  ? `Nowe na mojej checkliście: ${nowe}.`
+                  : 'Wszystkie były już na mojej checkliście.',
+          },
+    );
+    router.push(`/dziennik#wpis-${lista[0].id}`);
+  };
+
+  const zapiszObserwacje = () => {
+    setPokazBledy(true);
+    if (edycja) zapiszJedna();
+    else zapiszListe();
+  };
+
+  /** "Anuluj": a new sighting whose rows have photos asks first what to do with them. */
+  const anuluj = async () => {
+    if (edycja || !lista.length) return router.push('/dziennik');
+    try {
+      const zdjecia = await zdjeciaWpisow(lista.map((w) => w.id));
+      if (!zdjecia.length) return router.push('/dziennik');
+      setPorzucone(zdjecia);
+    } catch (err) {
+      console.error('[dziennik] could not read the new sighting’s photos', err);
+      router.push('/dziennik');
+    }
+  };
+  const usunPorzuconeIWyjdz = async () => {
+    try {
+      if (porzucone) await usunZdjecia(porzucone);
+      router.push('/dziennik');
+    } catch (err) {
+      console.error('[dziennik] could not delete the new sighting’s photos', err);
+      setPorzucone(null);
+      setBladZapisu('Nie udało się usunąć zdjęć. Zostają przy gatunkach; mogę je usunąć na checkliście.');
+    }
   };
 
   const usunObserwacje = () => {
@@ -236,24 +343,65 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         zapiszObserwacje();
       }}
     >
-      <Combobox
-        label="Gatunek"
-        description="Wpisz kilka liter nazwy polskiej, łacińskiej, angielskiej albo hiszpańskiej."
-        options={opcje}
-        value={gatunek}
-        onChange={(v) => {
-          setGatunek(v);
-          setBladGatunku(undefined);
-          setBladZapisu(null);
-        }}
-        filter={(o, q) => {
-          const p = poId.get(o.value);
-          const t = doSzukania(q);
-          return !t || (p ? [p.pl, p.lat, p.en, p.es] : [o.label]).some((n) => doSzukania(n).includes(t));
-        }}
-        emptyMessage="Nie znam takiego ptaka. Sprawdź pisownię albo wpisz nazwę łacińską."
-        error={bladGatunku}
-      />
+      {edycja ? (
+        <Combobox
+          label="Gatunek"
+          description={
+            zdjeciaBlokuja
+              ? 'Obserwacja ma zdjęcia tego gatunku. Żeby go zmienić, usuń je najpierw.'
+              : 'Wpisz kilka liter nazwy polskiej, łacińskiej, angielskiej albo hiszpańskiej.'
+          }
+          disabled={zdjeciaBlokuja}
+          options={opcje}
+          value={gatunek}
+          onChange={(v) => {
+            setGatunek(v);
+            setBladGatunku(undefined);
+            setBladZapisu(null);
+          }}
+          filter={filtrGatunku}
+          emptyMessage="Nie znam takiego ptaka. Sprawdź pisownię albo wpisz nazwę łacińską."
+          error={bladGatunku}
+        />
+      ) : (
+        <div className="stack lista-gatunkow">
+          <Combobox
+            label="Dodaj gatunek"
+            description="Wpisz kilka liter nazwy i wybierz ptaka; dodaj tak każdy gatunek z tego wyjścia."
+            options={opcje.filter((o) => !lista.some((w) => w.gatunek === o.value))}
+            value={null}
+            onChange={(v) => {
+              if (!v) return;
+              setLista((l) => (l.some((w) => w.gatunek === v) ? l : [...l, { id: noweIdWpisu(), gatunek: v, liczba: '' }]));
+              setBladGatunku(undefined);
+              setBladZapisu(null);
+            }}
+            filter={filtrGatunku}
+            emptyMessage="Nie znam takiego ptaka albo jest już na liście."
+            error={bladGatunku}
+          />
+          {lista.length > 0 && (
+            <>
+              <p className="filters__legend" id="lista-gatunkow">
+                Na liście: {lista.length} {odmiana(lista.length, ['gatunek', 'gatunki', 'gatunków'])}
+              </p>
+              <ol className="lista-gatunkow__lista" aria-labelledby="lista-gatunkow">
+                {lista.map((w) => (
+                  <WierszGatunku
+                    key={w.id}
+                    wiersz={w}
+                    nazwa={nazwaGatunku(w.gatunek)}
+                    lacina={poId.get(w.gatunek)?.lat ?? ''}
+                    bladLiczby={bladLiczbyZ(w.liczba)}
+                    onLiczba={(liczba) => setLista((l) => l.map((x) => (x.id === w.id ? { ...x, liczba } : x)))}
+                    onUsun={() => setLista((l) => l.filter((x) => x.id !== w.id))}
+                  />
+                ))}
+              </ol>
+            </>
+          )}
+        </div>
+      )}
       <div className="formularz-obserwacji__pola">
         <DatePicker
           label="Data"
@@ -263,21 +411,35 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
           error={pokazBledy ? bladDaty : undefined}
         />
         <Input label="Godzina" type="time" value={godzina} onChange={(e) => setGodzina(e.target.value)} />
-        <Input
-          label="Liczba ptaków"
-          description="Jeśli liczyłam."
-          type="number"
-          inputMode="numeric"
-          min={1}
-          step={1}
-          value={liczba}
-          onChange={(e) => setLiczba(e.target.value)}
-          error={bladLiczby}
-        />
+        {edycja && (
+          <Input
+            label="Liczba ptaków"
+            description="Jeśli liczyłam."
+            type="number"
+            inputMode="numeric"
+            min={1}
+            step={1}
+            value={liczba}
+            onChange={(e) => setLiczba(e.target.value)}
+            error={bladLiczby}
+          />
+        )}
       </div>
 
       <fieldset className="formularz-obserwacji__miejsce stack">
         <legend className="filters__legend">Gdzie</legend>
+        {ulubione.length > 0 && (
+          <div className="formularz-obserwacji__ulubione">
+            <p className="filters__legend" id="ulubione-miejsca">
+              Ulubione miejsca
+            </p>
+            <div className="chips" role="group" aria-labelledby="ulubione-miejsca">
+              {ulubione.map(([idM, m]) => (
+                <FilterChip key={idM} label={m.nazwa} pressed={wybraneUlubione?.[0] === idM} onClick={() => wybierzUlubione(m)} />
+              ))}
+            </div>
+          </div>
+        )}
         <div className="row">
           <Button type="button" variant="secondary" onClick={zlokalizuj} disabled={lokalizowanie.stan === 'lokalizuje'}>
             {lokalizowanie.stan === 'lokalizuje' ? 'Ustalam pozycję…' : 'Użyj mojej lokalizacji'}
@@ -340,6 +502,25 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
           maxLength={200}
           onChange={(e) => setMiejsce(e.target.value)}
         />
+        <div className="row">
+          {wybraneUlubione ? (
+            <Button type="button" variant="ghost" tone="critical" size="sm" onClick={() => setUsunUlubione(wybraneUlubione[0])}>
+              Usuń „{wybraneUlubione[1].nazwa}” z ulubionych
+            </Button>
+          ) : (
+            miejsce.trim() &&
+            punkt &&
+            miejsca && (
+              <Button type="button" variant="secondary" size="sm" onClick={dodajDoUlubionych}>
+                Dodaj „{miejsce.trim()}” do ulubionych
+              </Button>
+            )
+          )}
+          {!wybraneUlubione && miejsce.trim() && !punkt && (
+            <p className="muted">Żeby dodać miejsce do ulubionych, ustaw jego punkt.</p>
+          )}
+        </div>
+        {bladUlubionego && <StateBlock state="error" title="Nie dodano do ulubionych" description={bladUlubionego} scope="section" />}
       </fieldset>
 
       <datalist id="dziennik-moje-miejsca">
@@ -348,12 +529,24 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
 
       <Textarea label="Notatka" rows={3} maxLength={2000} value={notatka} onChange={(e) => setNotatka(e.target.value)} />
 
+      {edycja && gatunek && (
+        <OwnPhotos gatunek={gatunek} nazwa={poId.get(gatunek)?.pl ?? gatunek} wpis={id} edycja tytul="Zdjęcia z tej obserwacji" />
+      )}
+
       {bladZapisu && <StateBlock state="error" title="Nie zapisano" description={bladZapisu} scope="section" />}
       <div className="row">
-        <Button type="submit">{edycja ? 'Zapisz zmiany' : 'Zapisz obserwację'}</Button>
-        <ButtonLink href="/dziennik" variant="secondary">
-          Anuluj
-        </ButtonLink>
+        <Button type="submit">
+          {edycja ? 'Zapisz zmiany' : lista.length > 1 ? `Zapisz ${lista.length} ${odmiana(lista.length, ['gatunek', 'gatunki', 'gatunków'])}` : 'Zapisz obserwację'}
+        </Button>
+        {edycja ? (
+          <ButtonLink href="/dziennik" variant="secondary">
+            Anuluj
+          </ButtonLink>
+        ) : (
+          <Button type="button" variant="secondary" onClick={() => void anuluj()}>
+            Anuluj
+          </Button>
+        )}
         {edycja && (
           <Button type="button" variant="ghost" tone="critical" onClick={() => setPotwierdzUsuniecie(true)}>
             Usuń obserwację
@@ -377,6 +570,53 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         }
       >
         Zniknie z dziennika na wszystkich moich urządzeniach. Gatunek zostanie na checkliście.
+      </Dialog>
+      <Dialog
+        open={usunUlubione !== null}
+        onClose={() => setUsunUlubione(null)}
+        title="Usunąć to miejsce z ulubionych?"
+        size="sm"
+        footer={
+          <>
+            <Button type="button" variant="secondary" onClick={() => setUsunUlubione(null)}>
+              Anuluj
+            </Button>
+            <Button
+              type="button"
+              tone="critical"
+              onClick={() => {
+                if (usunUlubione && !usunMiejsce(usunUlubione)) setBladUlubionego('Przeglądarka nie zapisała zmiany. Miejsce zostaje w ulubionych.');
+                setUsunUlubione(null);
+              }}
+            >
+              Usuń z ulubionych
+            </Button>
+          </>
+        }
+      >
+        Zniknie też ze strony „Moje miejsca”. Obserwacje z tą nazwą miejsca zostaną bez zmian.
+      </Dialog>
+      <Dialog
+        open={porzucone !== null}
+        onClose={() => setPorzucone(null)}
+        title="Wyjść bez zapisu?"
+        size="sm"
+        footer={
+          <>
+            <Button type="button" variant="secondary" onClick={() => setPorzucone(null)}>
+              Anuluj
+            </Button>
+            <Button type="button" variant="secondary" onClick={() => router.push('/dziennik')}>
+              Zostaw zdjęcia
+            </Button>
+            <Button type="button" tone="critical" onClick={() => void usunPorzuconeIWyjdz()}>
+              Usuń zdjęcia
+            </Button>
+          </>
+        }
+      >
+        {porzucone &&
+          `Do tej niezapisanej obserwacji dodałam ${porzucone.length} ${odmiana(porzucone.length, ['zdjęcie', 'zdjęcia', 'zdjęć'])}. Jeśli je zostawię, będą przy gatunkach na checkliście, ale nie w dzienniku.`}
       </Dialog>
     </form>
   );

@@ -11,8 +11,10 @@ import {
   usunWpis,
   uzyteMiejsca,
   wpisy,
+  wizyty,
   zapiszWpis,
   type Dziennik,
+  type WpisDziennika,
 } from './dziennik';
 import type { Checklista } from './obserwacje';
 
@@ -145,4 +147,16 @@ test('only real calendar days pass, and only whole-metre accuracies', () => {
   assert.ok(!jestDniem('2026-02-29'));
   assert.ok(!jestDniem('2026-13-01'));
   assert.ok(!isDziennik({ [A]: { gatunek: 'czajka', data: '2026-11-08', punkt: { szer: 52, dl: 21, zrodlo: 'gps', dokladnosc: 8.5 }, zmieniono: T } }));
+});
+
+test('one outing’s sightings group into a visit; another time or place is another visit', () => {
+  const T0 = '2026-11-08T08:00:00.000Z';
+  const wspolne = { data: '2026-11-08', godzina: '10:30', miejsce: 'La Janda', punkt: { szer: 36.25, dl: -5.85, zrodlo: 'gps' as const }, zmieniono: T0 };
+  const lista: [string, WpisDziennika][] = [
+    ['a', { ...wspolne, gatunek: 'kania-czarna' }],
+    ['b', { ...wspolne, gatunek: 'kobuz' }],
+    ['c', { ...wspolne, godzina: '15:00', gatunek: 'zuraw' }],
+    ['d', { ...wspolne, gatunek: 'blotniak-stawowy' }],
+  ];
+  assert.deepEqual(wizyty(lista).map((g) => g.map(([id]) => id)), [['a', 'b', 'd'], ['c']]);
 });

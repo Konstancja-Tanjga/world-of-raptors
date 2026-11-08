@@ -29,14 +29,14 @@ Poniższa tabela łączy systematykę z tej lekcji z gatunkami z [atlasu gatunk�
 | Szponiaste / jastrzębiowate | **trzmielojady** | trzmielojad | tak |
 | | **kanie** | kania ruda, kania czarna | tak |
 | | **sępy** | sęp płowy, sęp kasztanowaty, ścierwnik, orłosęp | nie (tylko zalatują) |
-| | **orły węże** | gadożer | tak (nieliczny) |
-| | **orły „w spodniach”** | orzeł przedni, orzeł iberyjski, orzeł południowy, orzelek włochaty, orliki | tak (orliki, orzeł przedni) |
+| | **orły węże** | gadożer | tak (skrajnie nieliczny, wschód kraju) |
+| | **orły „w spodniach”** | orzeł przedni, orzeł iberyjski, orzeł południowy, orzełek włochaty, orliki | tak (orliki, orzeł przedni) |
 | | **bieliki** | bielik | tak |
 | | **błotniaki** | błotniak stawowy, łąkowy, zbożowy, stepowy | tak |
 | | **krogulce i jastrzębie** | krogulec, jastrząb | tak |
 | | **myszołowy** | myszołów, kurhannik, myszołów włochaty | tak (myszołów) |
 | | **kaniuki** | kaniuk | nie |
-| Szponiaste / rybołowy | **rybołów** | rybołów | tak (nieliczny) |
+| Szponiaste / rybołowy | **rybołów** | rybołów | tak (skrajnie nieliczny) |
 | Sokołowe / sokołowate | **sokoły** | pustułka, pustułeczka, kobuz, sokół wędrowny, sokół skalny, drzemlik, kobczyk, raróg, białozór | tak (pustułka, kobuz, sokół wędrowny) |
 | Sowy / płomykówkowate | **płomykówka** | płomykówka | tak |
 | Sowy / puszczykowate | **pozostałe sowy** | puchacz, puszczyk, puszczyk uralski, uszatka, uszatka błotna, pójdźka, syczek, włochatka, sóweczka | tak |
@@ -52,7 +52,7 @@ W Polsce regularnie gnieździ się około dwudziestu gatunków dziennych ptaków
 
 <margines>
 
-> Sokół wędrowny prawie zniknął z Polski w drugiej połowie XX wieku, głównie przez pestycydy (DDT). Wrócił dzięki programowi reintrodukcji i dziś gnieździ się m.in. na wysokich budynkach w miastach. Ta historia jest w module [A6 · Ochrona](../ochrona/README.md).
+> Sokół wędrowny wyginął w Polsce jako ptak lęgowy (ostatni lęg w 1964 r.), głównie przez pestycydy (DDT). Wrócił dzięki reintrodukcji prowadzonej od 1990 r. (pierwszy lęg w 1998 r. na Pałacu Kultury i Nauki w Warszawie) i dziś gnieździ się m.in. na wysokich budynkach w miastach. Ta historia jest w module [A6 · Ochrona](../ochrona/README.md).
 
 <zdjecie src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/A_peregrine_falcon_takes_off_from_Winchester_Cathedral.jpg/960px-A_peregrine_falcon_takes_off_from_Winchester_Cathedral.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="960" height="768" oryginal="3362x2690" alt="Sokół z rozpostartymi skrzydłami odlatuje z kamiennego szczytu budynku na tle nieba" podpis="Sokół wędrowny startuje z wieży katedry w Winchester: wysokie budowle zastępują mu skalne urwiska" autor="Andy Morffew" licencja="CC BY-SA 4.0" licencja-url="https://creativecommons.org/licenses/by-sa/4.0" strona="https://commons.wikimedia.org/wiki/File:A_peregrine_falcon_takes_off_from_Winchester_Cathedral.jpg">
 </zdjecie>
@@ -93,6 +93,7 @@ Nie musisz uczyć się wszystkich łacińskich nazw rodzin. Wystarczą trzy pyta
 - [YouTube: ptaki drapieżne Polski](https://www.youtube.com/results?search_query=ptaki+drapie%C5%BCne+Polski)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 - [Wikipedia: Bird of prey](https://en.wikipedia.org/wiki/Bird_of_prey)
 - [Komitet Ochrony Orłów](https://koo.org.pl)
 - [Stowarzyszenie na rzecz Dzikich Zwierząt „Sokół”](https://www.sokoly.pl)

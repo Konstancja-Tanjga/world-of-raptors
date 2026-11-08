@@ -121,7 +121,7 @@ Krępy, ciemny brodziec, z wierzchu oliwkowobrązowy z drobnymi jasnymi kropkami
 
 ## Rycyk i szlamnik
 
-Dwa duże siewkowce z długimi, prawie prostymi dziobami. Rycyk to ptak słodkich wód, wilgotnych łąk i pól ryżowych, w Polsce nieliczny ptak lęgowy. Szlamnik jest ptakiem wybrzeża: przelatuje wzdłuż Bałtyku i zimuje na równiach pływowych, także w Zatoce Kadyksu i w Marismas del Barbate.
+Dwa duże siewkowce z długimi, prawie prostymi dziobami. Rycyk to ptak słodkich wód, wilgotnych łąk i pól ryżowych, w Polsce bardzo nieliczny i szybko ubywający ptak lęgowy (według poradnika GIOŚ z 2015 r. ok. 1500–2000 par, głównie w dolinach rzek wschodniej i centralnej Polski). Szlamnik jest ptakiem wybrzeża: przelatuje wzdłuż Bałtyku i zimuje na równiach pływowych, także w Zatoce Kadyksu i w Marismas del Barbate.
 
 ### Rycyk — *Limosa limosa* (ang. Black-tailed Godwit)
 
@@ -240,6 +240,7 @@ Ptak lasu, nie błota. Dużo większa i krępsza od kszyka, mniej więcej wielko
 - [BTO Bird ID: Common and Jack Snipe (kszyk i bekasik)](https://www.youtube.com/results?search_query=BTO+Bird+ID+Common+and+Jack+Snipe)
 
 ## Źródła
+- Chylarecki P., Sikora A., Cenian Z., Chodkiewicz T. (red.) 2015. *Monitoring ptaków lęgowych. Poradnik metodyczny*. Wydanie 2. GIOŚ, Warszawa ([PDF w ResearchGate](https://www.researchgate.net/publication/278672792_Monitoring_ptakow_legowych_Poradnik_metodyczny_Wydanie_2)): status, siedliska i terminy w Polsce
 
 - [Tim Melling o brodźcu śniadym (Mark Avery)](https://markavery.info/2021/04/03/tim-melling-spotted-redshank/): dziób, brak białego brzegu skrzydła, wznoszące „czu-it” i opadające „tju”
 - [BirdForum Opus: Spotted Redshank](https://birdforum.net/opus/Spotted_Redshank): młode ptaki ciemne, z prążkami na bokach
