@@ -1,10 +1,10 @@
-<a href="https://world-of-raptors.vercel.app"><img src="docs/readme/karta.webp" width="100%" alt="World of Raptors: sylwetki ptaków drapieżnych krążących w kominie na tle nieba o zmierzchu i tytuł „Naucz się czytać niebo”"></a>
+<a href="https://www.worldofraptors.com"><img src="docs/readme/karta.webp" width="100%" alt="World of Raptors: sylwetki ptaków drapieżnych krążących w kominie na tle nieba o zmierzchu i tytuł „Naucz się czytać niebo”"></a>
 
 # World of Raptors
 
 Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Napisałam go do własnej nauki. Działa w przeglądarce, bez kont i bez serwera z danymi: postęp, fiszki i obserwacje zostają w przeglądarce.
 
-**Na żywo: [world-of-raptors.vercel.app](https://world-of-raptors.vercel.app)**
+**Na żywo: [worldofraptors.com](https://www.worldofraptors.com)**
 
 | 45 drapieżników | 55 ptaków mokradeł | 24 moduły | 125 lekcji | 261 pytań w quizach | 502 fiszki | 581 zdjęć |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -133,10 +133,10 @@ Jak dodać lekcję, moduł, gatunek, zdjęcie albo ciekawostkę: [TECH.md](TECH.
 
 ## Zdjęcia
 
-Zdjęcia w kursie (ptaki, ale też miejsca i przedmioty) pochodzą z Wikimedia Commons i są na wolnych licencjach (CC BY, CC BY-SA, CC0) albo w domenie publicznej. Wyjątki to moje zdjęcia: pójdźka w atlasie i zdjęcia z Marismas del Barbate w module B6. Przy każdym zdjęciu są autor i licencja, a na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie) dziękuję fotografom. Zrzuty ekranu w tym pliku pokazują część tych zdjęć, z podpisami jak w kursie.
+Zdjęcia w kursie (ptaki, ale też miejsca i przedmioty) pochodzą z Wikimedia Commons i są na wolnych licencjach (CC BY, CC BY-SA, CC0) albo w domenie publicznej. Wyjątki to moje zdjęcia: pójdźka w atlasie i zdjęcia z Marismas del Barbate w module B6. Przy każdym zdjęciu są autor i licencja, a na stronie [O projekcie](https://www.worldofraptors.com/o-projekcie) dziękuję fotografom. Zrzuty ekranu w tym pliku pokazują część tych zdjęć, z podpisami jak w kursie.
 
 ## Autorstwo
 
 <img src="docs/readme/o-projekcie.webp" width="100%" alt="Strona O projekcie: sylwetka kani rudej na niebie o zmierzchu, tytuł i autorzy kursu">
 
-Pomysł, plan kursu i cała treść: **Konstancja Tanjga-Nawrot**. Projekt, ruch i kod nowej wersji powstały razem z Claude, modelem AI firmy Anthropic, w Claude Code. Szczegóły i podziękowania dla fotografów są na stronie [O projekcie](https://world-of-raptors.vercel.app/o-projekcie).
+Pomysł, plan kursu i cała treść: **Konstancja Tanjga-Nawrot**. Projekt, ruch i kod nowej wersji powstały razem z Claude, modelem AI firmy Anthropic, w Claude Code. Szczegóły i podziękowania dla fotografów są na stronie [O projekcie](https://www.worldofraptors.com/o-projekcie).

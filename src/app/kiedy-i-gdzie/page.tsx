@@ -1,3 +1,4 @@
+import { CoTuZobacze } from '@/components/CoTuZobacze';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PlanerWyjazdu } from '@/components/PlanerWyjazdu';
@@ -40,6 +41,11 @@ export default function KiedyIGdziePage() {
         </p>
         <ul className="kiedy-i-gdzie__spis" aria-label="Na tej stronie">
           <li>
+            <a href="#co-tu" className="text-link">
+              Co tu zobaczę
+            </a>
+          </li>
+          <li>
             <a href="#kiedy" className="text-link">
               Kiedy jechać
             </a>
@@ -51,6 +57,16 @@ export default function KiedyIGdziePage() {
           </li>
         </ul>
       </header>
+
+      <section className="kiedy-i-gdzie__sekcja" aria-labelledby="co-tu">
+        <header className="sekcja">
+          <h2 id="co-tu" className="sekcja__tytul">
+            Co tu zobaczę
+          </h2>
+          <p className="sekcja__lead">Ptaki zgłaszane ostatnio w okolicy, z pogodą na teraz.</p>
+        </header>
+        <CoTuZobacze />
+      </section>
 
       <section className="kiedy-i-gdzie__sekcja" aria-labelledby="kiedy">
         <header className="sekcja">
@@ -75,12 +91,7 @@ export default function KiedyIGdziePage() {
             Gdzie stanąć
           </h2>
           <p className="sekcja__lead">
-            Punkty obserwacji z porą roku i dnia, wiatrem, ptakami i dojazdem. Wpisz, skąd ruszasz, a ułożą się od
-            najbliższego. Jak wiatr przesuwa przelot nad cieśniną, wyjaśnia lekcja{' '}
-            <Link href="/moduly/gibraltar/01-ciesnina" className="text-link">
-              Cieśnina, wiatry i kalendarz przelotu
-            </Link>
-            .
+            Punkty z porą roku, ptakami i dojazdem. Szukaj po nazwie, okolicy albo ptaku albo pokaż najbliższe.
           </p>
         </header>
         <PunktyObserwacji {...danePunktow()} />

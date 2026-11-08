@@ -9,22 +9,12 @@
 }
 .atlas__narzedzia {
   display: grid;
-  gap: var(--bh-gap-loose);
+  gap: var(--bh-gap-normal);
   padding-bottom: var(--bh-gap-loose);
   border-bottom: 1px solid var(--wor-linia);
 }
-.atlas__widok {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--bh-gap-loose);
-}
-.atlas__widok > * {
-  min-width: 0;
-  max-width: 100%;
-}
 .atlas__licznik {
+  justify-self: end;
   margin: 0;
   color: var(--bh-text-muted);
 }

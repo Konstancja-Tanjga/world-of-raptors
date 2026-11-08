@@ -14,7 +14,6 @@ import { Okladka } from '@/components/start/Okladka';
 import { StartKursu } from '@/components/start/StartKursu';
 import { MarkdownInline } from '@/components/Markdown';
 import {
-  ciekawostkiDla,
   gatunki,
   gotoweModuly,
   grupySylwetek,
@@ -103,7 +102,6 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
   const { grupy, lead } = grupySylwetek();
   const lekcji = gotoweModuly.reduce((n, m) => n + m.lekcje.length, 0);
   const dzienne = gatunki.filter((x) => x.aktywnosc === 'dzienny').length;
-  const konspekt = gotoweModuly.map(({ slug, id, lekcje }) => ({ slug, id, lekcje }));
 
   return (
     <div className="start">
@@ -142,7 +140,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
           rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską.
         </p>
         <div className="niebo__akcje">
-          <StartKursu konspekt={konspekt} />
+          <StartKursu />
           <Link href="/gatunki" className="cta cta--szklo">
             <span className="cta__etykieta">Otwórz atlas</span>
           </Link>
@@ -175,7 +173,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
       <Chor />
 
       <div className="start__ciekawostka">
-        <Ciekawostka {...ciekawostkiDla()} />
+        <Ciekawostka />
       </div>
 
       <Kolekcja

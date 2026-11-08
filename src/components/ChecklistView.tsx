@@ -3,8 +3,14 @@
 import Link from 'next/link';
 import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { dzisiaj, jestWidziany, useChecklista, widziane } from '@/lib/checklist';
+import { odmiana } from '@/lib/dziennik';
+import { useDziennik, wpisy } from '@/lib/dziennikMagazyn';
 import { useFiszki } from '@/lib/fiszki';
 import { NiepoprawnaKopia, odczytajKopie, utworzKopie, type OdczytanaKopia } from '@/lib/kopia';
+import { opisBleduLokalizacji, pobierzPozycje, type Pozycja } from '@/lib/lokalizacja';
+import { ptakiMojegoMiejsca } from '@/lib/filtrMiejsca';
+import { aktywne, najblizszeMoje, zgodzZMiejscami } from '@/lib/mojeMiejsca';
+import { useMojeMiejsca, wczytajMiejscaZKopii } from '@/lib/mojeMiejscaMagazyn';
 import { usePostep } from '@/lib/postep';
 import { useZdobyte, wczytajZKopii } from '@/lib/zdobyte';
 import { zastapZdjecia } from '@/lib/zdjeciaWlasne';
@@ -22,11 +28,15 @@ import {
   Textarea,
   useToast,
 } from './ds';
-import { filtryAktywne as czyFiltryAktywne, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
+import { ButtonLink } from './ButtonLink';
+import { doSzukania, filtryAktywne as czyFiltryAktywne, pasujeDoSzukania, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 import { NazwaPtaka } from './NazwaPtaka';
 
 type Widok = 'wszystkie' | 'widziane' | 'do-zobaczenia';
+
+/** How many of the rest of Europe's birds a search shows at most: a short text matches hundreds. */
+const NAJWIECEJ_POZOSTALYCH = 30;
 
 /** One group of a site's field list (content.ts, listaMiejsca). */
 export type GrupaListy = { id: string; nazwa: string; gatunki: string[] };
@@ -35,19 +45,26 @@ export type GrupaListy = { id: string; nazwa: string; gatunki: string[] };
  * `sylwetki`: each raptor's silhouette, drawn on the server so the generator
  * stays out of this bundle (birds of marshes have none). `listyMiejsc`: each
  * site's field list by group; with one site chosen, the list is grouped and
- * counted that way ("Siewkowe: 3 z 14").
+ * counted that way ("Siewkowe: 3 z 14"). `pozostale`: the rest of Europe's
+ * birds, shown only when a typed name finds them or, with every bird shown
+ * and nothing else filtered, once seen.
  */
 export function ChecklistView({
   ptaki,
+  pozostale,
   sylwetki,
   listyMiejsc,
 }: {
   ptaki: PtakNaLiscie[];
+  pozostale: PtakNaLiscie[];
   sylwetki: Record<string, ReactNode>;
   listyMiejsc: Record<Miejsce, GrupaListy[]>;
 }) {
   const { lista, przelacz, aktualizuj, zastap } = useChecklista();
-  const { filtry, setFiltry, zakres, wynik } = useFiltry(ptaki);
+  const { miejsca } = useMojeMiejsca();
+  const [szukamMiejsca, setSzukamMiejsca] = useState<string | null>(null);
+  const { filtry, setFiltry, zakres, wynik: wynikKursu } = useFiltry(ptaki, { szukajWszedzie: true });
+  const { dziennik, zastap: zastapDziennik } = useDziennik();
   const [widok, setWidok] = useState<Widok>('wszystkie');
   // Species whose date, place, note and photos are open; a species opens when ticked.
   const [otwarte, setOtwarte] = useState<ReadonlySet<string>>(new Set());
@@ -58,11 +75,15 @@ export function ChecklistView({
       else nowe.delete(id);
       return nowe;
     });
-  const filtryAktywne = czyFiltryAktywne(filtry);
+  // One of my places as a filter: kept apart from `filtry`, which links and lessons set by address.
+  const [mojeWybrane, setMojeWybrane] = useState<string | null>(null);
+  const mojeMiejsce = mojeWybrane && miejsca?.[mojeWybrane] && !miejsca[mojeWybrane].usuniete ? miejsca[mojeWybrane] : null;
+  const filtryAktywne = czyFiltryAktywne(filtry) || Boolean(mojeMiejsce);
   const miejsce = filtry.miejsca.length === 1 ? MIEJSCA.find((m) => m.value === filtry.miejsca[0]) : undefined;
   const listaMiejsca = miejsce ? listyMiejsc[miejsce.value] : null;
   const wyczyscFiltry = () => {
     setFiltry(PUSTE_FILTRY);
+    setMojeWybrane(null);
     // The button disappears with the empty state; keep keyboard focus on the page.
     requestAnimationFrame(() => document.querySelector<HTMLInputElement>('input[type=search]')?.focus());
   };
@@ -73,13 +94,35 @@ export function ChecklistView({
   const { fiszki, zastapFiszki } = useFiszki();
   const zdobyte = useZdobyte();
 
+  const q = doSzukania(filtry.szukaj);
+  const wszystkiePtaki =
+    filtry.ptaki === 'wszystkie' && !filtry.miejsca.length && !filtry.regiony.length && !filtry.aktywnosc.length;
+  const pasujacePozostale = useMemo(() => (q ? pozostale.filter((p) => pasujeDoSzukania(p, q)) : []), [pozostale, q]);
+  const ptakiMoje = useMemo(
+    () => (mojeMiejsce && lista ? ptakiMojegoMiejsca(mojeMiejsce, lista, dziennik ?? {}) : null),
+    [mojeMiejsce, lista, dziennik],
+  );
+  const wynik = useMemo(() => {
+    if (!lista) return wynikKursu;
+    // My place: every bird seen there, whatever its kind, the search still narrowing it.
+    if (ptakiMoje) return [...ptaki, ...pozostale].filter((p) => ptakiMoje.has(p.id) && (!q || pasujeDoSzukania(p, q)));
+    const dodatkowe = q ? pasujacePozostale.slice(0, NAJWIECEJ_POZOSTALYCH) : wszystkiePtaki ? pozostale.filter((p) => jestWidziany(lista, p.id)) : [];
+    return [...wynikKursu, ...dodatkowe];
+  }, [wynikKursu, lista, q, pasujacePozostale, wszystkiePtaki, pozostale, ptakiMoje, ptaki]);
+  const ileWDzienniku = useMemo(() => {
+    const ile = new Map<string, number>();
+    for (const [, w] of wpisy(dziennik ?? {})) ile.set(w.gatunek, (ile.get(w.gatunek) ?? 0) + 1);
+    return ile;
+  }, [dziennik]);
+
   const widoczne = useMemo(() => {
     if (!lista || widok === 'wszystkie') return wynik;
     return wynik.filter((g) => (widok === 'widziane') === jestWidziany(lista, g.id));
   }, [wynik, lista, widok]);
 
   const grupy = useMemo((): [string, PtakNaLiscie[]][] => {
-    if (listaMiejsca) {
+    // A typed name searches every bird, so it is not grouped by the site's list, which would hide the others.
+    if (listaMiejsca && !q) {
       const poId = new Map(widoczne.map((p) => [p.id, p]));
       return listaMiejsca
         .map((g): [string, PtakNaLiscie[]] => [g.nazwa, g.gatunki.flatMap((id) => poId.get(id) ?? [])])
@@ -88,7 +131,7 @@ export function ChecklistView({
     const map = new Map<string, PtakNaLiscie[]>();
     for (const g of widoczne) map.set(g.grupa, [...(map.get(g.grupa) ?? []), g]);
     return [...map.entries()];
-  }, [widoczne, listaMiejsca]);
+  }, [widoczne, listaMiejsca, q]);
 
   if (!lista) {
     return <StateBlock state="loading" title="Wczytywanie checklisty" scope="section" />;
@@ -96,17 +139,55 @@ export function ChecklistView({
 
   const liczba = zakres.filter((p) => jestWidziany(lista, p.id)).length;
   const wFiltrze = wynik.filter((g) => jestWidziany(lista, g.id)).length;
-  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'inne ptaki', wszystkie: null }[filtry.ptaki];
-  const etykietaPostepu = miejsce
+  const rodzaj = { drapiezne: 'drapieżniki', 'ptaki-mokradel': 'inne ptaki', pozostale: null, wszystkie: null }[filtry.ptaki];
+  const etykietaPostepu = mojeMiejsce
+    ? `Zaobserwowane w miejscu „${mojeMiejsce.nazwa}”`
+    : miejsce
     ? `Zaobserwowane w ${miejsce.label}${rodzaj ? `: ${rodzaj}` : ''}`
     : `Zaobserwowane ${rodzaj ?? 'gatunki'}`;
   // A site's groups as far as the chosen kind of bird reaches (its raptors, its birds of marshes, or all).
   const wZakresie = new Set(zakres.map((p) => p.id));
   const grupyMiejsca = listaMiejsca?.filter((g) => g.gatunki.some((id) => wZakresie.has(id)));
 
+  /** Fills an observation's place with my place nearest to where I am, if one is within 1 km. */
+  const tuGdzieJestem = async (id: string, nazwa: string) => {
+    if (!miejsca) return;
+    if (aktywne(miejsca).length === 0) {
+      // No place to find: no reason to ask the browser for the location.
+      notify({
+        tone: 'info',
+        title: 'Nie mam jeszcze zapisanych miejsc',
+        description: 'Dodam je w „Moich miejscach”, stojąc w terenie. Na razie mogę wpisać nazwę miejsca.',
+      });
+      return;
+    }
+    setSzukamMiejsca(id);
+    let pos: Pozycja;
+    try {
+      pos = await pobierzPozycje();
+    } catch (err) {
+      notify({ tone: 'warning', title: 'Nie udało się ustalić lokalizacji', description: `${opisBleduLokalizacji(err)} Mogę wpisać miejsce ręcznie.` });
+      return;
+    } finally {
+      setSzukamMiejsca(null);
+    }
+    const blisko = najblizszeMoje(miejsca, pos, 1);
+    if (!blisko) {
+      notify({
+        tone: 'info',
+        title: 'Brak mojego miejsca w pobliżu',
+        description: 'W promieniu 1 km nie ma żadnego z moich miejsc. Dodam to miejsce w „Moich miejscach” albo wpiszę nazwę.',
+      });
+      return;
+    }
+    const ok = aktualizuj(id, { miejsce: blisko.miejsce.nazwa });
+    sprawdzZapis(ok);
+    if (ok) notify({ tone: 'success', title: `Miejsce: ${blisko.miejsce.nazwa}`, description: `Wpisane przy obserwacji: ${nazwa}.` });
+  };
+
   const eksportuj = async () => {
     try {
-      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte);
+      const { plik, bezZdjec } = await utworzKopie(lista, postep ?? {}, fiszki, zdobyte, miejsca, dziennik);
       const url = URL.createObjectURL(plik);
       const a = document.createElement('a');
       a.href = url;
@@ -138,7 +219,7 @@ export function ChecklistView({
 
   // Order matters: validate everything, then write photos (most likely to
   // fail, and aborted atomically), then progress and flashcards, then what
-  // "Moje niebo" recorded, then the checklist.
+  // "Moje niebo" recorded, then my places (merged, never replaced), then the field log, then the checklist.
   const importuj = async (file: File) => {
     let kopia: OdczytanaKopia;
     try {
@@ -175,20 +256,30 @@ export function ChecklistView({
     const postepOk = kopia.postep ? zastapPostep(kopia.postep) : true;
     const fiszkiOk = kopia.fiszki ? zastapFiszki(kopia.fiszki) : true;
     const odznakiOk = wczytajZKopii(kopia.odznaki);
-    const checklistaOk = zastap(kopia.checklista);
+    const miejscaZKopii = kopia.miejsca ? wczytajMiejscaZKopii(kopia.miejsca) : null;
+    const miejscaOk = miejscaZKopii ? miejscaZKopii.zapisane : true;
+    const dziennikOk = kopia.dziennik ? zastapDziennik(kopia.dziennik) : true;
+    // A place renamed here since the backup keeps its newer name: the file's observations follow it.
+    const checklistaOk = zastap(
+      kopia.miejsca && miejscaZKopii ? zgodzZMiejscami(kopia.checklista, kopia.miejsca, miejscaZKopii.po, new Date().toISOString()) : kopia.checklista,
+    );
     const nieZapisane = [
       !checklistaOk && 'checklisty',
+      !dziennikOk && 'dziennika obserwacji',
       !postepOk && 'postępu nauki',
       !fiszkiOk && 'fiszek',
+      !miejscaOk && 'moich miejsc',
       // A file without dates changes only a mark of mine, nothing I would miss.
       !odznakiOk && kopia.odznaki && 'gwiazdozbiorów i naszywek',
     ].filter(Boolean);
     const wczytano = [
-      `${widziane(kopia.checklista).length} obserwacji`,
+      `${widziane(kopia.checklista).length} gatunków`,
+      kopia.dziennik ? `${wpisy(kopia.dziennik).length} wpisów dziennika` : null,
       kopia.zdjecia ? `${kopia.zdjecia.length} zdjęć` : null,
       kopia.postep ? 'postęp nauki' : null,
       kopia.fiszki ? `${Object.keys(kopia.fiszki).length} fiszek` : null,
       kopia.odznaki ? 'daty gwiazdozbiorów i naszywek' : null,
+      kopia.miejsca ? `moje miejsca (${aktywne(kopia.miejsca).length} w pliku; nowsze zmiany z tego urządzenia zostały)` : null,
     ].filter(Boolean);
     const pominiete = [!kopia.zdjecia && 'zdjęć (dotychczasowe zostały)', !kopia.postep && 'postępu (dotychczasowy został)', !kopia.fiszki && 'fiszek (dotychczasowe zostały)'].filter(
       Boolean,
@@ -211,12 +302,22 @@ export function ChecklistView({
 
   return (
     <div className="stack">
+      <div className="row">
+        <ButtonLink href="/dziennik/obserwacja">Dodaj obserwację</ButtonLink>
+        <ButtonLink href="/dziennik" variant="secondary">
+          Dziennik obserwacji
+        </ButtonLink>
+      </div>
+      {/* The place field's suggestions: my places, by name. */}
+      <datalist id="moje-miejsca-lista">
+        {miejsca && aktywne(miejsca).map(([id, m]) => <option key={id} value={m.nazwa} />)}
+      </datalist>
       <Progress
         label={etykietaPostepu}
-        value={liczba}
-        max={zakres.length}
-        valueText={`${liczba} z ${zakres.length}`}
-        tone={zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
+        value={ptakiMoje ? ptakiMoje.size : liczba}
+        max={ptakiMoje ? widziane(lista).length : zakres.length}
+        valueText={ptakiMoje ? `${ptakiMoje.size} z ${widziane(lista).length} moich gatunków` : `${liczba} z ${zakres.length}`}
+        tone={!ptakiMoje && zakres.length > 0 && liczba === zakres.length ? 'success' : 'neutral'}
       />
       <div className="scroll-x">
         <SegmentedControl
@@ -250,7 +351,27 @@ export function ChecklistView({
         </ul>
       )}
 
-      <SpeciesFilters filtry={filtry} onChange={setFiltry} />
+      <SpeciesFilters
+        filtry={filtry}
+        onChange={(f) => {
+          // A field list from the course and one of my places would intersect: choosing one lets go of the other.
+          if (f.miejsca.length) setMojeWybrane(null);
+          setFiltry(f);
+        }}
+        moje={{
+          miejsca: miejsca ? aktywne(miejsca).map(([id, m]) => ({ id, nazwa: m.nazwa })) : [],
+          wybrane: mojeMiejsce ? mojeWybrane : null,
+          wybierz: (id) => {
+            setMojeWybrane(id);
+            if (id && filtry.miejsca.length) setFiltry({ ...filtry, miejsca: [] });
+          },
+        }}
+      />
+      {pasujacePozostale.length > NAJWIECEJ_POZOSTALYCH && (
+        <p className="muted" role="status">
+          Spoza kursu pasuje {pasujacePozostale.length} ptaków, pokazuję pierwsze {NAJWIECEJ_POZOSTALYCH}. Wpisz dłuższą nazwę.
+        </p>
+      )}
 
       {grupy.length === 0 ? (
         filtryAktywne ? (
@@ -343,9 +464,11 @@ export function ChecklistView({
                               <span className="visually-hidden">: {g.pl}</span>
                             </Button>
                           )}
-                          <Link href={`/gatunki/${g.id}`} className="text-link">
-                            Karta gatunku<span className="visually-hidden">: {g.pl}</span>
-                          </Link>
+                          {g.kategoria !== 'pozostale' && (
+                            <Link href={`/gatunki/${g.id}`} className="text-link">
+                              Karta gatunku<span className="visually-hidden">: {g.pl}</span>
+                            </Link>
+                          )}
                         </div>
                       </div>
                       {obs && (
@@ -360,11 +483,26 @@ export function ChecklistView({
                                   value={obs.data ?? ''}
                                   onChange={(e) => sprawdzZapis(aktualizuj(g.id, { data: e.target.value }))}
                                 />
-                                <Input
-                                  label="Miejsce"
-                                  value={obs.miejsce ?? ''}
-                                  onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
-                                />
+                                <div className="checklist__miejsce">
+                                  <Input
+                                    label="Miejsce"
+                                    description="Wpisz albo wybierz jedno z moich miejsc."
+                                    list="moje-miejsca-lista"
+                                    value={obs.miejsce ?? ''}
+                                    onChange={(e) => sprawdzZapis(aktualizuj(g.id, { miejsce: e.target.value }))}
+                                  />
+                                  <Button
+                                    size="sm"
+                                    variant="secondary"
+                                    loading={szukamMiejsca === g.id}
+                                    loadingLabel="Ustalam lokalizację"
+                                    disabled={szukamMiejsca !== null || miejsca === null}
+                                    onClick={() => void tuGdzieJestem(g.id, g.pl)}
+                                  >
+                                    Tu, gdzie jestem
+                                    <span className="visually-hidden">: miejsce obserwacji {g.pl}</span>
+                                  </Button>
+                                </div>
                                 <Textarea
                                   label="Notatka"
                                   rows={2}
@@ -372,6 +510,17 @@ export function ChecklistView({
                                   onChange={(e) => sprawdzZapis(aktualizuj(g.id, { notatka: e.target.value }))}
                                 />
                               </div>
+                              <p className="row">
+                                <Link href={`/dziennik/obserwacja?gatunek=${g.id}`} className="text-link">
+                                  Dodaj obserwację z miejscem<span className="visually-hidden">: {g.pl}</span>
+                                </Link>
+                                {(ileWDzienniku.get(g.id) ?? 0) > 0 && (
+                                  <Link href={`/dziennik?gatunek=${g.id}`} className="text-link">
+                                    {ileWDzienniku.get(g.id)} {odmiana(ileWDzienniku.get(g.id)!, ['obserwacja', 'obserwacje', 'obserwacji'])} w dzienniku
+                                    <span className="visually-hidden">: {g.pl}</span>
+                                  </Link>
+                                )}
+                              </p>
                               <OwnPhotos gatunek={g.id} nazwa={g.pl} edycja />
                             </>
                           )}
@@ -391,7 +540,7 @@ export function ChecklistView({
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia, postęp nauki, fiszki i „Moje niebo” są zapisane tylko w tej przeglądarce. Co jakiś
+          Checklista, dziennik obserwacji, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane w tej przeglądarce (z kontem także na serwerze, oprócz zdjęć). Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>

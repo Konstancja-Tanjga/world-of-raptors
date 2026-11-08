@@ -9,7 +9,6 @@ import { StartModulu } from '@/components/modul/StartModulu';
 import { SylabusModulu } from '@/components/modul/SylabusModulu';
 import { Sylwetka } from '@/components/Sylwetka';
 import {
-  ciekawostkiDla,
   czytajMarkdown,
   gotoweModuly,
   otwarcieModulu,
@@ -165,7 +164,7 @@ export default async function ModulPage({ params }: PageProps<'/moduly/[slug]'>)
           )}
         </div>
         <div className="modul-strona__ciekawostka">
-          <Ciekawostka {...ciekawostkiDla({ modul: slug })} />
+          <Ciekawostka modul={slug} />
         </div>
       </div>
       <PodgladZdjec />

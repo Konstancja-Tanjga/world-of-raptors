@@ -17,7 +17,9 @@ Plan wdrożenia Supabase w World of Raptors. Kurs działa dalej bez logowania. K
 |---|---|---|
 | Ukończone lekcje (`wor:postep:v1`) | `lesson_progress` | `modul/lekcja`, np. `anatomia/01-wzrok` |
 | Checklista (`wor:checklista:v2`) | `observations` | gatunek, np. `kania-ruda` albo ptak mokradeł (jedna obserwacja na gatunek, jak w aplikacji). `zmieniono` to `updated_at`, a odznaczony gatunek (`widziany: false`) to `deleted_at`, z zachowaną datą, miejscem i notatką |
+| Dziennik obserwacji (`wor:dziennik:v1`) | `sightings` | UUID wpisu z urządzenia. Wiele obserwacji na gatunek: data, godzina, liczba, nazwa miejsca, punkt (szerokość, długość, dokładność, źródło `gps` albo `mapa`), notatka; usunięcie to `deleted_at`. Migracja `20261108130000_dziennik.sql` dodaje tę tabelę (limit 20 000 wpisów na konto) i podnosi limit `observations` z 200 do 1000, bo checklista przyjmuje teraz każdy ptak Europy. **Uruchomić ją w Supabase przed wdrożeniem aplikacji.** |
 | Fiszki (`wor:fiszki:v1`) | `flashcards` | karta, np. `kania-ruda/lot` |
+| Moje miejsca (`wor:miejsca:v1`) | `places` | losowy identyfikator miejsca (UUID). Nazwa, położenie, dokładność, data pierwszej wizyty i notatka; `zmieniono` to `updated_at`, a usunięte miejsce (`usuniete`) to `deleted_at`, z zachowanymi polami |
 | Zdobyte odznaki „Moje niebo” (`wor:odznaki:v1`) | `user_badges` | `gwiazdozbior:…`, `mistrz:…`, `naszywka:…`, `start` |
 
 Fiszki są potrzebne, bo pierścień „rozpoznaję” i złote gwiazdy liczą się z harmonogramów fiszek. Bez nich „Moje niebo” nie zapaliłoby się na nowym urządzeniu.
@@ -36,12 +38,12 @@ Fiszki są potrzebne, bo pierścień „rozpoznaję” i złote gwiazdy liczą s
 2. Google Cloud Console:
    - ekran zgody OAuth: typ External, zakresy `openid`, `email`, `profile`, nazwa „World of Raptors”, link do polityki prywatności,
    - klient OAuth typu Web:
-     - Authorized JavaScript origins: `http://localhost`, `http://localhost:3000`, `https://world-of-raptors.vercel.app` (i adres podglądu z Vercela, jeśli logowanie ma tam działać),
+     - Authorized JavaScript origins: `http://localhost`, `http://localhost:3000`, `https://www.worldofraptors.com`, `https://worldofraptors.com` (i adres podglądu z Vercela, jeśli logowanie ma tam działać),
      - Authorized redirect URI: `https://<project-ref>.supabase.co/auth/v1/callback`,
    - po testach ekran zgody na „In production”, bo logować się mogą też inne osoby.
 3. Supabase → Authentication:
    - Sign In / Providers → Google: Client ID i Client Secret,
-   - URL Configuration: Site URL `https://world-of-raptors.vercel.app`; Redirect URLs: produkcja, `http://localhost:3000/**` i wzorzec adresów podglądu z Vercela,
+   - URL Configuration: Site URL `https://www.worldofraptors.com`; Redirect URLs: produkcja, `http://localhost:3000/**` i wzorzec adresów podglądu z Vercela,
    - Sign In / Providers → Email: wyłączyć, żeby konta powstawały tylko przez Google.
 4. Supabase → SQL Editor: uruchomić po kolei migracje z `supabase/migrations/` (albo `npx supabase db push` po `npx supabase link`).
 5. Vercel → zmienne środowiskowe dla Production i Preview: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`, `NEXT_PUBLIC_ACCOUNTS_ENABLED` (na produkcji `false`). `SUPABASE_SECRET_KEY` dopiero w fazie 5.
@@ -61,7 +63,7 @@ Zrobione: projekt `tvfiymrlvmjpgrkxoums` (Frankfurt), projekt Google Cloud `worl
 
 ### Faza 2: model danych
 
-Gotowe: `supabase/migrations/20261009120000_konta.sql` i `20261010120000_limity.sql`. Druga migracja ustawia limit wierszy na konto w każdej tabeli (200 lekcji, 200 obserwacji, 1000 fiszek, 300 odznak), z zapasem względem tego, co kurs ma. Bez limitu jedno konto mogłoby zapełnić bazę i zepsuć synchronizację wszystkim. Każdy wiersz ma `updated_at` (czas zmiany na urządzeniu, rozstrzyga konflikty) i `synced_at` (czas zapisu na serwerze, według niego urządzenia pobierają zmiany). Usunięcia są miękkie (`deleted_at`). Sprawdzone testem w PGlite: scalanie, ograniczenia danych, RLS (osoba B nie czyta, nie zmienia i nie dopisuje danych osoby A; niezalogowani nie widzą nic) i kasowanie danych razem z kontem.
+Gotowe: `supabase/migrations/20261009120000_konta.sql` i `20261010120000_limity.sql`. Druga migracja ustawia limit wierszy na konto w każdej tabeli (200 lekcji, 200 obserwacji, 1000 fiszek, 300 odznak; od migracji `20261108120000_miejsca.sql` także 1000 miejsc, usunięte też się liczą), z zapasem względem tego, co kurs ma. Bez limitu jedno konto mogłoby zapełnić bazę i zepsuć synchronizację wszystkim. Każdy wiersz ma `updated_at` (czas zmiany na urządzeniu, rozstrzyga konflikty) i `synced_at` (czas zapisu na serwerze, według niego urządzenia pobierają zmiany). Usunięcia są miękkie (`deleted_at`). Sprawdzone testem w PGlite: scalanie, ograniczenia danych, RLS (osoba B nie czyta, nie zmienia i nie dopisuje danych osoby A; niezalogowani nie widzą nic) i kasowanie danych razem z kontem.
 
 ### Faza 3: synchronizacja
 

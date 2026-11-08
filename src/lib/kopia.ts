@@ -1,6 +1,8 @@
 'use client';
 
+import { isDziennik, type Dziennik } from './dziennik';
 import { isFiszki, type Fiszki } from './fiszki';
+import { isMojeMiejsca, type MojeMiejsca } from './mojeMiejsca';
 import { isPostep, type Postep } from './postep';
 import { checklistaZDowolnej, isChecklista, type Checklista } from './obserwacje';
 import { isZdobyte, type Zdobyte } from './zdobyte';
@@ -16,6 +18,10 @@ import {
 /**
  * Backup file format.
  *
+ * v4: as v3, with the field log (`dziennik`, dziennik.ts), left out when it
+ * is empty or not read yet, so importing such a file keeps the target
+ * device's log. A v4 file is refused by older versions of the app (they read
+ * up to v3), rather than imported without its log.
  * v3: as v2, with the checklist in its v2 shape (obserwacje.ts: `widziany`,
  * `zmieniono`, unticked species kept). v1 and v2 files still import: their
  * checklist goes through checklistaZDowolnej, as the store's own does.
@@ -25,21 +31,33 @@ import {
  * a file keeps the target device's flashcards. `odznaki` ("Moje niebo": when
  * each constellation, gold star and patch was earned) came later still and is
  * left out the same way; a file without it loses only the dates, since the
- * progress earns them again. `zdjecia` is left out (not `[]`) when the photos could
+ * progress earns them again. `miejsca` ("Moje miejsca", removed ones kept as
+ * tombstones) came later still, left out when the store is empty (a file may
+ * carry only removed places); loading it merges by `zmieniono` rather than
+ * replacing, so a file never takes back a place added since. `zdjecia` is left out (not `[]`) when the photos could
  * not be read, so importing such a file keeps the photos already on the
  * target device instead of erasing them.
  * v1: a bare checklist object.
  */
-type KopiaV3 = {
-  wersja: 3;
+type KopiaV4 = {
+  wersja: 4;
   checklista: Checklista;
   postep: Postep;
+  dziennik?: Dziennik;
   fiszki?: Fiszki;
   odznaki?: Zdobyte;
+  miejsca?: MojeMiejsca;
   zdjecia?: ZdjecieKopii[];
 };
 
-export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki: Fiszki | null, odznaki: Zdobyte | null) {
+export async function utworzKopie(
+  checklista: Checklista,
+  postep: Postep,
+  fiszki: Fiszki | null,
+  odznaki: Zdobyte | null,
+  miejsca: MojeMiejsca | null,
+  dziennik: Dziennik | null,
+) {
   let zdjecia: ZdjecieKopii[] | undefined;
   try {
     zdjecia = await Promise.all(
@@ -49,12 +67,14 @@ export async function utworzKopie(checklista: Checklista, postep: Postep, fiszki
     console.error('[kopia] could not read photos for export', err);
     zdjecia = undefined;
   }
-  const kopia: KopiaV3 = {
-    wersja: 3,
+  const kopia: KopiaV4 = {
+    wersja: 4,
     checklista,
     postep,
+    ...(dziennik && Object.keys(dziennik).length ? { dziennik } : {}),
     ...(fiszki && Object.keys(fiszki).length ? { fiszki } : {}),
     ...(odznaki && Object.keys(odznaki).length ? { odznaki } : {}),
+    ...(miejsca && Object.keys(miejsca).length ? { miejsca } : {}),
     ...(zdjecia ? { zdjecia } : {}),
   };
   return { plik: new Blob([JSON.stringify(kopia)], { type: 'application/json' }), bezZdjec: !zdjecia };
@@ -65,10 +85,14 @@ export type OdczytanaKopia = {
   checklista: Checklista;
   /** undefined: the file has no progress (v1, or v2 without it) — leave current progress alone. */
   postep?: Postep;
+  /** undefined: the file has no field log (before v4, or an empty one) — leave the current one alone. */
+  dziennik?: Dziennik;
   /** undefined: the file has no flashcards (v1, or an older v2) — leave current ones alone. */
   fiszki?: Fiszki;
   /** undefined: the file has no earned dates (v1, or an older v2). */
   odznaki?: Zdobyte;
+  /** undefined: the file has no places — leave current ones alone. */
+  miejsca?: MojeMiejsca;
   /** undefined: the file has no photos — leave current photos alone. */
   zdjecia?: ZdjecieWlasne[];
 };
@@ -90,18 +114,21 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   }
   const obiekt = typeof parsed === 'object' && parsed !== null ? (parsed as Record<string, unknown>) : null;
 
-  if (typeof obiekt?.wersja === 'number' && obiekt.wersja > 3) {
+  if (typeof obiekt?.wersja === 'number' && obiekt.wersja > 4) {
     throw new NiepoprawnaKopia(`kopia pochodzi z nowszej wersji kursu (format ${obiekt.wersja})`);
   }
-  if (obiekt?.wersja !== 2 && obiekt?.wersja !== 3) {
+  if (obiekt?.wersja !== 2 && obiekt?.wersja !== 3 && obiekt?.wersja !== 4) {
     const lista = checklistaZDowolnej(parsed);
     if (!lista) throw new NiepoprawnaKopia('plik nie wygląda na kopię checklisty');
     return { checklista: lista };
   }
 
   const checklista =
-    obiekt.wersja === 3 ? (isChecklista(obiekt.checklista) ? obiekt.checklista : null) : checklistaZDowolnej(obiekt.checklista);
+    obiekt.wersja >= 3 ? (isChecklista(obiekt.checklista) ? obiekt.checklista : null) : checklistaZDowolnej(obiekt.checklista);
   if (!checklista) throw new NiepoprawnaKopia('uszkodzona checklista w pliku');
+  if (obiekt.dziennik !== undefined && !isDziennik(obiekt.dziennik)) {
+    throw new NiepoprawnaKopia('uszkodzony dziennik obserwacji w pliku');
+  }
   if (obiekt.fiszki !== undefined && !isFiszki(obiekt.fiszki)) {
     throw new NiepoprawnaKopia('uszkodzone fiszki w pliku');
   }
@@ -110,6 +137,9 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   }
   if (obiekt.odznaki !== undefined && !isZdobyte(obiekt.odznaki)) {
     throw new NiepoprawnaKopia('uszkodzone gwiazdozbiory i naszywki w pliku');
+  }
+  if (obiekt.miejsca !== undefined && !isMojeMiejsca(obiekt.miejsca)) {
+    throw new NiepoprawnaKopia('uszkodzone moje miejsca w pliku');
   }
   let zdjecia: ZdjecieWlasne[] | undefined;
   if (obiekt.zdjecia !== undefined) {
@@ -127,8 +157,10 @@ export async function odczytajKopie(tekst: string): Promise<OdczytanaKopia> {
   return {
     checklista,
     postep: obiekt.postep as Postep | undefined,
+    dziennik: obiekt.dziennik as Dziennik | undefined,
     fiszki: obiekt.fiszki as Fiszki | undefined,
     odznaki: obiekt.odznaki as Zdobyte | undefined,
+    miejsca: obiekt.miejsca as MojeMiejsca | undefined,
     zdjecia,
   };
 }

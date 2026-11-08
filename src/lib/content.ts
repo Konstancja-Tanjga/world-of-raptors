@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import gatunkiJson from '../../content/gatunki.json';
 import mokradlaJson from '../../content/ptaki-mokradel.json';
+import europyJson from '../../content/ptaki-europy.json';
 import modulyJson from '../../content/moduly.json';
 import ciekawostkiJson from '../../content/ciekawostki.json';
 import zdjeciaJson from '../../content/zdjecia.json';
@@ -60,6 +61,7 @@ import type {
   Miejsce,
   Modul,
   Nagranie,
+  PtakEuropy,
   PtakNaLiscie,
   PytanieQuizu,
   PytanieTestu,
@@ -332,6 +334,36 @@ export const ptakiNaLiscie: PtakNaLiscie[] = [
     }),
   ),
 ];
+
+/** The group the checklist lists the rest of Europe's birds under. */
+export const GRUPA_POZOSTALYCH = 'Pozostałe ptaki Europy';
+
+/**
+ * The rest of Europe's birds (content/ptaki-europy.json, made by
+ * scripts/ptaki-europy.py), in taxonomic order: the checklist and the field
+ * log take them, so any bird seen can be logged. They have no page, photos or
+ * lessons, and the checklist shows them only when searched for or seen.
+ */
+export const ptakiEuropy: PtakNaLiscie[] = (europyJson.gatunki as Partial<PtakEuropy>[]).map((p) => ({
+  id: p.id ?? '',
+  pl: p.pl ?? '',
+  lat: p.lat ?? '',
+  // eBird has no English or Spanish name for a few; the search reads every name, so none may be missing.
+  en: p.en ?? '',
+  es: p.es ?? '',
+  kategoria: 'pozostale',
+  grupa: GRUPA_POZOSTALYCH,
+  miejsca: [],
+  regiony: [],
+  aktywnosc: null,
+  rzadki: false,
+}));
+
+/** Each bird's eBird species code, the course's and the rest (for matching eBird's sightings). */
+export const kodyEbird: Record<string, string> = {
+  ...(europyJson.kody_kursu as Record<string, string>),
+  ...Object.fromEntries((europyJson.gatunki as Partial<PtakEuropy>[]).map((p) => [p.id ?? '', p.ebird ?? ''])),
+};
 
 /** One group of a site's field list: its raptors, or one group of its birds of marshes. */
 export type GrupaMiejsca = { id: GrupaListyMiejsca; nazwa: string; gatunki: string[] };
@@ -769,8 +801,7 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   const lekcja = modul?.lekcje.find((l) => l.slug === c.lekcja);
   const numer = modul && lekcja ? modul.lekcje.indexOf(lekcja) + 1 : 0;
   return {
-    id: c.id,
-    tekst: c.tekst,
+    ...c,
     href: lekcja ? `/moduly/${c.modul}/${lekcja.slug}` : `/moduly/${c.modul}`,
     zrodlo: modul
       ? lekcja
@@ -780,20 +811,9 @@ function doPokazania(c: Ciekawostka): CiekawostkaDoPokazania {
   };
 }
 
-/**
- * Curiosities for a place in the app, the most relevant first: those about
- * the given species, then from the given module (skipping the current
- * lesson, which already shows its own), then everything else.
- */
-export function ciekawostkiDla({ modul, lekcja, gatunek }: { modul?: string; lekcja?: string; gatunek?: string } = {}) {
-  const pasuje = (c: Ciekawostka) =>
-    (gatunek !== undefined && c.gatunki.includes(gatunek)) || (modul !== undefined && c.modul === modul);
-  // Skip the page's own text: a lesson's callouts, or a module's intro on its overview page.
-  const pula = ciekawostki.filter((c) => !(modul && c.modul === modul && (c.lekcja ?? undefined) === lekcja));
-  return {
-    preferowane: pula.filter(pasuje).map(doPokazania),
-    pozostale: pula.filter((c) => !pasuje(c)).map(doPokazania),
-  };
+/** Every curiosity, ready to render; served whole at /ciekawostki and ranked for each page in the browser (lib/ciekawostki.ts). */
+export function ciekawostkiDoPokazania() {
+  return ciekawostki.map(doPokazania);
 }
 
 /** A species that draws each of the eight silhouette groups (typed by GRUPY_SYLWETEK, so none can be missing). */
@@ -1297,7 +1317,28 @@ function sprawdzSpojnosc() {
   if (kartyWTalii.size) bledy.push(`content.ts: fiszki gatunków spoza „Mojego nieba”: ${[...kartyWTalii.keys()].join(', ')}`);
   // Per-account caps on the server (supabase/migrations/20261010120000_limity.sql): keep a fifth of each free.
   if (talia.length > 800) bledy.push(`content.ts: ${talia.length} fiszek, a konto mieści 1000 (zostaw zapas)`);
-  if (ptakiNaLiscie.length > 160) bledy.push(`content.ts: ${ptakiNaLiscie.length} ptaków na liście, a konto mieści 200 obserwacji (zostaw zapas)`);
+  // The checklist takes the course's birds and the rest of Europe's (20261108130000_dziennik.sql: 1000 a person).
+  const naChecklisce = ptakiNaLiscie.length + ptakiEuropy.length;
+  if (naChecklisce > 800) bledy.push(`content.ts: ${naChecklisce} ptaków na checkliście, a konto mieści 1000 obserwacji (zostaw zapas)`);
+  const idKursu = new Set(ptakiNaLiscie.map((p) => p.id));
+  const lacinaKursu = new Set(ptakiNaLiscie.map((p) => p.lat));
+  const idEuropy = new Set<string>();
+  for (const p of ptakiEuropy) {
+    if (!ID.test(p.id)) bledy.push(`ptaki-europy.json: id „${p.id}” musi być małymi literami z łącznikami`);
+    if (idKursu.has(p.id) || idEuropy.has(p.id)) bledy.push(`ptaki-europy.json: id „${p.id}” jest już zajęte (checklista trzyma wszystkie ptaki pod jednym kluczem)`);
+    if (lacinaKursu.has(p.lat)) bledy.push(`ptaki-europy.json: ${p.id}: ${p.lat} jest już w kursie; uruchom scripts/ptaki-europy.py ponownie`);
+    if (!p.pl.trim() || !p.lat.trim()) bledy.push(`ptaki-europy.json: ${p.id}: brak nazwy polskiej albo łacińskiej`);
+    const zrodlo = (europyJson.gatunki as Record<string, unknown>[]).find((g) => g.id === p.id);
+    for (const pole of ['en', 'es', 'ebird'] as const) {
+      const v = zrodlo?.[pole];
+      if (typeof v !== 'string' || !v.trim()) bledy.push(`ptaki-europy.json: ${p.id}: puste pole ${pole}; uruchom scripts/ptaki-europy.py ponownie`);
+    }
+    idEuropy.add(p.id);
+  }
+  for (const [id, kod] of Object.entries(europyJson.kody_kursu as Record<string, unknown>)) {
+    if (!idKursu.has(id)) bledy.push(`ptaki-europy.json: kody_kursu: „${id}” nie jest ptakiem kursu`);
+    if (typeof kod !== 'string' || !kod.trim()) bledy.push(`ptaki-europy.json: kody_kursu: ${id} bez kodu eBird`);
+  }
   const katalogi: [string, object, ReadonlySet<string>][] = [
     ['SYLWETKI', SYLWETKI, idGatunkow],
     ['STYL_LOTU', STYL_LOTU, idGatunkow],

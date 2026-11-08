@@ -4,13 +4,13 @@ import { MAKS_FRAGMENTU, przytnij, type Fragment, type Sekcja, type TypFragmentu
  * What can be pointed at, and what a pointed-at element tells the owner: its
  * kind, its text, its photo, and the `##` section it sits in. Only the
  * course's own content counts. The person's own things (the checklist, their
- * notes and photos, "Moje niebo", the account) cannot be pointed at, and a
- * selection that touches them is not taken.
+ * notes and photos, their places, "Moje niebo", the account) cannot be pointed
+ * at, and a selection that touches them is not taken.
  */
 
 const KANDYDACI = 'h1, h2, h3, h4, p, li, blockquote, tr, dt, dd, .quiz__pytanie, img';
 const PRYWATNE = '.checklist__row, .own-photos, [data-prywatne]';
-const PRYWATNE_STRONY = ['/checklista', '/moje-niebo', '/konto'];
+const PRYWATNE_STRONY = ['/checklista', '/dziennik', '/moje-miejsca', '/moje-niebo', '/konto'];
 
 export type Miejsce = { sekcja?: Sekcja; fragment?: Fragment };
 

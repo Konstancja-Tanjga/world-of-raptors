@@ -12,6 +12,7 @@
   "dependencies": {
     "@bighat/ui": "git+https://github.com/Konstancja-Tanjga/bighat-design-system.git#6b80b9d72b8ed400f9a28b05534aaf0331773d65",
     "@supabase/supabase-js": "^2.117.3",
+    "leaflet": "^1.9.4",
     "next": "16.3.6",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.8",
+    "@types/leaflet": "^1.9.22",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

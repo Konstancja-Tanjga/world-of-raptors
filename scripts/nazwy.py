@@ -12,7 +12,7 @@ import json, os, re, time, urllib.parse, urllib.request
 JEZYKI = ['de', 'fr', 'it', 'pt', 'nl', 'cs', 'sk', 'uk', 'sv', 'da', 'nb', 'fi', 'hu', 'ro']
 # Wikidata files these species under a name the atlas does not use.
 SYNONIMY = {'Aquila pennata': 'Hieraaetus pennatus'}
-UA = 'WorldOfRaptors/1.0 (private course; https://world-of-raptors.vercel.app)'
+UA = 'WorldOfRaptors/1.0 (private course; https://www.worldofraptors.com)'
 KORZEN = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def wczytaj(plik, klucz):

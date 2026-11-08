@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import './atlas.css';
 import { AtlasView } from '@/components/AtlasView';
 import { Ciekawostka } from '@/components/Ciekawostka';
-import { ciekawostkiDla, gatunki, ptakiNaLiscie, zdjecia } from '@/lib/content';
+import { gatunki, ptakiNaLiscie, zdjecia } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 };
 
 export default function GatunkiPage() {
-  const dzienne = gatunki.filter((g) => g.aktywnosc === 'dzienny').length;
-  const sowy = gatunki.length - dzienne;
   return (
     <div className="page page--atlas">
       <header className="naglowek-strony">
         <p className="eyebrow">Atlas</p>
         <h1 className="naglowek-strony__tytul">Atlas gatunków</h1>
         <p className="naglowek-strony__lead">
-          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} z kursu: {dzienne}{' '}
-          {odmiana(dzienne, ['drapieżnik dzienny', 'drapieżniki dzienne', 'drapieżników dziennych'])} i {sowy}{' '}
-          {odmiana(sowy, ['sowa', 'sowy', 'sów'])}. Zobacz je na zdjęciach, jako sylwetki na tle nieba albo w jednej skali.
+          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} drapieżników i sów z kursu: na zdjęciach,
+          jako sylwetki albo w jednej skali. Nie wiesz, co widzisz?{' '}
+          <Link href="/rozpoznaj" className="text-link">
+            Rozpoznaj krok po kroku
+          </Link>
+          .
         </p>
       </header>
       <AtlasView
@@ -35,7 +37,7 @@ export default function GatunkiPage() {
         )}
       />
       <div className="atlas__ciekawostka">
-        <Ciekawostka {...ciekawostkiDla()} />
+        <Ciekawostka />
       </div>
     </div>
   );

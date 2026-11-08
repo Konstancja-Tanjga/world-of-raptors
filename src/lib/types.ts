@@ -139,7 +139,14 @@ export type RozpoznawanieMokradel = {
 };
 
 /** The two kinds of bird in the atlas; raptors are the default, birds of marshes are shown on request. */
-export type Kategoria = 'drapiezne' | 'ptaki-mokradel';
+/** Raptors, birds of marshes, and the rest of Europe's birds (content/ptaki-europy.json: checklist and field log only). */
+export type Kategoria = 'drapiezne' | 'ptaki-mokradel' | 'pozostale';
+
+/** A bird the field log can take, with the names it is searched by. */
+export type PtakDoWyboru = Pick<PtakNaLiscie, 'id' | 'pl' | 'lat' | 'en' | 'es'>;
+
+/** A bird of Europe outside the course (content/ptaki-europy.json): names and its eBird code, nothing taught. */
+export type PtakEuropy = { id: string; pl: string; lat: string; en: string; es: string; ebird: string };
 
 /** What the atlas and the checklist list, filter and link: a raptor or a bird of marshes. */
 export type PtakNaLiscie = {
@@ -209,8 +216,8 @@ export type Ciekawostka = {
   gatunki: string[];
 };
 
-/** A curiosity ready to render: where to read more about it. */
-export type CiekawostkaDoPokazania = { id: string; tekst: string; href: string; zrodlo: string };
+/** A curiosity ready to render: where to read more about it, and what it is about (to rank it for a page). */
+export type CiekawostkaDoPokazania = Ciekawostka & { href: string; zrodlo: string };
 
 /** One quiz question; `poprawna` is the index into `odpowiedzi`. */
 export type PytanieQuizu = { pytanie: string; odpowiedzi: string[]; poprawna: number };

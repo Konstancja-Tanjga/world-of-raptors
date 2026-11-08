@@ -31,6 +31,19 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **`width` w `Column`:** typ opisuje go jako „Any CSS grid track value — `1fr`, `160px`, `minmax(120px, 1fr)`”, ale `Table` renderuje prawdziwy `<table>` i przekazuje tę wartość jako `style.width` na `<th>`. Wartości `fr` i `minmax()` są tam niepoprawne i przeglądarka je pomija. W porównaniu cech (`src/components/CuesTable.tsx`) zrezygnowałam z `width`. Kontrakt i implementacja się nie zgadzają: to błąd do zgłoszenia, a nie do obchodzenia.
 - **Nagłówki wierszy:** `Table` renderuje każdą komórkę treści jako `<td>` i nie da się oznaczyć pierwszej kolumny jako `<th scope="row">`. W tabeli porównawczej czytnik ekranu czyta wtedy wartość z nazwą gatunku (nagłówkiem kolumny), ale bez nazwy cechy (nagłówka wiersza), co osłabia relację wymaganą przez WCAG 1.3.1. Nie da się tego obejść bez furtki `className`, więc zostawiam to jako lukę.
 
+## DatePicker: podpowiedź zakresu tylko po angielsku
+
+- **Co zauważyłam:** `DatePicker` z `min` albo `max` i bez `description` sam dopisuje opis „2026-11-08 or earlier.” (albo „… or later.”, „Between … and …”). Tekst jest po angielsku i nie da się go przetłumaczyć, a data ma format ISO, nie polski.
+- **Co zrobiłam:** każde pole daty z `max` dostaje własny polski opis (`ChecklistView.tsx`, `MojeMiejscaView.tsx`), który zastępuje podpowiedź.
+- **Pytanie do design systemu:** czy podpowiedź zakresu powinna brać teksty z ustawień języka (jak inne komunikaty), albo być wyłączana, skoro `max` i tak blokuje późniejsze daty w kalendarzu?
+
+## Pole tekstowe z podpowiedziami
+
+- **Po co sięgnęłam:** pole „Miejsce” przy obserwacji w checkliście podpowiada moje miejsca, ale można też wpisać dowolną nazwę.
+- **Co jest w systemie:** `Combobox` przyjmuje tylko wartości z listy (kontrakt `notFor`: „Free text — the value must come from the list”), a `Input` wyklucza kontrolki z własną obsługą klawiatury.
+- **Co zrobiłam:** `Input` z atrybutem `list` i natywnym `<datalist>` (`ChecklistView.tsx`). Przeglądarka sama obsługuje podpowiedzi i klawiaturę, ale ich wygląd nie pochodzi z Big Hat i różni się między przeglądarkami.
+- **Pytanie do design systemu:** czy `Combobox` mógłby mieć tryb „wolny tekst z podpowiedziami”, albo `Input` prop `suggestions`?
+
 ## Brak rozmiaru tekstu dla nagłówka „hero”
 
 - **Po co sięgnęłam:** tytuły, które otwierają stronę („Naucz się czytać niebo”, otwarcie modułu, nazwa na karcie gatunku), muszą być najmocniejszym tekstem na stronie, mocniejszym niż nagłówki sekcji.
@@ -120,3 +133,12 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Co zbudowałam lokalnie:** `src/components/zgloszenie/ZglosPoprawke.tsx`. Pasek z instrukcją u góry ekranu (`.wskazywanie`), obramowanie wskazanego fragmentu (`.wskazywanie__ramka`) i tymczasowe `tabindex="0"` na fragmentach, żeby dało się do nich przejść Tabem. Formularz jest w `Dialog`, a nie obok fragmentu; fragment widać w formularzu jako cytat.
 - **Co robi gorzej:** własna obsługa klawiatury i fokusu w trybie wskazywania, bez testów kontraktowych Big Hat. Okno dialogowe zasłania stronę, więc wskazanego miejsca nie widać obok formularza.
 - **Pytanie do design systemu:** czy popover przypięty do elementu (z fokusem i Escape jak w `Dialog`, ale bez zasłaniania strony) to komponent systemu?
+
+## Mapa
+
+- **Po co sięgnęłam:** dziennik obserwacji (`/dziennik`) potrzebuje mapy: do wybrania punktu obserwacji dotknięciem i do pokazania wszystkich moich punktów.
+- **Co zbudowałam lokalnie:** `src/components/dziennik/MapaPunktow.tsx`, czyli Leaflet z kafelkami OpenStreetMap, ładowany dopiero po otwarciu mapy. Punkty to kółka w kolorze `--wor-akcent`; `.mapa-punktow` w `globals.css` izoluje warstwy Leafleta (`isolation: isolate`), żeby ich `z-index` nie przykrywał przyklejonych pasków.
+- **Co robi gorzej:**
+  - Kontrolki Leafleta (przybliżanie, atrybucja, dymki) mają jego własny wygląd i focus, nie Big Hat.
+  - Wybór punktu wymaga wskaźnika. Obok mapy jest więc zawsze „Użyj mojej lokalizacji” i pole współrzędnych (WCAG 2.5.7); samą mapę da się przesuwać i przybliżać klawiaturą.
+- **Pytanie do design systemu:** czy mapa to komponent systemu (kontener z tokenami, kontrolkami i alternatywą bez wskaźnika), czy zawsze biblioteka z zewnątrz?

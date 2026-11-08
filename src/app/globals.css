@@ -679,6 +679,25 @@ li {
   flex-direction: column;
   gap: var(--bh-gap-normal);
 }
+/* The search, the kind of bird and the fold's button on one row, wrapping on a phone. */
+.filters__glowne {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--bh-gap-normal) var(--bh-gap-loose);
+}
+.filters__szukaj {
+  flex: 1 1 14rem;
+  max-width: 24rem;
+}
+.filters__wiecej {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bh-gap-normal) var(--bh-gap-loose);
+}
+.filters__wiecej[hidden] {
+  display: none;
+}
 .filters__group {
   border: 0;
   margin: 0;
@@ -805,6 +824,76 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: var(--bh-gap-normal);
   padding-block-start: var(--bh-gap-normal);
+}
+/* The place field with "Tu, gdzie jestem" under it, left-aligned. */
+.checklist__miejsce {
+  display: grid;
+  gap: var(--bh-gap-snug);
+  justify-items: start;
+}
+.checklist__miejsce > :first-child {
+  justify-self: stretch;
+}
+
+/* Field log (dziennik) */
+.formularz-obserwacji {
+  max-width: 44rem;
+}
+.formularz-obserwacji__pola {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--bh-gap-normal);
+}
+.formularz-obserwacji__miejsce {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.formularz-obserwacji__wspolrzedne {
+  align-items: end;
+}
+/* Leaflet's panes carry z-indexes up to 1000: keep them inside the map, under the sticky bars. */
+.mapa-punktow {
+  isolation: isolate;
+  block-size: min(60vh, 26rem);
+  border: 1px solid var(--wor-linia);
+  border-radius: var(--bh-radius-control);
+  overflow: hidden;
+}
+.dziennik__dzien {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-snug);
+}
+.dziennik__dzien .checklist__naglowek::first-letter {
+  text-transform: uppercase;
+}
+.dziennik__wpisy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-normal);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dziennik__wpis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-gap-tight);
+  padding-block-end: var(--bh-gap-normal);
+  border-bottom: 1px solid var(--wor-linia);
+  scroll-margin-block-start: calc(var(--wor-nav-height) + var(--bh-gap-normal));
+}
+.dziennik__wpis p {
+  margin: 0;
+}
+.dziennik__godzina {
+  font-variant-numeric: tabular-nums;
+  color: var(--bh-text-secondary);
+}
+.dziennik__notatka {
+  white-space: pre-line;
 }
 
 /* Cards */
