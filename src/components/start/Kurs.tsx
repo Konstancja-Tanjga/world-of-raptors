@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
-import { gotoweModuly, moduly, sciezki, zajawkaModulu } from '@/lib/content';
+import { gotoweModuly, moduly, sciezki } from '@/lib/content';
 import { odmiana } from '@/lib/odmiana';
-import { MarkdownInline } from '../Markdown';
 import { PostepModulu } from '../PostepModulu';
 import { PRZEWODNICY_SCIEZEK } from '@/lib/rysunki';
 import { Sylwetka } from '../Sylwetka';
@@ -13,7 +12,7 @@ const OPISY: Record<'a' | 'b', string> = {
 };
 
 /**
- * The course as two paths of numbered modules, each with its own hook and my
+ * The course as two paths of numbered modules, each with a few words on it and my
  * progress. `naglowek={false}` leaves out the section heading, for a page
  * whose own title already says what this is.
  */
@@ -53,7 +52,6 @@ export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
               .filter((m) => m.sciezka === s.id)
               .map((m, i) => {
                 const gotowy = gotoweModuly.find((g) => g.id === m.id);
-                const zajawka = gotowy && zajawkaModulu(gotowy.slug);
                 return (
                   // `--i` staggers the cards' landing, in course order.
                   <li key={m.id} style={{ '--i': i } as CSSProperties}>
@@ -61,11 +59,7 @@ export function Kurs({ naglowek = true }: { naglowek?: boolean }) {
                       <Link href={`/moduly/${gotowy.slug}`} className="modul">
                         <span className="modul__id">{m.id}</span>
                         <span className="modul__tytul">{m.tytul}</span>
-                        {zajawka && (
-                          <span className="modul__zajawka">
-                            <MarkdownInline source={zajawka} baseDir={`moduly/${gotowy.slug}`} bezLinkow />
-                          </span>
-                        )}
+                        {m.krotko && <span className="modul__zajawka">{m.krotko}</span>}
                         <span className="modul__stopka">
                           <span>
                             {gotowy.lekcje.length} {odmiana(gotowy.lekcje.length, ['lekcja', 'lekcje', 'lekcji'])}

@@ -15,6 +15,7 @@
       "slug": "kim-sa-drapiezniki",
       "sciezka": "a",
       "tytul": "Kim są ptaki drapieżne?",
+      "krotko": "Pokrewieństwa i rodziny drapieżników.",
       "gotowy": true,
       "lekcje": [
         {
@@ -44,6 +45,7 @@
       "slug": "anatomia",
       "sciezka": "a",
       "tytul": "Anatomia łowcy",
+      "krotko": "Ciało zbudowane do polowania.",
       "gotowy": true,
       "lekcje": [
         {
@@ -73,6 +75,7 @@
       "slug": "polowanie-i-ekologia",
       "sciezka": "a",
       "tytul": "Polowanie i ekologia",
+      "krotko": "Jak polują i czym się żywią.",
       "gotowy": true,
       "lekcje": [
         {
@@ -102,6 +105,7 @@
       "slug": "rozrod",
       "sciezka": "a",
       "tytul": "Rozród i życie rodzinne",
+      "krotko": "Pary, gniazda i pisklęta.",
       "gotowy": true,
       "lekcje": [
         {
@@ -131,6 +135,7 @@
       "slug": "wedrowki",
       "sciezka": "a",
       "tytul": "Wędrówki",
+      "krotko": "Jak i dokąd wędrują.",
       "gotowy": true,
       "lekcje": [
         {
@@ -160,6 +165,7 @@
       "slug": "ochrona",
       "sciezka": "a",
       "tytul": "Ochrona",
+      "krotko": "Zagrożenia i powroty gatunków.",
       "gotowy": true,
       "lekcje": [
         {
@@ -189,6 +195,7 @@
       "slug": "ludzie-i-drapiezniki",
       "sciezka": "a",
       "tytul": "Ludzie i drapieżniki",
+      "krotko": "Sokolnictwo, symbole i pomoc ptakom.",
       "gotowy": true,
       "lekcje": [
         {
@@ -218,6 +225,7 @@
       "slug": "swiat-sow",
       "sciezka": "a",
       "tytul": "Wspaniały świat sów",
+      "krotko": "Słuch, cichy lot i życie nocą.",
       "gotowy": true,
       "lekcje": [
         {
@@ -255,6 +263,7 @@
       "slug": "budowa-ptaka",
       "sciezka": "a",
       "tytul": "Budowa ptaka",
+      "krotko": "Pióra, kości i narządy w 3D.",
       "gotowy": true,
       "lekcje": [
         {
@@ -284,6 +293,7 @@
       "slug": "ewolucja",
       "sciezka": "a",
       "tytul": "Ewolucja ptaków drapieżnych",
+      "krotko": "Od dinozaurów do dzisiejszych drapieżników.",
       "gotowy": true,
       "lekcje": [
         {
@@ -313,6 +323,7 @@
       "slug": "lot",
       "sciezka": "a",
       "tytul": "Lot w praktyce",
+      "krotko": "Zawis, pikowanie i inne style lotu.",
       "gotowy": true,
       "lekcje": [
         {
@@ -342,6 +353,7 @@
       "slug": "krukowate",
       "sciezka": "a",
       "tytul": "Krukowate: sąsiedzi drapieżników",
+      "krotko": "Wrony, kruki i ich spory z drapieżnikami.",
       "gotowy": true,
       "lekcje": [
         {
@@ -371,6 +383,7 @@
       "slug": "male-ptaki",
       "sciezka": "a",
       "tytul": "Małe ptaki: codzienni sąsiedzi i zdobycz",
+      "krotko": "Pospolite małe ptaki, zdobycz drapieżników.",
       "gotowy": true,
       "lekcje": [
         {
@@ -400,6 +413,7 @@
       "slug": "metoda",
       "sciezka": "b",
       "tytul": "Metoda rozpoznawania w locie",
+      "krotko": "Rozpoznawanie po sylwetce w locie.",
       "gotowy": true,
       "lekcje": [
         {
@@ -429,6 +443,7 @@
       "slug": "polska",
       "sciezka": "b",
       "tytul": "Ptaki drapieżne Polski",
+      "krotko": "Dzienne drapieżniki Polski.",
       "gotowy": true,
       "lekcje": [
         {
@@ -458,6 +473,7 @@
       "slug": "gibraltar",
       "sciezka": "b",
       "tytul": "Cieśnina Gibraltarska",
+      "krotko": "Jesienny przelot i gdzie stanąć.",
       "gotowy": true,
       "lekcje": [
         {
@@ -487,6 +503,7 @@
       "slug": "poludnie-hiszpanii",
       "sciezka": "b",
       "tytul": "Ptaki drapieżne południa Hiszpanii",
+      "krotko": "Sępy, orły i stepy Andaluzji.",
       "gotowy": true,
       "lekcje": [
         {
@@ -516,6 +533,7 @@
       "slug": "sowy",
       "sciezka": "b",
       "tytul": "Sowy, drapieżniki nocne",
+      "krotko": "Sowy rozpoznawane głównie po głosie.",
       "gotowy": true,
       "lekcje": [
         {
@@ -545,6 +563,7 @@
       "slug": "barbate",
       "sciezka": "b",
       "tytul": "Marismas del Barbate, początek października",
+      "krotko": "Rozlewiska Barbate jesienią.",
       "gotowy": true,
       "lekcje": [
         {
@@ -574,6 +593,7 @@
       "slug": "wielkosc-i-ksztalt",
       "sciezka": "b",
       "tytul": "Wielkość i kształt",
+      "krotko": "Jak ocenić wielkość i kształt.",
       "gotowy": true,
       "lekcje": [
         {
@@ -603,6 +623,7 @@
       "slug": "punkt-obserwacyjny",
       "sciezka": "b",
       "tytul": "Wirtualny punkt obserwacyjny",
+      "krotko": "Liczenie przelotu na wirtualnym punkcie.",
       "gotowy": true,
       "lekcje": [
         {
@@ -632,6 +653,7 @@
       "slug": "siewkowce",
       "sciezka": "b",
       "tytul": "Siewkowce",
+      "krotko": "Siewkowce w stadzie i w locie.",
       "gotowy": true,
       "lekcje": [
         {
@@ -673,6 +695,7 @@
       "slug": "wiek-orlow",
       "sciezka": "b",
       "tytul": "Wiek i upierzenie dużych orłów",
+      "krotko": "Wiek orłów z upierzenia.",
       "gotowy": true,
       "lekcje": [
         {
@@ -702,6 +725,7 @@
       "slug": "projekt-koncowy",
       "sciezka": "b",
       "tytul": "Projekt końcowy",
+      "krotko": "Własny projekt w terenie.",
       "gotowy": true,
       "lekcje": [
         {

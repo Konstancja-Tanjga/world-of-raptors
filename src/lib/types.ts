@@ -65,6 +65,8 @@ export type Modul = {
   slug: string | null;
   sciezka: 'a' | 'b';
   tytul: string;
+  /** A few words for the module's card (the course's paths); the README's hook says the rest on the module's page. */
+  krotko?: string;
   gotowy: boolean;
   lekcje?: Lekcja[];
 };
