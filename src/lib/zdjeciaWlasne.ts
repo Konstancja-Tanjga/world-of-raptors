@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react';
 
 /**
- * My own photos attached to checklist observations.
+ * My own photos attached to checklist observations, and to single sightings
+ * of the field log (`wpis`, the sighting's id): a sighting's photo is a photo
+ * of its species too, so the checklist and the species page show it.
  *
  * Stored in IndexedDB, not localStorage: localStorage holds a few MB of text,
  * a single phone photo can be larger than that. Every photo is re-encoded on
@@ -13,6 +15,8 @@ import { useEffect, useState } from 'react';
 export type ZdjecieWlasne = {
   id: string;
   gatunek: string;
+  /** The field log sighting it was added to (dziennik.ts), if any. Not indexed: read through `gatunek`. */
+  wpis?: string;
   blob: Blob;
   width: number;
   height: number;
@@ -111,9 +115,9 @@ const noweId = () =>
     ? crypto.randomUUID()
     : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
 
-export async function dodajZdjecie(gatunek: string, plik: File, dodano: string) {
+export async function dodajZdjecie(gatunek: string, plik: File, dodano: string, wpis?: string) {
   const { blob, width, height } = await zmniejsz(plik);
-  const zdjecie: ZdjecieWlasne = { id: noweId(), gatunek, blob, width, height, dodano };
+  const zdjecie: ZdjecieWlasne = { id: noweId(), gatunek, ...(wpis ? { wpis } : {}), blob, width, height, dodano };
   await transakcja('readwrite', (s) => s.put(zdjecie));
   // Ask the browser not to evict this origin's data under storage pressure.
   void navigator.storage?.persist?.();
@@ -123,6 +127,26 @@ export async function dodajZdjecie(gatunek: string, plik: File, dodano: string) 
 export async function usunZdjecie(id: string, gatunek: string) {
   await transakcja('readwrite', (s) => s.delete(id));
   powiadom(gatunek);
+}
+
+/** The photos added to these field log sightings (by `wpis`), e.g. of a new sighting about to be dropped. */
+export async function zdjeciaWpisow(wpisy: string[]) {
+  const ids = new Set(wpisy);
+  return (await wszystkieZdjecia()).filter((z) => z.wpis !== undefined && ids.has(z.wpis));
+}
+
+/** Deletes these photos in one transaction; listeners hear of every species touched. */
+export async function usunZdjecia(zdjecia: Pick<ZdjecieWlasne, 'id' | 'gatunek'>[]) {
+  const db = await otworz();
+  await new Promise<void>((resolve, reject) => {
+    const tx = db.transaction(STORE, 'readwrite');
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error);
+    const s = tx.objectStore(STORE);
+    zdjecia.forEach((z) => s.delete(z.id));
+  });
+  new Set(zdjecia.map((z) => z.gatunek)).forEach(powiadom);
 }
 
 export function wszystkieZdjecia() {
@@ -159,6 +183,7 @@ export function isZdjecieKopii(v: unknown): v is ZdjecieKopii {
     typeof z.id === 'string' &&
     z.id !== '' &&
     typeof z.gatunek === 'string' &&
+    (z.wpis === undefined || typeof z.wpis === 'string') &&
     typeof z.dodano === 'string' &&
     typeof z.width === 'number' &&
     Number.isFinite(z.width) &&
@@ -172,10 +197,11 @@ export function isZdjecieKopii(v: unknown): v is ZdjecieKopii {
 export type ZdjecieDoPokazania = ZdjecieWlasne & { url: string };
 
 /**
- * Photos of one species with object URLs for <img>. `null` while loading;
- * an error is surfaced rather than rendered as "no photos".
+ * Photos of one species with object URLs for <img>, or with `wpis` only
+ * those of that sighting. `null` while loading; an error is surfaced rather
+ * than rendered as "no photos".
  */
-export function useZdjeciaWlasne(gatunek: string) {
+export function useZdjeciaWlasne(gatunek: string, wpis?: string) {
   const [stan, setStan] = useState<{ zdjecia: ZdjecieDoPokazania[] | null; blad: string | null }>({
     zdjecia: null,
     blad: null,
@@ -192,6 +218,7 @@ export function useZdjeciaWlasne(gatunek: string) {
           if (!aktywny || moj !== numer) return;
           urls.forEach(URL.revokeObjectURL);
           const zdjecia = lista
+            .filter((z) => !wpis || z.wpis === wpis)
             .sort((a, b) => String(a.dodano).localeCompare(String(b.dodano)))
             .map((z) => ({ ...z, url: URL.createObjectURL(z.blob) }));
           urls = zdjecia.map((z) => z.url);
@@ -214,7 +241,7 @@ export function useZdjeciaWlasne(gatunek: string) {
       listeners.delete(sluchaj);
       urls.forEach(URL.revokeObjectURL);
     };
-  }, [gatunek]);
+  }, [gatunek, wpis]);
 
   return stan;
 }
