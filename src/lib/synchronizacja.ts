@@ -218,6 +218,11 @@ export const DZIENNIK: Tabela<Dziennik> = {
       dziennik[id] = wpis;
     }
     return dziennik;
+  },
+  bez: bezKlucza,
+  odcisk: odciskZmiany,
+};
+
 // ---- The owner's places ----
 
 /** A number from the server: Postgres numerics may arrive as strings. */
