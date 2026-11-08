@@ -899,6 +899,54 @@ li {
 .dziennik__notatka {
   white-space: pre-line;
 }
+/* A visit: one outing's species under its time and place. */
+.dziennik__naglowek-wizyty {
+  margin: 0;
+}
+.dziennik__gatunki-wizyty {
+  margin: 0;
+  padding-inline-start: var(--bh-gap-loose);
+  display: grid;
+  gap: var(--bh-gap-snug);
+}
+.dziennik__edytuj {
+  font-size: var(--bh-text-size-caption);
+}
+
+/* The new-sighting form's species list and favourite places. */
+.lista-gatunkow__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--bh-gap-normal);
+}
+.lista-gatunkow__wiersz {
+  display: grid;
+  gap: var(--bh-gap-tight);
+  padding-block-end: var(--bh-gap-normal);
+  border-bottom: 1px solid var(--wor-linia);
+}
+.lista-gatunkow__pola {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--bh-gap-snug) var(--bh-gap-normal);
+}
+.lista-gatunkow__pola > :first-child {
+  flex: 1 1 12rem;
+  max-width: 20rem;
+}
+.lista-gatunkow__uwaga {
+  margin: 0;
+}
+.formularz-obserwacji__ulubione {
+  display: grid;
+  gap: var(--bh-gap-tight);
+}
+.formularz-obserwacji__ulubione p {
+  margin: 0;
+}
 
 /* Cards */
 .species-card {
