@@ -206,7 +206,7 @@ export function ChecklistView({
 
   // Order matters: validate everything, then write photos (most likely to
   // fail, and aborted atomically), then progress and flashcards, then what
-  // "Moje niebo" recorded, then my places (merged, never replaced), then the checklist.
+  // "Moje niebo" recorded, then my places (merged, never replaced), then the field log, then the checklist.
   const importuj = async (file: File) => {
     let kopia: OdczytanaKopia;
     try {
@@ -512,7 +512,7 @@ export function ChecklistView({
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Checklista, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane w tej przeglądarce (z kontem także na serwerze, oprócz zdjęć). Co jakiś
+          Checklista, dziennik obserwacji, moje zdjęcia, moje miejsca, postęp nauki, fiszki i „Moje niebo” są zapisane w tej przeglądarce (z kontem także na serwerze, oprócz zdjęć). Co jakiś
           czas zapisz kopię w pliku, żeby ich nie stracić. Wczytaj ją na innym urządzeniu, żeby tam
           też je mieć.
         </p>
