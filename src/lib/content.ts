@@ -1410,6 +1410,7 @@ function sprawdzSpojnosc() {
   }
   for (const m of gotoweModuly) {
     if (!otwarcieModulu(m.slug)) bledy.push(`content.ts: moduł ${m.slug} nie ma otwarcia (OTWARCIA_MODULOW) albo jego zdjęcia`);
+    if (!m.krotko?.trim()) bledy.push(`moduly.json: ${m.id} nie ma krótkiego opisu (krotko) na kartę modułu`);
   }
   for (const [grupa, id] of Object.entries(RYSUNEK_GRUPY)) {
     if (!SYLWETKI[id]) bledy.push(`content.ts: grupę „${grupa}” rysuje ${id}, który nie ma sylwetki`);
