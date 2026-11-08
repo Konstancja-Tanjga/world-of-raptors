@@ -17,8 +17,7 @@ export default function FiszkiPage() {
           Rozpoznaję ptaka ze zdjęcia ({ile(['lot', 'siedzacy'])}), z sylwetki w locie ({ile(['sylwetka'])})
           {ile(['glos']) > 0 && <>, po głosie ({ile(['glos'])})</>} i po nazwie w trzech językach (
           {ile(['pl-en', 'pl-es', 'en-pl', 'es-pl'])}), a do tego uczę się budowy ptaka (
-          {ile(['czesc-obraz', 'czesc-nazwa'])}). Algorytm FSRS (ten sam co w Anki) układa powtórki według moich ocen:
-          trudne fiszki wracają szybciej, łatwe coraz rzadziej, a każdego dnia dochodzi do 10 nowych.
+          {ile(['czesc-obraz', 'czesc-nazwa'])}).
         </p>
       </header>
       <FiszkiView talia={talia} gatunki={gatunkiFiszek()} />
