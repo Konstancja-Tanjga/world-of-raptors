@@ -56,6 +56,9 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
     <div className="stack">
       <div className="row">
         <ButtonLink href={gatunek ? `/dziennik/obserwacja?gatunek=${gatunek}` : '/dziennik/obserwacja'}>Dodaj obserwację</ButtonLink>
+        <ButtonLink href="/kiedy-i-gdzie#co-tu" variant="secondary">
+          Co tu zobaczę?
+        </ButtonLink>
         {punkty.length > 0 && (
           <Button variant="secondary" aria-expanded={mapa} onClick={() => setMapa(!mapa)}>
             {mapa ? 'Ukryj mapę' : 'Pokaż na mapie'}

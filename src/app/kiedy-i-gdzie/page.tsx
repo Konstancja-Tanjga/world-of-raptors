@@ -1,3 +1,4 @@
+import { CoTuZobacze } from '@/components/CoTuZobacze';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PlanerWyjazdu } from '@/components/PlanerWyjazdu';
@@ -41,6 +42,11 @@ export default function KiedyIGdziePage() {
         </p>
         <ul className="kiedy-i-gdzie__spis" aria-label="Na tej stronie">
           <li>
+            <a href="#co-tu" className="text-link">
+              Co tu zobaczę
+            </a>
+          </li>
+          <li>
             <a href="#kiedy" className="text-link">
               Kiedy jechać
             </a>
@@ -52,6 +58,16 @@ export default function KiedyIGdziePage() {
           </li>
         </ul>
       </header>
+
+      <section className="kiedy-i-gdzie__sekcja" aria-labelledby="co-tu">
+        <header className="sekcja">
+          <h2 id="co-tu" className="sekcja__tytul">
+            Co tu zobaczę
+          </h2>
+          <p className="sekcja__lead">Ptaki zgłaszane ostatnio w okolicy, z pogodą na teraz.</p>
+        </header>
+        <CoTuZobacze />
+      </section>
 
       <section className="kiedy-i-gdzie__sekcja" aria-labelledby="kiedy">
         <header className="sekcja">
