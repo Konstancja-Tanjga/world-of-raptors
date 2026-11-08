@@ -32,6 +32,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'wiek-orlow': { gatunek: 'orlik-krzykliwy', nazwa: 'Orlik' },
   'projekt-koncowy': { gatunek: 'orzelek-wlochaty', nazwa: 'Orzełek' },
   siewkowce: { gatunek: 'drzemlik', nazwa: 'Drzemlik' },
+  rewiry: { gatunek: 'wlochatka', nazwa: 'Włochatka' },
 };
 
 /** A star at [x, y], in fractions of the bird's box (0 at the top left). */
@@ -48,7 +49,7 @@ export type Polozenie = { x: number; y: number; szer: number; obrot: number };
 
 const KOLUMNY = [0.135, 0.375, 0.625, 0.865];
 /** The most rows the wide map takes; the narrow map has twice as many. */
-const NAJWIECEJ_WIERSZY = 6;
+const NAJWIECEJ_WIERSZY = 7;
 /**
  * Small offsets (dx within ±0.01, dy within ±0.02: ukladNaNiebie relies on
  * those bounds) and tilts, one per place, so a grid of constellations reads
