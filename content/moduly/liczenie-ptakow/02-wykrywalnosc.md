@@ -26,7 +26,7 @@ Dwie uwagi z poradnika:
 
 Poradnik ilustruje to przykładem, który warto zapamiętać. Na małej powierzchni ma terytoria 20 samców wodniczki *Acrocephalus paludicola* (ang. Aquatic Warbler). Samiec, który nie śpiewa, tylko żeruje w turzycach, jest praktycznie nie do wykrycia, więc wykrycie zależy od tego, czy zaśpiewa w czasie kontroli. Załóżmy, że szansa wynosi p = 0,5.
 
-Średnio usłyszę 10 samców (20 · 0,5). Ale pojedyncze liczenie to jak **20 rzutów monetą**: wynik zależy od przypadku, nie od obserwatorki. Autorzy poradnika „wykonali” 1000 wirtualnych kontroli i pokazali, że jedno liczenie może się skończyć prawie każdym wynikiem od ok. 3 do 17 samców. Najczęściej wychodzi 8–11, ale 5 albo 16 też się zdarzają, a 19 albo 20 praktycznie nigdy. Nawet przy p = 0,9, czyli u świetnie przygotowanej obserwatorki w najlepszej porze, zdarzy się kontrola z zaledwie 13 samcami.
+Średnio usłyszę 10 samców (20 · 0,5). Ale pojedyncze liczenie to jak **20 rzutów monetą**: wynik zależy od przypadku, nie od obserwatorki. Autorzy poradnika „wykonali” 1000 wirtualnych kontroli i pokazali, że jedno liczenie może się skończyć prawie każdym wynikiem od ok. 3 do 17 samców. Najczęściej wychodzi 8–11, ale 5 albo 16 też się zdarzają, a 19 albo 20 praktycznie nigdy. Nawet przy p = 0,9, czyli u świetnie przygotowanej obserwatorki w najlepszej porze, może się trafić kontrola z zaledwie 13 samcami.
 
 Wynik liczenia kształtują więc **dwa źródła zmienności**:
 
@@ -69,16 +69,16 @@ Jeśli wracam n razy, szansa, że gatunek obecny na powierzchni choć raz się p
 
 Dla D = 0,3: po jednej kontroli 30%, po trzech ok. 66%, po sześciu ok. 88%.
 
-Stąd odpowiedź na pytanie z tytułu. Żeby mieć np. 95% pewności, że **wykryłabym gatunek, gdyby tu był**, potrzebuję tylu pustych kontroli z rzędu, by K przekroczyło 0,95. Dla D = 0,3 to **9 kontroli**, a dla rzadko odzywającego się gatunku z D = 0,1 aż 29. Sprawdź to na suwakach:
-
-<ile-ich-jest data-wariant="powroty">
-</ile-ich-jest>
-
 <margines>
 
 > Poradnik podaje też wzór, który uwzględnia, jak bardzo spodziewałam się gatunku przed liczeniem (Wintle i in. 2005). Im pewniejsza byłam, że gatunek tu jest, tym więcej pustych kontroli potrzeba, żeby zmienić zdanie: przy D = 0,1 i wcześniejszej szansie spotkania 0,8 wychodzi ok. 41 kontroli, przy D = 0,3 ok. 12.
 
 </margines>
+
+Stąd odpowiedź na pytanie z tytułu. Żeby mieć np. 95% pewności, że **wykryłabym gatunek, gdyby tu był**, potrzebuję tylu pustych kontroli z rzędu, by K przekroczyło 0,95. Dla D = 0,3 to **9 kontroli**, a dla rzadko odzywającego się gatunku z D = 0,1 aż 29. Sprawdź to na suwakach:
+
+<ile-ich-jest data-wariant="powroty">
+</ile-ich-jest>
 
 ### Fałszywe zera
 

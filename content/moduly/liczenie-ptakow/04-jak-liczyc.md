@@ -17,7 +17,7 @@ Obserwatorka idzie wyznaczoną wcześniej trasą i zapisuje ptaki widziane i sł
 
 Po co te pasy? Metoda zakłada, że ptaki **na samej linii** wykrywa się wszystkie, a im dalej, tym większa ich część umyka. Z tego, jak liczba zapisów maleje z odległością, da się wyznaczyć krzywą wykrywalności i oszacować, ilu ptaków nie zauważono. To odpowiedź na problem z [lekcji 2](02-wykrywalnosc.md) wbudowana w samą metodę.
 
-Tempo wynosi zwykle 2–3 km/h: dość wolno, by wszystko zapisać, i dość szybko, by nie liczyć dwa razy tego samego ptaka. Typowy transekt na lądzie ma 1–2 km. Na transektach **nie stosuje się stymulacji głosowej**: kroki zagłuszają odpowiedź, a ptaki idą za źródłem dźwięku i można je policzyć kilka razy.
+Tempo marszu z notowaniem wynosi według poradnika zwykle 2–3 km/h: dość wolno, by wszystko zapisać, i dość szybko, by nie liczyć dwa razy tego samego ptaka. Typowy transekt na lądzie ma 1–2 km. Na transektach **nie stosuje się stymulacji głosowej**: kroki zagłuszają odpowiedź, a ptaki idą za źródłem dźwięku i można je policzyć kilka razy.
 
 ### Przykład: kwadrat w Monitoringu Pospolitych Ptaków Lęgowych
 
@@ -84,6 +84,8 @@ Z [lekcji 1](01-cenzus-i-monitoring.md) wiesz, że monitoring może korzystać z
 | sposób liczenia | z punktu, z transektu albo przeczesanie całej powierzchni |
 | termin | okno dat, np. 10–30 maja |
 | pora dnia | okno godzin, np. 4:00–9:00 |
+
+Tempo 3–4 km/h w tabeli to przykład standardu dla przejścia całej powierzchni, a 2–3 km/h wyżej to typowe tempo na transekcie, gdzie co chwilę trzeba się zatrzymać i zapisać ptaka. Ważniejsza od samej liczby jest to, że w danym programie jest ona co roku ta sama.
 
 Granice nie mogą być zbyt ostre. Przesadnie wyśrubowane wymagania kończą się tym, że ktoś rezygnuje z kontroli, która dałaby całkiem dobre dane, a wtedy nie ma żadnych.
 

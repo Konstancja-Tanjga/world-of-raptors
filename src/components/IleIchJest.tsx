@@ -50,6 +50,10 @@ function KontrolePowierzchni() {
   const [blad, setBlad] = useState<string>();
   const [odkryte, setOdkryte] = useState<number | null>(null);
   const wynikRef = useRef<HTMLDivElement>(null);
+  const szacunekRef = useRef<HTMLInputElement>(null);
+  const startRef = useRef<HTMLButtonElement>(null);
+  // Set by "Nowa powierzchnia", whose button unmounts: focus then goes to the new plot's first control.
+  const poNowej = useRef(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -66,6 +70,16 @@ function KontrolePowierzchni() {
   useEffect(() => {
     if (odkryte !== null) wynikRef.current?.focus();
   }, [odkryte]);
+  // After the last night the night button is disabled: focus moves on to the estimate.
+  useEffect(() => {
+    if (kontrole.length >= NAJWIECEJ_KONTROLI) szacunekRef.current?.focus();
+  }, [kontrole.length]);
+  useEffect(() => {
+    if (poNowej.current && ziarno !== null) {
+      poNowej.current = false;
+      startRef.current?.focus();
+    }
+  }, [ziarno]);
 
   if (!plansza || ziarno === null) return <StateBlock state="loading" title="Przygotowuję powierzchnię" scope="inline" />;
 
@@ -83,6 +97,7 @@ function KontrolePowierzchni() {
     setOdkryte(x);
   };
   const nowa = () => {
+    poNowej.current = true;
     setZiarno(Math.floor(Math.random() * 2147483646) + 1);
     setKontrole([]);
     setSzacunek('');
@@ -93,7 +108,7 @@ function KontrolePowierzchni() {
     odkryte !== null
       ? `Powierzchnia z ${n} rewirami puszczyków; w ostatniej kontroli odezwało się ${wyniki.at(-1) ?? 0}`
       : ostatnia
-        ? `Powierzchnia nocą; w ostatniej kontroli usłyszane ${wyniki.at(-1)} ${samcow(wyniki.at(-1)!)}`
+        ? `Powierzchnia nocą; w ostatniej kontroli usłyszano ${wyniki.at(-1)} ${samcow(wyniki.at(-1)!)}`
         : 'Powierzchnia nocą, jeszcze bez kontroli';
 
   return (
@@ -108,7 +123,8 @@ function KontrolePowierzchni() {
             const cy = 1 + s.y * 98;
             if (glos) {
               return (
-                <g key={i} className="ile__samiec ile__samiec--glos">
+                // Keyed by night, so the fade-in plays again for a male heard on consecutive nights.
+                <g key={`${kontrole.length}-${i}`} className="ile__samiec ile__samiec--glos">
                   <circle cx={cx} cy={cy} r="6" className="ile__fala" />
                   <circle cx={cx} cy={cy} r="2.6" />
                 </g>
@@ -139,18 +155,20 @@ function KontrolePowierzchni() {
           )}
           {odkryte === null && (
             <div className="ile__przyciski">
-              <Button onClick={zrobKontrole} disabled={kontrole.length >= NAJWIECEJ_KONTROLI} variant={kontrole.length ? 'secondary' : 'primary'}>
+              <Button ref={startRef} onClick={zrobKontrole} disabled={kontrole.length >= NAJWIECEJ_KONTROLI} variant={kontrole.length ? 'secondary' : 'primary'}>
                 {kontrole.length ? 'Następna noc' : 'Zrób pierwszą kontrolę'}
               </Button>
             </div>
           )}
+          {/* Mounted from the start, so screen readers announce the first night too. */}
+          <p className="ile__tekst" aria-live="polite">
+            {ostatnia && odkryte === null
+              ? `Noc ${kontrole.length}: usłyszano ${wyniki.at(-1)} ${samcow(wyniki.at(-1)!)}.${kontrole.length >= NAJWIECEJ_KONTROLI ? ' To ostatnia noc na tej powierzchni.' : ''}`
+              : ''}
+          </p>
           {ostatnia && odkryte === null && (
             <>
-              <p className="ile__tekst" aria-live="polite">
-                Noc {kontrole.length}: usłyszane {wyniki.at(-1)} {samcow(wyniki.at(-1)!)}.
-                {kontrole.length >= NAJWIECEJ_KONTROLI && ' To ostatnia noc na tej powierzchni.'}
-              </p>
-              <Input label="Ile samców ma tu rewiry?" inputMode="numeric" value={szacunek} onChange={(e) => setSzacunek(e.target.value)} error={blad} autoComplete="off" />
+              <Input ref={szacunekRef} label="Ile samców ma tu rewiry?" inputMode="numeric" value={szacunek} onChange={(e) => setSzacunek(e.target.value)} error={blad} autoComplete="off" />
               <div className="ile__przyciski">
                 <Button onClick={sprawdz}>Sprawdź</Button>
               </div>
@@ -199,7 +217,7 @@ function Wynik({
         </span>
       </div>
       <figure className="ile__rozklad">
-        <svg viewBox="0 0 100 46" role="img" aria-label={`Wyniki ${WIRTUALNYCH} wirtualnych kontroli tej powierzchni: w 95% z nich usłyszane od ${od} do ${doK} samców z ${n}`}>
+        <svg viewBox="0 0 100 46" role="img" aria-label={`Wyniki ${WIRTUALNYCH} wirtualnych kontroli tej powierzchni: w 95% z nich usłyszano od ${od} do ${doK} samców z ${n}`}>
           {rozklad.map((x, k) => {
             const h = maks ? (x / maks) * 36 : 0;
             return (
@@ -237,7 +255,9 @@ function IleRazyWrocic() {
   const [d, setD] = useState(30);
   const [pewnosc, setPewnosc] = useState(95);
   const n = kontroliDoPewnosci(d / 100, pewnosc / 100);
-  const pokaz = Math.max(10, Math.min(n + 2, 40));
+  const NAJWIECEJ_SLUPKOW = 40;
+  const pokaz = Math.max(10, Math.min(n + 2, NAJWIECEJ_SLUPKOW));
+  const k3 = kumulatywna(d / 100, 3);
   const szer = 100 / pokaz;
   const prog = 40 - (pewnosc / 100) * 36;
   return (
@@ -257,7 +277,8 @@ function IleRazyWrocic() {
           {n} {kontroli(n)} bez wyniku
         </p>
         <p className="ile__tekst">
-          Gatunek, który wykrywasz w {d} kontrolach na 100, możesz uznać za nieobecny z pewnością {pewnosc}% dopiero po {n} pustych kontrolach z rzędu. Po trzech pustych nocach wykryłabyś go, gdyby był, tylko z szansą {procent(kumulatywna(d / 100, 3))}.
+          Gatunek, który wykrywasz w {d} kontrolach na 100, wykryłabyś, gdyby tu był, z szansą co najmniej {pewnosc}% dopiero po{' '}
+          {n === 1 ? '1 pustej kontroli' : `${n} pustych kontrolach z rzędu`}. Po trzech pustych nocach ta szansa wynosi {procent(k3)}. To jeszcze nie pewność, że gatunku nie ma: ta zależy też od tego, jak bardzo spodziewałaś się go przed liczeniem.
         </p>
       </div>
       <figure className="ile__rozklad">
@@ -272,6 +293,7 @@ function IleRazyWrocic() {
         </svg>
         <figcaption>
           Słupek to szansa, że po tylu kontrolach gatunek obecny na powierzchni choć raz się pokazał (pierwszy słupek: jedna kontrola). Linia to Twoja pewność; wyraźniejsze słupki już ją przekraczają.
+          {n > NAJWIECEJ_SLUPKOW && ` Wykres kończy się na ${NAJWIECEJ_SLUPKOW}. kontroli, a próg przekroczysz dopiero po ${n}.`}
         </figcaption>
       </figure>
     </div>

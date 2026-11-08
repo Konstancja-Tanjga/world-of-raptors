@@ -63,7 +63,7 @@ Dlatego Monitoring Pospolitych Ptaków Lęgowych liczył w ostatnich latach na o
 
 ## A drapieżniki?
 
-Drapieżników jest mało, a ich rewiry są duże, więc kwadrat 1 × 1 km to dla nich za mało. Według opisu Monitoringu Ptaków Polski na stronie OTOP grupy gatunków, takie jak sowy czy ptaki drapieżne, liczy się na powierzchniach próbnych rzędu 1 × 1 km albo 10 × 10 km, wylosowanych z obszaru występowania tych gatunków. Dla rzadkich gatunków prowadzi się natomiast cenzusy całego znanego areału: kontroluje się znane stanowiska, dawne i obecne, i szuka nowych. Osobne programy mają m.in. orzeł przedni, orlik grubodzioby i rybołów. To jedna z niewielu sytuacji, w których monitoring zbliża się do cenzusu.
+Według opisu Monitoringu Ptaków Polski na stronie OTOP grupy gatunków, takie jak sowy czy ptaki drapieżne, też liczy się na wylosowanych powierzchniach próbnych, tylko dobranych do wielkości ich rewirów. Monitoring Ptaków Drapieżnych, uruchomiony w 2007 roku dla 11 rozpowszechnionych gatunków, liczył je według publikacji o programie na ok. 40 powierzchniach 10 × 10 km, bo w kwadracie 1 × 1 km zmieściłby się co najwyżej kawałek jednego rewiru. Dla rzadkich gatunków prowadzi się natomiast cenzusy całego znanego areału: kontroluje się znane stanowiska, dawne i obecne, i szuka nowych. Osobne programy mają m.in. orzeł przedni, orlik grubodzioby i rybołów. To jedna z niewielu sytuacji, w których monitoring zbliża się do cenzusu.
 
 ## Rozpowszechnienie: tańsza miara
 
