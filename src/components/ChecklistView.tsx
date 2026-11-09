@@ -67,6 +67,8 @@ export function ChecklistView({
   const [widok, setWidok] = useState<Widok>('wszystkie');
   // Species whose date, place, note and photos are open; a species opens when ticked.
   const [otwarte, setOtwarte] = useState<ReadonlySet<string>>(new Set());
+  // The species just ticked: its silhouette takes off once (globals.css, `lifer`), not every seen one on each visit.
+  const [swiezy, setSwiezy] = useState<string | null>(null);
   const ustawOtwarty = (id: string, otwarty: boolean) =>
     setOtwarte((s) => {
       const nowe = new Set(s);
@@ -421,7 +423,7 @@ export function ChecklistView({
                 return (
                   <li key={g.id} data-otwarty={otwarty ? '' : undefined}>
                     <Card padding="snug" accent={obs ? 'success' : 'none'}>
-                      <div className="checklist__row" data-widziany={obs ? '' : undefined}>
+                      <div className="checklist__row" data-widziany={obs ? '' : undefined} data-swiezy={obs && swiezy === g.id ? '' : undefined}>
                         <span className="checklist__sylwetka" aria-hidden="true">
                           {sylwetki[g.id] ?? null}
                         </span>
@@ -448,6 +450,7 @@ export function ChecklistView({
                           checked={Boolean(obs)}
                           onChange={() => {
                             ustawOtwarty(g.id, !obs);
+                            setSwiezy(obs ? null : g.id);
                             sprawdzZapis(przelacz(g.id));
                           }}
                         />

@@ -142,3 +142,25 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
   - Kontrolki Leafleta (przybliżanie, atrybucja, dymki) mają jego własny wygląd i focus, nie Big Hat.
   - Wybór punktu wymaga wskaźnika. Obok mapy jest więc zawsze „Użyj mojej lokalizacji” i pole współrzędnych (WCAG 2.5.7); samą mapę da się przesuwać i przybliżać klawiaturą.
 - **Pytanie do design systemu:** czy mapa to komponent systemu (kontener z tokenami, kontrolkami i alternatywą bez wskaźnika), czy zawsze biblioteka z zewnątrz?
+
+## Dolny pasek nawigacji na telefonie
+
+- **Po co sięgnęłam:** na telefonie, w terenie, najczęściej używane sekcje (Kurs, Atlas, Teren, Fiszki, Niebo) mają być w zasięgu kciuka, a nie pod „Menu”.
+- **Czego nie ma w Big Hat:** `nav-rail` jest pionowy i przeznaczony do aplikacji (`AppShell`), a ramy kursu nie budujemy na `AppShell` (patrz wyżej). Nie ma poziomego paska kart na dole ekranu.
+- **Co zbudowałam lokalnie:** `src/components/DolnyPasek.tsx` z regułami sekcji w `src/lib/nawigacja.ts`. To linki z `aria-current`, materiał chrome Big Hat, pasek akcentu nad bieżącą sekcją. Pokazuje się tam, gdzie menu zastępuje linki górnego paska (do 1000 px), a strona zostawia na niego miejsce (`--wor-dolny-pasek`, z `safe-area-inset-bottom`).
+- **Co robi gorzej:** toasty Big Hat stoją w prawym dolnym rogu. Są na wyższej warstwie, więc przykrywają pasek, zamiast stanąć nad nim.
+- **Pytanie do design systemu:** czy dolny pasek kart (bottom navigation) to wariant `nav-rail` na wąski ekran, i czy obszar toastów może brać odstęp od dołu z tokenu?
+
+## Zakładki, które są stronami
+
+- **Po co sięgnęłam:** „Teren” to trzy strony (dziennik, checklista, moje miejsca) z zakładkami na górze.
+- **Dlaczego nie `Tabs`:** `Tabs` przełącza panele na jednej stronie (`role="tablist"`), a tu każda zakładka ma swój adres, historię i odświeżanie.
+- **Co zbudowałam lokalnie:** `src/components/ZakladkiTerenu.tsx`, czyli `<nav>` z linkami i `aria-current="page"`, podkreślenie w kolorze akcentu.
+- **Pytanie do design systemu:** czy nawigacja wyglądająca jak zakładki (linki, nie panele) to wariant `Tabs` albo `nav-list`?
+
+## Toast z akcją „Cofnij”
+
+- **Po co sięgnęłam:** usunięcie obserwacji, miejsca albo zdjęcia jest odwracalne (zostaje znacznik usunięcia), więc zamiast okna z potwierdzeniem wystarczyłby toast „Usunięto” z przyciskiem „Cofnij”.
+- **Czego nie ma w Big Hat:** `Toast` przyjmuje tylko ton, tytuł, opis i czas, bez akcji (choć kontrakt wspomina, że Tab „dochodzi do akcji”).
+- **Co zrobiłam:** nic lokalnie. Usuwanie dalej potwierdza `Dialog`.
+- **Pytanie do design systemu:** czy `Toast` dostanie jedną akcję (`action: { label, onClick }`), dla wzorca „Cofnij”?

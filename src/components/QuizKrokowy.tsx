@@ -181,7 +181,7 @@ export function QuizKrokowy({ quiz, modul, lekcja }: { quiz: Quiz; modul: string
                   : undefined,
           }))}
         />
-        <div className="quiz__feedback" aria-live="polite">
+        <div className="quiz__feedback" aria-live="polite" data-wynik={etap.sprawdzona ? (dobrze ? 'dobrze' : 'zle') : undefined}>
           {etap.sprawdzona && (
             <>
               <Badge tone={dobrze ? 'success' : 'critical'}>{dobrze ? 'Dobrze' : 'Źle'}</Badge>

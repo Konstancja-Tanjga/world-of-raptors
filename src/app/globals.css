@@ -874,6 +874,19 @@ li {
 [data-widziany] > .checklist__sylwetka .sylwetka {
   fill: var(--wor-lifer);
 }
+/* Ticking a species: its silhouette lifts off in gold, a lifer's moment. Only the one just ticked
+   (data-swiezy), so a list of seen birds does not all take off on every visit. Under reduced motion
+   --wor-ruch is 0 and only the glow shows. */
+[data-swiezy] > .checklist__sylwetka .sylwetka {
+  animation: lifer var(--wor-dur-expressive) var(--wor-ease-out);
+}
+@keyframes lifer {
+  40% {
+    translate: 0 calc(-0.45rem * var(--wor-ruch));
+    scale: calc(1 + 0.14 * var(--wor-ruch));
+    filter: drop-shadow(0 0 0.4rem var(--wor-lifer));
+  }
+}
 /* Closed entries sit two abreast on a wide page; an open one takes the whole row. */
 .checklist {
   list-style: none;
@@ -1578,6 +1591,38 @@ li {
   .zakladki-terenu > .button-link {
     flex: 1 1 100%;
     justify-content: center;
+  }
+}
+
+/* Quiz feedback: a right answer settles in, a wrong one shakes its head once. */
+.quiz__feedback[data-wynik='dobrze'] {
+  animation: trafienie var(--wor-dur-base) var(--wor-ease-spring) both;
+}
+.quiz__feedback[data-wynik='zle'] {
+  animation: pudlo var(--wor-dur-expressive) var(--wor-ease-out) both;
+}
+@keyframes trafienie {
+  from {
+    opacity: 0;
+    scale: calc(1 - 0.06 * var(--wor-ruch));
+  }
+}
+@keyframes pudlo {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    translate: calc(-0.3rem * var(--wor-ruch)) 0;
+  }
+  35% {
+    translate: calc(0.25rem * var(--wor-ruch)) 0;
+  }
+  55% {
+    translate: calc(-0.15rem * var(--wor-ruch)) 0;
+  }
+  75% {
+    translate: calc(0.05rem * var(--wor-ruch)) 0;
   }
 }
 
