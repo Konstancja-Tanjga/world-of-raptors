@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import './atlas.css';
 import { AtlasView } from '@/components/AtlasView';
 import { Ciekawostka } from '@/components/Ciekawostka';
 import { gatunki, ptakiNaLiscie, zdjecia } from '@/lib/content';
-import { odmiana } from '@/lib/odmiana';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
+import { ButtonLink } from '@/components/ButtonLink';
 
 export const metadata: Metadata = {
   title: 'Atlas gatunków',
@@ -17,18 +17,14 @@ export const metadata: Metadata = {
 export default function GatunkiPage() {
   return (
     <div className="page page--atlas">
-      <header className="naglowek-strony">
-        <p className="eyebrow">Atlas</p>
-        <h1 className="naglowek-strony__tytul">Atlas gatunków</h1>
-        <p className="naglowek-strony__lead">
-          {gatunki.length} {odmiana(gatunki.length, ['gatunek', 'gatunki', 'gatunków'])} drapieżników i sów z kursu: na zdjęciach,
-          jako sylwetki albo w jednej skali. Nie wiesz, co widzisz?{' '}
-          <Link href="/rozpoznaj" className="text-link">
-            Rozpoznaj krok po kroku
-          </Link>
-          .
-        </p>
-      </header>
+      <NaglowekStrony
+        tytul="Atlas gatunków"
+        akcje={
+          <ButtonLink href="/rozpoznaj" variant="secondary" size="sm">
+            Rozpoznaj ptaka
+          </ButtonLink>
+        }
+      />
       <AtlasView
         ptaki={ptakiNaLiscie}
         gatunki={gatunki}

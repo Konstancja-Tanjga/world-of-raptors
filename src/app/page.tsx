@@ -136,8 +136,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
           Naucz się czytać niebo
         </h1>
         <p className="niebo__lead">
-          Kurs o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak
-          rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską.
+          Ptaki drapieżne i sowy, od polskich pól po Cieśninę Gibraltarską.
         </p>
         <div className="niebo__akcje">
           <StartKursu />

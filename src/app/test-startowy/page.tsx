@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Sylwetka } from '@/components/Sylwetka';
 import { TestStartowyView } from '@/components/TestStartowyView';
 import { gotoweModuly, testStartowy } from '@/lib/content';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
 
 export const metadata: Metadata = {
   title: 'Test startowy',
@@ -18,13 +19,7 @@ export default function TestStartowyPage() {
   const moduly = Object.fromEntries(gotoweModuly.map((m) => [m.slug, `${m.id} ${m.tytul}`]));
   return (
     <div className="page page--reading">
-      <header className="naglowek-strony">
-        <p className="eyebrow">Moduł 0</p>
-        <h1 className="naglowek-strony__tytul">Test startowy</h1>
-        <p className="naglowek-strony__lead">
-          Wynik podpowiada, od czego zacząć, a ten sam test na końcu kursu pokaże, ile się nauczyłam.
-        </p>
-      </header>
+      <NaglowekStrony tytul="Test startowy" lead="Wynik podpowie, od czego zacząć." />
       <TestStartowyView pytania={pytania} sylwetki={sylwetki} moduly={moduly} />
     </div>
   );

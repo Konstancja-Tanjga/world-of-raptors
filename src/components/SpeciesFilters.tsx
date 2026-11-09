@@ -128,17 +128,20 @@ export function SpeciesFilters({
   onChange,
   obok,
   moje,
+  przyklejone = false,
 }: {
   filtry: Filtry;
   onChange: (next: Filtry) => void;
   obok?: ReactNode;
   moje?: MojeMiejscaFiltra;
+  /** Stays under the navigation while the list scrolls (`.pasek-filtrow`); the atlas makes its whole toolbar so instead. */
+  przyklejone?: boolean;
 }) {
   const [otwarte, setOtwarte] = useState(false);
   const wlaczone = filtry.miejsca.length + filtry.regiony.length + filtry.aktywnosc.length + (moje?.wybrane ? 1 : 0);
   const id = useId();
   return (
-    <div className="filters">
+    <div className={przyklejone ? 'filters pasek-filtrow' : 'filters'}>
       <div className="filters__glowne">
         <div className="filters__szukaj">
           <Input

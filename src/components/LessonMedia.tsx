@@ -18,11 +18,6 @@ export function LessonMedia({ ids, juzPokazane }: { ids: string[]; juzPokazane: 
       <h2 id="media" className="section-title">
         Zobacz, posłuchaj, poczytaj
       </h2>
-      <p className="muted">
-        Gatunki z tej lekcji: zdjęcia, gatunki, z którymi łatwo je pomylić, filmy, głosy i źródła.
-        Zdjęcia pochodzą z Wikimedia Commons, a linki do YouTube otwierają wyszukiwanie filmów o
-        danym gatunku.
-      </p>
       {lista.map((g) => (
         <article key={g.id} className="lesson-media__species" aria-labelledby={`media-${g.id}`}>
           <h3 id={`media-${g.id}`} className="species-card__title">

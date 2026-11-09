@@ -23,11 +23,9 @@ export function Kolekcja({ gatunki }: { gatunki: PozycjaKolekcji[] }) {
         <div>
           <p className="eyebrow">Moja lista</p>
           <h2 id="kolekcja-tytul" className="sekcja__tytul">
-            Każdy gatunek ma tu swoje miejsce
+            Moja kolekcja
           </h2>
-          <p className="sekcja__lead">
-            Sylwetki zaobserwowanych gatunków wypełniają się, gdy zaznaczę je na checkliście.
-          </p>
+          <p className="sekcja__lead">Odhaczone na checkliście wypełniają się złotem.</p>
         </div>
         <div className="kolekcja__licznik">
           {widziane !== null && (
