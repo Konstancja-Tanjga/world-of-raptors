@@ -57,20 +57,22 @@ export function DziennikView({ ptaki }: { ptaki: PtakDoWyboru[] }) {
 
   return (
     <div className="stack">
-      <div className="row">
-        {/* The field tabs above offer a new sighting; filtered to a species, a new one of that species. */}
-        {gatunek && lista.length > 0 && <ButtonLink href={nowa}>Dodaj obserwację tego gatunku</ButtonLink>}
-        {KIEDY_I_GDZIE && (
-          <ButtonLink href="/kiedy-i-gdzie#co-tu" variant="secondary">
-            Co tu zobaczę?
-          </ButtonLink>
-        )}
-        {punkty.length > 0 && (
-          <Button variant="secondary" aria-expanded={mapa} onClick={() => setMapa(!mapa)}>
-            {mapa ? 'Ukryj mapę' : 'Pokaż na mapie'}
-          </Button>
-        )}
-      </div>
+      {((gatunek && lista.length > 0) || KIEDY_I_GDZIE || punkty.length > 0) && (
+        <div className="row">
+          {/* The field tabs above offer a new sighting; filtered to a species, a new one of that species. */}
+          {gatunek && lista.length > 0 && <ButtonLink href={nowa}>Dodaj obserwację tego gatunku</ButtonLink>}
+          {KIEDY_I_GDZIE && (
+            <ButtonLink href="/kiedy-i-gdzie#co-tu" variant="secondary">
+              Co tu zobaczę?
+            </ButtonLink>
+          )}
+          {punkty.length > 0 && (
+            <Button variant="secondary" aria-expanded={mapa} onClick={() => setMapa(!mapa)}>
+              {mapa ? 'Ukryj mapę' : 'Pokaż na mapie'}
+            </Button>
+          )}
+        </div>
+      )}
       {nazwaGatunku && (
         <p>
           Tylko: <strong>{nazwaGatunku}</strong>.{' '}

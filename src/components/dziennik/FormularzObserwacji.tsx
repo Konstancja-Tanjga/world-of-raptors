@@ -463,7 +463,7 @@ export function FormularzObserwacji({ ptaki }: { ptaki: PtakDoWyboru[] }) {
         {mapa && (
           <>
             <p className="muted">
-              Dotknij mapy w miejscu obserwacji.
+              Dotknij mapy w miejscu obserwacji. Kafelki mapy pobiera OpenStreetMap, punkt zostaje w przeglądarce.
             </p>
             <MapaWGranicy
               opisBledu="Pewnie nie ma zasięgu. Wpisz współrzędne poniżej albo użyj lokalizacji telefonu."

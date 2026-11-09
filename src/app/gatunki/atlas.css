@@ -75,7 +75,7 @@
 .karta-gatunku__foto {
   transition: scale var(--wor-dur-quick) var(--wor-ease-out);
 }
-/* Cards a filter brings in rise into place; the ones that stay keep still. */
+/* Cards rise into place as they appear: on arrival, on a change of view, and those a filter brings in; the ones that stay keep still. */
 .atlas__karty > li {
   transition:
     opacity var(--wor-dur-base) var(--wor-ease-out),

@@ -182,7 +182,7 @@ export function Nawigacja({
                 <ul aria-labelledby={`${idArkusza}-${g.tytul}`}>
                   {g.linki.map((l) => (
                     <li key={l.href}>
-                      <Link href={l.href} className="nav__arkusz-link" aria-current={pathname === l.href ? 'page' : undefined}>
+                      <Link href={l.href} className="nav__arkusz-link" aria-current={biezacy(l, pathname)}>
                         {l.etykieta}
                       </Link>
                     </li>

@@ -15,7 +15,7 @@ const KONTA = process.env.NEXT_PUBLIC_ACCOUNTS_ENABLED === 'true';
 /** "Teren": the field log, the checklist and my places, one section of three tabs. */
 export const TEREN: LinkNawigacji[] = [
   { href: '/dziennik', etykieta: 'Obserwacje', aktywny: pod('/dziennik') },
-  { href: '/checklista', etykieta: 'Lista gatunków', aktywny: pod('/checklista') },
+  { href: '/checklista', etykieta: 'Checklista', aktywny: pod('/checklista') },
   { href: '/moje-miejsca', etykieta: 'Miejsca', aktywny: pod('/moje-miejsca') },
 ];
 export const wTerenie = (p: string) => TEREN.some((t) => t.aktywny(p));

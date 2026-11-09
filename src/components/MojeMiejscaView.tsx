@@ -155,7 +155,11 @@ function Miejsce({
           </p>
         ) : (
           <p className="muted">
-            Na razie żadne.
+            Na razie żadne. Wybierz to miejsce przy obserwacji w{' '}
+            <Link href="/checklista" className="text-link">
+              checkliście
+            </Link>
+            .
           </p>
         )}
       </div>
@@ -384,7 +388,7 @@ export function MojeMiejscaView({ ptaki, punkty }: { ptaki: Record<string, PtakM
         open={Boolean(usuwane)}
         onClose={() => setDoUsuniecia(null)}
         title={usuwane ? `Usunąć „${usuwane.nazwa}”?` : 'Usunąć miejsce?'}
-        description="Obserwacje zachowają nazwę miejsca."
+        description="Obserwacje zachowają nazwę miejsca. Z kontem miejsce zniknie też z innych urządzeń."
         footer={
           <>
             <Button variant="ghost" onClick={() => setDoUsuniecia(null)}>

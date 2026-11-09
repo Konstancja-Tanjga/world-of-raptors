@@ -542,7 +542,7 @@ export function ChecklistView({
           Kopia zapasowa
         </h2>
         <p className="muted">
-          Wszystko jest w tej przeglądarce (z kontem także na serwerze, bez zdjęć). Co jakiś czas zapisz kopię.
+          Wszystko jest w tej przeglądarce, a z kontem także na serwerze. Zdjęcia są tylko tu i w kopii: zapisuj ją co jakiś czas.
         </p>
         <div className="row">
           <Button variant="secondary" onClick={() => void eksportuj()}>

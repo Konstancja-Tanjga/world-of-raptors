@@ -154,7 +154,7 @@ export function OwnPhotos({
       )}
       {edycja && (
         <p className="muted own-photos__uwaga">
-          Zdjęcia zostają w tej przeglądarce, bez lokalizacji.
+          Zdjęcia zostają w tej przeglądarce, bez lokalizacji, i trafiają do kopii zapasowej.
         </p>
       )}
     </div>

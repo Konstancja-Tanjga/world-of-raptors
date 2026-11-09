@@ -365,6 +365,9 @@ li {
   html[data-menu] .dolny-pasek {
     display: none;
   }
+  html:has(.dolny-pasek) {
+    scroll-padding-bottom: calc(var(--wor-dolny-pasek) + env(safe-area-inset-bottom, 0px) + var(--bh-gap-loose));
+  }
   body:has(.dolny-pasek) {
     padding-bottom: calc(var(--wor-dolny-pasek) + env(safe-area-inset-bottom, 0px));
   }
@@ -809,7 +812,8 @@ li {
 }
 
 /* The filters stay under the navigation while the list scrolls, on screens tall and wide enough to spare the
-   room. Opened, the extra filters are too tall to pin: the bar then scrolls away with the page. */
+   room. Opened, the extra filters scroll inside the bar, so the bar never jumps away from the button. A focused
+   card scrolled into view clears the bar (scroll-padding). */
 @media (min-width: 48rem) and (min-height: 36rem) {
   .pasek-filtrow {
     position: sticky;
@@ -821,8 +825,12 @@ li {
     -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
     backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
   }
-  .pasek-filtrow:has(.filters__wiecej:not([hidden])) {
-    position: static;
+  .pasek-filtrow .filters__wiecej {
+    max-height: 40svh;
+    overflow-y: auto;
+  }
+  html:has(.pasek-filtrow) {
+    scroll-padding-top: calc(var(--wor-nav-height) + 9rem);
   }
 }
 
