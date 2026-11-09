@@ -11,6 +11,8 @@ import { biezacy, DOLNY_PASEK } from '@/lib/nawigacja';
  */
 export function DolnyPasek() {
   const pathname = usePathname();
+  // A lesson is for reading: the module bar above already leads on, and the screen keeps its height.
+  if (/^\/moduly\/[^/]+\/[^/]+$/.test(pathname)) return null;
   return (
     <nav aria-label="Na skróty" className="dolny-pasek">
       <ul>

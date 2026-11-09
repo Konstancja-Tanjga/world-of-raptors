@@ -365,7 +365,7 @@ li {
   html[data-menu] .dolny-pasek {
     display: none;
   }
-  body {
+  body:has(.dolny-pasek) {
     padding-bottom: calc(var(--wor-dolny-pasek) + env(safe-area-inset-bottom, 0px));
   }
 }
