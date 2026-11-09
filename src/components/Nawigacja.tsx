@@ -1,25 +1,12 @@
 'use client';
 
-import { KIEDY_I_GDZIE } from '@/lib/publikacja';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useKontynuuj } from '@/lib/kontynuuj';
+import { biezacy, GRUPY_MENU, LINKI } from '@/lib/nawigacja';
 import type { ModulNawigacji } from './AppFrame';
 
-const LINKI: { href: string; etykieta: string; aktywny: (p: string) => boolean }[] = [
-  { href: '/plan', etykieta: 'Kurs', aktywny: (p) => p === '/plan' || p.startsWith('/moduly') },
-  { href: '/gatunki', etykieta: 'Atlas', aktywny: (p) => p.startsWith('/gatunki') },
-  { href: '/fiszki', etykieta: 'Fiszki', aktywny: (p) => p === '/fiszki' },
-  { href: '/checklista', etykieta: 'Checklista', aktywny: (p) => p === '/checklista' },
-  { href: '/rozpoznaj', etykieta: 'Rozpoznaj', aktywny: (p) => p === '/rozpoznaj' },
-  ...(KIEDY_I_GDZIE ? [{ href: '/kiedy-i-gdzie', etykieta: 'Kiedy i gdzie', aktywny: (p: string) => p === '/kiedy-i-gdzie' }] : []),
-  { href: '/moje-niebo', etykieta: 'Moje niebo', aktywny: (p) => p === '/moje-niebo' },
-  // Accounts ship behind a flag (KONTA.md). Read inline, not from konto.ts, which would bring Supabase into every page.
-  ...(process.env.NEXT_PUBLIC_ACCOUNTS_ENABLED === 'true'
-    ? [{ href: '/konto', etykieta: 'Konto', aktywny: (p: string) => p === '/konto' }]
-    : []),
-];
 
 /**
  * Pages whose first section is a dark scene pulled up under the bar (a
@@ -154,7 +141,7 @@ export function Nawigacja({
                 <Link
                   href={l.href}
                   className="nav__link"
-                  aria-current={pathname === l.href ? 'page' : l.aktywny(pathname) ? 'true' : undefined}
+                  aria-current={biezacy(l, pathname)}
                 >
                   {l.etykieta}
                 </Link>
@@ -183,29 +170,30 @@ export function Nawigacja({
       </div>
       <div id={idArkusza} ref={arkusz} className="nav__arkusz" hidden={!menu}>
         <nav aria-label="Menu">
-          <ul>
-            <li>
-              <Link href="/" className="nav__arkusz-link" aria-current={pathname === '/' ? 'page' : undefined}>
-                Start
-              </Link>
-            </li>
-            {LINKI.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="nav__arkusz-link"
-                  aria-current={pathname === l.href ? 'page' : l.aktywny(pathname) ? 'true' : undefined}
-                >
-                  {l.etykieta}
-                </Link>
-              </li>
+          <Link href="/" className="nav__arkusz-link" aria-current={pathname === '/' ? 'page' : undefined}>
+            Start
+          </Link>
+          <div className="nav__arkusz-grupy">
+            {GRUPY_MENU.map((g) => (
+              <div key={g.tytul} className="nav__arkusz-grupa">
+                <p id={`${idArkusza}-${g.tytul}`} className="nav__arkusz-tytul">
+                  {g.tytul}
+                </p>
+                <ul aria-labelledby={`${idArkusza}-${g.tytul}`}>
+                  {g.linki.map((l) => (
+                    <li key={l.href}>
+                      <Link href={l.href} className="nav__arkusz-link" aria-current={pathname === l.href ? 'page' : undefined}>
+                        {l.etykieta}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-            <li>
-              <Link href="/o-projekcie" className="nav__arkusz-link" aria-current={pathname === '/o-projekcie' ? 'page' : undefined}>
-                O projekcie
-              </Link>
-            </li>
-          </ul>
+          </div>
+          <Link href="/o-projekcie" className="nav__arkusz-link nav__arkusz-link--maly" aria-current={pathname === '/o-projekcie' ? 'page' : undefined}>
+            O projekcie
+          </Link>
         </nav>
         {dokad && (
           <Link href={dokad.href} className="nav__arkusz-dalej">

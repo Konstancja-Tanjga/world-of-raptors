@@ -3,6 +3,7 @@ import { ChecklistView } from '@/components/ChecklistView';
 import { Sylwetka } from '@/components/Sylwetka';
 import { gatunki, listaMiejsca, ptakiEuropy, ptakiNaLiscie } from '@/lib/content';
 import { NaglowekStrony } from '@/components/NaglowekStrony';
+import { ZakladkiTerenu } from '@/components/ZakladkiTerenu';
 
 // Personal: what I saw, learned and earned, kept in this browser; nothing for a search engine.
 export const metadata: Metadata = { title: 'Moja checklista', robots: { index: false } };
@@ -10,7 +11,14 @@ export const metadata: Metadata = { title: 'Moja checklista', robots: { index: f
 export default function ChecklistaPage() {
   return (
     <div className="page">
-      <NaglowekStrony tytul="Checklista" />
+      <NaglowekStrony
+        tytul={
+          <>
+            Teren<span className="visually-hidden">: Checklista</span>
+          </>
+        }
+      />
+      <ZakladkiTerenu biezaca="/checklista" />
       <ChecklistView
         ptaki={ptakiNaLiscie}
         pozostale={ptakiEuropy}

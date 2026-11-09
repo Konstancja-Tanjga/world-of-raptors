@@ -28,7 +28,6 @@ import {
   Textarea,
   useToast,
 } from './ds';
-import { ButtonLink } from './ButtonLink';
 import { doSzukania, filtryAktywne as czyFiltryAktywne, pasujeDoSzukania, PUSTE_FILTRY, SpeciesFilters, useFiltry } from './SpeciesFilters';
 import { useOstrzezenieZapisu } from './useOstrzezenieZapisu';
 import { NazwaPtaka } from './NazwaPtaka';
@@ -302,12 +301,6 @@ export function ChecklistView({
 
   return (
     <div className="stack">
-      <div className="row">
-        <ButtonLink href="/dziennik/obserwacja">Dodaj obserwację</ButtonLink>
-        <ButtonLink href="/dziennik" variant="secondary">
-          Mój dziennik
-        </ButtonLink>
-      </div>
       {/* The place field's suggestions: my places, by name. */}
       <datalist id="moje-miejsca-lista">
         {miejsca && aktywne(miejsca).map(([id, m]) => <option key={id} value={m.nazwa} />)}

@@ -102,6 +102,7 @@
   --wor-space-section: clamp(4.5rem, 2.5rem + 8vw, 11rem);
   --wor-width: 82rem;
   --wor-nav-height: 3.25rem;
+  --wor-dolny-pasek: 3.5rem;
   --wor-radius-scene: clamp(1.25rem, 0.8rem + 1.6vw, 2.25rem);
 
   /* Motion. Productive: interface feedback, short. Expressive: story moments. */

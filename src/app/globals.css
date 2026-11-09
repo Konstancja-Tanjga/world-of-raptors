@@ -241,6 +241,31 @@ li {
     opacity var(--wor-dur-expressive) var(--wor-ease-out),
     translate var(--wor-dur-expressive) var(--wor-ease-out);
 }
+.nav__arkusz nav {
+  display: grid;
+  gap: var(--wor-space-block);
+}
+/* The menu by section: two columns on most phones, one on the narrowest. */
+.nav__arkusz-grupy {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: var(--wor-space-block) var(--bh-gap-loose);
+}
+.nav__arkusz-tytul {
+  margin: 0 0 var(--bh-gap-tight);
+  color: var(--wor-akcent);
+  font-size: var(--wor-size-eyebrow);
+  font-weight: var(--bh-text-weight-heading);
+  letter-spacing: var(--wor-tracking-eyebrow);
+}
+.nav__arkusz-grupa .nav__arkusz-link {
+  font-size: var(--wor-size-lead);
+}
+.nav__arkusz-link--maly {
+  font-family: var(--wor-font-text);
+  font-size: var(--bh-text-size-heading);
+  font-weight: var(--bh-text-weight-body);
+}
 .nav__arkusz-link[aria-current] {
   color: var(--wor-akcent);
   text-decoration: underline;
@@ -275,6 +300,76 @@ li {
   font-weight: var(--bh-text-weight-heading);
   font-size: var(--bh-text-size-heading);
 }
+/* The phone's bottom bar (DolnyPasek): the sections used most, in a thumb's reach. It shows wherever the
+   menu sheet does, and the page leaves room for it. Big Hat's toasts sit on a higher layer, so one shows
+   over the bar rather than under it. */
+.dolny-pasek {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .dolny-pasek {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: var(--bh-layer-sticky);
+    display: block;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--bh-material-chrome-bg);
+    -webkit-backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+    backdrop-filter: blur(var(--bh-material-chrome-blur)) saturate(var(--bh-material-saturation));
+    border-top: 1px solid var(--bh-border-hairline);
+  }
+  .dolny-pasek ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .dolny-pasek__link {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: var(--wor-dolny-pasek);
+    color: var(--bh-text-secondary);
+    font-size: var(--bh-text-size-caption);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--wor-dur-base) var(--wor-ease-out);
+  }
+  .dolny-pasek__link[aria-current] {
+    color: var(--bh-text-primary);
+    font-weight: var(--bh-text-weight-heading);
+  }
+  /* The current section: the accent bar of the top bar's links, here above the word, sliding in. */
+  .dolny-pasek__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline: 30%;
+    height: var(--bh-gap-hairline);
+    border-radius: var(--bh-radius-pill);
+    background: var(--wor-akcent);
+    scale: 0 1;
+    transition: scale var(--wor-dur-base) var(--wor-ease-out);
+  }
+  .dolny-pasek__link[aria-current]::before {
+    scale: 1 1;
+  }
+  .dolny-pasek__link:active {
+    scale: calc(1 - 0.04 * var(--wor-ruch));
+  }
+  .dolny-pasek__link:focus-visible {
+    outline: 2px solid var(--bh-border-focus);
+    outline-offset: -4px;
+  }
+  html[data-menu] .dolny-pasek {
+    display: none;
+  }
+  body {
+    padding-bottom: calc(var(--wor-dolny-pasek) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* The full bar needs about 1000 px for its links, the account included: below that, the menu sheet. Nawigacja.tsx matches it. */
 @media (max-width: 1000px) {
   .nav__glowna {
@@ -1412,6 +1507,78 @@ li {
   display: flex;
   flex-wrap: wrap;
   gap: var(--bh-gap-snug);
+}
+
+/* "Teren": the log, the checklist and my places as tabs (ZakladkiTerenu), the new-sighting button beside them. */
+.zakladki-terenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bh-gap-snug) var(--bh-gap-loose);
+  margin-bottom: var(--wor-space-block);
+  border-bottom: 1px solid var(--bh-border-hairline);
+}
+.zakladki-terenu__lista {
+  display: flex;
+  gap: var(--bh-gap-tight);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zakladki-terenu__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--bh-control-lg);
+  padding-inline: var(--bh-padding-inline);
+  color: var(--bh-text-secondary);
+  font-size: var(--bh-text-size-heading);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--wor-dur-base) var(--wor-ease-out);
+}
+.zakladki-terenu__link:hover {
+  color: var(--bh-text-primary);
+}
+.zakladki-terenu__link[aria-current] {
+  color: var(--bh-text-primary);
+  font-weight: var(--bh-text-weight-heading);
+}
+.zakladki-terenu__link::after {
+  content: '';
+  position: absolute;
+  inset-inline: var(--bh-padding-inline);
+  bottom: 0;
+  height: var(--bh-gap-hairline);
+  border-radius: var(--bh-radius-pill);
+  background: var(--wor-akcent);
+  scale: 0 1;
+  transition: scale var(--wor-dur-base) var(--wor-ease-out);
+}
+.zakladki-terenu__link[aria-current]::after {
+  scale: 1 1;
+}
+.zakladki-terenu__link:focus-visible {
+  outline: 2px solid var(--bh-border-focus);
+  outline-offset: -2px;
+}
+/* On a phone the new sighting has its own row under the tabs, at full width, where the thumb is. */
+@media (max-width: 40rem) {
+  .zakladki-terenu {
+    padding-bottom: var(--bh-gap-snug);
+  }
+  .zakladki-terenu__link {
+    padding-inline: var(--bh-gap-snug);
+    font-size: var(--bh-text-size-caption);
+  }
+  .zakladki-terenu__link::after {
+    inset-inline: var(--bh-gap-snug);
+  }
+  .zakladki-terenu > .button-link {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
 }
 
 /* Flashcards */

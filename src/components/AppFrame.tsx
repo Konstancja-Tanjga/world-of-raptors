@@ -7,6 +7,7 @@ import { useOstatniaLekcja } from '@/lib/ostatnia';
 import { odpornoscNaTlumacza } from '@/lib/odpornoscNaTlumacza';
 import { CichaGranica } from './CichaGranica';
 import { SkipLink } from './ds';
+import { DolnyPasek } from './DolnyPasek';
 import { Nawigacja } from './Nawigacja';
 import { PasekModulu } from './PasekModulu';
 import { Stopka } from './Stopka';
@@ -119,6 +120,7 @@ export function AppFrame({
           )
         }
       />
+      <DolnyPasek />
       <CichaGranica nazwa="StraznikOdznak">
         <StraznikOdznak />
       </CichaGranica>
