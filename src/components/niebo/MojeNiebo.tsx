@@ -104,7 +104,6 @@ export function MojeNiebo({
     <>
       <section className="moje-niebo__sekcja" aria-labelledby="gwiazdozbiory">
         <header className="sekcja">
-          <p className="eyebrow">Moduły</p>
           <h2 id="gwiazdozbiory" className="sekcja__tytul">
             Gwiazdozbiory
           </h2>
@@ -118,7 +117,6 @@ export function MojeNiebo({
       <section className="moje-niebo__sekcja" aria-labelledby="lista-zyciowa">
         <header className="sekcja sekcja--wiersz">
           <div>
-            <p className="eyebrow">Gatunki</p>
             <h2 id="lista-zyciowa" className="sekcja__tytul">
               Lista życiowa
             </h2>
@@ -176,7 +174,6 @@ export function MojeNiebo({
       <section className="moje-niebo__sekcja" aria-labelledby="naszywki">
         <header className="sekcja sekcja--wiersz">
           <div>
-            <p className="eyebrow">Umiejętności</p>
             <h2 id="naszywki" className="sekcja__tytul">
               Naszywki
             </h2>
