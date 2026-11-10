@@ -138,6 +138,9 @@ export type RozpoznawanieMokradel = {
   /** Body length, bill tip to tail tip. */
   dlugosc_cm: [number, number];
   regiony: Region[];
+  /** For "Rozpoznaj", as an atlas species has them. */
+  kolory: Kolor[];
+  zachowania: Zachowanie[];
 };
 
 /** The two kinds of bird in the atlas; raptors are the default, birds of marshes are shown on request. */

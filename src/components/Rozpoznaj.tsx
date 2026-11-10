@@ -275,7 +275,7 @@ export function Rozpoznaj({ gatunki, odniesienia }: { gatunki: GatunekRozpoznani
             {lot && (
               <RadioGroup
                 key={lot}
-                legend={lot === 'lot' ? 'Jak leciał' : 'Gdzie siedział'}
+                legend={lot === 'lot' ? 'Jak leciał' : lot === 'brzeg' ? 'Co dokładnie' : 'Gdzie siedział'}
                 description="Jeśli nie wiesz, przejdź dalej."
                 value={odp.zachowanie ?? ''}
                 onChange={(v) => setOdp({ ...odp, zachowanie: v as Zachowanie })}

@@ -1337,6 +1337,13 @@ function sprawdzSpojnosc() {
       bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.dlugosc_cm ma być [od, do] w centymetrach, mniej niż rozpiętość`);
     }
     if (!r.regiony?.length || !r.regiony.every((x) => regiony.has(x))) bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.regiony ma być niepustą listą z ${[...regiony].join(', ')}`);
+    // "Rozpoznaj" asks for them as it does for an atlas species.
+    if (!r.kolory?.length || !r.kolory.every((k) => KOLORY.some((x) => x.value === k))) {
+      bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.kolory ${JSON.stringify(r.kolory)} mają być niepustą listą z ${KOLORY.map((x) => x.value).join(', ')}`);
+    }
+    if (!r.zachowania?.length || !r.zachowania.every((z) => ZACHOWANIA.some((x) => x.value === z))) {
+      bledy.push(`ptaki-mokradel.json: ${p.id}: rozpoznawanie.zachowania ${JSON.stringify(r.zachowania)} mają być niepustą listą z ${ZACHOWANIA.map((x) => x.value).join(', ')}`);
+    }
     for (const m of r.mylona_z ?? []) {
       if (m === p.id || !idSiewkowcow.has(m)) bledy.push(`ptaki-mokradel.json: ${p.id}: mylona_z wskazuje „${m}”, a ma wskazywać innego ptaka z „rozpoznawanie”`);
     }

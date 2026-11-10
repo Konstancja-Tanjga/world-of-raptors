@@ -165,3 +165,19 @@ test('dopasuj: an unknown size is a skipped step; the night keeps owls', () => {
     ['puszczyk'],
   );
 });
+
+test('dopasuj: "on the shore" finds a wader that wades, not a raptor', () => {
+  const KWOKACZ: CechyRozpoznania = {
+    id: 'kwokacz',
+    regiony: ['gibraltar', 'poludnie-hiszpanii', 'polska'],
+    dlugosc_cm: [30, 34],
+    kolory: ['szary', 'bialy'],
+    zachowania: ['brodzi'],
+  };
+  const wyniki = dopasuj([...WSZYSTKIE, KWOKACZ], { rodzaj: 'brzeg' }, SKALA);
+  assert.deepEqual(
+    wyniki.map((w) => w.gatunek.id),
+    ['kwokacz'],
+  );
+  assert.equal(dopasuj([...WSZYSTKIE, KWOKACZ], { rodzaj: 'brzeg', zachowanie: 'biega' }, SKALA).length, 0);
+});

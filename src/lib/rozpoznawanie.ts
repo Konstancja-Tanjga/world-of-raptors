@@ -1,5 +1,6 @@
 /**
- * "Rozpoznaj krok po kroku": which atlas species fit what the observer saw,
+ * "Rozpoznaj krok po kroku": which atlas species (raptors, owls and B9's
+ * waders) fit what the observer saw,
  * in the manner of Merlin's Step by Step. No directive and no browser APIs,
  * so the rules can be tested; the page asks the questions (Rozpoznaj.tsx).
  *
@@ -30,16 +31,20 @@ export const ZACHOWANIA = [
   { value: 'nisko', label: 'Leciał nisko nad polem, łąką albo trzciną' },
   { value: 'goni', label: 'Gonił ptaki albo spadał z wysoka' },
   { value: 'woda', label: 'Polował nad wodą' },
+  { value: 'nadwoda', label: 'Leciał nisko nad wodą albo błotem' },
   { value: 'slup', label: 'Siedział na słupie, drzewie albo skale' },
   { value: 'ziemia', label: 'Siedział na ziemi' },
+  { value: 'brodzi', label: 'Brodził albo pływał' },
+  { value: 'biega', label: 'Biegał albo chodził po plaży, błocie lub łące' },
   { value: 'noc', label: 'Latał albo odzywał się po zmroku' },
 ] as const;
 export type Zachowanie = (typeof ZACHOWANIA)[number]['value'];
 
-/** The behaviour step asks in two: flying, perched or after dark first, then (for the first two) how. */
+/** The behaviour step asks in two: flying, perched, on the shore or after dark first, then (but after dark) how. */
 export const RODZAJE_ZACHOWAN = [
-  { value: 'lot', label: 'Leciał', zachowania: ['krazy', 'zawisa', 'nisko', 'goni', 'woda'] },
+  { value: 'lot', label: 'Leciał', zachowania: ['krazy', 'zawisa', 'nisko', 'goni', 'woda', 'nadwoda'] },
   { value: 'siedzi', label: 'Siedział', zachowania: ['slup', 'ziemia'] },
+  { value: 'brzeg', label: 'Chodził, biegał albo brodził', zachowania: ['brodzi', 'biega'] },
   { value: 'noc', label: 'Latał albo odzywał się po zmroku', zachowania: ['noc'] },
 ] as const satisfies readonly { value: string; label: string; zachowania: readonly Zachowanie[] }[];
 export type RodzajZachowania = (typeof RODZAJE_ZACHOWAN)[number]['value'];
