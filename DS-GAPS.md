@@ -148,7 +148,7 @@ Rzeczy, których design system nie pokrywa, a których ten projekt potrzebował.
 - **Po co sięgnęłam:** na telefonie, w terenie, najczęściej używane sekcje (Kurs, Atlas, Teren, Fiszki, Niebo) mają być w zasięgu kciuka, a nie pod „Menu”.
 - **Czego nie ma w Big Hat:** `nav-rail` jest pionowy i przeznaczony do aplikacji (`AppShell`), a ramy kursu nie budujemy na `AppShell` (patrz wyżej). Nie ma poziomego paska kart na dole ekranu.
 - **Co zbudowałam lokalnie:** `src/components/DolnyPasek.tsx` z regułami sekcji w `src/lib/nawigacja.ts`. To linki z `aria-current`, materiał chrome Big Hat, pasek akcentu nad bieżącą sekcją. Pokazuje się tam, gdzie menu zastępuje linki górnego paska (do 1000 px), a strona zostawia na niego miejsce (`--wor-dolny-pasek`, z `safe-area-inset-bottom`).
-- **Co robi gorzej:** toasty Big Hat stoją w prawym dolnym rogu. Są na wyższej warstwie, więc przykrywają pasek, zamiast stanąć nad nim.
+- **Co robi gorzej:** toasty Big Hat stoją 24 px od dołu okna, czyli na pasku. Póki pasek jest widoczny, `globals.css` przesuwa `.bh-toast-viewport` w górę o jego wysokość (`bottom`). To jedyna właściwość układu, którą produkt nadpisuje na klasie `bh-*`.
 - **Pytanie do design systemu:** czy dolny pasek kart (bottom navigation) to wariant `nav-rail` na wąski ekran, i czy obszar toastów może brać odstęp od dołu z tokenu?
 
 ## Zakładki, które są stronami

@@ -301,8 +301,7 @@ li {
   font-size: var(--bh-text-size-heading);
 }
 /* The phone's bottom bar (DolnyPasek): the sections used most, in a thumb's reach. It shows wherever the
-   menu sheet does, and the page leaves room for it. Big Hat's toasts sit on a higher layer, so one shows
-   over the bar rather than under it. */
+   menu sheet does, and the page leaves room for it; toasts stand above it. */
 .dolny-pasek {
   display: none;
 }
@@ -362,8 +361,29 @@ li {
     outline: 2px solid var(--bh-border-focus);
     outline-offset: -4px;
   }
+  /* Over the home sky the bar is night glass, as the top bar is over a scene. */
+  .dolny-pasek[data-nad-scena] {
+    background: var(--wor-scena-szklo);
+    border-top-color: var(--wor-scena-linia);
+  }
+  .dolny-pasek[data-nad-scena] .dolny-pasek__link {
+    color: var(--wor-scena-tekst-2);
+  }
+  .dolny-pasek[data-nad-scena] .dolny-pasek__link[aria-current] {
+    color: var(--wor-scena-tekst);
+  }
+  .dolny-pasek {
+    transition:
+      background-color var(--wor-dur-base) var(--wor-ease-out),
+      border-color var(--wor-dur-base) var(--wor-ease-out);
+  }
   html[data-menu] .dolny-pasek {
     display: none;
+  }
+  /* Big Hat's toasts stand 24px from the window's bottom, which is on the bar: they stand above it instead.
+     The one layout property the product sets on a bh-* class (DS-GAPS.md, "Dolny pasek nawigacji"). */
+  html:has(.dolny-pasek) .bh-toast-viewport {
+    bottom: calc(var(--wor-dolny-pasek) + env(safe-area-inset-bottom, 0px) + var(--bh-gap-snug));
   }
   html:has(.dolny-pasek) {
     scroll-padding-bottom: calc(var(--wor-dolny-pasek) + env(safe-area-inset-bottom, 0px) + var(--bh-gap-loose));
