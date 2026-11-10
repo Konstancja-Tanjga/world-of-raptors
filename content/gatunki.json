@@ -28,7 +28,7 @@
         "stale kręci ogonem"
       ],
       "kolory": ["brazowy", "czarny", "szary"],
-      "zachowania": ["krazy", "woda", "slup"],
+      "zachowania": ["krazy", "woda", "slup", "nadwoda"],
       "mylona_z": [
         "kania-ruda",
         "blotniak-stawowy",
@@ -405,7 +405,7 @@
         "ciemny pas przez oko"
       ],
       "kolory": ["bialy", "brazowy", "czarny"],
-      "zachowania": ["krazy", "zawisa", "woda", "slup"],
+      "zachowania": ["krazy", "zawisa", "woda", "slup", "nadwoda"],
       "mylona_z": [
         "gadozer",
         "bielik"
@@ -680,7 +680,7 @@
         "samica ciemnobrązowa z kremową głową"
       ],
       "kolory": ["brazowy", "szary", "czarny", "plowy"],
-      "zachowania": ["nisko", "krazy", "ziemia"],
+      "zachowania": ["nisko", "krazy", "ziemia", "nadwoda"],
       "mylona_z": [
         "kania-czarna"
       ],
@@ -1841,7 +1841,7 @@
         "ogromna głowa z masywnym dziobem wystaje daleko przed skrzydła"
       ],
       "kolory": ["brazowy", "bialy", "plowy"],
-      "zachowania": ["krazy", "woda", "slup", "ziemia"],
+      "zachowania": ["krazy", "woda", "slup", "ziemia", "nadwoda"],
       "mylona_z": [
         "orzel-przedni",
         "rybolow"

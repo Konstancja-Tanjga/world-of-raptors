@@ -103,7 +103,7 @@
         "rozpietosc_cm": [67, 77],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["bialy", "czarny"],
-        "zachowania": ["brodzi", "nadwoda"]
+        "zachowania": ["brodzi", "nadwoda", "ziemia"]
       }
     },
     {
@@ -130,7 +130,7 @@
         "rozpietosc_cm": [67, 83],
         "regiony": ["poludnie-hiszpanii", "gibraltar"],
         "kolory": ["bialy", "czarny"],
-        "zachowania": ["brodzi"]
+        "zachowania": ["brodzi", "ziemia"]
       }
     },
     {
@@ -160,7 +160,7 @@
         "rozpietosc_cm": [42, 45],
         "regiony": ["poludnie-hiszpanii", "gibraltar"],
         "kolory": ["plowy", "bialy"],
-        "zachowania": ["biega"]
+        "zachowania": ["biega", "ziemia"]
       },
       "todo": "Wymiary z Beaman i Madge (za madeirabirds.com), nie z Collinsa; sprawdzić. Opis głosu z Wikipedii i pamięci, sprawdzić w Collinsie. Commons nie ma wolnego zdjęcia w locie (stan na 1.11.2026); dodać, gdy się pojawi albo z własnych zdjęć."
     },
@@ -191,7 +191,7 @@
         "rozpietosc_cm": [48, 57],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["plowy", "bialy", "czarny"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       },
       "todo": "Wymiary z HBW (za polską Wikipedią); angielska Wikipedia podaje rozpiętość 35–41 cm, sprawdzić w Collinsie."
     },
@@ -252,7 +252,7 @@
         "rozpietosc_cm": [38, 43],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["szary", "brazowy", "czarny", "rudy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -282,7 +282,7 @@
         "rozpietosc_cm": [35, 40],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["bialy", "szary"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -312,7 +312,7 @@
         "rozpietosc_cm": [50, 57],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["czarny", "bialy", "rudy", "brazowy"],
-        "zachowania": ["biega"]
+        "zachowania": ["biega", "ziemia"]
       }
     },
     {
@@ -343,7 +343,7 @@
         "rozpietosc_cm": [47, 53],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "szary"],
-        "zachowania": ["brodzi", "biega", "nadwoda"]
+        "zachowania": ["brodzi", "biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -373,7 +373,7 @@
         "rozpietosc_cm": [68, 70],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["szary", "bialy"],
-        "zachowania": ["brodzi"]
+        "zachowania": ["brodzi", "ziemia"]
       }
     },
     {
@@ -400,7 +400,7 @@
         "dlugosc_cm": [50, 60],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "plowy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       },
       "todo": "Wymiary z HBW (przez polską Wikipedię i oiseaux-birds.com), nie z Collinsa, sprawdzić."
     },
@@ -431,7 +431,7 @@
         "dlugosc_cm": [40, 45],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "plowy"],
-        "zachowania": ["biega"]
+        "zachowania": ["biega", "ziemia"]
       },
       "todo": "Wymiary z HBW (przez oiseaux-birds.com), nie z Collinsa; Wikipedia (All About Birds) podaje 37–47 cm i 75–90 cm, sprawdzić."
     },
@@ -462,7 +462,7 @@
         "dlugosc_cm": [37, 41],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["szary", "brazowy", "rudy"],
-        "zachowania": ["brodzi", "biega", "nadwoda"]
+        "zachowania": ["brodzi", "biega", "nadwoda", "ziemia"]
       },
       "todo": "Wymiary z HBW (przez Wikipedię i oiseaux-birds.com), nie z Collinsa, sprawdzić. Zdjęcie w locie (istniejące) przedstawia ptaka z Pacyfiku, bez białego klina na grzbiecie: rozważyć europejskie."
     },
@@ -490,7 +490,7 @@
         "rozpietosc_cm": [80, 85],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["czarny", "bialy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -520,7 +520,7 @@
         "rozpietosc_cm": [42, 48],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["plowy", "bialy", "czarny"],
-        "zachowania": ["biega"]
+        "zachowania": ["biega", "ziemia"]
       },
       "todo": "Wymiary z HBW (za polską Wikipedią), nie z Collinsa; sprawdzić."
     },
@@ -551,7 +551,7 @@
         "rozpietosc_cm": [67, 76],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["plowy", "czarny", "brazowy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       },
       "todo": "Wymiary z Birds of the World (za polską Wikipedią), nie z Collinsa; sprawdzić. Czy zimuje regularnie przy Cieśninie (La Janda), sprawdzić."
     },
@@ -582,7 +582,7 @@
         "rozpietosc_cm": [67, 87],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["czarny", "bialy"],
-        "zachowania": ["biega", "nisko", "nadwoda"]
+        "zachowania": ["biega", "nisko", "nadwoda", "ziemia"]
       },
       "todo": "Wymiary z angielskiej Wikipedii, nie z Collinsa; sprawdzić."
     },
@@ -613,7 +613,7 @@
         "rozpietosc_cm": [38, 46],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["rudy", "szary", "bialy"],
-        "zachowania": ["brodzi", "biega", "nadwoda"]
+        "zachowania": ["brodzi", "biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -643,7 +643,7 @@
         "rozpietosc_cm": [34, 37],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["rudy", "szary", "bialy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -673,7 +673,7 @@
         "rozpietosc_cm": [34, 37],
         "regiony": ["polska", "poludnie-hiszpanii"],
         "kolory": ["szary", "brazowy"],
-        "zachowania": ["biega"]
+        "zachowania": ["biega", "ziemia"]
       },
       "todo": "Sprawdzić, czy biegus mały jest regularny w rejonie Cieśniny (teraz tylko Polska i południe Hiszpanii)."
     },
@@ -704,7 +704,7 @@
         "rozpietosc_cm": [47, 53],
         "regiony": ["polska", "poludnie-hiszpanii"],
         "kolory": ["szary", "rudy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       },
       "todo": "Sprawdzić, czy biegus rdzawy bywa regularnie w rejonie Cieśniny (Barbate, Los Lances); teraz tylko Polska i południe Hiszpanii."
     },
@@ -735,7 +735,7 @@
         "rozpietosc_cm": [46, 60],
         "regiony": ["polska", "poludnie-hiszpanii"],
         "kolory": ["brazowy", "plowy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       },
       "todo": "Sprawdzić, czy batalion jest regularny w rejonie Cieśniny (teraz tylko Polska i południe Hiszpanii)."
     },
@@ -767,7 +767,7 @@
         "rozpietosc_cm": [61, 67],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["czarny", "szary"],
-        "zachowania": ["brodzi"]
+        "zachowania": ["brodzi", "ziemia"]
       }
     },
     {
@@ -798,7 +798,7 @@
         "rozpietosc_cm": [55, 59],
         "regiony": ["polska"],
         "kolory": ["szary", "bialy"],
-        "zachowania": ["brodzi"]
+        "zachowania": ["brodzi", "ziemia"]
       }
     },
     {
@@ -829,7 +829,7 @@
         "rozpietosc_cm": [36, 40],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "bialy"],
-        "zachowania": ["brodzi", "nadwoda"]
+        "zachowania": ["brodzi", "nadwoda", "ziemia"]
       }
     },
     {
@@ -859,7 +859,7 @@
         "rozpietosc_cm": [39, 44],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "bialy"],
-        "zachowania": ["biega"]
+        "zachowania": ["biega", "ziemia"]
       }
     },
     {
@@ -889,7 +889,7 @@
         "rozpietosc_cm": [32, 35],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "bialy"],
-        "zachowania": ["biega", "nadwoda"]
+        "zachowania": ["biega", "nadwoda", "ziemia"]
       }
     },
     {
@@ -919,7 +919,7 @@
         "dlugosc_cm": [36, 44],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["szary", "rudy", "czarny"],
-        "zachowania": ["brodzi", "nadwoda"]
+        "zachowania": ["brodzi", "nadwoda", "ziemia"]
       },
       "todo": "Wymiary nie z Collinsa (HBW przez oiseaux-birds.com i BWPi przez Wikipedię), sprawdzić. Transkrypcje głosu z polskiej Wikipedii (bez przypisu), sprawdzić z nagraniem."
     },
@@ -950,7 +950,7 @@
         "dlugosc_cm": [25, 27],
         "regiony": ["polska", "poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "plowy"],
-        "zachowania": ["biega", "noc"]
+        "zachowania": ["biega", "noc", "ziemia"]
       },
       "todo": "Wymiary z HBW i Snow & Perrins (przez Wikipedię), nie z Collinsa; polska Wikipedia (Sterry) podaje 37–45 cm rozpiętości, sprawdzić. Obecność w rejonie Cieśniny (La Janda, Barbate) zimą przyjęta z ogólnej wiedzy, sprawdzić."
     },
@@ -981,7 +981,7 @@
         "dlugosc_cm": [17, 19],
         "regiony": ["polska", "poludnie-hiszpanii"],
         "kolory": ["brazowy", "plowy"],
-        "zachowania": ["biega", "nisko"]
+        "zachowania": ["biega", "nisko", "ziemia"]
       },
       "todo": "Wymiary z HBW (przez oiseaux-birds.com), nie z Collinsa; Wikipedia (Dunning) podaje 18–25 cm i 30–41 cm, polska Wikipedia 18–20 cm i 33–36 cm (bez źródła), sprawdzić. Nie dodano regionu „gibraltar”: zimuje w Andaluzji nielicznie, nie znalazłam potwierdzenia dla rejonu Cieśniny."
     },
@@ -1012,7 +1012,7 @@
         "dlugosc_cm": [33, 38],
         "regiony": ["polska", "poludnie-hiszpanii"],
         "kolory": ["rudy", "brazowy"],
-        "zachowania": ["noc"]
+        "zachowania": ["noc", "ziemia"]
       },
       "todo": "Nazwa „słonka” jak na liście ptaków Polski; lista ptaków świata (Mielczarek i Kuziemko) używa „słonka zwyczajna”, zdecydować. Nie dodano regionu „gibraltar”: zimuje w lasach Andaluzji (np. Los Alcornocales), ale nie znalazłam potwierdzenia dla samego rejonu Cieśniny."
     },
@@ -1105,7 +1105,7 @@
         "rozpietosc_cm": [60, 70],
         "regiony": ["poludnie-hiszpanii", "gibraltar"],
         "kolory": ["brazowy", "plowy", "bialy"],
-        "zachowania": ["woda", "biega"]
+        "zachowania": ["woda", "biega", "ziemia"]
       },
       "todo": "Wymiary z hiszpańskiej Wikipedii (24–28 i 60–70 cm), nie z Collinsa: sprawdzić. Brak nagrania na wolnej licencji z xeno-canto i Commons."
     },
