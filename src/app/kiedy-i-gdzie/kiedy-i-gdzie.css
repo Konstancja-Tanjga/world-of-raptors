@@ -33,6 +33,7 @@
   display: grid;
   align-content: start;
   gap: var(--bh-gap-normal);
+  box-sizing: border-box;
   height: 100%;
   padding: var(--bh-padding-section);
   border: 1px solid var(--bh-border-subtle);
@@ -144,25 +145,12 @@
   margin-inline: calc(-1 * var(--bh-gap-snug));
 }
 
-/* The page: the planner, then the points, each a section of its own. */
-.kiedy-i-gdzie__spis {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--bh-gap-tight) var(--bh-gap-loose);
+/* The page: three tabs. A link inside it (a point's planner link) brings them back under the bar. */
+.kiedy-i-gdzie__zakladki {
+  scroll-margin-top: calc(var(--wor-nav-height) + var(--bh-gap-normal));
 }
-.kiedy-i-gdzie__sekcja {
-  display: grid;
-  gap: var(--bh-gap-loose);
-}
-/* The section's own gap spaces its header; .sekcja's bottom margin would double it. */
-.kiedy-i-gdzie__sekcja > .sekcja {
-  margin-bottom: 0;
-}
-.kiedy-i-gdzie__sekcja + .kiedy-i-gdzie__sekcja {
-  margin-top: var(--wor-space-block);
+.kiedy-i-gdzie__panel {
+  padding-top: var(--bh-gap-loose);
 }
 
 /* "Co tu zobaczę": the weather's notes, then the birds, one short entry each. */

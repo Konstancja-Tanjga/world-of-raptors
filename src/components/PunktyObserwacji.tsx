@@ -89,7 +89,7 @@ function Kalendarz({ p }: { p: PunktObserwacji }) {
   return (
     <div className="punkt__kalendarz">
       <p className="punkt__kiedy" id={id}>
-        <span className="punkt__etykieta">Kiedy jechać:</span> najlepiej {zakresMiesiecy(p.szczyt)}
+        Najlepiej {zakresMiesiecy(p.szczyt)}
         {p.szczyt.length < p.miesiace.length ? `, warto ${zakresMiesiecy(p.miesiace)}` : ''}
       </p>
       {/* The sentence above says it in words; the strip shows the same months at a glance. */}
@@ -142,10 +142,9 @@ function Punkt({ p, od, dane, miesiac }: { p: PunktObserwacji; od?: PunktOdMiejs
         )}
         <div className="punkt__znaczniki">
           {pora && <Badge tone={pora.ton}>{pora.etykieta}</Badge>}
-          <Badge tone="neutral">{p.rodzaj === 'przelot' ? 'Punkt przelotu' : 'Ptaki na miejscu'}</Badge>
           {p.wiatr.map((w) => (
             <Badge key={w} tone="info">
-              {w === 'lewant' ? 'Najlepiej przy lewancie' : 'Najlepiej przy poniente'}
+              {w === 'lewant' ? 'Przy lewancie' : 'Przy poniente'}
             </Badge>
           ))}
         </div>
@@ -175,6 +174,7 @@ function Punkt({ p, od, dane, miesiac }: { p: PunktObserwacji; od?: PunktOdMiejs
                 layout="rows"
                 density="compact"
                 items={[
+                  { term: 'Rodzaj', value: p.rodzaj === 'przelot' ? 'Punkt przelotu' : 'Ptaki na miejscu' },
                   { term: 'Pora dnia', value: p.pora_dnia },
                   {
                     term: 'Ptaki',
@@ -447,7 +447,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
       <div className="punkty__szukaj" role="search" aria-label="Punkty obserwacji">
         <Input
           label="Szukaj punktu"
-          description="Nazwa, okolica albo ptak, np. Bolonia, Algeciras, sęp"
+          description="Nazwa, okolica albo ptak"
           type="search"
           value={zapytanie}
           onChange={(e) => setZapytanie(e.target.value)}
@@ -477,7 +477,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
         <div className="punkty__opcje">
           <Select
             label="Wiatr w cieśninie"
-            description="Lewant przesuwa przelot w stronę Tarify, poniente w stronę Algeciras."
+            description="Lewant: bliżej Tarify. Poniente: bliżej Algeciras."
             value={wiatr ?? ''}
             onChange={(e) => setWiatr((e.target.value || null) as Wiatr | null)}
             options={OPCJE_WIATRU}
@@ -594,9 +594,6 @@ export function PunktyObserwacji(dane: DanePunktow) {
               </h3>
               {proponowane.length ? (
                 <>
-                  <p className="muted">
-                    Najbliższe punkty, w których teraz jest sezon; te w najlepszych miesiącach wyprzedzają nieco bliższe.
-                  </p>
                   <ol className="punkty__lista">
                     {proponowane.map((o) => (
                       <li key={o.punkt.id}>
@@ -683,13 +680,12 @@ export function PunktyObserwacji(dane: DanePunktow) {
       )}
 
       <p className="muted planer__uwaga">
-        Wyszukiwanie miejsc po nazwie:{' '}
+        Nazwę miejsca wyszukuje{' '}
         <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noreferrer" className="text-link">
           Open-Meteo
           {NOWA_KARTA}
         </a>{' '}
-        (dane GeoNames, CC BY 4.0); wpisana nazwa trafia do ich serwera. Twoja lokalizacja zostaje w przeglądarce: odległości
-        liczę tutaj. Większość punktów przelotu w cieśninie opisuję za{' '}
+        (GeoNames, CC BY 4.0), więc trafia ona do ich serwera; lokalizacja zostaje w przeglądarce. Punkty przelotu opisuję za{' '}
         <a
           href="https://www.andaluciabirdsociety.org/article-library/birding-sites/migration-watching-sites/"
           target="_blank"
@@ -699,7 +695,7 @@ export function PunktyObserwacji(dane: DanePunktow) {
           Andalucia Bird Society
           {NOWA_KARTA}
         </a>
-        , a źródła każdego punktu są przy nim. Zanim pojedziesz, sprawdź dojazd na miejscu, bo drogi i tablice się zmieniają.
+        , źródła są przy każdym punkcie. Dojazd sprawdź na miejscu.
       </p>
     </div>
   );

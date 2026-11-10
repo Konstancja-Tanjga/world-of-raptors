@@ -4263,15 +4263,7 @@ a.modul:focus-visible {
   font-weight: var(--bh-text-weight-emphasis);
 }
 
-/* "Kiedy jechać": the best windows, then day by day. */
-.planer__lista {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: var(--bh-gap-normal);
-}
+/* "Kiedy jechać": the best window in full, then a row per day with its score as a bar. */
 .planer__okno {
   display: flex;
   flex-direction: column;
@@ -4282,9 +4274,6 @@ a.modul:focus-visible {
   margin: 0;
   color: var(--bh-text-secondary);
   font-size: var(--bh-text-size-caption);
-}
-.planer__dzien::first-letter {
-  text-transform: uppercase;
 }
 .planer__godziny {
   margin: 0;
@@ -4299,6 +4288,74 @@ a.modul:focus-visible {
   padding-inline-start: var(--bh-gap-loose);
   color: var(--bh-text-secondary);
   font-size: var(--bh-text-size-caption);
+}
+.planer__wyniki {
+  display: grid;
+  gap: var(--bh-gap-loose);
+  max-width: 48rem;
+}
+.planer__wiersz {
+  display: grid;
+  /* Fixed columns for the hours, the bar and the words, so the bars line up from day to day. */
+  grid-template-columns: minmax(9rem, 1fr) 11ch 6rem 17ch;
+  align-items: center;
+  gap: var(--bh-gap-snug) var(--bh-gap-normal);
+  inline-size: 100%;
+  font-variant-numeric: tabular-nums;
+}
+.planer__wiersz-dzien::first-letter {
+  text-transform: uppercase;
+}
+.planer__wiersz[data-najlepszy] .planer__wiersz-dzien {
+  font-weight: var(--bh-text-weight-emphasis);
+}
+.planer__wiersz-warunki {
+  justify-self: end;
+}
+.planer__wiersz-godziny {
+  font-weight: var(--bh-text-weight-emphasis);
+  text-align: end;
+}
+/* The score as a filled bar, in the badge's tone; it grows in when the forecast arrives. */
+.planer__ocena {
+  display: block;
+  block-size: var(--bh-gap-tight);
+  border-radius: var(--bh-radius-pill);
+  background: var(--bh-border-subtle);
+  overflow: hidden;
+}
+.planer__ocena > span {
+  display: block;
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--bh-border-strong);
+  transform-origin: left;
+}
+.planer__ocena[data-ton='success'] > span {
+  background: var(--bh-status-success-fg);
+}
+.planer__ocena[data-ton='info'] > span {
+  background: var(--bh-status-info-fg);
+}
+.planer__ocena[data-ton='warning'] > span {
+  background: var(--bh-status-warning-fg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .planer__ocena > span {
+    animation: planer-ocena var(--wor-dur-expressive) var(--wor-ease-out) both;
+  }
+}
+@keyframes planer-ocena {
+  from {
+    scale: 0 1;
+  }
+}
+@media (max-width: 30rem) {
+  /* On a phone: day and hours on the first line, the bar and the words under them. */
+  .planer__wiersz {
+    grid-template-columns: 1fr auto;
+  }
+
 }
 .planer__uwaga {
   max-width: 60rem;

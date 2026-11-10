@@ -2,10 +2,10 @@ import { CoTuZobacze } from '@/components/CoTuZobacze';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { KIEDY_I_GDZIE } from '@/lib/publikacja';
-import Link from 'next/link';
 import { PlanerWyjazdu } from '@/components/PlanerWyjazdu';
 import { PunktyObserwacji, type DanePunktow } from '@/components/PunktyObserwacji';
-import { TrzymajKotwice } from '@/components/TrzymajKotwice';
+import { NaglowekStrony } from '@/components/NaglowekStrony';
+import { ZakladkiKiedyIGdzie } from '@/components/ZakladkiKiedyIGdzie';
 import { gotoweModuly, punktyObserwacji, znajdzGatunek, znajdzPtakaMokradel } from '@/lib/content';
 import './kiedy-i-gdzie.css';
 
@@ -31,76 +31,18 @@ function danePunktow(): DanePunktow {
   return { punkty: punktyObserwacji, ptaki, lekcje };
 }
 
-/** "Kiedy i gdzie": the trip planner (when) above the observation points (where). */
+/** "Kiedy i gdzie": the trip planner, the observation points and eBird's latest, one tab each. */
 export default function KiedyIGdziePage() {
   // Taken off the site for now (src/lib/publikacja.ts).
   if (!KIEDY_I_GDZIE) notFound();
   return (
     <div className="page">
-      <header className="naglowek-strony">
-        <p className="eyebrow">W teren</p>
-        <h1 className="naglowek-strony__tytul">Kiedy i gdzie</h1>
-        <p className="naglowek-strony__lead">
-          Najlepsze godziny na La Jandę i Marismas del Barbate oraz punkty obserwacji ułożone od miejsca, z którego ruszasz.
-        </p>
-        <ul className="kiedy-i-gdzie__spis" aria-label="Na tej stronie">
-          <li>
-            <a href="#co-tu" className="text-link">
-              Co tu zobaczę
-            </a>
-          </li>
-          <li>
-            <a href="#kiedy" className="text-link">
-              Kiedy jechać
-            </a>
-          </li>
-          <li>
-            <a href="#gdzie" className="text-link">
-              Gdzie stanąć
-            </a>
-          </li>
-        </ul>
-      </header>
-
-      <section className="kiedy-i-gdzie__sekcja" aria-labelledby="co-tu">
-        <header className="sekcja">
-          <h2 id="co-tu" className="sekcja__tytul">
-            Co tu zobaczę
-          </h2>
-          <p className="sekcja__lead">Ptaki zgłaszane ostatnio w okolicy, z pogodą na teraz.</p>
-        </header>
-        <CoTuZobacze />
-      </section>
-
-      <section className="kiedy-i-gdzie__sekcja" aria-labelledby="kiedy">
-        <header className="sekcja">
-          <h2 id="kiedy" className="sekcja__tytul">
-            Kiedy jechać
-          </h2>
-          <p className="sekcja__lead">
-            Wybierz miejsce, a planer sprawdzi prognozę pływów i pogody na dziesięć dni i podpowie, kiedy będzie tam
-            najwięcej do oglądania. Zasady pochodzą z lekcji{' '}
-            <Link href="/moduly/barbate/02-przed-wyjsciem" className="text-link">
-              Przed wyjściem: pływy, wiatr, luneta
-            </Link>
-            .
-          </p>
-        </header>
-        <PlanerWyjazdu />
-      </section>
-
-      <section className="kiedy-i-gdzie__sekcja" aria-labelledby="gdzie">
-        <header className="sekcja">
-          <h2 id="gdzie" className="sekcja__tytul">
-            Gdzie stanąć
-          </h2>
-          <p className="sekcja__lead">
-            Punkty z porą roku, ptakami i dojazdem. Szukaj po nazwie, okolicy albo ptaku albo pokaż najbliższe.
-          </p>
-        </header>
-        <PunktyObserwacji {...danePunktow()} />
-      </section>
-      <TrzymajKotwice />
+      <NaglowekStrony tytul="Kiedy i gdzie" />
+      <ZakladkiKiedyIGdzie
+        kiedy={<PlanerWyjazdu />}
+        gdzie={<PunktyObserwacji {...danePunktow()} />}
+        coTu={<CoTuZobacze />}
+      />
     </div>
   );
 }

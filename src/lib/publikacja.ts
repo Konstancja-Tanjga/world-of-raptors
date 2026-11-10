@@ -6,7 +6,7 @@
  * and links to it in lessons render as their plain text. Setting it to true
  * brings all of that back.
  */
-export const KIEDY_I_GDZIE = false;
+export const KIEDY_I_GDZIE = true;
 
 const SCIEZKI = ['/kiedy-i-gdzie', '/kiedy-jechac', '/punkty-obserwacji'];
 

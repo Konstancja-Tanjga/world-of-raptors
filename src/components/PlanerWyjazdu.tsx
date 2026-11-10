@@ -13,7 +13,8 @@ import {
   type MiejscePlanera,
   type Okno,
 } from '@/lib/planer';
-import { Badge, Button, Card, SegmentedControl, StateBlock } from './ds';
+import Link from 'next/link';
+import { Accordion, AccordionItem, Badge, Button, Card, SegmentedControl, StateBlock } from './ds';
 
 type Wybor = { miejsce?: MiejscePlanera };
 function isWybor(v: unknown): v is Wybor {
@@ -62,12 +63,13 @@ function warunki(ocena: number): { tekst: string; ton: 'success' | 'info' | 'neu
   return { tekst: 'Słabe warunki', ton: 'warning' };
 }
 
-function KartaOkna({ o, najlepsze: wyroznione }: { o: Okno; najlepsze?: boolean }) {
+/** The best window, in full: day, hours, conditions and why. */
+function NajlepszeOkno({ o }: { o: Okno }) {
   const w = warunki(o.ocena);
   return (
-    <Card padding="snug" accent={wyroznione ? 'success' : 'none'}>
+    <Card padding="snug" accent="success">
       <div className="planer__okno">
-        <p className="planer__dzien">{dzien(o.data)}</p>
+        <p className="planer__dzien">Najlepiej: {dzien(o.data)}</p>
         <p className="planer__godziny">
           {godzina(o.od)}–{godzina(o.do)}
         </p>
@@ -82,10 +84,41 @@ function KartaOkna({ o, najlepsze: wyroznione }: { o: Okno; najlepsze?: boolean 
   );
 }
 
+/** One day as a row: the day, the hours and a bar of the score; the reasons fold under it. */
+function WierszDnia({ o, najlepszy }: { o: Okno; najlepszy: boolean }) {
+  const w = warunki(o.ocena);
+  return (
+    <AccordionItem
+      id={`okno-${o.start}`}
+      title={
+        <span className="planer__wiersz" data-najlepszy={najlepszy ? '' : undefined}>
+          <span className="planer__wiersz-dzien">{dzien(o.data)}</span>
+          <span className="planer__wiersz-godziny">
+            {godzina(o.od)}–{godzina(o.do)}
+          </span>
+          {/* The badge says it in words; the bar shows the score at a glance. */}
+          <span className="planer__ocena" aria-hidden="true" data-ton={w.ton}>
+            <span style={{ inlineSize: `${Math.max(6, Math.min(100, o.ocena))}%` }} />
+          </span>
+          <span className="planer__wiersz-warunki">
+            <Badge tone={w.ton}>{w.tekst}</Badge>
+          </span>
+        </span>
+      }
+    >
+      <ul className="planer__powody">
+        {o.powody.map((p) => (
+          <li key={p}>{p}</li>
+        ))}
+      </ul>
+    </AccordionItem>
+  );
+}
+
 /**
  * "Kiedy jechać": pick a site, and the page fetches ten days of tide and
  * weather from Open-Meteo, then lists the best times to be there by the
- * course's rules (lib/planer.ts), the best three first, then day by day.
+ * course's rules (lib/planer.ts): the best one in full, then day by day.
  */
 export function PlanerWyjazdu() {
   const zapisany = wybor.useMagazyn();
@@ -130,6 +163,7 @@ export function PlanerWyjazdu() {
 
   if (!miejsce) return <StateBlock state="loading" title="Wczytywanie planera" scope="section" />;
   const plywy = MIEJSCA_PLANERA.find((m) => m.value === miejsce)!.plywy;
+  const najlepszeOkno = stan.stan === 'gotowe' ? najlepsze(stan.okna, 1)[0] : undefined;
 
   return (
     <div className="stack">
@@ -143,9 +177,10 @@ export function PlanerWyjazdu() {
         />
       </div>
       <p className="muted">
-        {plywy
-          ? 'Liczę według pływów: najlepiej być na miejscu, gdy woda rośnie, od ok. trzech godzin przed pełnym przypływem. Dochodzą do tego światło dnia, deszcz i wiatr.'
-          : 'La Janda nie ma pływów. Liczę według pory dnia (drapieżniki szybują, gdy powietrze się nagrzeje), deszczu i wiatru; lewant przesuwa przelot na zachód, nad równinę.'}
+        {plywy ? 'Najlepiej, gdy woda rośnie: od ok. 3 h przed przypływem, za dnia.' : 'Najlepiej 11:00–16:30, bez deszczu i silnego wiatru.'}{' '}
+        <Link href="/moduly/barbate/02-przed-wyjsciem" className="text-link">
+          Skąd te zasady
+        </Link>
       </p>
 
       {stan.stan === 'wczytywanie' ? (
@@ -174,43 +209,33 @@ export function PlanerWyjazdu() {
           scope="section"
         />
       ) : (
-        <>
-          <section className="stack" aria-labelledby="planer-najlepsze">
-            <h3 id="planer-najlepsze" className="checklist__naglowek">
-              Najlepsze terminy
-            </h3>
-            <ol className="planer__lista">
-              {najlepsze(stan.okna, 3).map((o, i) => (
-                <li key={o.start}>
-                  <KartaOkna o={o} najlepsze={i === 0} />
-                </li>
-              ))}
-            </ol>
-          </section>
+        <div className="planer__wyniki">
+          <NajlepszeOkno o={najlepszeOkno!} />
           <section className="stack" aria-labelledby="planer-dni">
-            <h3 id="planer-dni" className="checklist__naglowek">
+            <h2 id="planer-dni" className="checklist__naglowek">
               Dzień po dniu
-            </h3>
-            <ul className="planer__lista">
-              {stan.okna.map((o) => (
-                <li key={o.start}>
-                  <KartaOkna o={o} />
-                </li>
-              ))}
-            </ul>
+            </h2>
+            <Accordion headingLevel={3}>
+                {stan.okna.map((o) => (
+                  <WierszDnia key={o.start} o={o} najlepszy={o.start === najlepszeOkno?.start} />
+                ))}
+            </Accordion>
           </section>
-        </>
+        </div>
       )}
 
       <p className="muted planer__uwaga">
-        To reguły z kursu, nie liczenie ptaków: ptaki nie czytają prognoz. Pływy pochodzą z modelu i mogą różnić się od
-        tablicy portowej o ok. pół godziny, a w kanałach wyżej w marismas woda przychodzi później, więc przyjedź z zapasem
-        i sprawdź{' '}
-        <a href="https://tablademareas.com/es/cadiz/barbate/prevision/mareas" target="_blank" rel="noreferrer" className="text-link">
-          tablicę pływów Barbate
-          <span className="visually-hidden">, otwiera się w nowej karcie</span>
-        </a>
-        . Prognoza:{' '}
+        {plywy && (
+          <>
+            Pływy z modelu bywają ok. pół godziny przed{' '}
+            <a href="https://tablademareas.com/es/cadiz/barbate/prevision/mareas" target="_blank" rel="noreferrer" className="text-link">
+              tablicą portu Barbate
+              <span className="visually-hidden">, otwiera się w nowej karcie</span>
+            </a>
+            , a w kanałach marismas woda przychodzi później: przyjedź z zapasem.{' '}
+          </>
+        )}
+        Prognoza:{' '}
         <a href="https://open-meteo.com/" target="_blank" rel="noreferrer" className="text-link">
           Open-Meteo.com
           <span className="visually-hidden">, otwiera się w nowej karcie</span>
