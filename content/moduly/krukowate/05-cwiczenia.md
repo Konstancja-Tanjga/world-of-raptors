@@ -13,7 +13,7 @@ Krukowate są wszędzie, więc najlepszym ćwiczeniem jest wyjść za próg. Naj
 4. Który krukowaty ma szary kark i jasne oko i gnieździ się w kominach?
    a) sroka b) sójka c) **kawka** d) orzechówka
 5. Który krukowaty z Hiszpanii ma czerwony, zakrzywiony dziób?
-   a) czarnowron b) **wieszczek** c) błękitna sroka d) kruk
+   a) czarnowron b) **wrończyk** c) błękitna sroka d) kruk
 6. Co pokazało doświadczenie Kabadayi i Osvatha z krukami?
    a) że kruki rozpoznają się w lustrze b) **że potrafią wybrać narzędzie, które przyda się dopiero następnego dnia** c) że kruki mówią ludzkim głosem d) że kruki nie robią zapasów
 7. Jak sójka przyczynia się do sadzenia dębów?

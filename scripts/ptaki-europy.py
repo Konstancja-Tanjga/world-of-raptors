@@ -174,9 +174,10 @@ def main() -> None:
     for g in gatunki:
         del g['kolejnosc']
 
-    # A Polish name the course already uses for another species (the course's
-    # wieszczek is Pyrrhocorax pyrrhocorax; eBird's is P. graculus): the
-    # newcomer takes its Latin epithet too, since course ids are stored keys.
+    # A Polish name the course already uses as an id for another species (the
+    # course's id `wieszczek` is the wrończyk, Pyrrhocorax pyrrhocorax, named
+    # wrongly once and kept because ids are stored keys; eBird's wieszczek is
+    # P. graculus): the newcomer takes its Latin epithet too.
     for g in gatunki:
         if g['id'] in kurs.values():
             g['id'] = f"{g['id']}-{slug(g['lat'].split()[-1])}"

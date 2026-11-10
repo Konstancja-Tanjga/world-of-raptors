@@ -53,7 +53,7 @@ Po czym poznać, że to kruk:
 
 Na południu Hiszpanii, oprócz kruka, czarnowrona, kawki, sroki i sójki, warto znać jeszcze dwa:
 
-- **Wieszczek** *Pyrrhocorax pyrrhocorax* (ang. Red-billed Chough): czarny, z **czerwonym, długim, zakrzywionym dziobem** i czerwonymi nogami; w stadach przy urwiskach i w górach, wspaniale lata, „pływając” w wietrze.
+- **Wrończyk** *Pyrrhocorax pyrrhocorax* (ang. Red-billed Chough): czarny, z **czerwonym, długim, zakrzywionym dziobem** i czerwonymi nogami; w stadach przy urwiskach i w górach, wspaniale lata, „pływając” w wietrze.
 - **Błękitna sroka** z Półwyspu Iberyjskiego, *Cyanopica cooki* (ang. Iberian Magpie): mniejsza od sroki, z czarną czapką, jasnoniebieskimi skrzydłami i ogonem; w stadach w dąbrowach i dehesach.
 
 ## Źródła
@@ -74,6 +74,6 @@ Na południu Hiszpanii, oprócz kruka, czarnowrona, kawki, sroki i sójki, warto
 1. Po nagiej, szarobiałej twarzy u nasady szpiczastego dzioba i luźnych „portkach”.
 2. Mała, czarna z szarym karkiem i jasnym okiem; gnieździ się w koloniach w kominach, wieżach i dziuplach.
 3. Po klinowatym ogonie, głowie i grubym, prostym dziobie wysuniętych daleko przed skrzydła, po akrobacjach i po głosie.
-4. Wieszczek.
+4. Wrończyk.
 5. Czarnowron w zachodniej i południowej Europie, także w Hiszpanii; wrona siwa w Polsce, na wschodzie i północy Europy.
 </details>
