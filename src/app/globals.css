@@ -4350,8 +4350,8 @@ a.modul:focus-visible {
     scale: 0 1;
   }
 }
-@media (max-width: 30rem) {
-  /* On a phone: day and hours on the first line, the bar and the words under them. */
+@media (max-width: 40rem) {
+  /* On a narrow screen: day and hours on the first line, the bar and the words under them. */
   .planer__wiersz {
     grid-template-columns: 1fr auto;
   }

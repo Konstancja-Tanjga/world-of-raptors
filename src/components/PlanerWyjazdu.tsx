@@ -177,7 +177,7 @@ export function PlanerWyjazdu() {
         />
       </div>
       <p className="muted">
-        {plywy ? 'Najlepiej, gdy woda rośnie: od ok. 3 h przed przypływem, za dnia.' : 'Najlepiej 11:00–16:30, bez deszczu i silnego wiatru.'}{' '}
+        {plywy ? 'Najlepiej, gdy woda rośnie: od ok. 3 h przed przypływem, za dnia.' : 'Najlepiej 11:00–16:30, bez deszczu i silnego wiatru; lewant przesuwa przelot nad równinę.'}{' '}
         <Link href="/moduly/barbate/02-przed-wyjsciem" className="text-link">
           Skąd te zasady
         </Link>
@@ -235,7 +235,7 @@ export function PlanerWyjazdu() {
             , a w kanałach marismas woda przychodzi później: przyjedź z zapasem.{' '}
           </>
         )}
-        Prognoza:{' '}
+        To reguły z kursu, a ptaki nie czytają prognoz. Prognoza:{' '}
         <a href="https://open-meteo.com/" target="_blank" rel="noreferrer" className="text-link">
           Open-Meteo.com
           <span className="visually-hidden">, otwiera się w nowej karcie</span>

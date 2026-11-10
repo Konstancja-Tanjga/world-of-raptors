@@ -28,8 +28,12 @@ export function ZakladkiKiedyIGdzie({ kiedy, gdzie, coTu }: { kiedy: ReactNode; 
       const z = zHasha(location.hash);
       if (!z) return;
       setAktywna(z);
-      // A link inside the page (a point's planner link): bring the tabs back into view.
-      if (przewin) korzen.current?.scrollIntoView({ block: 'start' });
+      // A link inside the page (a point's planner link) hid the panel it sat in: bring the tabs
+      // back into view and give focus to the chosen tab, so the keyboard does not fall to the page's start.
+      if (przewin) {
+        korzen.current?.scrollIntoView({ block: 'start' });
+        requestAnimationFrame(() => korzen.current?.querySelector<HTMLElement>(`[role="tab"][aria-selected="true"]`)?.focus());
+      }
     };
     zAdresu(false);
     const naZmiane = () => zAdresu(true);

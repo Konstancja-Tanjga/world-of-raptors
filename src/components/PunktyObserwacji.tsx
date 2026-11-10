@@ -132,9 +132,9 @@ function Punkt({ p, od, dane, miesiac }: { p: PunktObserwacji; od?: PunktOdMiejs
   return (
     <article className="punkt" aria-labelledby={`punkt-${p.id}`}>
       <header className="punkt__naglowek">
-        <h4 id={`punkt-${p.id}`} className="punkt__nazwa">
+        <h3 id={`punkt-${p.id}`} className="punkt__nazwa">
           {p.nazwa}
-        </h4>
+        </h3>
         {od && (
           <p className="punkt__odleglosc">
             {odlegloscSlownie(od.km)} {od.kierunek}
@@ -166,7 +166,7 @@ function Punkt({ p, od, dane, miesiac }: { p: PunktObserwacji; od?: PunktOdMiejs
         </a>
       </p>
       <div className="punkt__szczegoly">
-        <Accordion headingLevel={5}>
+        <Accordion headingLevel={4}>
           <AccordionItem id={`szczegoly-${p.id}`} title={<>Szczegóły<span className="visually-hidden">: {p.nazwa}</span></>}>
             <div className="stack">
               <p className="punkt__opis">{p.opis}</p>
@@ -255,9 +255,9 @@ function MojPunkt({ id, m, od }: { id: string; m: MojeMiejsce; od?: { km: number
     // data-prywatne: my place and note are mine, not the course's, so "Zgłoś poprawkę" cannot point at them.
     <article className="punkt" aria-labelledby={`moje-${id}`} data-prywatne>
       <header className="punkt__naglowek">
-        <h4 id={`moje-${id}`} className="punkt__nazwa">
+        <h3 id={`moje-${id}`} className="punkt__nazwa">
           {m.nazwa}
-        </h4>
+        </h3>
         {od && (
           <p className="punkt__odleglosc">
             {odlegloscSlownie(od.km)} {od.kierunek}
@@ -589,9 +589,9 @@ export function PunktyObserwacji(dane: DanePunktow) {
         <>
           {miesiac && (
             <section className="stack punkty__propozycje" aria-labelledby="punkty-propozycje">
-              <h3 id="punkty-propozycje" className="checklist__naglowek">
+              <h2 id="punkty-propozycje" className="checklist__naglowek">
                 Propozycje na {NAZWY_MIESIECY[miesiac - 1]}
-              </h3>
+              </h2>
               {proponowane.length ? (
                 <>
                   <ol className="punkty__lista">
@@ -608,9 +608,9 @@ export function PunktyObserwacji(dane: DanePunktow) {
             </section>
           )}
         <section className="stack" aria-labelledby="punkty-najblizsze">
-          <h3 id="punkty-najblizsze" className="checklist__naglowek">
+          <h2 id="punkty-najblizsze" className="checklist__naglowek">
             {proponowane.length ? 'Pozostałe od najbliższego' : 'Od najbliższego'}
-          </h3>
+          </h2>
           {najblizszyKursu && najblizszyKursu.km > DALEKO_KM && (
             <p className="muted">
               Najbliższy punkt z kursu jest {odlegloscSlownie(najblizszyKursu.km)} stąd. Na razie są tu punkty z okolic Cieśniny
@@ -635,9 +635,9 @@ export function PunktyObserwacji(dane: DanePunktow) {
       ) : (
         <>
           <section className="stack" aria-labelledby="okolica-moje">
-            <h3 id="okolica-moje" className="checklist__naglowek">
+            <h2 id="okolica-moje" className="checklist__naglowek">
               Moje miejsca
-            </h3>
+            </h2>
             {moje.length === 0 && szukane ? (
               <p className="muted">Żadne z moich miejsc nie pasuje do wyszukiwania.</p>
             ) : moje.length === 0 ? (
@@ -663,9 +663,9 @@ export function PunktyObserwacji(dane: DanePunktow) {
             if (!wOkolicy.length) return null;
             return (
               <section key={o.value} className="stack" aria-labelledby={`okolica-${o.value}`}>
-                <h3 id={`okolica-${o.value}`} className="checklist__naglowek">
+                <h2 id={`okolica-${o.value}`} className="checklist__naglowek">
                   {o.label}
-                </h3>
+                </h2>
                 <ul className="punkty__lista">
                   {wOkolicy.map((p) => (
                     <li key={p.id}>
