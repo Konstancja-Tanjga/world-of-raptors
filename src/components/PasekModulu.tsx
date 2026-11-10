@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { kluczLekcji, usePostep } from '@/lib/postep';
 import type { ModulNawigacji } from './AppFrame';
 
@@ -12,6 +13,14 @@ import type { ModulNawigacji } from './AppFrame';
  */
 export function PasekModulu({ modul, lekcja }: { modul: ModulNawigacji; lekcja?: string }) {
   const { postep } = usePostep();
+  // The lessons finished since the bar first read the progress: their steps fill with a small pop.
+  // Kept from the previous render (not an effect), so the step and its pop arrive in the same frame.
+  const [poprzedni, setPoprzedni] = useState(postep);
+  const [swieze, setSwieze] = useState<ReadonlySet<string>>(new Set());
+  if (postep !== poprzedni) {
+    setPoprzedni(postep);
+    if (poprzedni && postep) setSwieze(new Set(Object.keys(postep).filter((k) => postep[k] && !poprzedni[k])));
+  }
   const biezaca = modul.lekcje.findIndex((l) => l.slug === lekcja);
   const ukonczone = postep ? modul.lekcje.filter((l) => postep[kluczLekcji(modul.slug, l.slug)]).length : null;
 
@@ -32,6 +41,7 @@ export function PasekModulu({ modul, lekcja }: { modul: ModulNawigacji; lekcja?:
                   className="pasek__lekcja"
                   aria-current={i === biezaca ? 'page' : undefined}
                   data-gotowa={gotowa ? '' : undefined}
+                  data-swieza={gotowa && swieze.has(kluczLekcji(modul.slug, l.slug)) ? '' : undefined}
                 >
                   <span className="pasek__nr" aria-hidden="true">
                     {gotowa ? '✓' : i + 1}

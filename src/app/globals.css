@@ -488,6 +488,22 @@ li {
 .pasek__lekcja[aria-current] .pasek__nr {
   border-color: var(--bh-text-primary);
 }
+/* A lesson just finished (the box ticked or the quiz passed): its step fills in, with a small pop. */
+.pasek__nr {
+  transition:
+    background-color var(--wor-dur-base) var(--wor-ease-out),
+    border-color var(--wor-dur-base) var(--wor-ease-out),
+    color var(--wor-dur-base) var(--wor-ease-out);
+}
+.pasek__lekcja[data-swieza] .pasek__nr {
+  animation: krok-ukonczony var(--wor-dur-expressive) var(--wor-ease-out);
+}
+@keyframes krok-ukonczony {
+  40% {
+    scale: calc(1 + 0.25 * var(--wor-ruch));
+    box-shadow: 0 0 0 calc(0.3rem * var(--wor-ruch)) color-mix(in oklab, var(--wor-akcent) 30%, transparent);
+  }
+}
 /* Only the current lesson shows its title; the others keep it for screen readers. */
 .pasek__lekcja:not([aria-current]) .pasek__nazwa {
   position: absolute;
