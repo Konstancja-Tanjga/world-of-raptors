@@ -120,6 +120,14 @@ Problem: ołów z amunicji wciąż zabija kondory, a wiele ptaków trzeba regula
 
 Ważna lekcja: **reintrodukcja działa tylko wtedy, gdy wcześniej usunie się przyczynę wymarcia**. Wypuszczanie ptaków tam, gdzie wciąż wykłada się trucizny, to strata ptaków.
 
+## Poza Europą: Mauritius i Nagaland
+Dwie historie z innych kontynentów pasują do tej samej listy.
+
+- **Pustułka maskareńska** (*Falco punctatus*, ang. Mauritius Kestrel): w 1974 r. znano cztery ptaki. Hodowla, dokarmianie i skrzynki lęgowe podniosły liczebność do kilkuset. Więcej w lekcji [Australia i wyspy](../drapiezniki-swiata/05-australia-i-wyspy.md).
+- **Kobczyk amurski** (*Falco amurensis*, ang. Amur Falcon): w Nagalandzie łowiono go masowo na mięso. Po kampanii z udziałem rad wiosek i kościołów już rok później nie odnotowano zabitych ptaków. Więcej w lekcji [Azja: orły lasu, morza i oceanu](../drapiezniki-swiata/04-azja.md).
+
+W pierwszej zadziałała hodowla, w drugiej współpraca z ludźmi na miejscu. W obu najpierw usunięto przyczynę.
+
 ## Filmy
 - [YouTube: powrót sokoła wędrownego do Polski](https://www.youtube.com/results?search_query=sok%C3%B3%C5%82+w%C4%99drowny+restytucja+Polska)
 - [YouTube: kondor kalifornijski, ratunek w ostatniej chwili](https://www.youtube.com/results?search_query=california+condor+recovery+program)

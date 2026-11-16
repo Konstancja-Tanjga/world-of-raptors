@@ -122,6 +122,14 @@ Najlepszy sposób, żeby zobaczyć życie rodzinne z bliska, nie szkodząc ptako
 
 Więcej o miejscach i kamerach w Polsce w [lekcji o miejscach modułu B2](../polska/03-miejsca.md).
 
+## W tropikach wszystko trwa dłużej
+Europejski drapieżnik ma lęg co roku. Wielkie orły lasów tropikalnych rozmnażają się dużo wolniej.
+
+- **Harpia wielka** (*Harpia harpyja*, ang. Harpy Eagle) wychowuje jedno młode raz na dwa albo trzy lata, a młody ptak zostaje w rewirze rodziców ponad rok.
+- **Orzeł filipiński** (*Pithecophaga jefferyi*, ang. Philippine Eagle) ma jedno młode raz na dwa lata.
+
+Przy tak wolnym rozrodzie para przez całe życie wychowuje tylko kilkoro młodych, więc strata każdego dorosłego ptaka liczy się bardzo długo. To jeden z powodów, dla których oba gatunki są dziś zagrożone. Więcej w module [A16 Drapieżniki świata](../drapiezniki-swiata/README.md).
+
 ## Filmy
 - [YouTube: pisklęta bielika rosną, od puchu do wylotu](https://www.youtube.com/results?search_query=white-tailed+eagle+chick+growth+nest+camera)
 - [YouTube: pierwszy lot młodego sokoła wędrownego](https://www.youtube.com/results?search_query=peregrine+falcon+fledgling+first+flight)

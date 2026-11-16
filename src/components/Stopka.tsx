@@ -13,8 +13,8 @@ export function Stopka({ zglos }: { zglos?: ReactNode }) {
         <div className="stopka__marka">
           <p className="stopka__nazwa">World of Raptors</p>
           <p className="stopka__opis">
-            Prywatny kurs o drapieżnikach dziennych i nocnych: biologia i rozpoznawanie w terenie. Polska, południe
-            Hiszpanii i Cieśnina Gibraltarska.
+            Prywatny kurs o drapieżnikach dziennych i nocnych: biologia ptaków z całego świata i rozpoznawanie w
+            terenie w Polsce, na południu Hiszpanii i nad Cieśniną Gibraltarską.
           </p>
           <p className="stopka__autorzy">
             Pomysł, plan i treść: <strong>Konstancja Tanjga-Nawrot</strong>. Projekt, ruch i kod: razem z Claude (Anthropic).{' '}

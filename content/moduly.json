@@ -477,6 +477,40 @@
       ]
     },
     {
+      "id": "A16",
+      "slug": "drapiezniki-swiata",
+      "sciezka": "a",
+      "tytul": "Drapieżniki świata",
+      "krotko": "Ptaki drapieżne innych kontynentów.",
+      "gotowy": true,
+      "lekcje": [
+        {
+          "slug": "01-mapa-swiata",
+          "tytul": "Mapa świata drapieżników"
+        },
+        {
+          "slug": "02-afryka",
+          "tytul": "Afryka: sawanna, sępy i sekretarz"
+        },
+        {
+          "slug": "03-ameryki",
+          "tytul": "Ameryki: od prerii po las deszczowy"
+        },
+        {
+          "slug": "04-azja",
+          "tytul": "Azja: orły lasu, morza i oceanu"
+        },
+        {
+          "slug": "05-australia-i-wyspy",
+          "tytul": "Australia i wyspy"
+        },
+        {
+          "slug": "06-cwiczenia",
+          "tytul": "Ćwiczenia i quiz"
+        }
+      ]
+    },
+    {
       "id": "B1",
       "slug": "metoda",
       "sciezka": "b",

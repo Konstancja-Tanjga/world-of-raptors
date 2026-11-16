@@ -1108,6 +1108,7 @@ const OTWARCIA_MODULOW: Record<string, { gatunek: string; zdjecie: 'lot' | 'sied
   'male-ptaki': { gatunek: 'krogulec', zdjecie: 'siedzacy' },
   'liczenie-ptakow': { gatunek: 'puszczyk', zdjecie: 'siedzacy' },
   trendy: { gatunek: 'blotniak-lakowy', zdjecie: 'lot' },
+  'drapiezniki-swiata': { gatunek: 'sep-plamisty', zdjecie: 'lot' },
   metoda: { gatunek: 'myszolow', zdjecie: 'lot' },
   polska: { gatunek: 'bielik', zdjecie: 'lot' },
   gibraltar: { gatunek: 'kania-czarna', zdjecie: 'lot' },

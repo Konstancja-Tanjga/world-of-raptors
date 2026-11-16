@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   title: { default: 'World of Raptors', template: '%s, World of Raptors' },
   description:
     // At most 160 characters, which is what a search result or a link preview shows.
-    'Kurs o ptakach drapieżnych: jak je rozpoznać w terenie, od Polski po Cieśninę Gibraltarską. Pomysł i treść: Konstancja Tanjga-Nawrot; projekt i kod z Claude.',
+    'Kurs o ptakach drapieżnych: ich biologia na całym świecie i rozpoznawanie w terenie, od Polski po Cieśninę Gibraltarską. Pomysł i treść: Konstancja Tanjga-Nawrot; projekt i kod z Claude.',
   authors: [{ name: 'Konstancja Tanjga-Nawrot' }],
   creator: 'Konstancja Tanjga-Nawrot',
   openGraph: OPEN_GRAPH,

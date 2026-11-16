@@ -98,6 +98,15 @@ Fotograf przy gnieździe, wycinka w sezonie lęgowym, quad w lesie, dron nad ska
 | DDT i inne pestycydy chloroorganiczne | ołów, trutki na gryzonie, leki weterynaryjne |
 | | linie energetyczne, farmy wiatrowe, utrata siedlisk |
 
+## Te same zagrożenia na innych kontynentach
+To, co Europa przeszła w XX w., dzieje się dziś gdzie indziej, często na większą skalę. Przegląd wszystkich drapieżników świata (McClure i in., 2018) policzył, że ok. 18% gatunków jest zagrożonych wyginięciem, a liczebność ok. połowy spada.
+
+- **Trucie.** W Afryce liczebność siedmiu gatunków sępów spadła w ciągu trzech pokoleń o 80% lub więcej, głównie przez zatrutą padlinę.
+- **Utrata siedlisk.** Wielkie orły lasów tropikalnych, harpia wielka i orzeł filipiński, znikają razem z lasem.
+- **Zabijanie.** W indyjskim Nagalandzie jeszcze w 2012 r. łowiono w sieci ponad sto tysięcy kobczyków amurskich w jednym sezonie.
+
+Szczegóły i źródła są w module [A16 Drapieżniki świata](../drapiezniki-swiata/README.md).
+
 ## Filmy
 - [YouTube: porażenia prądem ptaków drapieżnych na słupach](https://www.youtube.com/results?search_query=raptor+electrocution+power+lines)
 - [YouTube: farmy wiatrowe i sępy w rejonie Tarify](https://www.youtube.com/results?search_query=wind+turbines+vultures+Tarifa)

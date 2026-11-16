@@ -97,6 +97,14 @@ Terminy zależą od gatunku. W Polsce:
 
 Trzmielojad i kobuz późno przylatują z Afryki. Uważa się, że ich lęgi są dopasowane do pokarmu: u trzmielojada do szczytu rozwoju gniazd os, u kobuza do okresu, kiedy latają młode jaskółki i ważki.
 
+## Poza Europą: kilka dorosłych przy jednym gnieździe
+Para na lata to reguła u drapieżników Europy. Dwa gatunki z Ameryk pokazują, że są od niej wyjątki.
+
+- U **myszołowa galapagoskiego** (*Buteo galapagoensis*, ang. Galápagos Hawk) jedna samica łączy się z kilkoma samcami naraz, a wszystkie bronią rewiru i karmią młode. To **poliandria**, u ptaków drapieżnych bardzo rzadka.
+- U **myszołowca towarzyskiego** (*Parabuteo unicinctus*, ang. Harris's Hawk) przy gnieździe pomagają starsze młode z poprzednich lęgów, a cała grupa razem poluje.
+
+Więcej w lekcjach [Australia i wyspy](../drapiezniki-swiata/05-australia-i-wyspy.md) i [Ameryki: od prerii po las deszczowy](../drapiezniki-swiata/03-ameryki.md).
+
 ## Filmy
 - [YouTube: bieliki sczepiają się szponami i koziołkują](https://www.youtube.com/results?search_query=white-tailed+eagle+talon+grappling+cartwheel)
 - [YouTube: błotniak przekazuje pokarm w locie](https://www.youtube.com/results?search_query=marsh+harrier+food+pass)
