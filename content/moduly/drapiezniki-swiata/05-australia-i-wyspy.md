@@ -18,7 +18,7 @@ W kraju bez sępów to on jest głównym dużym padlinożercą. Przy drogach zja
 Przez większą część XX w. uważano go za szkodnika zabijającego jagnięta i płacono za każdego zabitego ptaka. Zginęły wtedy setki tysięcy orłów. Późniejsze badania pokazały, że orły zabierały głównie martwe i słabe jagnięta. Dziś gatunek jest chroniony w całej Australii i liczny, poza Tasmanią, gdzie żyje osobny, zagrożony podgatunek.
 
 ## Kamień jako narzędzie
-Australijski drapieżnik *Hamirostra melanosternon* (ang. Black-breasted Buzzard) jest jednym z niewielu ptaków drapieżnych, które używają narzędzi. Kiedy znajdzie gniazdo emu albo żurawia, podnosi dziobem kamień i rzuca nim w jajo, aż skorupa pęknie. Podobnie robi ścierwnik w Afryce z jajami strusi, co opisuje lekcja o [specjalistach i padlinożercach](../polowanie-i-ekologia/02-specjalisci-i-padlinozercy.md). Dwa niespokrewnione gatunki na dwóch kontynentach doszły do tego samego sposobu.
+Australijski drapieżnik *Hamirostra melanosternon* (ang. Black-breasted Buzzard) jest jednym z niewielu ptaków drapieżnych, które używają narzędzi. Opisywano, że kiedy znajdzie gniazdo emu, podnosi dziobem kamień i rzuca nim w jajo, aż skorupa pęknie. Podobnie robi ścierwnik w Afryce z jajami strusi, co opisuje lekcja o [specjalistach i padlinożercach](../polowanie-i-ekologia/02-specjalisci-i-padlinozercy.md). Dwa daleko spokrewnione gatunki na dwóch kontynentach doszły do tego samego sposobu.
 
 Z Australii pochodzą też doniesienia o „ognistych jastrzębiach”: kaniach i sokołach, które mają przenosić płonące gałązki i w ten sposób wypłaszać zdobycz. Opisuje je lekcja [Ewolucja trwa](../ewolucja/04-ewolucja-trwa.md).
 
@@ -36,14 +36,14 @@ Prawie wszystkie jastrzębiowate polują za dnia. Wyjątkiem jest australijski k
 
 Myszołów galapagoski (*Buteo galapagoensis*, ang. Galápagos Hawk) jest jedynym dziennym drapieżnikiem gniazdującym na Galapagos. Jego przodkowie dolecieli tam z Ameryki stosunkowo niedawno; najbliższym krewnym jest myszołów preriowy z poprzedniej lekcji.
 
-W module o rozrodzie przeczytałaś, że drapieżniki są w większości monogamiczne. Tu jest inaczej. Na wielu wyspach samica łączy się z dwoma, trzema, a czasem nawet ośmioma samcami. Wszyscy bronią wspólnego rewiru, wysiadują jaja i karmią młode, choć ojcem jest tylko jeden albo dwóch. Taki układ nazywa się **poliandrią**. Najczęstsze wyjaśnienie: dobrych rewirów na małej wyspie jest mało, więc samcowi bardziej opłaca się dzielić rewir niż nie mieć żadnego.
+W module o rozrodzie przeczytałaś, że drapieżniki są w większości monogamiczne. Tu jest inaczej. Na wielu wyspach samica łączy się z dwoma, trzema, a czasem nawet ośmioma samcami. Wszyscy bronią wspólnego rewiru, wysiadują jaja i karmią młode, choć ojcami piskląt są tylko niektóre z nich. Taki układ nazywa się **poliandrią**. Najczęstsze wyjaśnienie: dobrych rewirów na małej wyspie jest mało, więc samcowi bardziej opłaca się dzielić rewir niż nie mieć żadnego.
 
 Ptaki z Galapagos prawie nie boją się ludzi, bo przez tysiące lat nie miały tam wrogów.
 
 ## Pustułka maskareńska: z czterech ptaków
 Pustułka maskareńska (*Falco punctatus*, ang. Mauritius Kestrel) żyje tylko na Mauritiusie. Ma krótkie, zaokrąglone skrzydła, jak krogulec, bo poluje w lesie na gekony. Kiedy wycięto prawie cały las wyspy, a resztę skaził DDT, gatunek prawie zniknął. W 1974 r. znano tylko **cztery** ptaki, w tym jedną samicę, która składała jaja. Był to wtedy najrzadszy ptak świata.
 
-Uratowały go metody podobne do tych, którymi w Polsce przywracano sokoła wędrownego ([Historie sukcesu](../ochrona/03-historie-sukcesu.md)): zabieranie pierwszego zniesienia do inkubatora (samica składa wtedy drugie), hodowla w niewoli, dokarmianie i skrzynki lęgowe. W ciągu ok. 30 lat populacja urosła do kilkuset ptaków. W ostatnich latach znów maleje, więc program trwa. Od 2022 r. pustułka maskareńska jest ptakiem narodowym Mauritiusa.
+Uratowały go metody podobne do tych, którymi w Polsce przywracano sokoła wędrownego ([Historie sukcesu](../ochrona/03-historie-sukcesu.md)): zabieranie pierwszego zniesienia do inkubatora (samica składa wtedy drugie), hodowla w niewoli, dokarmianie i skrzynki lęgowe. W ciągu ok. 30 lat populacja urosła do kilkuset ptaków. W ostatnich latach znów maleje, więc program trwa.
 
 ## Sokół skalny: wyspiarz z Europy
 Jeden z gatunków atlasu ma podobną, wyspiarską historię. **Sokół skalny** (*Falco eleonorae*, ang. Eleonora's Falcon) gniazduje kolonijnie na skalistych wyspach Morza Śródziemnego i Wysp Kanaryjskich. Lęgi zaczyna dopiero pod koniec lata, kiedy inne ptaki je kończą. Dzięki temu pisklęta rosną jesienią, w czasie przelotu małych ptaków nad morzem, i rodzice mają czym je karmić.

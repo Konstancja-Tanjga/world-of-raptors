@@ -66,7 +66,7 @@ Prawie cały przelot to trzy gatunki:
 - myszołów szerokoskrzydły (*Buteo platypterus*, ang. Broad-winged Hawk),
 - myszołów preriowy (*Buteo swainsoni*, ang. Swainson's Hawk).
 
-Myszołów preriowy leci z prerii Kanady i USA na pampę w Argentynie, ok. 10 000 km w jedną stronę. Zimą je tam głównie szarańczaki. W połowie lat 90. na argentyńskich polach zaczęto je zwalczać silnym pestycydem, monokrotofosem, i w dwa sezony znaleziono ok. 6 tysięcy martwych myszołowów, a szacunki mówią o ok. 20 tysiącach. Ptaki z nadajnikami doprowadziły badaczy na miejsce, a Argentyna wycofała środek z użycia w ciągu kilku lat. To przykład tego, że ptaka wędrownego trzeba chronić na całej trasie, nie tylko tam, gdzie gniazduje.
+Myszołów preriowy leci z prerii Kanady i USA na pampę w Argentynie, ok. 10 000 km w jedną stronę. Zimą je tam głównie szarańczaki. W połowie lat 90. na argentyńskich polach zaczęto je zwalczać silnym pestycydem, monokrotofosem, i w dwa sezony znaleziono ok. 5–6 tysięcy martwych myszołowów, a szacunki mówią o ok. 20 tysiącach. Ptaki z nadajnikami doprowadziły badaczy na miejsce, a Argentyna wycofała środek z użycia w ciągu kilku lat. To przykład tego, że ptaka wędrownego trzeba chronić na całej trasie, nie tylko tam, gdzie gniazduje.
 
 ## Filmy
 - [YouTube: myszołowce towarzyskie polują w grupie](https://www.youtube.com/results?search_query=harris+hawks+hunting+together)

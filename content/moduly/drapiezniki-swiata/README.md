@@ -13,7 +13,7 @@ To moduł o biologii i różnorodności, nie o rozpoznawaniu w terenie. Atlas ku
 Po ukończeniu modułu potrafisz:
 1. Wyjaśnić, dlaczego najwięcej gatunków drapieżników żyje w tropikach i czym gatunek kosmopolityczny różni się od endemitu.
 2. Wymienić po kilka charakterystycznych drapieżników Afryki, obu Ameryk, Azji i Australii i powiedzieć, czym się wyróżniają.
-3. Podać przykłady zachowań, których nie ma u drapieżników Europy: polowanie pieszo, polowanie w grupie, używanie narzędzi, kilku samców przy jednym gnieździe.
+3. Podać przykłady zachowań, których w Europie nie zobaczysz: polowanie pieszo, polowanie w grupie, używanie narzędzi, kilku samców przy jednym gnieździe.
 4. Opisać największe przeloty drapieżników poza Europą: Veracruz, przelot kobczyków amurskich i szlak wschodnioazjatycki.
 5. Opowiedzieć o zagrożeniach i sukcesach ochrony na innych kontynentach: trucie sępów w Afryce, pustułka maskareńska, Nagaland.
 

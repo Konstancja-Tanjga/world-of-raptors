@@ -28,7 +28,7 @@ Sekretarz jest jedynym żyjącym gatunkiem swojej rodziny. Od 2020 r. Czerwona L
 
 Kuglarz (*Terathopius ecaudatus*, ang. Bateleur) to krewny gadożera. Ma długie skrzydła i ogon tak krótki, że w locie stopy wystają poza niego. Bez długiego ogona trudniej utrzymać równowagę, więc kuglarz szybuje, kołysząc się na boki jak linoskoczek z tyczką. Stąd jego francuska nazwa *bateleur*, czyli akrobata, i polska.
 
-Większość dnia spędza w powietrzu. Leci nisko nad sawanną ze skrzydłami wzniesionymi w płytkie V i szuka padliny oraz drobnej zdobyczy. Często znajduje padlinę pierwszy, przed sępami, dlatego jako pierwszy ginie od zatrutych przynęt.
+Większość dnia spędza w powietrzu. Leci nisko nad sawanną ze skrzydłami wzniesionymi w płytkie V i szuka padliny oraz drobnej zdobyczy. Często znajduje padlinę pierwszy, przed sępami, dlatego często ginie od zatrutych przynęt.
 
 ## Rybożer afrykański
 
@@ -39,15 +39,15 @@ Większość dnia spędza w powietrzu. Leci nisko nad sawanną ze skrzydłami wz
 
 </margines>
 
-Rybożer afrykański (*Haliaeetus vocifer*, ang. African Fish Eagle) to bliski krewny naszego bielika. Żyje nad jeziorami i rzekami na południe od Sahary. Rybę chwyta z powierzchni, z lotu, bez nurkowania. Jego donośny głos, podawany z głową odrzuconą do tyłu, bywa nazywany głosem Afryki. Jest ptakiem narodowym m.in. Zambii i Zimbabwe.
+Rybożer afrykański (*Haliaeetus vocifer*, ang. African Fish Eagle) to bliski krewny naszego bielika (na nowszych listach w rodzaju *Icthyophaga*). Żyje nad jeziorami i rzekami na południe od Sahary. Rybę chwyta z powierzchni, z lotu, bez nurkowania. Jego donośny głos, podawany z głową odrzuconą do tyłu, bywa nazywany głosem Afryki. Jest ptakiem narodowym m.in. Zambii i Zimbabwe.
 
 ## Małe i dziwne
 - **Sokolik czerwonooki** (*Polihierax semitorquatus*, ang. Pygmy Falcon) jest wielkości dzierzby. Na pustyni Kalahari nie buduje gniazda, tylko zajmuje jedną z komór w ogromnych wspólnych gniazdach wikłaczy z gatunku *Philetairus socius* (ang. Sociable Weaver). Gniazdo wikłaczy bywa wielkości stogu siana i chroni przed upałem i nocnym chłodem.
 - **Palmojad** (*Gypohierax angolensis*, ang. Palm-nut Vulture) to sęp, który je głównie owoce: tłusty miąższ owoców palmy oleistej i rafii. Ryby i kraby są tylko dodatkiem.
-- **Wojownik zbrojny** (*Polemaetus bellicosus*, ang. Martial Eagle) to największy orzeł Afryki. Poluje na młode antylopy, warany i perlice. Jest zagrożony, bo rolnicy zabijają go w obawie o jagnięta.
+- **Wojownik zbrojny** (*Polemaetus bellicosus*, ang. Martial Eagle) to największy orzeł Afryki. Poluje na młode antylopy, warany i perlice. Jest zagrożony, bo rolnicy zabijają go w obawie o jagnięta. Jego leśny krewny, wojownik wspaniały (*Stephanoaetus coronatus*, ang. Crowned Eagle), poluje w lasach na małpy i małe antylopy.
 
 ## Kilka sępów przy jednej padlinie
-W Europie przy padlinie spotkasz zwykle jeden gatunek, sępa płowego. Na sawannie bywa ich pięć albo sześć naraz i każdy ma swoją rolę.
+W Hiszpanii przy jednej padlinie spotykają się sęp płowy, sęp kasztanowaty i ścierwnik. Na sawannie gatunków bywa pięć albo sześć naraz i tak samo każdy ma swoją rolę.
 
 | Gatunek | Rola przy padlinie |
 |---|---|

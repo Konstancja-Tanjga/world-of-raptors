@@ -15,7 +15,7 @@ Dla każdego ptaka ze świata wskaż drapieżnika z Polski albo Hiszpanii, któr
 
 <details><summary>Odpowiedzi</summary>
 
-1. Bielik. Bliscy krewni, ten sam rodzaj.
+1. Bielik. Bliscy krewni.
 2. Sęp płowy. Niespokrewnieni: sępnik należy do kondorowatych, to ewolucja zbieżna.
 3. Gadożer, bo oba polują na węże. Dalecy krewni i zupełnie inna metoda: sekretarz kopie, gadożer chwyta z lotu.
 4. Trzmielojad. Bliscy krewni, ten sam rodzaj.

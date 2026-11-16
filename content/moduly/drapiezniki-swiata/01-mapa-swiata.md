@@ -10,7 +10,7 @@ Powodów jest kilka i działają razem:
 - **Stałość.** Tam, gdzie pokarm jest przez cały rok, ptak nie musi wędrować ani umieć wszystkiego. Może się wyspecjalizować.
 - **Czas.** Tropików nie przykrył lądolód. Gatunki miały tam więcej czasu, żeby powstawać, i mniej powodów, żeby wymierać.
 
-Tropikalne drapieżniki żyją też inaczej niż europejskie. Wiele z nich nie wędruje, ma jedno pisklę i opiekuje się nim bardzo długo. Para harpii wielkich wychowuje jedno młode raz na dwa albo trzy lata. Dla porównania para myszołowów w Polsce wyprowadza zwykle dwa lub trzy młode co roku.
+Tropikalne drapieżniki żyją też inaczej niż europejskie. Wiele z nich nie wędruje, ma jedno pisklę i opiekuje się nim bardzo długo. Para harpii wielkich wychowuje jedno młode raz na dwa albo trzy lata. Dla porównania para myszołowów w Polsce wyprowadza od jednego do trzech młodych co roku.
 
 ## Te same zadania, inni wykonawcy
 Na każdym kontynencie są te same „posady”: padlinożerca, łowca ptaków w lesie, łowca ryb, łowca węży. Zajmują je jednak różne ptaki, często niespokrewnione.

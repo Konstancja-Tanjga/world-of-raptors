@@ -8,7 +8,7 @@ import { odmiana } from '@/lib/odmiana';
 export const metadata: Metadata = {
   title: 'Plan kursu',
   description:
-    'Dwie ścieżki kursu o ptakach drapieżnych: biologia (jak żyją, polują i wędrują) i rozpoznawanie w terenie, od polskich pól po Cieśninę Gibraltarską.',
+    'Dwie ścieżki kursu o ptakach drapieżnych: biologia (jak żyją, polują i wędrują na całym świecie) i rozpoznawanie w terenie, od polskich pól po Cieśninę Gibraltarską.',
 };
 
 /**
