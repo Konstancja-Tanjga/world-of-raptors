@@ -103,6 +103,17 @@ Przez Europę Środkową przebiega **przedział wędrówkowy** (ang. *migratory 
 - **Młode lecą mniej „wydajnie”**: ich trasy są bardziej kręte, częściej dają się znosić wiatrowi i częściej ryzykują przelot nad morzem.
 - Młode dużych gatunków (orlików, trzmielojadów, sępów) często **zostają w Afryce na pierwsze lato**, a czasem i dłużej, zanim po raz pierwszy wrócą do Europy.
 
+## Wąskie gardła innych kontynentów
+Ta sama zasada lejka działa na całym świecie. Największe przeloty drapieżników są poza Europą.
+
+| Miejsce | Ile ptaków jesienią (w przybliżeniu) | Główne gatunki |
+|---|---|---|
+| **Veracruz** (Meksyk) | ponad 4 mln, największy przelot drapieżników na świecie | sępnik różowogłowy, myszołów szerokoskrzydły, myszołów preriowy |
+| **Panama** | ponad 2 mln | te same trzy gatunki, dalej na południe |
+| **Chumphon** (Tajlandia) | setki tysięcy | krogulec chiński, trzmielojad czubaty |
+
+Opisy tych miejsc i wędrówki kobczyka amurskiego nad oceanem są w lekcjach [Ameryki: od prerii po las deszczowy](../drapiezniki-swiata/03-ameryki.md) i [Azja: orły lasu, morza i oceanu](../drapiezniki-swiata/04-azja.md).
+
 ## Filmy
 - [YouTube: przelot ptaków drapieżnych nad Bosforem](https://www.youtube.com/results?search_query=Bosphorus+raptor+migration)
 - [YouTube: Batumi Raptor Count, milion ptaków](https://www.youtube.com/results?search_query=Batumi+Raptor+Count)

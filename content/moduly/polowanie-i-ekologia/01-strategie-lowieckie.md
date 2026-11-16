@@ -104,6 +104,13 @@ Większość polowań kończy się **porażką**. Skuteczność bardzo się ró�
 - łowcy gryzoni i ryb radzą sobie zwykle lepiej,
 - młode ptaki w pierwszej jesieni polują znacznie gorzej niż dorosłe, a wiele z nich nie przeżywa pierwszej zimy.
 
+## Poza Europą: pieszo, w grupie, o zmierzchu
+Siedem strategii z tej lekcji zobaczysz u drapieżników Europy. Na innych kontynentach są jeszcze trzy, których u nas nie ma.
+
+- **Pieszo.** Sekretarz z afrykańskiej sawanny poluje, chodząc, a zdobycz zabija kopnięciami. Więcej w lekcji [Afryka: sawanna, sępy i sekretarz](../drapiezniki-swiata/02-afryka.md).
+- **W grupie.** Myszołowiec towarzyski (*Parabuteo unicinctus*, ang. Harris's Hawk) z pustyń obu Ameryk poluje całą rodziną: ptaki atakują z kilku stron albo gonią zdobycz na zmianę. Więcej w lekcji [Ameryki: od prerii po las deszczowy](../drapiezniki-swiata/03-ameryki.md).
+- **O zmierzchu.** Afrykański i azjatycki drapieżnik *Macheiramphus alcinus* (ang. Bat Hawk) poluje prawie wyłącznie na nietoperze. Ma na to ok. pół godziny dziennie, kiedy nietoperze wylatują o zmierzchu z kryjówek. Chwyta je w locie i połyka w całości, bez lądowania.
+
 ## Filmy
 - [YouTube: pustułka zawisa i poluje na norniki](https://www.youtube.com/results?search_query=kestrel+hovering+hunting+vole)
 - [YouTube: sokół wędrowny pikuje na ptaka](https://www.youtube.com/results?search_query=peregrine+falcon+stoop+hunting)

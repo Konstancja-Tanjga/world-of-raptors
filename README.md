@@ -2,11 +2,11 @@
 
 # World of Raptors
 
-Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują, i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Napisałam go do własnej nauki. Działa w przeglądarce, bez kont i bez serwera z danymi: postęp, fiszki i obserwacje zostają w przeglądarce.
+Kurs online o drapieżnikach dziennych i nocnych, czyli ptakach drapieżnych i sowach: jak żyją, polują i wędrują na całym świecie i jak rozpoznać je w terenie, od polskich pól po Cieśninę Gibraltarską. Napisałam go do własnej nauki. Działa w przeglądarce, bez kont i bez serwera z danymi: postęp, fiszki i obserwacje zostają w przeglądarce.
 
 **Na żywo: [worldofraptors.com](https://www.worldofraptors.com)**
 
-| 45 drapieżników | 55 ptaków mokradeł | 27 modułów | 142 lekcje | 297 pytań w quizach | 502 fiszki | 590 zdjęć |
+| 45 drapieżników | 55 ptaków mokradeł | 28 modułów | 148 lekcji | 314 pytań w quizach | 502 fiszki | 590 zdjęć |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Niebo o każdej porze
@@ -19,7 +19,7 @@ Strona startowa pokazuje niebo nad Warszawą takie, jakie jest w chwili, gdy ją
 
 ### Lekcje
 
-Dwie ścieżki, dwadzieścia cztery moduły i projekt końcowy, w każdym pięć lekcji, w A8 siedem, a w B9 osiem:
+Dwie ścieżki, dwadzieścia siedem modułów i projekt końcowy, w każdym pięć lub sześć lekcji, w A8 siedem, a w B9 osiem:
 
 | Ścieżka A: Biologia | Ścieżka B: Rozpoznawanie w terenie |
 | :--- | :--- |
@@ -36,6 +36,9 @@ Dwie ścieżki, dwadzieścia cztery moduły i projekt końcowy, w każdym pięć
 | A11&nbsp;[Lot w praktyce](content/moduly/lot/README.md) | B11&nbsp;[Rewiry, toki i gniazda](content/moduly/rewiry/README.md) |
 | A12&nbsp;[Krukowate: sąsiedzi drapieżników](content/moduly/krukowate/README.md) | P&nbsp;[Projekt końcowy](content/moduly/projekt-koncowy/README.md) |
 | A13&nbsp;[Małe ptaki: codzienni sąsiedzi i zdobycz](content/moduly/male-ptaki/README.md) | |
+| A14&nbsp;[Policzyć niewidzialne: jak liczy się ptaki lęgowe](content/moduly/liczenie-ptakow/README.md) | |
+| A15&nbsp;[Trendy: jak czytać liczby o populacjach](content/moduly/trendy/README.md) | |
+| A16&nbsp;[Drapieżniki świata](content/moduly/drapiezniki-swiata/README.md) | |
 
 <table>
   <tr>

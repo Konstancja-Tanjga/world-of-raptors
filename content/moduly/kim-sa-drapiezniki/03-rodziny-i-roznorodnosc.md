@@ -21,7 +21,7 @@ Na świecie żyje około **11 tysięcy** gatunków ptaków. Drapieżników (dzie
 | **Najmniejsze dzienne** | sokoliki z rodzaju *Microhierax* (Azja Południowo-Wschodnia) | ok. 15 cm długości, kilkadziesiąt gramów, czyli mniej więcej wróbel |
 | **Najmniejsze sowy** | np. *Micrathene whitneyi* (ang. Elf Owl; pustynie Ameryki Północnej) | ok. 40 g |
 | **Największa rozpiętość** | kondor wielki (*Vultur gryphus*, ang. Andean Condor; Andy) | ok. 3 m, masa do ok. 15 kg |
-| **Najcięższe orły** | harpia wielka (*Harpia harpyja*, ang. Harpy Eagle; Ameryka Południowa), orzeł filipiński (*Pithecophaga jefferyi*, ang. Philippine Eagle) | samice harpii zwykle ok. 6–9 kg |
+| **Najcięższe orły** | harpia wielka (*Harpia harpyja*, ang. Harpy Eagle; Ameryka Południowa), orzeł filipiński (*Pithecophaga jefferyi*, ang. Philippine Eagle), bielik olbrzymi (*Haliaeetus pelagicus*, ang. Steller's Sea Eagle; Daleki Wschód) | samice harpii zwykle ok. 6–9 kg; bielik olbrzymi jest średnio najcięższy, samice do ok. 9 kg |
 | **Największy w Europie** | sęp kasztanowaty (*Aegypius monachus*, ang. Cinereous Vulture) | rozpiętość ok. 2,5–3 m |
 
 <margines>

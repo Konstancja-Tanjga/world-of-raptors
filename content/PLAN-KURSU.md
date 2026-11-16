@@ -2,7 +2,7 @@
 
 ## Idea
 Kursy Cornell Bird Academy dzielą temat na dwie osobne (płatne) części: **biologię** („The Wonderful World of Raptors”) i **rozpoznawanie** („Hawk and Raptor Identification” — tylko Ameryka Północna).
-Ten kurs łączy obie rzeczy i skupia się na **Polsce, południu Hiszpanii i Cieśninie Gibraltarskiej**. To prywatny kurs do własnej nauki.
+Ten kurs łączy obie rzeczy i dzieli je podobnie: **biologia** (ścieżka A) opowiada o ptakach drapieżnych całego świata, a **rozpoznawanie** (ścieżka B) uczy tego, co można zobaczyć w **Polsce, na południu Hiszpanii i nad Cieśniną Gibraltarską**. Atlas i fiszki obejmują drapieżniki i sowy Europy. To prywatny kurs do własnej nauki.
 
 Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obie po kolei albo wybrać jedną po teście startowym.
 
@@ -32,6 +32,9 @@ Kurs ma dwie ścieżki nauki (jak ścieżki w Pluralsight). Można przejść obi
 | A13 | **Małe ptaki: codzienni sąsiedzi i zdobycz** | Ptaki wróblowe i jak zacząć je rozpoznawać, najpospolitsze małe ptaki miasta, lasu, łąki i pola, kto na nie poluje (krogulec, sóweczka, kobuz, drzemlik), karmniki a krogulce, jak się bronią: dwa rodzaje alarmu, przeganianie sów, stado, kamuflaż | [gotowy](moduly/male-ptaki/README.md) |
 | A14 | **Policzyć niewidzialne: jak liczy się ptaki lęgowe** | Cenzus, inwentaryzacja i monitoring, wykrywalność (C = p · N, ile pustych kontroli wyklucza gatunek, fałszywe zera, symulator nocnych kontroli puszczyków), powierzchnie próbne i losowanie, transekt, punkt i metoda kartograficzna, standaryzacja, jak dołączyć do Monitoringu Ptaków Polski oraz SACRE i NOCTUA w Hiszpanii | [gotowy](moduly/liczenie-ptakow/README.md) |
 | A15 | **Trendy: jak czytać liczby o populacjach** | Przesunięcie punktu odniesienia i ubytek ptaków w Europie od 1980 r., wykrywalność i indeks względem roku bazowego, skala logarytmiczna i trend wykładniczy, wahanie czy trend (przedział ufności, sześć kategorii PECBMS, trend lokalny na tle krajowego), monitoring a badania przed inwestycją (BA i BACI), raport z art. 12 Dyrektywy Ptasiej dla bielika, orlika, błotniaka łąkowego, pustułki i kani rudej; ćwiczenie „Czy to trend?” | [gotowy](moduly/trendy/README.md) |
+| A16 | **Drapieżniki świata** | Dlaczego najwięcej gatunków żyje w tropikach, kosmopolici i endemity; Afryka (sekretarz, kuglarz, kryzys sępów), Ameryki (myszołowiec towarzyski polujący w grupie, ślimakojad, karakary, Veracruz), Azja (bielik olbrzymi, orzeł filipiński, kobczyk amurski nad oceanem), Australia i wyspy (orzeł australijski, poliandria myszołowa galapagoskiego, pustułka maskareńska) | [gotowy](moduly/drapiezniki-swiata/README.md) |
+
+Moduły A3–A6 mają też krótkie części o innych kontynentach, które odsyłają do A16.
 
 ## Ścieżka B: Rozpoznawanie w terenie
 

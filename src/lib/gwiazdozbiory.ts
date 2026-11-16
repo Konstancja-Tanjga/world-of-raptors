@@ -23,6 +23,7 @@ export const GWIAZDOZBIORY: Record<string, { gatunek: string; nazwa: string }> =
   'male-ptaki': { gatunek: 'krogulec', nazwa: 'Krogulec' },
   'liczenie-ptakow': { gatunek: 'blotniak-stawowy', nazwa: 'Błotniak' },
   trendy: { gatunek: 'blotniak-lakowy', nazwa: 'Błotniak łąkowy' },
+  'drapiezniki-swiata': { gatunek: 'sep-plamisty', nazwa: 'Sęp plamisty' },
   metoda: { gatunek: 'myszolow', nazwa: 'Myszołów' },
   polska: { gatunek: 'kania-ruda', nazwa: 'Kania' },
   gibraltar: { gatunek: 'trzmielojad', nazwa: 'Trzmielojad' },

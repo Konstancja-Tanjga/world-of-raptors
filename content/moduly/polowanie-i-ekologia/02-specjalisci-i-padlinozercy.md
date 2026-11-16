@@ -105,6 +105,15 @@ Sępy mają bardzo kwaśny żołądek, który niszczy wiele bakterii obecnych w 
 ### Okazjonalni padlinożercy
 Padlinę chętnie jedzą też kanie (m.in. zwierzęta zabite na drogach i odpadki na wysypiskach), bieliki, orły przednie, myszołowy i kruki. Zimą padlina bywa dla nich kluczowym źródłem pokarmu.
 
+## Specjaliści z innych kontynentów
+Trzmielojad i gadożer to specjaliści na miarę Europy. W tropikach, gdzie pokarm jest przez cały rok, specjalizacja idzie dalej.
+
+- **Ślimakojad czerwonooki** (*Rostrhamus sociabilis*, ang. Snail Kite) z mokradeł Ameryki je prawie wyłącznie jeden rodzaj wodnych ślimaków i ma do tego cienki, mocno zagięty dziób.
+- **Palmojad** (*Gypohierax angolensis*, ang. Palm-nut Vulture) z Afryki to sęp, który je głównie owoce palmy oleistej.
+- **Trębacz chichotliwy** (*Herpetotheres cachinnans*, ang. Laughing Falcon) z lasów Ameryki poluje prawie wyłącznie na węże, tak jak gadożer, choć należy do sokołowatych.
+
+Ich historie, razem z tym, co stało się z dziobami ślimakojadów na Florydzie, są w module [A16 Drapieżniki świata](../drapiezniki-swiata/README.md).
+
 ## Filmy
 - [YouTube: trzmielojad wykopuje gniazdo os](https://www.youtube.com/results?search_query=honey+buzzard+digging+wasp+nest)
 - [YouTube: gadożer poluje na węża](https://www.youtube.com/results?search_query=short-toed+snake+eagle+catching+snake)

@@ -136,7 +136,7 @@ export default async function Home({ searchParams }: PageProps<'/'>) {
           Naucz się czytać niebo
         </h1>
         <p className="niebo__lead">
-          Ptaki drapieżne i sowy, od polskich pól po Cieśninę Gibraltarską.
+          Ptaki drapieżne i sowy: biologia z całego świata, rozpoznawanie od polskich pól po Cieśninę Gibraltarską.
         </p>
         <div className="niebo__akcje">
           <StartKursu />
